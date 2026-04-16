@@ -1,0 +1,306 @@
+<!-- Desarrollo 100% realizado por Sergio Alejandro Ospina Rocha -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta name="author" content="Sergio Alejandro Ospina Rocha">
+    <meta charset=UTF-8>
+    <meta name=viewport content=width=device-width,initial-scale=1.0>
+    <title>Suscripciones y Planes de Cuidado | CUDI Marketplace</title>
+    <meta name=description content=Elige el plan CUDI que mejor se adapte a tu estilo de vida. Protección integral, telemedicina y descuentos exclusivos en servicios para tu mascota.>
+    <meta name=robots content=index,follow>
+
+    <!-- Structured Data (GEO) -->
+    <script type=application/ld+json>
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Planes de Salud y Suscripciones CUDI",
+      "url": "https://cudi.ai/planes-suscripcion-bienestar-animal.html"
+    }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- TFM Tracking Requirements: Google Analytics (GA4) & Meta Pixel -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CUDI2026TFM"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-CUDI2026TFM', { 'debug_mode': true });
+    </script>
+    <!-- Meta Pixel Code for Funnel Tracking -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1029384756CUDI');
+      fbq('track', 'PageView');
+    </script>
+    <!-- End TFM Tracking Requirements -->
+
+    <!-- Microsoft Clarity Tracking Code -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];
+            y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "CUDI_TRABAJO_FINAL_2026");
+    </script>
+
+</head>
+<body style="background:var(--clr-white);">
+
+    <!-- Barra de Contacto Superior Refinada -->
+    <div class="top-bar-refined">
+        <span><i class="fa-solid fa-envelope"></i> cudi.ai2026@gmail.com</span>
+        <span><i class="fa-solid fa-phone"></i> 900 123 456</span>
+        <div style="display:flex; align-items:center; gap:5px;">
+            <i class="fa-solid fa-globe"></i>
+            <select class="lang-selector" style="background:transparent; color:white; border:none; outline:none; font-family:var(--font-body); cursor:pointer; font-weight:700; font-size:0.75rem;">
+                <option value="es" style="color:#000;">ES</option>
+                <option value="ca" style="color:#000;">CA</option>
+                <option value="en" style="color:#000;">EN</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Navegación Estilo "Floating Island" -->
+    <nav class="navbar-island">
+        <div class="nav-capsule">
+            <!-- 1. Logo -->
+            <a href="index.html" class="logo" style="display:flex; align-items:center;">
+                <img src="logo.jpeg" alt="CUDI" style="height:55px; width:auto; transition: transform 0.3s; border-radius: 8px;">
+            </a>
+
+            <!-- 2. Buscador Arquitectónico -->
+            <div class="nav-search-island">
+                <i class="fa-solid fa-magnifying-glass" style="color:var(--clr-primary); font-size:0.9rem;"></i>
+                <input type="text" placeholder="¿Qué necesita tu compañero hoy?">
+            </div>
+
+            <!-- 3. Enlaces y Carrito -->
+            <div class=nav-right-island>
+                <ul class=nav-links-island style=gap:30px;>
+                    <li><a href=index.html>Inicio</a></li>
+                    <li><a href="smart-collar-aventuras-sin-sustos.html">Lanzamiento</a></li>
+                    <li><a href=#store-grid>Tienda</a></li>
+                    <li><a href=#suscripciones>Planes</a></li>
+                    <li><a href="index.html#portal-educativo">Artículos</a></li>
+                    <li><a href="red-socios-clinicas-veterinarias.html">Red de Socios</a></li>
+                    <li><a href="simulador-gemelo-digital-telemetria.html" style="color:#10b981; font-weight:800;"><i class="fa-solid fa-mobile-screen"></i> App Demo</a></li>
+                    
+                </ul>
+                <div class=cart-trigger-island onclick=toggleCart()>
+                    <i class=cart-icon-cudi style=font-size:1.2rem;></i>
+                    <span class=cart-badge id=global-cart-badge style=position:absolute;top:-8px;right:-12px;background:var(--clr-primary);color:white;font-size:0.65rem;font-weight:700;border-radius:50px;width:18px;height:18px;display:flex;align-items:center;justify-content:center;border:2px;solid;white;>0</span>
+                </div>
+
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- PANEL LATERAL CARRITO (SIDE-CART) -->
+    <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+    <div class="side-cart" id="side-cart">
+        <div class="cart-header">
+            <h3><i class="fa-solid fa-bag-shopping"></i> Tu Cesta CUDI</h3>
+            <button class="close-cart" aria-label="Cerrar Carrito" onclick="toggleCart()"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="cart-items" id="cart-items-container"></div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total Estimado:</span>
+                <span id="cart-total-price">0.00 €</span>
+            </div>
+            <a href="contratar-plan-premium-cudi.html" class="btn-primary" aria-label="Acción principal" style="display:block; text-align:center; margin-top:10px;">Procesar Pago Seguro <i class="fa-solid fa-lock"></i></a>
+        </div>
+    </div>
+
+    <!-- HERO SUBSCRIPCIÓN -->
+    <header style="padding: 120px 0 80px 0; background: radial-gradient(circle at top right, #f0f9ff 0%, #ffffff 70%);">
+        <div class="container" style="text-align:center; max-width:900px;">
+            <span style="background:var(--clr-primary); color:white; padding:8px 20px; border-radius:50px; font-weight:700; font-size:0.8rem; text-transform:uppercase; letter-spacing:1px; margin-bottom:25px; display:inline-block;">Ecosistema de Cuidado Inteligente</span>
+            <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); font-weight:800; line-height:1.1; margin-bottom:20px; color:var(--clr-text); letter-spacing:-2px;">Elige el nivel de protección que tu mejor amigo merece</h1>
+            <p style="font-size:1.25rem; color:var(--clr-text-muted); line-height:1.6; margin-bottom:40px;">Diseñamos nuestros planes pensando en tu tranquilidad y en su bienestar. Empieza a gestionar su mundo hoy mismo o desbloquea el cuidado preventivo total con nuestro ecosistema inteligente.</p>
+        </div>
+    </header>
+
+    <!-- SECCIÓN 1: BENEFICIOS -->
+    <section style="padding: 40px 0 100px 0;">
+        <div class="container">
+            <div style="text-align:center; margin-bottom:60px;">
+                <h2 style="font-size:2.2rem; font-weight:800;">¿Por qué elegir CUDI?</h2>
+            </div>
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:30px;">
+                <div style="background:white; padding:40px; border-radius:30px; border:1px solid #f0f0f0; transition: transform 0.3s;" onmouseover="this.style.transform='translateY(-10px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <div style="width:60px; height:60px; background:#EBF5FB; color:var(--clr-primary); border-radius:15px; display:flex; align-items:center; justify-content:center; font-size:1.5rem; margin-bottom:25px;"><i class="fa-solid fa-laptop-medical"></i></div>
+                    <h3 style="margin-bottom:15px; font-weight:800;">Prevención antes que reacción</h3>
+                    <p style="color:var(--clr-text-muted); line-height:1.7;">No esperamos a que tu mascota se sienta mal. Nuestro sistema detecta anomalías en su rutina para que puedas actuar a tiempo.</p>
+                </div>
+                <div style="background:white; padding:40px; border-radius:30px; border:1px solid #f0f0f0; transition: transform 0.3s;" onmouseover="this.style.transform='translateY(-10px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <div style="width:60px; height:60px; background:#EBF5FB; color:var(--clr-primary); border-radius:15px; display:flex; align-items:center; justify-content:center; font-size:1.5rem; margin-bottom:25px;"><i class="fa-solid fa-piggy-bank"></i></div>
+                    <h3 style="margin-bottom:15px; font-weight:800;">Ahorro inteligente</h3>
+                    <p style="color:var(--clr-text-muted); line-height:1.7;">Centralizar sus cuidados, alimentación y salud en una sola plataforma te permite acceder a descuentos exclusivos y evitar gastos médicos de urgencia.</p>
+                </div>
+                <div style="background:white; padding:40px; border-radius:30px; border:1px solid #f0f0f0; transition: transform 0.3s;" onmouseover="this.style.transform='translateY(-10px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <div style="width:60px; height:60px; background:#EBF5FB; color:var(--clr-primary); border-radius:15px; display:flex; align-items:center; justify-content:center; font-size:1.5rem; margin-bottom:25px;"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                    <h3 style="margin-bottom:15px; font-weight:800;">Comodidad absoluta</h3>
+                    <p style="color:var(--clr-text-muted); line-height:1.7;">Desde agendar un baño hasta consultar a un veterinario de madrugada, todo se resuelve con un solo clic en tu teléfono.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 2: MAPA DE PLANES -->
+    <section style="padding: 100px 0; background:#f8fafc;">
+        <div class="container">
+            <div style="text-align:center; margin-bottom:80px;">
+                <h2 style="font-size:2.8rem; font-weight:800; letter-spacing:-1px;">Nuestros Planes de Cuidado</h2>
+                <p style="font-size:1.1rem; color:var(--clr-text-muted);">Sin compromisos de permanencia. Cambia de plan cuando quieras.</p>
+            </div>
+
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 450px)); gap:40px; justify-content:center;">
+                <!-- Plan Esencial -->
+                <div style="background:white; padding:50px; border-radius:40px; border:1px solid #eee; display:flex; flex-direction:column; justify-content:space-between; box-shadow:0 20px 50px rgba(0,0,0,0.03);">
+                    <div>
+                        <h3 style="font-size:1.8rem; font-weight:800; margin-bottom:10px;">CUDI Esencial</h3>
+                        <p style="color:var(--clr-text-muted); margin-bottom:30px; font-size:1.1rem;">Perfecto para organizar la vida de tu mascota y descubrir nuestra red de confianza.</p>
+<div style="background-image:url('rutas-paseos-seguros-barcelona.png'); background-size:cover; height:150px; border-radius:15px; margin-bottom:20px;"></div>
+                        <div style="font-size:3.5rem; font-weight:800; color:var(--clr-text); margin-bottom:40px;">0€ <span style="font-size:1.1rem; color:var(--clr-text-muted); font-weight:400;">/mes</span></div>
+                        <ul style="list-style:none; padding:0; margin-bottom:50px;">
+                            <li style="margin-bottom:18px; display:flex; align-items:center; gap:12px;"><i class="fa-solid fa-circle-check" style="color:#20C997;"></i> Expediente digital completo</li>
+                            <li style="margin-bottom:18px; display:flex; align-items:center; gap:12px;"><i class="fa-solid fa-circle-check" style="color:#20C997;"></i> Alertas de vacunación</li>
+                            <li style="margin-bottom:18px; display:flex; align-items:center; gap:12px;"><i class="fa-solid fa-circle-check" style="color:#20C997;"></i> Acceso al catálogo completo</li>
+                            <li style="margin-bottom:18px; display:flex; align-items:center; gap:12px; opacity:0.5;"><i class="fa-solid fa-circle" style="font-size:0.5rem;"></i> Navegación con anuncios</li>
+                        </ul>
+                    </div>
+                    <button class="btn-primary" aria-label="Acción principal" style="width:100%; padding:20px; border-radius:15px; font-size:1.1rem; border:none; background:#f0f0f0; color:var(--clr-text); cursor:pointer;">Crear cuenta gratuita</button>
+                </div>
+
+                <!-- Plan Premium -->
+                <div style="background:var(--clr-text); color:white; padding:50px; border-radius:40px; position:relative; display:flex; flex-direction:column; justify-content:space-between; box-shadow:0 30px 60px rgba(0, 119, 182, 0.2);">
+                    <div style="position:absolute; top:-20px; left:50%; transform:translateX(-50%); background:var(--clr-primary); padding:10px 30px; border-radius:50px; font-weight:800; font-size:0.8rem; letter-spacing:1px;">MÁS RECOMENDADO</div>
+                    <div>
+                        <h3 style="font-size:1.8rem; font-weight:800; margin-bottom:10px;">CUDI Premium Care</h3>
+                        <p style="color:rgba(255,255,255,0.7); margin-bottom:30px; font-size:1.1rem;">La experiencia definitiva de paz mental. Un asistente inteligente para tu compañero.</p>
+<div style="background-image:url('dashboard-biometrico-gemelo-digital-mascotas.png'); background-size:cover; height:150px; border-radius:15px; margin-bottom:20px;"></div>
+                        <div style="font-size:3.5rem; font-weight:800; color:white; margin-bottom:40px;">30€ <span style="font-size:1.1rem; color:rgba(255,255,255,0.5); font-weight:400;">/mes</span></div>
+                        <ul style="list-style:none; padding:0; margin-bottom:50px;">
+                            <li style="margin-bottom:18px; display:flex; align-items:center; gap:12px;"><i class="fa-solid fa-bolt" style="color:var(--clr-primary);"></i> Seguimiento GPS y telemetría</li>
+                            <li style="margin-bottom:18px; display:flex; align-items:center; gap:12px;"><i class="fa-solid fa-heart-pulse" style="color:var(--clr-primary);"></i> Chat veterinario 24/7</li>
+                            <li style="margin-bottom:18px; display:flex; align-items:center; gap:12px;"><i class="fa-solid fa-star" style="color:var(--clr-primary);"></i> Paseo gratuito al mes</li>
+                            <li style="margin-bottom:18px; display:flex; align-items:center; gap:12px;"><i class="fa-solid fa-shield-halved" style="color:var(--clr-primary);"></i> Descuentos exclusivos</li>
+                        </ul>
+                    </div>
+                    <button class="btn-primary" aria-label="Acción principal" style="width:100%; padding:20px; border-radius:15px; font-size:1.1rem; border:none; background:var(--clr-primary); color:white; font-weight:800; cursor:pointer;" onclick="addToCart('CUDI Premium Care', 30.00, 'dashboard-biometrico-gemelo-digital-mascotas.png'); toggleCart();">Activar protección Premium</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <footer class=premium-footer>
+        <div class=container>
+            <div class=footer-grid>
+                <!-- Columna 1: Marca (Fase 1) -->
+                <div class=footer-col>
+                    <a href=index.html class=logo style=margin-bottom:30px;display:inline-block;>
+                        <img src=logo.jpeg alt=CUDI style=height:70px;border-radius:12px;>
+                    </a>
+                    <p>CUDI es el primer ecosistema integral de salud y bienestar animal impulsado por IA. Monitorizamos, protegemos y conectamos todo el universo de tu compañero hoy para un mañana más sano.</p>
+                </div>
+
+                <!-- Columna 2: Recursos (Fase 1) -->
+                <div class=footer-col>
+                    <h4>Comunidad CUDI</h4>
+                    <ul class=footer-links-list>
+                        <li><a href=index.html>Inicio</a></li>
+                        <li><a href=index.html#store-grid>Tienda Marketplace</a></li>
+                        <li><a href=index.html#suscripciones>Planes de Protección</a></li>
+                        <li><a href=index.html#portal-educativo>Portal Educativo</a></li>
+                        <li><a href=red-socios-clinicas-veterinarias.html>Red de Socios</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3: Legal (Fase 1) -->
+                <div class=footer-col>
+                    <h4>Información Legal</h4>
+                    <ul class=footer-links-list>
+                        <li><a href=terminos-condiciones-app.html>Términos y Condiciones</a></li>
+                        <li><a href=politica-cookies-plataforma.html>Política de Cookies</a></li>
+                        <li><a href=politica-privacidad-datos-mascotas.html>Política de Privacidad</a></li>
+                        <li><a href=politica-devoluciones-smart-collar.html>Devoluciones y Cambios</a></li>
+                        <li><a href=legal.html>Información Legal</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 4: Conecta (Fase 1) -->
+                <div class=footer-col>
+                    <h4>Conecta con nosotros</h4>
+                    <p style=margin-bottom:20px;>Recibe consejos de salud preventiva validados por expertos.</p>
+                    <div class=footer-socials>
+                        <a href=https://www.instagram.com/cudi.ai2026/ target=_blank class=social-btn><i class=icon-ig></i></a>
+                        <a href=https://www.facebook.com/Cudi2026 target=_blank class=social-btn><i class=icon-fb></i></a>
+                        <a href=# class=social-btn><i class=icon-tk></i></a>
+                        <a href=# class=social-btn><i class=icon-yt></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class=footer-bottom>
+                <p>&copy; 2026 CUDI AI Ecosystem S.L. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="i18n.js"></script>
+
+    div>
+\n    
+    div>
+\n    
+    <!-- Global AI Chat Widget -->
+    <div class="cudi-chat-widget" style="position:fixed; bottom:30px; right:30px; z-index:9999;">
+        <div class="cudi-chat-btn" onclick="toggleAIChat()" style="overflow:hidden; padding:3px; background:white; width:65px; height:65px; border-radius:50%; box-shadow:0 10px 25px rgba(0,0,0,0.25); cursor:pointer; border: 3px solid #0077b6;">
+            <img src="logo.jpeg" alt="CUDI AI" style="width:100%; height:100%; object-fit:contain; border-radius:50%;">
+        </div>
+        <div class="cudi-chat-panel" id="cudi-chat-panel" style="display:none; position:absolute; bottom:85px; right:0; width:360px; background:white; border-radius:24px; box-shadow:0 20px 45px rgba(0,0,0,0.2); overflow:hidden; border:1px solid #e2e8f0; flex-direction:column;">
+            <div class="chat-panel-header" style="background:#0077b6; color:white; padding:18px; position:relative; display:flex; align-items:center;">
+                <div class="title" style="font-weight:800; font-size:1.05rem; flex:1;"><i class="fa-solid fa-shield-dog"></i> CUDI Triaje IA</div>
+                <div class="status" style="font-size:0.8rem; color:#e0f2fe; margin-right:30px; font-weight:600;"><span style="display:inline-block; width:8px; height:8px; background:#10b981; border-radius:50%; margin-right:5px;"></span>24/7 Activo</div>
+                
+                <!-- Pet Mascot Avatar Overlapping -->
+                <div style="position:absolute; top:-25px; right:-15px; width:75px; height:75px; border-radius:50%; border:4px solid #F8FAFC; overflow:hidden; background:white; z-index:10; box-shadow:0 10px 20px rgba(0,0,0,0.2);">
+                   <img src="avatar-mascota-perfil-gemelo-digital.png" alt="Perfil" style="width:100%; height:100%; object-fit:cover;">
+                </div>
+
+                <button onclick="toggleAIChat()" style="position:absolute; top:18px; right:15px; background:transparent; border:none; color:white; cursor:pointer; font-size:1.1rem;"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <div class="chat-panel-body" id="chat-body" style="height:320px; padding:15px; overflow-y:auto; background:#f8fafc; display:flex; flex-direction:column;">
+                <!-- Initial Greeting is now handled by script.js when opened, but fallback here: -->
+                <div style="background:white; padding:12px 15px; border-radius:15px; margin-bottom:12px; font-size:0.9rem; color:#333; border:1px solid #f1f5f9; border-top-left-radius:0; box-shadow:0 2px 5px rgba(0,0,0,0.02); line-height:1.5;">
+                    ¡Hola! Soy CUDI, tu asistente preventivo. Estoy conectado a la telemetría inteligente.<br><br><b>¿Qué necesitas?</b> Puedes probar palabras como *"vómito"*, *"fiebre"*, *"comprar"*, o *"paseo"*.
+                </div>
+            </div>
+            
+            <div class="chat-panel-footer" style="padding:15px; background:white; border-top:1px solid #f1f5f9; display:flex; gap:10px; align-items:center;">
+                <input type="text" id="chat-input" placeholder="Pregúntame sobre su salud..." onkeypress="handleChatEnter(event)" style="flex:1; padding:12px 16px; border-radius:30px; border:1px solid #cbd5e1; outline:none; font-family:inherit; font-size:0.9rem; background:#f8fafc; transition:all 0.3s;" onfocus="this.style.borderColor='#0077b6'; this.style.background='white';" onblur="this.style.borderColor='#cbd5e1'; this.style.background='#f8fafc';">
+                <button onclick="sendChatMessage()" style="background:#0077b6; color:white; border:none; width:45px; height:45px; border-radius:50%; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"><i class="fa-solid fa-paper-plane" style="font-size:1.1rem; margin-left:-2px;"></i></button>
+            </div>
+        </div>
+    </div>
+\n    </body>
+</html>

@@ -1,0 +1,280 @@
+<!-- Desarrollo 100% realizado por Sergio Alejandro Ospina Rocha -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta name="author" content="Sergio Alejandro Ospina Rocha">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-width=1.0">
+    <title>CUDI | Pago Transaccional Seguro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- TFM Tracking Requirements: Google Analytics (GA4) & Meta Pixel -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CUDI2026TFM"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-CUDI2026TFM', { 'debug_mode': true });
+    </script>
+    <!-- Meta Pixel Code for Funnel Tracking -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1029384756CUDI');
+      fbq('track', 'PageView');
+    </script>
+    <!-- End TFM Tracking Requirements -->
+
+    <!-- Microsoft Clarity Tracking Code -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];
+            y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "CUDI_TRABAJO_FINAL_2026");
+    </script>
+
+</head>
+<body style="background:#F4F6F9;">
+
+    <!-- Barra de Contacto Superior Refinada -->
+    <div class="top-bar-refined">
+        <span><i class="fa-solid fa-envelope"></i> cudi.ai2026@gmail.com</span>
+        <span><i class="fa-solid fa-phone"></i> 900 123 456</span>
+        <div style="display:flex; align-items:center; gap:5px;">
+            <i class="fa-solid fa-globe"></i>
+            <select class="lang-selector" style="background:transparent; color:white; border:none; outline:none; font-family:var(--font-body); cursor:pointer; font-weight:700; font-size:0.75rem;">
+                <option value="es" style="color:#000;">ES</option>
+                <option value="ca" style="color:#000;">CA</option>
+                <option value="en" style="color:#000;">EN</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="checkout-header" style="background:white; padding:20px; text-align:center; border-bottom:1px solid #eee;">
+        <a href="index.html"><img src="logo.jpeg" alt="CUDI" style="height:60px; border-radius:8px;"></a>
+    </div>
+
+    <div class="container checkout-container">
+        
+        <!-- RESUMEN DE PEDIDO COLAPSABLE -->
+        <div class="order-summary-mini">
+            <div class="summary-header" onclick="toggleSummary()">
+                <h4><i class="fa-solid fa-cart-shopping"></i> Resumen de tu pedido</h4>
+                <div style="display:flex; align-items:center; gap:10px;">
+                    <span id="summary-total" style="font-weight:800; color:var(--clr-primary);">0.00 €</span>
+                    <i class="fa-solid fa-chevron-down" id="summary-chevron"></i>
+                </div>
+            </div>
+            <div class="summary-content" id="summary-content">
+                <div id="checkout-items-list">
+                    <!-- Dinámico -->
+                </div>
+            </div>
+        </div>
+
+        <!-- BARRA DE PROGRESO SECUENCIAL -->
+        <div class="progress-container">
+            <div class="progress-line"></div>
+            <div class="progress-line-fill" style="width: 66%;"></div>
+            
+            <div class="step-node active">1</div>
+            <div class="step-node active">2</div>
+            <div class="step-node">3</div>
+        </div>
+
+        <div class="checkout-card">
+            <h2 id="checkout-title-step">Datos Logísticos de Envío</h2>
+            <form id="checkout-form" onsubmit="event.preventDefault(); simulatePayment();">
+                <div class="checkout-form-grid">
+                    <div class="form-group">
+                        <label>Nombre Completo</label>
+                        <input type="text" id="chk-name" autocomplete="name" class="form-control" placeholder="Ej: Juan Pérez" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Dirección de Entrega</label>
+                        <input type="text" id="chk-address" autocomplete="street-address" class="form-control" placeholder="Calle, número, piso..." required>
+                    </div>
+                </div>
+                
+                <h2 style="margin:20px 0;">Método de Pago Seguro</h2>
+                <div class="payment-grid">
+                    <label class="payment-option active" onclick="selectPayment(this)">
+                        <input type="radio" name="payment" checked> 
+                        <i class="fa-brands fa-cc-visa"></i>
+                        <span>Tarjeta</span>
+                    </label>
+                    <label class="payment-option" onclick="selectPayment(this)">
+                        <input type="radio" name="payment"> 
+                        <i class="fa-brands fa-paypal"></i>
+                        <span>PayPal</span>
+                    </label>
+                    <label class="payment-option" onclick="selectPayment(this)">
+                        <input type="radio" name="payment"> 
+                        <i class="fa-brands fa-apple"></i>
+                        <span>Apple Pay</span>
+                    </label>
+                </div>
+
+                <div style="background:#f8fafc; padding:25px; border-radius:16px; margin-bottom:25px; display:flex; justify-content:space-between; font-weight:800; font-size:1.3rem; border:1px solid var(--clr-border);">
+                    <span>Total Final:</span>
+                    <span id="checkout-total-price" style="color:var(--clr-primary);">0.00 €</span>
+                </div>
+
+                <button type="submit" id="btn-pay" class="btn-primary btn-block" style="padding:22px;">Confirmar y Pagar Ahora <i class="fa-solid fa-shield-halved" style="margin-left:8px; opacity:0.7;"></i></button>
+            </form>
+
+            <div id="success-message" style="display:none; text-align:center; padding:20px 0;">
+                <i class="fa-solid fa-circle-check" style="font-size:4rem; color:#10b981; margin-bottom:25px;"></i>
+                <h2 style="font-size:2rem; letter-spacing:-1px;">¡Pago Confirmado!</h2>
+                
+                <!-- Interfaz de Rastreo (Tracking Interface) -->
+                <div class="tracking-wrapper">
+                    <div class="tracking-header">
+                        <div>
+                            <span style="font-size:0.75rem; color:#64748b; text-transform:uppercase; letter-spacing:1px; font-weight:700;">Estado en Tiempo Real</span>
+                            <h3 id="current-status-text" style="color:var(--clr-primary); margin-top:5px; font-size:1.2rem;">Enviando a Almacén Central</h3>
+                        </div>
+                        <div style="text-align:right;">
+                            <span style="font-size:0.75rem; color:#64748b; text-transform:uppercase; letter-spacing:1px; font-weight:700;">Paradas</span>
+                            <div style="font-size:1.4rem; font-weight:800; color:var(--clr-text);" id="stops-remaining-container"><span id="stops-remaining">8</span></div>
+                        </div>
+                    </div>
+                    
+                    <div style="height:280px; background:url('geolocalizacion-tiempo-real-smart-collar.png') center/cover no-repeat; position:relative;">
+                        <div style="position:absolute; top:45%; left:55%; width:24px; height:24px; background:var(--clr-primary); border:4px solid white; border-radius:50%; box-shadow:0 0 20px rgba(0,119,182,0.4); animation:pulse 2s infinite;"></div>
+                    </div>
+
+                    <div style="padding:40px 30px; display:flex; justify-content:space-between; position:relative;">
+                        <div style="position:absolute; top:55px; left:15%; right:15%; height:3px; background:#f1f5f9; z-index:1;"></div>
+                        <div id="track-line-fill" style="position:absolute; top:55px; left:15%; width:0%; height:3px; background:var(--clr-primary); z-index:2; transition: width 4s linear;"></div>
+                        
+                        <div class="tracking-step active" style="z-index:3; text-align:center; flex:1;">
+                            <div class="step-icon" style="width:35px; height:35px; background:var(--clr-primary); color:white; border-radius:50%; margin:0 auto 12px auto; display:flex; align-items:center; justify-content:center; font-size:0.9rem;"><i class="fa-solid fa-check"></i></div>
+                            <span style="font-size:0.8rem; font-weight:700; color:var(--clr-text);">Validado</span>
+                        </div>
+                        <div class="tracking-step active" style="z-index:3; text-align:center; flex:1;">
+                            <div class="step-icon" style="width:35px; height:35px; background:var(--clr-primary); color:white; border-radius:50%; margin:0 auto 12px auto; display:flex; align-items:center; justify-content:center; font-size:0.9rem;"><i class="fa-solid fa-box"></i></div>
+                            <span style="font-size:0.8rem; font-weight:700; color:var(--clr-text);">Preparando</span>
+                        </div>
+                        <div class="tracking-item-step step-distribution" style="z-index:3; text-align:center; flex:1;">
+                            <div class="step-icon" style="width:35px; height:35px; background:#e2e8f0; color:#94a3b8; border-radius:50%; margin:0 auto 12px auto; display:flex; align-items:center; justify-content:center; font-size:0.9rem;"><i class="fa-solid fa-truck-fast"></i></div>
+                            <span style="font-size:0.8rem; font-weight:700; color:#94a3b8;">Reparto</span>
+                        </div>
+                    </div>
+                </div>
+
+                <p style="color:var(--clr-text-muted); margin-top:30px; font-size:1.1rem;">Tu pedido CUDI está en camino. Recibirás un SMS de confirmación.</p>
+                <a href="index.html" class="btn-primary" aria-label="Acción principal" style="margin-top:20px; display:inline-block; background:#0f172a;">Volver a la Tienda</a>
+            </div>
+        </div>
+
+                <style>
+                    @keyframes pulse {
+                        0% { transform: scale(1); opacity: 1; }
+                        50% { transform: scale(1.5); opacity: 0.5; }
+                        100% { transform: scale(1); opacity: 1; }
+                    }
+                    .tracking-step.active .step-icon { background: var(--clr-primary) !important; }
+                </style>
+
+                <p style="color:#666; margin-top:20px;">La liquidación ha sido confirmada. El sistema B2B está procesando tu envío.</p>
+                <a href="index.html" class="btn-secondary" style="margin-top:20px; display:inline-block;">Retornar a Inicio</a>
+            </div>
+        </div>
+    </div>
+    
+    <footer class=premium-footer>
+        <div class=container>
+            <div class=footer-grid>
+                <div class=footer-col>
+                    <a href=index.html class=logo style=margin-bottom:30px;display:inline-block;>
+                        <img src=logo.jpeg alt=CUDI style=height:70px;border-radius:12px;>
+                    </a>
+                    <p>CUDI es el primer ecosistema integral de salud y bienestar animal impulsado por IA. Monitorizamos, protegemos y conectamos todo el universo de tu compañero hoy para un mañana más sano.</p>
+                </div>
+                <div class=footer-col>
+                    <h4>Comunidad CUDI</h4>
+                    <ul class=footer-links-list>
+                        <li><a href=index.html>Inicio</a></li>
+                        <li><a href=index.html#store-grid>Tienda Marketplace</a></li>
+                        <li><a href=index.html#suscripciones>Planes de Protección</a></li>
+                        <li><a href=index.html#portal-educativo>Portal Educativo</a></li>
+                        <li><a href=red-socios-clinicas-veterinarias.html>Red de Socios</a></li>
+                    </ul>
+                </div>
+                <div class=footer-col>
+                    <h4>Información Legal</h4>
+                    <ul class=footer-links-list>
+                        <li><a href=terminos-condiciones-app.html>Términos y Condiciones</a></li>
+                        <li><a href=politica-cookies-plataforma.html>Política de Cookies</a></li>
+                        <li><a href=politica-privacidad-datos-mascotas.html>Política de Privacidad</a></li>
+                        <li><a href=politica-devoluciones-smart-collar.html>Devoluciones y Cambios</a></li>
+
+                        <li><a href=legal.html>Información Legal</a></li>
+                    </ul>
+                </div>
+                <div class=footer-col>
+                    <h4>Conecta con nosotros</h4>
+                    <p style=margin-bottom:20px;>Recibe consejos de salud preventiva validados por expertos.</p>
+                    <div class=footer-socials>
+                        <a href=https://www.instagram.com/cudi.ai2026/ target=_blank class=social-btn><i class=icon-ig></i></a>
+                        <a href=https://www.facebook.com/Cudi2026 target=_blank class=social-btn><i class=icon-fb></i></a>
+                        <a href=# class=social-btn><i class=icon-tk></i></a>
+                        <a href=# class=social-btn><i class=icon-yt></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class=footer-bottom>
+                <p>&copy; 2026 CUDI AI Ecosystem S.L. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    <script src="script.js"></script>
+    <script src="i18n.js"></script>
+
+    div>
+\n    
+    div>
+\n    
+    <!-- Global AI Chat Widget -->
+    <div class="cudi-chat-widget" style="position:fixed; bottom:30px; right:30px; z-index:9999;">
+        <div class="cudi-chat-btn" onclick="toggleAIChat()" style="overflow:hidden; padding:3px; background:white; width:65px; height:65px; border-radius:50%; box-shadow:0 10px 25px rgba(0,0,0,0.25); cursor:pointer; border: 3px solid #0077b6;">
+            <img src="logo.jpeg" alt="CUDI AI" style="width:100%; height:100%; object-fit:contain; border-radius:50%;">
+        </div>
+        <div class="cudi-chat-panel" id="cudi-chat-panel" style="display:none; position:absolute; bottom:85px; right:0; width:360px; background:white; border-radius:24px; box-shadow:0 20px 45px rgba(0,0,0,0.2); overflow:hidden; border:1px solid #e2e8f0; flex-direction:column;">
+            <div class="chat-panel-header" style="background:#0077b6; color:white; padding:18px; position:relative; display:flex; align-items:center;">
+                <div class="title" style="font-weight:800; font-size:1.05rem; flex:1;"><i class="fa-solid fa-shield-dog"></i> CUDI Triaje IA</div>
+                <div class="status" style="font-size:0.8rem; color:#e0f2fe; margin-right:30px; font-weight:600;"><span style="display:inline-block; width:8px; height:8px; background:#10b981; border-radius:50%; margin-right:5px;"></span>24/7 Activo</div>
+                
+                <!-- Pet Mascot Avatar Overlapping -->
+                <div style="position:absolute; top:-25px; right:-15px; width:75px; height:75px; border-radius:50%; border:4px solid #F8FAFC; overflow:hidden; background:white; z-index:10; box-shadow:0 10px 20px rgba(0,0,0,0.2);">
+                   <img src="avatar-mascota-perfil-gemelo-digital.png" alt="Perfil" style="width:100%; height:100%; object-fit:cover;">
+                </div>
+
+                <button onclick="toggleAIChat()" style="position:absolute; top:18px; right:15px; background:transparent; border:none; color:white; cursor:pointer; font-size:1.1rem;"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <div class="chat-panel-body" id="chat-body" style="height:320px; padding:15px; overflow-y:auto; background:#f8fafc; display:flex; flex-direction:column;">
+                <!-- Initial Greeting is now handled by script.js when opened, but fallback here: -->
+                <div style="background:white; padding:12px 15px; border-radius:15px; margin-bottom:12px; font-size:0.9rem; color:#333; border:1px solid #f1f5f9; border-top-left-radius:0; box-shadow:0 2px 5px rgba(0,0,0,0.02); line-height:1.5;">
+                    ¡Hola! Soy CUDI, tu asistente preventivo. Estoy conectado a la telemetría inteligente.<br><br><b>¿Qué necesitas?</b> Puedes probar palabras como *"vómito"*, *"fiebre"*, *"comprar"*, o *"paseo"*.
+                </div>
+            </div>
+            
+            <div class="chat-panel-footer" style="padding:15px; background:white; border-top:1px solid #f1f5f9; display:flex; gap:10px; align-items:center;">
+                <input type="text" id="chat-input" placeholder="Pregúntame sobre su salud..." onkeypress="handleChatEnter(event)" style="flex:1; padding:12px 16px; border-radius:30px; border:1px solid #cbd5e1; outline:none; font-family:inherit; font-size:0.9rem; background:#f8fafc; transition:all 0.3s;" onfocus="this.style.borderColor='#0077b6'; this.style.background='white';" onblur="this.style.borderColor='#cbd5e1'; this.style.background='#f8fafc';">
+                <button onclick="sendChatMessage()" style="background:#0077b6; color:white; border:none; width:45px; height:45px; border-radius:50%; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"><i class="fa-solid fa-paper-plane" style="font-size:1.1rem; margin-left:-2px;"></i></button>
+            </div>
+        </div>
+    </div>
+\n    </body>
+</html>

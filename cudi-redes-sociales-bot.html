@@ -1,0 +1,369 @@
+<!-- Desarrollo 100% realizado por Sergio Alejandro Ospina Rocha -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta name="author" content="Sergio Alejandro Ospina Rocha">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>CUDI - Conexión desde Redes Sociales</title>
+    <meta name="description" content="Bienvenido a CUDI desde nuestras redes sociales. Comienza la revolución en bienestar animal preventivo.">
+    
+    <!-- TFM Tracking Requirements: Google Analytics (GA4) & Meta Pixel -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CUDI2026TFM"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-CUDI2026TFM');
+    </script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --clr-primary: #0077b6;
+            --clr-secondary: #00b4d8;
+            --clr-accent: #10b981;
+            --clr-dark: #0f172a;
+            --clr-light: #f8fafc;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, var(--clr-dark) 0%, #1e293b 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            color: white;
+            overflow: hidden;
+        }
+
+        .phone-container {
+            width: 100%;
+            max-width: 400px;
+            height: 100vh;
+            max-height: 850px;
+            background: var(--clr-light);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+            animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @media (min-width: 450px) {
+            .phone-container {
+                height: 90vh;
+                border-radius: 40px;
+                overflow: hidden;
+                border: 8px solid #334155;
+            }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(100px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Nav Header */
+        .social-header {
+            background: var(--clr-primary);
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 10;
+        }
+
+        .social-header img {
+            height: 35px;
+            border-radius: 8px;
+        }
+        
+        .verified-badge {
+            position: absolute;
+            right: 20px;
+            color: #38bdf8;
+            font-size: 1.2rem;
+        }
+
+        /* Chat Area */
+        .chat-area {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            background: url('hero_family_duo.png') center/cover;
+            background-blend-mode: overlay;
+            background-color: rgba(248, 250, 252, 0.95);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .message {
+            max-width: 85%;
+            padding: 15px 20px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            animation: popIn 0.4s ease-out forwards;
+            opacity: 0;
+            transform: scale(0.9);
+        }
+
+        @keyframes popIn {
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .message.bot {
+            background: white;
+            color: #334155;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-bottom-left-radius: 5px;
+            border: 1px solid #e2e8f0;
+            align-self: flex-start;
+        }
+
+        .message.user {
+            background: var(--clr-primary);
+            color: white;
+            border-bottom-right-radius: 5px;
+            align-self: flex-end;
+            box-shadow: 0 5px 15px rgba(0, 119, 182, 0.2);
+        }
+        
+        .bot-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+            border: 2px solid var(--clr-secondary);
+        }
+
+        .typing-indicator {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 10px 15px;
+            background: white;
+            border-radius: 20px;
+            width: fit-content;
+            border-bottom-left-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            background: #cbd5e1;
+            border-radius: 50%;
+            animation: bounce 1.4s infinite ease-in-out both;
+        }
+
+        .dot:nth-child(1) { animation-delay: -0.32s; }
+        .dot:nth-child(2) { animation-delay: -0.16s; }
+
+        @keyframes bounce {
+            0%, 80%, 100% { transform: scale(0); }
+            40% { transform: scale(1); }
+        }
+
+        /* Quick Replies Area */
+        .quick-replies {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 15px;
+            background: white;
+            border-top: 1px solid #e2e8f0;
+            box-shadow: 0 -10px 20px rgba(0,0,0,0.02);
+            animation: slideUp 0.5s 1.5s forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .reply-btn {
+            background: #f1f5f9;
+            border: 1px solid #e2e8f0;
+            color: var(--clr-dark);
+            padding: 15px;
+            border-radius: 12px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .reply-btn:hover, .reply-btn:active {
+            background: #e0f2fe;
+            border-color: var(--clr-primary);
+            color: var(--clr-primary);
+        }
+
+        .reply-btn.primary-action {
+            background: linear-gradient(135deg, var(--clr-primary), var(--clr-secondary));
+            color: white;
+            border: none;
+            box-shadow: 0 10px 20px rgba(0, 119, 182, 0.2);
+        }
+
+        .reply-btn.primary-action:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 25px rgba(0, 119, 182, 0.3);
+        }
+
+        .reply-btn i {
+            font-size: 1.2rem;
+        }
+
+        /* Confetti Canvas for Sale */
+        #confetti {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 100;
+        }
+    </style>
+
+    <!-- Microsoft Clarity Tracking Code -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];
+            y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "CUDI_TRABAJO_FINAL_2026");
+    </script>
+
+</head>
+<body>
+
+    <div class="phone-container">
+        <canvas id="confetti"></canvas>
+        
+        <div class="social-header">
+            <a href="index.html"><img src="logo.jpeg" alt="CUDI"></a>
+            <i class="fa-solid fa-circle-check verified-badge"></i>
+        </div>
+
+        <div class="chat-area" id="chatWindow">
+            <!-- Typing indicator initially -->
+            <div class="typing-indicator" id="typingIndicator">
+                <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+            </div>
+        </div>
+
+        <div class="quick-replies" id="quickReplies">
+            <p style="margin:0 0 10px 0; font-size:0.85rem; color:#64748b; text-align:center;">Selecciona una opción rápida</p>
+            
+            <button class="reply-btn primary-action" onclick="purchaseFlow()">
+                <span><i class="fa-solid fa-bag-shopping" style="margin-right:10px;"></i> Comprar Smart Collar + App</span>
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+            <button class="reply-btn" onclick="directLink('simulador-gemelo-digital-telemetria.html')">
+                <span><i class="fa-solid fa-mobile-screen" style="margin-right:10px; color:#38bdf8;"></i> Probar Demo de la App</span>
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+            <button class="reply-btn" onclick="directLink('index.html')">
+                <span><i class="fa-solid fa-house" style="margin-right:10px; color:#10b981;"></i> Ir a la página principal</span>
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Track the entrance from Social Media
+        document.addEventListener('DOMContentLoaded', () => {
+             if(typeof gtag === 'function'){
+                 gtag('event', 'social_bot_loaded', { event_category: 'social_media', event_label: 'instagram_link_in_bio' });
+             }
+        });
+
+        const chatWindow = document.getElementById('chatWindow');
+        const typingIndicator = document.getElementById('typingIndicator');
+
+        // Initial Greeting Sequence
+        setTimeout(() => {
+            typingIndicator.style.display = 'none';
+            addMessage("bot", "¡Hola! 👋 Qué bueno verte por aquí. Vimos que hiciste clic en nuestro perfil social.");
+            
+            setTimeout(() => {
+                chatWindow.appendChild(typingIndicator);
+                typingIndicator.style.display = 'flex';
+                
+                setTimeout(() => {
+                    typingIndicator.style.display = 'none';
+                    addMessage("bot", "Sabemos que quieres lo mejor para tu mascota. Por estar aquí tienes el envío de nuestro Smart Collar totalmente <b>GRATIS</b>. ¿Qué te gustaría hacer?");
+                }, 1200);
+            }, 800);
+        }, 1500);
+
+        function addMessage(sender, text) {
+            const msgDiv = document.createElement('div');
+            msgDiv.className = `message ${sender}`;
+            
+            if(sender === 'bot') {
+                msgDiv.innerHTML = `<div style="display:flex;">
+                    <img alt="CUDI - Logo - Bienestar Animal" src="avatar-mascota-perfil-gemelo-digital.png" class="bot-avatar" onerror="this.src='logo.jpeg'">
+                    <div>${text}</div>
+                </div>`;
+            } else {
+                msgDiv.innerHTML = text;
+            }
+            
+            chatWindow.appendChild(msgDiv);
+            chatWindow.scrollTop = chatWindow.scrollHeight;
+        }
+
+        // Transactional Flow requested in TFM
+        function purchaseFlow() {
+            // Document the interaction to Analytics
+            if(typeof gtag === 'function'){
+                 gtag('event', 'add_to_cart', { currency: 'EUR', value: 89.50, items: [{ item_id: 'smart-collar-1', item_name: 'CUDI Premium Care' }] });
+            }
+
+            document.getElementById('quickReplies').style.display = 'none';
+            addMessage("user", "¡Quiero comprar el Smart Collar y la Suscripción!");
+            
+            setTimeout(() => {
+                chatWindow.appendChild(typingIndicator);
+                typingIndicator.style.display = 'flex';
+                
+                setTimeout(() => {
+                    typingIndicator.style.display = 'none';
+                    addMessage("bot", "¡Excelente decisión! 🐾 Preparando tu carrito...");
+                    
+                    // Emulate loading state before redirect
+                    setTimeout(() => {
+                        addMessage("bot", "Redirigiendo a pago seguro. ¡Paz mental garantizada! 🚀");
+                        
+                        // Fire Confetti logically before redirecting
+                        setTimeout(() => {
+                            window.location.href = "contratar-plan-premium-cudi.html?social_promo=true";
+                        }, 1200);
+                    }, 1000);
+                }, 1200);
+            }, 600);
+        }
+
+        function directLink(url) {
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>

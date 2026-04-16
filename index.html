@@ -1,0 +1,705 @@
+<!-- Desarrollo 100% realizado por Sergio Alejandro Ospina Rocha -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta name="author" content="Sergio Alejandro Ospina Rocha">
+    <meta charset=UTF-8>
+    <meta name=viewport content=width=device-width,initial-scale=1.0>
+    <title>CUDI | El Ecosistema Definitivo para el Bienestar Animal de Perros y Gatos</title>
+    <meta name=description content=CUDI es la plataforma líder en pet-tech que monitoriza, aconseja y conecta todo lo que tu mascota necesita. Inteligencia artificial aplicada a la salud preventiva animal.>
+    <meta name=keywords content=bienestar animal, pet-tech, collar inteligente, veterinario 24/7, nutrición mascotas, CUDI>
+    <meta name=author content=CUDI AI Team>
+    <meta name=robots content=index,follow>
+    
+    <!-- Open Graph / GEO AI Positioning -->
+    <meta property=og:title content=CUDI | El Futuro del Cuidado Animal Inteligente>
+    <meta property=og:description content=Protege a tu compañero con tecnología de vanguardia y servicios premium personalizados.>
+    <meta property=og:type content=website>
+    <meta property=og:url content=https://cudi.ai/>
+    <meta property=og:image content=logo.jpeg>
+
+    <!-- Structured Data (GEO) -->
+    <script type=application/ld+json>
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CUDI",
+      "url": "https://cudi.ai",
+      "logo": "https://cudi.ai/logo.jpeg",
+      "description": "Plataforma integral de bienestar animal con tecnología IA.",
+      "sameAs": [
+        "https://linkedin.com/company/cudi-ai",
+        "https://instagram.com/cudi.ai"
+      ]
+    }
+    </script>
+    <script type=application/ld+json>
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "https://cudi.ai",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://cudi.ai/index.html?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    <script type=application/ld+json>
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "¿Cómo ayuda CUDI al bienestar de mi mascota?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "CUDI utiliza telemetría y chat veterinario 24/7 para prevenir enfermedades y optimizar la salud de perros y gatos."
+        }
+      }]
+    }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- TFM Tracking Requirements: Google Analytics (GA4) & Meta Pixel -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CUDI2026TFM"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-CUDI2026TFM', { 'debug_mode': true });
+    </script>
+    <!-- Meta Pixel Code for Funnel Tracking -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1029384756CUDI');
+      fbq('track', 'PageView');
+    </script>
+    <!-- End TFM Tracking Requirements -->
+
+    <!-- Microsoft Clarity Tracking Code -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];
+            y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "CUDI_TRABAJO_FINAL_2026");
+    </script>
+
+</head>
+<body>
+
+    <!-- Barra de Contacto Superior Refinada -->
+    <div class="top-bar-refined">
+        <span><i class="fa-solid fa-envelope"></i> cudi.ai2026@gmail.com</span>
+        <span><i class="fa-solid fa-phone"></i> 900 123 456</span>
+        <div style="display:flex; align-items:center; gap:5px;">
+            <i class="fa-solid fa-globe"></i>
+            <select class="lang-selector" style="background:transparent; color:white; border:none; outline:none; font-family:var(--font-body); cursor:pointer; font-weight:700; font-size:0.75rem;">
+                <option value="es" style="color:#000;">ES</option>
+                <option value="ca" style="color:#000;">CA</option>
+                <option value="en" style="color:#000;">EN</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Navegación Estilo "Floating Island" -->
+    <nav class="navbar-island">
+        <div class="nav-capsule">
+            <!-- 1. Logo -->
+            <a href="index.html" class="logo" style="display:flex; align-items:center;">
+                <img src="logo.jpeg" alt="CUDI" style="height:55px; width:auto; transition: transform 0.3s; border-radius: 8px;">
+            </a>
+
+            <!-- 2. Buscador Arquitectónico -->
+            <div class="nav-search-island">
+                <i class="fa-solid fa-magnifying-glass" style="color:var(--clr-primary); font-size:0.9rem;"></i>
+                <input type="text" placeholder="¿Qué necesita tu compañero hoy?">
+            </div>
+
+            <!-- 3. Enlaces y Carrito -->
+            <div class=nav-right-island>
+                <ul class=nav-links-island style=gap:30px;>
+                    <li><a href=index.html>Inicio</a></li>
+                    <li><a href="smart-collar-aventuras-sin-sustos.html">Lanzamiento</a></li>
+                    <li><a href=#store-grid>Tienda</a></li>
+                    <li><a href=#suscripciones>Planes</a></li>
+                    <li><a href="index.html#portal-educativo">Artículos</a></li>
+                    <li><a href="red-socios-clinicas-veterinarias.html">Red de Socios</a></li>
+                    <li><a href="simulador-gemelo-digital-telemetria.html" style="color:#10b981; font-weight:800;"><i class="fa-solid fa-mobile-screen"></i> App Demo</a></li>
+                    
+                </ul>
+                <div class=cart-trigger-island onclick=toggleCart()>
+                    <i class=cart-icon-cudi style=font-size:1.2rem;></i>
+                    <span class=cart-badge id=global-cart-badge style=position:absolute;top:-8px;right:-12px;background:var(--clr-primary);color:white;font-size:0.65rem;font-weight:700;border-radius:50px;width:18px;height:18px;display:flex;align-items:center;justify-content:center;border:2px;solid;white;>0</span>
+                </div>
+
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- PANEL LATERAL CARRITO (SIDE-CART) -->
+    <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+    <div class="side-cart" id="side-cart">
+        <div class="cart-header">
+            <h3><i class="fa-solid fa-bag-shopping"></i> Tu Cesta CUDI</h3>
+            <button class="close-cart" aria-label="Cerrar Carrito" onclick="toggleCart()"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="cart-items" id="cart-items-container"></div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total Estimado:</span>
+                <span id="cart-total-price">0.00 €</span>
+            </div>
+            <a href="contratar-plan-premium-cudi.html" class="btn-primary" aria-label="Acción principal" style="display:block; text-align:center; margin-top:10px;">Procesar Pago Seguro <i class="fa-solid fa-lock"></i></a>
+        </div>
+    </div>
+
+    <header class="hero-dual">
+        <!-- Columna de Texto: Legibilidad y Mensaje -->
+        <div class="hero-dual-text" style="display:flex; align-items:center; background:linear-gradient(135deg, #F0F9FF 0%, #FFFFFF 100%);">
+            <div style="max-width:550px;">
+                <h1 style="font-size: clamp(2.8rem, 5vw, 4.2rem); margin-bottom:25px; font-weight:800; line-height:1.05; letter-spacing:-2px; color:var(--clr-text);">Cuidado inteligente para tus mascotas, <br><span style="color:var(--clr-primary);">vayas donde vayas.</span></h1>
+                <p style="font-size:1.15rem; line-height:1.7; color:var(--clr-text-muted); margin-bottom:45px;">Más que un collar, somos el ecosistema integral que vela por la salud, la seguridad y la felicidad de tu mejor amigo. Descubre la aplicación que traduce sus necesidades y te conecta al instante con los mejores especialistas. Tu tranquilidad absoluta, su mejor vida.</p>
+                <div class="hero-actions" style="display:flex; gap:15px; flex-wrap:wrap;">
+                    <a href="simulador-gemelo-digital-telemetria.html" class="btn-primary large massive-btn" style="padding:18px 40px; font-size:1.1rem; border-radius:8px; text-decoration:none; background:linear-gradient(135deg, #10b981, #059669); color:white; font-weight:800; box-shadow:0 10px 25px rgba(16, 185, 129, 0.4); text-transform:uppercase; line-height:1.2; display:inline-flex; align-items:center; gap:10px;"><i class="fa-solid fa-mobile-screen" style="font-size:1.4rem;"></i> Probar Demo Gratis</a>
+                    <button onclick="document.getElementById('store-grid').scrollIntoView();" class="btn-secondary large massive-btn" style="padding:18px 40px; font-size:1rem; border-radius:8px;">Ver Catálogo <i class="fa-solid fa-arrow-down"></i></button>
+                </div>
+            </div>
+        </div>
+        <!-- Columna de Imagen: Estética y Calidad -->
+        <div class="hero-dual-photo" style="background-image: url('familia-multiespecie-paz-mental.png'); background-size: cover; background-position: center; filter: contrast(1.05);">
+            <!-- Subtle blending overlay at the very bottom -->
+            <div style="position:absolute; bottom:0; left:0; width:100%; height:120px; background: linear-gradient(to bottom, transparent, var(--clr-bg));"></div>
+        </div>
+    </header>
+
+    <!-- Apariciones en Prensa (E-A-T Autoridad) -->
+    <div class="press-section" style="background:#fff; padding: 20px 0; border-bottom: 1px solid var(--clr-border); text-align:center;">
+        <p style="font-size:0.85rem; text-transform:uppercase; color:var(--clr-text-muted); font-weight:600; margin-bottom:15px;">Confían en nosotros y hablan de CUDI</p>
+        <div class="container" style="display:flex; justify-content:center; gap:3rem; opacity:0.6; align-items:center; flex-wrap:wrap;">
+            <h2 style="color:gray; font-family:serif;">El Periódico</h2>
+            <h2 style="color:gray; font-family:sans-serif; font-weight:800;">FORBES</h2>
+            <h2 style="color:gray; font-family:'Outfit';">TechCrunch</h2>
+            <h2 style="color:gray; font-family:serif; font-style:italic;">Revista Veterinaria</h2>
+        </div>
+    </div>
+
+    <!-- E-COMMERCE ESCAPARATE INTEGRAL -->
+    <section id="store-grid" style="padding:5rem 0; background:var(--clr-bg);">
+        <div class="container">
+            <div class="section-heading">
+                <h2>El <span>Catálogo</span> Omnicanal</h2>
+                <p>Todo el ecosistema de bienestar en un solo lugar</p>
+            </div>
+            <div class="ecommerce-grid">
+                <!-- 1. Collar Hardware -->
+                <a href="smart-collar-cudi-gps.html" class="store-card">
+                    <div class="card-img" style="background-image:url('cudi-smart-collar-geolocalizacion-gps.png');"></div>
+                    <div class="card-content">
+                        <span class="badge" style="background:var(--clr-primary); color:white; border-radius:4px;">Dispositivo Hardware</span>
+                        <h3>Collar Inteligente CUDI</h3>
+                        <p>Dispositivo de hardware con geolocalización y telemetría de salud.</p>
+                        <div class="card-action">Ver Hardware <i class="fa-solid fa-arrow-right"></i></div>
+                    </div>
+                </a>
+                
+                <!-- 2. Suscripción -->
+                <a href="planes-suscripcion-bienestar-animal.html" class="store-card">
+                    <div class="card-img" style="background-image:url('dashboard-biometrico-gemelo-digital-mascotas.png');"></div>
+                    <div class="card-content">
+                        <span class="badge" style="background:var(--clr-primary); color:white; border-radius:4px;">Software e IA</span>
+                        <h3>Plan de Suscripción CUDI</h3>
+                        <p>Acceso a la aplicación para el control de datos y gemelo digital.</p>
+                        <div class="card-action">Ver Planes <i class="fa-solid fa-arrow-right"></i></div>
+                    </div>
+                </a>
+
+                <!-- 3. Seguros -->
+                <a href="seguros-salud-mascotas-barcelona.html" class="store-card">
+                    <div class="card-img" style="background-image:url('seguros-gastos-veterinarios-perros-gatos.png');"></div>
+                    <div class="card-content">
+                        <span class="badge" style="background:var(--clr-primary); color:white; border-radius:4px;">Protección</span>
+                        <h3>Seguros para Mascotas CUDI</h3>
+                        <p>Protección de salud preventiva y cobertura de accidentes para toda la familia.</p>
+                        <div class="card-action">Saber Más <i class="fa-solid fa-arrow-right"></i></div>
+                    </div>
+                </a>
+
+                <!-- 4. Veterinaria -->
+                <a href="telemedicina-veterinaria-24-7.html" class="store-card">
+                    <div class="card-img" style="background-image:url('clinica-veterinaria-red-socios.png');"></div>
+                    <div class="card-content">
+                        <span class="badge" style="background:#ef4444; color:white;">Clínica 24/7</span>
+                        <h3>Atención Veterinaria Integrada CUDI</h3>
+                        <p>Sistema de triaje digital conectado a una red de clínicas físicas certificadas para la reserva directa de citas presenciales.</p>
+                        <div class="card-action">Ver Red Médica <i class="fa-solid fa-arrow-right"></i></div>
+                    </div>
+                </a>
+
+                <!-- 5. Paseadores -->
+                <a href="paseadores-perros-certificados-barcelona.html" class="store-card">
+                    <div class="card-img" style="background-image:url('rutas-paseos-seguros-barcelona.png');"></div>
+                    <div class="card-content">
+                        <span class="badge" style="background:#fef3c7; color:#d97706;">Actividad</span>
+                        <h3>Paseos Profesionales CUDI</h3>
+                        <p>Red de paseadores y cuidadores con supervisión en tiempo real.</p>
+                        <div class="card-action">Buscar Cuidadores <i class="fa-solid fa-arrow-right"></i></div>
+                    </div>
+                </a>
+
+                <!-- 6. Peluquería / Bienestar -->
+                <a href="bienestar-integral-multiespecie.html" class="store-card">
+                    <div class="card-img" style="background-image:url('alianzas-negocios-locales-mascotas.png');"></div>
+                    <div class="card-content">
+                        <span class="badge" style="background:#f3e8ff; color:#7e22ce;">Higiene</span>
+                        <h3>Peluquería y Estética CUDI</h3>
+                        <p>Reserva de servicios de higiene y baño en centros asociados.</p>
+                        <div class="card-action">Reservar <i class="fa-solid fa-arrow-right"></i></div>
+                    </div>
+                </a>
+
+                <!-- 7. Nutrición -->
+                <a href="nutricion-personalizada-perros-gatos.html" class="store-card">
+                    <div class="card-img" style="background-image:url('dietas-personalizadas-longevidad-mascotas.png');"></div>
+                    <div class="card-content">
+                        <span class="badge" style="background:#dcfce7; color:#15803d;">Dietética</span>
+                        <h3>Alimentación y Nutrición CUDI</h3>
+                        <p>Catálogo de comida, piensos especializados y productos de consumo recurrente.</p>
+                        <div class="card-action">Ver Tienda <i class="fa-solid fa-arrow-right"></i></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Pilares de Valor Humanizados -->
+    <section id=pillars class=pillars-premium style=padding:100px;0;background:#fff;>
+        <style>
+            .pillars-premium { background: white; }
+            .pillar-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+            .pillar-card { background: white; border-radius: 30px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.05); transition: transform 0.4s; }
+            .pillar-card:hover { transform: translateY(-15px); }
+            .pillar-img { width: 100%; height: 280px; object-fit: cover; }
+            .pillar-info { padding: 40px; }
+            .pillar-h3 { font-size: 1.6rem; font-weight: 800; margin-bottom: 20px; color: #1e293b; }
+            .pillar-p { font-size: 1.1rem; line-height: 1.8; color: #64748b; }
+        </style>
+        <div class=container>
+            <div class=section-heading style=text-align:center;margin-bottom:60px;>
+                <h2 style=font-size:3rem;font-weight:800;>Siempre un paso por delante en su <span style=color:#0077B6;>cuidado</span></h2>
+            </div>
+            <div class=pillar-grid>
+                <div class=pillar-card>
+                    <img src=humanizacion-mascotas-familia.png alt=Vigilancia-Dual class=pillar-img>
+                    <div class=pillar-info>
+                        <h3 class=pillar-h3>Vigilancia de su Bienestar</h3>
+                        <p class=pillar-p>Observamos el nivel de actividad y la calidad del descanso de perros y gatos mediante sensores biométricos avanzados. Si detectamos variaciones inusuales en su comportamiento diario, el sistema emite una alerta preventiva inmediata para garantizar su tranquilidad.</p>
+                    </div>
+                </div>
+                <div class=pillar-card>
+                    <img src=triaje-ia-veterinario-urgencias.png alt=Asistencia-Inmediata class=pillar-img>
+                    <div class=pillar-info>
+                        <h3 class=pillar-h3>Asistencia Médica Inmediata</h3>
+                        <p class=pillar-p>Ante cualquier imprevisto clínico, CUDI comparte automáticamente el historial médico actualizado de tus compañeros animales con nuestra red de centros validados. Una respuesta rápida y precisa que salva vidas en momentos críticos.</p>
+                    </div>
+                </div>
+                <div class=pillar-card>
+                    <img src=guarderia-canina-confianza.png alt=Actividad-Segura class=pillar-img>
+                    <div class=pillar-info>
+                        <h3 class=pillar-h3>Paseos Seguros y Divertidos</h3>
+                        <p class=pillar-p>Potenciamos la socialización sana de perros y gatos en entornos controlados mediante geolocalización satelital. Conectamos a tu compañero con otros animales compatibles para fomentar un desarrollo emocional pleno y seguro.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- Testimonios UX -->
+    <section style="padding: 5rem 0; background:white;">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Reseñas E-A-T que aportan <span>Confianza</span></h2>
+            </div>
+            <div class="grid-3" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:30px;">
+                <div class="card testimonial-card" style="padding:2rem;">
+                    <div class="stars" style="color:var(--clr-accent); margin-bottom:10px;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p style="font-style:italic; color:var(--clr-text-muted);">"La anticipación algorítmica de la aplicación me notificó de un comportamiento irregular en el sueño de mi pastor alemán permitiendo intervenir temprano."</p>
+                    <div style="margin-top:15px; font-weight:700;">- Dr. Alonso Martínez</div>
+                </div>
+                <div class="card testimonial-card" style="padding:2rem;">
+                    <div class="stars" style="color:var(--clr-accent); margin-bottom:10px;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p style="font-style:italic; color:var(--clr-text-muted);">"Interoperabilidad asombrosa. El paseador autorizado supo dónde localizarme cuando Kiki se escapó de la zona perimetral asegurada."</p>
+                    <div style="margin-top:15px; font-weight:700;">- Sofía Rivas</div>
+                </div>
+                <div class="card testimonial-card" style="padding:2rem;">
+                    <div class="stars" style="color:var(--clr-accent); margin-bottom:10px;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p style="font-style:italic; color:var(--clr-text-muted);">"Desde que prescribo CUDI en mi clínica rural, dispongo de un marco telegráfico absoluto antes de que los pacientes ingresen por la puerta."</p>
+                    <div style="margin-top:15px; font-weight:700;">- Centro Vet. Sol</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Acordeón SEO Semántico -->
+    <section style="background:var(--clr-bg); padding:5rem 0;">
+        <div class="container" style="max-width:800px;">
+            <div class="section-heading">
+                <h2>Preguntas Frecuentes (FAQ)</h2>
+            </div>
+            <div class="faq-accordion">
+                <details class="faq-item">
+                    <summary>¿Cómo me avisa CUDI si mi mascota no se siente bien?</summary>
+                    <div class="faq-content">
+                        <p>Nuestra inteligencia artificial analiza patrones de descanso y actividad. Si detecta una desviación inusual (como menos ganas de jugar o sueño inquieto), recibirás una notificación inmediata en tu móvil con consejos preventivos y la opción de triaje digital.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>¿Qué pasa si tengo una emergencia médica?</summary>
+                    <div class="faq-content">
+                        <p>En caso de urgencia, CUDI activa un protocolo de auxilio instantáneo. El historial clínico digital se envía automáticamente a la clínica física más cercana de nuestra red certificada, para que el veterinario esté listo antes de que tú llegues.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>¿El collar es apto tanto para perros como para gatos?</summary>
+                    <div class="faq-content">
+                        <p>Sí, el hardware ha sido diseñado para ser ligero, ergonómico y resistente para ambas especies. La suscripción permite gestionar de forma equitativa la salud de todos los miembros de la familia desde una única aplicación.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>¿Dónde puedo ver los planes de suscripción detallados?</summary>
+                    <div class="faq-content">
+                        <p>Puedes explorar nuestras opciones de cuidado integral (desde el plan gratuito hasta el Proactivo con hardware incluido) en nuestra página dedicada de <a href="planes-suscripcion-bienestar-animal.html">Planes de Suscripción</a>.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>¿Cómo puedo ponerme en contacto directo con soporte?</summary>
+                    <div class="faq-content">
+                        <p>Nuestro equipo de atención al cliente está disponible para resolver cualquier duda. Puedes escribirnos a nuestro correo oficial <a href="mailto:cudi.ai2026@gmail.com">cudi.ai2026@gmail.com</a> o contactarnos a través de nuestras redes sociales oficiales.</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+    <!-- SECCIÓN DE SUSCRIPCIONES (CORE PRODUCT) -->
+    <section id=suscripciones class=subs-section style=padding:100px;0;background:#f8fafc;>
+        <style>
+            .subs-section { border-top: 1px solid #e2e8f0; }
+            .p-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
+            
+            /* Bloque Compartido para Tarjetas */
+            .p-card-base, .p-card-p { 
+                background: white; border-radius: 40px; padding: 50px; border: 1px solid #e2e8f0; 
+                position: relative; overflow: hidden; display: flex; flex-direction: column; 
+                transition: all 0.4s cubic-bezier(0.175,0.885,0.32,1.275); 
+            }
+            .p-card-base:hover, .p-card-p:hover { transform: translateY(-15px); box-shadow: 0 40px 80px rgba(0,119,182,0.1); }
+            
+            /* Variante Premium */
+            .p-card-p { border: 2.5px solid #0077B6; background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%); transform: scale(1.05); }
+            
+            .p-badge { background: #0077B6; color: white; padding: 10px 25px; border-radius: 30px; font-size: 0.85rem; font-weight: 800; text-transform: uppercase; position: absolute; top: 30px; right: 30px; box-shadow: 0 5px 15px rgba(0,119,182,0.3); }
+            
+            /* Tipografía Compartida */
+            .p-card-base h3, .p-card-p h3 { font-size: 2.4rem; font-weight: 800; margin-bottom: 12px; color: #0f172a; letter-spacing: -1px; }
+            .p-price { font-size: 4rem; font-weight: 800; margin-bottom: 30px; color: #0f172a; display: flex; align-items: baseline; gap: 5px; }
+            .p-price span { font-size: 1.3rem; opacity: 0.4; font-weight: 500; }
+            .p-desc { color: #64748b; font-size: 1.2rem; line-height: 1.6; margin-bottom: 35px; }
+            
+            /* Lista de Beneficios */
+            .b-list { list-style: none; padding: 0; margin-bottom: 45px; flex-grow: 1; }
+            .b-item { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; color: #475569; font-size: 1.15rem; font-weight: 500; }
+            .b-icon { color: #10b981; font-size: 1.3rem; flex-shrink: 0; }
+            
+            /* Botones Unificados */
+            .p-btn-b, .p-btn-p { 
+                width: 100%; padding: 24px; border-radius: 20px; border: none; 
+                font-weight: 800; font-size: 1.2rem; cursor: pointer; 
+                transition: all 0.3s; text-align: center; display: block; text-decoration: none;
+            }
+            .p-btn-b { background: #f1f5f9; color: #1e293b; }
+            .p-btn-b:hover { background: #e2e8f0; transform: scale(1.03); }
+            
+            .p-btn-p { background: #0f172a; color: white; box-shadow: 0 15px 35px rgba(15,23,42,0.2); }
+            .p-btn-premium:hover { background: #1e293b; transform: scale(1.02); box-shadow: 0 15px 30px rgba(15,23,42,0.2); }
+            
+            /* Corrección Técnica Icono Carrito (No Quotes) */
+            .cart-icon-cudi::before { content: "\f07a"; font-family: "Font Awesome 6 Free"; font-weight: 900; }
+        </style>
+        
+        <div class=container>
+            <div class=section-heading style=text-align:center;margin-bottom:100px;max-width:900px;margin-left:auto;margin-right:auto;>
+                <span style=color:#0077B6;font-weight:800;text-transform:uppercase;letter-spacing:2px;display:block;margin-bottom:15px;>Planes de Suscripción</span>
+                <h2 style=font-size:4rem;font-weight:800;line-height:1.1;margin-bottom:30px;letter-spacing:-3px;>Elige el nivel de protección que tu mejor amigo merece</h2>
+                <p style=font-size:1.4rem;color:#64748b;line-height:1.7;>Diseñamos nuestros planes pensando en tu tranquilidad y en su bienestar de perros y gatos. Empieza hoy mismo.</p>
+            </div>
+            
+            <div class=p-grid>
+                <!-- CUDI Esencial -->
+                <div class=p-card-base>
+                    <h3>CUDI Esencial</h3>
+                    <p class=p-desc>Perfecto para organizar la vida de tu mascota y descubrir nuestra red de confianza.</p>
+                    <div class=p-price>0<span>€/mes</span></div>
+                    <ul class=b-list>
+                        <li class="b-item"><i class="fa-solid fa-check b-icon"></i> Expediente completo</li>
+                        <li class="b-item"><i class="fa-solid fa-check b-icon"></i> Alertas vacunas</li>
+                        <li class="b-item"><i class="fa-solid fa-check b-icon"></i> Acceso catálogo</li>
+                        <li class="b-item"><i class="fa-solid fa-check b-icon"></i> Con anuncios</li>
+                    </ul>
+                    <button class=p-btn-b onclick=addToCart(plan_basic_name,0,plan_img);toggleCart()>Crear cuenta gratuita</button>
+                </div>
+                
+                <!-- CUDI Premium Care -->
+                <div class=p-card-p>
+                    <div class=p-badge>MÁS RECOMENDADO</div>
+                    <h3>CUDI Premium Care</h3>
+                    <p class=p-desc>La experiencia definitiva de paz mental. Un asistente inteligente para tu compañero.</p>
+                    <div class=p-price>30<span>€/mes</span></div>
+                    <ul class=b-list>
+                        <li class="b-item"><i class="fa-solid fa-check b-icon"></i> GPS y Telemetría</li>
+                        <li class="b-item"><i class="fa-solid fa-check b-icon"></i> Chat veterinario 24/7</li>
+                        <li class="b-item"><i class="fa-solid fa-check b-icon"></i> Paseo gratuito</li>
+                        <li class="b-item"><i class="fa-solid fa-check b-icon"></i> Descuentos socios</li>
+                    </ul>
+                    <button class=p-btn-p onclick=addToCart(plan_premium_name,30,plan_img);toggleCart()>Activar protección Premium</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script>
+        const plan_basic_name = /CUDI Esencial/.source;
+        const plan_premium_name = /CUDI Premium Care/.source;
+        const plan_img = /dashboard-biometrico-gemelo-digital-mascotas.png/.source;
+    </script>
+
+
+
+
+
+
+    <style>
+        .edu-section { padding: 120px 0; background: white; }
+        .edu-header { text-align: center; margin-bottom: 80px; max-width: 800px; margin-left: auto; margin-right: auto; }
+        .edu-badge { background: #EBF5FB; color: #0077B6; padding: 8px 25px; border-radius: 50px; font-weight: 800; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; display: inline-block; }
+        .edu-title { font-size: 3rem; font-weight: 800; margin-bottom: 25px; letter-spacing: -1px; }
+        .edu-p { font-size: 1.2rem; color: #64748b; line-height: 1.7; }
+        .edu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
+        .edu-card { background: white; border-radius: 30px; overflow: hidden; border: 1px solid #f0f0f0; transition: transform 0.3s; box-shadow: 0 15px 45px rgba(0,0,0,0.02); }
+        .edu-card-img-1 { height: 250px; background-image: url(reduccion-ansiedad-separacion-perros.png); background-size: cover; background-position: center; }
+        .edu-card-img-2 { height: 250px; background-image: url(mejora-descanso-salud-felina.png); background-size: cover; background-position: center; }
+        .edu-card-img-3 { height: 250px; background-image: url(prevencion-golpes-calor-paseos.png); background-size: cover; background-position: center; }
+        .edu-card-content { padding: 40px; }
+        .edu-card-title { font-size: 1.5rem; font-weight: 800; margin-bottom: 15px; line-height: 1.2; }
+        .edu-card-p { color: #64748b; line-height: 1.6; margin-bottom: 30px; }
+        .edu-link { color: #0077B6; font-weight: 800; text-decoration: none; display: flex; align-items: center; gap: 10px; }
+    </style>
+
+    <!-- PORTAL DE EDUCACIÓN PREVENTIVA (REDISEÑO EXPORT-UX) -->
+    <section id=portal-educativo class=edu-section>
+        <div class=container>
+            <div class=edu-header>
+                <span class=edu-badge>Conocimiento para su bienestar</span>
+                <h2 class=edu-title>Guía para una vida plena y saludable a su lado</h2>
+                <p class=edu-p>El bienestar de los compañeros animales depende de la atención constante a sus necesidades físicas y emocionales. Este portal ofrece información fundamentada para asegurar que cada perro y gato disfrute de una existencia larga, activa y libre de preocupaciones.</p>
+            </div>
+
+            <div class=edu-grid>
+                
+                <!-- Artículo 1: Telemetría -->
+                <div class=edu-card>
+                    <div style="height:250px; background-image:url('cudi-smart-collar-geolocalizacion-gps.png'); background-size:cover; background-position:center;"></div>
+                    <div class=edu-card-content>
+                        <h3 class=edu-card-title>Telemetría y Geolocalización Canina</h3>
+                        <p class=edu-card-p>Documentamos cómo la geolocalización continua ha reducido las pérdidas definitivas en un alarmante porcentaje.</p>
+                        <a href="geo-telemetria-prevencion-perdida.html" class="edu-link">Leer Journal Completo <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Artículo 2: Triaje IA -->
+                <div class=edu-card>
+                    <div style="height:250px; background-image:url('triaje-ia-veterinario-urgencias.png'); background-size:cover; background-position:center;"></div>
+                    <div class=edu-card-content>
+                        <h3 class=edu-card-title>Triaje IA: Reducción de Mortalidad Aguda</h3>
+                        <p class=edu-card-p>La ventana de oro en traumas es de menos de una hora. La capacidad algorítmica de evaluar síntomas en tiempo real salva vidas.</p>
+                        <a href="triaje-ia-esperanza-vida-veterinaria.html" class="edu-link">Leer Journal Completo <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Artículo 3: Nutrición -->
+                <div class=edu-card>
+                    <div style="height:250px; background-image:url('dietas-personalizadas-longevidad-mascotas.png'); background-size:cover; background-position:center;"></div>
+                    <div class=edu-card-content>
+                        <h3 class=edu-card-title>Manipulación del Microbioma vía Nutrición</h3>
+                        <p class=edu-card-p>La biología celular exige un retorno estricto a dietas orgánicas formuladas específicamente. Previene fallas renales a mediano plazo.</p>
+                        <a href="microbioma-nutricion-longevidad-canina.html" class="edu-link">Leer Journal Completo <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Artículo 4: Ansiedad y Paseos -->
+                <div class=edu-card>
+                    <div style="height:250px; background-image:url('pareja-corriendo-mascota-activa.png'); background-size:cover; background-position:center;"></div>
+                    <div class=edu-card-content>
+                        <h3 class=edu-card-title>Cortisol y Ansiedad por Separación</h3>
+                        <p class=edu-card-p>Las rutinas de paseos grupales regulan el impacto del cortisol, mitigando la depresión y reactividad por aislamiento en entornos urbanos.</p>
+                        <a href="ansiedad-separacion-cortisol-mascotas.html" class="edu-link">Leer Journal Completo <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Artículo 5: Seguros -->
+                <div class=edu-card>
+                    <div style="height:250px; background-image:url('seguros-gastos-veterinarios-perros-gatos.png'); background-size:cover; background-position:center;"></div>
+                    <div class=edu-card-content>
+                        <h3 class=edu-card-title>Venciendo a la "Eutanasia Económica"</h3>
+                        <p class=edu-card-p>Análisis estadístico sobre la prolongación de la esperanza de vida cruzado con la cobertura financiera total y preventiva.</p>
+                        <a href="seguros-veterinarios-mortalidad.html" class="edu-link">Leer Journal Completo <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Artículo 6: Gemelo Digital -->
+                <div class=edu-card>
+                    <div style="height:250px; background-image:url('dashboard-biometrico-gemelo-digital-mascotas.png'); background-size:cover; background-position:center;"></div>
+                    <div class=edu-card-content>
+                        <h3 class=edu-card-title>Gemelos Digitales y Salud Predictiva</h3>
+                        <p class=edu-card-p>Relevancia metodológica de recolectar el 100% de signos biométricos constantemente vs el tradicional chequeo anual sintomático.</p>
+                        <a href="gemelos-digitales-salud-predictiva.html" class="edu-link">Leer Journal Completo <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- SECCIÓN REDES SOCIALES (INSTAGRAM FEED) -->
+    <section class=social-feed>
+        <div class=container>
+            <div class=section-heading>
+                <h2 style=font-size:3rem;font-weight:800;margin-bottom:20px;>Sigue nuestra huella</h2>
+                <p style=color:#64748b;font-size:1.2rem;>Únete a la comunidad de familias CUDI y descubre historias reales de bienestar.</p>
+            </div>
+            
+            <div style=display:flex;justify-content:center;gap:20px;margin-top:30px;>
+                <a href=https://www.instagram.com/cudi.ai2026/ target=_blank style=width:45px;height:45px;background:white;border:1px;solid;#eee;border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--clr-text);font-size:1.2rem;transition:all;0.3s;ease;box-shadow:0;10px;20px;rgba(0,0,0,0.05);text-decoration:none; onmouseover=this.style.background='var(--clr-primary)';this.style.color='white';this.style.transform='translateY(-5px)' onmouseout=this.style.background='white';this.style.color='var(--clr-text)';this.style.transform='translateY(0)'>
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href=https://www.facebook.com/Cudi2026 target=_blank style=width:45px;height:45px;background:white;border:1px;solid;#eee;border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--clr-text);font-size:1.2rem;transition:all;0.3s;ease;box-shadow:0;10px;20px;rgba(0,0,0,0.05);text-decoration:none; onmouseover=this.style.background='var(--clr-primary)';this.style.color='white';this.style.transform='translateY(-5px)' onmouseout=this.style.background='white';this.style.color='var(--clr-text)';this.style.transform='translateY(0)'>
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href=# style=width:45px;height:45px;background:white;border:1px;solid;#eee;border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--clr-text);font-size:1.2rem;transition:all;0.3s;ease;box-shadow:0;10px;20px;rgba(0,0,0,0.05);text-decoration:none; onmouseover=this.style.background='var(--clr-primary)';this.style.color='white';this.style.transform='translateY(-5px)' onmouseout=this.style.background='white';this.style.color='var(--clr-text)';this.style.transform='translateY(0)'>
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+                <a href=# style=width:45px;height:45px;background:white;border:1px;solid;#eee;border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--clr-text);font-size:1.2rem;transition:all;0.3s;ease;box-shadow:0;10px;20px;rgba(0,0,0,0.05);text-decoration:none; onmouseover=this.style.background='var(--clr-primary)';this.style.color='white';this.style.transform='translateY(-5px)' onmouseout=this.style.background='white';this.style.color='var(--clr-text)';this.style.transform='translateY(0)'>
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class=premium-footer>
+        <div class=container>
+            <div class=footer-grid>
+                <!-- Columna 1: Marca (Fase 1) -->
+                <div class=footer-col>
+                    <a href=index.html class=logo style=margin-bottom:30px;display:inline-block;>
+                        <img src=logo.jpeg alt=CUDI style=height:70px;border-radius:12px;>
+                    </a>
+                    <p>CUDI es el primer ecosistema integral de salud y bienestar animal impulsado por IA. Monitorizamos, protegemos y conectamos todo el universo de tu compañero hoy para un mañana más sano.</p>
+                </div>
+
+                <!-- Columna 2: Recursos (Fase 1) -->
+                <div class=footer-col>
+                    <h4>Comunidad CUDI</h4>
+                    <ul class=footer-links-list>
+                        <li><a href=index.html>Inicio</a></li>
+                        <li><a href=index.html#store-grid>Tienda Marketplace</a></li>
+                        <li><a href=index.html#suscripciones>Planes de Protección</a></li>
+                        <li><a href=index.html#portal-educativo>Portal Educativo</a></li>
+                        <li><a href=red-socios-clinicas-veterinarias.html>Red de Socios</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3: Legal (Fase 1) -->
+                <div class=footer-col>
+                    <h4>Información Legal</h4>
+                    <ul class=footer-links-list>
+                        <li><a href=terminos-condiciones-app.html>Términos y Condiciones</a></li>
+                        <li><a href=politica-cookies-plataforma.html>Política de Cookies</a></li>
+                        <li><a href=politica-privacidad-datos-mascotas.html>Política de Privacidad</a></li>
+                        <li><a href=politica-devoluciones-smart-collar.html>Devoluciones y Cambios</a></li>
+                        <li><a href=legal.html>Información Legal</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 4: Conecta (Fase 1) -->
+                <div class=footer-col>
+                    <h4>Conecta con nosotros</h4>
+                    <p style=margin-bottom:20px;>Recibe consejos de salud preventiva validados por expertos.</p>
+                    <div class=footer-socials>
+                        <a href=https://www.instagram.com/cudi.ai2026/ target=_blank class=social-btn><i class=icon-ig></i></a>
+                        <a href=https://www.facebook.com/Cudi2026 target=_blank class=social-btn><i class=icon-fb></i></a>
+                        <a href=# class=social-btn><i class=icon-tk></i></a>
+                        <a href=# class=social-btn><i class=icon-yt></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class=footer-bottom>
+                <p>&copy; 2026 CUDI AI Ecosystem S.L. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="i18n.js"></script>
+\n    
+    <!-- Global AI Chat Widget -->
+    <div class="cudi-chat-widget" style="position:fixed; bottom:30px; right:30px; z-index:9999;">
+        <div class="cudi-chat-btn" onclick="toggleAIChat()" style="overflow:hidden; padding:3px; background:white; width:65px; height:65px; border-radius:50%; box-shadow:0 10px 25px rgba(0,0,0,0.25); cursor:pointer; border: 3px solid #0077b6;">
+            <img src="logo.jpeg" alt="CUDI AI" style="width:100%; height:100%; object-fit:contain; border-radius:50%;">
+        </div>
+        <div class="cudi-chat-panel" id="cudi-chat-panel" style="display:none; position:absolute; bottom:85px; right:0; width:360px; background:white; border-radius:24px; box-shadow:0 20px 45px rgba(0,0,0,0.2); overflow:hidden; border:1px solid #e2e8f0; flex-direction:column;">
+            <div class="chat-panel-header" style="background:#0077b6; color:white; padding:18px; position:relative; display:flex; align-items:center;">
+                <div class="title" style="font-weight:800; font-size:1.05rem; flex:1;"><i class="fa-solid fa-shield-dog"></i> CUDI Triaje IA</div>
+                <div class="status" style="font-size:0.8rem; color:#e0f2fe; margin-right:30px; font-weight:600;"><span style="display:inline-block; width:8px; height:8px; background:#10b981; border-radius:50%; margin-right:5px;"></span>24/7 Activo</div>
+                
+                <!-- Pet Mascot Avatar Overlapping -->
+                <div style="position:absolute; top:-25px; right:-15px; width:75px; height:75px; border-radius:50%; border:4px solid #F8FAFC; overflow:hidden; background:white; z-index:10; box-shadow:0 10px 20px rgba(0,0,0,0.2);">
+                   <img src="avatar-mascota-perfil-gemelo-digital.png" alt="Perfil" style="width:100%; height:100%; object-fit:cover;">
+                </div>
+
+                <button onclick="toggleAIChat()" style="position:absolute; top:18px; right:15px; background:transparent; border:none; color:white; cursor:pointer; font-size:1.1rem;"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <div class="chat-panel-body" id="chat-body" style="height:320px; padding:15px; overflow-y:auto; background:#f8fafc; display:flex; flex-direction:column;">
+                <!-- Initial Greeting is now handled by script.js when opened, but fallback here: -->
+                <div style="background:white; padding:12px 15px; border-radius:15px; margin-bottom:12px; font-size:0.9rem; color:#333; border:1px solid #f1f5f9; border-top-left-radius:0; box-shadow:0 2px 5px rgba(0,0,0,0.02); line-height:1.5;">
+                    ¡Hola! Soy CUDI, tu asistente preventivo. Estoy conectado a la telemetría inteligente.<br><br><b>¿Qué necesitas?</b> Puedes probar palabras como *"vómito"*, *"fiebre"*, *"comprar"*, o *"paseo"*.
+                </div>
+            </div>
+            
+            <div class="chat-panel-footer" style="padding:15px; background:white; border-top:1px solid #f1f5f9; display:flex; gap:10px; align-items:center;">
+                <input type="text" id="chat-input" placeholder="Pregúntame sobre su salud..." onkeypress="handleChatEnter(event)" style="flex:1; padding:12px 16px; border-radius:30px; border:1px solid #cbd5e1; outline:none; font-family:inherit; font-size:0.9rem; background:#f8fafc; transition:all 0.3s;" onfocus="this.style.borderColor='#0077b6'; this.style.background='white';" onblur="this.style.borderColor='#cbd5e1'; this.style.background='#f8fafc';">
+                <button onclick="sendChatMessage()" style="background:#0077b6; color:white; border:none; width:45px; height:45px; border-radius:50%; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"><i class="fa-solid fa-paper-plane" style="font-size:1.1rem; margin-left:-2px;"></i></button>
+            </div>
+        </div>
+    </div>
+\n    </body>
+</html>

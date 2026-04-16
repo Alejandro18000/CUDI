@@ -1,0 +1,208 @@
+<!-- Desarrollo 100% realizado por Sergio Alejandro Ospina Rocha -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta name="author" content="Sergio Alejandro Ospina Rocha">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eficacia del Triaje mediante Inteligencia Artificial: Reducción de la Mortalidad Aguda | CUDI Journal</title>
+    <meta name="description" content="La ventana de oro en cardiología y traumas veterinarios es de menos de una hora. La capacidad algorítmica de evaluar síntomas cambia las reglas del juego.">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { background:#fdfdfd; }
+        .header-bg h1 { color: #ffffff !important; text-shadow: 0 4px 20px rgba(0,0,0,0.6); }
+        .header-bg { background: linear-gradient(rgba(15,23,42,0.8), rgba(15,23,42,0.8)), url('triaje-ia-veterinario-urgencias.png') center/cover; padding:150px 0 80px 0; color:white; }
+        .badge-journal { background:#0ea5e9; padding:5px 15px; border-radius:5px; font-weight:700; text-transform:uppercase; font-size:0.8rem; letter-spacing:1px; margin-bottom:20px; display:inline-block; }
+        .article-content { font-family:'Inter',sans-serif; font-size:1.2rem; line-height:1.8; color:#334155; margin-bottom:50px; border-left:4px solid #10b981; padding-left:30px; background:#f8fafc; padding:30px; border-radius:15px; }
+        .cta-box { background:white; padding:50px; border-radius:24px; box-shadow:0 25px 50px rgba(0,0,0,0.05); text-align:center; border:1px solid #f1f5f9; }
+    </style>
+    <!-- Tracking -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CUDI2026TFM"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-CUDI2026TFM');</script>
+
+    <!-- Microsoft Clarity Tracking Code -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];
+            y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "CUDI_TRABAJO_FINAL_2026");
+    </script>
+
+</head>
+<body>
+    <div class="top-bar-refined">
+        <span><i class="fa-solid fa-envelope"></i> cudi.ai2026@gmail.com</span>
+        <span><i class="fa-solid fa-phone"></i> 900 123 456</span>
+        <div style="display:flex; align-items:center; gap:5px;">
+            <i class="fa-solid fa-globe"></i>
+            <select class="lang-selector" style="background:transparent; color:white; border:none; outline:none; font-family:var(--font-body); cursor:pointer; font-weight:700; font-size:0.75rem;">
+                <option value="es" style="color:#000;">ES</option>
+                <option value="ca" style="color:#000;">CA</option>
+                <option value="en" style="color:#000;">EN</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Navegación Estilo "Floating Island" -->
+    <nav class="navbar-island">
+        <div class="nav-capsule">
+            <!-- 1. Logo -->
+            <a href="index.html" class="logo" style="display:flex; align-items:center;">
+                <img src="logo.jpeg" alt="CUDI" style="height:55px; width:auto; transition: transform 0.3s; border-radius: 8px;">
+            </a>
+
+            <!-- 2. Buscador Arquitectónico -->
+            <div class="nav-search-island">
+                <i class="fa-solid fa-magnifying-glass" style="color:var(--clr-primary); font-size:0.9rem;"></i>
+                <input type="text" placeholder="¿Qué necesita tu compañero hoy?">
+            </div>
+
+            <!-- 3. Enlaces y Carrito -->
+            <div class=nav-right-island>
+                <ul class=nav-links-island style=gap:30px;>
+                    <li><a href=index.html>Inicio</a></li>
+                    <li><a href="smart-collar-aventuras-sin-sustos.html">Lanzamiento</a></li>
+                    <li><a href=#store-grid>Tienda</a></li>
+                    <li><a href=#suscripciones>Planes</a></li>
+                    <li><a href="index.html#portal-educativo">Artículos</a></li>
+                    <li><a href="red-socios-clinicas-veterinarias.html">Red de Socios</a></li>
+                    <li><a href="simulador-gemelo-digital-telemetria.html" style="color:#10b981; font-weight:800;"><i class="fa-solid fa-mobile-screen"></i> App Demo</a></li>
+                    
+                </ul>
+                <div class=cart-trigger-island onclick=toggleCart()>
+                    <i class=cart-icon-cudi style=font-size:1.2rem;></i>
+                    <span class=cart-badge id=global-cart-badge style=position:absolute;top:-8px;right:-12px;background:var(--clr-primary);color:white;font-size:0.65rem;font-weight:700;border-radius:50px;width:18px;height:18px;display:flex;align-items:center;justify-content:center;border:2px;solid;white;>0</span>
+                </div>
+
+            </div>
+
+        </div>
+    </nav>
+    <!-- PANEL LATERAL CARRITO (SIDE-CART) -->
+    <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+    <div class="side-cart" id="side-cart">
+        <div class="cart-header">
+            <h3><i class="fa-solid fa-bag-shopping"></i> Tu Cesta CUDI</h3>
+            <button class="close-cart" aria-label="Cerrar Carrito" onclick="toggleCart()"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="cart-items" id="cart-items-container"></div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total Estimado:</span>
+                <span id="cart-total-price">0.00 €</span>
+            </div>
+            <a href="contratar-plan-premium-cudi.html" class="btn-primary" aria-label="Acción principal" style="display:block; text-align:center; margin-top:10px;">Procesar Pago Seguro <i class="fa-solid fa-lock"></i></a>
+        </div>
+    </div>
+
+    <header class="header-bg">
+        <div class="container" style="max-width:900px; text-align:center;">
+            <div class="badge-journal"><i class="fa-solid fa-graduation-cap"></i> Evidencia Científica CUDI</div>
+            <h1 style="font-family:'Outfit',sans-serif; font-size:clamp(2.5rem, 4vw, 3.5rem); font-weight:800; line-height:1.1; margin-bottom:20px;">Eficacia del Triaje mediante Inteligencia Artificial: Reducción de la Mortalidad Aguda</h1>
+            <p style="font-size:1.1rem; opacity:0.8; font-weight:300;">Validado por Publicaciones Internacionales: <span style="font-weight:700; color:#10b981;">Frontiers in Veterinary Science</span></p>
+        </div>
+    </header>
+
+    <div class="container" style="max-width:800px; padding:60px 20px;">
+        <p style="font-size:1.3rem; font-weight:600; color:#0f172a; margin-bottom:30px; line-height:1.6;">La ventana de oro en cardiología y traumas veterinarios es de menos de una hora. La capacidad algorítmica de evaluar síntomas cambia las reglas del juego.</p>
+        
+        <div class="article-content">
+            Un tutor promedio tarda 4 horas en decidir acudir al veterinario ante los primeros síntomas. El Triaje Asistido con IA, alimentado por telemetría del collar en tiempo real, presiona asertivamente para la intervención médica inmediata, lo que incrementa estadísticamente las tasas de recuperación posquirúrgica.
+        </div>
+
+        <div style="background:white; border-radius:20px; box-shadow:0 10px 30px rgba(0,0,0,0.05); padding:30px; margin-bottom:60px; border:1px solid #e2e8f0;">
+            <h3 style="font-family:'Outfit',sans-serif; font-size:1.5rem; text-align:center; margin-bottom:20px; color:#0077b6;">Tasa de Supervivencia en Urgencias (%)</h3>
+            <canvas id="journalChart" style="max-height:350px;"></canvas>
+        </div>
+
+        <div class="cta-box">
+            <h3 style="font-family:'Outfit',sans-serif; font-size:2.2rem; font-weight:800; color:#0f172a; margin-bottom:20px;">Suscripción a Consultas 24/7</h3>
+            <p style="color:#64748b; font-size:1.1rem; margin-bottom:30px;">Implementa inmediatamente las recomendaciones clínicas del estudio en tu hogar multiespecie.</p>
+            <button onclick="addToCart('CUDI Premium Care', 30.0, 'triaje-ia-veterinario-urgencias.png'); toggleCart();" class="btn-primary" aria-label="Acción principal" style="padding:20px 40px; font-size:1.2rem; border-radius:15px; cursor:pointer;" onmouseover="this.style.boxShadow='0 15px 30px rgba(16,185,129,0.3)'" onmouseout="this.style.boxShadow='none'">Activar CUDI Premium Care (30€/mes) <i class="fa-solid fa-arrow-right"></i></button>
+            <small style="display:block; margin-top:20px; color:#94a3b8;"><i class="fa-solid fa-shield-halved"></i> Garantía y Respaldo por la red CUDI</small>
+        </div>
+    </div>
+
+    <footer class=premium-footer>
+        <div class=container>
+            <div class=footer-grid>
+                <!-- Columna 1: Marca (Fase 1) -->
+                <div class=footer-col>
+                    <a href=index.html class=logo style=margin-bottom:30px;display:inline-block;>
+                        <img src=logo.jpeg alt=CUDI style=height:70px;border-radius:12px;>
+                    </a>
+                    <p>CUDI es el primer ecosistema integral de salud y bienestar animal impulsado por IA. Monitorizamos, protegemos y conectamos todo el universo de tu compañero hoy para un mañana más sano.</p>
+                </div>
+
+                <!-- Columna 2: Recursos (Fase 1) -->
+                <div class=footer-col>
+                    <h4>Comunidad CUDI</h4>
+                    <ul class=footer-links-list>
+                        <li><a href=index.html>Inicio</a></li>
+                        <li><a href=index.html#store-grid>Tienda Marketplace</a></li>
+                        <li><a href=index.html#suscripciones>Planes de Protección</a></li>
+                        <li><a href=index.html#portal-educativo>Portal Educativo</a></li>
+                        <li><a href=red-socios-clinicas-veterinarias.html>Red de Socios</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3: Legal (Fase 1) -->
+                <div class=footer-col>
+                    <h4>Información Legal</h4>
+                    <ul class=footer-links-list>
+                        <li><a href=terminos-condiciones-app.html>Términos y Condiciones</a></li>
+                        <li><a href=politica-cookies-plataforma.html>Política de Cookies</a></li>
+                        <li><a href=politica-privacidad-datos-mascotas.html>Política de Privacidad</a></li>
+                        <li><a href=politica-devoluciones-smart-collar.html>Devoluciones y Cambios</a></li>
+                        <li><a href=legal.html>Información Legal</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 4: Conecta (Fase 1) -->
+                <div class=footer-col>
+                    <h4>Conecta con nosotros</h4>
+                    <p style=margin-bottom:20px;>Recibe consejos de salud preventiva validados por expertos.</p>
+                    <div class=footer-socials>
+                        <a href=https://www.instagram.com/cudi.ai2026/ target=_blank class=social-btn><i class=icon-ig></i></a>
+                        <a href=https://www.facebook.com/Cudi2026 target=_blank class=social-btn><i class=icon-fb></i></a>
+                        <a href=# class=social-btn><i class=icon-tk></i></a>
+                        <a href=# class=social-btn><i class=icon-yt></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class=footer-bottom>
+                <p>&copy; 2026 CUDI AI Ecosystem S.L. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+    <script>
+        const ctx = document.getElementById('journalChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['0-1h (Triaje IA)', '1-4h (Tradicional)', '+4h (Sin Triaje)'],
+                datasets: [{
+                    label: 'Métricas Obtenidas',
+                    data: [94, 65, 20], backgroundColor: ['#ef4444', '#f59e0b', '#64748b']
+                }]
+            },
+            options: { responsive: true, maintainAspectRatio: false }
+        });
+    </script>
+
+    <!-- Global AI Chat Widget -->
+    <div class="cudi-chat-widget" style="position:fixed; bottom:30px; right:30px; z-index:9999;">
+        <div class="cudi-chat-btn" onclick="toggleAIChat()" style="overflow:hidden; padding:3px; background:white; width:65px; height:65px; border-radius:50%; box-shadow:0 10px 25px rgba(0,0,0,0.25); cursor:pointer; border: 3px solid #0077b6;">
+            <img src="logo.jpeg" alt="CUDI AI" style="width:100%; height:100%; object-fit:contain; border-radius:50%;">
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,511 @@
+<!-- Desarrollo 100% realizado por Sergio Alejandro Ospina Rocha -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta name="author" content="Sergio Alejandro Ospina Rocha">
+    <meta charset=UTF-8>
+    <meta name=viewport content=width=device-width,initial-scale=1.0>
+    <title>CUDI App | Monitorización Inteligente y Salud Preventiva</title>
+    <meta name=description content=Descarga la App CUDI para un control total de la salud de tu mascota. Telemetría en tiempo real, chat veterinario y gestión de expedientes digitales.>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="app-demo.css">
+
+    <!-- TFM Tracking Requirements: Google Analytics (GA4) & Meta Pixel -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CUDI2026TFM"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-CUDI2026TFM', { 'debug_mode': true });
+    </script>
+    <!-- Meta Pixel Code for Funnel Tracking -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1029384756CUDI');
+      fbq('track', 'PageView');
+    </script>
+    <!-- End TFM Tracking Requirements -->
+
+    <!-- Microsoft Clarity Tracking Code -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];
+            y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "CUDI_TRABAJO_FINAL_2026");
+    </script>
+
+</head>
+<body style="flex-direction: column; padding-top: 0; min-height: 100vh; display: block; background: #fdfdfd;">
+    
+    <div class="top-bar-refined">
+        <span><i class="fa-solid fa-envelope"></i> cudi.ai2026@gmail.com</span>
+        <span><i class="fa-solid fa-phone"></i> 900 123 456</span>
+        <div style="display:flex; align-items:center; gap:5px;">
+            <i class="fa-solid fa-globe"></i>
+            <select class="lang-selector" style="background:transparent; color:white; border:none; outline:none; font-family:var(--font-body); cursor:pointer; font-weight:700; font-size:0.75rem;">
+                <option value="es" style="color:#000;">ES</option>
+                <option value="ca" style="color:#000;">CA</option>
+                <option value="en" style="color:#000;">EN</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Navegación Estilo "Floating Island" -->
+    <nav class="navbar-island">
+        <div class="nav-capsule">
+            <!-- 1. Logo -->
+            <a href="index.html" class="logo" style="display:flex; align-items:center;">
+                <img src="logo.jpeg" alt="CUDI" style="height:55px; width:auto; transition: transform 0.3s; border-radius: 8px;">
+            </a>
+
+            <!-- 2. Buscador Arquitectónico -->
+            <div class="nav-search-island">
+                <i class="fa-solid fa-magnifying-glass" style="color:var(--clr-primary); font-size:0.9rem;"></i>
+                <input type="text" placeholder="¿Qué necesita tu compañero hoy?">
+            </div>
+
+            <!-- 3. Enlaces y Carrito -->
+            <div class=nav-right-island>
+                <ul class=nav-links-island style=gap:30px;>
+                    <li><a href=index.html>Inicio</a></li>
+                    <li><a href="smart-collar-aventuras-sin-sustos.html">Lanzamiento</a></li>
+                    <li><a href=#store-grid>Tienda</a></li>
+                    <li><a href=#suscripciones>Planes</a></li>
+                    <li><a href="index.html#portal-educativo">Artículos</a></li>
+                    <li><a href="red-socios-clinicas-veterinarias.html">Red de Socios</a></li>
+                    <li><a href="simulador-gemelo-digital-telemetria.html" style="color:#10b981; font-weight:800;"><i class="fa-solid fa-mobile-screen"></i> App Demo</a></li>
+                    
+                </ul>
+                <div class=cart-trigger-island onclick=toggleCart()>
+                    <i class=cart-icon-cudi style=font-size:1.2rem;></i>
+                    <span class=cart-badge id=global-cart-badge style=position:absolute;top:-8px;right:-12px;background:var(--clr-primary);color:white;font-size:0.65rem;font-weight:700;border-radius:50px;width:18px;height:18px;display:flex;align-items:center;justify-content:center;border:2px;solid;white;>0</span>
+                </div>
+
+            </div>
+
+        </div>
+    </nav>
+
+    <div class="presentation-wrapper" style="margin: 0 auto; padding-top: 20px;">
+        <!-- Left info -->
+        <div class="presentation-info" style="background: rgba(255,255,255,0.7); padding: 50px; border-radius: 30px; box-shadow: 0 15px 35px rgba(0,0,0,0.03); backdrop-filter: blur(20px);">
+            <h2 style="font-size: 2.2rem; margin-bottom: 15px; color: var(--app-text); font-weight:800; line-height:1.2;">El gemelo digital de tu <br><span style="color:var(--app-primary);">compañero ideal.</span></h2>
+            <p style="font-size: 1.15rem; color: var(--app-text-muted); line-height: 1.7; margin-bottom: 35px;">Descubre cómo nuestra Inteligencia Artificial interpreta las emociones, salud y necesidades ocultas de aquellos que no pueden hablar, pero a quienes amas más que a nada.</p>
+            <div style="display: flex; gap: 20px; align-items: center;">
+                <a href="index.html" class="app-btn primary" style="width: auto; padding: 15px 30px; text-decoration: none;"><i class="fa-solid fa-arrow-left"></i> Volver al inicio</a>
+            </div>
+        </div>
+
+        <div class="mobile-device">
+            <div class="top-status-bar" style="display:none;" id="global-app-nav">
+                <i class="fa-solid fa-signal" style="color:var(--app-success);"></i> CUDI Sync
+                <div class="app-cart-icon" onclick="openCheckoutDemo()" style="margin-left:10px;">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="app-cart-badge" id="app-cart-badge">0</span>
+                </div>
+            </div>
+
+            <div class="mobile-screen">
+                
+                <!-- PANTALLA 1: ONBOARDING EMPÁTICO -->
+                <div id="screen-1" class="app-screen active" style="padding:0; overflow-y:auto; background: #fdfdfd;">
+                    <div class="onboarding-image" style="background-image: url('bienestar-integral-perros-gatos.png'); background-position:top center; background-size:cover; height:280px; position:relative;">
+                        <div style="position:absolute; bottom:0; left:0; right:0; height:80px; background:linear-gradient(to top, white, transparent);"></div>
+                    </div>
+                    <div class="form-container" style="padding:25px; z-index:2; position:relative; background:white; border-top-left-radius:30px; border-top-right-radius:30px; margin-top:-40px; box-shadow:0 -10px 20px rgba(0,0,0,0.05);">
+                        <h3 class="emotional-title" style="font-size:1.6rem; margin-bottom:5px;">Conociendo a tú Peludo</h3>
+                        <p class="emotional-desc" style="font-size:0.9rem; margin-bottom:20px;">Ayúdanos a personalizar su perfil.</p>
+                        
+                        <div class="input-group">
+                            <label>Nombre de tu compañero</label>
+                            <input type="text" id="pet-name" placeholder="Ej. Luna" class="app-input" onkeyup="checkRegistration()">
+                        </div>
+                        <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+                            <div class="input-group">
+                                <label>¿De quién hablamos?</label>
+                                <select id="pet-type" class="app-input" onchange="checkRegistration()">
+                                    <option value="">Selecciona</option>
+                                    <option value="perro">Compañero Perruno 🐶</option>
+                                    <option value="gato">Compañero Gatuno 🐱</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label>Peso estimado (Kg)</label>
+                                <input type="number" id="pet-weight" placeholder="Ej. 8" class="app-input" onkeyup="checkRegistration()">
+                            </div>
+                        </div>
+                        <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+                            <div class="input-group">
+                                <label>Etapa de Vida</label>
+                                <select id="pet-age" class="app-input">
+                                    <option value="cachorro">Cachorro/Bebé</option>
+                                    <option value="adulto">Adulto</option>
+                                    <option value="senior">Abuelete (Senior)</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label>Energía Diaria</label>
+                                <select id="pet-energy" class="app-input">
+                                    <option value="tranquilo">Muy Tranquilo</option>
+                                    <option value="moderado">Juguetón</option>
+                                    <option value="activo">Terremoto Imparable</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="input-group" style="margin-bottom:20px;">
+                            <label>Tipo de Alimentación Actual</label>
+                            <select id="pet-food" class="app-input">
+                                <option value="pienso">Pienso / Croquetas secas</option>
+                                <option value="barf">Dieta Natural (BARF)</option>
+                                <option value="mixta">Mixta (Seco + Húmedo)</option>
+                            </select>
+                        </div>
+                        
+                        <button class="app-btn primary" id="btn-next-1" disabled onclick="initializeDashboard()">
+                            Sincronizar Corazón CUDI <i class="fa-solid fa-heart-pulse"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- TABS MULTIPLES -->
+                <div id="screen-main" class="app-screen" style="padding:0; background:var(--app-bg-soft);">
+                    
+                    <!-- TAB 1: BIO-DASHBOARD -->
+                    <div id="tab-dash" class="tab-view active">
+                        <div class="dash-section" style="padding-top: 90px;">
+                            <h3 class="emotional-title" style="font-size:1.4rem;">Panel Clínico de <span id="display-pet-name">tu peque</span></h3>
+                            
+                            <!-- Grafico 1: Radar -->
+                            <div class="chart-box">
+                                <h5>Equilibrio Biométrico</h5>
+                                <canvas id="chart-radar"></canvas>
+                            </div>
+
+                            <!-- Grafico 2: Line (BPM) -->
+                            <div class="chart-box">
+                                <h5>Frecuencia Cardíaca (24h)</h5>
+                                <canvas id="chart-line-bpm"></canvas>
+                            </div>
+
+                            <!-- Grafico 3: Polar (Sueño) -->
+                            <div class="chart-box">
+                                <h5>Calidad de Sueño vs Ruido Total</h5>
+                                <canvas id="chart-polar-sleep"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TAB 2: SIMULADOR IA -->
+                    <div id="tab-sim" class="tab-view">
+                        <div class="dash-section" style="padding-top: 90px;">
+                            <h3 class="emotional-title">Triaje y Diagnóstico IA</h3>
+                            <p class="emotional-desc">Elige un evento simulado para ver cómo responde la Inteligencia Artificial de CUDI con recomendaciones preventivas en tiempo real.</p>
+                            
+                            <div class="simulator-buttons-grid" style="display:grid; grid-template-columns:1fr; gap:10px; margin-top:20px;">
+                                <button class="app-btn secondary" style="font-size:0.9rem; padding:12px;" onclick="startAIAnalysis('energia')"><i class="fa-solid fa-bolt" style="color:#FFD166;"></i> Simular Exceso de Energía</button>
+                                <button class="app-btn secondary" style="font-size:0.9rem; padding:12px;" onclick="startAIAnalysis('sueno')"><i class="fa-solid fa-moon" style="color:#0077B6;"></i> Simular Inactividad / Sueño Fuerte</button>
+                                <button class="app-btn secondary" style="font-size:0.9rem; padding:12px;" onclick="startAIAnalysis('ansiedad')"><i class="fa-solid fa-cloud-bolt" style="color:#48CAE4;"></i> Simular Estrés Ambiental</button>
+                                <button class="app-btn secondary" style="font-size:0.9rem; padding:12px;" onclick="startAIAnalysis('nutricion')"><i class="fa-solid fa-bowl-food" style="color:#20C997;"></i> Simular Desbalance Nutricional</button>
+                                <button class="app-btn secondary" style="font-size:0.9rem; padding:12px;" onclick="startAIAnalysis('prevencion')"><i class="fa-solid fa-shield-virus" style="color:#EF476F;"></i> Simular Riesgo Preventivo</button>
+                            </div>
+
+                            <div class="ai-analysis-container" style="text-align: center; margin-top:2rem;">
+                                <div id="ai-scanning-ui" style="display: none; padding: 1rem 0;">
+                                    <i class="fa-solid fa-radar fa-spin" style="font-size: 3.5rem; color: var(--app-primary); margin-bottom:1rem;"></i>
+                                    <h4 id="scanning-status" style="color: var(--app-text); font-weight:700;">Analizando telemetría...</h4>
+                                    <div style="background:#EBF5FB; border-radius:10px; height:8px; width:100%; margin-top:1.5rem; overflow:hidden;">
+                                        <div id="scan-progress" style="background:var(--app-primary); width:0%; height:100%; transition:width 0.2s linear;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TAB 3: VACUNACIÓN Y SALUD -->
+                    <div id="tab-vax" class="tab-view">
+                        <div class="dash-section" style="padding-top: 90px;">
+                            <h3 class="emotional-title">Calendario y Salud</h3>
+                            <p class="emotional-desc">Control absoluto de su expediente y agenda.</p>
+                            
+                            <div style="background:white; border-radius:15px; padding:15px; border:1px solid var(--app-border); margin-bottom:25px;">
+                                <h4 style="font-size:1rem; margin-bottom:10px; color:var(--app-primary);"><i class="fa-solid fa-syringe"></i> Próximas Vacunas</h4>
+                                <div style="display:flex; justify-content:space-between; border-bottom:1px solid #f1f5f9; padding-bottom:8px; margin-bottom:8px;">
+                                    <span style="font-weight:600; font-size:0.85rem;">Rabia (Recordatorio)</span>
+                                    <span style="color:var(--app-text-muted); font-size:0.85rem;">15 Mayo, 2026</span>
+                                </div>
+                                <div style="display:flex; justify-content:space-between; border-bottom:1px solid #f1f5f9; padding-bottom:8px; margin-bottom:8px;">
+                                    <span style="font-weight:600; font-size:0.85rem;">Polivalente Anual</span>
+                                    <span style="color:var(--app-danger); font-size:0.85rem; font-weight:700;">¡Vence Hoy!</span>
+                                </div>
+                                <button class="app-btn secondary" style="padding:10px; font-size:0.85rem; margin-top:10px;" onclick="bookOption('Renovar Polivalente', 35.00)">Programar Vacuna Ahora</button>
+                            </div>
+
+                            <div style="background:white; border-radius:15px; padding:15px; border:1px solid var(--app-border); margin-bottom:25px;">
+                                <h4 style="font-size:1rem; margin-bottom:10px; color:var(--app-success);"><i class="fa-solid fa-calendar-check"></i> Citas Reservadas</h4>
+                                <div style="display:flex; align-items:center; gap:10px; background:#f8fafc; padding:10px; border-radius:10px;">
+                                    <div style="background:var(--app-success); color:white; width:40px; height:40px; border-radius:10px; display:flex; align-items:center; justify-content:center; text-align:center; font-weight:700; line-height:1.1; font-size:0.8rem;">22<br>ABR</div>
+                                    <div style="flex:1;">
+                                        <div style="font-weight:700; font-size:0.9rem;">Revisión Pediátrica</div>
+                                        <div style="font-size:0.75rem; color:var(--app-text-muted);">Clínica Veterinaria CUDI Centro</div>
+                                    </div>
+                                    <i class="fa-solid fa-chevron-right" style="color:#ccc;"></i>
+                                </div>
+                            </div>
+                            
+                            <!-- Gráfico 4: Stacked Bar (Temperaturas) -->
+                            <div class="chart-box">
+                                <h5>Curva Térmica Post-Vacunación</h5>
+                                <canvas id="chart-stacked-temp"></canvas>
+                            </div>
+
+                            <!-- Gráfico 5: Pie (Alertas resueltas) -->
+                            <div class="chart-box">
+                                <h5>Desglose Inmunológico</h5>
+                                <canvas id="chart-pie-alerts"></canvas>
+                            </div>
+
+                             <!-- Gráfico 6: Area (Estrés) -->
+                            <div class="chart-box">
+                                <h5>Niveles de Ansiedad en Consulta</h5>
+                                <canvas id="chart-area-stress"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TAB 4: STORE / ECOMMERCE (UNIFICADO CON LA HOME) -->
+                    <div id="tab-store" class="tab-view">
+                        <div class="dash-section" style="padding-top: 90px;">
+                            <h3 class="emotional-title">Tienda Inteligente</h3>
+                            <p class="emotional-desc">Todo el catálogo de productos y servicios CUDI integrados en tu aplicación móvil.</p>
+
+                            <div class="ecommerce-app-grid">
+                                <div class="eco-card" onclick="bookOption('Collar Inteligente CUDI', 89.50)" style="background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('cudi-smart-collar-geolocalizacion-gps.png'); background-size:cover;">
+                                    <i class="fa-solid fa-microchip"></i>
+                                    <h6>Collar Hardware</h6>
+                                    <span>Ver Dispositivo</span>
+                                </div>
+                                <div class="eco-card" onclick="bookOption('Suscripción Premium', 30.00)" style="background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('dashboard-biometrico-gemelo-digital-mascotas.png'); background-size:cover;">
+                                    <i class="fa-solid fa-star"></i>
+                                    <h6>Planes IA</h6>
+                                    <span>Plan Mensual</span>
+                                </div>
+                                <div class="eco-card" onclick="bookOption('Seguro Familiar Base', 35.00)" style="background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('seguros-gastos-veterinarios-perros-gatos.png'); background-size:cover;">
+                                    <i class="fa-solid fa-shield-heart"></i>
+                                    <h6>Seguros Mascotas</h6>
+                                    <span>Cobertura Total</span>
+                                </div>
+                                <div class="eco-card" onclick="bookOption('Consulta Clínica CUDI', 60.00)" style="background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('clinica-veterinaria-red-socios.png'); background-size:cover;">
+                                    <i class="fa-solid fa-user-doctor" style="color:#ef4444;"></i>
+                                    <h6>Clínica 24/7</h6>
+                                    <span>Reservar Cita</span>
+                                </div>
+                                <div class="eco-card" onclick="bookOption('Urban Pet Walkers', 15.00)" style="background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('rutas-paseos-seguros-barcelona.png'); background-size:cover;">
+                                    <i class="fa-solid fa-person-walking-with-cane" style="color:#d97706;"></i>
+                                    <h6>Paseadores Activos</h6>
+                                    <span>Red de Expertos</span>
+                                </div>
+                                <div class="eco-card" onclick="bookOption('EcoPet Organic', 45.00)" style="background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('dietas-personalizadas-longevidad-mascotas.png'); background-size:cover;">
+                                    <i class="fa-solid fa-bone" style="color:#15803d;"></i>
+                                    <h6>Alimentación</h6>
+                                    <span>Suscripción Pienso</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TAB 5: ACTIVIDAD Y NUTRICION -->
+                    <div id="tab-act" class="tab-view">
+                        <div class="dash-section" style="padding-top: 90px;">
+                            <h3 class="emotional-title">Balance Diario</h3>
+
+                            <!-- Gráfico 7: Bar (Semanal) -->
+                            <div class="chart-box">
+                                <h5>Kilómetros Recorridos (Semana)</h5>
+                                <canvas id="chart-bar-weekly"></canvas>
+                            </div>
+
+                            <!-- Gráfico 8: Doughnut (Dieta) -->
+                            <div class="chart-box">
+                                <h5>Consumo de Macronutrientes</h5>
+                                <canvas id="chart-doughnut-diet"></canvas>
+                            </div>
+
+                            <!-- Gráfico 9: Bubble (Paseos) -->
+                            <div class="chart-box">
+                                <h5>Interacciones en Paseos</h5>
+                                <canvas id="chart-bubble-social"></canvas>
+                            </div>
+
+                            <!-- Gráfico 10: Scatter (Rutas) -->
+                            <div class="chart-box">
+                                <h5>Anomalías Geográficas</h5>
+                                <canvas id="chart-scatter-geo"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- NAVEGACIÓN INFERIOR DE 5 TABS -->
+                    <div class="bottom-nav">
+                        <div class="nav-item active" onclick="switchNav('dash', this)"><i class="fa-solid fa-heart-pulse"></i><span>Bio</span></div>
+                        <div class="nav-item" onclick="switchNav('sim', this)"><i class="fa-solid fa-microchip"></i><span>IA</span></div>
+                        <div class="nav-item" onclick="switchNav('vax', this)"><i class="fa-solid fa-syringe"></i><span>Salud</span></div>
+                        <div class="nav-item" onclick="switchNav('store', this)"><i class="fa-solid fa-bag-shopping"></i><span>Store</span></div>
+                        <div class="nav-item" onclick="switchNav('act', this)"><i class="fa-solid fa-bone"></i><span>Diario</span></div>
+                    </div>
+                </div>
+
+                <!-- PANTALLA ALERTA DINÁMICA -->
+                <div id="screen-alert" class="app-screen pad-screen" style="background:#fff; z-index:50; padding-bottom:15px; border-top:10px solid var(--app-primary);">
+                    <h3 class="emotional-title" id="alert-title">Sugerencia AI</h3>
+                    <p class="emotional-desc" id="alert-desc" style="font-size:0.9rem;">Analizando requerimientos emocionales...</p>
+                    
+                    <div id="partner-options-container" style="display:flex; flex-direction:column; gap:10px; flex:1; overflow-y:auto; padding-bottom:10px;">
+                        <!-- Cards injected via JS -->
+                    </div>
+
+                    <div class="bottom-btn-container" style="padding:10px 0 0 0; margin-top:auto; box-shadow:none;">
+                        <button class="app-btn secondary no-border" onclick="closeDynamicAlert()">Descartar opciones por ahora</button>
+                    </div>
+                </div>
+
+                <!-- CHECKOUT MODAL UNIFICADO -->
+                <div id="checkout-modal" class="modal-overlay">
+                    <div class="modal-content">
+                        <h3 style="font-family:var(--font-heading); color:var(--app-text);">CUDI Checkout Omni-canal</h3>
+                        <p style="color:var(--app-text-muted); font-size:0.9rem;">Cesta unificada de todo CUDI:</p>
+                        <div class="price-tag" id="checkout-price">0.00 €</div>
+                        <button class="app-btn primary" id="btn-pay" onclick="processDemoPayment()">Confirmar y Proteger</button>
+                        <button class="app-btn secondary" style="margin-top:10px;" onclick="closeModal('checkout-modal')">Volver</button>
+                    </div>
+                </div>
+
+                <!-- SUCCESS MESSAGE -->
+                <div id="success-modal" class="modal-overlay">
+                    <div class="modal-content" style="text-align:center;">
+                        <div style="font-size:3rem; color:var(--app-success);"><i class="fa-solid fa-check-circle"></i></div>
+                        <h3 class="emotional-title">Todo listo para él</h3>
+                        <p class="emotional-desc">Transacción B2B automática procesada exitosamente.</p>
+                        <button class="app-btn secondary" onclick="location.reload()">Restablecer Demo</button>
+                    </div>
+                </div>
+
+                <!-- IN-APP AI CHAT WIDGET -->
+                <div class="in-app-chat-widget" style="position:absolute; bottom:95px; right:15px; z-index:900;">
+                    <div class="cudi-chat-btn" onclick="toggleInAppChat()" style="overflow:hidden; padding:3px; background:white; width:55px; height:55px; border-radius:50%; box-shadow:0 10px 25px rgba(0,0,0,0.25); border: 2px solid var(--app-primary); cursor:pointer;">
+                        <img src="logo.jpeg" alt="CUDI AI" style="width:100%; height:100%; object-fit:contain; border-radius:50%;">
+                    </div>
+                    <div class="cudi-chat-panel" id="in-app-chat-panel" style="display:none; position:absolute; bottom:65px; right:0; width:300px; background:white; border-radius:20px; box-shadow:0 15px 35px rgba(0,0,0,0.2); overflow:hidden; border:1px solid #eee;">
+                        <div class="chat-panel-header" style="background:var(--app-primary); color:white; padding:12px; position:relative;">
+                            <div class="title" style="font-weight:700; font-size:0.9rem;"><i class="fa-solid fa-shield-dog"></i> Asistente CUDI</div>
+                            <button onclick="toggleInAppChat()" style="position:absolute; top:12px; right:15px; background:transparent; border:none; color:white; cursor:pointer;"><i class="fa-solid fa-xmark"></i></button>
+                        </div>
+                        <div class="chat-panel-body" id="in-app-chat-body" style="height:250px; padding:15px; overflow-y:auto; background:#f8fafc;">
+                            <div style="background:white; padding:10px; border-radius:12px; margin-bottom:10px; font-size:0.85rem; color:#333; border:1px solid #eee; border-top-left-radius:0;">
+                                ¡Hola! Estoy aquí mismo. ¿Tienes alguna duda mientras navegas por la aplicación?
+                            </div>
+                        </div>
+                        <div class="chat-panel-footer" style="padding:10px; background:white; border-top:1px solid #eee; display:flex; gap:8px;">
+                            <input type="text" id="in-app-chat-input" placeholder="Pregunta algo..." onkeypress="handleInAppChatEnter(event)" style="flex:1; padding:8px 12px; border-radius:20px; border:1px solid #ccc; outline:none; font-size:0.85rem;">
+                            <button onclick="sendInAppChatMessage()" style="background:var(--app-primary); color:white; border:none; width:35px; border-radius:50%; cursor:pointer;"><i class="fa-solid fa-paper-plane"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    div>
+    <!-- Scripts -->
+    <script src="app-demo.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Funciones para el Chat In-App (dentro del dispositivo)
+        function toggleInAppChat() {
+            const panel = document.getElementById('in-app-chat-panel');
+            if(panel) panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
+        }
+        function handleInAppChatEnter(e) { if(e.key==='Enter') sendInAppChatMessage(); }
+        function sendInAppChatMessage() {
+            const input = document.getElementById('in-app-chat-input');
+            const txt = input.value.trim();
+            if(!txt) return;
+            const body = document.getElementById('in-app-chat-body');
+            body.innerHTML += `<div style="background:var(--app-primary); color:white; padding:10px; border-radius:12px; margin-bottom:10px; font-size:0.85rem; border-top-right-radius:0; align-self:flex-end;">${txt}</div>`;
+            input.value = '';
+            body.scrollTop = body.scrollHeight;
+            
+            // Simular Typing con la lógica inteligente de script.js
+            const typingId = 'typing-' + Date.now();
+            body.innerHTML += `<div id="${typingId}" style="color:#64748b; font-size:0.8rem; margin-bottom:10px;"><i class="fa-solid fa-spinner fa-spin"></i> CUDI analizando...</div>`;
+            body.scrollTop = body.scrollHeight;
+
+            setTimeout(() => {
+                const typingEl = document.getElementById(typingId);
+                if(typingEl) typingEl.remove();
+                
+                // Usar la IA inteligente definida en script.js (generateAIResponse)
+                let reply = "";
+                if(typeof generateAIResponse === 'function') {
+                    reply = generateAIResponse(txt);
+                } else {
+                    reply = "Lo estoy registrando. ¿Quieres que veamos más a fondo su panel clínico?";
+                }
+
+                body.innerHTML += `<div style="background:white; padding:10px; border-radius:12px; margin-bottom:10px; font-size:0.85rem; color:#333; border:1px solid #eee; border-top-left-radius:0; box-shadow:0 2px 5px rgba(0,0,0,0.05);">${reply}</div>`;
+                body.scrollTop = body.scrollHeight;
+            }, 1500);
+        }
+    </script>
+
+    div>
+\n    
+    div>
+\n    
+    <!-- Global AI Chat Widget -->
+    <div class="cudi-chat-widget" style="position:fixed; bottom:30px; right:30px; z-index:9999;">
+        <div class="cudi-chat-btn" onclick="toggleAIChat()" style="overflow:hidden; padding:3px; background:white; width:65px; height:65px; border-radius:50%; box-shadow:0 10px 25px rgba(0,0,0,0.25); cursor:pointer; border: 3px solid #0077b6;">
+            <img src="logo.jpeg" alt="CUDI AI" style="width:100%; height:100%; object-fit:contain; border-radius:50%;">
+        </div>
+        <div class="cudi-chat-panel" id="cudi-chat-panel" style="display:none; position:absolute; bottom:85px; right:0; width:360px; background:white; border-radius:24px; box-shadow:0 20px 45px rgba(0,0,0,0.2); overflow:hidden; border:1px solid #e2e8f0; flex-direction:column;">
+            <div class="chat-panel-header" style="background:#0077b6; color:white; padding:18px; position:relative; display:flex; align-items:center;">
+                <div class="title" style="font-weight:800; font-size:1.05rem; flex:1;"><i class="fa-solid fa-shield-dog"></i> CUDI Triaje IA</div>
+                <div class="status" style="font-size:0.8rem; color:#e0f2fe; margin-right:30px; font-weight:600;"><span style="display:inline-block; width:8px; height:8px; background:#10b981; border-radius:50%; margin-right:5px;"></span>24/7 Activo</div>
+                
+                <!-- Pet Mascot Avatar Overlapping -->
+                <div style="position:absolute; top:-25px; right:-15px; width:75px; height:75px; border-radius:50%; border:4px solid #F8FAFC; overflow:hidden; background:white; z-index:10; box-shadow:0 10px 20px rgba(0,0,0,0.2);">
+                   <img src="avatar-mascota-perfil-gemelo-digital.png" alt="Perfil" style="width:100%; height:100%; object-fit:cover;">
+                </div>
+
+                <button onclick="toggleAIChat()" style="position:absolute; top:18px; right:15px; background:transparent; border:none; color:white; cursor:pointer; font-size:1.1rem;"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <div class="chat-panel-body" id="chat-body" style="height:320px; padding:15px; overflow-y:auto; background:#f8fafc; display:flex; flex-direction:column;">
+                <!-- Initial Greeting is now handled by script.js when opened, but fallback here: -->
+                <div style="background:white; padding:12px 15px; border-radius:15px; margin-bottom:12px; font-size:0.9rem; color:#333; border:1px solid #f1f5f9; border-top-left-radius:0; box-shadow:0 2px 5px rgba(0,0,0,0.02); line-height:1.5;">
+                    ¡Hola! Soy CUDI, tu asistente preventivo. Estoy conectado a la telemetría inteligente.<br><br><b>¿Qué necesitas?</b> Puedes probar palabras como *"vómito"*, *"fiebre"*, *"comprar"*, o *"paseo"*.
+                </div>
+            </div>
+            
+            <div class="chat-panel-footer" style="padding:15px; background:white; border-top:1px solid #f1f5f9; display:flex; gap:10px; align-items:center;">
+                <input type="text" id="chat-input" placeholder="Pregúntame sobre su salud..." onkeypress="handleChatEnter(event)" style="flex:1; padding:12px 16px; border-radius:30px; border:1px solid #cbd5e1; outline:none; font-family:inherit; font-size:0.9rem; background:#f8fafc; transition:all 0.3s;" onfocus="this.style.borderColor='#0077b6'; this.style.background='white';" onblur="this.style.borderColor='#cbd5e1'; this.style.background='#f8fafc';">
+                <button onclick="sendChatMessage()" style="background:#0077b6; color:white; border:none; width:45px; height:45px; border-radius:50%; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"><i class="fa-solid fa-paper-plane" style="font-size:1.1rem; margin-left:-2px;"></i></button>
+            </div>
+        </div>
+    </div>
+\n    </body>
+</html>

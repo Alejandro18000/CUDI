@@ -1,0 +1,16 @@
+# .gitignore para Ecosistema CUDI
+# Ignorar archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Ignorar archivos temporales de Python (por si se ejecutan otros scripts)
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Ignorar archivos de logs
+*.log
+
+# Ignorar archivos de configuración local
+.vscode/
+.idea/
