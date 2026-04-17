@@ -369,11 +369,52 @@ function processDemoPayment() {
         document.getElementById('success-modal').classList.add('active');
         appCart = []; 
         saveAppCart();
+
+        // Auto-cerrar el éxito después de 4s y resetear SIN recargar página
+        setTimeout(resetSimulationState, 4000);
     }, 2500);
 }
 
 function closeModal(modalId) {
     document.getElementById(modalId).classList.remove('active');
+}
+
+// ==== RESET PARCIAL: solo limpia la simulación, sin recargar la página ====
+function resetSimulationState() {
+    // Cerrar modales
+    closeModal('success-modal');
+    closeModal('checkout-modal');
+    document.getElementById('screen-alert')?.classList.remove('active');
+
+    // Resetear barra de progreso e interfaz de escaneo
+    const progressBar = document.getElementById('scan-progress');
+    if (progressBar) progressBar.style.width = '0%';
+    const scanningUI = document.getElementById('ai-scanning-ui');
+    if (scanningUI) scanningUI.style.display = 'none';
+    const statusText = document.getElementById('scanning-status');
+    if (statusText) statusText.innerText = 'Analizando telemetría...';
+
+    // Resetear botón de pago
+    const btnPay = document.getElementById('btn-pay');
+    if (btnPay) {
+        btnPay.innerHTML = 'Confirmar y Proteger';
+        btnPay.disabled = false;
+    }
+
+    // Vaciar carrito interno (sin afectar al carrito global del sitio)
+    appCart = [];
+    saveAppCart();
+
+    // Volver al tab de IA para otra simulación
+    const simTab = document.querySelector('.nav-item:nth-child(2)');
+    if (simTab) switchNav('sim', simTab);
+
+    // Toast de confirmación
+    setTimeout(() => {
+        if (typeof showCudiToast === 'function') {
+            showCudiToast('¡Pago procesado! Puedes simular otro escenario.');
+        }
+    }, 300);
 }
 
 // ==== SISTEMA DE NOTIFICACIONES SIMULADAS ====

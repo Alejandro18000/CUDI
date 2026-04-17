@@ -450,9 +450,15 @@
                 <div id="success-modal" class="modal-overlay">
                     <div class="modal-content" style="text-align:center;">
                         <div style="font-size:3rem; color:var(--app-success);"><i class="fa-solid fa-check-circle"></i></div>
-                        <h3 class="emotional-title">Todo listo para él</h3>
+                        <h3 class="emotional-title">¡Todo listo para él!</h3>
                         <p class="emotional-desc">Transacción B2B automática procesada exitosamente.</p>
-                        <button class="app-btn secondary" onclick="location.reload()">Restablecer Demo</button>
+                        <p style="font-size:0.8rem; color:#94a3b8; margin-bottom:20px;">Volviendo automáticamente en unos segundos…</p>
+                        <button class="app-btn primary" onclick="resetSimulationState()" style="margin-bottom:10px;">
+                            <i class="fa-solid fa-play"></i> Simular otro escenario
+                        </button>
+                        <button class="app-btn secondary" onclick="resetSimulationState()">
+                            Cerrar y continuar
+                        </button>
                     </div>
                 </div>
 
