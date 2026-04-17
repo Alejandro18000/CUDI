@@ -1662,3 +1662,158 @@ section:nth-of-type(2) { animation-delay: 0.6s; }
 .timeline-node.active .node-text {
     color: var(--clr-text);
 }
+
+/* 
+   ==========================================================================
+   CUDI UNIVERSAL MOBILE & RESPONSIVE SYSTEM
+   ========================================================================== 
+*/
+
+@media (max-width: 992px) {
+    /* Global Reset for Mobile */
+    .container {
+        width: 100% !important;
+        padding: 0 20px !important;
+        max-width: 100% !important;
+        min-width: auto !important;
+    }
+
+    /* Universal Media Resizer */
+    img, video, canvas, svg {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+
+    /* Hide Desktop Nav - Show Mobile Hub */
+    .nav-links-island, .nav-search-island, .top-bar-refined {
+        display: none !important;
+    }
+
+    .menu-trigger-mobile {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        background: var(--clr-primary);
+        color: white;
+        width: 45px;
+        height: 45px;
+        border-radius: 12px;
+        border: none;
+        font-size: 1.2rem;
+        cursor: pointer;
+        box-shadow: 0 8px 15px rgba(0, 119, 182, 0.2);
+    }
+
+    .nav-capsule {
+        padding: 10px 15px !important;
+        justify-content: space-between !important;
+    }
+
+    /* Grid & Flex Stacking */
+    .footer-grid, .grid, .flex, .roi-card-grid, .features-grid, .presentation-wrapper {
+        grid-template-columns: 1fr !important;
+        display: block !important;
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* Typography Adjustments */
+    h1 { font-size: 2.2rem !important; }
+    h2 { font-size: 1.8rem !important; }
+
+    /* Side Cart Mobile optimization */
+    .side-cart {
+        width: 90% !important;
+        right: 5% !important;
+        left: 5% !important;
+        height: 85vh !important;
+        top: 7.5vh !important;
+    }
+
+    /* ROI Dashboard Mobile */
+    .roi-dashboard-premium {
+        padding: 30px 20px !important;
+        border-radius: 24px !important;
+    }
+
+    .chart-projection-container {
+        height: 250px !important;
+        padding: 20px !important;
+        gap: 15px !important;
+    }
+
+    .roi-card-value {
+        font-size: 2.2rem !important;
+    }
+}
+
+/* Mobile Drawer Styles */
+.mobile-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 320px;
+    height: 100vh;
+    background: white;
+    z-index: 10000;
+    transform: translateX(100%);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: -20px 0 60px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    padding: 40px 30px;
+}
+
+.mobile-drawer.active {
+    transform: translateX(0);
+}
+
+.drawer-close {
+    align-self: flex-end;
+    background: #f1f5f9;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.drawer-links {
+    list-style: none;
+    margin-top: 30px;
+}
+
+.drawer-links li {
+    margin-bottom: 25px;
+}
+
+.drawer-links a {
+    text-decoration: none;
+    color: var(--clr-text);
+    font-size: 1.2rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: color 0.3s;
+}
+
+.drawer-links a:hover {
+    color: var(--clr-primary);
+}
+
+/* App Demo Fullscreen Mobile Fix */
+@media (max-width: 600px) {
+    .gemelo-digital-demo-container {
+        height: 100dvh !important;
+        margin: 0 !important;
+        border-radius: 0 !important;
+    }
+    
+    .demo-frame {
+        height: 100% !important;
+        border: none !important;
+    }
+}

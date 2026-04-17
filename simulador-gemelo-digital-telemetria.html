@@ -137,10 +137,15 @@
             </div>
         </div>
 
+        <!-- Botón flotante "Salir de Demo" - solo visible en móvil -->
+        <a href="index.html" id="demo-exit-btn" style="display:none; position:fixed; top:12px; left:12px; z-index:10001; background:rgba(15,23,42,0.85); color:white; padding:8px 14px; border-radius:50px; font-size:0.8rem; font-weight:700; text-decoration:none; backdrop-filter:blur(10px); align-items:center; gap:7px; border:1px solid rgba(255,255,255,0.15); box-shadow:0 4px 15px rgba(0,0,0,0.2); transition:all 0.2s;">
+            <i class="fa-solid fa-arrow-left"></i> Salir
+        </a>
+
         <div class="mobile-device">
-            <div class="top-status-bar" style="display:none;" id="global-app-nav">
+            <div class="top-status-bar" id="global-app-nav">
                 <i class="fa-solid fa-signal" style="color:var(--app-success);"></i> CUDI Sync
-                <div style="flex:1;"></div>
+                <span id="app-current-section" style="flex:1; text-align:center; font-size:0.75rem; color:#64748b; font-weight:600;">Bio-Dashboard</span>
                 <div class="app-notification-icon" onclick="toggleNotifications()" style="position:relative; cursor:pointer; margin-right:15px; font-size:1.1rem;">
                     <i class="fa-solid fa-bell"></i>
                     <span id="notification-dot" style="position:absolute; top:-2px; right:-2px; width:8px; height:8px; background:#ef4444; border-radius:50%; display:none; border:1px solid white;"></span>
@@ -414,6 +419,10 @@
 
                 <!-- PANTALLA ALERTA DINÁMICA -->
                 <div id="screen-alert" class="app-screen pad-screen" style="background:#fff; z-index:50; padding-bottom:15px; border-top:10px solid var(--app-primary);">
+                    <!-- Botón retroceso en pantalla de alerta -->
+                    <button onclick="closeDynamicAlert()" style="display:inline-flex; align-items:center; gap:8px; background:#f1f5f9; border:none; color:#475569; font-weight:700; font-size:0.85rem; padding:10px 16px; border-radius:50px; cursor:pointer; margin-bottom:20px; transition:all 0.2s;" onmouseover="this.style.background='#e2e8f0'" onmouseout="this.style.background='#f1f5f9'">
+                        <i class="fa-solid fa-arrow-left"></i> Volver al panel
+                    </button>
                     <h3 class="emotional-title" id="alert-title">Sugerencia AI</h3>
                     <p class="emotional-desc" id="alert-desc" style="font-size:0.9rem;">Analizando requerimientos emocionales...</p>
                     
@@ -507,7 +516,81 @@
                 body.innerHTML += `<div style="background:white; padding:10px; border-radius:12px; margin-bottom:10px; font-size:0.85rem; color:#333; border:1px solid #eee; border-top-left-radius:0; box-shadow:0 2px 5px rgba(0,0,0,0.05);">${reply}</div>`;
                 body.scrollTop = body.scrollHeight;
             }, 1500);
+    </script>
+
+    <script>
+        // Funciones para el Chat In-App (dentro del dispositivo)
+        function toggleInAppChat() {
+            const panel = document.getElementById('in-app-chat-panel');
+            if(panel) panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
         }
+        function handleInAppChatEnter(e) { if(e.key==='Enter') sendInAppChatMessage(); }
+        function sendInAppChatMessage() {
+            const input = document.getElementById('in-app-chat-input');
+            const txt = input.value.trim();
+            if(!txt) return;
+            const body = document.getElementById('in-app-chat-body');
+            body.innerHTML += `<div style="background:var(--app-primary); color:white; padding:10px; border-radius:12px; margin-bottom:10px; font-size:0.85rem; border-top-right-radius:0; align-self:flex-end;">${txt}</div>`;
+            input.value = '';
+            body.scrollTop = body.scrollHeight;
+            
+            const typingId = 'typing-' + Date.now();
+            body.innerHTML += `<div id="${typingId}" style="color:#64748b; font-size:0.8rem; margin-bottom:10px;"><i class="fa-solid fa-spinner fa-spin"></i> CUDI analizando...</div>`;
+            body.scrollTop = body.scrollHeight;
+
+            setTimeout(() => {
+                const typingEl = document.getElementById(typingId);
+                if(typingEl) typingEl.remove();
+                
+                let reply = "";
+                if(typeof generateAIResponse === 'function') {
+                    reply = generateAIResponse(txt);
+                } else {
+                    reply = "Lo estoy registrando. ¿Quieres que veamos más a fondo su panel clínico?";
+                }
+
+                body.innerHTML += `<div style="background:white; padding:10px; border-radius:12px; margin-bottom:10px; font-size:0.85rem; color:#333; border:1px solid #eee; border-top-left-radius:0; box-shadow:0 2px 5px rgba(0,0,0,0.05);">${reply}</div>`;
+                body.scrollTop = body.scrollHeight;
+            }, 1500);
+        }
+
+        // ── Botón "Salir de Demo" solo en móvil ──
+        (function initDemoNav() {
+            const exitBtn = document.getElementById('demo-exit-btn');
+            const navBar  = document.getElementById('global-app-nav');
+
+            function applyDemoMode() {
+                if (window.innerWidth < 992) {
+                    if (exitBtn) exitBtn.style.display = 'flex';
+                    if (navBar)  navBar.style.display = 'flex';
+                } else {
+                    if (exitBtn) exitBtn.style.display = 'none';
+                    // En desktop la barra de estado se muestra cuando la demo está activa
+                    if (navBar)  navBar.style.display = document.getElementById('screen-main')?.classList.contains('active') ? 'flex' : 'none';
+                }
+            }
+
+            window.addEventListener('resize', applyDemoMode);
+            document.addEventListener('DOMContentLoaded', applyDemoMode);
+            window.addEventListener('load', applyDemoMode);
+        })();
+
+        // ── Breadcrumb de sección activa ──
+        const SECTION_LABELS = {
+            'dash':  '📊 Bio-Dashboard',
+            'sim':   '🤖 Triaje IA',
+            'vax':   '💉 Calendario',
+            'store': '🛍️ Tienda',
+            'act':   '🏃 Diario'
+        };
+
+        // Parchear switchNav para actualizar el breadcrumb
+        const _origSwitchNav = window.switchNav;
+        window.switchNav = function(tab, el) {
+            if (typeof _origSwitchNav === 'function') _origSwitchNav(tab, el);
+            const label = document.getElementById('app-current-section');
+            if (label && SECTION_LABELS[tab]) label.textContent = SECTION_LABELS[tab];
+        };
     </script>
 
 

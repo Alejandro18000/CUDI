@@ -827,13 +827,136 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// --- CUDI MOBILE NAVIGATION ---
-function toggleMobileMenu() {
-    const drawer = document.getElementById('mobile-drawer');
-    if (drawer) {
-        drawer.classList.toggle('active');
+// --- CUDI MOBILE NAVIGATION SYSTEM ---
+function initMobileEnvironment() {
+    // 1. Inyectar Mobile Drawer si no existe
+    if (!document.getElementById('mobile-drawer')) {
+        const drawer = document.createElement('div');
+        drawer.id = 'mobile-drawer';
+        drawer.className = 'mobile-drawer';
+        drawer.innerHTML = `
+            <button class="drawer-close" onclick="toggleMobileMenu()"><i class="fa-solid fa-xmark"></i></button>
+            <div style="text-align:center; margin-bottom:30px;">
+                <img src="logo.jpeg" alt="CUDI" style="height:60px; border-radius:10px;">
+            </div>
+            <ul class="drawer-links">
+                <li><a href="index.html" onclick="toggleMobileMenu()"><i class="fa-solid fa-house"></i> Inicio</a></li>
+                <li><a href="smart-collar-aventuras-sin-sustos.html" onclick="toggleMobileMenu()"><i class="fa-solid fa-rocket"></i> Lanzamiento</a></li>
+                <li><a href="index.html#store-grid" onclick="toggleMobileMenu()"><i class="fa-solid fa-store"></i> Tienda</a></li>
+                <li><a href="index.html#suscripciones" onclick="toggleMobileMenu()"><i class="fa-solid fa-shield-cat"></i> Planes</a></li>
+                <li><a href="red-socios-clinicas-veterinarias.html" onclick="toggleMobileMenu()"><i class="fa-solid fa-handshake"></i> Red de Socios</a></li>
+                <li><a href="simulador-gemelo-digital-telemetria.html" style="color:#10b981; font-weight:800;" onclick="toggleMobileMenu()"><i class="fa-solid fa-mobile-screen"></i> App Demo</a></li>
+            </ul>
+        `;
+        document.body.appendChild(drawer);
+    }
+
+    // 2. FUERZA BRUTA RESPONSIVA: Inyectar CSS de última instancia
+    applyMobileShockforce();
+}
+
+function applyMobileShockforce() {
+    if (window.innerWidth < 992) {
+        // Forzar meta viewport
+        let meta = document.querySelector('meta[name="viewport"]');
+        if (!meta) {
+            meta = document.createElement('meta');
+            meta.name = "viewport";
+            document.head.appendChild(meta);
+        }
+        meta.content = "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0";
+
+        // Inyectar Estilos de Máxima Prioridad - solo aplica en móvil
+        if (!document.getElementById('cudi-mobile-force-css')) {
+            const style = document.createElement('style');
+            style.id = 'cudi-mobile-force-css';
+            // IMPORTANTE: No usamos * { max-width } globalmente para no romper Chart.js en desktop
+            style.innerHTML = `
+                body { overflow-x: hidden !important; width: 100vw !important; position: relative !important; }
+                html { overflow-x: hidden !important; }
+                img, video, svg, table { max-width: 100% !important; box-sizing: border-box !important; }
+                .presentation-wrapper { display: block !important; width: 100% !important; padding: 0 !important; margin: 0 !important; overflow: hidden !important; }
+                .presentation-info { width: 100% !important; padding: 40px 20px !important; text-align: center !important; box-sizing: border-box !important; }
+
+                /* Quitar mockup del teléfono en móvil, mantener contenido */
+                .mobile-device { 
+                    width: 100vw !important; 
+                    height: 100dvh !important; 
+                    border-radius: 0 !important; 
+                    border: none !important; 
+                    padding: 0 !important; 
+                    margin: 0 !important; 
+                    background: #F4F7FB !important; 
+                    box-shadow: none !important; 
+                    flex-shrink: 0 !important;
+                    position: relative !important;
+                }
+                .mobile-device::before { display: none !important; }
+                .mobile-screen { border-radius: 0 !important; width: 100% !important; height: 100% !important; }
+
+                /* Barra de estado y nav inferior */
+                .top-status-bar { 
+                    position: fixed !important;
+                    width: calc(100% - 30px) !important; 
+                    left: 15px !important; 
+                    top: 15px !important; 
+                    z-index: 9000 !important;
+                }
+                .bottom-nav {
+                    border-radius: 0 !important;
+                    border-bottom-left-radius: 0 !important;
+                    border-bottom-right-radius: 0 !important;
+                    padding-bottom: env(safe-area-inset-bottom, 15px) !important;
+                }
+
+                /* Navbar del sitio en móvil */
+                .navbar-island { 
+                    width: 100% !important; 
+                    left: 0 !important; 
+                    right: 0 !important; 
+                    border-radius: 0 !important; 
+                    top: 0 !important;
+                    margin: 0 !important; 
+                    position: fixed !important; 
+                }
+                .nav-capsule { border-radius: 0 !important; padding: 10px 15px !important; }
+
+                /* Canvas en móvil */
+                canvas { max-width: 100% !important; }
+
+                /* Anchos fijos comunes que causaban el desbordamiento de 915px */
+                [style*="min-width: 350px"], [style*="min-width:350px"],
+                [style*="min-width: 300px"], [style*="min-width:300px"],
+                [style*="width: 900px"], [style*="width:900px"],
+                [style*="width: 800px"], [style*="width:800px"],
+                [style*="width: 600px"], [style*="width:600px"],
+                [style*="width: 420px"], [style*="width:420px"] {
+                    width: 100% !important;
+                    min-width: auto !important;
+                    max-width: 100% !important;
+                    box-sizing: border-box !important;
+                }
+            `;
+            document.head.appendChild(style);
+        }
     }
 }
+
+function toggleMobileMenu() {
+    const drawer = document.getElementById('mobile-drawer');
+    const overlay = document.getElementById('cart-overlay'); // Reusar overlay para el menú
+    if (drawer) {
+        drawer.classList.toggle('active');
+        if (overlay) overlay.classList.toggle('active');
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    initMobileEnvironment();
+    window.addEventListener('resize', normalizeResponsiveLayout);
+    // Ejecutar inmediatamente después de cargar todos los recursos para sobreescribir estilos inyectados por otros scripts
+    window.addEventListener('load', normalizeResponsiveLayout);
+});
 
 // Proteccin Anti-Robo: Bloqueo de men contextual
 document.addEventListener('contextmenu', e => {
