@@ -170,62 +170,86 @@
 
             <div class="mobile-screen">
                 
-                <!-- PANTALLA 1: ONBOARDING EMPÁTICO -->
+                <!-- PANTALLA 1: ONBOARDING EMPÁTICo DINÁMICO -->
                 <div id="screen-1" class="app-screen active" style="padding:0; overflow-y:auto; background: #fdfdfd;">
-                    <div class="onboarding-image" style="background-image: url('bienestar-integral-perros-gatos.png'); background-position:top center; background-size:cover; height:280px; position:relative;">
+                    <div class="onboarding-image" id="onboarding-hero" style="background-image: url('bienestar-integral-perros-gatos.png'); background-position:top center; background-size:cover; height:260px; position:relative; transition: background-image 0.4s;">
                         <div style="position:absolute; bottom:0; left:0; right:0; height:80px; background:linear-gradient(to top, white, transparent);"></div>
                     </div>
                     <div class="form-container" style="padding:25px; z-index:2; position:relative; background:white; border-top-left-radius:30px; border-top-right-radius:30px; margin-top:-40px; box-shadow:0 -10px 20px rgba(0,0,0,0.05);">
-                        <h3 class="emotional-title" style="font-size:1.6rem; margin-bottom:5px;">Conociendo a tú Peludo</h3>
-                        <p class="emotional-desc" style="font-size:0.9rem; margin-bottom:20px;">Ayúdanos a personalizar su perfil.</p>
+                        <h3 class="emotional-title" style="font-size:1.5rem; margin-bottom:5px;">Conociendo a tu Peludo 🐾</h3>
+                        <p class="emotional-desc" style="font-size:0.85rem; margin-bottom:18px;">Personalizamos cada recomendación a su especie, edad y estilo de vida.</p>
                         
+                        <!-- Nombre -->
                         <div class="input-group">
                             <label>Nombre de tu compañero</label>
                             <input type="text" id="pet-name" placeholder="Ej. Luna" class="app-input" onkeyup="checkRegistration()">
                         </div>
+
+                        <!-- Tipo + Peso -->
                         <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
                             <div class="input-group">
-                                <label>¿De quién hablamos?</label>
-                                <select id="pet-type" class="app-input" onchange="checkRegistration()">
+                                <label>¿Quién es?</label>
+                                <select id="pet-type" class="app-input" onchange="onPetTypeChange(); checkRegistration()">
                                     <option value="">Selecciona</option>
-                                    <option value="perro">Compañero Perruno 🐶</option>
-                                    <option value="gato">Compañero Gatuno 🐱</option>
+                                    <option value="perro">🐶 Perro</option>
+                                    <option value="gato">🐱 Gato</option>
                                 </select>
                             </div>
                             <div class="input-group">
-                                <label>Peso estimado (Kg)</label>
+                                <label>Peso (Kg)</label>
                                 <input type="number" id="pet-weight" placeholder="Ej. 8" class="app-input" onkeyup="checkRegistration()">
                             </div>
                         </div>
+
+                        <!-- Raza (dinámica por especie) -->
+                        <div class="input-group" id="breed-group" style="display:none;">
+                            <label id="breed-label">Raza</label>
+                            <select id="pet-breed" class="app-input">
+                                <option value="">Selecciona la raza</option>
+                            </select>
+                        </div>
+
+                        <!-- Etapa de Vida + Energía -->
                         <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
                             <div class="input-group">
                                 <label>Etapa de Vida</label>
-                                <select id="pet-age" class="app-input">
-                                    <option value="cachorro">Cachorro/Bebé</option>
-                                    <option value="adulto">Adulto</option>
-                                    <option value="senior">Abuelete (Senior)</option>
+                                <select id="pet-age" class="app-input" onchange="onPetAgeChange()">
+                                    <option value="cachorro">🍼 Cachorro/Bebé</option>
+                                    <option value="joven">⚡ Joven Activo</option>
+                                    <option value="adulto">🎯 Adulto</option>
+                                    <option value="senior">🧓 Senior</option>
                                 </select>
                             </div>
                             <div class="input-group">
                                 <label>Energía Diaria</label>
                                 <select id="pet-energy" class="app-input">
-                                    <option value="tranquilo">Muy Tranquilo</option>
-                                    <option value="moderado">Juguetón</option>
-                                    <option value="activo">Terremoto Imparable</option>
+                                    <option value="tranquilo">😴 Tranquilo</option>
+                                    <option value="moderado">🎾 Juguetón</option>
+                                    <option value="activo">⚡ Imparable</option>
                                 </select>
                             </div>
                         </div>
-                        <div class="input-group" style="margin-bottom:20px;">
-                            <label>Tipo de Alimentación Actual</label>
+
+                        <!-- Alimentación (dinámica por especie) -->
+                        <div class="input-group" style="margin-bottom:18px;">
+                            <label id="food-label">Tipo de Alimentación</label>
                             <select id="pet-food" class="app-input">
-                                <option value="pienso">Pienso / Croquetas secas</option>
+                                <option value="pienso">Pienso Seco</option>
                                 <option value="barf">Dieta Natural (BARF)</option>
                                 <option value="mixta">Mixta (Seco + Húmedo)</option>
                             </select>
                         </div>
+
+                        <!-- Cuidado especial (aparece según edad) -->
+                        <div class="input-group" id="special-care-group" style="display:none; margin-bottom:18px;">
+                            <label id="special-care-label">Cuidado Especial</label>
+                            <select id="pet-care" class="app-input">
+                                <option value="ninguno">Ninguno específico</option>
+                            </select>
+                        </div>
                         
                         <button class="app-btn primary" id="btn-next-1" disabled onclick="initializeDashboard()">
-                            Sincronizar Corazón CUDI <i class="fa-solid fa-heart-pulse"></i>
+                            Sincronizar con CUDI <i class="fa-solid fa-heart-pulse"></i>
                         </button>
                     </div>
                 </div>
@@ -335,42 +359,109 @@
                         </div>
                     </div>
 
-                    <!-- TAB 4: STORE / ECOMMERCE (UNIFICADO CON LA HOME) -->
+                    <!-- TAB 4: STORE / ECOMMERCE PROFUNDO -->
                     <div id="tab-store" class="tab-view">
-                        <div class="dash-section" style="padding-top: 90px;">
-                            <h3 class="emotional-title">Tienda Inteligente</h3>
-                            <p class="emotional-desc">Todo el catálogo de productos y servicios CUDI integrados en tu aplicación móvil.</p>
+                        <div class="dash-section" style="padding-top: 90px; padding-bottom:10px;">
+                            <h3 class="emotional-title" style="font-size:1.2rem;">Tienda CUDI</h3>
+                            <p class="emotional-desc" style="font-size:0.8rem;">Todo el catálogo integrado. Añade y gestiona tu pedido.</p>
 
-                            <div class="ecommerce-app-grid">
-                                <div class="eco-card" onclick="bookOption('Collar Inteligente CUDI', 89.50)" style="background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('cudi-smart-collar-geolocalizacion-gps.png'); background-size:cover;">
-                                    <i class="fa-solid fa-microchip"></i>
-                                    <h6>Collar Hardware</h6>
-                                    <span>Ver Dispositivo</span>
+                            <!-- Carrito inline -->
+                            <div id="inline-cart-panel" style="display:none; background:#f8fafc; border-radius:15px; padding:15px; margin-bottom:15px; border:1px solid #e2e8f0;">
+                                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                                    <span style="font-weight:800; font-size:0.9rem;"><i class="fa-solid fa-cart-shopping" style="color:var(--app-primary);"></i> Tu Cesta</span>
+                                    <button onclick="document.getElementById('inline-cart-panel').style.display='none'" style="background:none;border:none;cursor:pointer;color:#94a3b8;"><i class="fa-solid fa-xmark"></i></button>
                                 </div>
-                                <div class="eco-card" onclick="bookOption('Suscripción Premium', 30.00)" style="background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('dashboard-biometrico-gemelo-digital-mascotas.png'); background-size:cover;">
-                                    <i class="fa-solid fa-star"></i>
-                                    <h6>Planes IA</h6>
-                                    <span>Plan Mensual</span>
+                                <div id="inline-cart-items" style="max-height:150px; overflow-y:auto;"></div>
+                                <div style="border-top:1px solid #e2e8f0; padding-top:10px; margin-top:10px; display:flex; justify-content:space-between; align-items:center;">
+                                    <span style="font-weight:800; color:var(--app-primary);">Total: <span id="inline-cart-total">0.00 €</span></span>
+                                    <button class="app-btn primary" onclick="openFullCheckout()" style="padding:10px 18px; font-size:0.85rem; width:auto;">Pagar <i class="fa-solid fa-lock"></i></button>
                                 </div>
-                                <div class="eco-card" onclick="bookOption('Seguro Familiar Base', 35.00)" style="background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('seguros-gastos-veterinarios-perros-gatos.png'); background-size:cover;">
-                                    <i class="fa-solid fa-shield-heart"></i>
-                                    <h6>Seguros Mascotas</h6>
-                                    <span>Cobertura Total</span>
+                            </div>
+
+                            <!-- Botón flotante ver carrito -->
+                            <button id="cart-float-btn" onclick="toggleInlineCart()" style="display:none; width:100%; background:var(--app-primary); color:white; border:none; border-radius:12px; padding:12px; font-weight:700; font-size:0.85rem; cursor:pointer; margin-bottom:15px; display:flex; align-items:center; justify-content:center; gap:8px;">
+                                <i class="fa-solid fa-cart-shopping"></i> Ver Carrito (<span id="cart-float-count">0</span>)
+                            </button>
+
+                            <!-- Productos con imagen -->
+                            <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+                                <!-- Collar Smart -->
+                                <div style="background:white; border-radius:16px; overflow:hidden; border:1px solid #e2e8f0; box-shadow:0 4px 12px rgba(0,0,0,0.04);">
+                                    <div style="height:100px; background:url('cudi-smart-collar-geolocalizacion-gps.png') center/cover;"></div>
+                                    <div style="padding:12px;">
+                                        <div style="font-size:0.6rem; color:var(--app-primary); font-weight:700; text-transform:uppercase; margin-bottom:3px;">Hardware</div>
+                                        <div style="font-weight:800; font-size:0.85rem; margin-bottom:2px;">Collar Smart GPS</div>
+                                        <div style="font-size:0.75rem; color:#64748b; margin-bottom:8px;">Geolocalización 24/7</div>
+                                        <div style="display:flex; justify-content:space-between; align-items:center;">
+                                            <span style="font-weight:800; color:var(--app-primary);">89.50€</span>
+                                            <button onclick="addToAppCart('Collar Smart CUDI GPS', 89.50, 'cudi-smart-collar-geolocalizacion-gps.png')" style="background:var(--app-primary); color:white; border:none; border-radius:8px; padding:6px 10px; font-size:0.75rem; cursor:pointer;"><i class="fa-solid fa-plus"></i></button>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="eco-card" onclick="bookOption('Consulta Clínica CUDI', 60.00)" style="background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('clinica-veterinaria-red-socios.png'); background-size:cover;">
-                                    <i class="fa-solid fa-user-doctor" style="color:#ef4444;"></i>
-                                    <h6>Clínica 24/7</h6>
-                                    <span>Reservar Cita</span>
+                                <!-- Plan Premium -->
+                                <div style="background:white; border-radius:16px; overflow:hidden; border:1px solid #e2e8f0; box-shadow:0 4px 12px rgba(0,0,0,0.04);">
+                                    <div style="height:100px; background:url('dashboard-biometrico-gemelo-digital-mascotas.png') center/cover;"></div>
+                                    <div style="padding:12px;">
+                                        <div style="font-size:0.6rem; color:#10b981; font-weight:700; text-transform:uppercase; margin-bottom:3px;">Suscripción</div>
+                                        <div style="font-weight:800; font-size:0.85rem; margin-bottom:2px;">Premium Care IA</div>
+                                        <div style="font-size:0.75rem; color:#64748b; margin-bottom:8px;">Telemetría completa</div>
+                                        <div style="display:flex; justify-content:space-between; align-items:center;">
+                                            <span style="font-weight:800; color:var(--app-primary);">30€/mes</span>
+                                            <button onclick="addToAppCart('Plan Premium IA', 30.00, 'dashboard-biometrico-gemelo-digital-mascotas.png')" style="background:var(--app-primary); color:white; border:none; border-radius:8px; padding:6px 10px; font-size:0.75rem; cursor:pointer;"><i class="fa-solid fa-plus"></i></button>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="eco-card" onclick="bookOption('Urban Pet Walkers', 15.00)" style="background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('rutas-paseos-seguros-barcelona.png'); background-size:cover;">
-                                    <i class="fa-solid fa-person-walking-with-cane" style="color:#d97706;"></i>
-                                    <h6>Paseadores Activos</h6>
-                                    <span>Red de Expertos</span>
+                                <!-- Seguro Familiar -->
+                                <div style="background:white; border-radius:16px; overflow:hidden; border:1px solid #e2e8f0; box-shadow:0 4px 12px rgba(0,0,0,0.04);">
+                                    <div style="height:100px; background:url('seguros-gastos-veterinarios-perros-gatos.png') center/cover;"></div>
+                                    <div style="padding:12px;">
+                                        <div style="font-size:0.6rem; color:#ef4444; font-weight:700; text-transform:uppercase; margin-bottom:3px;">Seguro</div>
+                                        <div style="font-weight:800; font-size:0.85rem; margin-bottom:2px;">Familiar Base</div>
+                                        <div style="font-size:0.75rem; color:#64748b; margin-bottom:8px;">Cobertura veterinaria</div>
+                                        <div style="display:flex; justify-content:space-between; align-items:center;">
+                                            <span style="font-weight:800; color:var(--app-primary);">35€/mes</span>
+                                            <button onclick="addToAppCart('Seguro Familiar Base', 35.00, 'seguros-gastos-veterinarios-perros-gatos.png')" style="background:var(--app-primary); color:white; border:none; border-radius:8px; padding:6px 10px; font-size:0.75rem; cursor:pointer;"><i class="fa-solid fa-plus"></i></button>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="eco-card" onclick="bookOption('EcoPet Organic', 45.00)" style="background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('dietas-personalizadas-longevidad-mascotas.png'); background-size:cover;">
-                                    <i class="fa-solid fa-bone" style="color:#15803d;"></i>
-                                    <h6>Alimentación</h6>
-                                    <span>Suscripción Pienso</span>
+                                <!-- Consulta Clínica -->
+                                <div style="background:white; border-radius:16px; overflow:hidden; border:1px solid #e2e8f0; box-shadow:0 4px 12px rgba(0,0,0,0.04);">
+                                    <div style="height:100px; background:url('clinica-veterinaria-red-socios.png') center/cover;"></div>
+                                    <div style="padding:12px;">
+                                        <div style="font-size:0.6rem; color:#d97706; font-weight:700; text-transform:uppercase; margin-bottom:3px;">Clínica</div>
+                                        <div style="font-weight:800; font-size:0.85rem; margin-bottom:2px;">Consulta 24/7</div>
+                                        <div style="font-size:0.75rem; color:#64748b; margin-bottom:8px;">Red socios CUDI</div>
+                                        <div style="display:flex; justify-content:space-between; align-items:center;">
+                                            <span style="font-weight:800; color:var(--app-primary);">60€</span>
+                                            <button onclick="addToAppCart('Consulta Clínica CUDI', 60.00, 'clinica-veterinaria-red-socios.png')" style="background:var(--app-primary); color:white; border:none; border-radius:8px; padding:6px 10px; font-size:0.75rem; cursor:pointer;"><i class="fa-solid fa-plus"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Paseador VIP -->
+                                <div style="background:white; border-radius:16px; overflow:hidden; border:1px solid #e2e8f0; box-shadow:0 4px 12px rgba(0,0,0,0.04);">
+                                    <div style="height:100px; background:url('rutas-paseos-seguros-barcelona.png') center/cover;"></div>
+                                    <div style="padding:12px;">
+                                        <div style="font-size:0.6rem; color:#0ea5e9; font-weight:700; text-transform:uppercase; margin-bottom:3px;">Servicio</div>
+                                        <div style="font-weight:800; font-size:0.85rem; margin-bottom:2px;">Paseadores Red</div>
+                                        <div style="font-size:0.75rem; color:#64748b; margin-bottom:8px;">Urban Pet Walkers</div>
+                                        <div style="display:flex; justify-content:space-between; align-items:center;">
+                                            <span style="font-weight:800; color:var(--app-primary);">15€</span>
+                                            <button onclick="addToAppCart('Paseo Urbano Premium', 15.00, 'rutas-paseos-seguros-barcelona.png')" style="background:var(--app-primary); color:white; border:none; border-radius:8px; padding:6px 10px; font-size:0.75rem; cursor:pointer;"><i class="fa-solid fa-plus"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Nutrición Orgánica -->
+                                <div style="background:white; border-radius:16px; overflow:hidden; border:1px solid #e2e8f0; box-shadow:0 4px 12px rgba(0,0,0,0.04);">
+                                    <div style="height:100px; background:url('dietas-personalizadas-longevidad-mascotas.png') center/cover;"></div>
+                                    <div style="padding:12px;">
+                                        <div style="font-size:0.6rem; color:#10b981; font-weight:700; text-transform:uppercase; margin-bottom:3px;">Nutrición</div>
+                                        <div style="font-weight:800; font-size:0.85rem; margin-bottom:2px;">EcoPet Organic</div>
+                                        <div style="font-size:0.75rem; color:#64748b; margin-bottom:8px;">Suscripción mensual</div>
+                                        <div style="display:flex; justify-content:space-between; align-items:center;">
+                                            <span style="font-weight:800; color:var(--app-primary);">45€/mes</span>
+                                            <button onclick="addToAppCart('EcoPet Organic', 45.00, 'dietas-personalizadas-longevidad-mascotas.png')" style="background:var(--app-primary); color:white; border:none; border-radius:8px; padding:6px 10px; font-size:0.75rem; cursor:pointer;"><i class="fa-solid fa-plus"></i></button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -407,13 +498,83 @@
                         </div>
                     </div>
 
-                    <!-- NAVEGACIÓN INFERIOR DE 5 TABS -->
-                    <div class="bottom-nav">
+                    <!-- TAB 6: PERFIL DE LA MASCOTA -->
+                    <div id="tab-profile" class="tab-view">
+                        <div class="dash-section" style="padding-top:90px; padding-bottom:120px;">
+                            
+                            <!-- Avatar + nombre -->
+                            <div style="text-align:center; margin-bottom:25px;">
+                                <div id="pet-avatar-display" style="width:100px; height:100px; border-radius:50%; margin:0 auto 15px; border:4px solid var(--app-primary); background:url('avatar-mascota-perfil-gemelo-digital.png') center/cover; background-color:#e2e8f0; box-shadow:0 8px 24px rgba(0,119,182,0.2);"></div>
+                                <h3 id="profile-pet-name" style="font-family:var(--font-heading); font-weight:800; font-size:1.4rem; color:var(--app-text); margin-bottom:5px;">—</h3>
+                                <span id="profile-pet-badge" style="background:var(--app-primary); color:white; padding:4px 14px; border-radius:50px; font-size:0.75rem; font-weight:700;">Sin registrar</span>
+                            </div>
+
+                            <!-- Tarjeta datos -->
+                            <div style="background:white; border-radius:20px; padding:20px; border:1px solid var(--app-border); box-shadow:0 4px 12px rgba(0,0,0,0.04); margin-bottom:15px;">
+                                <h4 style="font-size:0.9rem; font-weight:800; color:var(--app-primary); margin-bottom:15px;"><i class="fa-solid fa-id-card"></i> Ficha Digital</h4>
+                                <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+                                    <div>
+                                        <div style="font-size:0.7rem; color:#94a3b8; font-weight:700; text-transform:uppercase; margin-bottom:3px;">Especie</div>
+                                        <div id="profile-type" style="font-weight:700; font-size:0.9rem;">—</div>
+                                    </div>
+                                    <div>
+                                        <div style="font-size:0.7rem; color:#94a3b8; font-weight:700; text-transform:uppercase; margin-bottom:3px;">Raza</div>
+                                        <div id="profile-breed" style="font-weight:700; font-size:0.9rem;">—</div>
+                                    </div>
+                                    <div>
+                                        <div style="font-size:0.7rem; color:#94a3b8; font-weight:700; text-transform:uppercase; margin-bottom:3px;">Etapa</div>
+                                        <div id="profile-age" style="font-weight:700; font-size:0.9rem;">—</div>
+                                    </div>
+                                    <div>
+                                        <div style="font-size:0.7rem; color:#94a3b8; font-weight:700; text-transform:uppercase; margin-bottom:3px;">Peso</div>
+                                        <div id="profile-weight" style="font-weight:700; font-size:0.9rem;">—</div>
+                                    </div>
+                                    <div>
+                                        <div style="font-size:0.7rem; color:#94a3b8; font-weight:700; text-transform:uppercase; margin-bottom:3px;">Energía</div>
+                                        <div id="profile-energy" style="font-weight:700; font-size:0.9rem;">—</div>
+                                    </div>
+                                    <div>
+                                        <div style="font-size:0.7rem; color:#94a3b8; font-weight:700; text-transform:uppercase; margin-bottom:3px;">Dieta</div>
+                                        <div id="profile-food" style="font-weight:700; font-size:0.9rem;">—</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Estado CUDI -->
+                            <div style="background:linear-gradient(135deg, #0077b6 0%, #0ea5e9 100%); border-radius:20px; padding:20px; color:white; margin-bottom:15px;">
+                                <h4 style="font-size:0.9rem; font-weight:800; margin-bottom:12px;"><i class="fa-solid fa-shield-check"></i> Estado CUDI</h4>
+                                <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; text-align:center;">
+                                    <div>
+                                        <div style="font-size:1.4rem; font-weight:800;">98%</div>
+                                        <div style="font-size:0.7rem; opacity:0.8;">Salud Global</div>
+                                    </div>
+                                    <div>
+                                        <div style="font-size:1.4rem; font-weight:800;">4.2km</div>
+                                        <div style="font-size:0.7rem; opacity:0.8;">Hoy</div>
+                                    </div>
+                                    <div>
+                                        <div style="font-size:1.4rem; font-weight:800;">87bpm</div>
+                                        <div style="font-size:0.7rem; opacity:0.8;">Corazón</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Cuidados especiales dinámicos -->
+                            <div id="profile-care-card" style="background:white; border-radius:20px; padding:20px; border:1px solid var(--app-border); display:none;">
+                                <h4 style="font-size:0.9rem; font-weight:800; color:#f59e0b; margin-bottom:10px;"><i class="fa-solid fa-star"></i> Cuidados Especiales</h4>
+                                <p id="profile-care-text" style="font-size:0.85rem; color:#64748b; line-height:1.5;"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- NAVEGACIÓN INFERIOR DE 6 TABS -->
+                    <div class="bottom-nav" style="justify-content:space-around;">
                         <div class="nav-item active" onclick="switchNav('dash', this)"><i class="fa-solid fa-heart-pulse"></i><span>Bio</span></div>
                         <div class="nav-item" onclick="switchNav('sim', this)"><i class="fa-solid fa-microchip"></i><span>IA</span></div>
                         <div class="nav-item" onclick="switchNav('vax', this)"><i class="fa-solid fa-syringe"></i><span>Salud</span></div>
                         <div class="nav-item" onclick="switchNav('store', this)"><i class="fa-solid fa-bag-shopping"></i><span>Store</span></div>
                         <div class="nav-item" onclick="switchNav('act', this)"><i class="fa-solid fa-bone"></i><span>Diario</span></div>
+                        <div class="nav-item" onclick="switchNav('profile', this)"><i class="fa-solid fa-paw"></i><span>Perfil</span></div>
                     </div>
                 </div>
 
@@ -435,14 +596,118 @@
                     </div>
                 </div>
 
-                <!-- CHECKOUT MODAL UNIFICADO -->
+                <!-- CHECKOUT COMPLETO DE 3 PASOS -->
                 <div id="checkout-modal" class="modal-overlay">
-                    <div class="modal-content">
-                        <h3 style="font-family:var(--font-heading); color:var(--app-text);">CUDI Checkout Omni-canal</h3>
-                        <p style="color:var(--app-text-muted); font-size:0.9rem;">Cesta unificada de todo CUDI:</p>
-                        <div class="price-tag" id="checkout-price">0.00 €</div>
-                        <button class="app-btn primary" id="btn-pay" onclick="processDemoPayment()">Confirmar y Proteger</button>
-                        <button class="app-btn secondary" style="margin-top:10px;" onclick="closeModal('checkout-modal')">Volver</button>
+                    <div class="modal-content" style="padding:0; overflow:hidden; width:100%; max-width:100%; height:100%; max-height:100%; border-radius:0; display:flex; flex-direction:column;">
+                        
+                        <!-- Header checkout -->
+                        <div style="background:white; padding:16px 20px; border-bottom:1px solid #e2e8f0; display:flex; align-items:center; gap:12px; flex-shrink:0;">
+                            <button onclick="closeModal('checkout-modal')" style="background:#f1f5f9; border:none; width:36px; height:36px; border-radius:50%; cursor:pointer; display:flex; align-items:center; justify-content:center; color:#64748b;">
+                                <i class="fa-solid fa-arrow-left"></i>
+                            </button>
+                            <div>
+                                <div style="font-weight:800; font-size:0.95rem; color:#0f172a;">Checkout Seguro CUDI</div>
+                                <div id="checkout-step-label" style="font-size:0.75rem; color:#94a3b8;">Paso 1 de 3 — Tu cesta</div>
+                            </div>
+                            <!-- progreso -->
+                            <div style="margin-left:auto; display:flex; gap:5px; align-items:center;">
+                                <div id="chk-dot-1" style="width:8px; height:8px; border-radius:50%; background:var(--app-primary);"></div>
+                                <div id="chk-dot-2" style="width:8px; height:8px; border-radius:50%; background:#e2e8f0;"></div>
+                                <div id="chk-dot-3" style="width:8px; height:8px; border-radius:50%; background:#e2e8f0;"></div>
+                            </div>
+                        </div>
+
+                        <!-- Cuerpo scrollable -->
+                        <div style="overflow-y:auto; flex:1; padding:20px;">
+
+                            <!-- PASO 1: RESUMEN DEL CARRITO -->
+                            <div id="chk-step-1">
+                                <h4 style="font-weight:800; margin-bottom:15px; font-size:0.9rem; color:#0f172a;"><i class="fa-solid fa-cart-shopping" style="color:var(--app-primary);"></i> Tu pedido</h4>
+                                <div id="checkout-items-detail" style="display:flex; flex-direction:column; gap:10px; margin-bottom:20px;"></div>
+                                <div style="background:#f8fafc; border-radius:12px; padding:15px; border:1px solid #e2e8f0;">
+                                    <div style="display:flex; justify-content:space-between; margin-bottom:6px; font-size:0.85rem; color:#64748b;">
+                                        <span>Subtotal</span><span id="chk-subtotal">0.00 €</span>
+                                    </div>
+                                    <div style="display:flex; justify-content:space-between; margin-bottom:6px; font-size:0.85rem; color:#64748b;">
+                                        <span>Envío CUDI</span><span style="color:#10b981;">Gratis</span>
+                                    </div>
+                                    <div style="display:flex; justify-content:space-between; font-size:1rem; font-weight:800; color:#0f172a; border-top:1px solid #e2e8f0; padding-top:10px; margin-top:10px;">
+                                        <span>Total</span><span id="chk-total" style="color:var(--app-primary);">0.00 €</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- PASO 2: ENVÍO + PAGO -->
+                            <div id="chk-step-2" style="display:none;">
+                                <h4 style="font-weight:800; margin-bottom:15px; font-size:0.9rem; color:#0f172a;"><i class="fa-solid fa-location-dot" style="color:var(--app-primary);"></i> Dirección de entrega</h4>
+                                <div style="display:flex; flex-direction:column; gap:10px; margin-bottom:20px;">
+                                    <input id="chk-name" class="app-input" type="text" placeholder="Nombre completo">
+                                    <input id="chk-address" class="app-input" type="text" placeholder="Calle y número">
+                                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+                                        <input id="chk-city" class="app-input" type="text" placeholder="Ciudad">
+                                        <input id="chk-zip" class="app-input" type="text" placeholder="Código postal">
+                                    </div>
+                                </div>
+
+                                <h4 style="font-weight:800; margin-bottom:12px; font-size:0.9rem; color:#0f172a;"><i class="fa-solid fa-lock" style="color:var(--app-primary);"></i> Método de pago</h4>
+                                <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:20px;">
+                                    <label id="pay-opt-card" onclick="selectDemoPayment('card', this)" style="display:flex; flex-direction:column; align-items:center; gap:6px; padding:15px 10px; background:var(--app-primary); color:white; border-radius:14px; cursor:pointer; font-size:0.8rem; font-weight:700; border:2px solid var(--app-primary); transition:all 0.2s;">
+                                        <i class="fa-brands fa-cc-visa" style="font-size:1.5rem;"></i>Tarjeta
+                                    </label>
+                                    <label id="pay-opt-paypal" onclick="selectDemoPayment('paypal', this)" style="display:flex; flex-direction:column; align-items:center; gap:6px; padding:15px 10px; background:white; color:#475569; border-radius:14px; cursor:pointer; font-size:0.8rem; font-weight:700; border:2px solid #e2e8f0; transition:all 0.2s;">
+                                        <i class="fa-brands fa-paypal" style="font-size:1.5rem; color:#003087;"></i>PayPal
+                                    </label>
+                                    <label id="pay-opt-bizum" onclick="selectDemoPayment('bizum', this)" style="display:flex; flex-direction:column; align-items:center; gap:6px; padding:15px 10px; background:white; color:#475569; border-radius:14px; cursor:pointer; font-size:0.8rem; font-weight:700; border:2px solid #e2e8f0; transition:all 0.2s;">
+                                        <i class="fa-solid fa-mobile-screen-button" style="font-size:1.5rem; color:#6d28d9;"></i>Bizum
+                                    </label>
+                                    <label id="pay-opt-apple" onclick="selectDemoPayment('apple', this)" style="display:flex; flex-direction:column; align-items:center; gap:6px; padding:15px 10px; background:white; color:#475569; border-radius:14px; cursor:pointer; font-size:0.8rem; font-weight:700; border:2px solid #e2e8f0; transition:all 0.2s;">
+                                        <i class="fa-brands fa-apple" style="font-size:1.5rem; color:#000;"></i>Apple Pay
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- PASO 3: TRACKING -->
+                            <div id="chk-step-3" style="display:none; text-align:center;">
+                                <div style="font-size:3rem; color:var(--app-success); margin-bottom:10px;"><i class="fa-solid fa-check-circle"></i></div>
+                                <h3 style="font-family:var(--font-heading); font-weight:800; margin-bottom:5px;">¡Pedido confirmado!</h3>
+                                <p style="font-size:0.8rem; color:#64748b; margin-bottom:20px;">Número de seguimiento: <strong id="tracking-number" style="color:var(--app-primary);">—</strong></p>
+
+                                <!-- Timeline tracking -->
+                                <div style="text-align:left; background:#f8fafc; border-radius:16px; padding:20px; margin-bottom:20px; border:1px solid #e2e8f0;">
+                                    <h4 style="font-size:0.85rem; font-weight:800; margin-bottom:15px; color:#0f172a;"><i class="fa-solid fa-truck-fast" style="color:var(--app-primary);"></i> Seguimiento en tiempo real</h4>
+                                    <div style="position:relative; padding-left:25px;">
+                                        <div style="position:absolute; left:8px; top:0; bottom:0; width:2px; background:#e2e8f0;"></div>
+                                        <div class="track-step" style="margin-bottom:15px; position:relative;">
+                                            <div style="position:absolute; left:-21px; top:3px; width:10px; height:10px; border-radius:50%; background:var(--app-success);"></div>
+                                            <div style="font-weight:700; font-size:0.85rem; color:#10b981;">✓ Pedido confirmado</div>
+                                            <div style="font-size:0.75rem; color:#94a3b8;">Ahora mismo</div>
+                                        </div>
+                                        <div class="track-step" style="margin-bottom:15px; position:relative;" id="track-prepare">
+                                            <div id="track-dot-prepare" style="position:absolute; left:-21px; top:3px; width:10px; height:10px; border-radius:50%; background:#e2e8f0;"></div>
+                                            <div style="font-weight:700; font-size:0.85rem; color:#64748b;">⏳ Preparando tu pedido</div>
+                                            <div style="font-size:0.75rem; color:#94a3b8;">En los próximos minutos</div>
+                                        </div>
+                                        <div class="track-step" style="margin-bottom:15px; position:relative;">
+                                            <div id="track-dot-transit" style="position:absolute; left:-21px; top:3px; width:10px; height:10px; border-radius:50%; background:#e2e8f0;"></div>
+                                            <div style="font-weight:700; font-size:0.85rem; color:#64748b;">🚚 En tránsito</div>
+                                            <div style="font-size:0.75rem; color:#94a3b8;">Estimado: 24-48h</div>
+                                        </div>
+                                        <div class="track-step" style="position:relative;">
+                                            <div id="track-dot-delivered" style="position:absolute; left:-21px; top:3px; width:10px; height:10px; border-radius:50%; background:#e2e8f0;"></div>
+                                            <div style="font-weight:700; font-size:0.85rem; color:#64748b;">📦 Entregado</div>
+                                            <div style="font-size:0.75rem; color:#94a3b8;">Tu dirección</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Footer con botón acción -->
+                        <div style="padding:16px 20px; background:white; border-top:1px solid #e2e8f0; flex-shrink:0;">
+                            <button id="chk-action-btn" class="app-btn primary" onclick="checkoutNextStep()" style="margin:0;">
+                                Ver resumen <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
 

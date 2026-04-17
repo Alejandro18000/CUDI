@@ -1,6 +1,9 @@
 // ---- ESTADO Y DATOS SINCRONIZADOS ----
 let appCart = JSON.parse(localStorage.getItem('cudi_cart')) || [];
 let activeDynamicProduct = null;
+let checkoutStep = 1;
+let selectedPayMethod = 'card';
+let petProfile = {};
 
 function saveAppCart() {
     localStorage.setItem('cudi_cart', JSON.stringify(appCart));
@@ -9,9 +12,154 @@ function saveAppCart() {
 
 function updateCartUI() {
     const badge = document.getElementById('app-cart-badge');
-    if(!badge) return;
+    const floatCount = document.getElementById('cart-float-count');
+    const floatBtn = document.getElementById('cart-float-btn');
     let totalItems = appCart.reduce((acc, item) => acc + item.qty, 0);
-    badge.innerText = totalItems;
+    if (badge) badge.innerText = totalItems;
+    if (floatCount) floatCount.innerText = totalItems;
+    if (floatBtn) floatBtn.style.display = totalItems > 0 ? 'flex' : 'none';
+    renderInlineCart();
+}
+
+function renderInlineCart() {
+    const container = document.getElementById('inline-cart-items');
+    if (!container) return;
+    if (appCart.length === 0) {
+        container.innerHTML = '<p style="text-align:center; color:#94a3b8; font-size:0.8rem; padding:10px;">El carrito está vacío</p>';
+        return;
+    }
+    container.innerHTML = appCart.map((item, idx) => `
+        <div style="display:flex; align-items:center; gap:10px; padding:8px 0; border-bottom:1px solid #f1f5f9;">
+            <div style="width:40px; height:40px; border-radius:8px; background:url('${item.img}') center/cover; background-color:#e2e8f0; flex-shrink:0;"></div>
+            <div style="flex:1; min-width:0;">
+                <div style="font-weight:700; font-size:0.8rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${item.name}</div>
+                <div style="font-size:0.75rem; color:var(--app-primary); font-weight:700;">${item.price.toFixed(2)} €</div>
+            </div>
+            <div style="display:flex; align-items:center; gap:6px;">
+                <button onclick="changeCartQty(${idx}, -1)" style="width:24px; height:24px; border-radius:50%; border:1px solid #e2e8f0; background:white; cursor:pointer; font-weight:700; display:flex; align-items:center; justify-content:center; font-size:0.85rem;">-</button>
+                <span style="font-weight:700; font-size:0.85rem; min-width:16px; text-align:center;">${item.qty}</span>
+                <button onclick="changeCartQty(${idx}, 1)" style="width:24px; height:24px; border-radius:50%; border:none; background:var(--app-primary); color:white; cursor:pointer; font-weight:700; display:flex; align-items:center; justify-content:center; font-size:0.85rem;">+</button>
+            </div>
+        </div>
+    `).join('');
+    const total = appCart.reduce((a, i) => a + i.price * i.qty, 0);
+    const totalEl = document.getElementById('inline-cart-total');
+    if (totalEl) totalEl.textContent = total.toFixed(2) + ' €';
+}
+
+function changeCartQty(idx, delta) {
+    appCart[idx].qty += delta;
+    if (appCart[idx].qty <= 0) appCart.splice(idx, 1);
+    saveAppCart();
+}
+
+function addToAppCart(name, price, img = '') {
+    const existing = appCart.find(i => i.name === name);
+    if (existing) {
+        existing.qty++;
+    } else {
+        appCart.push({ name, price, qty: 1, img });
+    }
+    saveAppCart();
+
+    // Mostrar el panel del carrito
+    const panel = document.getElementById('inline-cart-panel');
+    if (panel) panel.style.display = 'block';
+
+    // Toast rápido
+    if (typeof showCudiToast === 'function') showCudiToast(`"${name}" añadido al carrito ✓`);
+}
+
+function toggleInlineCart() {
+    const panel = document.getElementById('inline-cart-panel');
+    if (panel) panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
+}
+
+// ---- REGISTRO DINÁMICO ----
+const BREEDS = {
+    perro: ['Golden Retriever','Labrador','Pastor Alemán','Bulldog Francés','Beagle','Poodle','Chihuahua','Husky Siberiano','Yorkshire Terrier','Mestizo'],
+    gato: ['Europeo Común','Persa','Maine Coon','Ragdoll','Siamés','Bengalí','British Shorthair','Scottish Fold','Abisinio','Mestizo']
+};
+
+const CARE_BY_AGE = {
+    cachorro: {
+        label: 'Cuidados de Cachorro',
+        perro: ['Vacunación primaria (6-8 semanas)', 'Socialización temprana (hasta 16 semanas)', 'Entrenamiento básico y límites', 'Dieta específica para crecimiento'],
+        gato: ['Vacunación: triple felina y rabia', 'Destete y socialización', 'Revisión parasitaria', 'Dieta alta en proteínas para crecimiento'],
+        special: ['Vacunación temprana', 'Socialización', 'Control crecimiento']
+    },
+    joven: {
+        label: 'Cuidados de Joven Activo',
+        perro: ['Esterilización recomendada (6-18 meses)', 'Ejercicio diario >= 45 min', 'Educación avanzada y agility', 'Desparasitación trimestral'],
+        gato: ['Esterilización/castración (5-7 meses)', 'Enriquecimiento ambiental', 'Revisión oftalmológica', 'Dieta equilibrada activa'],
+        special: ['Esterilización', 'Ejercicio intensivo', 'Control peso']
+    },
+    adulto: {
+        label: 'Cuidados de Adulto',
+        perro: ['Revisión anual completa', 'Profilaxis dental bianual', 'Mantenimiento de peso', 'Análisis de sangre rutinario'],
+        gato: ['Análisis de orina anual', 'Limpieza dental', 'Control peso y dieta', 'Revisión de tiroides (>6 años)'],
+        special: ['Revisión anual', 'Dental', 'Análisis sangre']
+    },
+    senior: {
+        label: 'Cuidados Senior',
+        perro: ['Revisiones semestrales obligatorias', 'Control articular y movilidad', 'Dieta baja en fósforo', 'Análisis renal y hepático'],
+        gato: ['Revisiones cada 4 meses', 'Detección precoz de hipertiroidismo', 'Dieta húmeda renal', 'Control presión arterial'],
+        special: ['Revisión semestral', 'Dieta renal', 'Control articular']
+    }
+};
+
+const PET_AVATAR = {
+    perro: 'avatar-mascota-perfil-gemelo-digital.png',
+    gato: 'avatar-mascota-perfil-gemelo-digital.png'
+};
+
+function onPetTypeChange() {
+    const type = document.getElementById('pet-type').value;
+    const breedGroup = document.getElementById('breed-group');
+    const breedSelect = document.getElementById('pet-breed');
+    const hero = document.getElementById('onboarding-hero');
+
+    if (!type) { breedGroup.style.display = 'none'; return; }
+
+    breedGroup.style.display = 'block';
+    breedSelect.innerHTML = '<option value="">Selecciona la raza</option>';
+    (BREEDS[type] || []).forEach(b => {
+        breedSelect.innerHTML += `<option value="${b}">${b}</option>`;
+    });
+
+    // Cambiar imagen de fondo según especie
+    if (hero) {
+        hero.style.backgroundImage = type === 'perro'
+            ? "url('bienestar-integral-perros-gatos.png')"
+            : "url('dietas-personalizadas-longevidad-mascotas.png')";
+    }
+
+    // Actualizar etiqueta de alimentación
+    const foodLabel = document.getElementById('food-label');
+    if (foodLabel) foodLabel.textContent = type === 'gato' ? 'Preferencia Alimentaria' : 'Tipo de Alimentación';
+
+    onPetAgeChange(); // actualizar cuidados también
+}
+
+function onPetAgeChange() {
+    const age = document.getElementById('pet-age').value;
+    const type = document.getElementById('pet-type').value;
+    const careGroup = document.getElementById('special-care-group');
+    const careLabel = document.getElementById('special-care-label');
+    const careSelect = document.getElementById('pet-care');
+
+    if (!age) { careGroup.style.display = 'none'; return; }
+
+    careGroup.style.display = 'block';
+    const careData = CARE_BY_AGE[age];
+    if (!careData) return;
+
+    careLabel.textContent = careData.label;
+    careSelect.innerHTML = '<option value="ninguno">Ninguno específico</option>';
+    const items = type && careData[type] ? careData[type] : careData.special;
+    items.forEach(c => {
+        careSelect.innerHTML += `<option value="${c}">${c}</option>`;
+    });
 }
 
 // ==== BASE DE DATOS DE SIMULACIÓN IA (LAS 8 ALERTAS TFM EMPÁTICO) ====
@@ -102,9 +250,69 @@ function initializeDashboard() {
     document.getElementById('screen-main').classList.add('active');
     document.getElementById('global-app-nav').style.display = 'flex';
     
+    // Guardar perfil de la mascota
+    petProfile = {
+        name:   document.getElementById('pet-name').value.trim(),
+        type:   document.getElementById('pet-type').value,
+        breed:  document.getElementById('pet-breed')?.value || 'Mestizo',
+        age:    document.getElementById('pet-age').value,
+        weight: document.getElementById('pet-weight').value,
+        energy: document.getElementById('pet-energy').value,
+        food:   document.getElementById('pet-food').value
+    };
+
+    populatePetProfile();
+    
     // Inicia Charts y simulaciones
     setTimeout(initCharts, 300);
     simulateNewNotification();
+
+    // Nombre en el dashboard
+    const displayPetName = document.getElementById('display-pet-name');
+    if (displayPetName) displayPetName.innerText = petProfile.name || 'tu peque';
+}
+
+function populatePetProfile() {
+    const p = petProfile;
+    const typeLabels = { perro: '🐶 Perro', gato: '🐱 Gato' };
+    const ageLabels  = { cachorro: '🍼 Cachorro', joven: '⚡ Joven', adulto: '🎯 Adulto', senior: '🧓 Senior' };
+    const energyLabels = { tranquilo: '😴 Tranquilo', moderado: '🎾 Moderado', activo: '⚡ Activo' };
+    const foodLabels = { pienso: 'Pienso Seco', barf: 'BARF Natural', mixta: 'Mixta' };
+
+    const set = (id, val) => { const el = document.getElementById(id); if(el) el.textContent = val || '—'; };
+
+    set('profile-pet-name', p.name);
+    set('profile-type',   typeLabels[p.type] || p.type);
+    set('profile-breed',  p.breed);
+    set('profile-age',    ageLabels[p.age] || p.age);
+    set('profile-weight', p.weight ? `${p.weight} kg` : '—');
+    set('profile-energy', energyLabels[p.energy] || p.energy);
+    set('profile-food',   foodLabels[p.food] || p.food);
+
+    // Badge
+    const badge = document.getElementById('profile-pet-badge');
+    if (badge) badge.textContent = `${typeLabels[p.type] || ''}  ${ageLabels[p.age] || ''}`;
+
+    // Avatar
+    const avatar = document.getElementById('pet-avatar-display');
+    if (avatar && p.type) {
+        const avatarUrl = p.type === 'gato'
+            ? 'dietas-personalizadas-longevidad-mascotas.png'
+            : 'avatar-mascota-perfil-gemelo-digital.png';
+        avatar.style.backgroundImage = `url('${avatarUrl}')`;
+    }
+
+    // Cuidados especiales
+    const careCard = document.getElementById('profile-care-card');
+    const careText = document.getElementById('profile-care-text');
+    if (careCard && careText && p.age) {
+        const careData = CARE_BY_AGE[p.age];
+        if (careData) {
+            const items = p.type && careData[p.type] ? careData[p.type] : careData.special;
+            careText.innerHTML = items.map(c => `• ${c}`).join('<br>');
+            careCard.style.display = 'block';
+        }
+    }
 }
 
 // ==== PANTALLA 2 A 5: NAVEGADOR DE TABS (5 TABS) ====
@@ -318,7 +526,7 @@ function triggerAlert(alertKey) {
     
     data.options.forEach((opt, index) => {
         htmlContent += `
-        <div class="partner-option-card" onclick="bookOption('${opt.name}', ${opt.price})">
+        <div class="partner-option-card" onclick="bookOption('${opt.name}', ${opt.price}, '${opt.img}')">
             <div class="partner-option-img" style="background-image:url('${opt.img}'); background-color:#e2e8f0;"></div>
             <div class="partner-option-content">
                 <div style="font-size:0.7rem; color:gray; font-weight:700; text-transform:uppercase;">${opt.partner}</div>
@@ -340,39 +548,135 @@ function closeDynamicAlert() {
     document.getElementById('screen-alert').classList.remove('active');
 }
 
-// ==== TRANSACCIONAL OMNICANAL B2B2C ====
-function bookOption(name, price) {
-    appCart.push({ name: name, price: price, qty: 1 });
-    saveAppCart();
-    
+// ==== CARRITO Y CHECKOUT 3 PASOS ====
+// bookOption: puente entre alertas IA y el carrito/checkout
+function bookOption(name, price, img = '') {
+    addToAppCart(name, price, img);
     closeDynamicAlert();
-    openCheckoutDemo();
+    openFullCheckout();
 }
 
-function openCheckoutDemo() {
-    if(appCart.length === 0) {
-        alert("Primero simula una alerta y selecciona un tratamiento o producto.");
+function openFullCheckout() {
+    if (appCart.length === 0) {
+        if (typeof showCudiToast === 'function') showCudiToast('Añade productos al carrito primero 🛒');
         return;
     }
-    const finalPrice = appCart.reduce((acc, item) => acc + (item.price * item.qty), 0);
-    document.getElementById('checkout-price').innerText = finalPrice.toFixed(2) + " €";
+    checkoutStep = 1;
+    selectedPayMethod = 'card';
+    renderCheckoutStep1();
     document.getElementById('checkout-modal').classList.add('active');
 }
 
+function openCheckoutDemo() {
+    openFullCheckout();
+}
+
+function renderCheckoutStep1() {
+    checkoutStep = 1;
+    const container = document.getElementById('checkout-items-detail');
+    if (container) {
+        container.innerHTML = appCart.map(item => `
+            <div style="display:flex; align-items:center; gap:12px; background:#f8fafc; border-radius:12px; padding:12px; border:1px solid #e2e8f0;">
+                <div style="width:50px; height:50px; border-radius:10px; background:url('${item.img}') center/cover; background-color:#e2e8f0; flex-shrink:0;"></div>
+                <div style="flex:1;">
+                    <div style="font-weight:700; font-size:0.9rem;">${item.name}</div>
+                    <div style="font-size:0.8rem; color:#64748b;">Cantidad: ${item.qty}</div>
+                </div>
+                <div style="font-weight:800; color:var(--app-primary);">${(item.price * item.qty).toFixed(2)}€</div>
+            </div>
+        `).join('');
+    }
+    const total = appCart.reduce((a, i) => a + i.price * i.qty, 0);
+    const sub = document.getElementById('chk-subtotal');
+    const tot = document.getElementById('chk-total');
+    if (sub) sub.textContent = total.toFixed(2) + ' €';
+    if (tot) tot.textContent = total.toFixed(2) + ' €';
+    
+    setCheckoutUI(1, 'Continuar al pago <i class="fa-solid fa-arrow-right"></i>', 'Paso 1 de 3 — Tu cesta');
+}
+
+function checkoutNextStep() {
+    if (checkoutStep === 1) {
+        // Ir a paso 2
+        checkoutStep = 2;
+        document.getElementById('chk-step-1').style.display = 'none';
+        document.getElementById('chk-step-2').style.display = 'block';
+        document.getElementById('chk-step-3').style.display = 'none';
+        setCheckoutUI(2, 'Confirmar y pagar <i class="fa-solid fa-lock"></i>', 'Paso 2 de 3 — Pago');
+    } else if (checkoutStep === 2) {
+        // Procesar pago
+        processDemoPayment();
+    } else if (checkoutStep === 3) {
+        // Cerrar y continuar
+        resetSimulationState();
+    }
+}
+
+function setCheckoutUI(step, btnHtml, stepLabel) {
+    const dots = ['chk-dot-1','chk-dot-2','chk-dot-3'];
+    dots.forEach((id, i) => {
+        const el = document.getElementById(id);
+        if (el) el.style.background = i < step ? 'var(--app-primary)' : '#e2e8f0';
+    });
+    const lbl = document.getElementById('checkout-step-label');
+    if (lbl) lbl.innerHTML = stepLabel;
+    const btn = document.getElementById('chk-action-btn');
+    if (btn) btn.innerHTML = btnHtml;
+}
+
+function selectDemoPayment(method, el) {
+    selectedPayMethod = method;
+    ['card','paypal','bizum','apple'].forEach(m => {
+        const opt = document.getElementById(`pay-opt-${m}`);
+        if (opt) {
+            opt.style.background = m === method ? 'var(--app-primary)' : 'white';
+            opt.style.color = m === method ? 'white' : '#475569';
+            opt.style.borderColor = m === method ? 'var(--app-primary)' : '#e2e8f0';
+        }
+    });
+}
+
 function processDemoPayment() {
-    const btn = document.getElementById('btn-pay');
-    btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Emitiendo Liquidación B2B...';
-    btn.disabled = true;
+    const btn = document.getElementById('chk-action-btn');
+    if (btn) {
+        btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Procesando...';
+        btn.disabled = true;
+    }
 
     setTimeout(() => {
-        closeModal('checkout-modal');
-        document.getElementById('success-modal').classList.add('active');
-        appCart = []; 
+        // Generar número de tracking simulado
+        const trackNum = 'CUDI-' + Math.random().toString(36).substring(2,8).toUpperCase();
+        const tn = document.getElementById('tracking-number');
+        if (tn) tn.textContent = trackNum;
+
+        appCart = [];
         saveAppCart();
 
-        // Auto-cerrar el éxito después de 4s y resetear SIN recargar página
-        setTimeout(resetSimulationState, 4000);
-    }, 2500);
+        // Paso 3: tracking
+        checkoutStep = 3;
+        document.getElementById('chk-step-1').style.display = 'none';
+        document.getElementById('chk-step-2').style.display = 'none';
+        document.getElementById('chk-step-3').style.display = 'block';
+        setCheckoutUI(3, 'Listo, entendido <i class="fa-solid fa-check"></i>', '✓ Pedido confirmado');
+        if (btn) btn.disabled = false;
+
+        // Animar timeline de tracking
+        animateTracking();
+    }, 2000);
+}
+
+function animateTracking() {
+    const steps = [
+        { dot: 'track-dot-prepare',  delay: 1500 },
+        { dot: 'track-dot-transit',  delay: 3500 },
+        { dot: 'track-dot-delivered',delay: 6000 }
+    ];
+    steps.forEach(({ dot, delay }) => {
+        setTimeout(() => {
+            const el = document.getElementById(dot);
+            if (el) el.style.background = 'var(--app-success)';
+        }, delay);
+    });
 }
 
 function closeModal(modalId) {
