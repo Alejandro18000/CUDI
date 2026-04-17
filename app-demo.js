@@ -289,9 +289,9 @@ function populatePetProfile() {
     set('profile-energy', energyLabels[p.energy] || p.energy);
     set('profile-food',   foodLabels[p.food] || p.food);
 
-    // Badge
+    // El badge Premium Elite se mantiene del HTML, pero podemos actualizar subtítulos si es necesario
     const badge = document.getElementById('profile-pet-badge');
-    if (badge) badge.textContent = `${typeLabels[p.type] || ''}  ${ageLabels[p.age] || ''}`;
+    if (badge) badge.textContent = 'PREMIUM ELITE';
 
     // Avatar: foto real del animal seleccionado
     const avatar = document.getElementById('pet-avatar-display');
@@ -423,19 +423,36 @@ function renderSocialPets() {
     const list = document.getElementById('social-pets-list');
     if (!list) return;
     list.innerHTML = SOCIAL_PETS.map((pet, idx) => `
-        <div style="display:flex; align-items:center; gap:12px; background:white; border-radius:16px; padding:14px; border:1px solid #e2e8f0; box-shadow:0 2px 8px rgba(0,0,0,0.04);">
-            <div style="width:56px; height:56px; border-radius:50%; background:url('${pet.img}') center/cover; background-color:#e2e8f0; flex-shrink:0; border:2px solid var(--app-primary);"></div>
-            <div style="flex:1; min-width:0;">
-                <div style="display:flex; align-items:center; gap:6px; margin-bottom:2px;">
-                    <span style="font-weight:800; font-size:0.95rem;">${pet.name}</span>
-                    <span style="font-size:0.7rem; color:#64748b;">${pet.breed}</span>
+        <div style="background:white; border-radius:24px; overflow:hidden; border:1px solid #e2e8f0; box-shadow:0 10px 25px rgba(0,0,0,0.04); margin-bottom:15px; transition:transform 0.2s;">
+            <div style="height:150px; background:url('${pet.img}') center/cover; position:relative;">
+                <div style="position:absolute; top:12px; right:12px; background:rgba(0,0,0,0.4); backdrop-filter:blur(5px); color:white; padding:4px 10px; border:1px solid rgba(255,255,255,0.2); border-radius:10px; font-size:0.7rem; font-weight:700;">
+                    📍 ${pet.distance}
                 </div>
-                <div style="font-size:0.72rem; color:var(--app-primary); font-weight:700; margin-bottom:3px;">${pet.age}</div>
-                <div style="font-size:0.72rem; color:#64748b;">📍 ${pet.distance} de ti &bull; ${pet.status}</div>
+                <div style="position:absolute; bottom:12px; left:12px; background:var(--app-primary); color:white; padding:4px 10px; border-radius:10px; font-size:0.65rem; font-weight:800; letter-spacing:0.5px;">
+                    ${pet.type.toUpperCase()}
+                </div>
             </div>
-            <button onclick="connectWithPet('${pet.name}', ${idx})" id="connect-btn-${idx}" style="background:var(--app-primary); color:white; border:none; border-radius:10px; padding:8px 12px; font-size:0.75rem; font-weight:700; cursor:pointer; flex-shrink:0; white-space:nowrap;">
-                Conectar
-            </button>
+            <div style="padding:15px;">
+                <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:10px;">
+                    <div>
+                        <h4 style="font-weight:900; font-size:1.1rem; color:#0f172a; margin-bottom:2px;">${pet.name}</h4>
+                        <div style="font-size:0.75rem; color:#64748b;">${pet.breed} &bull; ${pet.age.split(' ')[0]} ${pet.age.split(' ')[1]}</div>
+                    </div>
+                    <div style="text-align:right;">
+                        <div style="font-size:0.6rem; font-weight:800; color:#10b981; text-transform:uppercase; letter-spacing:1px; margin-bottom:2px;">Compatibilidad</div>
+                        <div style="display:flex; align-items:center; gap:4px;">
+                            <div style="width:50px; height:6px; background:#f1f5f9; border-radius:10px; overflow:hidden;">
+                                <div style="width:${85 + (idx * 3)}%; height:100%; background:linear-gradient(90deg, #10b981, #34d399);"></div>
+                            </div>
+                            <span style="font-size:0.75rem; font-weight:800; color:#10b981;">${85 + (idx * 3)}%</span>
+                        </div>
+                    </div>
+                </div>
+                <p style="font-size:0.75rem; color:#64748b; margin-bottom:15px; line-height:1.4;">"${pet.status}"</p>
+                <button onclick="connectWithPet('${pet.name}', ${idx})" id="connect-btn-${idx}" style="width:100%; background:#0f172a; color:white; border:none; border-radius:14px; padding:12px; font-size:0.85rem; font-weight:800; cursor:pointer; transition:all 0.2s; display:flex; align-items:center; justify-content:center; gap:8px;">
+                    <i class="fa-solid fa-heart"></i> Enviar solicitud de amistad
+                </button>
+            </div>
         </div>
     `).join('');
 }
@@ -787,26 +804,21 @@ function processDemoPayment() {
         btn.disabled = true;
     }
 
-    setTimeout(() => {
-        // Generar número de tracking simulado
-        const trackNum = 'CUDI-' + Math.random().toString(36).substring(2,8).toUpperCase();
-        const tn = document.getElementById('tracking-number');
-        if (tn) tn.textContent = trackNum;
-
-        appCart = [];
-        saveAppCart();
-
-        // Paso 3: tracking
-        checkoutStep = 3;
-        document.getElementById('chk-step-1').style.display = 'none';
-        document.getElementById('chk-step-2').style.display = 'none';
-        document.getElementById('chk-step-3').style.display = 'block';
-        setCheckoutUI(3, 'Listo, entendido <i class="fa-solid fa-check"></i>', '✓ Pedido confirmado');
-        if (btn) btn.disabled = false;
-
-        // Animar timeline de tracking
-        animateTracking();
+        // Finalizar y mostrar pantalla de éxito
+        showOrderSuccess();
     }, 2000);
+}
+
+function showOrderSuccess() {
+    closeModal('checkout-modal');
+    appCart = [];
+    saveAppCart();
+    document.getElementById('screen-order-success').style.display = 'block';
+}
+
+function closeOrderSuccess() {
+    document.getElementById('screen-order-success').style.display = 'none';
+    switchNav('dash', document.querySelector('.nav-item'));
 }
 
 function animateTracking() {
