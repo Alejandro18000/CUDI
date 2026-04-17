@@ -322,60 +322,46 @@ function populatePetProfile() {
 }
 
 
-// ==== CATÁLOGO STORE EXPANDIBLE ====
+// ==== CATÁLOGO STORE — SERVICIOS REALES DEL TFM ====
 const STORE_CATALOG = {
-    hardware: {
-        icon: 'fa-microchip', label: 'Hardware Inteligente', color: '#0077b6',
-        img: 'cudi-smart-collar-geolocalizacion-gps.png',
+    paseos: {
+        icon: 'fa-person-walking', label: '🦮 Paseos & Cuidadores', color: '#0077b6',
         products: [
-            { name: 'Collar Smart GPS', price: 89.50, img: 'cudi-smart-collar-geolocalizacion-gps.png', desc: 'Geolocalización 24/7, alertas de zona segura y telemetría biométrica en tiempo real.' },
-            { name: 'Módulo Geolocalizador Lite', price: 49.00, img: 'geolocalizacion-tiempo-real-smart-collar.png', desc: 'Seguimiento GPS compacto, ideal para mascotas pequeñas. 30 días de batería.' },
-            { name: 'Radar GPS Antipérdida', price: 35.00, img: 'radar-gps-prevencion-perdidas.png', desc: 'Sistema de alerta de pérdida con radio de 200m. Compatible con todos los collares CUDI.' }
-        ]
-    },
-    planes: {
-        icon: 'fa-star', label: 'Planes IA Premium', color: '#10b981',
-        img: 'dashboard-biometrico-gemelo-digital-mascotas.png',
-        products: [
-            { name: 'Plan Care Básico', price: 15.00, img: 'telemetria-aplicada-veterinaria.png', desc: 'Gemelo digital básico, alertas esenciales y acceso al asistente IA. Facturación mensual.' },
-            { name: 'Plan Premium IA', price: 30.00, img: 'dashboard-biometrico-gemelo-digital-mascotas.png', desc: 'Telemetría completa, informes semanales, triaje IA 24/7 y acceso preferente a la red CUDI.' },
-            { name: 'Plan Total Família', price: 49.00, img: 'familia-multiespecie-paz-mental.png', desc: 'Hasta 3 mascotas con perfiles individuales, historial completo y gestión multiespecie.' }
-        ]
-    },
-    seguros: {
-        icon: 'fa-shield-heart', label: 'Seguros Mascotas', color: '#ef4444',
-        img: 'seguros-gastos-veterinarios-perros-gatos.png',
-        products: [
-            { name: 'Seguro Básico Salud', price: 20.00, img: 'seguros-gastos-veterinarios-perros-gatos.png', desc: 'Cobertura de consultas veterinarias urgentes y desparasitación anual. Sin permanencia.' },
-            { name: 'Seguro Familiar Base', price: 35.00, img: 'humanizacion-mascotas-familia.png', desc: 'Hospitalización, cirugía y eutanasia. Acceso a toda la red clínica asociada CUDI.' },
-            { name: 'Protección Total Platinum', price: 55.00, img: 'mascota-sana-feliz.png', desc: 'Todo incluido: oncología, fisioterapia, telemedicina y asistencia en viajes al extranjero.' }
+            { name: 'Paseo Urbano (30 min)',    price: 12.00, img: 'perro-urbano-barcelona-paseo.png',     desc: 'Paseador certificado CUDI en tu barrio. Reporte GPS + foto de actividad en tiempo real.' },
+            { name: 'Guardería de Día',          price: 18.00, img: 'guarderia-canina-confianza.png',      desc: 'Tu mascota pasa el día con un cuidador verificado. Cámaras en vivo, informe al final del día.' },
+            { name: 'Cuidado a Domicilio (noche)', price: 35.00, img: 'familia-multiespecie-paz-mental.png', desc: 'El cuidador se queda en tu casa. Perfecto para viajes. Tu rutina, sin estrés para tu mascota.' }
         ]
     },
     clinica: {
-        icon: 'fa-user-doctor', label: 'Clínica & Telemedicina', color: '#d97706',
-        img: 'clinica-veterinaria-red-socios.png',
+        icon: 'fa-user-doctor', label: '🩺 Veterinaria & Salud', color: '#ef4444',
         products: [
-            { name: 'Consulta Chat 24/7', price: 15.00, img: 'triaje-ia-veterinario-urgencias.png', desc: 'Triaje IA inmediato. Un veterinario real te responde en menos de 10 minutos.' },
-            { name: 'Videoconsulta Experta', price: 35.00, img: 'servicios-telemedicina-veterinaria-domicilio.png', desc: 'Videollamada cara a cara con un especialista de la red CUDI. Horario 8h-22h.' },
-            { name: 'Visita Domiciliaria Exprés', price: 65.00, img: 'clinica-veterinaria-red-socios.png', desc: 'El veterinario viene a tu casa en 90 minutos. Sin estrés para tu mascota.' }
+            { name: 'Chat Veterinario 24/7',     price: 15.00, img: 'triaje-ia-veterinario-urgencias.png',          desc: 'Consulta con un veterinario en menos de 10 minutos por chat. Triaje IA + supervisión humana.' },
+            { name: 'Videoconsulta Veterinaria', price: 35.00, img: 'servicios-telemedicina-veterinaria-domicilio.png', desc: 'Videollamada con especialista de la red CUDI. Horario 8h-22h todos los días.' },
+            { name: 'Visita Veterinaria a Domicilio', price: 65.00, img: 'clinica-veterinaria-red-socios.png',       desc: 'El veterinario te visita en casa en menos de 90 minutos. Sin colas, sin estrés.' }
         ]
     },
-    paseos: {
-        icon: 'fa-person-walking', label: 'Paseos & Actividad', color: '#0ea5e9',
-        img: 'rutas-paseos-seguros-barcelona.png',
+    estetica: {
+        icon: 'fa-scissors', label: '✂️ Estética & Peluquería', color: '#10b981',
         products: [
-            { name: 'Paseo Urbano (30 min)', price: 12.00, img: 'perro-urbano-barcelona-paseo.png', desc: 'Paseador certificado CUDI en tu barrio. Reporte de actividad y geolocalización en tiempo real.' },
-            { name: 'Ruta Naturaleza (1h)', price: 22.00, img: 'rutas-pet-friendly-barcelona.png', desc: 'Excursión guiada por rutas pet-friendly verificadas. Grupos reducidos de máx. 4 mascotas.' },
-            { name: 'Guardería Día Completo', price: 40.00, img: 'guarderia-canina-confianza.png', desc: 'Hasta 10 horas de cuidado premium, ejercicio, socialización y cámaras en vivo.' }
+            { name: 'Baño + Secado',             price: 25.00, img: 'estetica-canina-bienestar.png',       desc: 'Baño con productos hipoalergénicos, secado profesional y fragancia suave. Para perros y gatos.' },
+            { name: 'Corte de Pelo + Arreglo',   price: 40.00, img: 'mascota-sana-feliz.png',              desc: 'Corte personalizado según raza, estilo y temporada. Incluye limpieza de oídos y uñas.' },
+            { name: 'Pack Bienestar Completo',   price: 60.00, img: 'mejora-descanso-salud-felina.png',    desc: 'Baño, corte, tratamiento antiparasitario, hidratación del pelaje y revisión básica de salud.' }
         ]
     },
-    nutricion: {
-        icon: 'fa-bowl-food', label: 'Nutrición & Bienestar', color: '#8b5cf6',
-        img: 'dietas-personalizadas-longevidad-mascotas.png',
+    petshop: {
+        icon: 'fa-store', label: '🛍️ Pet Shop', color: '#d97706',
         products: [
-            { name: 'Pack Pienso Smart (5kg)', price: 38.00, img: 'marketplace-alimentos-organicos-perros.png', desc: 'Fórmula personalizada por la IA según el perfil biométrico de tu mascota. Sin cereales.' },
-            { name: 'EcoPet Organic Mensual', price: 45.00, img: 'dietas-personalizadas-longevidad-mascotas.png', desc: 'Suscripción de comida natural preparada con ingredientes ecológicos certificados. A domicilio.' },
-            { name: 'Plan Longevi-Pet Senior', price: 59.00, img: 'perro-senior-calidad-vida-longevidad.png', desc: 'Dieta específica para mascotas Golden. Baja en fósforo, rica en Omega-3 y condroitina.' }
+            { name: 'Alimento Premium (5 kg)',   price: 38.00, img: 'marketplace-alimentos-organicos-perros.png', desc: 'Fórmula sin cereales, alta en proteína, recomendada por la IA según el perfil de tu mascota.' },
+            { name: 'Pack Higiene & Accesorios', price: 22.00, img: 'tienda-productos-mascotas-barcelona.png',    desc: 'Shampoo, cepillo, limpiador dental y bolsas biodegradables. Todo lo esencial en un pack.' },
+            { name: 'Juguetes & Enriquecimiento', price: 18.00, img: 'reduccion-ansiedad-separacion-perros.png', desc: 'Kit de juguetes cognitivos para reducir la ansiedad de separación y estimular el instinto natural.' }
+        ]
+    },
+    adiestramiento: {
+        icon: 'fa-graduation-cap', label: '🎓 Adiestramiento', color: '#8b5cf6',
+        products: [
+            { name: 'Sesión Adiestramiento (1h)', price: 45.00, img: 'comportamiento-canino-barcelona.png',  desc: 'Entrenador certificado CUDI. Metodología positiva. Obediencia básica, socialización y comportamiento.' },
+            { name: 'Pack 5 Sesiones',            price: 180.00, img: 'rutas-paseos-seguros-barcelona.png', desc: 'Programa de 5 sesiones consecutivas con seguimiento semanal. Ideal para cachorros y perros adultos.' },
+            { name: 'Taller Grupal (2h)',          price: 25.00, img: 'senderismo-familiar-mascota-naturaleza.png', desc: 'Clase colectiva con otras mascotas compatibles. Socialización guiada y aprendizaje en entorno natural.' }
         ]
     }
 };
@@ -386,7 +372,6 @@ function openStoreCategory(catId) {
     const panel = document.getElementById('store-products-panel');
     if (!panel) return;
 
-    // Si es la misma categoría ya abierta, plegar
     if (activeCategoryId === catId) {
         panel.style.display = 'none';
         activeCategoryId = null;
@@ -404,18 +389,18 @@ function openStoreCategory(catId) {
 
     panel.style.display = 'block';
     panel.innerHTML = `
-        <div style="font-weight:800; font-size:0.9rem; color:${cat.color}; margin-bottom:12px; display:flex; align-items:center; gap:8px;">
+        <div style="font-weight:800; font-size:0.85rem; color:${cat.color}; margin-bottom:12px; display:flex; align-items:center; gap:6px; text-transform:uppercase; letter-spacing:0.3px;">
             <i class="fa-solid ${cat.icon}"></i> ${cat.label}
         </div>
         ${cat.products.map(p => `
             <div style="display:flex; align-items:flex-start; gap:12px; background:white; border-radius:14px; padding:12px; margin-bottom:10px; border:1px solid #e2e8f0; box-shadow:0 2px 8px rgba(0,0,0,0.04);">
-                <div style="width:60px; height:60px; border-radius:10px; background:url('${p.img}') center/cover; background-color:#f1f5f9; flex-shrink:0;"></div>
+                <div style="width:64px; height:64px; border-radius:10px; background:url('${p.img}') center/cover; background-color:#f1f5f9; flex-shrink:0;"></div>
                 <div style="flex:1; min-width:0;">
-                    <div style="font-weight:800; font-size:0.85rem; margin-bottom:3px;">${p.name}</div>
+                    <div style="font-weight:800; font-size:0.85rem; margin-bottom:3px; color:#0f172a;">${p.name}</div>
                     <div style="font-size:0.75rem; color:#64748b; margin-bottom:8px; line-height:1.4;">${p.desc}</div>
                     <div style="display:flex; justify-content:space-between; align-items:center;">
-                        <span style="font-weight:800; color:${cat.color}; font-size:1rem;">${p.price.toFixed(2)} €</span>
-                        <button onclick="addToAppCart('${p.name}', ${p.price}, '${p.img}')" style="background:${cat.color}; color:white; border:none; border-radius:8px; padding:7px 12px; font-size:0.8rem; font-weight:700; cursor:pointer; display:flex; align-items:center; gap:5px;">
+                        <span style="font-weight:900; color:${cat.color}; font-size:1rem;">${p.price.toFixed(2)} €</span>
+                        <button onclick="addToAppCart('${p.name}', ${p.price}, '${p.img}')" style="background:${cat.color}; color:white; border:none; border-radius:8px; padding:8px 14px; font-size:0.8rem; font-weight:700; cursor:pointer; display:flex; align-items:center; gap:5px; transition:opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
                             <i class="fa-solid fa-cart-plus"></i> Añadir
                         </button>
                     </div>
@@ -426,6 +411,49 @@ function openStoreCategory(catId) {
     panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
+// ==== RED SOCIAL CUDI PAWS ====
+const SOCIAL_PETS = [
+    { name: 'Berto', type: 'Perro', breed: 'Golden Retriever', age: '⚡ Energía Desatada', distance: '180m', img: 'bienestar-integral-perros-gatos.png', status: 'Disponible esta tarde' },
+    { name: 'Mimi',  type: 'Gata',  breed: 'Europeo Común',    age: '🌟 Plenitud Vital',  distance: '320m', img: 'gato-explorando-seguro-collar-gps.png', status: 'Salida mañana por la mañana' },
+    { name: 'Zeus',  type: 'Perro', breed: 'Husky Siberiano',  age: '🌱 Primera Aventura', distance: '450m', img: 'comportamiento-canino-barcelona.png', status: 'Busca compañía para paseo' },
+    { name: 'Coco',  type: 'Perro', breed: 'Beagle',           age: '🏅 Sabiduría Golden', distance: '600m', img: 'perro-senior-calidad-vida-longevidad.png', status: 'Paseo tranquilo preferido' }
+];
+
+function renderSocialPets() {
+    const list = document.getElementById('social-pets-list');
+    if (!list) return;
+    list.innerHTML = SOCIAL_PETS.map((pet, idx) => `
+        <div style="display:flex; align-items:center; gap:12px; background:white; border-radius:16px; padding:14px; border:1px solid #e2e8f0; box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+            <div style="width:56px; height:56px; border-radius:50%; background:url('${pet.img}') center/cover; background-color:#e2e8f0; flex-shrink:0; border:2px solid var(--app-primary);"></div>
+            <div style="flex:1; min-width:0;">
+                <div style="display:flex; align-items:center; gap:6px; margin-bottom:2px;">
+                    <span style="font-weight:800; font-size:0.95rem;">${pet.name}</span>
+                    <span style="font-size:0.7rem; color:#64748b;">${pet.breed}</span>
+                </div>
+                <div style="font-size:0.72rem; color:var(--app-primary); font-weight:700; margin-bottom:3px;">${pet.age}</div>
+                <div style="font-size:0.72rem; color:#64748b;">📍 ${pet.distance} de ti &bull; ${pet.status}</div>
+            </div>
+            <button onclick="connectWithPet('${pet.name}', ${idx})" id="connect-btn-${idx}" style="background:var(--app-primary); color:white; border:none; border-radius:10px; padding:8px 12px; font-size:0.75rem; font-weight:700; cursor:pointer; flex-shrink:0; white-space:nowrap;">
+                Conectar
+            </button>
+        </div>
+    `).join('');
+}
+
+function connectWithPet(name, idx) {
+    const btn = document.getElementById(`connect-btn-${idx}`);
+    if (btn) {
+        btn.innerHTML = '✓ ¡Conectado!';
+        btn.style.background = '#10b981';
+        btn.disabled = true;
+    }
+    if (typeof showCudiToast === 'function') showCudiToast(`¡Solicitud enviada a ${name}! Te notificamos cuando acepten 🐾`);
+}
+
+function proposeOuting() {
+    if (typeof showCudiToast === 'function') showCudiToast('📍 Salida propuesta enviada a mascotas compatibles cerca de ti');
+}
+
 // ==== PANTALLA 2 A 5: NAVEGADOR DE TABS ====
 function switchNav(tabId, element) {
     document.querySelectorAll('.tab-view').forEach(t => t.classList.remove('active'));
@@ -433,6 +461,11 @@ function switchNav(tabId, element) {
     
     document.getElementById(`tab-${tabId}`).classList.add('active');
     element.classList.add('active');
+
+    // Renderizar la red social al entrar al tab
+    if (tabId === 'social') {
+        setTimeout(renderSocialPets, 100);
+    }
 }
 
 // ==== CHARTS.JS INTEGRATION (10 GRAPHICS) ====
@@ -899,4 +932,5 @@ function simulateNewNotification() {
 document.addEventListener('DOMContentLoaded', () => {
     updateCartUI();
     renderNotifications();
+    renderSocialPets();
 });

@@ -359,13 +359,39 @@
                         </div>
                     </div>
 
-                    <!-- TAB 4: STORE / ECOMMERCE CON CATEGORÍAS EXPANDIBLES -->
+                    <!-- TAB 4: STORE — PRODUCTOS REALES TFM -->
                     <div id="tab-store" class="tab-view">
-                        <div class="dash-section" style="padding-top: 80px; padding-bottom:20px;">
-                            <h3 class="emotional-title" style="font-size:1.2rem;">Tienda CUDI</h3>
-                            <p class="emotional-desc" style="font-size:0.8rem; margin-bottom:16px;">Selecciona una categoría para explorar su catálogo completo.</p>
+                        <div class="dash-section" style="padding-top:80px; padding-bottom:100px;">
 
-                            <!-- Carrito inline -->
+                            <!-- BANNER PREMIUM SIEMPRE VISIBLE -->
+                            <div id="premium-hero-banner" style="background:linear-gradient(135deg, #0f172a 0%, #0077b6 60%, #00b4d8 100%); border-radius:22px; padding:22px; margin-bottom:18px; color:white; position:relative; overflow:hidden;">
+                                <div style="position:absolute; top:-20px; right:-20px; width:120px; height:120px; border-radius:50%; background:rgba(255,255,255,0.07);"></div>
+                                <div style="position:absolute; bottom:-30px; left:40px; width:80px; height:80px; border-radius:50%; background:rgba(255,255,255,0.05);"></div>
+                                <div style="position:relative; z-index:2;">
+                                    <div style="display:flex; align-items:center; gap:8px; margin-bottom:10px;">
+                                        <span style="background:linear-gradient(90deg,#ffd700,#ffb700); color:#0f172a; font-size:0.7rem; font-weight:900; padding:4px 10px; border-radius:30px; letter-spacing:0.5px;">★ PLAN PREMIUM</span>
+                                        <span style="font-size:0.7rem; color:#93c5fd; font-weight:600;">El più completo de CUDI</span>
+                                    </div>
+                                    <h3 style="font-family:var(--font-heading); font-weight:900; font-size:1.25rem; margin-bottom:8px; line-height:1.2;">Todo el cuidado de tu mascota, en una suscripción.</h3>
+                                    <ul style="list-style:none; margin:0 0 16px 0; padding:0; display:flex; flex-direction:column; gap:5px;">
+                                        <li style="font-size:0.82rem; color:#e0f2fe;"><i class="fa-solid fa-check" style="color:#34d399; margin-right:6px;"></i><strong>Collar GPS incluido</strong> — telemetría 24/7</li>
+                                        <li style="font-size:0.82rem; color:#e0f2fe;"><i class="fa-solid fa-check" style="color:#34d399; margin-right:6px;"></i>IA hiper-personalizada para tu mascota</li>
+                                        <li style="font-size:0.82rem; color:#e0f2fe;"><i class="fa-solid fa-check" style="color:#34d399; margin-right:6px;"></i>Chat veterinario 24/7 incluido</li>
+                                        <li style="font-size:0.82rem; color:#e0f2fe;"><i class="fa-solid fa-check" style="color:#34d399; margin-right:6px;"></i>1 paseo de 1h al mes incluido</li>
+                                        <li style="font-size:0.82rem; color:#e0f2fe;"><i class="fa-solid fa-check" style="color:#34d399; margin-right:6px;"></i>Descuentos exclusivos en toda la red</li>
+                                        <li style="font-size:0.82rem; color:#e0f2fe;"><i class="fa-solid fa-check" style="color:#34d399; margin-right:6px;"></i>Acceso prioritario a todos los servicios</li>
+                                    </ul>
+                                    <div style="display:flex; align-items:baseline; gap:6px; margin-bottom:14px;">
+                                        <span style="font-size:2rem; font-weight:900; color:white;">30€</span>
+                                        <span style="font-size:0.85rem; color:#93c5fd;">/mes · sin permanencia</span>
+                                    </div>
+                                    <button onclick="addToAppCart('Plan Premium CUDI', 30.00, 'dashboard-biometrico-gemelo-digital-mascotas.png')" style="width:100%; background:linear-gradient(90deg,#ffd700,#f59e0b); color:#0f172a; border:none; border-radius:12px; padding:14px; font-weight:900; font-size:0.95rem; cursor:pointer; letter-spacing:0.3px;">
+                                        ★ Activar Premium ahora
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- CARRITO INLINE -->
                             <div id="inline-cart-panel" style="display:none; background:#f8fafc; border-radius:15px; padding:15px; margin-bottom:15px; border:1px solid #e2e8f0;">
                                 <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
                                     <span style="font-weight:800; font-size:0.9rem;"><i class="fa-solid fa-cart-shopping" style="color:var(--app-primary);"></i> Tu Cesta</span>
@@ -378,72 +404,83 @@
                                 </div>
                             </div>
 
-                            <!-- Botón flotante ver carrito -->
                             <button id="cart-float-btn" onclick="toggleInlineCart()" style="display:none; width:100%; background:var(--app-primary); color:white; border:none; border-radius:12px; padding:12px; font-weight:700; font-size:0.85rem; cursor:pointer; margin-bottom:15px; align-items:center; justify-content:center; gap:8px;">
-                                <i class="fa-solid fa-cart-shopping"></i> Ver Carrito (<span id="cart-float-count">0</span>)
+                                <i class="fa-solid fa-cart-shopping"></i> Ver Cesta (<span id="cart-float-count">0</span>)
                             </button>
 
-                            <!-- Categorías -->
+                            <!-- SERVICIOS — Categorías expandibles -->
+                            <p style="font-size:0.8rem; font-weight:700; color:#64748b; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:10px;">Servicios disponibles</p>
                             <div style="display:flex; flex-direction:column; gap:8px;">
-                                <button id="cat-btn-hardware" class="store-cat-btn" onclick="openStoreCategory('hardware')" style="display:flex; align-items:center; gap:12px; background:white; border:1px solid #e2e8f0; border-radius:14px; padding:14px; cursor:pointer; text-align:left; width:100%; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s;">
-                                    <div style="width:44px; height:44px; border-radius:10px; background:url('cudi-smart-collar-geolocalizacion-gps.png') center/cover; flex-shrink:0;"></div>
+                                <button id="cat-btn-paseos" class="store-cat-btn" onclick="openStoreCategory('paseos')" style="display:flex; align-items:center; gap:12px; background:white; border:1px solid #e2e8f0; border-radius:14px; padding:14px; cursor:pointer; text-align:left; width:100%; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s;">
+                                    <div style="width:44px; height:44px; border-radius:10px; background:url('paseadores-perros-actividad-fisica.png') center/cover; background-color:#dbeafe; flex-shrink:0;"></div>
                                     <div style="flex:1;">
-                                        <div style="font-weight:800; font-size:0.9rem; color:#0f172a;">Hardware Inteligente</div>
-                                        <div style="font-size:0.75rem; color:#64748b;">Collarines, GPS y sensores</div>
-                                    </div>
-                                    <i class="fa-solid fa-chevron-right" style="color:#94a3b8; font-size:0.8rem;"></i>
-                                </button>
-
-                                <button id="cat-btn-planes" class="store-cat-btn" onclick="openStoreCategory('planes')" style="display:flex; align-items:center; gap:12px; background:white; border:1px solid #e2e8f0; border-radius:14px; padding:14px; cursor:pointer; text-align:left; width:100%; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s;">
-                                    <div style="width:44px; height:44px; border-radius:10px; background:url('dashboard-biometrico-gemelo-digital-mascotas.png') center/cover; flex-shrink:0;"></div>
-                                    <div style="flex:1;">
-                                        <div style="font-weight:800; font-size:0.9rem; color:#0f172a;">Planes IA Premium</div>
-                                        <div style="font-size:0.75rem; color:#64748b;">Suscripciones y gemelo digital</div>
-                                    </div>
-                                    <i class="fa-solid fa-chevron-right" style="color:#94a3b8; font-size:0.8rem;"></i>
-                                </button>
-
-                                <button id="cat-btn-seguros" class="store-cat-btn" onclick="openStoreCategory('seguros')" style="display:flex; align-items:center; gap:12px; background:white; border:1px solid #e2e8f0; border-radius:14px; padding:14px; cursor:pointer; text-align:left; width:100%; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s;">
-                                    <div style="width:44px; height:44px; border-radius:10px; background:url('seguros-gastos-veterinarios-perros-gatos.png') center/cover; flex-shrink:0;"></div>
-                                    <div style="flex:1;">
-                                        <div style="font-weight:800; font-size:0.9rem; color:#0f172a;">Seguros Mascotas</div>
-                                        <div style="font-size:0.75rem; color:#64748b;">Coberturas Basic, Familiar y Platinum</div>
+                                        <div style="font-weight:800; font-size:0.9rem; color:#0f172a;">🦮 Paseos & Cuidadores</div>
+                                        <div style="font-size:0.75rem; color:#64748b;">Paseadores, guardería y alojamiento</div>
                                     </div>
                                     <i class="fa-solid fa-chevron-right" style="color:#94a3b8; font-size:0.8rem;"></i>
                                 </button>
 
                                 <button id="cat-btn-clinica" class="store-cat-btn" onclick="openStoreCategory('clinica')" style="display:flex; align-items:center; gap:12px; background:white; border:1px solid #e2e8f0; border-radius:14px; padding:14px; cursor:pointer; text-align:left; width:100%; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s;">
-                                    <div style="width:44px; height:44px; border-radius:10px; background:url('clinica-veterinaria-red-socios.png') center/cover; flex-shrink:0;"></div>
+                                    <div style="width:44px; height:44px; border-radius:10px; background:url('triaje-ia-veterinario-urgencias.png') center/cover; background-color:#fce7f3; flex-shrink:0;"></div>
                                     <div style="flex:1;">
-                                        <div style="font-weight:800; font-size:0.9rem; color:#0f172a;">Clínica & Telemedicina</div>
-                                        <div style="font-size:0.75rem; color:#64748b;">Chat, videoconsulta y domicilio</div>
+                                        <div style="font-weight:800; font-size:0.9rem; color:#0f172a;">🩺 Veterinaria & Salud</div>
+                                        <div style="font-size:0.75rem; color:#64748b;">Consultas, domicilio y telemedicina</div>
                                     </div>
                                     <i class="fa-solid fa-chevron-right" style="color:#94a3b8; font-size:0.8rem;"></i>
                                 </button>
 
-                                <button id="cat-btn-paseos" class="store-cat-btn" onclick="openStoreCategory('paseos')" style="display:flex; align-items:center; gap:12px; background:white; border:1px solid #e2e8f0; border-radius:14px; padding:14px; cursor:pointer; text-align:left; width:100%; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s;">
-                                    <div style="width:44px; height:44px; border-radius:10px; background:url('rutas-paseos-seguros-barcelona.png') center/cover; flex-shrink:0;"></div>
+                                <button id="cat-btn-estetica" class="store-cat-btn" onclick="openStoreCategory('estetica')" style="display:flex; align-items:center; gap:12px; background:white; border:1px solid #e2e8f0; border-radius:14px; padding:14px; cursor:pointer; text-align:left; width:100%; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s;">
+                                    <div style="width:44px; height:44px; border-radius:10px; background:url('estetica-canina-bienestar.png') center/cover; background-color:#f0fdf4; flex-shrink:0;"></div>
                                     <div style="flex:1;">
-                                        <div style="font-weight:800; font-size:0.9rem; color:#0f172a;">Paseos & Actividad</div>
-                                        <div style="font-size:0.75rem; color:#64748b;">Paseadores, rutas y guardería</div>
+                                        <div style="font-weight:800; font-size:0.9rem; color:#0f172a;">✂️ Estética & Peluquería</div>
+                                        <div style="font-size:0.75rem; color:#64748b;">Baño, corte y asesoramiento</div>
                                     </div>
                                     <i class="fa-solid fa-chevron-right" style="color:#94a3b8; font-size:0.8rem;"></i>
                                 </button>
 
-                                <button id="cat-btn-nutricion" class="store-cat-btn" onclick="openStoreCategory('nutricion')" style="display:flex; align-items:center; gap:12px; background:white; border:1px solid #e2e8f0; border-radius:14px; padding:14px; cursor:pointer; text-align:left; width:100%; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s;">
-                                    <div style="width:44px; height:44px; border-radius:10px; background:url('dietas-personalizadas-longevidad-mascotas.png') center/cover; flex-shrink:0;"></div>
+                                <button id="cat-btn-petshop" class="store-cat-btn" onclick="openStoreCategory('petshop')" style="display:flex; align-items:center; gap:12px; background:white; border:1px solid #e2e8f0; border-radius:14px; padding:14px; cursor:pointer; text-align:left; width:100%; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s;">
+                                    <div style="width:44px; height:44px; border-radius:10px; background:url('marketplace-alimentos-organicos-perros.png') center/cover; background-color:#fff7ed; flex-shrink:0;"></div>
                                     <div style="flex:1;">
-                                        <div style="font-weight:800; font-size:0.9rem; color:#0f172a;">Nutrición & Bienestar</div>
-                                        <div style="font-size:0.75rem; color:#64748b;">Pienso, dietas y suplementos</div>
+                                        <div style="font-weight:800; font-size:0.9rem; color:#0f172a;">🛍️ Pet Shop</div>
+                                        <div style="font-size:0.75rem; color:#64748b;">Alimentos, higiene, accesorios, juguetes</div>
+                                    </div>
+                                    <i class="fa-solid fa-chevron-right" style="color:#94a3b8; font-size:0.8rem;"></i>
+                                </button>
+
+                                <button id="cat-btn-adiestramiento" class="store-cat-btn" onclick="openStoreCategory('adiestramiento')" style="display:flex; align-items:center; gap:12px; background:white; border:1px solid #e2e8f0; border-radius:14px; padding:14px; cursor:pointer; text-align:left; width:100%; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s;">
+                                    <div style="width:44px; height:44px; border-radius:10px; background:url('comportamiento-canino-barcelona.png') center/cover; background-color:#ede9fe; flex-shrink:0;"></div>
+                                    <div style="flex:1;">
+                                        <div style="font-weight:800; font-size:0.9rem; color:#0f172a;">🎓 Adiestramiento</div>
+                                        <div style="font-size:0.75rem; color:#64748b;">Entrenamiento personalizado certificado</div>
                                     </div>
                                     <i class="fa-solid fa-chevron-right" style="color:#94a3b8; font-size:0.8rem;"></i>
                                 </button>
                             </div>
 
-                            <!-- Panel de productos (se inyecta dinámicamente) -->
-                            <div id="store-products-panel" style="display:none; margin-top:15px; animation: fadeIn 0.2s ease;"></div>
+                            <!-- Panel de productos inyectado dinámicamente -->
+                            <div id="store-products-panel" style="display:none; margin-top:15px;"></div>
                         </div>
                     </div>
+
+                    <!-- TAB 5: SOCIAL — CUDI PAWS -->
+                    <div id="tab-social" class="tab-view">
+                        <div class="dash-section" style="padding-top:80px; padding-bottom:100px;">
+                            <h3 class="emotional-title" style="font-size:1.15rem;">🐾 CUDI Paws Social</h3>
+                            <p class="emotional-desc" style="font-size:0.8rem; margin-bottom:18px;">Conectamos mascotas compatibles cerca de ti para salidas, juegos y nuevas amistades.</p>
+
+                            <!-- Proponer salida -->
+                            <div style="background:linear-gradient(135deg, #0077b6, #0ea5e9); border-radius:18px; padding:18px; color:white; margin-bottom:18px; text-align:center;">
+                                <i class="fa-solid fa-people-group" style="font-size:2rem; margin-bottom:10px;"></i>
+                                <p style="font-size:0.85rem; margin-bottom:12px; line-height:1.5;">La IA CUDI analiza las interacciones durante los paseos y sugiere conexiones entre mascotas compatibles.</p>
+                                <button onclick="proposeOuting()" style="background:white; color:#0077b6; border:none; border-radius:10px; padding:10px 20px; font-weight:800; font-size:0.85rem; cursor:pointer;">📍 Proponer una salida</button>
+                            </div>
+
+                            <!-- Cards de mascotas cercanas -->
+                            <p style="font-size:0.8rem; font-weight:700; color:#64748b; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:10px;">Mascotas cerca de ti 📡</p>
+                            <div id="social-pets-list" style="display:flex; flex-direction:column; gap:10px;"></div>
+                        </div>
+                    </div>
+
 
                     <!-- TAB 5: ACTIVIDAD Y NUTRICION -->
                     <div id="tab-act" class="tab-view">
@@ -546,13 +583,15 @@
                     </div>
 
                     <!-- NAVEGACIÓN INFERIOR DE 6 TABS -->
-                    <div class="bottom-nav" style="justify-content:space-around;">
-                        <div class="nav-item active" onclick="switchNav('dash', this)"><i class="fa-solid fa-heart-pulse"></i><span>Bio</span></div>
-                        <div class="nav-item" onclick="switchNav('sim', this)"><i class="fa-solid fa-microchip"></i><span>IA</span></div>
-                        <div class="nav-item" onclick="switchNav('vax', this)"><i class="fa-solid fa-syringe"></i><span>Salud</span></div>
-                        <div class="nav-item" onclick="switchNav('store', this)"><i class="fa-solid fa-bag-shopping"></i><span>Store</span></div>
-                        <div class="nav-item" onclick="switchNav('act', this)"><i class="fa-solid fa-bone"></i><span>Diario</span></div>
-                        <div class="nav-item" onclick="switchNav('profile', this)"><i class="fa-solid fa-paw"></i><span>Perfil</span></div>
+                    <div class="global-app-nav" id="global-app-nav" style="display:none;">
+                        <div class="bottom-nav" style="justify-content:space-around;">
+                            <div class="nav-item active" onclick="switchNav('dash', this)"><i class="fa-solid fa-heart-pulse"></i><span>Bio</span></div>
+                            <div class="nav-item" onclick="switchNav('sim', this)"><i class="fa-solid fa-microchip"></i><span>IA</span></div>
+                            <div class="nav-item" onclick="switchNav('vax', this)"><i class="fa-solid fa-syringe"></i><span>Salud</span></div>
+                            <div class="nav-item" onclick="switchNav('store', this)"><i class="fa-solid fa-bag-shopping"></i><span>Tienda</span></div>
+                            <div class="nav-item" onclick="switchNav('social', this)"><i class="fa-solid fa-paw"></i><span>Social</span></div>
+                            <div class="nav-item" onclick="switchNav('profile', this)"><i class="fa-solid fa-id-card"></i><span>Perfil</span></div>
+                        </div>
                     </div>
                 </div>
 
