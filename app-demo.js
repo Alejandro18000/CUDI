@@ -82,26 +82,26 @@ const BREEDS = {
 };
 
 const CARE_BY_AGE = {
-    cachorro: {
-        label: 'Cuidados de Cachorro',
+    primera: {
+        label: 'Primera Aventura',
         perro: ['Vacunación primaria (6-8 semanas)', 'Socialización temprana (hasta 16 semanas)', 'Entrenamiento básico y límites', 'Dieta específica para crecimiento'],
         gato: ['Vacunación: triple felina y rabia', 'Destete y socialización', 'Revisión parasitaria', 'Dieta alta en proteínas para crecimiento'],
         special: ['Vacunación temprana', 'Socialización', 'Control crecimiento']
     },
-    joven: {
-        label: 'Cuidados de Joven Activo',
+    explorer: {
+        label: 'Energía Desatada',
         perro: ['Esterilización recomendada (6-18 meses)', 'Ejercicio diario >= 45 min', 'Educación avanzada y agility', 'Desparasitación trimestral'],
         gato: ['Esterilización/castración (5-7 meses)', 'Enriquecimiento ambiental', 'Revisión oftalmológica', 'Dieta equilibrada activa'],
         special: ['Esterilización', 'Ejercicio intensivo', 'Control peso']
     },
-    adulto: {
-        label: 'Cuidados de Adulto',
+    plenitud: {
+        label: 'Plenitud Vital',
         perro: ['Revisión anual completa', 'Profilaxis dental bianual', 'Mantenimiento de peso', 'Análisis de sangre rutinario'],
         gato: ['Análisis de orina anual', 'Limpieza dental', 'Control peso y dieta', 'Revisión de tiroides (>6 años)'],
         special: ['Revisión anual', 'Dental', 'Análisis sangre']
     },
-    senior: {
-        label: 'Cuidados Senior',
+    golden: {
+        label: 'Sabiduría Golden',
         perro: ['Revisiones semestrales obligatorias', 'Control articular y movilidad', 'Dieta baja en fósforo', 'Análisis renal y hepático'],
         gato: ['Revisiones cada 4 meses', 'Detección precoz de hipertiroidismo', 'Dieta húmeda renal', 'Control presión arterial'],
         special: ['Revisión semestral', 'Dieta renal', 'Control articular']
@@ -275,7 +275,7 @@ function initializeDashboard() {
 function populatePetProfile() {
     const p = petProfile;
     const typeLabels = { perro: '🐶 Perro', gato: '🐱 Gato' };
-    const ageLabels  = { cachorro: '🍼 Cachorro', joven: '⚡ Joven', adulto: '🎯 Adulto', senior: '🧓 Senior' };
+    const ageLabels  = { primera: '🌱 Primera Aventura', explorer: '⚡ Energía Desatada', plenitud: '🌟 Plenitud Vital', golden: '🏅 Sabiduría Golden' };
     const energyLabels = { tranquilo: '😴 Tranquilo', moderado: '🎾 Moderado', activo: '⚡ Activo' };
     const foodLabels = { pienso: 'Pienso Seco', barf: 'BARF Natural', mixta: 'Mixta' };
 
@@ -293,14 +293,20 @@ function populatePetProfile() {
     const badge = document.getElementById('profile-pet-badge');
     if (badge) badge.textContent = `${typeLabels[p.type] || ''}  ${ageLabels[p.age] || ''}`;
 
-    // Avatar
+    // Avatar: foto real del animal seleccionado
     const avatar = document.getElementById('pet-avatar-display');
     if (avatar && p.type) {
         const avatarUrl = p.type === 'gato'
-            ? 'dietas-personalizadas-longevidad-mascotas.png'
-            : 'avatar-mascota-perfil-gemelo-digital.png';
+            ? 'gato-explorando-seguro-collar-gps.png'
+            : (p.age === 'golden' ? 'perro-senior-calidad-vida-longevidad.png' : 'perro-urbano-barcelona-paseo.png');
         avatar.style.backgroundImage = `url('${avatarUrl}')`;
+        avatar.style.backgroundSize = 'cover';
+        avatar.style.backgroundPosition = 'center top';
     }
+
+    // Nombre visible debajo del avatar — siempre desde el perfil
+    const nameEl = document.getElementById('profile-pet-name');
+    if (nameEl) nameEl.textContent = p.name || '—';
 
     // Cuidados especiales
     const careCard = document.getElementById('profile-care-card');
@@ -315,7 +321,112 @@ function populatePetProfile() {
     }
 }
 
-// ==== PANTALLA 2 A 5: NAVEGADOR DE TABS (5 TABS) ====
+
+// ==== CATÁLOGO STORE EXPANDIBLE ====
+const STORE_CATALOG = {
+    hardware: {
+        icon: 'fa-microchip', label: 'Hardware Inteligente', color: '#0077b6',
+        img: 'cudi-smart-collar-geolocalizacion-gps.png',
+        products: [
+            { name: 'Collar Smart GPS', price: 89.50, img: 'cudi-smart-collar-geolocalizacion-gps.png', desc: 'Geolocalización 24/7, alertas de zona segura y telemetría biométrica en tiempo real.' },
+            { name: 'Módulo Geolocalizador Lite', price: 49.00, img: 'geolocalizacion-tiempo-real-smart-collar.png', desc: 'Seguimiento GPS compacto, ideal para mascotas pequeñas. 30 días de batería.' },
+            { name: 'Radar GPS Antipérdida', price: 35.00, img: 'radar-gps-prevencion-perdidas.png', desc: 'Sistema de alerta de pérdida con radio de 200m. Compatible con todos los collares CUDI.' }
+        ]
+    },
+    planes: {
+        icon: 'fa-star', label: 'Planes IA Premium', color: '#10b981',
+        img: 'dashboard-biometrico-gemelo-digital-mascotas.png',
+        products: [
+            { name: 'Plan Care Básico', price: 15.00, img: 'telemetria-aplicada-veterinaria.png', desc: 'Gemelo digital básico, alertas esenciales y acceso al asistente IA. Facturación mensual.' },
+            { name: 'Plan Premium IA', price: 30.00, img: 'dashboard-biometrico-gemelo-digital-mascotas.png', desc: 'Telemetría completa, informes semanales, triaje IA 24/7 y acceso preferente a la red CUDI.' },
+            { name: 'Plan Total Família', price: 49.00, img: 'familia-multiespecie-paz-mental.png', desc: 'Hasta 3 mascotas con perfiles individuales, historial completo y gestión multiespecie.' }
+        ]
+    },
+    seguros: {
+        icon: 'fa-shield-heart', label: 'Seguros Mascotas', color: '#ef4444',
+        img: 'seguros-gastos-veterinarios-perros-gatos.png',
+        products: [
+            { name: 'Seguro Básico Salud', price: 20.00, img: 'seguros-gastos-veterinarios-perros-gatos.png', desc: 'Cobertura de consultas veterinarias urgentes y desparasitación anual. Sin permanencia.' },
+            { name: 'Seguro Familiar Base', price: 35.00, img: 'humanizacion-mascotas-familia.png', desc: 'Hospitalización, cirugía y eutanasia. Acceso a toda la red clínica asociada CUDI.' },
+            { name: 'Protección Total Platinum', price: 55.00, img: 'mascota-sana-feliz.png', desc: 'Todo incluido: oncología, fisioterapia, telemedicina y asistencia en viajes al extranjero.' }
+        ]
+    },
+    clinica: {
+        icon: 'fa-user-doctor', label: 'Clínica & Telemedicina', color: '#d97706',
+        img: 'clinica-veterinaria-red-socios.png',
+        products: [
+            { name: 'Consulta Chat 24/7', price: 15.00, img: 'triaje-ia-veterinario-urgencias.png', desc: 'Triaje IA inmediato. Un veterinario real te responde en menos de 10 minutos.' },
+            { name: 'Videoconsulta Experta', price: 35.00, img: 'servicios-telemedicina-veterinaria-domicilio.png', desc: 'Videollamada cara a cara con un especialista de la red CUDI. Horario 8h-22h.' },
+            { name: 'Visita Domiciliaria Exprés', price: 65.00, img: 'clinica-veterinaria-red-socios.png', desc: 'El veterinario viene a tu casa en 90 minutos. Sin estrés para tu mascota.' }
+        ]
+    },
+    paseos: {
+        icon: 'fa-person-walking', label: 'Paseos & Actividad', color: '#0ea5e9',
+        img: 'rutas-paseos-seguros-barcelona.png',
+        products: [
+            { name: 'Paseo Urbano (30 min)', price: 12.00, img: 'perro-urbano-barcelona-paseo.png', desc: 'Paseador certificado CUDI en tu barrio. Reporte de actividad y geolocalización en tiempo real.' },
+            { name: 'Ruta Naturaleza (1h)', price: 22.00, img: 'rutas-pet-friendly-barcelona.png', desc: 'Excursión guiada por rutas pet-friendly verificadas. Grupos reducidos de máx. 4 mascotas.' },
+            { name: 'Guardería Día Completo', price: 40.00, img: 'guarderia-canina-confianza.png', desc: 'Hasta 10 horas de cuidado premium, ejercicio, socialización y cámaras en vivo.' }
+        ]
+    },
+    nutricion: {
+        icon: 'fa-bowl-food', label: 'Nutrición & Bienestar', color: '#8b5cf6',
+        img: 'dietas-personalizadas-longevidad-mascotas.png',
+        products: [
+            { name: 'Pack Pienso Smart (5kg)', price: 38.00, img: 'marketplace-alimentos-organicos-perros.png', desc: 'Fórmula personalizada por la IA según el perfil biométrico de tu mascota. Sin cereales.' },
+            { name: 'EcoPet Organic Mensual', price: 45.00, img: 'dietas-personalizadas-longevidad-mascotas.png', desc: 'Suscripción de comida natural preparada con ingredientes ecológicos certificados. A domicilio.' },
+            { name: 'Plan Longevi-Pet Senior', price: 59.00, img: 'perro-senior-calidad-vida-longevidad.png', desc: 'Dieta específica para mascotas Golden. Baja en fósforo, rica en Omega-3 y condroitina.' }
+        ]
+    }
+};
+
+let activeCategoryId = null;
+
+function openStoreCategory(catId) {
+    const panel = document.getElementById('store-products-panel');
+    if (!panel) return;
+
+    // Si es la misma categoría ya abierta, plegar
+    if (activeCategoryId === catId) {
+        panel.style.display = 'none';
+        activeCategoryId = null;
+        document.querySelectorAll('.store-cat-btn').forEach(b => b.classList.remove('active-cat'));
+        return;
+    }
+
+    activeCategoryId = catId;
+    document.querySelectorAll('.store-cat-btn').forEach(b => b.classList.remove('active-cat'));
+    const activeBtn = document.getElementById(`cat-btn-${catId}`);
+    if (activeBtn) activeBtn.classList.add('active-cat');
+
+    const cat = STORE_CATALOG[catId];
+    if (!cat) return;
+
+    panel.style.display = 'block';
+    panel.innerHTML = `
+        <div style="font-weight:800; font-size:0.9rem; color:${cat.color}; margin-bottom:12px; display:flex; align-items:center; gap:8px;">
+            <i class="fa-solid ${cat.icon}"></i> ${cat.label}
+        </div>
+        ${cat.products.map(p => `
+            <div style="display:flex; align-items:flex-start; gap:12px; background:white; border-radius:14px; padding:12px; margin-bottom:10px; border:1px solid #e2e8f0; box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+                <div style="width:60px; height:60px; border-radius:10px; background:url('${p.img}') center/cover; background-color:#f1f5f9; flex-shrink:0;"></div>
+                <div style="flex:1; min-width:0;">
+                    <div style="font-weight:800; font-size:0.85rem; margin-bottom:3px;">${p.name}</div>
+                    <div style="font-size:0.75rem; color:#64748b; margin-bottom:8px; line-height:1.4;">${p.desc}</div>
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <span style="font-weight:800; color:${cat.color}; font-size:1rem;">${p.price.toFixed(2)} €</span>
+                        <button onclick="addToAppCart('${p.name}', ${p.price}, '${p.img}')" style="background:${cat.color}; color:white; border:none; border-radius:8px; padding:7px 12px; font-size:0.8rem; font-weight:700; cursor:pointer; display:flex; align-items:center; gap:5px;">
+                            <i class="fa-solid fa-cart-plus"></i> Añadir
+                        </button>
+                    </div>
+                </div>
+            </div>
+        `).join('')}
+    `;
+    panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+// ==== PANTALLA 2 A 5: NAVEGADOR DE TABS ====
 function switchNav(tabId, element) {
     document.querySelectorAll('.tab-view').forEach(t => t.classList.remove('active'));
     document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));

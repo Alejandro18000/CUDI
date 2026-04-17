@@ -214,10 +214,10 @@
                             <div class="input-group">
                                 <label>Etapa de Vida</label>
                                 <select id="pet-age" class="app-input" onchange="onPetAgeChange()">
-                                    <option value="cachorro">🍼 Cachorro/Bebé</option>
-                                    <option value="joven">⚡ Joven Activo</option>
-                                    <option value="adulto">🎯 Adulto</option>
-                                    <option value="senior">🧓 Senior</option>
+                                    <option value="primera">🌱 Primera Aventura</option>
+                                    <option value="explorer">⚡ Energía Desatada</option>
+                                    <option value="plenitud">🌟 Plenitud Vital</option>
+                                    <option value="golden">🏅 Sabiduría Golden</option>
                                 </select>
                             </div>
                             <div class="input-group">
@@ -359,11 +359,11 @@
                         </div>
                     </div>
 
-                    <!-- TAB 4: STORE / ECOMMERCE PROFUNDO -->
+                    <!-- TAB 4: STORE / ECOMMERCE CON CATEGORÍAS EXPANDIBLES -->
                     <div id="tab-store" class="tab-view">
-                        <div class="dash-section" style="padding-top: 90px; padding-bottom:10px;">
+                        <div class="dash-section" style="padding-top: 80px; padding-bottom:20px;">
                             <h3 class="emotional-title" style="font-size:1.2rem;">Tienda CUDI</h3>
-                            <p class="emotional-desc" style="font-size:0.8rem;">Todo el catálogo integrado. Añade y gestiona tu pedido.</p>
+                            <p class="emotional-desc" style="font-size:0.8rem; margin-bottom:16px;">Selecciona una categoría para explorar su catálogo completo.</p>
 
                             <!-- Carrito inline -->
                             <div id="inline-cart-panel" style="display:none; background:#f8fafc; border-radius:15px; padding:15px; margin-bottom:15px; border:1px solid #e2e8f0;">
@@ -379,91 +379,69 @@
                             </div>
 
                             <!-- Botón flotante ver carrito -->
-                            <button id="cart-float-btn" onclick="toggleInlineCart()" style="display:none; width:100%; background:var(--app-primary); color:white; border:none; border-radius:12px; padding:12px; font-weight:700; font-size:0.85rem; cursor:pointer; margin-bottom:15px; display:flex; align-items:center; justify-content:center; gap:8px;">
+                            <button id="cart-float-btn" onclick="toggleInlineCart()" style="display:none; width:100%; background:var(--app-primary); color:white; border:none; border-radius:12px; padding:12px; font-weight:700; font-size:0.85rem; cursor:pointer; margin-bottom:15px; align-items:center; justify-content:center; gap:8px;">
                                 <i class="fa-solid fa-cart-shopping"></i> Ver Carrito (<span id="cart-float-count">0</span>)
                             </button>
 
-                            <!-- Productos con imagen -->
-                            <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
-                                <!-- Collar Smart -->
-                                <div style="background:white; border-radius:16px; overflow:hidden; border:1px solid #e2e8f0; box-shadow:0 4px 12px rgba(0,0,0,0.04);">
-                                    <div style="height:100px; background:url('cudi-smart-collar-geolocalizacion-gps.png') center/cover;"></div>
-                                    <div style="padding:12px;">
-                                        <div style="font-size:0.6rem; color:var(--app-primary); font-weight:700; text-transform:uppercase; margin-bottom:3px;">Hardware</div>
-                                        <div style="font-weight:800; font-size:0.85rem; margin-bottom:2px;">Collar Smart GPS</div>
-                                        <div style="font-size:0.75rem; color:#64748b; margin-bottom:8px;">Geolocalización 24/7</div>
-                                        <div style="display:flex; justify-content:space-between; align-items:center;">
-                                            <span style="font-weight:800; color:var(--app-primary);">89.50€</span>
-                                            <button onclick="addToAppCart('Collar Smart CUDI GPS', 89.50, 'cudi-smart-collar-geolocalizacion-gps.png')" style="background:var(--app-primary); color:white; border:none; border-radius:8px; padding:6px 10px; font-size:0.75rem; cursor:pointer;"><i class="fa-solid fa-plus"></i></button>
-                                        </div>
+                            <!-- Categorías -->
+                            <div style="display:flex; flex-direction:column; gap:8px;">
+                                <button id="cat-btn-hardware" class="store-cat-btn" onclick="openStoreCategory('hardware')" style="display:flex; align-items:center; gap:12px; background:white; border:1px solid #e2e8f0; border-radius:14px; padding:14px; cursor:pointer; text-align:left; width:100%; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s;">
+                                    <div style="width:44px; height:44px; border-radius:10px; background:url('cudi-smart-collar-geolocalizacion-gps.png') center/cover; flex-shrink:0;"></div>
+                                    <div style="flex:1;">
+                                        <div style="font-weight:800; font-size:0.9rem; color:#0f172a;">Hardware Inteligente</div>
+                                        <div style="font-size:0.75rem; color:#64748b;">Collarines, GPS y sensores</div>
                                     </div>
-                                </div>
-                                <!-- Plan Premium -->
-                                <div style="background:white; border-radius:16px; overflow:hidden; border:1px solid #e2e8f0; box-shadow:0 4px 12px rgba(0,0,0,0.04);">
-                                    <div style="height:100px; background:url('dashboard-biometrico-gemelo-digital-mascotas.png') center/cover;"></div>
-                                    <div style="padding:12px;">
-                                        <div style="font-size:0.6rem; color:#10b981; font-weight:700; text-transform:uppercase; margin-bottom:3px;">Suscripción</div>
-                                        <div style="font-weight:800; font-size:0.85rem; margin-bottom:2px;">Premium Care IA</div>
-                                        <div style="font-size:0.75rem; color:#64748b; margin-bottom:8px;">Telemetría completa</div>
-                                        <div style="display:flex; justify-content:space-between; align-items:center;">
-                                            <span style="font-weight:800; color:var(--app-primary);">30€/mes</span>
-                                            <button onclick="addToAppCart('Plan Premium IA', 30.00, 'dashboard-biometrico-gemelo-digital-mascotas.png')" style="background:var(--app-primary); color:white; border:none; border-radius:8px; padding:6px 10px; font-size:0.75rem; cursor:pointer;"><i class="fa-solid fa-plus"></i></button>
-                                        </div>
+                                    <i class="fa-solid fa-chevron-right" style="color:#94a3b8; font-size:0.8rem;"></i>
+                                </button>
+
+                                <button id="cat-btn-planes" class="store-cat-btn" onclick="openStoreCategory('planes')" style="display:flex; align-items:center; gap:12px; background:white; border:1px solid #e2e8f0; border-radius:14px; padding:14px; cursor:pointer; text-align:left; width:100%; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s;">
+                                    <div style="width:44px; height:44px; border-radius:10px; background:url('dashboard-biometrico-gemelo-digital-mascotas.png') center/cover; flex-shrink:0;"></div>
+                                    <div style="flex:1;">
+                                        <div style="font-weight:800; font-size:0.9rem; color:#0f172a;">Planes IA Premium</div>
+                                        <div style="font-size:0.75rem; color:#64748b;">Suscripciones y gemelo digital</div>
                                     </div>
-                                </div>
-                                <!-- Seguro Familiar -->
-                                <div style="background:white; border-radius:16px; overflow:hidden; border:1px solid #e2e8f0; box-shadow:0 4px 12px rgba(0,0,0,0.04);">
-                                    <div style="height:100px; background:url('seguros-gastos-veterinarios-perros-gatos.png') center/cover;"></div>
-                                    <div style="padding:12px;">
-                                        <div style="font-size:0.6rem; color:#ef4444; font-weight:700; text-transform:uppercase; margin-bottom:3px;">Seguro</div>
-                                        <div style="font-weight:800; font-size:0.85rem; margin-bottom:2px;">Familiar Base</div>
-                                        <div style="font-size:0.75rem; color:#64748b; margin-bottom:8px;">Cobertura veterinaria</div>
-                                        <div style="display:flex; justify-content:space-between; align-items:center;">
-                                            <span style="font-weight:800; color:var(--app-primary);">35€/mes</span>
-                                            <button onclick="addToAppCart('Seguro Familiar Base', 35.00, 'seguros-gastos-veterinarios-perros-gatos.png')" style="background:var(--app-primary); color:white; border:none; border-radius:8px; padding:6px 10px; font-size:0.75rem; cursor:pointer;"><i class="fa-solid fa-plus"></i></button>
-                                        </div>
+                                    <i class="fa-solid fa-chevron-right" style="color:#94a3b8; font-size:0.8rem;"></i>
+                                </button>
+
+                                <button id="cat-btn-seguros" class="store-cat-btn" onclick="openStoreCategory('seguros')" style="display:flex; align-items:center; gap:12px; background:white; border:1px solid #e2e8f0; border-radius:14px; padding:14px; cursor:pointer; text-align:left; width:100%; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s;">
+                                    <div style="width:44px; height:44px; border-radius:10px; background:url('seguros-gastos-veterinarios-perros-gatos.png') center/cover; flex-shrink:0;"></div>
+                                    <div style="flex:1;">
+                                        <div style="font-weight:800; font-size:0.9rem; color:#0f172a;">Seguros Mascotas</div>
+                                        <div style="font-size:0.75rem; color:#64748b;">Coberturas Basic, Familiar y Platinum</div>
                                     </div>
-                                </div>
-                                <!-- Consulta Clínica -->
-                                <div style="background:white; border-radius:16px; overflow:hidden; border:1px solid #e2e8f0; box-shadow:0 4px 12px rgba(0,0,0,0.04);">
-                                    <div style="height:100px; background:url('clinica-veterinaria-red-socios.png') center/cover;"></div>
-                                    <div style="padding:12px;">
-                                        <div style="font-size:0.6rem; color:#d97706; font-weight:700; text-transform:uppercase; margin-bottom:3px;">Clínica</div>
-                                        <div style="font-weight:800; font-size:0.85rem; margin-bottom:2px;">Consulta 24/7</div>
-                                        <div style="font-size:0.75rem; color:#64748b; margin-bottom:8px;">Red socios CUDI</div>
-                                        <div style="display:flex; justify-content:space-between; align-items:center;">
-                                            <span style="font-weight:800; color:var(--app-primary);">60€</span>
-                                            <button onclick="addToAppCart('Consulta Clínica CUDI', 60.00, 'clinica-veterinaria-red-socios.png')" style="background:var(--app-primary); color:white; border:none; border-radius:8px; padding:6px 10px; font-size:0.75rem; cursor:pointer;"><i class="fa-solid fa-plus"></i></button>
-                                        </div>
+                                    <i class="fa-solid fa-chevron-right" style="color:#94a3b8; font-size:0.8rem;"></i>
+                                </button>
+
+                                <button id="cat-btn-clinica" class="store-cat-btn" onclick="openStoreCategory('clinica')" style="display:flex; align-items:center; gap:12px; background:white; border:1px solid #e2e8f0; border-radius:14px; padding:14px; cursor:pointer; text-align:left; width:100%; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s;">
+                                    <div style="width:44px; height:44px; border-radius:10px; background:url('clinica-veterinaria-red-socios.png') center/cover; flex-shrink:0;"></div>
+                                    <div style="flex:1;">
+                                        <div style="font-weight:800; font-size:0.9rem; color:#0f172a;">Clínica & Telemedicina</div>
+                                        <div style="font-size:0.75rem; color:#64748b;">Chat, videoconsulta y domicilio</div>
                                     </div>
-                                </div>
-                                <!-- Paseador VIP -->
-                                <div style="background:white; border-radius:16px; overflow:hidden; border:1px solid #e2e8f0; box-shadow:0 4px 12px rgba(0,0,0,0.04);">
-                                    <div style="height:100px; background:url('rutas-paseos-seguros-barcelona.png') center/cover;"></div>
-                                    <div style="padding:12px;">
-                                        <div style="font-size:0.6rem; color:#0ea5e9; font-weight:700; text-transform:uppercase; margin-bottom:3px;">Servicio</div>
-                                        <div style="font-weight:800; font-size:0.85rem; margin-bottom:2px;">Paseadores Red</div>
-                                        <div style="font-size:0.75rem; color:#64748b; margin-bottom:8px;">Urban Pet Walkers</div>
-                                        <div style="display:flex; justify-content:space-between; align-items:center;">
-                                            <span style="font-weight:800; color:var(--app-primary);">15€</span>
-                                            <button onclick="addToAppCart('Paseo Urbano Premium', 15.00, 'rutas-paseos-seguros-barcelona.png')" style="background:var(--app-primary); color:white; border:none; border-radius:8px; padding:6px 10px; font-size:0.75rem; cursor:pointer;"><i class="fa-solid fa-plus"></i></button>
-                                        </div>
+                                    <i class="fa-solid fa-chevron-right" style="color:#94a3b8; font-size:0.8rem;"></i>
+                                </button>
+
+                                <button id="cat-btn-paseos" class="store-cat-btn" onclick="openStoreCategory('paseos')" style="display:flex; align-items:center; gap:12px; background:white; border:1px solid #e2e8f0; border-radius:14px; padding:14px; cursor:pointer; text-align:left; width:100%; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s;">
+                                    <div style="width:44px; height:44px; border-radius:10px; background:url('rutas-paseos-seguros-barcelona.png') center/cover; flex-shrink:0;"></div>
+                                    <div style="flex:1;">
+                                        <div style="font-weight:800; font-size:0.9rem; color:#0f172a;">Paseos & Actividad</div>
+                                        <div style="font-size:0.75rem; color:#64748b;">Paseadores, rutas y guardería</div>
                                     </div>
-                                </div>
-                                <!-- Nutrición Orgánica -->
-                                <div style="background:white; border-radius:16px; overflow:hidden; border:1px solid #e2e8f0; box-shadow:0 4px 12px rgba(0,0,0,0.04);">
-                                    <div style="height:100px; background:url('dietas-personalizadas-longevidad-mascotas.png') center/cover;"></div>
-                                    <div style="padding:12px;">
-                                        <div style="font-size:0.6rem; color:#10b981; font-weight:700; text-transform:uppercase; margin-bottom:3px;">Nutrición</div>
-                                        <div style="font-weight:800; font-size:0.85rem; margin-bottom:2px;">EcoPet Organic</div>
-                                        <div style="font-size:0.75rem; color:#64748b; margin-bottom:8px;">Suscripción mensual</div>
-                                        <div style="display:flex; justify-content:space-between; align-items:center;">
-                                            <span style="font-weight:800; color:var(--app-primary);">45€/mes</span>
-                                            <button onclick="addToAppCart('EcoPet Organic', 45.00, 'dietas-personalizadas-longevidad-mascotas.png')" style="background:var(--app-primary); color:white; border:none; border-radius:8px; padding:6px 10px; font-size:0.75rem; cursor:pointer;"><i class="fa-solid fa-plus"></i></button>
-                                        </div>
+                                    <i class="fa-solid fa-chevron-right" style="color:#94a3b8; font-size:0.8rem;"></i>
+                                </button>
+
+                                <button id="cat-btn-nutricion" class="store-cat-btn" onclick="openStoreCategory('nutricion')" style="display:flex; align-items:center; gap:12px; background:white; border:1px solid #e2e8f0; border-radius:14px; padding:14px; cursor:pointer; text-align:left; width:100%; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s;">
+                                    <div style="width:44px; height:44px; border-radius:10px; background:url('dietas-personalizadas-longevidad-mascotas.png') center/cover; flex-shrink:0;"></div>
+                                    <div style="flex:1;">
+                                        <div style="font-weight:800; font-size:0.9rem; color:#0f172a;">Nutrición & Bienestar</div>
+                                        <div style="font-size:0.75rem; color:#64748b;">Pienso, dietas y suplementos</div>
                                     </div>
-                                </div>
+                                    <i class="fa-solid fa-chevron-right" style="color:#94a3b8; font-size:0.8rem;"></i>
+                                </button>
                             </div>
+
+                            <!-- Panel de productos (se inyecta dinámicamente) -->
+                            <div id="store-products-panel" style="display:none; margin-top:15px; animation: fadeIn 0.2s ease;"></div>
                         </div>
                     </div>
 
