@@ -299,6 +299,11 @@ function addToCart(name, price, img) {
     }
     saveCart();
     renderCartUI();
+    
+    // Feedback Premium: Toast en lugar de Alert
+    if (typeof showCudiToast === 'function') {
+        showCudiToast(`¡${name} añadido al carrito!`);
+    }
 }
 
 function removeFromCart(index) {
@@ -822,5 +827,46 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Proteccin Anti-Robo: Bloqueo de men contextual
+// --- CUDI MOBILE NAVIGATION ---
+function toggleMobileMenu() {
+    const drawer = document.getElementById('mobile-drawer');
+    if (drawer) {
+        drawer.classList.toggle('active');
+    }
+}
 
+// Proteccin Anti-Robo: Bloqueo de men contextual
+document.addEventListener('contextmenu', e => {
+    // Solo bloqueamos si no es un elemento de entrada para no romper la UX
+    if (!['INPUT', 'TEXTAREA', 'SELECT'].includes(e.target.tagName)) {
+        e.preventDefault();
+    }
+});
+
+// === CUDI TOAST NOTIFICATION SYSTEM ===
+function showCudiToast(message) {
+    let container = document.querySelector('.cudi-toast-container');
+    if (!container) {
+        container = document.createElement('div');
+        container.className = 'cudi-toast-container';
+        document.body.appendChild(container);
+    }
+
+    const toast = document.createElement('div');
+    toast.className = 'cudi-toast';
+    toast.innerHTML = `
+        <i class="fa-solid fa-circle-check"></i>
+        <span>${message}</span>
+    `;
+
+    container.appendChild(toast);
+
+    // Trigger animation
+    setTimeout(() => toast.classList.add('active'), 10);
+
+    // Remove after duration
+    setTimeout(() => {
+        toast.classList.remove('active');
+        setTimeout(() => toast.remove(), 400);
+    }, 3000);
+}

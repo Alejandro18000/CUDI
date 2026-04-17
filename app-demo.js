@@ -102,8 +102,9 @@ function initializeDashboard() {
     document.getElementById('screen-main').classList.add('active');
     document.getElementById('global-app-nav').style.display = 'flex';
     
-    // Inicia Charts
+    // Inicia Charts y simulaciones
     setTimeout(initCharts, 300);
+    simulateNewNotification();
 }
 
 // ==== PANTALLA 2 A 5: NAVEGADOR DE TABS (5 TABS) ====
@@ -375,6 +376,71 @@ function closeModal(modalId) {
     document.getElementById(modalId).classList.remove('active');
 }
 
+// ==== SISTEMA DE NOTIFICACIONES SIMULADAS ====
+let notifications = [
+    { id: 1, title: "Informe Semanal Disponible", desc: "El gemelo digital ha procesado los datos de los últimos 7 días. Pulsa para ver el progreso de salud.", read: false, type: "report" },
+    { id: 2, title: "Alerta de Hidratación", desc: "Se detecta un descenso del 12% en la frecuencia de ingesta de agua. Monitorizando...", read: false, type: "alert" }
+];
+
+function toggleNotifications() {
+    const panel = document.getElementById('app-notifications-panel');
+    if(!panel) return;
+    panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
+    renderNotifications();
+}
+
+function renderNotifications() {
+    const list = document.getElementById('notifications-list');
+    const dot = document.getElementById('notification-dot');
+    if(!list) return;
+
+    const unread = notifications.filter(n => !n.read);
+    if(dot) dot.style.display = unread.length > 0 ? 'block' : 'none';
+
+    if(notifications.length === 0) {
+        list.innerHTML = '<div style="text-align:center; padding:20px; color:#94a3b8; font-size:0.85rem;">No tienes notificaciones nuevas</div>';
+        return;
+    }
+
+    list.innerHTML = notifications.map(n => `
+        <div style="padding:12px; border-bottom:1px solid #f1f5f9; cursor:pointer; background:${n.read ? 'white' : 'var(--clr-primary-glow)'}; transition:all 0.2s;" onclick="readNotification(${n.id})">
+            <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+                <span style="font-weight:700; font-size:0.85rem; color:var(--app-text);">${n.title}</span>
+                <span style="font-size:0.7rem; color:#94a3b8;">Ahora</span>
+            </div>
+            <p style="margin:0; font-size:0.8rem; color:var(--app-text-muted); line-height:1.4;">${n.desc}</p>
+        </div>
+    `).join('');
+}
+
+function readNotification(id) {
+    const n = notifications.find(notif => notif.id === id);
+    if(n) n.read = true;
+    renderNotifications();
+    // Simulate opening the relevant tab
+    if(n.type === 'report') switchNav('dash', document.querySelector('.nav-item'));
+}
+
+function markAllRead() {
+    notifications.forEach(n => n.read = true);
+    renderNotifications();
+}
+
+// Simular llegada de nueva notificación al iniciar demo
+function simulateNewNotification() {
+    setTimeout(() => {
+        notifications.unshift({
+            id: Date.now(),
+            title: "Plan Activo: CUDI Care",
+            desc: "Tu suscripción se ha sincronizado con el collar inteligente con éxito.",
+            read: false,
+            type: "info"
+        });
+        renderNotifications();
+    }, 5000);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     updateCartUI();
+    renderNotifications();
 });
