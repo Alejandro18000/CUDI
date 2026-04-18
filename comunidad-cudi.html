@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comunidad CUDI | Red Social de Bienestar</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="social-page">
+    <!-- Global AI Chat Widget (Liquid Glass Edition) -->
+    <div class="cudi-chat-widget" style="position:fixed; bottom:30px; right:30px; z-index:10000;">
+        <div class="cudi-chat-btn" onclick="toggleAIChat()" style="overflow:hidden; padding:3px; background:white; width:65px; height:65px; border-radius:50%; box-shadow:0 10px 25px rgba(0,0,0,0.25); cursor:pointer; border: 3px solid #0077b6;">
+            <img src="logo.jpeg" alt="CUDI AI" style="width:100%; height:100%; object-fit:contain; border-radius:50%;">
+        </div>
+        <div class="cudi-chat-panel liquid-glass-card" id="cudi-chat-panel" style="display:none; position:absolute; bottom:85px; right:0; width:360px; border-radius:30px; box-shadow:0 20px 45px rgba(0,0,0,0.2); overflow:hidden; border:1px solid rgba(255,255,255,0.2); flex-direction:column;">
+            <div class="chat-panel-header" style="background:#0077b6; color:white; padding:18px; position:relative; display:flex; align-items:center;">
+                <div class="title" style="font-weight:800; font-size:1.05rem; flex:1;"><i class="fa-solid fa-shield-dog"></i> CUDI Triaje IA</div>
+                <div class="status" style="font-size:0.8rem; color:#e0f2fe; margin-right:30px; font-weight:600;"><span style="display:inline-block; width:8px; height:8px; background:#10b981; border-radius:50%; margin-right:5px;"></span>24/7 Activo</div>
+                <div style="position:absolute; top:-25px; right:-15px; width:75px; height:75px; border-radius:50%; border:4px solid #F8FAFC; overflow:hidden; background:white; z-index:10; box-shadow:0 10px 20px rgba(0,0,0,0.2);">
+                   <img src="avatar-mascota-perfil-gemelo-digital.png" alt="Perfil" style="width:100%; height:100%; object-fit:cover;">
+                </div>
+                <button onclick="toggleAIChat()" style="position:absolute; top:18px; right:15px; background:transparent; border:none; color:white; cursor:pointer; font-size:1.1rem;"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="chat-panel-body" id="chat-body" style="height:320px; padding:15px; overflow-y:auto; background:rgba(248,250,252,0.85); display:flex; flex-direction:column;">
+                <div style="background:white; padding:12px 15px; border-radius:15px; margin-bottom:12px; font-size:0.9rem; color:#333; border:1px solid #f1f5f9; border-top-left-radius:0; box-shadow:0 2px 5px rgba(0,0,0,0.02); line-height:1.5;">
+                    ¡Hola! Soy CUDI, tu asistente preventivo. Estoy conectado a la telemetría inteligente.<br><br><b>¿Qué necesitas?</b> Puedes probar palabras como *"vómito"*, *"fiebre"*, *"comprar"*, o *"paseo"*.
+                </div>
+            </div>
+            <div class="chat-panel-footer" style="padding:15px; background:rgba(255,255,255,0.9); border-top:1px solid rgba(0,0,0,0.05); display:flex; gap:10px; align-items:center;">
+                <input type="text" id="chat-input" placeholder="Pregúntame sobre su salud..." onkeypress="handleChatEnter(event)" style="flex:1; padding:12px 16px; border-radius:30px; border:1px solid #cbd5e1; outline:none; font-family:inherit; font-size:0.9rem; background:white; transition:all 0.3s;" onfocus="this.style.borderColor='#0077b6';">
+                <button onclick="sendChatMessage()" style="background:#0077b6; color:white; border:none; width:45px; height:45px; border-radius:50%; cursor:pointer; display:flex; align-items:center; justify-content:center;"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Barra de Contacto Superior -->
+    <div class="top-bar-refined">
+        <span><i class="fa-solid fa-envelope"></i> cudi.ai2026@gmail.com</span>
+        <span><i class="fa-solid fa-phone"></i> 900 123 456</span>
+    </div>
+
+    <!-- Navegación "Floating Island" -->
+    <nav class="navbar-island">
+        <div class="nav-capsule">
+            <a href="index.html" class="logo" style="display:flex; align-items:center;">
+                <img src="logo.jpeg" alt="CUDI" style="height:55px; width:auto; border-radius: 8px;">
+            </a>
+            <div class="nav-search-island">
+                <i class="fa-solid fa-magnifying-glass" style="color:var(--clr-primary); font-size:0.9rem;"></i>
+                <input type="text" placeholder="¿Qué necesita tu compañero hoy?">
+            </div>
+            <div class="nav-right-island">
+                <ul class="nav-links-island" style="gap:25px;">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="smart-collar-aventuras-sin-sustos.html">Lanzamiento</a></li>
+                    <li><a href="comunidad-cudi.html" class="active" style="color:var(--clr-primary); font-weight:800;">Comunidad</a></li>
+                    <li><a href="index.html#store-grid">Tienda</a></li>
+                    <li><a href="index.html#suscripciones">Planes</a></li>
+                    <li><a href="red-socios-clinicas-veterinarias.html">Partners</a></li>
+                    <li id="nav-session-item"></li>
+                </ul>
+                <div class="cart-trigger-island" onclick="toggleCart()">
+                    <i class="cart-icon-cudi" style="font-size:1.2rem;"></i>
+                    <span class="cart-badge" id="global-cart-badge" style="position:absolute;top:-8px;right:-12px;background:var(--clr-primary);color:white;font-size:0.65rem;font-weight:700;border-radius:50px;width:18px;height:18px;display:flex;align-items:center;justify-content:center;border: 2px solid white;">0</span>
+                </div>
+                <button class="menu-trigger-mobile" onclick="toggleMobileMenu()"><i class="fa-solid fa-bars-staggered"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container" style="max-width: 1300px; margin-top: 20px;">
+        
+        <!-- STORIES BAR (ESTADOS) - POSICIÓN SUPERIOR MASTER -->
+        <div class="post-card liquid-glass-card" style="padding: 20px; border-radius:35px; margin-bottom:30px; background:rgba(255,255,255,0.6);">
+            <div class="stories-container">
+                 <div class="story-item">
+                    <div class="story-avatar-wrap" style="background:rgba(0,0,0,0.05); padding:2px;">
+                        <div style="width:100%; height:100%; border-radius:50%; background:#f1f5f9; display:flex; align-items:center; justify-content:center; border:2px dashed #cbd5e1;">
+                            <i class="fa-solid fa-plus" style="color:#64748b;"></i>
+                        </div>
+                    </div>
+                    <span class="story-name">Tú</span>
+                </div>
+                <div class="story-item">
+                    <div class="story-avatar-wrap active"><img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=200" alt="Max"></div>
+                    <span class="story-name">Max</span>
+                </div>
+                <div class="story-item">
+                    <div class="story-avatar-wrap active"><img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=200" alt="Cooper"></div>
+                    <span class="story-name">Cooper</span>
+                </div>
+                <div class="story-item">
+                    <div class="story-avatar-wrap"><img src="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?w=200" alt="Cleo"></div>
+                    <span class="story-name">Cleo</span>
+                </div>
+                <div class="story-item">
+                    <div class="story-avatar-wrap active"><img src="https://images.unsplash.com/photo-1517423440428-a5a00ad493e8?w=200" alt="Bella"></div>
+                    <span class="story-name">Bella</span>
+                </div>
+                <div class="story-item">
+                    <div class="story-avatar-wrap"><img src="https://images.unsplash.com/photo-1583511655826-05700d52f4d9?w=200" alt="Rex"></div>
+                    <span class="story-name">Rex</span>
+                </div>
+                <div class="story-item">
+                    <div class="story-avatar-wrap active"><img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=200" alt="Mimi"></div>
+                    <span class="story-name">Mimi</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="social-layout-grid">
+            
+            <!-- LATERAL IZQUIERDO: PERFIL Y NAVEGACIÓN -->
+            <aside class="social-sidebar-left">
+                <div class="post-card liquid-glass-card" style="text-align:center; padding: 30px 20px;">
+                    <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=400" alt="Profile" style="width:100px; height:100px; border-radius:50%; border:4px solid white; box-shadow:0 10px 20px rgba(0,0,0,0.1); margin-bottom:15px; object-fit:cover;">
+                    <h4 style="margin:0; color:#1e293b;">Companion (Demo)</h4>
+                    <p style="font-size:0.8rem; color:#64748b; margin:5px 0 20px;">Golden Retriever • 2 años</p>
+                    <div style="display:flex; justify-content:space-around; border-top:1px solid rgba(0,0,0,0.05); padding-top:20px;">
+                        <div><div style="font-weight:800; color:#0f172a;">124</div><div style="font-size:0.7rem; color:#64748b; text-transform:uppercase;">Seguidores</div></div>
+                        <div><div style="font-weight:800; color:#0f172a;">56</div><div style="font-size:0.7rem; color:#64748b; text-transform:uppercase;">Siguiendo</div></div>
+                    </div>
+                </div>
+
+                <div class="post-card liquid-glass-card" style="padding:15px; background:rgba(255,255,255,0.4);">
+                    <ul style="list-style:none; padding:0; margin:0;">
+                        <li style="padding:12px; border-radius:12px; background:rgba(255,255,255,0.8); margin-bottom:5px; font-weight:700;"><i class="fa-solid fa-newspaper" style="margin-right:10px; color:var(--app-primary);"></i> Feed Principal</li>
+                        <li style="padding:12px; border-radius:12px; margin-bottom:5px;"><i class="fa-solid fa-users-rays" style="margin-right:10px;"></i> Grupos</li>
+                        <li style="padding:12px; border-radius:12px; margin-bottom:5px;"><i class="fa-solid fa-calendar-check" style="margin-right:10px;"></i> Mis Eventos</li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- CENTRO: FEED DE PUBLICACIONES -->
+            <section class="social-feed-center">
+                <!-- Publicación 1 -->
+                <article class="post-card">
+                    <div class="post-header">
+                        <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=100" class="post-author-img" alt="Cooper">
+                        <div class="post-meta">
+                            <h5>Cooper <i class="fa-solid fa-circle-check" style="color:var(--app-primary); font-size:0.8rem;"></i></h5>
+                            <span>Hace 2 horas • Parque del Retiro</span>
+                        </div>
+                        <button style="margin-left:auto; background:#f1f5f9; border:none; padding:8px 15px; border-radius:50px; font-weight:700; font-size:0.8rem; color:var(--app-primary); cursor:pointer;">Seguir +</button>
+                    </div>
+                    <div class="post-content">
+                        <p>Disfrutando de un paseo matutino. ¡Mis niveles de energía están por las nubes según mi CUDI Smart Collar! 🦴✨</p>
+                        <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=800&q=80" class="post-image" alt="Cooper en el parque">
+                    </div>
+                    <div class="post-actions">
+                        <button class="post-action-btn liked"><i class="fa-solid fa-heart"></i> 45</button>
+                        <button class="post-action-btn"><i class="fa-solid fa-comment"></i> 12</button>
+                        <button class="post-action-btn"><i class="fa-solid fa-share-nodes"></i> Compartir</button>
+                    </div>
+                </article>
+
+                <!-- Publicación 2 -->
+                <article class="post-card">
+                    <div class="post-header">
+                        <img src="https://images.unsplash.com/photo-1517423440428-a5a00ad493e8?w=100" class="post-author-img" alt="Bella">
+                        <div class="post-meta">
+                            <h5>Bella</h5>
+                            <span>Hace 5 horas • Barcelona</span>
+                        </div>
+                        <button style="margin-left:auto; background:#f1f5f9; border:none; padding:8px 15px; border-radius:50px; font-weight:700; font-size:0.8rem; color:var(--app-primary); cursor:pointer;">Seguir +</button>
+                    </div>
+                    <div class="post-content">
+                        <p>¿Quién más está listo para el fin de semana de juegos? La IA dice que soy un 98% compatible con Labradores hoy. ¡A jugar! 🎾</p>
+                    </div>
+                    <div class="post-actions">
+                        <button class="post-action-btn"><i class="fa-solid fa-heart"></i> 32</button>
+                        <button class="post-action-btn"><i class="fa-solid fa-comment"></i> 8</button>
+                        <button class="post-action-btn"><i class="fa-solid fa-bone" style="transform:rotate(-45deg);"></i> 5 Invitaciones</button>
+                    </div>
+                </article>
+            </section>
+
+            <!-- LATERAL DERECHO: MATCH IA Y SUGERENCIAS -->
+            <aside class="social-sidebar-right">
+                <!-- BANNER MATCH IA (LIQUID GLASS) -->
+                <div class="liquid-glass-card" style="background: linear-gradient(135deg, #0077b6, #0ea5e9); color:white; padding:25px; margin-bottom:25px;">
+                    <div style="position:relative; z-index:2;">
+                        <span style="background:rgba(255,255,255,0.2); padding:4px 10px; border-radius:50px; font-size:0.7rem; font-weight:800; text-transform:uppercase;">Recomendación IA del día</span>
+                        <h4 style="font-size:1.4rem; margin:15px 0 10px; color:white !important;">¡Match detectado!</h4>
+                        <p style="font-size:0.9rem; margin-bottom:20px; color:white !important; opacity:1; font-weight:500;">Luna y tu compañero tienen un 95% de compatibilidad hoy.</p>
+                        <button class="btn-premium-action" style="width:100%; border:none; padding:12px; border-radius:12px; font-weight:800; cursor:pointer;">Proponer Encuentro <i class="fa-solid fa-bolt"></i></button>
+                    </div>
+                    <i class="fa-solid fa-heart-pulse" style="position:absolute; bottom:-10px; right:10px; font-size:6rem; opacity:0.1; transform:rotate(-15deg);"></i>
+                </div>
+
+                <div class="post-card" style="padding:25px;">
+                    <h5 style="margin:0 0 15px 0; font-weight:800;">Mascotas cerca de ti</h5>
+                    <div style="display:flex; flex-direction:column; gap:15px;">
+                        <div style="display:flex; align-items:center; gap:12px;">
+                            <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=100" style="width:50px; height:50px; border-radius:15px; object-fit:cover;">
+                            <div style="flex:1;">
+                                <div style="font-weight:800; font-size:0.9rem;">Max</div>
+                                <div style="font-size:0.75rem; color:#64748b;">A 300m • <span style="color:var(--app-primary); font-weight:700;">98% Match</span></div>
+                            </div>
+                            <button style="background:var(--app-primary); color:white; border:none; width:30px; height:30px; border-radius:50%;"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                        <div style="display:flex; align-items:center; gap:12px;">
+                            <img src="https://images.unsplash.com/photo-1601979031925-424e53b6caaa?w=100" style="width:50px; height:50px; border-radius:15px; object-fit:cover;">
+                            <div style="flex:1;">
+                                <div style="font-weight:800; font-size:0.9rem;">Simba</div>
+                                <div style="font-size:0.75rem; color:#64748b;">A 1.2km • <span style="color:var(--app-primary); font-weight:700;">82% Match</span></div>
+                            </div>
+                            <button style="background:var(--app-primary); color:white; border:none; width:30px; height:30px; border-radius:50%;"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="post-card" style="padding:25px; background:white;">
+                    <h5 style="margin:0 0 15px 0; font-weight:800;">Eventos Sugeridos</h5>
+                    <div style="background:#f8fafc; border-radius:15px; padding:12px; margin-bottom:10px;">
+                        <div style="font-size:0.7rem; color:var(--app-primary); font-weight:800; margin-bottom:5px;">20 ABRIL</div>
+                        <div style="font-size:0.85rem; font-weight:700;">Paseo Grupal Retiro</div>
+                    </div>
+                    <div style="background:#f8fafc; border-radius:15px; padding:12px;">
+                        <div style="font-size:0.7rem; color:var(--app-primary); font-weight:800; margin-bottom:5px;">22 ABRIL</div>
+                        <div style="font-size:0.85rem; font-weight:700;">Workshop Socialización</div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- FOOTER PREMIUM -->
+    <footer class="premium-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Columna 1: Marca (Fase 1) -->
+                <div class="footer-col">
+                    <a href="index.html" class="logo" style="margin-bottom:30px;display:inline-block;">
+                        <img src="logo.jpeg" alt="CUDI" style="height:70px;border-radius:12px;">
+                    </a>
+                    <p>CUDI es el primer ecosistema integral de salud y bienestar animal impulsado por IA. Monitorizamos, protegemos y conectamos todo el universo de tu compañero hoy para un mañana más sano.</p>
+                </div>
+
+                <!-- Columna 2: Recursos (Fase 1) -->
+                <div class="footer-col">
+                    <h4>Comunidad CUDI</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="index.html#store-grid">Tienda Marketplace</a></li>
+                        <li><a href="index.html#suscripciones">Planes de Protección</a></li>
+                        <li><a href="comunidad-cudi.html">Red Social</a></li>
+                        <li><a href="red-socios-clinicas-veterinarias.html">Partners</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3: Legal (Fase 1) -->
+                <div class="footer-col">
+                    <h4>Información Legal</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="terminos-condiciones-app.html">Términos y Condiciones</a></li>
+                        <li><a href="politica-cookies-plataforma.html">Política de Cookies</a></li>
+                        <li><a href="politica-privacidad-datos-mascotas.html">Política de Privacidad</a></li>
+                        <li><a href="politica-devoluciones-smart-collar.html">Devoluciones y Cambios</a></li>
+                        <li><a href="legal.html">Información Legal</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 4: Conecta (Fase 1) -->
+                <div class="footer-col">
+                    <h4>Conecta con nosotros</h4>
+                    <p style="margin-bottom:20px;">Recibe consejos de salud preventiva validados por expertos.</p>
+                    <div class="footer-socials">
+                        <a href="https://www.instagram.com/cudi.ai2026/" target="_blank" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/Cudi2026" target="_blank" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="social-btn"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="#" class="social-btn"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 CUDI AI Ecosystem S.L. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

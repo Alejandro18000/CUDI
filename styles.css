@@ -1944,6 +1944,75 @@ section:nth-of-type(2) { animation-delay: 0.6s; }
     margin-top: 20px;
 }
 
+/* === CUDI LIQUID GLASS EVOLUTION === */
+.liquid-hero {
+    background: radial-gradient(at 0% 0%, #0077b6 0%, transparent 50%),
+                radial-gradient(at 100% 0%, #00b4d8 0%, transparent 50%),
+                radial-gradient(at 100% 100%, #10b981 0%, transparent 50%),
+                radial-gradient(at 0% 100%, #023e8a 0%, transparent 50%),
+                #0077b6;
+    background-size: 200% 200%;
+    animation: liquidMesh 15s ease infinite;
+    padding: 140px 0 100px;
+    text-align: center;
+    color: white;
+    border-radius: 0 0 80px 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes liquidMesh {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.liquid-glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(28px) saturate(180%);
+    -webkit-backdrop-filter: blur(28px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 40px;
+    box-shadow: inset 0 0 20px rgba(255,255,255,0.05),
+                0 30px 60px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.liquid-glass-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent 0%,
+        transparent 40%,
+        rgba(255, 255, 255, 0.05) 45%,
+        rgba(255, 255, 255, 0.1) 50%,
+        rgba(255, 255, 255, 0.05) 55%,
+        transparent 60%
+    );
+    transform: rotate(-45deg);
+    pointer-events: none;
+}
+
+/* Update Post Cards to Liquid Glass */
+.post-card {
+    background: rgba(255, 255, 255, 0.7) !important;
+    backdrop-filter: blur(20px);
+    border-radius: 30px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.03);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
 .dash-ai-icon {
     font-size: 3rem;
     opacity: 0.9;
@@ -2068,4 +2137,185 @@ section:nth-of-type(2) { animation-delay: 0.6s; }
     margin-top: 10px;
     font-size: 0.8rem;
     font-weight: 600;
+}
+
+/* === CUDI SOCIAL HUB UPGRADE === */
+.social-layout-grid {
+    display: grid;
+    grid-template-columns: 280px 1fr 320px;
+    gap: 30px;
+    align-items: start;
+    margin-top: 40px;
+}
+
+@media (max-width: 1200px) {
+    .social-layout-grid {
+        grid-template-columns: 1fr 340px;
+    }
+    .social-sidebar-left { display: none; }
+}
+
+@media (max-width: 900px) {
+    .social-layout-grid {
+        grid-template-columns: 1fr;
+    }
+    .social-sidebar-right { display: none; }
+}
+
+/* Stories / Status Bar */
+.stories-container {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 10px 5px 25px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    justify-content: center;
+}
+
+.stories-container::-webkit-scrollbar { display: none; }
+
+.story-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    min-width: 85px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.story-item:hover { transform: scale(1.05); }
+
+.story-avatar-wrap {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    padding: 3px;
+    background: linear-gradient(45deg, #0077b6, #10b981, #0ea5e9);
+    position: relative;
+}
+
+.story-avatar-wrap.active::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    width: 18px;
+    height: 18px;
+    background: #10b981;
+    border: 3px solid white;
+    border-radius: 50%;
+}
+
+.story-avatar-wrap img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid white;
+}
+
+.story-name {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--clr-text);
+}
+
+/* Post Cards (Feed Central) */
+.post-card {
+    background: white;
+    border-radius: 30px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.03);
+    border: 1px solid #f1f5f9;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.post-author-img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.post-meta h5 {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 800;
+}
+
+.post-meta span {
+    font-size: 0.75rem;
+    color: var(--clr-text-muted);
+}
+
+.post-content {
+    margin-bottom: 20px;
+}
+
+.post-image {
+    width: 100%;
+    max-height: 450px;
+    border-radius: 20px;
+    object-fit: cover;
+    margin-top: 15px;
+}
+
+.post-actions {
+    display: flex;
+    gap: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #f1f5f9;
+}
+
+.post-action-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--clr-text-muted);
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+}
+
+.post-action-btn:hover { color: var(--app-primary); }
+.post-action-btn.liked { color: #ef4444; }
+
+/* Readability Overrides */
+.high-contrast-title {
+    color: #FFFFFF !important;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.4) !important;
+    font-weight: 800 !important;
+}
+
+.high-contrast-subtitle {
+    color: #FFFFFF !important; 
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.9) !important;
+    font-weight: 600 !important;
+    line-height: 1.6;
+    opacity: 1 !important;
+}
+
+/* === SOCIAL PAGE GLOBAL BACKGROUND === */
+.social-page {
+    background: radial-gradient(at 0% 0%, #f8fafc 0%, transparent 50%),
+                radial-gradient(at 100% 0%, #e2e8f0 0%, transparent 50%),
+                #f1f5f9;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+.social-page .navbar-island {
+    margin-bottom: 20px;
 }
