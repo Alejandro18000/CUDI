@@ -484,9 +484,130 @@ function startTrackingSimulation() {
     }, 4000);
 }
 
-// Inicialización global
+// === GLOBAL SESSION / PERSISTENCE & AUTH ===
+function handleHeroAction() {
+    const profileStr = localStorage.getItem('cudi_pet_profile');
+    const heroBtn = document.querySelector('.hero-actions .btn-primary');
+    
+    // Si ya existe un perfil personalizado O si el botón indica acceso al panel
+    const isDashboardLink = heroBtn && (heroBtn.textContent.toLowerCase().includes('panel') || heroBtn.textContent.toLowerCase().includes('mi mascota'));
+
+    if (profileStr || isDashboardLink) {
+        // Redirección directa y robusta
+        window.location.assign('mi-mascota.html');
+    } else {
+        openAuthModal();
+    }
+}
+
+function openAuthModal() {
+    const modal = document.getElementById('cudi-auth-modal');
+    if (modal) modal.style.display = 'flex';
+}
+
+function closeAuthModal() {
+    const modal = document.getElementById('cudi-auth-modal');
+    if (modal) modal.style.display = 'none';
+}
+
+function cudi_logout() {
+    if (confirm('¿Deseas cerrar la sesión de tu mascota?')) {
+        localStorage.removeItem('cudi_pet_profile');
+        window.location.href = 'index.html';
+    }
+}
+
+function handleWebRegister(event) {
+    if (event) event.preventDefault();
+    const name = document.getElementById('web-pet-name').value;
+    const type = document.getElementById('web-pet-type').value;
+    
+    if (!name) return alert('Por favor, dinos el nombre de tu mascota');
+
+    const profile = {
+        name: name,
+        photo: type === 'gato' ? 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=800&q=80' : 'https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=800&q=80',
+        breed: 'Mestizo', // Default for quick reg
+        age: 2,
+        weight: 10,
+        energy: 'moderado',
+        food: 'pienso'
+    };
+
+    localStorage.setItem('cudi_pet_profile', JSON.stringify(profile));
+    cudi_check_session();
+    closeAuthModal();
+    
+    // Smooth redirect to dashboard
+    window.location.href = 'mi-mascota.html';
+}
+
+function cudi_check_session() {
+    let profileStr = localStorage.getItem('cudi_pet_profile');
+    let profile = profileStr ? JSON.parse(profileStr) : null;
+    
+    // Default Academic Session seeding (Neutral & Generic)
+    if (!profile) {
+        profile = {
+            name: 'Companion',
+            photo: 'https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=800&q=80',
+            breed: 'Golden Retriever',
+            age: 2,
+            weight: 25,
+            energy: 'Alto',
+            food: 'Premium Orgánico'
+        };
+    }
+
+    const navItem = document.getElementById('nav-session-item');
+    const mobileItem = document.getElementById('mobile-session-item');
+    const heroBtn = document.querySelector('.hero-actions .btn-primary');
+
+    // Update Hero Button if it exists (on index.html)
+    if (heroBtn) {
+        // Ahora permitimos ir al panel incluso con la sesión demo para que el botón "funcione" siempre
+        heroBtn.innerHTML = `<i class="fa-solid fa-chart-line" style="font-size:1.4rem;"></i> Ir a mi Panel`;
+        // Nota: Si el usuario quiere vincular su propia mascota, el modal sigue disponible
+        // pero el botón principal ahora siempre da acceso al ecosistema.
+    }
+
+    const sessionHtml = `
+        <div class="session-badge-premium" style="display:flex !important; position:relative;">
+            <a href="mi-mascota.html" style="display:flex; align-items:center; text-decoration:none; color:inherit; gap:10px;">
+                <img src="${profile.photo}" alt="${profile.name}" class="session-badge-photo">
+                <span class="session-badge-name">Sesion: ${profile.name}</span>
+            </a>
+            <button onclick="cudi_logout()" title="Cerrar Sesión" style="background:none; border:none; color:var(--app-primary); opacity:0.6; cursor:pointer; margin-left:10px; font-size:0.9rem; padding:5px;">
+                <i class="fa-solid fa-power-off"></i>
+            </button>
+        </div>
+    `;
+
+    if (navItem) navItem.innerHTML = sessionHtml;
+    if (mobileItem) {
+        mobileItem.innerHTML = `
+            <div style="display:flex; flex-direction:column; gap:5px;">
+                <a href="mi-mascota.html" style="display:flex; align-items:center; gap:10px; padding:15px; background:#f0f9ff; border-radius:12px; margin-top:10px; text-decoration:none; color:var(--clr-primary); font-weight:800;" onclick="toggleMobileMenu()">
+                    <img src="${profile.photo}" alt="${profile.name}" style="width:30px; height:30px; border-radius:50%; object-fit:cover; border:2px solid var(--clr-primary);">
+                    <span>Mi Mascota: ${profile.name}</span>
+                </a>
+                <button onclick="cudi_logout()" style="background:none; border:none; color:#ef4444; padding:10px; font-weight:600; text-align:left; padding-left:15px; cursor:pointer;">
+                    <i class="fa-solid fa-power-off"></i> Cerrar Sesión
+                </button>
+            </div>
+        `;
+    }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
-    // Si la página tiene el badge del carrito, el contenedor de ítems o el visor de total de checkout
+    cudi_check_session();
+    
+    // Auto-open registration if requested via URL
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('action') === 'register') {
+        setTimeout(openAuthModal, 500);
+    }
+    
     if(document.getElementById('global-cart-badge') || 
        document.getElementById('checkout-total-price') || 
        document.getElementById('cart-items-container')) {

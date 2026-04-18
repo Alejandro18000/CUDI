@@ -1,0 +1,430 @@
+<!-- Desarrollo 100% realizado por Sergio Alejandro Ospina Rocha -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Mascota | CUDI Dashboard Premium</title>
+    <meta name="description" content="Panel de control biométrico avanzado para tu mascota. Visualiza salud, energía y descanso en tiempo real.">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* Tooltip Premium para Chart.js */
+        #chartjs-tooltip {
+            opacity: 1;
+            position: absolute;
+            background: rgba(15, 23, 42, 0.9);
+            color: white;
+            border-radius: 8px;
+            padding: 10px;
+            pointer-events: none;
+            transform: translate(-50%, 0);
+            transition: all 0.1s ease;
+            font-size: 0.8rem;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <!-- Global AI Chat Widget -->
+    <div class="cudi-chat-widget" style="position:fixed; bottom:30px; right:30px; z-index:10000;">
+        <div class="cudi-chat-btn" onclick="toggleAIChat()" style="overflow:hidden; padding:3px; background:white; width:65px; height:65px; border-radius:50%; box-shadow:0 10px 25px rgba(0,0,0,0.25); cursor:pointer; border: 3px solid #0077b6;">
+            <img src="logo.jpeg" alt="CUDI AI" style="width:100%; height:100%; object-fit:contain; border-radius:50%;">
+        </div>
+        <div class="cudi-chat-panel" id="cudi-chat-panel" style="display:none; position:absolute; bottom:85px; right:0; width:360px; background:white; border-radius:24px; box-shadow:0 20px 45px rgba(0,0,0,0.2); overflow:hidden; border:1px solid #e2e8f0; flex-direction:column;">
+            <div class="chat-panel-header" style="background:#0077b6; color:white; padding:18px; position:relative; display:flex; align-items:center;">
+                <div class="title" style="font-weight:800; font-size:1.05rem; flex:1;"><i class="fa-solid fa-shield-dog"></i> CUDI Triaje IA</div>
+                <button onclick="toggleAIChat()" style="background:transparent; border:none; color:white; cursor:pointer; font-size:1.1rem;"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="chat-panel-body" id="chat-body" style="height:320px; padding:15px; overflow-y:auto; background:#f8fafc; display:flex; flex-direction:column;"></div>
+            <div class="chat-panel-footer" style="padding:15px; background:white; border-top:1px solid #f1f5f9; display:flex; gap:10px; align-items:center;">
+                <input type="text" id="chat-input" placeholder="Pregúntame sobre su salud..." style="flex:1; padding:12px; border-radius:30px; border:1px solid #cbd5e1; outline:none; font-family:inherit; font-size:0.9rem; background:#f8fafc;">
+                <button onclick="sendChatMessage()" style="background:#0077b6; color:white; border:none; width:45px; height:45px; border-radius:50%; cursor:pointer; display:flex; align-items:center; justify-content:center;"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navegación -->
+    <nav class="navbar-island">
+        <div class="nav-capsule">
+            <a href="index.html" class="logo">
+                <img src="logo.jpeg" alt="CUDI" style="height:55px; border-radius:8px;">
+            </a>
+            <div class="nav-search-island">
+                <i class="fa-solid fa-magnifying-glass" style="color:var(--clr-primary);"></i>
+                <input type="text" placeholder="Buscar en el ecosistema...">
+            </div>
+            <div class="nav-right-island">
+                <ul class="nav-links-island" style="gap:25px;">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="smart-collar-aventuras-sin-sustos.html">Lanzamiento</a></li>
+                    <li><a href="index.html#store-grid">Tienda</a></li>
+                    <li><a href="index.html#suscripciones">Planes</a></li>
+                    <li><a href="red-socios-clinicas-veterinarias.html">Partners</a></li>
+                    <li id="nav-session-item"></li>
+                </ul>
+                <div class="cart-trigger-island" onclick="toggleCart()">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="dashboard-web-wrapper">
+        <div class="dash-web-container">
+            
+            <!-- Hero Dashboard -->
+            <div class="dash-web-hero">
+                <div style="position:relative;">
+                    <img src="" id="dash-pet-photo" alt="Mascota" class="dash-web-avatar">
+                    <div style="position:absolute; bottom:5px; right:5px; width:25px; height:25px; background:#10b981; border:3px solid white; border-radius:50%; animation: pulse 2s infinite;"></div>
+                </div>
+                <div class="dash-web-info">
+                    <div style="display:flex; align-items:center; gap:10px; margin-bottom:5px;">
+                        <span class="badge-elite"><i class="fa-solid fa-crown"></i> PERFIL PREMIUM ELITE</span>
+                        <span style="color:var(--clr-primary); font-weight:800; font-size:0.75rem;">CONEXIÓN ACTIVA</span>
+                    </div>
+                    <h1 id="dash-pet-name">Cargando...</h1>
+                    <p id="dash-pet-meta" style="color: var(--clr-text-muted); font-size: 1.1rem;"></p>
+                </div>
+                <div style="margin-left:auto; display:flex; gap:15px;">
+                    <button class="btn-primary" style="padding:12px 25px; border-radius:50px; font-size:0.85rem;" onclick="window.location.href='simulador-gemelo-digital-telemetria.html'"><i class="fa-solid fa-mobile-screen"></i> Abrir Versión Móvil</button>
+                    <button class="btn-secondary" style="background:#f8fafc; padding:12px 18px; border-radius:50px; border:1px solid #e2e8f0;"><i class="fa-solid fa-gear"></i></button>
+                </div>
+            </div>
+
+            <!-- Ficha Técnica de la Mascota -->
+            <div class="dash-tech-info">
+                <div class="tech-card">
+                    <div class="tech-card-label">Raza / Identidad</div>
+                    <div class="tech-card-value" id="tech-breed">-</div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-label">Etapa de Vida</div>
+                    <div class="tech-card-value" id="tech-age">-</div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-label">Peso Corporal</div>
+                    <div class="tech-card-value" id="tech-weight">- kg</div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-label">Plan Nutricional</div>
+                    <div class="tech-card-value" id="tech-food">-</div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-label">Nivel de Energía</div>
+                    <div class="tech-card-value" id="tech-energy">-</div>
+                </div>
+            </div>
+
+            <!-- Grilla Principal de Métricas -->
+            <div class="dash-web-grid">
+                
+                <!-- Card 1: Corazón con Rango Saludable -->
+                <div class="dash-web-card">
+                    <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+                        <div>
+                            <h5><i class="fa-solid fa-heart-pulse" style="color: #ef4444;"></i> Frecuencia Cardíaca</h5>
+                            <div class="dash-web-value" id="val-bpm">-- <span style="font-size: 1rem; color: #94a3b8;">BPM</span></div>
+                        </div>
+                        <div style="background:#fef2f2; color:#ef4444; padding:5px 10px; border-radius:8px; font-size:0.7rem; font-weight:700;">NORMAL: 70-110</div>
+                    </div>
+                    <div class="dash-web-chart" style="height:120px; margin-top:10px;">
+                        <canvas id="chart-heart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Card 2: Energía (Desglose Actividad vs Reposo) -->
+                <div class="dash-web-card">
+                    <h5><i class="fa-solid fa-bolt" style="color: #f59e0b;"></i> Desglose de Energía</h5>
+                    <div class="dash-web-value" id="val-energy">--%</div>
+                    <div class="dash-web-chart" style="height:120px;">
+                        <canvas id="chart-energy"></canvas>
+                    </div>
+                    <div class="chart-legend-custom">
+                        <span><i class="fa-solid fa-circle" style="color:#f59e0b; font-size:0.6rem;"></i> Actividad</span>
+                        <span><i class="fa-solid fa-circle" style="color:#fde68a; font-size:0.6rem;"></i> Reposo</span>
+                    </div>
+                </div>
+
+                <!-- Card 3: Calidad del Sueño (REM vs Profundo) -->
+                <div class="dash-web-card">
+                    <h5><i class="fa-solid fa-moon" style="color: #6366f1;"></i> Ciclos de Descanso</h5>
+                    <div class="dash-web-value" id="val-sleep">-- <span style="font-size: 1rem; color: #94a3b8;">hrs</span></div>
+                    <div class="dash-web-chart" style="height:120px; display:flex; align-items:center; justify-content:center;">
+                        <canvas id="chart-sleep" style="max-width:140px;"></canvas>
+                    </div>
+                    <div class="chart-legend-custom">
+                        <span><i class="fa-solid fa-circle" style="color:#6366f1; font-size:0.6rem;"></i> Profundo</span>
+                        <span><i class="fa-solid fa-circle" style="color:#a5b4fc; font-size:0.6rem;"></i> REM</span>
+                    </div>
+                </div>
+
+                <!-- Card 4: Estrés (Balance Biométrico) -->
+                <div class="dash-web-card">
+                    <h5><i class="fa-solid fa-brain" style="color: #ec4899;"></i> Balance Biométrico</h5>
+                    <div class="dash-web-value" id="val-stress">Óptimo</div>
+                    <div class="dash-web-chart" style="height:120px;">
+                        <canvas id="chart-stress"></canvas>
+                    </div>
+                </div>
+
+                <!-- IA Insight Dinámico -->
+                <div class="dash-ai-insight" style="color: white !important;">
+                    <div class="dash-ai-icon">
+                        <i class="fa-solid fa-wand-magic-sparkles" style="color:#ffd700;"></i>
+                    </div>
+                    <div>
+                        <div style="display:flex; align-items:center; gap:10px; margin-bottom:5px;">
+                            <h3 style="margin:0; font-weight:800; font-size:1.2rem; color: white !important;">Análisis CUDI IA</h3>
+                            <span style="background:rgba(255,255,255,0.2); padding:3px 10px; border-radius:50px; font-size:0.7rem; font-weight:700; color: white !important;">ACTUALIZADO AHORA</span>
+                        </div>
+                        <p id="ai-suggestion" style="font-size: 1.1rem; opacity: 0.95; line-height:1.4; color: white !important;">Analizando el perfil genético y biometría actual para generar recomendaciones...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="premium-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Columna 1: Marca -->
+                <div class="footer-col">
+                    <a href="index.html" class="logo" style="margin-bottom:30px; display:inline-block;">
+                        <img src="logo.jpeg" alt="CUDI" style="height:70px; border-radius:12px;">
+                    </a>
+                    <p>CUDI es el primer ecosistema integral de salud y bienestar animal impulsado por IA. Monitorizamos, protegemos y conectamos todo el universo de tu compañero hoy para un mañana más sano.</p>
+                </div>
+
+                <!-- Columna 2: Recursos -->
+                <div class="footer-col">
+                    <h4>Comunidad CUDI</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="index.html#store-grid">Tienda Marketplace</a></li>
+                        <li><a href="index.html#suscripciones">Planes de Protección</a></li>
+                        <li><a href="index.html#portal-educativo">Portal Educativo</a></li>
+                        <li><a href="red-socios-clinicas-veterinarias.html">Partners</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3: Legal -->
+                <div class="footer-col">
+                    <h4>Información Legal</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="terminos-condiciones-app.html">Términos y Condiciones</a></li>
+                        <li><a href="politica-cookies-plataforma.html">Política de Cookies</a></li>
+                        <li><a href="politica-privacidad-datos-mascotas.html">Política de Privacidad</a></li>
+                        <li><a href="legal.html">Información Legal</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 4: Conecta -->
+                <div class="footer-col">
+                    <h4>Conecta con nosotros</h4>
+                    <p style="margin-bottom:20px;">Recibe consejos de salud preventiva validados por expertos.</p>
+                    <div class="footer-socials">
+                        <a href="https://www.instagram.com/cudi.ai2026/" target="_blank" class="social-btn"><i class="icon-ig"></i></a>
+                        <a href="https://www.facebook.com/Cudi2026" target="_blank" class="social-btn"><i class="icon-fb"></i></a>
+                        <a href="#" class="social-btn"><i class="icon-tk"></i></a>
+                        <a href="#" class="social-btn"><i class="icon-yt"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 CUDI AI Ecosystem S.L. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        let heartChart, energyChart, sleepChart, stressChart;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            let profile = JSON.parse(localStorage.getItem('cudi_pet_profile'));
+            
+            // Si no hay perfil personalizado, cargar el Companion académico por defecto
+            if (!profile) {
+                profile = {
+                    name: 'Companion',
+                    photo: 'https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=800&q=80',
+                    breed: 'Golden Retriever',
+                    age: 2,
+                    weight: 25,
+                    energy: 'Alto',
+                    food: 'Premium Orgánico'
+                };
+            }
+
+            // Actualizar Cabecera
+            document.getElementById('dash-pet-name').innerText = profile.name;
+            document.getElementById('dash-pet-photo').src = profile.photo;
+            document.getElementById('dash-pet-meta').innerText = `${profile.breed} • ${profile.age} años • ${profile.weight} kg`;
+
+            // Actualizar Ficha Técnica
+            document.getElementById('tech-breed').innerText = profile.breed;
+            document.getElementById('tech-age').innerText = profile.age + " años";
+            document.getElementById('tech-weight').innerText = profile.weight + " kg";
+            document.getElementById('tech-food').innerText = profile.food || "Natural Mixta";
+            document.getElementById('tech-energy').innerText = profile.energy || "Moderada";
+
+            initDashboardCharts(profile);
+            simulateLiveUpdate(profile);
+        });
+
+        function initDashboardCharts(profile) {
+            Chart.defaults.font.family = "'Outfit', sans-serif";
+            Chart.defaults.color = '#94a3b8';
+
+            // 1. Corazón (Con Zona de Salud)
+            const ctxHeart = document.getElementById('chart-heart').getContext('2d');
+            heartChart = new Chart(ctxHeart, {
+                type: 'line',
+                data: {
+                    labels: ['10s', '8s', '6s', '4s', '2s', 'Ahora'],
+                    datasets: [
+                        {
+                            label: 'Latidos',
+                            data: [78, 82, 75, 88, 80, 85],
+                            borderColor: '#ef4444',
+                            borderWidth: 3,
+                            backgroundColor: 'rgba(239, 68, 68, 0.1)',
+                            fill: true,
+                            tension: 0.4,
+                            pointRadius: 0
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: { 
+                        x: { display: false }, 
+                        y: { 
+                            min: 50, max: 130, 
+                            ticks: { display: false },
+                            grid: { display: false }
+                        } 
+                    }
+                }
+            });
+
+            // 2. Energía (Apilado: Actividad vs Reposo)
+            const ctxEnergy = document.getElementById('chart-energy').getContext('2d');
+            energyChart = new Chart(ctxEnergy, {
+                type: 'bar',
+                data: {
+                    labels: ['L', 'M', 'X', 'J', 'V', 'S', 'D'],
+                    datasets: [
+                        { label: 'Actividad', data: [70, 85, 60, 95, 80, 100, 90], backgroundColor: '#f59e0b', borderRadius: 8 },
+                        { label: 'Reposo', data: [30, 15, 40, 5, 20, 0, 10], backgroundColor: '#fde68a', borderRadius: 8 }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: { 
+                        x: { stacked: true, grid: { display: false } }, 
+                        y: { stacked: true, display: false } 
+                    }
+                }
+            });
+
+            // 3. Sueño (Doughnut REM/Profundo)
+            const ctxSleep = document.getElementById('chart-sleep').getContext('2d');
+            sleepChart = new Chart(ctxSleep, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Profundo', 'REM'],
+                    datasets: [{
+                        data: [70, 30],
+                        backgroundColor: ['#6366f1', '#a5b4fc'],
+                        borderWidth: 0,
+                        cutout: '75%'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } }
+                }
+            });
+
+            // 4. Estrés / Balance (Radar Actual vs Ideal)
+            const ctxStress = document.getElementById('chart-stress').getContext('2d');
+            stressChart = new Chart(ctxStress, {
+                type: 'radar',
+                data: {
+                    labels: ['Pulso', 'Cortisol', 'Actividad', 'Descanso', 'Nutrición'],
+                    datasets: [
+                        {
+                            label: 'Actual',
+                            data: [85, 90, 75, 95, 80],
+                            borderColor: '#ec4899',
+                            backgroundColor: 'rgba(236, 72, 153, 0.2)',
+                            pointRadius: 0,
+                            borderWidth: 2
+                        },
+                        {
+                            label: 'Ideal',
+                            data: [100, 100, 100, 100, 100],
+                            borderColor: 'rgba(148, 163, 184, 0.3)',
+                            backgroundColor: 'transparent',
+                            pointRadius: 0,
+                            borderDash: [5, 5]
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: { 
+                        r: { 
+                            angleLines: { display: false },
+                            ticks: { display: false },
+                            grid: { color: 'rgba(0,0,0,0.05)' }
+                        } 
+                    }
+                }
+            });
+        }
+
+        function simulateLiveUpdate(profile) {
+            const bpmVal = document.getElementById('val-bpm');
+            const energyVal = document.getElementById('val-energy');
+            const sleepVal = document.getElementById('val-sleep');
+            const aiText = document.getElementById('ai-suggestion');
+
+            setInterval(() => {
+                // Simulación de latidos
+                const bpm = Math.floor(Math.random() * (105 - 72) + 72);
+                bpmVal.innerHTML = `${bpm} <span style="font-size: 1rem; color: #94a3b8;">BPM</span>`;
+                
+                // Actualizar gráfico de latidos
+                heartChart.data.datasets[0].data.shift();
+                heartChart.data.datasets[0].data.push(bpm);
+                heartChart.update('none');
+
+                // Simulación de Energía
+                const energyPct = Math.floor(Math.random() * (98 - 88) + 88);
+                energyVal.innerText = `${energyPct}%`;
+
+                // IA Insign Dinámico Personalizado
+                if (bpm > 100) {
+                    aiText.innerText = `He detectado que ${profile.name} está en un pico de actividad. Para un ${profile.breed}, esto es excelente; no olvides hidratarle tras el juego.`;
+                } else {
+                    aiText.innerText = `Los sistemas de ${profile.name} están en equilibrio total. Su descanso de 9.2h ha sido reparador, optimizando su ${profile.food}.`;
+                }
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
