@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CUDI - Portfolio de Proyecto 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;800&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0077b6;
+            --dark: #0f172a;
+            --gray: #64748b;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--dark);
+            background: #f8fafc;
+        }
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 20mm;
+            margin: 20px auto;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-sizing: border-box;
+            page-break-after: always;
+            position: relative;
+        }
+        @media print {
+            body { background: white; margin: 0; }
+            .page { margin: 0; box-shadow: none; border:none; }
+            .no-print { display: none; }
+            .live-link { border: 2px solid var(--primary); color: var(--primary) !important; background: transparent !important; }
+        }
+        h1, h2, h3 { font-family: 'Outfit', sans-serif; margin: 0; }
+        .cover {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            text-align: center;
+        }
+        .logo { width: 140px; border-radius: 20px; margin-bottom: 30px; }
+        .cover h1 { font-size: 5rem; color: var(--primary); letter-spacing: -3px; margin-bottom: 20px; }
+        .footer-info { position: absolute; bottom: 40px; left: 0; width: 100%; text-align: center; color: var(--gray); font-size: 0.9rem; }
+        
+        .section-title {
+            border-bottom: 4px solid var(--primary);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 2.2rem;
+            color: var(--dark);
+        }
+        .audit-item { margin-bottom: 35px; }
+        .audit-item h3 { font-size: 1.2rem; margin-bottom: 12px; color: var(--primary); }
+        .screenshot {
+            width: 100%;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-bottom: 10px;
+        }
+        .description-box {
+            background: #f8fafc;
+            border-left: 4px solid #0077b6;
+            padding: 15px;
+            border-radius: 0 12px 12px 0;
+            font-size: 0.9rem;
+            color: #334155;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .tag { display: inline-block; padding: 4px 12px; background: #e0f2fe; color: var(--primary); border-radius: 50px; font-size: 0.75rem; font-weight: 800; margin-bottom: 10px; text-transform: uppercase; }
+        
+        .seo-box {
+            background: #f1f5f9;
+            padding: 20px;
+            border-radius: 15px;
+            border-left: 5px solid var(--primary);
+            font-size: 0.85rem;
+            margin-top: 10px;
+        }
+        .seo-box b { color: var(--primary); }
+        
+        .live-link {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 30px;
+            background: var(--dark);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .highlight-box {
+            background: #f0f9ff;
+            border: 1px solid #bae6fd;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            color: #0369a1;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PORTADA SIMPLIFICADA -->
+    <div class="page cover">
+        <img src="logo.jpeg" class="logo" alt="CUDI">
+        <h1>CUDI</h1>
+        <div style="margin-top: 20px; font-size: 1.5rem; color: #475569; font-weight: 600;">
+            Trabajo Final de Máster (TFM)
+        </div>
+        <div style="margin-top: 10px; font-size: 1rem; color: #64748b;">
+            Portfolio de Auditoría y Diseño UI/UX
+        </div>
+        
+        <a href="https://alejandro18000.github.io/CUDI/" target="_blank" class="live-link">
+            🌐 Acceso a la Plataforma Web CUDI
+        </a>
+
+        <div class="footer-info">
+            © 2026 CUDI AI Ecosystem S.L. • Todos los derechos reservados
+        </div>
+    </div>
+
+    <!-- SECCIÓN 01: CENTROS DE CONTROL E INTERNACIONALIZACIÓN -->
+    <div class="page">
+        <div class="section-title">01. Plataforma Central e Internacionalización</div>
+        
+        <div class="audit-item" style="margin-bottom: 40px;">
+            <div class="highlight-box">
+                <b style="font-family:'Outfit'; font-size:1.1rem;"><i class="fa-solid fa-globe"></i> Estrategia de Localización e Idiomas (i18n)</b><br>
+                Un pilar documentado en el plan de negocio es la adaptación lingüística de la plataforma en tiempo real mediante un motor dinámico (`i18n.js`). Estratégicamente, se configuró el ecosistema web para operar en <b>Catalán, Español e Inglés</b>. Esta priorización es fundamental ya que CUDI fue concebida y está siendo desplegada inicialmente en la ciudad de Barcelona y su área metropolitana.
+            </div>
+        </div>
+
+        <div class="audit-item">
+            <span class="tag">HOME HUB</span>
+            <h3>Portal Principal</h3>
+            <img src="audit_assets/full_index_page_1776533445616.png" class="screenshot" style="max-height: 250px; object-fit: cover; object-position: top;">
+            <div class="description-box">
+                <b>Estrategia y Propósito:</b> El Index (Portal Principal) presenta de manera clara y accesible la misión corporativa. Facilita que el usuario comprenda inmediatamente los servicios disponibles y navegue intuitivamente hacia los planes e información detallada del Collar Inteligente.
+            </div>
+        </div>
+
+        <div class="audit-item">
+            <span class="tag">SOCIAL HUB</span>
+            <h3>Comunidad CUDI</h3>
+            <img src="audit_assets/full_comunidad_page_part1_1776533462170.png" class="screenshot" style="max-height: 250px; object-fit: cover; object-position: top;">
+            <div class="description-box">
+                <b>Estrategia y Propósito:</b> Un panel social integrado donde los usuarios comparten fotos y experiencias. Permite generar engagement y fomentar una red comunitaria que acompaña el bienestar animal en un entorno seguro y familiar.
+            </div>
+        </div>
+    </div>
+
+    <!-- SECCIÓN 02: APP DEMO Y GEMELO DIGITAL -->
+    <div class="page">
+        <div class="section-title">02. IoT: Simulador y Gemelo Digital</div>
+        <p style="font-size: 0.85rem; color: #475569; margin-bottom: 20px;">
+            <i>Aclaración: Visualizaciones iniciales de la demostración probaron diseños nocturnos (azulados). La UI final en la web utiliza estética neutra propia del ámbito de la salud.</i>
+        </p>
+
+        <div class="grid">
+            <div class="audit-item">
+                <span class="tag">SALUD Y TELEMETRÍA</span>
+                <img src="audit_assets/demo_salud_screen_1776533528755.png" class="screenshot" style="max-height: 220px; object-fit: cover;">
+                <div class="description-box" style="font-size: 0.8rem; padding: 10px;">
+                    <b>Propósito:</b> Interfaz que representa de forma visual los datos de salud y ritmo cardíaco obtenidos desde el dispositivo IoT.
+                </div>
+            </div>
+            <div class="audit-item">
+                <span class="tag">IA (MIMI) & TRIAJE</span>
+                <img src="audit_assets/demo_ia_screen_1776533536579.png" class="screenshot" style="max-height: 220px; object-fit: cover;">
+                <div class="description-box" style="font-size: 0.8rem; padding: 10px;">
+                    <b>Propósito:</b> Chat IA concebido como un primer punto de contacto para consultas de prevención, derivando al profesional si corresponde.
+                </div>
+            </div>
+            <div class="audit-item">
+                <span class="tag">PERFIL UNIFICADO</span>
+                <img src="audit_assets/demo_perfil_screen_1776533545574.png" class="screenshot" style="max-height: 220px; object-fit: cover;">
+                <div class="description-box" style="font-size: 0.8rem; padding: 10px;">
+                    <b>Propósito:</b> Consolidación del historial médico, accesible de forma organizada para propietarios y clínicas afiliadas.
+                </div>
+            </div>
+            <div class="audit-item">
+                <span class="tag">MARKETPLACE B2C</span>
+                <img src="audit_assets/demo_tienda_screen_1776533539499.png" class="screenshot" style="max-height: 220px; object-fit: cover;">
+                <div class="description-box" style="font-size: 0.8rem; padding: 10px;">
+                    <b>Propósito:</b> Sección que sugiere productos afines a las necesidades actuales de la mascota.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECCIÓN 03: MODELO SAAS Y PANEL DE USUARIO (NUEVA SECCIÓN DESTACADA) -->
+    <div class="page">
+        <div class="section-title">03. Modelo SaaS y Módulo de Usuario Web</div>
+        
+        <div class="highlight-box" style="background:#f0fdf4; border-color:#86efac; color:#166534;">
+            <b style="font-size: 1.1rem;"><i class="fa-solid fa-chart-line"></i> El Motor Financiero: Modelos de Suscripción (SaaS)</b><br>
+            Como núcleo recurrente del modelo de negocio expuesto en el TFM, el sistema requiere de suscripciones activas. La arquitectura web dispone y documenta las páginas de "Planes" y el "Módulo de Usuario", piezas vitales para la retención y la generación del flujo de caja mensual (MRR).
+        </div>
+
+        <div class="grid">
+            <div class="audit-item">
+                <span class="tag" style="background:#dcfce7; color:#166534;">SUBSCRIPTION TIERS (SAAS)</span>
+                <h3>Planes CUDI Premium</h3>
+                <img src="audit_assets/planes_suscripcion_page.png" class="screenshot" style="max-height: 260px; object-fit: cover; object-position: top;">
+                <div class="description-box">
+                    <b>Estrategia de Pricing (<i>planes-suscripcion-bienestar-animal.html</i>):</b> Despliegue de los niveles de servicio. A través de este módulo se estructuran los accesos de usuario (ej. cuenta gratuita vs membresía "All-in-One"), garantizando que los inversores o el jurado visualicen claramente cómo se monetiza la plataforma.
+                </div>
+            </div>
+
+            <div class="audit-item">
+                <span class="tag" style="background:#dcfce7; color:#166534;">DASHBOARD WEB</span>
+                <h3>Gestor Multiespecie: "Mi Mascota"</h3>
+                <img src="audit_assets/full_mi_mascota_page_1776533446229.png" class="screenshot" style="max-height: 260px; object-fit: cover; object-position: top;">
+                <div class="description-box">
+                    <b>Centralización (<i>mi-mascota.html</i>):</b> A diferencia del simulador móvil (App Demo), esta es la versión de escritorio operativa donde el dueño añade múltiples animales bajo una misma cuenta, accede legalmente a sus pólizas de seguro vinculadas e interactúa con el ecosistema de forma extendida y documental.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECCIÓN 04: MARKETPLACE Y CATEGORIZACIÓN OMNICANAL -->
+    <div class="page">
+        <div class="section-title">04. Marketplace: El Catálogo Omnicanal</div>
+        
+        <div class="highlight-box" style="background:#fff7ed; border-color:#fdba74; color:#9a3412;">
+            <b style="font-size: 1.1rem;"><i class="fa-solid fa-store"></i> Un Ecosistema Sin Fisuras</b><br>
+            La fuerza de CUDI reside en su capacidad de agrupar todas las necesidades del animal bajo un único paraguas corporativo. No vendemos productos aislados, sino que ofrecemos una solución de vida completa.
+        </div>
+
+        <div class="audit-item">
+            <span class="tag" style="background:#ffedd5; color:#9a3412;">COBERTURA 360º</span>
+            <h3>Estructura del Marketplace por Categorías</h3>
+            <img src="audit_assets/marketplace_categories_full.png" class="screenshot">
+            <div class="description-box">
+                <b>Mapeo del Valor del Negocio:</b> Como se observa en el catálogo real, CUDI cubre las 7 macro-categorías del bienestar multiespecie:
+                <ul style="margin-top:10px; columns: 2; -webkit-columns: 2;">
+                    <li><b>Hardware IoT:</b> Smart Collar GPS.</li>
+                    <li><b>Software SaaS:</b> App y Gemelo Digital.</li>
+                    <li><b>Protección:</b> Seguros de Salud.</li>
+                    <li><b>Salud Médica:</b> Veterinaria 24/7.</li>
+                    <li><b>Actividad:</b> Paseadores Certificados.</li>
+                    <li><b>Estética:</b> Bienestar e Higiene.</li>
+                    <li><b>Nutrición:</b> Dietética Personalizada.</li>
+                </ul>
+                Este despliegue omnicanal garantiza que el usuario encuentre todo en una sola plataforma, eliminando la necesidad de buscar proveedores externos y consolidando el liderazgo de CUDI en el sector Pet-Tech.
+            </div>
+        </div>
+    </div>
+
+    <!-- SECCIÓN 05: ASISTENTE IA Y OMNICANALIDAD (DESTACADO) -->
+    <div class="page">
+        <div class="section-title">05. Estrategia de Asistencia Omnicanal</div>
+        
+        <div class="highlight-box" style="background:#f5f3ff; border-color:#ddd6fe; color:#4c1d95;">
+            <b style="font-size: 1.15rem;"><i class="fa-solid fa-robot"></i> La Omnicanalidad como Eje Conector</b><br>
+            CUDI no es una colección de páginas aisladas. La estrategia omnicanal garantiza que el <b>Asistente de IA (Mimi)</b> esté presente en cada punto de contacto, guiando al usuario desde la lectura de un artículo clínico hasta la finalización de una compra o el triaje de una emergencia.
+        </div>
+
+        <div class="audit-item" style="text-align: center;">
+            <span class="tag" style="background:#ede9fe; color:#4c1d95;">INTERFACE PERSISTENTE</span>
+            <h3>Widget de IA Global (Mimi)</h3>
+            <img src="audit_assets/omnicanal_ia_widget.png" class="screenshot" style="max-height: 400px; width: auto; border: 4px solid #ddd6fe;">
+            <div class="description-box" style="text-align: left;">
+                <b>Propósito Estratégico:</b> Reducir la fricción en el embudo de ventas y soporte. Este componente transversal actúa como el hilo conductor del ecosistema, permitiendo que un usuario en cualquier sección (Tienda, Journal, Landings) pueda resolver dudas, pedir recomendaciones de productos o iniciar un triaje de salud sin abandonar su navegación actual. Es la materialización de la asistencia 24/7 que define a CUDI.
+            </div>
+        </div>
+    </div>
+
+    <!-- SECCIÓN 06: GO-TO-MARKET Y CAMPAÑA DE LANZAMIENTO -->
+    <div class="page">
+        <div class="section-title">06. Campaña de Lanzamiento "Aventuras sin Sustos"</div>
+        
+        <div class="audit-item">
+            <span class="tag">LANDING PAGE DEDICADA</span>
+            <h3>Campaña Principal: El Smart Collar</h3>
+            <img src="audit_assets/aventuras_sin_sustos_page.png" class="screenshot" style="max-height: 400px; object-fit: cover; object-position: center;">
+            <div class="description-box">
+                <b>Estrategia de Lanzamiento ("Aventuras sin Sustos"):</b> La comercialización inicial de CUDI no se basa en vender software directamente, sino en una campaña de adquisición de hardware físico: el <b>Smart Collar con GPS</b>. Esta <i>landing page</i> dedicada (<i>smart-collar-aventuras-sin-sustos.html</i>) funciona de embudo de marketing autónomo, focalizado en atacar el mayor punto de dolor del propietario (el riesgo de pérdida o accidente del animal en excursiones). Al comercializar prevención y seguridad, se genera un retorno rápido de capital e introduce a los usuarios directamente al ecosistema recurrente de CUDI.
+            </div>
+        </div>
+
+        <div class="audit-item">
+            <span class="tag">BOT DE ADQUISICIÓN (LINK-IN-BIO)</span>
+            <h3>Chatbot en Redes Sociales</h3>
+            <div style="background:#e2e8f0; border-radius:12px; padding:15px; display:inline-block; font-family:monospace; font-size:0.85rem; margin-bottom:10px; width:100%; box-sizing:border-box;">
+                > Tráfico de Instagram / TikTok aterriza en: cudi-redes-sociales-bot.html <br>
+                > IA: "Por venir de RRSS tienes el envío del Smart Collar GRATIS." <br>
+                > Cierre: Redirección transparente al Checkout de la Campaña.
+            </div>
+            <div class="description-box" style="font-size: 0.85rem; padding: 10px;">
+                Para apoyar esta Landing Page principal, trazamos un embudo social donde los usuarios aterrizan en un simulador de chat (Bot) desde canales de alto tráfico, ofreciendo una experiencia altamente interactiva y nativa al público objetivo.
+            </div>
+        </div>
+    </div>
+
+    <!-- SECCIÓN 07: RED DE SOCIOS (PARTNERS) -->
+    <div class="page">
+        <div class="section-title">07. Red de Socios (Partners) B2B</div>
+        
+        <div class="highlight-box" style="background:#f0fafb; border-color:#cffafe; color:#083344;">
+            <b style="font-size: 1.1rem;"><i class="fa-solid fa-handshake"></i> Escalabilidad mediante Alianzas</b><br>
+            CUDI expande su capacidad operativa mediante la certificación de centros asociados. Esta red no solo provee servicios físicos, sino que actúa como validadora del estándar de calidad CUDI en el mundo real.
+        </div>
+
+        <div class="audit-item">
+            <span class="tag" style="background:#ccfbf1; color:#134e4a;">B2B EXPANSION</span>
+            <h3>Certificación de Clínicas y Especialistas</h3>
+            <img src="audit_assets/partners_clinics_1776533751448.png" class="screenshot" style="max-height: 480px; object-fit: cover; object-position: top;">
+            <div class="description-box">
+                <b>Estrategia de Partners (<i>red-socios-clinicas-veterinarias.html</i>):</b> 
+                Incorporación de clínicas veterinarias y especialistas como infraestructura de apoyo fundamental. Esta vinculación nos otorga capilaridad geográfica sin incurrir en costes de personal médico directo, siguiendo un modelo de negocio escalable y seguro para el usuario B2C. Las clínicas obtienen visibilidad y flujo de clientes, mientras que CUDI asegura una respuesta física inmediata para sus asegurados.
+            </div>
+        </div>
+    </div>
+
+    <!-- SECCIÓN 08: INFRAESTRUCTURA LEGAL Y POSICIONAMIENTO -->
+    <div class="page">
+        <div class="section-title">08. Marco Legal, SEO y Confianza (E-A-T)</div>
+        
+        <div class="audit-item">
+            <span class="tag">LEGAL COMPLIANCE</span>
+            <h3>Estructura Normativa y Protección</h3>
+            <div class="description-box">
+                <b>Soporte Legal documentado:</b> Se ha desarrollado un ecosistema jurídico completo e integrado en la web para garantizar la seguridad del usuario y la viabilidad del proyecto:
+                <ul style="margin-top:10px; line-height: 1.8;">
+                    <li><b>Privacidad de Datos:</b> Cumplimiento estricto de RGPD para la gestión de datos biométricos y personales.</li>
+                    <li><b>Términos de Servicio:</b> Marco contractual claro para el uso de la App y el hardware.</li>
+                    <li><b>Garantía y Devoluciones:</b> Política específica para la comercialización del Smart Collar, asegurando la confianza en la compra.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="audit-item">
+            <span class="tag">SEO TÉCNICO E INBOUND</span>
+            <h3>Autoridad de Marca e Indexación</h3>
+            <div class="grid">
+                <div style="background:#f1f5f9; padding:20px; border-radius:15px; font-size:0.85rem;">
+                    <b>Inbound SEO (Journal):</b>
+                    Posicionamiento orgánico mediante artículos técnicos (Ansiedad, Microbioma) que atraen tráfico cualificado y establecen a CUDI como autoridad médica.
+                </div>
+                <div style="background:#f1f5f9; padding:20px; border-radius:15px; font-size:0.85rem;">
+                    <b>Microdatos JSON-LD:</b>
+                    Marcado semántico avanzado para que los motores de búsqueda identifiquen productos, reseñas de clientes y eventos de salud automáticamente.
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

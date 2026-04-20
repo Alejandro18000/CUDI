@@ -63,7 +63,7 @@ FOOTER_TEMPLATE = """    <footer class="premium-footer">
                     <h4>Conecta con nosotros</h4>
                     <p style="margin-bottom:20px;">Recibe consejos de salud preventiva validados por expertos.</p>
                     <div class="footer-socials">
-                        <a href="https://www.instagram.com/cudi.ai2026/" target="_blank" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/cudi.ia?igsh=bjdmNXhyeHZvMXo0&utm_source=qr" target="_blank" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
                         <a href="https://www.facebook.com/Cudi2026" target="_blank" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
                         <a href="#" class="social-btn"><i class="fa-brands fa-tiktok"></i></a>
                         <a href="#" class="social-btn"><i class="fa-brands fa-youtube"></i></a>
