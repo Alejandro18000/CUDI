@@ -50,6 +50,21 @@ body.app-demo-body {
     align-items: center;
 }
 
+@media (max-width: 1024px) {
+    .demo-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+        text-align: center;
+        padding: 0 20px;
+    }
+    .hero-content-col {
+        align-items: center;
+    }
+    .hero-title {
+        font-size: 2.8rem;
+    }
+}
+
 /* ----- COLUMNA IZQUIERDA (texto) ----- */
 .hero-content-col {
     display: flex;
@@ -148,6 +163,22 @@ body.app-demo-body {
     flex-shrink: 0;
     transform: scale(1.05);
     transform-origin: center top;
+}
+
+@media (max-width: 500px) {
+    .mobile-device {
+        transform: scale(0.85);
+        margin-top: -100px;
+        margin-bottom: -150px;
+    }
+}
+
+@media (max-width: 400px) {
+    .mobile-device {
+        transform: scale(0.7);
+        margin-top: -200px;
+        margin-bottom: -250px;
+    }
 }
 
 .mobile-notch {

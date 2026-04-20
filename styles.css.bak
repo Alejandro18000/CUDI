@@ -1,41 +1,46 @@
 /* Desarrollo 100% realizado por Sergio Alejandro Ospina Rocha */
 
+:root {
+    /* Paleta Corporativa Oficial: Azul Tecnológico y de Salud (Refinada) */
+    --clr-bg: #F8FAFC; /* Off-white extremadamente suave para reducir fatiga */
+    --clr-bg-card: #FFFFFF;
+    --clr-primary: #0077B6; 
+    --clr-primary-light: #E0F2FE;
+    --clr-primary-glow: rgba(0, 119, 182, 0.1);
+    --clr-accent: #0077B6; 
+    --clr-text: #0F172A; /* Contraste profundo y elegante */
+    --clr-text-muted: #475569;
+    --clr-white: #FFFFFF;
+    --clr-border: #E2E8F0;
+    --clr-secondary: #003049; /* Azul Marino Corporativo CUDI */
+
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    --transition: all 0.3s ease;
+    --radius-sm: 4px; /* Bordes más rectos y elegantes */
+    --radius-md: 8px;
+    --radius-lg: 12px;
+}
+
 * {
-    box-sizing: border-box;
-    max-width: 100vw;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     scroll-behavior: smooth;
 }
 
-:root {
-    --clr-primary: #0077b6;
-    --clr-primary-light: #0ea5e9;
-    --clr-primary-glow: rgba(14, 165, 233, 0.15);
-    --clr-secondary: #0f172a; /* Slate 900 */
-    --clr-accent: #10b981; /* Emerald 500 */
-    --clr-text: #1e293b; /* Slate 800 */
-    --clr-text-muted: #64748b; /* Slate 500 */
-    --clr-bg: #F8FAFC;
-    --clr-border: #E2E8F0;
-    --clr-white: #FFFFFF;
-    
-    --font-heading: 'Outfit', sans-serif;
-    --font-body: 'Inter', sans-serif;
-    
-    --radius-sm: 8px;
-    --radius-md: 12px;
-    --radius-lg: 24px;
-    
-    --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
 body {
+    font-family: var(--font-body);
     background-color: var(--clr-bg);
     color: var(--clr-text);
-    font-family: var(--font-body);
     line-height: 1.6;
     overflow-x: hidden;
+    position: relative;
+
+
+
+
 
 }
 
@@ -58,10 +63,9 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-    font-size: clamp(2.2rem, 8vw, 4rem);
+    font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 800;
-    margin-bottom: 1.2rem;
-    letter-spacing: -1.5px;
+    margin-bottom: 1.5rem;
 }
 
 h2 {
@@ -233,9 +237,9 @@ p {
 /* Ecommerce Grid */
 .ecommerce-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    margin-top: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
 }
 
 .store-card {
@@ -718,12 +722,6 @@ p {
     margin-top: 3rem;
 }
 
-@media (max-width: 900px) {
-    .marketplace-layout {
-        grid-template-columns: 1fr;
-    }
-}
-
 .filters-sidebar {
     background: white;
     padding: 30px;
@@ -894,12 +892,11 @@ p {
 .text-primary { color: var(--clr-primary); }
 .massive-btn { padding: 20px; font-size: 1.2rem; border-radius: 12px; }
 
-/* Responsive Implementation (Consolidaded Breakpoints) */
+/* Responsive Implementation */
 @media (max-width: 1024px) {
     .nav-search-island { width: 250px; }
     .hero-dual { grid-template-columns: 1fr; }
-    .hero-dual-text { padding: 60px 5%; text-align: center; }
-    .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
 }
 
 /* Mobile Menu Trigger Stylings */
@@ -915,21 +912,16 @@ p {
 
 @media (max-width: 850px) {
     .nav-links-island { display: none !important; }
-    .menu-trigger-mobile { display: block !important; order: 3; }
-    .nav-capsule { justify-content: space-between; padding: 10px 15px; border-radius: 30px; margin: 0 10px; width: auto; }
-    .logo, .logo img { height: 35px !important; width: auto !important; max-width: 120px !important; }
-    .nav-search-island { display: none !important; }
-    .top-bar-refined { display: none !important; }
-    .nav-right-island { gap: 15px !important; }
+    .menu-trigger-mobile { display: block; }
+    .nav-capsule { justify-content: space-between; padding: 0 20px; }
+    .nav-search-island { display: none; }
 }
 
 @media (max-width: 600px) {
-    .footer-grid { grid-template-columns: 1fr; text-align: left; gap: 40px; }
-    .footer-bottom { text-align: center; padding-bottom: 80px; }
-    .hero-dual-text h1 { font-size: 2.22rem !important; line-height: 1.1; }
-    .hero-dual-text p { font-size: 1rem; }
-    .massive-btn { width: 100%; text-align: center; justify-content: center; padding: 15px; }
-    .container { padding: 0 1.5rem; }
+    .footer-grid { grid-template-columns: 1fr; text-align: left; gap: 50px; }
+    .footer-bottom { text-align: center; }
+    .hero-dual-text h1 { font-size: 2.2rem !important; }
+    .massive-btn { width: 100%; text-align: center; justify-content: center; }
 }
 
 /* Mobile Drawer (Side Panel Navigation) */
@@ -1040,18 +1032,6 @@ button:active, .btn-primary:active, .btn-secondary:active, .store-card:active {
     overflow: hidden;
     transform-origin: bottom right;
     animation: chatPop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-@media (max-width: 480px) {
-    .cudi-chat-panel {
-        width: calc(100vw - 40px);
-        right: -10px;
-        height: 70vh;
-    }
-    .cudi-chat-widget {
-        bottom: 20px !important;
-        right: 20px !important;
-    }
 }
 @keyframes chatPop {
     0% { transform: scale(0); opacity: 0; }
@@ -2056,7 +2036,7 @@ section:nth-of-type(2) { animation-delay: 0.6s; }
 
 .cudi-modal-content {
     background: white;
-    width: 95%;
+    width: 100%;
     max-width: 500px;
     border-radius: 24px;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
@@ -2452,70 +2432,11 @@ section:nth-of-type(2) { animation-delay: 0.6s; }
     .footer-grid {
         grid-template-columns: 1fr;
         text-align: center;
-        gap: 30px;
     }
-    .footer-col img { height: 50px !important; margin: 0 auto 20px; }
     .footer-socials {
         justify-content: center;
     }
     .footer-links-list a:hover {
         transform: translateY(-2px);
-    }
-    
-    /* Hero Image Override */
-    .hero-dual-photo {
-        min-height: 250px !important;
-        background-size: cover !important;
-    }
-    
-}
-
-/* FINAL MOBILE MASTER OVERRIDE */
-@media (max-width: 1024px) {
-    header .nav-capsule .logo img,
-    footer .logo img,
-    .mobile-drawer .logo img {
-        height: 35px !important;
-        width: auto !important;
-        max-height: 35px !important;
-    }
-    
-    .navbar-island {
-        top: 0 !important;
-        padding: 10px 0 !important;
-    }
-
-    .nav-capsule {
-        padding: 5px 15px !important;
-        display: flex !important;
-        justify-content: space-between !important;
-        align-items: center !important;
-        border-radius: 0 !important;
-        margin: 0 !important;
-    }
-    
-    .nav-right-island {
-        gap: 15px !important;
-        display: flex !important;
-        align-items: center !important;
-    }
-    
-    .cart-trigger-island {
-        margin-right: 10px !important;
-    }
-    
-    .menu-trigger-mobile {
-        display: block !important;
-        background: var(--clr-primary) !important;
-        color: white !important;
-        padding: 8px 12px !important;
-        border-radius: 8px !important;
-        font-size: 1.2rem !important;
-        border: none !important;
-    }
-
-    /* Fix Hero Overlap */
-    .hero-dual {
-        margin-top: 60px !important;
     }
 }
