@@ -983,36 +983,6 @@ function initMobileEnvironment() {
         `;
         document.body.appendChild(drawer);
     }
-    applyMobileShockforce();
-}
-
-function applyMobileShockforce() {
-    if (window.innerWidth < 1024) {
-        let meta = document.querySelector('meta[name="viewport"]');
-        if (!meta) {
-            meta = document.createElement('meta');
-            meta.name = "viewport";
-            document.head.appendChild(meta);
-        }
-        meta.content = "width=device-width, initial-scale=1.0";
-
-        if (!document.getElementById('cudi-mobile-force-css')) {
-            const style = document.createElement('style');
-            style.id = 'cudi-mobile-force-css';
-            style.innerHTML = `
-                body { overflow-x: hidden !important; width: 100% !important; }
-                .navbar-island { position: fixed !important; top: 0 !important; width: 100% !important; left:0 !important; border-radius:0 !important; z-index: 10002 !important; }
-                .nav-capsule { border-radius: 0 !important; padding: 10px !important; display:flex !important; justify-content:space-between !important; align-items:center !important; }
-                .logo img { height: 35px !important; width: auto !important; }
-                .nav-search-island { display: none !important; }
-                .nav-links-island { display: none !important; }
-                .nav-right-island { display:flex !important; gap:20px !important; align-items:center !important; order:2 !important; min-width: 100px !important; }
-                .menu-trigger-mobile { display: block !important; order:3 !important; padding: 10px !important; z-index: 10005 !important; }
-                .cart-trigger-island { margin-right: 0 !important; cursor: pointer !important; }
-            `;
-            document.head.appendChild(style);
-        }
-    }
 }
 
 function toggleMobileMenu() {
