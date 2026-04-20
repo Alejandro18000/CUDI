@@ -993,8 +993,9 @@ function applyMobileShockforce() {
                 .logo img { height: 35px !important; width: auto !important; }
                 .nav-search-island { display: none !important; }
                 .nav-links-island { display: none !important; }
-                .menu-trigger-mobile { display: block !important; order:3 !important; }
-                .nav-right-island { display:flex !important; gap:15px !important; align-items:center !important; order:2 !important; }
+                .nav-right-island { display:flex !important; gap:20px !important; align-items:center !important; order:2 !important; min-width: 100px !important; }
+                .menu-trigger-mobile { display: block !important; order:3 !important; padding: 10px !important; z-index: 10005 !important; }
+                .cart-trigger-island { margin-right: 0 !important; cursor: pointer !important; }
             `;
             document.head.appendChild(style);
         }
