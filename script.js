@@ -277,11 +277,24 @@ let globalCart = JSON.parse(localStorage.getItem('cudi_cart')) || [];
 function toggleCart() {
     const cart = document.getElementById('side-cart');
     const overlay = document.getElementById('cart-overlay');
+    const drawer = document.getElementById('mobile-drawer');
+    
     if (!cart || !overlay) return;
+
+    // Si el menú móvil está abierto, lo cerramos
+    if (drawer && drawer.classList.contains('active')) {
+        drawer.classList.remove('active');
+        // El overlay ya está activo, no lo alteramos
+    } else {
+        overlay.classList.toggle('active');
+    }
 
     if (cart.classList.contains('active')) {
         cart.classList.remove('active');
-        overlay.classList.remove('active');
+        // Si no cerramos el menú arriba, removemos el overlay aquí si el carrito se cierra solo
+        if (!drawer || !drawer.classList.contains('active')) {
+             overlay.classList.remove('active');
+        }
     } else {
         cart.classList.add('active');
         overlay.classList.add('active');
@@ -1005,6 +1018,13 @@ function applyMobileShockforce() {
 function toggleMobileMenu() {
     const drawer = document.getElementById('mobile-drawer');
     const overlay = document.getElementById('cart-overlay');
+    const cart = document.getElementById('side-cart');
+    
+    // Si el carrito está abierto, lo cerramos primero
+    if (cart && cart.classList.contains('active')) {
+        cart.classList.remove('active');
+    }
+
     if (drawer) {
         drawer.classList.toggle('active');
         if (overlay) overlay.classList.toggle('active');
