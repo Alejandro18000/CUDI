@@ -281,23 +281,17 @@ function toggleCart() {
     
     if (!cart || !overlay) return;
 
-    // Si el menú móvil está abierto, lo cerramos
+    // Si el menú móvil está abierto, lo cerramos COMPLETAMENTE
     if (drawer && drawer.classList.contains('active')) {
         drawer.classList.remove('active');
-        // El overlay ya está activo, no lo alteramos
-    } else {
-        overlay.classList.toggle('active');
+        overlay.classList.remove('active');
     }
 
+    // Toggle del carrito
+    cart.classList.toggle('active');
+    overlay.classList.toggle('active');
+
     if (cart.classList.contains('active')) {
-        cart.classList.remove('active');
-        // Si no cerramos el menú arriba, removemos el overlay aquí si el carrito se cierra solo
-        if (!drawer || !drawer.classList.contains('active')) {
-             overlay.classList.remove('active');
-        }
-    } else {
-        cart.classList.add('active');
-        overlay.classList.add('active');
         renderCartUI();
     }
 }
@@ -989,16 +983,18 @@ function toggleMobileMenu() {
     const drawer = document.getElementById('mobile-drawer');
     const overlay = document.getElementById('cart-overlay');
     const cart = document.getElementById('side-cart');
-    
-    // Si el carrito está abierto, lo cerramos primero
+
+    if (!drawer || !overlay) return;
+
+    // Si el carrito está abierto, lo cerramos COMPLETAMENTE
     if (cart && cart.classList.contains('active')) {
         cart.classList.remove('active');
+        overlay.classList.remove('active');
     }
 
-    if (drawer) {
-        drawer.classList.toggle('active');
-        if (overlay) overlay.classList.toggle('active');
-    }
+    // Toggle del menú móvil
+    drawer.classList.toggle('active');
+    overlay.classList.toggle('active');
 }
 
 document.addEventListener('DOMContentLoaded', () => {
