@@ -962,6 +962,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function initMobileEnvironment() {
+    // Solo creamos el drawer si NO existe ya en el HTML (Prevención de duplicados TFM)
     if (!document.getElementById('mobile-drawer')) {
         const drawer = document.createElement('div');
         drawer.id = 'mobile-drawer';
@@ -974,10 +975,10 @@ function initMobileEnvironment() {
             <ul class="drawer-links">
                 <li><a href="index.html" onclick="toggleMobileMenu()"><i class="fa-solid fa-house"></i> Inicio</a></li>
                 <li><a href="smart-collar-aventuras-sin-sustos.html" onclick="toggleMobileMenu()"><i class="fa-solid fa-rocket"></i> Lanzamiento</a></li>
+                <li><a href="comunidad-cudi.html" onclick="toggleMobileMenu()"><i class="fa-solid fa-people-group"></i> Comunidad</a></li>
                 <li><a href="index.html#store-grid" onclick="toggleMobileMenu()"><i class="fa-solid fa-store"></i> Tienda</a></li>
                 <li><a href="index.html#suscripciones" onclick="toggleMobileMenu()"><i class="fa-solid fa-shield-cat"></i> Planes</a></li>
-                <li><a href="red-socios-clinicas-veterinarias.html" onclick="toggleMobileMenu()"><i class="fa-solid fa-handshake"></i> Red de Socios</a></li>
-                <li><a href="simulador-gemelo-digital-telemetria.html" style="color:#10b981; font-weight:800;" onclick="toggleMobileMenu()"><i class="fa-solid fa-mobile-screen"></i> App Demo</a></li>
+                <li><a href="red-socios-clinicas-veterinarias.html" onclick="toggleMobileMenu()"><i class="fa-solid fa-handshake"></i> Partners</a></li>
                 <li id="mobile-session-item"></li>
             </ul>
         `;
