@@ -2478,11 +2478,15 @@ section:nth-of-type(2) { animation-delay: 0.6s; }
         height: 35px !important;
         width: auto !important;
         max-height: 35px !important;
+        min-height: 0 !important;
     }
     
     .navbar-island {
         top: 0 !important;
-        padding: 10px 0 !important;
+        padding: 5px 0 !important;
+        width: 100% !important;
+        left: 0 !important;
+        right: 0 !important;
     }
 
     .nav-capsule {
@@ -2492,30 +2496,40 @@ section:nth-of-type(2) { animation-delay: 0.6s; }
         align-items: center !important;
         border-radius: 0 !important;
         margin: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
     }
     
     .nav-right-island {
         gap: 15px !important;
         display: flex !important;
         align-items: center !important;
-    }
-    
-    .cart-trigger-island {
-        margin-right: 10px !important;
+        padding: 0 !important;
     }
     
     .menu-trigger-mobile {
         display: block !important;
         background: var(--clr-primary) !important;
         color: white !important;
-        padding: 8px 12px !important;
+        padding: 6px 12px !important;
         border-radius: 8px !important;
-        font-size: 1.2rem !important;
+        font-size: 1.1rem !important;
         border: none !important;
     }
 
-    /* Fix Hero Overlap */
+    /* Fix Hero and Content Overlap/Scaling */
     .hero-dual {
-        margin-top: 60px !important;
+        margin-top: 50px !important;
+        flex-direction: column !important;
+    }
+    
+    .hero-dual-text, .hero-dual-photo {
+        width: 100% !important;
+        min-width: 100% !important;
+    }
+
+    .container {
+        padding: 0 15px !important;
+        width: 100% !important;
     }
 }
