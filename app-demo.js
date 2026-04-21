@@ -913,37 +913,11 @@ function showToast(msg) {
 // ==========================
 // IN-APP CHAT
 // ==========================
+// In-App Chat is now unified with the global CudiAI engine
 function toggleInAppChat() {
-    const panel = document.getElementById('in-app-chat-panel');
-    if (panel) panel.style.display = panel.style.display === 'none' || !panel.style.display ? 'block' : 'none';
-}
-
-function sendInAppMessage() {
-    const input = document.getElementById('in-app-chat-input');
-    const body  = document.getElementById('in-app-chat-body');
-    if (!input || !body) return;
-    const txt = input.value.trim();
-    if (!txt) return;
-
-    body.innerHTML += `<div style="background:var(--app-primary);color:white;padding:9px 13px;border-radius:14px;border-top-right-radius:4px;margin-bottom:8px;font-size:0.82rem;align-self:flex-end;max-width:85%;">${txt}</div>`;
-    input.value = '';
-    body.scrollTop = body.scrollHeight;
-
-    setTimeout(() => {
-        const replies = [
-            'Lo estoy analizando. Los signos vitales lucen estables.',
-            'Puedo ver los biometricos en tiempo real. Todo parece normal.',
-            'Recomiendo mantener la rutina de paseos y alimentacion.',
-            'Segun el historial, esto es completamente normal para su raza.'
-        ];
-        const reply = replies[Math.floor(Math.random() * replies.length)];
-        body.innerHTML += `<div style="background:white;border:1px solid var(--app-border);padding:9px 13px;border-radius:14px;border-top-left-radius:4px;margin-bottom:8px;font-size:0.82rem;max-width:85%;">${reply}</div>`;
-        body.scrollTop = body.scrollHeight;
-    }, 1200);
-}
-
-function handleInAppEnter(e) {
-    if (e.key === 'Enter') sendInAppMessage();
+    if (typeof CudiAI !== 'undefined') {
+        CudiAI.toggle();
+    }
 }
 
 // ==========================
