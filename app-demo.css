@@ -914,7 +914,184 @@ body.app-demo-body {
     z-index: 10;
 }
 
+
 @keyframes scanPulse {
     0% { box-shadow: 0 0 10px rgba(16, 185, 129, 0.4); }
     100% { box-shadow: 0 0 25px rgba(16, 185, 129, 0.8); }
 }
+
+/* =========================================================
+   IN-APP AI CHAT (MINI LIQUID GLASS)
+   ========================================================= */
+.in-app-ia-wrapper {
+    position: absolute;
+    bottom: 85px;
+    right: 15px;
+    z-index: 1000;
+}
+
+.in-app-ia-btn {
+    width: 50px;
+    height: 50px;
+    background: white;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border: 2px solid var(--app-primary);
+    overflow: hidden;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.in-app-ia-btn:hover { transform: scale(1.1); }
+
+.in-app-ia-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.ia-pulse-mini {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: var(--app-primary);
+    opacity: 0.3;
+    animation: pulseMini 2s infinite;
+    z-index: -1;
+}
+
+@keyframes pulseMini {
+    0% { transform: scale(1); opacity: 0.3; }
+    100% { transform: scale(1.5); opacity: 0; }
+}
+
+.in-app-ia-panel {
+    position: absolute;
+    bottom: 60px;
+    right: 0;
+    width: 280px;
+    height: 380px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    transform-origin: bottom right;
+    animation: panelPop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes panelPop {
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.ia-panel-mini-header {
+    padding: 12px 15px;
+    background: var(--app-primary);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ia-profile-mini {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ia-avatar-mini {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: white;
+    padding: 2px;
+}
+
+.ia-avatar-mini img { width: 100%; height: 100%; border-radius: 50%; }
+
+.ia-meta-mini { display: flex; flex-direction: column; }
+.ia-name-mini { font-size: 0.75rem; font-weight: 800; line-height: 1.1; }
+.ia-status-mini { font-size: 0.6rem; opacity: 0.8; }
+
+.ia-close-mini {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ia-panel-mini-body {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.ia-msg-bubble {
+    background: white;
+    padding: 10px 12px;
+    border-radius: 15px;
+    border-top-left-radius: 2px;
+    font-size: 0.8rem;
+    color: #475569;
+    align-self: flex-start;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+    max-width: 85%;
+    line-height: 1.4;
+}
+
+.user-msg-bubble {
+    background: var(--app-primary);
+    color: white;
+    padding: 10px 12px;
+    border-radius: 15px;
+    border-top-right-radius: 2px;
+    font-size: 0.8rem;
+    align-self: flex-end;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    max-width: 85%;
+    line-height: 1.4;
+}
+
+.ia-panel-mini-footer {
+    padding: 12px;
+    background: white;
+    display: flex;
+    gap: 8px;
+    border-top: 1px solid var(--app-border);
+}
+
+.ia-panel-mini-footer input {
+    flex: 1;
+    border: 1px solid var(--app-border);
+    border-radius: 50px;
+    padding: 8px 12px;
+    font-size: 0.8rem;
+    outline: none;
+}
+
+.ia-panel-mini-footer button {
+    background: var(--app-primary);
+    color: white;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.typing-mini { font-size: 0.7rem; color: var(--app-text-muted); font-style: italic; }

@@ -568,6 +568,35 @@
 
                         
 
+                        <!-- IN-APP AI CHAT WIDGET (Immersive Version) -->
+                        <div class="in-app-ia-wrapper">
+                            <div class="in-app-ia-btn" onclick="toggleInAppChat()">
+                                <img src="logo.jpeg" alt="CUDI AI">
+                                <div class="ia-pulse-mini"></div>
+                            </div>
+                            <div class="in-app-ia-panel" id="in-app-ia-panel">
+                                <div class="ia-panel-mini-header">
+                                    <div class="ia-profile-mini">
+                                        <div class="ia-avatar-mini">
+                                            <img src="logo.jpeg" alt="CUDI">
+                                        </div>
+                                        <div class="ia-meta-mini">
+                                            <span class="ia-name-mini">CUDI | Asistente de Salud</span>
+                                            <span class="ia-status-mini">En línea</span>
+                                        </div>
+                                    </div>
+                                    <button class="ia-close-mini" onclick="toggleInAppChat()"><i class="fa-solid fa-xmark"></i></button>
+                                </div>
+                                <div class="ia-panel-mini-body" id="in-app-ia-body">
+                                    <div class="ia-msg-bubble">¡Hola! Soy tu asistente CUDI. ¿Cómo puedo ayudarte hoy con tu compañero?</div>
+                                </div>
+                                <div class="ia-panel-mini-footer">
+                                    <input type="text" id="in-app-ia-input" placeholder="Pregúntame lo que necesites..." onkeypress="handleInAppChatEnter(event)">
+                                    <button onclick="sendInAppChatMessage()"><i class="fa-solid fa-paper-plane"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
                     </div><!-- /mobile-screen -->
                 </div><!-- /mobile-device -->
             </div><!-- /hero-phone-col -->

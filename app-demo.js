@@ -911,14 +911,72 @@ function showToast(msg) {
 }
 
 // ==========================
-// IN-APP CHAT
+// IN-APP CHAT (RE-INTEGRACION UNIFICADA)
 // ==========================
-// In-App Chat is now unified with the global CudiAI engine
 function toggleInAppChat() {
-    if (typeof CudiAI !== 'undefined') {
-        CudiAI.toggle();
+    const panel = document.getElementById('in-app-ia-panel');
+    if (panel) {
+        const isHidden = panel.style.display === 'none' || !panel.style.display;
+        panel.style.display = isHidden ? 'flex' : 'none';
+        if (isHidden) {
+             setTimeout(() => document.getElementById('in-app-ia-input').focus(), 100);
+        }
     }
 }
+
+function handleInAppChatEnter(e) {
+    if (e.key === 'Enter') sendInAppChatMessage();
+}
+
+async function sendInAppChatMessage() {
+    const input = document.getElementById('in-app-ia-input');
+    const msg = input.value.trim();
+    if (!msg || typeof CudiAI === 'undefined') return;
+
+    input.value = '';
+    addInAppMsg('user', msg);
+
+    // Indicador de escritura local
+    const body = document.getElementById('in-app-ia-body');
+    const typingId = 'typing-' + Date.now();
+    const typingDiv = document.createElement('div');
+    typingDiv.id = typingId;
+    typingDiv.className = 'typing-mini';
+    typingDiv.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> CUDI está pensando...';
+    body.appendChild(typingDiv);
+    body.scrollTop = body.scrollHeight;
+
+    // Obtenemos respuesta del motor unificado
+    const response = await CudiAI.generateResponse(msg);
+
+    // Limpiamos typing y anadimos respuesta
+    if (document.getElementById(typingId)) {
+        document.getElementById(typingId).remove();
+    }
+    addInAppMsg('ia', response);
+}
+
+function addInAppMsg(sender, text) {
+    const body = document.getElementById('in-app-ia-body');
+    if (!body) return;
+    
+    const div = document.createElement('div');
+    div.className = sender === 'user' ? 'user-msg-bubble' : 'ia-msg-bubble';
+    div.textContent = text;
+    body.appendChild(div);
+    
+    // Animacion de entrada
+    div.style.opacity = '0';
+    div.style.transform = 'translateY(10px)';
+    div.style.transition = 'all 0.3s ease';
+    
+    setTimeout(() => {
+        div.style.opacity = '1';
+        div.style.transform = 'translateY(0)';
+        body.scrollTop = body.scrollHeight;
+    }, 50);
+}
+
 
 // ==========================
 // INICIALIZACION
