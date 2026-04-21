@@ -3,6 +3,9 @@
 .DS_Store
 Thumbs.db
 
+# Ignorar carpetas de scratch o temporales
+scratch/
+
 # Ignorar archivos temporales de Python (por si se ejecutan otros scripts)
 __pycache__/
 *.py[cod]

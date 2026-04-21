@@ -986,6 +986,17 @@ function initMobileEnvironment() {
     }
 }
 
+function closeAllPanels() {
+    const drawer = document.getElementById('mobile-drawer');
+    const overlay = document.getElementById('cart-overlay');
+    const cart = document.getElementById('side-cart');
+    
+    if (drawer) drawer.classList.remove('active');
+    if (cart) cart.classList.remove('active');
+    if (overlay) overlay.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
 function toggleMobileMenu() {
     const drawer = document.getElementById('mobile-drawer');
     const overlay = document.getElementById('cart-overlay');
@@ -997,8 +1008,12 @@ function toggleMobileMenu() {
     }
 
     if (drawer) {
-        drawer.classList.toggle('active');
-        if (overlay) overlay.classList.toggle('active');
+        const isActive = drawer.classList.toggle('active');
+        if (overlay) {
+            if (isActive) overlay.classList.add('active');
+            else overlay.classList.remove('active');
+        }
+        document.body.style.overflow = isActive ? 'hidden' : '';
     }
 }
 
