@@ -281,23 +281,24 @@ function toggleCart() {
     
     if (!cart || !overlay) return;
 
-    // Si el menú móvil está abierto, lo cerramos
+    // Si el menú móvil está abierto, primero lo cerramos
     if (drawer && drawer.classList.contains('active')) {
         drawer.classList.remove('active');
-        // El overlay ya está activo, no lo alteramos
-    } else {
-        overlay.classList.toggle('active');
+        document.body.style.overflow = '';
     }
 
-    if (cart.classList.contains('active')) {
+    const isOpen = cart.classList.contains('active');
+
+    if (isOpen) {
+        // --- CERRAR CARRITO ---
         cart.classList.remove('active');
-        // Si no cerramos el menú arriba, removemos el overlay aquí si el carrito se cierra solo
-        if (!drawer || !drawer.classList.contains('active')) {
-             overlay.classList.remove('active');
-        }
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
     } else {
+        // --- ABRIR CARRITO ---
         cart.classList.add('active');
         overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
         renderCartUI();
     }
 }
@@ -763,27 +764,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function initMobileEnvironment() {
     // Solo creamos el drawer si NO existe ya en el HTML (Prevención de duplicados TFM)
-    if (!document.getElementById('mobile-drawer')) {
-        const drawer = document.createElement('div');
-        drawer.id = 'mobile-drawer';
-        drawer.className = 'mobile-drawer';
-        drawer.innerHTML = `
-            <button class="drawer-close" onclick="toggleMobileMenu()"><i class="fa-solid fa-xmark"></i></button>
-            <div style="text-align:center; margin-bottom:30px;">
-                <img src="logo.jpeg" alt="CUDI" style="height:60px; border-radius:10px;">
-            </div>
-            <ul class="drawer-links">
-                <li><a href="index.html" onclick="toggleMobileMenu()"><i class="fa-solid fa-house"></i> Inicio</a></li>
-                <li><a href="smart-collar-aventuras-sin-sustos.html" onclick="toggleMobileMenu()"><i class="fa-solid fa-rocket"></i> Lanzamiento</a></li>
-                <li><a href="comunidad-cudi.html" onclick="toggleMobileMenu()"><i class="fa-solid fa-people-group"></i> Comunidad</a></li>
-                <li><a href="index.html#store-grid" onclick="toggleMobileMenu()"><i class="fa-solid fa-store"></i> Tienda</a></li>
-                <li><a href="index.html#suscripciones" onclick="toggleMobileMenu()"><i class="fa-solid fa-shield-cat"></i> Planes</a></li>
-                <li><a href="red-socios-clinicas-veterinarias.html" onclick="toggleMobileMenu()"><i class="fa-solid fa-handshake"></i> Partners</a></li>
-                <li id="mobile-session-item"></li>
-            </ul>
-        `;
-        document.body.appendChild(drawer);
+    // Doble comprobación: por ID y por clase, para evitar cualquier duplicado
+    const existing = document.getElementById('mobile-drawer');
+    if (existing) {
+        // El drawer ya existe en el HTML, no creamos uno nuevo
+        return;
     }
+
+    const drawer = document.createElement('div');
+    drawer.id = 'mobile-drawer';
+    drawer.className = 'mobile-drawer';
+    drawer.innerHTML = `
+        <button class="drawer-close" onclick="toggleMobileMenu()"><i class="fa-solid fa-xmark"></i></button>
+        <div style="text-align:center; margin-bottom:30px;">
+            <img src="logo.jpeg" alt="CUDI" style="height:60px; border-radius:10px;">
+        </div>
+        <ul class="drawer-links">
+            <li><a href="index.html" onclick="toggleMobileMenu()"><i class="fa-solid fa-house"></i> Inicio</a></li>
+            <li><a href="smart-collar-aventuras-sin-sustos.html" onclick="toggleMobileMenu()"><i class="fa-solid fa-rocket"></i> Lanzamiento</a></li>
+            <li><a href="comunidad-cudi.html" onclick="toggleMobileMenu()"><i class="fa-solid fa-people-group"></i> Comunidad</a></li>
+            <li><a href="index.html#store-grid" onclick="toggleMobileMenu()"><i class="fa-solid fa-store"></i> Tienda</a></li>
+            <li><a href="index.html#suscripciones" onclick="toggleMobileMenu()"><i class="fa-solid fa-shield-cat"></i> Planes</a></li>
+            <li><a href="red-socios-clinicas-veterinarias.html" onclick="toggleMobileMenu()"><i class="fa-solid fa-handshake"></i> Partners</a></li>
+            <li id="mobile-session-item"></li>
+        </ul>
+    `;
+    document.body.appendChild(drawer);
 }
 
 function closeAllPanels() {
@@ -817,10 +823,37 @@ function toggleMobileMenu() {
     }
 }
 
+// ============================================================
+// applyMobileShockforce — Cierra todos los paneles al pasar
+// de móvil a desktop redimensionando el navegador.
+// Esta función era llamada en el listener de resize pero
+// no existía, causando un error JS que bloqueaba el menú.
+// ============================================================
+function applyMobileShockforce() {
+    if (window.innerWidth > 1024) {
+        // Al volver a escritorio: cerrar drawer, carrito y overlay
+        closeAllPanels();
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     initMobileEnvironment();
     cudi_check_session();
     window.addEventListener('resize', applyMobileShockforce);
+
+    // ================================================================
+    // FIX CRÍTICO: Reubicar paneles fixed (drawer, cart, overlay)
+    // Se mueven al inicio del body para evitar que queden atrapados
+    // por el stacking context de secciones con animaciones transform.
+    // ================================================================
+    const panelsToMove = ['mobile-drawer', 'side-cart', 'cart-overlay'];
+    panelsToMove.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+            // Se insertan al principio para asegurar prioridad visual y de contexto
+            document.body.insertBefore(el, document.body.firstChild);
+        }
+    });
 });
 
 document.addEventListener('contextmenu', e => {

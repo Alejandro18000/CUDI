@@ -226,10 +226,24 @@ p {
     position: relative;
     cursor: pointer;
     transition: var(--transition);
+    /* Mínimo 44x44px (WCAG touch target) para que el área de click sea correcta */
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .cart-trigger-island:hover {
     transform: scale(1.1);
+}
+
+/* El badge nunca debe capturar clicks ni salirse del contenedor */
+.cart-badge {
+    pointer-events: none;
+    /* Reposicionar para no solapar el botón hamburguesa */
+    top: -6px !important;
+    right: -6px !important;
 }
 
 /* Hero Dual */
@@ -341,7 +355,7 @@ p {
     height: calc(100vh - 40px);
     background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(20px);
-    z-index: 2000;
+    z-index: 40000 !important;
     box-shadow: 0 40px 100px rgba(15, 23, 42, 0.15);
     transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     padding: clamp(20px, 5vw, 40px);
@@ -362,7 +376,7 @@ p {
     width: 100vw;
     height: 100vh;
     background: rgba(15, 23, 42, 0.4);
-    z-index: 1500;
+    z-index: 30000 !important;
     opacity: 0;
     visibility: hidden;
     transition: all 0.4s ease;
@@ -416,8 +430,6 @@ p {
     overflow-y: auto;
     padding-right: 15px;
     margin-right: -15px;
-}
-    padding-right: 10px;
 }
 
 /* Scrollbar para el carrito */
@@ -487,10 +499,6 @@ p {
     padding: 4px 8px;
     border-radius: 50px;
     border: 1px solid #e2e8f0;
-}
-    color: var(--clr-primary);
-    font-size: 0.95rem;
-    margin-bottom: 10px;
 }
 
 .remove-item {
@@ -919,7 +927,7 @@ p {
     .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 40px; }
 }
 
-/* Mobile Menu Trigger Stylings */
+/* Mobile Menu Trigger — Oculto en desktop, visible solo en @media (ver abajo) */
 .menu-trigger-mobile {
     display: none;
     background: transparent;
@@ -928,16 +936,50 @@ p {
     font-size: 1.5rem;
     cursor: pointer;
     padding: 10px;
+    /* Área tocable mínima para móviles */
+    min-width: 44px;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+    touch-action: manipulation;
+    /* Separar del carrito para evitar clics incorrectos */
+    margin-left: 4px;
 }
 
 @media (max-width: 850px) {
+    /* En tablets pequeñas: ocultar links y mostrar hamburguesa */
     .nav-links-island { display: none !important; }
-    .menu-trigger-mobile { display: block !important; order: 3; }
-    .nav-capsule { justify-content: space-between; padding: 10px 15px; border-radius: 30px; margin: 0 10px; width: auto; }
-    .logo, .logo img { height: 35px !important; width: auto !important; max-width: 120px !important; }
     .nav-search-island { display: none !important; }
     .top-bar-refined { display: none !important; }
     .nav-right-island { gap: 15px !important; }
+    /* Asegurar que el trigger móvil es visible y tocable */
+    .menu-trigger-mobile {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        min-width: 44px;
+        min-height: 44px;
+        order: 3;
+    }
+    /* Logo compacto para no empujar elementos */
+    .logo img { height: 35px !important; width: auto !important; max-width: 120px !important; }
+    /* Reducir capsule padding para que quepa el contenido */
+    .nav-capsule {
+        justify-content: space-between !important;
+        padding: 8px 12px !important;
+        border-radius: 30px !important;
+        margin: 0 8px !important;
+        width: calc(100% - 16px) !important;
+    }
+    /* Asegurar que el carrito es siempre tocable */
+    .cart-trigger-island {
+        min-width: 44px !important;
+        min-height: 44px !important;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        padding: 8px !important;
+    }
 }
 
 @media (max-width: 600px) {
@@ -949,10 +991,8 @@ p {
     .container { padding: 0 1.5rem; }
 }
 
-/* Navigation Triggers Base */
-.menu-trigger-mobile {
-    display: none;
-}
+/* Navigation Triggers Base — Regla única, sin duplicados */
+/* El trigger móvil se muestra solo dentro del @media (max-width:1024px) definido abajo */
 
 /* Touch Optmization for Buttons */
 button:active, .btn-primary:active, .btn-secondary:active, .store-card:active {
@@ -1410,10 +1450,24 @@ button:active, .btn-primary:active, .btn-secondary:active, .store-card:active {
     animation: revealSoft 1s ease-out forwards;
 }
 
-/* Aplicación global a secciones principales */
+/* Aplicación global a secciones principales — EXCLUYE paneles fixed (drawer, cart, overlay) */
 header, section, footer {
     opacity: 0; /* Preparado para ser revelado por JS o scroll */
     animation: revealUp 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+/* Los paneles overlay NUNCA deben tener transform ni opacidad controlada por animación global.
+   Cualquier transform en un ancestro rompe position:fixed en CSS.
+   IMPORTANTE: No sobreescribimos 'transform' aquí para que cada panel
+   use su propio translateX/translate de manera independiente. */
+.mobile-drawer,
+.side-cart,
+.cart-overlay,
+.cudi-modal-overlay,
+.cudi-chat-widget {
+    animation: none !important;
+    opacity: 1 !important;
+    will-change: transform; /* Promueve a su propia capa de composición GPU */
 }
 
 header { animation-delay: 0.2s; }
@@ -1746,9 +1800,32 @@ section:nth-of-type(2) { animation-delay: 0.6s; }
     }
 }
 
-/* Mobile Drawer Base (Hidden on Desktop) */
+/* ================================================================
+   MOBILE DRAWER — Siempre en posición fixed, oculto con transform.
+   NUNCA usar display:none aquí porque impide que position:fixed
+   funcione correctamente al ser re-activado por el @media query.
+   La visibilidad se controla con translateX (fuera de pantalla).
+   ================================================================ */
 .mobile-drawer {
-    display: none;
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    width: min(320px, 85vw);
+    height: 100vh !important;
+    background: white;
+    z-index: 40000 !important;
+    padding: 40px clamp(20px, 5vw, 30px);
+    transform: translateX(110%) !important;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+    display: flex !important;
+    flex-direction: column;
+    visibility: hidden;
+}
+
+.mobile-drawer.active {
+    transform: translateX(0) !important;
+    visibility: visible !important;
 }
 
 /* App Demo Fullscreen Mobile Fix */
@@ -1974,7 +2051,7 @@ section:nth-of-type(2) { animation-delay: 0.6s; }
     height: 100%;
     background: rgba(15, 23, 42, 0.6);
     backdrop-filter: blur(8px);
-    z-index: 20000;
+    z-index: 50000 !important;
     display: none;
     align-items: center;
     justify-content: center;
@@ -2446,25 +2523,39 @@ section:nth-of-type(2) { animation-delay: 0.6s; }
     }
     
     .menu-trigger-mobile {
-        display: block !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
         background: var(--clr-primary) !important;
         color: white !important;
-        padding: 8px 16px !important;
+        padding: 10px 14px !important;
         border-radius: 8px !important;
         font-size: 1.2rem !important;
         border: none !important;
         cursor: pointer !important;
         position: relative !important;
-        z-index: 50 !important; /* Extremely high to beat any overlapping badge */
+        z-index: 1010 !important;
+        min-width: 44px !important;
+        min-height: 44px !important;
+        flex-shrink: 0 !important;
+        touch-action: manipulation !important;
     }
 
     .cart-trigger-island {
-        padding: 5px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
         position: relative !important;
+        min-width: 44px !important;
+        min-height: 44px !important;
+        flex-shrink: 0 !important;
+        z-index: 1010 !important;
+        cursor: pointer !important;
     }
 
     .cart-badge {
-        right: -5px !important; /* Adjusted to be closer to icon and avoid overlap */
+        pointer-events: none !important;
+        right: -5px !important;
         top: -5px !important;
     }
 
@@ -2482,29 +2573,8 @@ section:nth-of-type(2) { animation-delay: 0.6s; }
         min-width: 100% !important;
     }
 
-    /* MOBILE DRAWER SYSTEM (Fixed Logic) */
-    .mobile-drawer {
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: min(320px, 85vw);
-        height: 100vh;
-        background: white;
-        z-index: 20000;
-        padding: 40px clamp(20px, 5vw, 30px);
-        transform: translateX(100%);
-        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        box-shadow: -10px 0 30px rgba(0,0,0,0.1);
-        display: flex !important;
-        flex-direction: column;
-    }
-
-    .mobile-drawer.active {
-        transform: translateX(0) !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-    }
-
+    /* MOBILE DRAWER — Los estilos de posicionamiento están en la regla base.
+       Aquí solo definimos los estilos de los links del drawer. */
     .drawer-close {
         position: absolute;
         top: 20px;
@@ -2514,11 +2584,17 @@ section:nth-of-type(2) { animation-delay: 0.6s; }
         font-size: 1.5rem;
         color: var(--clr-text);
         cursor: pointer;
+        min-width: 44px;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .drawer-links {
         list-style: none;
         margin-top: 50px;
+        padding: 0;
     }
 
     .drawer-links li {
@@ -2542,22 +2618,4 @@ section:nth-of-type(2) { animation-delay: 0.6s; }
         width: 20px;
     }
 
-    .cart-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background: rgba(15, 23, 42, 0.4);
-        backdrop-filter: blur(8px);
-        z-index: 15000;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s;
-    }
-
-    .cart-overlay.active {
-        opacity: 1;
-        visibility: visible;
-    }
 }

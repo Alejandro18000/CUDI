@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CUDI - QR de Acceso Directo</title>
+    <style>
+        :root {
+            --primary: #6366f1;
+            --secondary: #a855f7;
+            --bg: #0f172a;
+            --text: #f8fafc;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px border rgba(255, 255, 255, 0.1);
+            border-radius: 32px;
+            padding: 3rem;
+            text-align: center;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            max-width: 500px;
+            width: 90%;
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, #818cf8, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p {
+            color: #94a3b8;
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+        }
+
+        .qr-wrapper {
+            background: white;
+            padding: 2rem;
+            border-radius: 24px;
+            display: inline-block;
+            margin-bottom: 2rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .qr-wrapper:hover {
+            transform: scale(1.02);
+        }
+
+        .qr-image {
+            width: 250px;
+            height: 250px;
+            display: block;
+        }
+
+        .url-box {
+            background: rgba(0,0,0,0.3);
+            padding: 0.75rem 1rem;
+            border-radius: 12px;
+            font-family: monospace;
+            font-size: 0.9rem;
+            color: #818cf8;
+            border: 1px solid rgba(129, 140, 248, 0.2);
+            word-break: break-all;
+        }
+
+        .footer {
+            margin-top: 2rem;
+            font-size: 0.8rem;
+            color: #64748b;
+        }
+
+        @media print {
+            body { background: white; color: black; }
+            .container { background: transparent; backdrop-filter: none; border: none; box-shadow: none; box-shadow: none; }
+            h1 { -webkit-text-fill-color: black; }
+            .url-box { border: 1px solid #ccc; color: black; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="logo.jpeg" alt="CUDI Logo" class="logo">
+        <h1>Acceso a CUDI</h1>
+        <p>Escanea este código para acceder a la plataforma en vivo y ver el ecosistema de bienestar animal.</p>
+        
+        <div class="qr-wrapper">
+            <img src="qr_code.png" alt="QR Code" class="qr-image">
+        </div>
+
+        <div class="url-box">
+            https://alejandro18000.github.io/CUDI/
+        </div>
+
+        <div class="footer">
+            Sergio Alejandro Ospina Rocha © 2026<br>
+            TFM Master - Ecosistema Digital de Bienestar Animal
+        </div>
+    </div>
+</body>
+</html>

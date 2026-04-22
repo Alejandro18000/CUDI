@@ -50,9 +50,9 @@
                     <li><a href="red-socios-clinicas-veterinarias.html">Partners</a></li>
                     <li id="nav-session-item"></li>
                 </ul>
-                <div class="cart-trigger-island" onclick="toggleCart()">
+                <div class="cart-trigger-island" onclick="toggleCart()" style="position:relative;display:flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;cursor:pointer;">
                     <i class="cart-icon-cudi" style="font-size:1.2rem;"></i>
-                    <span class="cart-badge" id="global-cart-badge" style="position:absolute;top:-8px;right:-12px;background:var(--clr-primary);color:white;font-size:0.65rem;font-weight:700;border-radius:50px;width:18px;height:18px;display:flex;align-items:center;justify-content:center;border: 2px solid white;">0</span>
+                    <span class="cart-badge" id="global-cart-badge" style="pointer-events:none;position:absolute;top:-8px;right:-6px;background:var(--clr-primary);color:white;font-size:0.65rem;font-weight:700;border-radius:50px;width:18px;height:18px;display:flex;align-items:center;justify-content:center;border: 2px solid white;">0</span>
                 </div>
                 <button class="menu-trigger-mobile" onclick="toggleMobileMenu()"><i class="fa-solid fa-bars-staggered"></i></button>
             </div>
@@ -164,6 +164,27 @@
             </div>
         </div>
     </footer>
+
+    
+    <!-- Side Cart Drawer -->
+    <div id="cart-overlay" onclick="closeAllPanels()" class="cart-overlay"></div>
+    <div class="side-cart" id="side-cart">
+        <div class="cart-header">
+            <h3><i class="cart-icon-cudi"></i> Tu Cesta CUDI</h3>
+            <button class="cart-close" onclick="toggleCart()"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="cart-items" id="cart-items-container">
+            <div class="cart-empty-state" id="cart-empty">
+                <i class="fa-solid fa-basket-shopping" style="font-size:3rem;color:#cbd5e1;margin-bottom:15px;display:block;"></i>
+                <p style="color:#94a3b8;font-weight:600;">Tu cesta esta vacia</p>
+                <a href="index.html#store-grid" onclick="toggleCart()" style="color:var(--clr-primary);font-weight:700;text-decoration:none;">Explorar tienda</a>
+            </div>
+        </div>
+        <div class="cart-footer" id="cart-footer" style="display:none;">
+            <div class="cart-total"><span>Total</span><span id="cart-total-price">0.00</span></div>
+            <button class="btn-primary" style="width:100%;padding:15px;border-radius:12px;font-size:1rem;font-weight:800;" onclick="alert('Pago disponible en version completa')"><i class="fa-solid fa-lock"></i> Pagar Seguro</button>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 
