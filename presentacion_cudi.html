@@ -1,0 +1,3379 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CUDI - Presentación Final TFM 2026</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <style>
+        :root {
+            --clr-primary: #0077b6; /* Azul Cudi Principal */
+            --clr-primary-light: #0ea5e9; /* Azul Cielo / Cyan */
+            --clr-secondary: #0f172a; /* Azul Oscuro Profundo / Slate 900 */
+            --clr-bg-light: #f8fafc; /* Gris Fondo Suave / Slate 50 */
+            --clr-card-bg: #FFFFFF; /* Premium solid white */
+            --clr-accent: #10b981; /* Verde Esmeralda / Success */
+            --clr-red: #ef4444; /* Rojo Peligro / Danger */
+            --clr-text: #0f172a; /* Azul Oscuro Profundo para textos */
+            --clr-text-muted: #64748b; /* Slate 500 para textos muted */
+            --clr-border: #e2e8f0; /* Borde Slate */
+            --clr-white: #FFFFFF;
+            --clr-turquoise: #00b4d8; /* Azul Fusión Claro / Turquoise */
+            --clr-dark-blue: #03045e; /* Azul Navy / Dark Blue */
+            --clr-gold: #f59e0b; /* Naranja Alerta / Warning */
+            --font-heading: 'Outfit', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            --transition-bounce: all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .hover-grow-capsule {
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-grow-capsule:hover {
+            transform: translateX(6px) scale(1.02);
+            background-color: rgba(255, 255, 255, 0.95) !important;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--clr-bg-light);
+            color: var(--clr-text);
+            font-family: var(--font-body);
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        /* Ambient Glowing Background Orbs */
+        .ambient-glow-1 {
+            position: absolute;
+            top: -20%;
+            left: -10%;
+            width: 60vw;
+            height: 60vw;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0, 113, 227, 0.06) 0%, rgba(255, 255, 255, 0) 70%);
+            z-index: 1;
+            pointer-events: none;
+            animation: floatGlow 15s infinite alternate ease-in-out;
+        }
+
+        .ambient-glow-2 {
+            position: absolute;
+            bottom: -20%;
+            right: -10%;
+            width: 60vw;
+            height: 60vw;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(81, 168, 255, 0.05) 0%, rgba(255, 255, 255, 0) 70%);
+            z-index: 1;
+            pointer-events: none;
+            animation: floatGlow 20s infinite alternate-reverse ease-in-out;
+        }
+
+        @keyframes floatGlow {
+            0% { transform: translate3d(0, 0, 0) scale(1); }
+            100% { transform: translate3d(40px, 20px, 0) scale(1.08); }
+        }
+
+        /* App Layout */
+        .presentation-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 65px 20px 75px 20px;
+            z-index: 2;
+            position: relative;
+        }
+
+        /* Header Navbar */
+        .header-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 10px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: rgba(245, 245, 247, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .header-logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .animated-logo {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            object-fit: cover;
+            border: 2px solid var(--clr-primary);
+            animation: logoPulse 4s infinite ease-in-out;
+            box-shadow: 0 4px 15px rgba(0, 113, 227, 0.15);
+        }
+
+        @keyframes logoPulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 4px 15px rgba(0, 113, 227, 0.15);
+                border-color: var(--clr-primary);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 6px 25px rgba(0, 113, 227, 0.3);
+                border-color: var(--clr-accent);
+            }
+        }
+
+        .header-brand {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 1.8rem;
+            letter-spacing: -0.5px;
+            color: var(--clr-text);
+        }
+
+        .header-brand span {
+            color: var(--clr-primary);
+        }
+
+        .speaker-badge-container {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .speaker-badge {
+            background: rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--clr-text-muted);
+            letter-spacing: 0.5px;
+            transition: var(--transition-smooth);
+        }
+
+        .speaker-badge.active {
+            background: linear-gradient(135deg, var(--clr-primary) 0%, var(--clr-primary-light) 100%);
+            border-color: var(--clr-primary);
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 113, 227, 0.2);
+            transform: scale(1.05);
+        }
+
+        .badge-num {
+            display: none;
+        }
+
+        /* Responsive Badges */
+        @media (max-width: 1024px) {
+            .badge-lbl {
+                display: none;
+            }
+            .badge-num {
+                display: inline;
+            }
+            .speaker-badge-container {
+                gap: 6px;
+            }
+            .speaker-badge {
+                padding: 4px 10px;
+                font-size: 0.75rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .speaker-badge-container {
+                display: none;
+            }
+            .header-bar {
+                padding: 10px 20px;
+            }
+        }
+
+        /* Slides Core */
+        .slide {
+            position: absolute;
+            left: 50%;
+            top: calc(50% + 20px);
+            width: 95vw;
+            height: 78vh;
+            max-width: 1750px;
+            max-height: 840px;
+            background: #FFFFFF; /* All slides are solid premium white */
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: 24px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            opacity: 0;
+            transform: translate3d(calc(-50% + 80px), -50%, 0) scale(0.96);
+            pointer-events: none;
+            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.03);
+            color: var(--clr-text);
+        }
+
+        .slide.active {
+            opacity: 1;
+            transform: translate3d(-50%, -50%, 0) scale(1);
+            pointer-events: all;
+            z-index: 10;
+        }
+
+        .slide.prev {
+            opacity: 0;
+            transform: translate3d(calc(-50% - 80px), -50%, 0) scale(0.96);
+        }
+
+        /* Slide specific backgrounds (subtle light mode gradients or image) */
+        #slide-1 { background: #000000; border: none; padding: 0; } /* Slide 1 is full-screen video */
+        #slide-13 { background: transparent; border: none; box-shadow: none; } /* Slide 14 is full-screen image */
+
+        /* Slide Typography */
+        .slide-header {
+            margin-bottom: 10px;
+        }
+
+        .slide-category {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--clr-primary);
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        .slide-title {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 2.1rem;
+            letter-spacing: -0.8px;
+            color: var(--clr-text);
+            line-height: 1.15;
+        }
+
+        .slide-content {
+            flex: 1;
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding: 5px 0;
+            width: 100%;
+        }
+
+        /* Slide Items Transitions */
+        .slide .animate-item {
+            opacity: 0;
+            transform: translate3d(0, 20px, 0);
+            transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .slide.active .animate-item {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }
+
+        .slide.active .del-1 { transition-delay: 0.1s; }
+        .slide.active .del-2 { transition-delay: 0.2s; }
+        .slide.active .del-3 { transition-delay: 0.3s; }
+        .slide.active .del-4 { transition-delay: 0.4s; }
+        .slide.active .del-5 { transition-delay: 0.5s; }
+
+        /* Grid Layouts */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            width: 100%;
+            height: 100%;
+            align-items: center;
+        }
+
+        /* Cards */
+        .card-premium {
+            background: #FFFFFF; /* Solid white background */
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: 20px;
+            padding: 24px;
+            transition: var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.02);
+        }
+
+        /* No hover color changes, only lift/shadow */
+        .card-premium:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 113, 227, 0.08);
+        }
+
+        .card-premium h3, .card-premium h4 {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            color: var(--clr-text);
+            font-weight: 700;
+        }
+
+        .card-premium p {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: var(--clr-text-muted);
+        }
+
+        .card-premium ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .card-premium li {
+            font-size: 0.85rem;
+            color: var(--clr-text-muted);
+            margin-bottom: 5px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .card-premium li::before {
+            content: "✦";
+            color: var(--clr-primary-light);
+            font-size: 0.8rem;
+            position: absolute;
+            left: 0;
+            top: 1px;
+        }
+
+        .card-img-wrapper {
+            width: 100%;
+            height: 140px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            margin-bottom: 5px;
+            background: white;
+        }
+
+        .card-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Slide 2 - Asymmetrical Pain */
+        .dog-bg-image {
+            width: 100%;
+            height: 100%;
+            background-image: url('reduccion-ansiedad-separacion-perros.png');
+            background-size: cover;
+            background-position: center;
+            transition: transform 20s linear;
+        }
+
+        .slide.active .dog-bg-image {
+            transform: scale(1.15);
+        }
+
+        .sweep-title {
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .slide.active .sweep-title {
+            opacity: 1;
+            transform: translateX(0);
+            transition-delay: 0.2s;
+        }
+
+        .fade-pitch {
+            opacity: 0;
+            transition: opacity 0.8s ease;
+            background: rgba(0, 119, 182, 0.05);
+            border-left: 4px solid var(--clr-primary);
+            padding: 20px;
+            border-radius: 4px 16px 16px 4px;
+        }
+
+        .slide.active .fade-pitch {
+            opacity: 1;
+            transition-delay: 1.2s;
+        }
+
+        /* Slide 3 - Bento Grid target cards */
+        .bento-half {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .slide.active .bento-half:nth-child(1) {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 0.1s;
+        }
+        .slide.active .bento-half:nth-child(2) {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 0.5s;
+        }
+        .bento-sub-card {
+            background: #FFFFFF !important;
+            border: 1px solid rgba(0, 0, 0, 0.08) !important;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.01) !important;
+            transition: transform 0.4s ease, box-shadow 0.4s ease !important;
+        }
+        .bento-sub-card:hover {
+            transform: translateY(-3px) !important;
+            box-shadow: 0 10px 25px rgba(0, 113, 227, 0.05) !important;
+        }
+
+        /* Slide 4 - Propuesta de Valor diagram */
+        .diagram-container-value {
+            position: relative;
+            width: 560px;
+            height: 380px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+        }
+
+        .central-node {
+            position: absolute;
+            left: 220px;
+            top: 130px;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: white;
+            border: 3px solid var(--clr-primary);
+            box-shadow: 0 10px 30px rgba(0, 113, 227, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            animation: pulseCentral 3s infinite ease-in-out;
+        }
+
+        @keyframes pulseCentral {
+            0%, 100% { transform: scale(1); box-shadow: 0 10px 30px rgba(0, 113, 227, 0.15); }
+            50% { transform: scale(1.05); box-shadow: 0 15px 45px rgba(0, 113, 227, 0.3); }
+        }
+
+        .satellite-node {
+            position: absolute;
+            width: 150px;
+            height: auto;
+            min-height: 110px;
+            left: 205px;
+            top: 135px;
+            background: white;
+            border: 1px solid rgba(0,0,0,0.06);
+            padding: 12px;
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.03);
+            z-index: 5;
+            opacity: 0;
+            transform: scale(0.2) translate(0, 0);
+            transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.8s ease;
+        }
+
+        .satellite-node img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            margin-bottom: 6px;
+        }
+
+        .satellite-node h4 {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--clr-text);
+            margin-bottom: 2px;
+        }
+
+        .satellite-node p {
+            font-size: 0.68rem;
+            color: var(--clr-text-muted);
+            line-height: 1.3;
+        }
+
+        /* Active animations for satellites - Outward explosion from center */
+        .slide.active #sat-1 {
+            opacity: 1;
+            transform: scale(1) translate(-210px, -110px);
+            transition-delay: 0.2s;
+        }
+        .slide.active #sat-2 {
+            opacity: 1;
+            transform: scale(1) translate(210px, -110px);
+            transition-delay: 0.6s;
+        }
+        .slide.active #sat-3 {
+            opacity: 1;
+            transform: scale(1) translate(0, 120px);
+            transition-delay: 1.0s;
+        }
+
+        /* Flowing connector lines */
+        .sat-line {
+            fill: none;
+            stroke: var(--clr-primary);
+            stroke-width: 3;
+            stroke-linecap: round;
+            stroke-dasharray: 8 8;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .slide.active #sat-line-1 {
+            opacity: 0.7;
+            animation: flowLines 1.2s linear infinite;
+            transition-delay: 0.2s;
+        }
+        .slide.active #sat-line-2 {
+            opacity: 0.7;
+            animation: flowLines 1.2s linear infinite;
+            transition-delay: 0.6s;
+        }
+        .slide.active #sat-line-3 {
+            opacity: 0.7;
+            animation: flowLines 1.2s linear infinite;
+            transition-delay: 1.0s;
+        }
+
+        @keyframes flowLines {
+            from { stroke-dashoffset: 16; }
+            to { stroke-dashoffset: 0; }
+        }
+
+        /* Slide 5 - iPhone & Auto app simulator iframe */
+        .iphone-mockup {
+            width: 320px;
+            height: 640px;
+            background: #000000;
+            border: 12px solid #1e293b;
+            border-radius: 44px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+            position: relative;
+            opacity: 0;
+            transform: translateY(60px) rotateY(-5deg) rotateX(2deg);
+            transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .slide.active .iphone-mockup {
+            opacity: 1;
+            transform: translateY(0) rotateY(-5deg) rotateX(2deg);
+            animation: floatAndRotate 6s infinite alternate ease-in-out 1s;
+        }
+
+        .qr-card-holder {
+            opacity: 0;
+            transform: scale(0.6);
+            transition: opacity 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .slide.active .qr-card-holder {
+            opacity: 1;
+            transform: scale(1);
+            transition-delay: 0.4s;
+        }
+
+        /* Slide 6 - Colliding cards */
+        #income-block-1 {
+            background: #FFFFFF;
+            border-left: 5px solid var(--clr-turquoise);
+            opacity: 0;
+            transform: translateX(-150px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        #income-block-2 {
+            background: #FFFFFF;
+            border-left: 5px solid var(--clr-dark-blue);
+            opacity: 0;
+            transform: translateX(150px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .slide.active #income-block-1 { opacity: 1; transform: translateX(0); transition-delay: 0.1s; }
+        .slide.active #income-block-2 { opacity: 1; transform: translateX(0); transition-delay: 0.3s; }
+
+        /* Slide 7 - Funnel & Typewriter Numbers */
+        .funnel-container {
+            width: 250px;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .funnel-layer {
+            width: 100%;
+            height: 65px;
+            clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 0.95rem;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+        }
+
+        .funnel-layer.tofu { background: #0071E3; width: 100%; }
+        .funnel-layer.mofu { background: #51A8FF; width: 80%; clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%); }
+        .funnel-layer.bofu { background: #1E3A8A; width: 60%; clip-path: polygon(0 0, 100% 0, 75% 100%, 25% 100%); }
+
+        .funnel-num-item {
+            opacity: 0;
+            transition: opacity 0.6s ease;
+        }
+
+        /* Automatic sequential fade-in */
+        .slide.active #funnel-num-1 { opacity: 1; transition-delay: 0.2s; }
+        .slide.active #funnel-num-2 { opacity: 1; transition-delay: 0.8s; }
+        .slide.active #funnel-num-3 { opacity: 1; transition-delay: 1.4s; }
+
+        /* Slide 8 - Clean B2B Grid (No Barcelona Map) */
+        .b2b-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            width: 100%;
+        }
+
+        .b2b-card {
+            background: #FFFFFF;
+            border: 1px solid rgba(0,0,0,0.08);
+            border-top: 4px solid var(--clr-primary-light);
+            border-radius: 18px;
+            padding: 24px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.02);
+            transition: var(--transition-smooth);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .b2b-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,113,227,0.08);
+        }
+
+        .slide.active .b2b-card:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0.1s; }
+        .slide.active .b2b-card:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 0.3s; }
+        .slide.active .b2b-card:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 0.5s; }
+
+        .b2b-card-num {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--clr-primary);
+            margin: 10px 0 5px;
+        }
+
+        .b2b-card.vets { border-top-color: var(--clr-primary); }
+        .b2b-card.vets .b2b-card-num { color: var(--clr-primary); }
+        
+        .b2b-card.walkers { border-top-color: var(--clr-turquoise); }
+        .b2b-card.walkers .b2b-card-num { color: var(--clr-turquoise); }
+        
+        .b2b-card.groomers { border-top-color: var(--clr-dark-blue); }
+        .b2b-card.groomers .b2b-card-num { color: var(--clr-dark-blue); }
+
+        .metric-panel {
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .slide.active .metric-panel {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 0.4s;
+        }
+
+        /* Slide 9 - Clean Schema Code Window */
+        .macos-code-window {
+            background: #f8fafc;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .macos-window-header {
+            background: #f1f5f9;
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .macos-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+        .macos-dot.red { background: #ff5f56; }
+        .macos-dot.yellow { background: #ffbd2e; }
+        .macos-dot.green { background: #27c93f; }
+
+        .code-window-content {
+            margin: 0;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.72rem;
+            color: var(--clr-secondary);
+            line-height: 1.4;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+        .code-key { color: var(--clr-primary); font-weight: 600; }
+        .code-string { color: var(--clr-accent); }
+        .code-number { color: var(--clr-gold); }
+
+        /* Slide 10 - Paid Media phone mockups */
+        .phone-mockup-paid {
+            width: 170px;
+            height: 350px;
+            border: 5px solid #475569;
+            border-radius: 28px;
+            overflow: hidden;
+            background: #000;
+            position: relative;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            opacity: 0;
+            transform: translateY(60px) scale(0.9);
+            transition: opacity 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .slide.active .phone-mockup-paid:nth-child(1) {
+            opacity: 1;
+            transform: translateY(0) scale(1) rotate(-4deg);
+            transition-delay: 0.1s;
+        }
+
+        .slide.active .phone-mockup-paid:nth-child(2) {
+            opacity: 1;
+            transform: translateY(0) scale(1) rotate(4deg);
+            transition-delay: 0.3s;
+        }
+
+        .budget-table-card {
+            opacity: 0;
+            transform: translateX(60px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .slide.active .budget-table-card {
+            opacity: 1;
+            transform: translateX(0);
+            transition-delay: 0.4s;
+        }
+
+        /* Slide 11 - Infinity & pulse cards */
+        .infinity-path {
+            stroke-dasharray: 600;
+            stroke-dashoffset: 600;
+            transition: stroke-dashoffset 2s ease-in-out;
+        }
+
+        .slide.active .infinity-path {
+            stroke-dashoffset: 0;
+        }
+
+        .pulse-card {
+            background: #FFFFFF;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: 16px;
+            padding: 12px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            transition: var(--transition-smooth);
+        }
+
+        .slide.active .pulse-card:nth-child(1) { animation: pulseEffect 2s infinite ease-in-out 1.5s; }
+        .slide.active .pulse-card:nth-child(2) { animation: pulseEffect 2s infinite ease-in-out 2.0s; }
+        .slide.active .pulse-card:nth-child(3) { animation: pulseEffect 2s infinite ease-in-out 2.5s; }
+
+        @keyframes pulseEffect {
+            0%, 100% { transform: scale(1); box-shadow: 0 4px 15px rgba(0,0,0,0.02); }
+            50% { transform: scale(1.04); box-shadow: 0 10px 25px rgba(0, 113, 227, 0.06); border-color: var(--clr-primary-light); }
+        }
+
+        /* Slide 12 - Viabilidad & Counter */
+        .frosted-square {
+            background: #FFFFFF;
+            border: 1px solid var(--clr-border);
+            border-radius: 20px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.02);
+            transition: var(--transition-smooth);
+            width: 100%;
+            flex: 1;
+            min-width: 0;
+        }
+
+        .frosted-square.cac { border-top: 5px solid var(--clr-red); }
+        .frosted-square.ltv { border-top: 5px solid var(--clr-accent); }
+        .frosted-square.ratio { border-top: 5px solid var(--clr-gold); }
+
+        .counter-big-num {
+            font-family: var(--font-heading);
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--clr-text);
+            line-height: 1;
+        }
+
+        .pulse-ratio {
+            animation: pulseRatio 1s infinite alternate ease-in-out;
+        }
+
+        @keyframes pulseRatio {
+            0% { transform: scale(1); filter: drop-shadow(0 0 2px rgba(245, 158, 11, 0.2)); }
+            100% { transform: scale(1.06); filter: drop-shadow(0 0 12px rgba(245, 158, 11, 0.5)); }
+        }
+
+        .growth-comparison-bar {
+            width: 100%;
+            height: 8px;
+            background: var(--clr-border);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 8px;
+            position: relative;
+        }
+
+        .growth-fill {
+            height: 100%;
+            border-radius: 4px;
+            width: 0;
+            transition: width 1.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s;
+        }
+        .growth-fill.red { background: var(--clr-red); }
+        .growth-fill.green { background: var(--clr-accent); }
+        .growth-fill.gold { background: var(--clr-gold); }
+
+        .slide.active #growth-cac-fill { width: 5.3%; }
+        .slide.active #growth-ltv-fill { width: 100%; }
+        .slide.active #growth-ratio-fill { width: 75.4%; } /* proportional */
+
+        /* Slide 13 - Cap Table & Donut timeline */
+        .donut-bg {
+            fill: none;
+            stroke: rgba(0, 0, 0, 0.05);
+            stroke-width: 24;
+        }
+
+        .donut-slice {
+            fill: none;
+            stroke-width: 24;
+            stroke-linecap: round;
+            transition: stroke-dasharray 1.2s cubic-bezier(0.16, 1, 0.3, 1), stroke-dashoffset 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .slice-fundadores { stroke: var(--clr-primary); }
+        .slice-investors { stroke: var(--clr-turquoise); }
+        .slice-enisa { stroke: var(--clr-gold); }
+
+        .timeline-progress-bar {
+            width: 0;
+            transition: width 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .slide.active .timeline-progress-bar {
+            width: 44.8%; /* 8.07 months runway */
+        }
+
+        /* Slide 14 - Closure bg and effects */
+        .closure-bg-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('familia-multiespecie-paz-mental.png');
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+            transition: transform 20s linear;
+        }
+
+        .slide.active .closure-bg-image {
+            transform: scale(1.12);
+        }
+
+        /* Footer Controls */
+        .footer-controls {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 10px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: rgba(245, 245, 247, 0.85);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn-nav {
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            color: var(--clr-text);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition-smooth);
+            font-size: 1.1rem;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        }
+
+        .btn-nav:hover:not(:disabled) {
+            background: var(--clr-primary);
+            border-color: var(--clr-primary);
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 113, 227, 0.2);
+            transform: scale(1.05);
+        }
+
+        .btn-nav:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        .progress-indicator {
+            flex: 1;
+            margin: 0 30px;
+            height: 5px;
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 3px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .progress-bar-fill {
+            position: absolute;
+            height: 100%;
+            background: linear-gradient(90deg, var(--clr-primary) 0%, var(--clr-primary-light) 100%);
+            width: 7.14%;
+            transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            border-radius: 3px;
+        }
+
+        .slide-counter {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--clr-text-muted);
+            min-width: 50px;
+            text-align: right;
+        }
+
+        .btn-notes-toggle {
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            color: var(--clr-text-muted);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        }
+
+        .btn-notes-toggle:hover {
+            border-color: var(--clr-primary);
+            color: var(--clr-text);
+            background: white;
+        }
+
+        .btn-notes-toggle.active {
+            background: var(--clr-primary);
+            border-color: var(--clr-primary);
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 113, 227, 0.2);
+        }
+
+        /* Presenter Notes Overlay Panel */
+        .notes-panel {
+            position: fixed;
+            bottom: 74px;
+            left: 20px;
+            right: 20px;
+            height: 115px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: 20px;
+            z-index: 90;
+            padding: 15px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.04);
+            opacity: 0;
+            transform: translate3d(0, 20px, 0);
+            pointer-events: none;
+            transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .notes-panel.active {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+            pointer-events: all;
+        }
+
+        .notes-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            padding-bottom: 4px;
+        }
+
+        .notes-speaker {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--clr-primary);
+        }
+
+        .notes-cue {
+            font-size: 0.72rem;
+            color: var(--clr-text-muted);
+            font-style: italic;
+        }
+
+        .notes-body {
+            flex: 1;
+            font-size: 0.82rem;
+            line-height: 1.5;
+            color: var(--clr-text);
+            overflow-y: auto;
+            padding-right: 5px;
+        }
+
+        .notes-body strong {
+            color: var(--clr-primary);
+            font-weight: 700;
+        }
+
+        @media (max-height: 720px) {
+            .slide {
+                height: 76vh;
+                top: calc(50% + 25px);
+                padding: 15px;
+            }
+            .slide-title {
+                font-size: 1.85rem;
+            }
+            .notes-panel {
+                height: 100px;
+                bottom: 64px;
+            }
+        }
+
+        /* Organic Post-it and central frame styles for Slide 4 */
+        /* Organic Post-it and central frame styles for Slide 4 */
+        .organic-container {
+            position: relative;
+            width: 100%;
+            height: 440px;
+            overflow: visible;
+        }
+
+        .center-photo-frame {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 220px;
+            height: 260px;
+            border-radius: 4px;
+            border: 8px solid #FFFFFF;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12), 0 3px 6px rgba(0,0,0,0.06);
+            z-index: 4;
+            background: #FFFFFF;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .center-photo-frame:hover {
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18);
+            z-index: 8;
+        }
+
+        .center-photo-frame img {
+            width: 204px;
+            height: 204px;
+            object-fit: cover;
+            display: block;
+            border-radius: 2px;
+        }
+
+        .polaroid-label {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 0.8rem;
+            color: var(--clr-secondary);
+            margin-top: 8px;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+        }
+
+        .post-it {
+            position: absolute;
+            width: 180px;
+            padding: 12px 14px;
+            border-radius: 4px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05), 0 3px 8px rgba(0,0,0,0.03);
+            font-family: var(--font-heading);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 6;
+            text-align: left;
+        }
+
+        .post-it:hover {
+            transform: scale(1.08) rotate(0deg) translateY(-5px) !important;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+        }
+
+        .post-it h4 {
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin: 0 0 4px 0;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            color: var(--clr-secondary);
+        }
+
+        .post-it p {
+            font-size: 0.72rem;
+            color: var(--clr-text-muted);
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        /* Color variations for post-its using premium pastel post-it tones and left borders */
+        .post-it.yellow {
+            background: #FFFCDB;
+            border-left: 5px solid var(--clr-gold);
+        }
+        .post-it.red {
+            background: #FFEAEA;
+            border-left: 5px solid var(--clr-red);
+        }
+        .post-it.blue {
+            background: #E8F4FF;
+            border-left: 5px solid var(--clr-primary);
+        }
+        .post-it.green {
+            background: #E8FDF0;
+            border-left: 5px solid var(--clr-accent);
+        }
+        .post-it.purple {
+            background: #F5E8FF;
+            border-left: 5px solid #a855f7;
+        }
+
+        /* Slide 6 & 7 Custom Layout Styles */
+        .metric-card-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 30px 20px;
+            background: #FFFFFF;
+            border-radius: 24px;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02), 0 2px 5px rgba(0, 0, 0, 0.01);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .metric-card-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 71, 171, 0.05);
+            border-color: rgba(0, 113, 227, 0.1);
+        }
+
+        .metric-icon-container {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: var(--clr-primary);
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 20px rgba(0, 71, 171, 0.12);
+            transition: transform 0.3s ease;
+        }
+
+        .metric-number-badge {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--clr-secondary);
+            color: #FFFFFF;
+            font-size: 0.8rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #FFFFFF;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-top: -12px;
+            margin-bottom: 12px;
+            z-index: 2;
+        }
+
+        .metric-card-title {
+            font-family: var(--font-heading);
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--clr-secondary);
+            margin: 0 0 10px 0;
+            min-height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1.3;
+        }
+
+        .metric-card-value {
+            font-family: var(--font-heading);
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: var(--clr-primary);
+            margin: 5px 0;
+            line-height: 1.1;
+            letter-spacing: -1px;
+        }
+
+        .metric-card-label {
+            font-size: 0.82rem;
+            color: var(--clr-text-muted);
+            margin: 0 0 20px 0;
+            line-height: 1.45;
+            min-height: 48px;
+            max-width: 90%;
+        }
+
+        .metric-footer-badge {
+            background: #F0F7FF;
+            color: var(--clr-primary);
+            font-size: 0.74rem;
+            font-weight: 700;
+            padding: 6px 14px;
+            border-radius: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            border: 1px solid rgba(0, 113, 227, 0.05);
+        }
+
+        /* Staggered Delay classes for Slide 4 */
+        .slide.active .stagger-1 { transition-delay: 0.2s; }
+        .slide.active .stagger-2 { transition-delay: 0.5s; }
+        .slide.active .stagger-3 { transition-delay: 0.8s; }
+        .slide.active .stagger-4 { transition-delay: 1.1s; }
+        .slide.active .stagger-5 { transition-delay: 1.4s; }
+
+        /* Rippling Icon and Loading Bar Animations for Slide 6 & 7 */
+        @keyframes rippleEffect {
+            0% { transform: scale(1); opacity: 0.6; }
+            100% { transform: scale(1.4); opacity: 0; }
+        }
+
+        .metric-icon-container {
+            position: relative;
+        }
+
+        .metric-icon-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px solid var(--clr-primary);
+            animation: rippleEffect 2s infinite ease-out;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .metric-progress-bar {
+            width: 80%;
+            height: 6px;
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 3px;
+            overflow: hidden;
+            margin: 8px auto 15px auto;
+        }
+
+        .metric-progress-fill {
+            height: 100%;
+            background: var(--clr-primary);
+            width: 0%;
+            border-radius: 3px;
+            transition: width 1.5s cubic-bezier(0.1, 0.8, 0.2, 1);
+        }
+
+        .slide.active .fill-67 { width: 67%; }
+        .slide.active .fill-55 { width: 55%; }
+        .slide.active .fill-85 { width: 85%; }
+        .slide.active .fill-100 { width: 100%; }
+
+        .slide.active .fill-10 { width: 20%; } /* Visual 20% for 1% */
+        .slide.active .fill-50 { width: 50%; } /* Visual 50% for 5% */
+        .slide.active .fill-48 { width: 48%; } /* Visual 48% for <4.8% */
+
+        .qr-trigger-container:hover .qr-hover-dropdown,
+        .web-promo-capsule:hover .qr-hover-dropdown {
+            display: block !important;
+            animation: fadeInPromo 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        @keyframes fadeInPromo {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .promo-badge {
+            transition: all 0.3s ease;
+        }
+        .promo-badge:hover {
+            background: var(--clr-primary) !important;
+            color: #FFFFFF !important;
+            box-shadow: 0 4px 12px rgba(0, 113, 227, 0.2);
+        }
+        
+        /* Slide 8 Funnel & Slide 9-10 Animations */
+        .funnel-container {
+            position: relative;
+        }
+        .funnel-container::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            background: linear-gradient(180deg, var(--clr-primary) 0%, var(--clr-accent) 50%, var(--clr-gold) 100%);
+            z-index: 1;
+            opacity: 0.25;
+        }
+        .funnel-stage {
+            position: relative;
+            z-index: 2;
+            transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.35s ease, background-color 0.35s ease, border-color 0.35s ease;
+        }
+        .funnel-stage:hover {
+            transform: scale(1.05) translateY(-2px) !important;
+            box-shadow: 0 12px 30px rgba(0,113,227,0.12) !important;
+            z-index: 10;
+        }
+        
+        /* Slide 9 Social Campaign cards */
+        .social-campaign-card {
+            position: relative;
+            background: #FFFFFF;
+            border: 6px solid #FFFFFF;
+            border-radius: 4px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            width: 240px;
+            padding-bottom: 8px;
+        }
+        .social-campaign-card img {
+            width: 100%;
+            height: 155px;
+            object-fit: cover;
+            border-radius: 2px;
+            display: block;
+        }
+        .social-campaign-card.left-tilt {
+            transform: rotate(-3deg);
+        }
+        .social-campaign-card.right-tilt {
+            transform: rotate(3deg);
+        }
+        .social-campaign-card:hover {
+            transform: rotate(0deg) scale(1.1) translateY(-12px) !important;
+            box-shadow: 0 18px 40px rgba(0, 113, 227, 0.2) !important;
+            z-index: 30;
+        }
+        
+        /* Slide 9 Animated progress bars */
+        .slide.active .fill-ugc { width: 69.1%; }
+        .slide.active .fill-paid { width: 19.3%; }
+        .slide.active .fill-retarget { width: 11.6%; }
+        
+        /* Pulse animations */
+        @keyframes pulseHeart {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.25); }
+        }
+        .pulsing-heart {
+            animation: pulseHeart 0.8s infinite alternate cubic-bezier(0.215, 0.61, 0.355, 1);
+        }
+
+        /* Slide 8: Interactive Timeline Funnel */
+        @keyframes circleBeacon {
+            0% {
+                box-shadow: 0 0 0 0 rgba(0, 113, 227, 0.6);
+            }
+            70% {
+                box-shadow: 0 0 0 12px rgba(0, 113, 227, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(0, 113, 227, 0);
+            }
+        }
+        .funnel-timeline {
+            position: relative;
+            padding-left: 48px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+            max-width: 680px;
+            margin: 0 auto;
+        }
+        .funnel-timeline::before {
+            content: '';
+            position: absolute;
+            left: 18px;
+            top: 10px;
+            bottom: 10px;
+            width: 5px;
+            background: linear-gradient(to bottom, var(--clr-primary), var(--clr-accent), var(--clr-gold));
+            border-radius: 2.5px;
+            z-index: 1;
+        }
+        .funnel-timeline-glow {
+            position: absolute;
+            left: 18px;
+            top: 10px;
+            bottom: 10px;
+            width: 5px;
+            background: linear-gradient(to bottom, transparent, var(--clr-primary-light), var(--clr-accent), var(--clr-gold), transparent);
+            border-radius: 2.5px;
+            z-index: 2;
+            opacity: 0.85;
+            filter: drop-shadow(0 0 10px var(--clr-primary-light));
+            animation: flowGlow 3s infinite linear;
+            background-size: 100% 200%;
+        }
+        @keyframes flowGlow {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 0% -200%; }
+        }
+        .funnel-node-item {
+            position: relative;
+            background: rgba(255, 255, 255, 0.7);
+            border: 1.5px solid rgba(0, 113, 227, 0.08);
+            border-radius: 14px;
+            padding: 14px 20px;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            z-index: 3;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.01);
+            backdrop-filter: blur(5px);
+        }
+        .funnel-node-circle {
+            position: absolute;
+            left: -39px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: #FFFFFF;
+            border: 2px solid var(--clr-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: var(--clr-primary);
+            z-index: 4;
+            transition: all 0.35s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+        }
+        .funnel-node-item:hover,
+        .funnel-node-item.active {
+            background: #FFFFFF;
+            transform: translateX(12px) scale(1.03);
+            border-color: var(--clr-primary-light);
+            box-shadow: 0 10px 28px rgba(0, 113, 227, 0.15);
+        }
+        .funnel-node-item:hover .funnel-node-circle,
+        .funnel-node-item.active .funnel-node-circle {
+            background: var(--clr-primary);
+            color: #FFFFFF;
+            box-shadow: 0 0 14px var(--clr-primary-light);
+            transform: translateY(-50%) scale(1.25);
+            animation: circleBeacon 1.5s infinite;
+        }
+        
+        /* Node specific colors along gradient */
+        .funnel-node-item:nth-child(3) .funnel-node-circle,
+        .funnel-node-item:nth-child(4) .funnel-node-circle {
+            border-color: var(--clr-accent);
+            color: var(--clr-accent);
+        }
+        .funnel-node-item:nth-child(3):hover .funnel-node-circle,
+        .funnel-node-item:nth-child(3).active .funnel-node-circle,
+        .funnel-node-item:nth-child(4):hover .funnel-node-circle,
+        .funnel-node-item:nth-child(4).active .funnel-node-circle {
+            background: var(--clr-accent);
+            color: #FFFFFF;
+            box-shadow: 0 0 12px var(--clr-accent);
+        }
+        .funnel-node-item:nth-child(5) .funnel-node-circle {
+            border-color: var(--clr-gold);
+            color: var(--clr-gold);
+        }
+        .funnel-node-item:nth-child(5):hover .funnel-node-circle,
+        .funnel-node-item:nth-child(5).active .funnel-node-circle {
+            background: var(--clr-gold);
+            color: #FFFFFF;
+            box-shadow: 0 0 12px var(--clr-gold);
+        }
+        .funnel-node-item:nth-child(6) .funnel-node-circle {
+            border-color: var(--clr-secondary);
+            color: var(--clr-secondary);
+        }
+        .funnel-node-item:nth-child(6):hover .funnel-node-circle,
+        .funnel-node-item:nth-child(6).active .funnel-node-circle {
+            background: var(--clr-secondary);
+            color: #FFFFFF;
+            box-shadow: 0 0 12px var(--clr-secondary);
+        }
+        
+        .funnel-node-title {
+            font-size: 0.95rem;
+            font-weight: 800;
+            color: var(--clr-secondary);
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+        .funnel-node-desc {
+            font-size: 0.8rem;
+            color: var(--clr-text-muted);
+            margin: 0;
+            line-height: 1.35;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: all 0.35s ease;
+        }
+        .funnel-node-item:hover .funnel-node-desc,
+        .funnel-node-item.active .funnel-node-desc {
+            max-height: 60px;
+            opacity: 1;
+            margin-top: 5px;
+        }
+
+        /* Slide 9: Web Browser Mockup & Social Buttons */
+        .web-browser-mockup {
+            width: 100%;
+            height: 440px;
+            background: #FFFFFF;
+            border-radius: 16px;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0, 113, 227, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            backdrop-filter: blur(10px);
+        }
+        .web-browser-header {
+            background: #f1f5f9;
+            height: 34px;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+            gap: 12px;
+            position: relative;
+            flex-shrink: 0;
+        }
+        .web-browser-dots {
+            display: flex;
+            gap: 6px;
+        }
+        .web-browser-dot {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+        }
+        .web-browser-dot.red { background: #ef4444; }
+        .web-browser-dot.yellow { background: #f59e0b; }
+        .web-browser-dot.green { background: #10b981; }
+        .web-browser-address {
+            flex-grow: 1;
+            background: #FFFFFF;
+            border-radius: 6px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.65rem;
+            color: var(--clr-text-muted);
+            border: 1px solid #e2e8f0;
+            font-family: monospace;
+            padding: 0 10px;
+        }
+        .web-browser-iframe {
+            width: 100%;
+            height: calc(100% - 34px);
+            border: none;
+            overflow: hidden;
+        }
+        .social-capsules-container {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            width: 100%;
+            margin-top: 12px;
+        }
+        .social-capsule-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            border-radius: 50px;
+            font-size: 0.72rem;
+            font-weight: 800;
+            color: #FFFFFF;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        .social-capsule-btn i {
+            font-size: 0.85rem;
+        }
+        .social-capsule-btn.instagram {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        }
+        .social-capsule-btn.facebook {
+            background: #1877F2;
+        }
+        .social-capsule-btn.tiktok {
+            background: #000000;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .social-capsule-btn.youtube {
+            background: #FF0000;
+        }
+        .social-capsule-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+            filter: brightness(1.1);
+        }
+
+        /* Slide 10: Happy Pets card floating animation */
+        @keyframes floatPetsCard {
+            0% { transform: translateY(0px) rotate(0.5deg); }
+            50% { transform: translateY(-8px) rotate(-0.5deg); }
+            100% { transform: translateY(0px) rotate(0.5deg); }
+        }
+        .happy-pets-card {
+            background: #FFFFFF;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1.5px solid rgba(0, 113, 227, 0.08);
+            overflow: hidden;
+            animation: floatPetsCard 4s infinite ease-in-out;
+            transition: box-shadow 0.3s ease;
+        }
+        .happy-pets-card:hover {
+            box-shadow: 0 15px 35px rgba(0,113,227,0.12);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Ambient Glowing Orbs -->
+    <div class="ambient-glow-1"></div>
+    <div class="ambient-glow-2"></div>
+
+    <!-- Header / Nav Island -->
+    <header class="header-bar">
+        <div class="header-logo-container">
+            <video src="Video de logo CUDI.mp4" autoplay loop muted playsinline class="animated-logo" style="object-fit: contain; background: transparent; border: none; box-shadow: none;"></video>
+            <div class="header-brand">CUDI<span>.</span></div>
+        </div>
+        <div class="speaker-badge-container">
+            <div class="speaker-badge" id="badge-block-1">
+                <span class="badge-lbl">Bloque 1</span>
+                <span class="badge-num">B1</span>
+            </div>
+            <div class="speaker-badge" id="badge-block-2">
+                <span class="badge-lbl">Bloque 2</span>
+                <span class="badge-num">B2</span>
+            </div>
+            <div class="speaker-badge" id="badge-block-3">
+                <span class="badge-lbl">Bloque 3</span>
+                <span class="badge-num">B3</span>
+            </div>
+            <div class="speaker-badge" id="badge-block-4">
+                <span class="badge-lbl">Bloque 4</span>
+                <span class="badge-num">B4</span>
+            </div>
+            <div class="speaker-badge" id="badge-block-5">
+                <span class="badge-lbl">Bloque 5</span>
+                <span class="badge-num">B5</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="presentation-container">
+
+        <!-- SLIDE 1: PORTADA - AUTOPLAYING & AUTO-ADVANCING PARTNER VIDEO (Alejandro) -->
+        <div class="slide active" id="slide-1" data-speaker="alejandro">
+            <div class="slide-content" style="padding:0; overflow:hidden; border-radius:24px; width:100%; height:100%; position:relative;">
+                <!-- Full slide partner video player -->
+                <video id="partner-presentation-video" src="video presentacion socios cudi.mp4" autoplay playsinline style="width:100%; height:100%; object-fit:contain; background:#000000;"></video>
+                
+                <!-- Play overlay for Autoplay bypass -->
+                <div id="video-play-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.75); backdrop-filter: blur(10px); display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 100; transition: opacity 0.5s ease; cursor: pointer;">
+                    <div style="width: 90px; height: 90px; border-radius: 50%; background: rgba(255, 255, 255, 0.15); border: 2px solid rgba(255, 255, 255, 0.4); display: flex; align-items: center; justify-content: center; box-shadow: 0 0 30px rgba(0, 0, 0, 0.3); transition: transform 0.3s ease, background 0.3s ease; margin-bottom: 20px;" onmouseover="this.style.transform='scale(1.1)'; this.style.backgroundColor='rgba(255, 255, 255, 0.25)';" onmouseout="this.style.transform='scale(1)'; this.style.backgroundColor='rgba(255, 255, 255, 0.15)';">
+                        <!-- SVG Play Icon -->
+                        <svg width="36" height="42" viewBox="0 0 36 42" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-left: 6px;">
+                            <path d="M4 3.73836C4 1.40871 6.55169 -0.024256 8.53763 1.18956L34.1376 16.8361C36.0592 18.0104 36.0592 20.7994 34.1376 21.9737L8.53763 37.6202C6.55169 38.8341 4 37.4011 4 35.0715V3.73836Z" fill="#FFFFFF"/>
+                        </svg>
+                    </div>
+                    <h2 style="color: #FFFFFF; font-family: 'Outfit', sans-serif; font-size: 28px; font-weight: 600; margin: 0 0 10px 0; text-align: center; text-shadow: 0 2px 10px rgba(0,0,0,0.5);">Iniciar Presentación CUDI</h2>
+                    <p style="color: rgba(255, 255, 255, 0.8); font-family: 'Inter', sans-serif; font-size: 16px; margin: 0; text-align: center; text-shadow: 0 2px 5px rgba(0,0,0,0.3);">Haz clic para reproducir la presentación con audio</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 2: EL DOLOR Y EL ELEVATOR PITCH (Alejandro) -->
+        <div class="slide" id="slide-2" data-speaker="alejandro">
+            <div class="slide-content" style="padding:0; overflow:hidden;">
+                <!-- Full slide height split screen -->
+                <div style="display:flex; width:100%; height:100%; align-items:stretch;">
+                    <!-- Left: Asymmetrical Image & Diagram (60% width) -->
+                    <div style="width:60%; overflow:hidden; position:relative; border-radius:24px 0 0 24px; display:flex; align-items:center; justify-content:center; background:#f8fafc; padding:20px;">
+                        <div style="position:relative; width:100%; max-height:100%;">
+                            <img src="diagram_mercado_fragmentado.png" style="width:100%; height:auto; display:block; border-radius:12px; box-shadow:0 8px 30px rgba(0,0,0,0.05);">
+                            <!-- SVG animation overlay -->
+                            <svg viewBox="0 0 2500 1220" style="position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:10;">
+                                 <!-- path 1: Veterinarios to slot -->
+                                 <path id="flow-path-1" d="M 120 490 Q 300 400 500 400" fill="none" stroke="transparent" stroke-width="2" />
+                                 <!-- path 2: Paseadores to slot -->
+                                 <path id="flow-path-2" d="M 330 570 C 400 570 450 550 500 550" fill="none" stroke="transparent" stroke-width="2" />
+                                 <!-- path 3: GPS to slot -->
+                                 <path id="flow-path-3" d="M 250 840 Q 350 700 500 700" fill="none" stroke="transparent" stroke-width="2" />
+
+                                 <!-- path 1b: slot 1 to platform -->
+                                 <path id="flow-path-1b" d="M 520 400 C 580 400 620 440 680 460" fill="none" stroke="transparent" stroke-width="2" />
+                                 <!-- path 2b: slot 2 to platform -->
+                                 <path id="flow-path-2b" d="M 520 550 C 580 550 600 560 680 560" fill="none" stroke="transparent" stroke-width="2" />
+                                 <!-- path 3b: slot 3 to platform -->
+                                 <path id="flow-path-3b" d="M 520 700 C 580 700 600 660 680 620" fill="none" stroke="transparent" stroke-width="2" />
+
+                                 <!-- Pulsing circles traveling on paths -->
+                                 <circle r="12" fill="var(--clr-primary)" opacity="0.8">
+                                     <animateMotion dur="4s" repeatCount="indefinite" path="M 120 490 Q 300 400 500 400" />
+                                 </circle>
+                                 <circle r="12" fill="var(--clr-accent)" opacity="0.8">
+                                     <animateMotion dur="4s" repeatCount="indefinite" path="M 330 570 C 400 570 450 550 500 550" />
+                                 </circle>
+                                 <circle r="12" fill="var(--clr-primary-light)" opacity="0.8">
+                                     <animateMotion dur="4s" repeatCount="indefinite" path="M 250 840 Q 350 700 500 700" />
+                                 </circle>
+
+                                 <circle r="12" fill="var(--clr-primary)" opacity="0.8">
+                                     <animateMotion dur="3s" begin="1s" repeatCount="indefinite" path="M 520 400 C 580 400 620 440 680 460" />
+                                 </circle>
+                                 <circle r="12" fill="var(--clr-accent)" opacity="0.8">
+                                     <animateMotion dur="3s" begin="1.5s" repeatCount="indefinite" path="M 520 550 C 580 550 600 560 680 560" />
+                                 </circle>
+                                 <circle r="12" fill="var(--clr-primary-light)" opacity="0.8">
+                                     <animateMotion dur="3s" begin="2s" repeatCount="indefinite" path="M 520 700 C 580 700 600 660 680 620" />
+                                 </circle>
+                                 
+                                 <!-- Glowing rings around slots -->
+                                 <circle cx="500" cy="400" r="22" fill="none" stroke="var(--clr-primary)" stroke-width="3" opacity="0.5">
+                                     <animate attributeName="r" values="18;28;18" dur="3s" repeatCount="indefinite" />
+                                 </circle>
+                                 <circle cx="500" cy="550" r="22" fill="none" stroke="var(--clr-accent)" stroke-width="3" opacity="0.5">
+                                     <animate attributeName="r" values="18;28;18" dur="3s" begin="1s" repeatCount="indefinite" />
+                                 </circle>
+                                 <circle cx="500" cy="700" r="22" fill="none" stroke="var(--clr-primary-light)" stroke-width="3" opacity="0.5">
+                                     <animate attributeName="r" values="18;28;18" dur="3s" begin="2s" repeatCount="indefinite" />
+                                 </circle>
+
+                                 <!-- Glowing ring around unified platform -->
+                                 <circle cx="760" cy="270" r="140" fill="none" stroke="var(--clr-gold)" stroke-width="4" opacity="0.4">
+                                     <animate attributeName="r" values="135;145;135" dur="4s" repeatCount="indefinite" />
+                                 </circle>
+                            </svg>
+                        </div>
+                    </div>
+                    <!-- Right: Content space (40% width) -->
+                    <div style="width:40%; padding:45px; display:flex; flex-direction:column; justify-content:center; gap:20px;">
+                        <div class="slide-header">
+                            <span class="slide-category">Gancho inicial</span>
+                            <h2 class="slide-title sweep-title">¿Sabes qué siente tu mejor amigo cuando cierras la puerta?</h2>
+                        </div>
+                        <div class="fade-pitch">
+                            <p style="font-size:1.1rem; line-height:1.5; color:var(--clr-text); font-weight:500;">
+                                Los Pet Parents se enfrentan a una fragmentación absoluta, reaccionando solo ante emergencias médicas. CUDI transforma esta preocupación en tranquilidad. Somos el primer ecosistema Pet-Tech All-in-One que fusiona telemetría constante (Smart Collar), IA predictiva y un Marketplace B2B2C.
+                            </p>
+                        </div>
+                        <p style="font-size:1.25rem; font-family:var(--font-heading); color:var(--clr-primary); font-weight:800; margin-top:5px;" class="animate-item del-3">
+                            CUDI: Tu tranquilidad absoluta, su mejor vida.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 3: LA PROPUESTA DE VALOR / ECOSISTEMA 360 (Alejandro) [MOVED & ENHANCED] -->
+        <div class="slide" id="slide-3" data-speaker="alejandro">
+            <div class="slide-header">
+                <span class="slide-category">Estrategia de Producto</span>
+                <h2 class="slide-title">La Propuesta de Valor: Ecosistema 360º</h2>
+            </div>
+            <div class="slide-content">
+                <div style="display:flex; width:100%; height:100%; gap:30px; align-items:stretch;">
+                    <!-- Left Column: 3 Cubes Diagram (65% width) -->
+                    <div style="width:65%; display:flex; justify-content:center; align-items:center; padding:10px;">
+                        <div style="position:relative; width:100%; max-height:100%;">
+                            <img src="diagram_tres_cubos.png" style="width:100%; height:auto; display:block; border-radius:16px; box-shadow:0 8px 30px rgba(0,0,0,0.05);">
+                            <!-- SVG animation overlay -->
+                            <svg viewBox="0 0 2500 1300" style="position: absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:10;">
+                                  <defs>
+                                      <filter id="glow-filter" x="-30%" y="-30%" width="160%" height="160%">
+                                          <feGaussianBlur stdDeviation="15" result="blur" />
+                                          <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                                      </filter>
+                                  </defs>
+                                  
+                                  <!-- Flow between Hardware (600,1160) and Software (1040,920) -->
+                                  <path id="cube-flow-1-2" d="M 600 1160 Q 820 1040 1040 920" fill="none" stroke="transparent" />
+                                  <path id="cube-flow-2-1" d="M 1040 920 Q 820 1040 600 1160" fill="none" stroke="transparent" />
+                                  
+                                  <circle r="12" fill="var(--clr-primary)" opacity="0.8">
+                                      <animateMotion dur="3.5s" repeatCount="indefinite" path="M 600 1160 Q 820 1040 1040 920" />
+                                  </circle>
+                                  <circle r="12" fill="var(--clr-primary-light)" opacity="0.8">
+                                      <animateMotion dur="3.5s" begin="1.75s" repeatCount="indefinite" path="M 1040 920 Q 820 1040 600 1160" />
+                                  </circle>
+
+                                  <!-- Flow between Software (1040,920) and Services (1440,700) -->
+                                  <path id="cube-flow-2-3" d="M 1040 920 Q 1240 810 1440 700" fill="none" stroke="transparent" />
+                                  <path id="cube-flow-3-2" d="M 1440 700 Q 1240 810 1040 920" fill="none" stroke="transparent" />
+
+                                  <circle r="12" fill="var(--clr-accent)" opacity="0.8">
+                                      <animateMotion dur="3.5s" repeatCount="indefinite" path="M 1040 920 Q 1240 810 1440 700" />
+                                  </circle>
+                                  <circle r="12" fill="var(--clr-gold)" opacity="0.8">
+                                      <animateMotion dur="3.5s" begin="1.75s" repeatCount="indefinite" path="M 1440 700 Q 1240 810 1040 920" />
+                                  </circle>
+                                  
+                                  <!-- Glowing highlights (sequential phase illumination) -->
+                                  <ellipse cx="600" cy="1160" rx="140" ry="75" fill="none" stroke="var(--clr-primary)" stroke-width="8" opacity="0" filter="url(#glow-filter)">
+                                      <animate attributeName="opacity" values="0;0.95;0;0" keyTimes="0;0.33;0.66;1" dur="6s" repeatCount="indefinite" />
+                                  </ellipse>
+                                  <ellipse cx="1040" cy="920" rx="140" ry="75" fill="none" stroke="var(--clr-accent)" stroke-width="8" opacity="0" filter="url(#glow-filter)">
+                                      <animate attributeName="opacity" values="0;0;0.95;0" keyTimes="0;0.33;0.66;1" dur="6s" repeatCount="indefinite" />
+                                  </ellipse>
+                                  <ellipse cx="1440" cy="700" rx="140" ry="75" fill="none" stroke="var(--clr-gold)" stroke-width="8" opacity="0" filter="url(#glow-filter)">
+                                      <animate attributeName="opacity" values="0;0;0;0.95" keyTimes="0;0.33;0.66;1" dur="6s" repeatCount="indefinite" />
+                                  </ellipse>
+
+                                  <!-- Pulsing hotspots on cubes -->
+                                  <circle cx="600" cy="1160" r="40" fill="none" stroke="var(--clr-primary)" stroke-width="3" opacity="0.5">
+                                      <animate attributeName="r" values="30;55;30" dur="4s" repeatCount="indefinite" />
+                                  </circle>
+                                  <circle cx="1040" cy="920" r="40" fill="none" stroke="var(--clr-accent)" stroke-width="3" opacity="0.5">
+                                      <animate attributeName="r" values="30;55;30" dur="4s" begin="1.3s" repeatCount="indefinite" />
+                                  </circle>
+                                  <circle cx="1440" cy="700" r="40" fill="none" stroke="var(--clr-gold)" stroke-width="3" opacity="0.5">
+                                      <animate attributeName="r" values="30;55;30" dur="4s" begin="2.6s" repeatCount="indefinite" />
+                                  </circle>
+                            </svg>
+                        </div>
+                    </div>
+                    <!-- Right Column: Pitch description (35% width) -->
+                    <div style="width:35%; display:flex; flex-direction:column; gap:20px; justify-content:center;">
+                        <div class="card-premium animate-item del-1" style="border-left: 5px solid var(--clr-primary); padding: 22px; background: rgba(0,0,0,0.01);">
+                            <h3 style="font-size:1.2rem; margin-bottom:6px; color: var(--clr-secondary); font-weight:800;">Fase 1: Hardware IoT</h3>
+                            <p style="font-size:0.82rem; line-height:1.45; color: var(--clr-text-muted);">
+                                Smart Collar que recopila telemetría constante (pulso, respiración, actividad) sin fricción para el usuario.
+                            </p>
+                        </div>
+                        <div class="card-premium animate-item del-2" style="border-left: 5px solid var(--clr-accent); padding: 22px; background: rgba(0,0,0,0.01);">
+                            <h3 style="font-size:1.2rem; margin-bottom:6px; color: var(--clr-secondary); font-weight:800;">Fase 2: Software e IA</h3>
+                            <p style="font-size:0.82rem; line-height:1.45; color: var(--clr-text-muted);">
+                                El Gemelo Digital traduce datos en diagnósticos predictivos y alertas automatizadas para el veterinario y dueño.
+                            </p>
+                        </div>
+                        <div class="card-premium animate-item del-3" style="border-left: 5px solid var(--clr-gold); padding: 22px; background: rgba(0,0,0,0.01);">
+                            <h3 style="font-size:1.2rem; margin-bottom:6px; color: var(--clr-secondary); font-weight:800;">Fase 3: Servicios O2O</h3>
+                            <p style="font-size:0.82rem; line-height:1.45; color: var(--clr-text-muted);">
+                                Marketplace integrado que conecta al usuario con paseadores, clínicas y seguros locales homologados.
+                            </p>
+                            <p style="font-size:0.68rem; text-transform:uppercase; letter-spacing:1px; color:var(--clr-text-muted); text-align:center; margin-top:5px;">
+                                *Estructurado para soporte multi-idioma (Catalán, Castellano, Inglés)
+                            </p>
+                        </div>
+                        
+                        <!-- QR Code Call-to-Action Card for Proposal -->
+                        <div class="card-premium animate-item del-4" style="border-top: 4px solid var(--clr-primary); padding: 12px 18px; display: flex; align-items: center; gap: 15px; margin-top: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); border-radius: 12px; background: rgba(0, 113, 227, 0.03); border-left: 1px solid rgba(0,113,227,0.1); border-right: 1px solid rgba(0,113,227,0.1); border-bottom: 1px solid rgba(0,113,227,0.1);">
+                            <img src="qr_code.png" style="width: 70px; height: 70px; border-radius: 8px; border: 2px solid white; box-shadow: 0 4px 12px rgba(0,0,0,0.08); flex-shrink: 0;" alt="QR CUDI Web">
+                            <div>
+                                <h4 style="font-size: 0.88rem; font-family: var(--font-heading); font-weight: 800; color: var(--clr-secondary); margin: 0 0 2px 0;">🌐 Web de CUDI Activa</h4>
+                                <p style="font-size: 0.72rem; color: var(--clr-text-muted); margin: 0; line-height: 1.35;">
+                                    Escanea para abrir la web funcional de CUDI en tu móvil y ver la propuesta de valor interactiva en vivo.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 4: EL TARGET B2C (Alejandro) [REDESIGNED] -->
+        <div class="slide" id="slide-4" data-speaker="alejandro">
+            <div class="slide-header">
+                <span class="slide-category">Segmentación de mercado</span>
+                <h2 class="slide-title">Definición Inicial del Segmento Target B2C</h2>
+            </div>
+            <div class="slide-content" style="overflow: visible;">
+                <!-- Full-width Organic Container -->
+                <div class="organic-container" style="max-width: 1100px; margin: 0 auto; height: 480px; overflow: visible; position: relative;">
+                    
+                    <!-- Center Polaroid Photo (B2C Pet Parent) -->
+                    <div class="center-photo-frame animate-item stagger-3" style="transform: translate(-50%, -50%) rotate(-2deg); width: 330px; height: 390px; padding-bottom: 24px; border-width: 12px; z-index: 4;">
+                        <img src="target_b2c_parent.png" alt="B2C Pet Parent" style="width: 306px; height: 306px; object-fit: cover; border-radius: 4px;">
+                        <div class="polaroid-label" style="font-size: 1.15rem; margin-top: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;">Pet Parent Digital</div>
+                    </div>
+                    
+                    <!-- Floating Post-its -->
+                    <!-- Top Left: Perfil Demográfico -->
+                    <div class="post-it blue animate-item stagger-1" style="top: 15px; left: 1%; transform: rotate(-5deg); width: 330px; padding: 22px; z-index: 6;">
+                        <h4 style="font-size: 1.2rem; margin-bottom: 10px; font-weight: 700; color: var(--clr-secondary);">👥 Perfil Demográfico</h4>
+                        <p style="font-size: 0.98rem; line-height: 1.55; color: var(--clr-text-muted);">
+                            <strong>25 a 55 años:</strong> Nativos digitales (Gen Z/Millennials) y Gen X digitalizada.<br>
+                            <strong>Área Urbana:</strong> Residentes en Barcelona y área metropolitana que viven en pisos.<br>
+                            <strong>Restricciones:</strong> Limitaciones de tiempo y espacio.
+                        </p>
+                    </div>
+                    
+                    <!-- Top Right: Nivel Socioeconómico -->
+                    <div class="post-it green animate-item stagger-2" style="top: 20px; right: 1%; transform: rotate(4deg); width: 330px; padding: 22px; z-index: 6;">
+                        <h4 style="font-size: 1.2rem; margin-bottom: 10px; font-weight: 700; color: var(--clr-secondary);">💰 Socioeconómico</h4>
+                        <p style="font-size: 0.98rem; line-height: 1.55; color: var(--clr-text-muted);">
+                            <strong>Medio-Alto:</strong> Alta capacidad de gasto y priorización del bienestar animal.<br>
+                            <strong>Gasto Recurrente:</strong> Superior a <strong>1.000 € anuales</strong> destinados al cuidado de la mascota.
+                        </p>
+                    </div>
+                    
+                    <!-- Bottom Left: Dolores Psicográficos -->
+                    <div class="post-it red animate-item stagger-4" style="bottom: 15px; left: 0%; transform: rotate(4deg); width: 340px; padding: 22px; z-index: 6;">
+                        <h4 style="font-size: 1.2rem; margin-bottom: 10px; font-weight: 700; color: var(--clr-secondary);">⚠️ Dolores Clave</h4>
+                        <p style="font-size: 0.98rem; line-height: 1.55; color: var(--clr-text-muted);">
+                            <strong>Culpa Parental:</strong> Ansiedad al no saber si su mascota está bien cuando no están presentes.<br>
+                            <strong>Desinformación:</strong> Angustia y fatiga por diagnósticos contradictorios en internet.
+                        </p>
+                    </div>
+                    
+                    <!-- Bottom Right: Expectativas y Solución -->
+                    <div class="post-it yellow animate-item stagger-5" style="bottom: 20px; right: 0%; transform: rotate(-4deg); width: 340px; padding: 22px; z-index: 6;">
+                        <h4 style="font-size: 1.2rem; margin-bottom: 10px; font-weight: 700; color: var(--clr-secondary);">🎯 Qué Buscan</h4>
+                        <p style="font-size: 0.98rem; line-height: 1.55; color: var(--clr-text-muted);">
+                            <strong>Digital First:</strong> Exigen inmediatez, control y telemetría en tiempo real.<br>
+                            <strong>Salud y Longevidad:</strong> No buscan un simple servicio logístico, buscan mitigar la incertidumbre sobre la salud de su mascota.
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 5: EL ELEMENTO SORPRESA / PROTOTIPO REAL - AUTOMATIC SLIDESHOW DEMO (Camilo) -->
+        <div class="slide" id="slide-5" data-speaker="camilo">
+            <div class="slide-header">
+                <span class="slide-category">Prueba de Producto</span>
+                <h2 class="slide-title">De la Estrategia a la Realidad: Prototipo Real</h2>
+            </div>
+            <div class="slide-content">
+                <div class="grid-2" style="height: 100%; align-items: center;">
+                    <!-- Left: Large iPhone with Automatic App Tour IFrame -->
+                    <div style="display:flex; justify-content:center; align-items:center; width:100%; height:100%;">
+                        <div class="iphone-mockup" style="width: 310px; height: 600px; border-radius: 44px; border: 12px solid #1e293b; background: black; box-shadow: 0 20px 40px rgba(0,0,0,0.15); overflow: hidden; position: relative;">
+                            <!-- Dynamic Island -->
+                            <div style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); width: 85px; height: 18px; background: #000000; border-radius: 10px; z-index: 10;"></div>
+                            <iframe id="app-demo-iframe" src="simulador-solo-app.html?autoplay=true" style="width: 100%; height: 100%; border: none;" scrolling="no"></iframe>
+                        </div>
+                    </div>
+                    <!-- Right: Gemelo Digital Diagram & Compact QR -->
+                    <div style="display:flex; flex-direction:column; gap:15px; justify-content:center; align-items:center; height: 100%; width: 100%;">
+                        <!-- Gemelo Digital Diagram with SVG pulse points and progress ring -->
+                        <div style="position:relative; width:100%; max-height:380px; flex:1; display:flex; align-items:center; justify-content:center; background:#f8fafc; border-radius:16px; padding:10px; overflow:hidden;">
+                            <div style="position:relative; width:100%; max-height:100%;">
+                                <img src="diagram_gemelo_digital.png" style="width:100%; height:auto; display:block; border-radius:12px; border:1px solid rgba(0,0,0,0.05);">
+                                <!-- SVG overlay -->
+                                <svg viewBox="0 0 2500 1200" style="position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:10;">
+                                     <defs>
+                                         <filter id="glow-filter" x="-20%" y="-20%" width="140%" height="140%">
+                                             <feGaussianBlur stdDeviation="8" result="blur" />
+                                             <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                                         </filter>
+                                     </defs>
+                                     <style>
+                                         .gemelo-pulse-point {
+                                             transform-origin: center;
+                                             animation: gemeloPulse 2.5s infinite ease-in-out;
+                                         }
+                                         @keyframes gemeloPulse {
+                                             0%, 100% { r: 15px; opacity: 0.6; fill: var(--clr-gold); }
+                                             50% { r: 35px; opacity: 1; fill: var(--clr-red); }
+                                         }
+                                         .gemelo-pulse-point-cat {
+                                             transform-origin: center;
+                                             animation: gemeloPulseCat 2.5s infinite ease-in-out;
+                                         }
+                                         @keyframes gemeloPulseCat {
+                                             0%, 100% { r: 12px; opacity: 0.6; fill: var(--clr-accent); }
+                                             50% { r: 28px; opacity: 1; fill: var(--clr-primary-light); }
+                                         }
+                                         .digital-twin-ring {
+                                             stroke-dasharray: 565.48;
+                                             stroke-dashoffset: 565.48;
+                                             transform: rotate(-90deg);
+                                             transform-origin: 710px 360px;
+                                         }
+                                         .slide.active .digital-twin-ring {
+                                             animation: drawTwinRing 2.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+                                         }
+                                         @keyframes drawTwinRing {
+                                             from { stroke-dashoffset: 565.48; }
+                                             to { stroke-dashoffset: 33.93; }
+                                         }
+                                         .wireframe-cat {
+                                             stroke-dasharray: 600;
+                                             stroke-dashoffset: 600;
+                                         }
+                                         .slide.active .wireframe-cat {
+                                             animation: drawCat 3s ease-in-out forwards;
+                                         }
+                                         @keyframes drawCat {
+                                             to { stroke-dashoffset: 0; }
+                                         }
+                                     </style>
+                                     
+                                     <!-- Animated scanning laser line -->
+                                     <line x1="150" y1="250" x2="850" y2="250" stroke="rgba(16, 185, 129, 0.5)" stroke-width="4" filter="url(#glow-filter)">
+                                         <animate attributeName="y1" values="250;530;250" dur="4s" repeatCount="indefinite" />
+                                         <animate attributeName="y2" values="250;530;250" dur="4s" repeatCount="indefinite" />
+                                     </line>
+
+                                     <!-- ECG Heartbeat line for Dog (over chest region cx=250 cy=450) -->
+                                     <path d="M 180 460 L 210 460 L 220 420 L 230 500 L 240 450 L 250 470 L 290 470" fill="none" stroke="var(--clr-red)" stroke-width="4" stroke-dasharray="100" stroke-dashoffset="100" opacity="0.7">
+                                         <animate attributeName="stroke-dashoffset" values="100;0" dur="2s" repeatCount="indefinite" />
+                                     </path>
+
+                                     <!-- ECG Heartbeat line for Cat (over chest region cx=450 cy=480) -->
+                                     <path d="M 400 490 L 430 490 L 435 470 L 440 510 L 445 485 L 450 495 L 480 495" fill="none" stroke="var(--clr-primary-light)" stroke-width="3" stroke-dasharray="80" stroke-dashoffset="80" opacity="0.7">
+                                         <animate attributeName="stroke-dashoffset" values="80;0" dur="2s" begin="0.5s" repeatCount="indefinite" />
+                                     </path>
+                                     
+                                     <!-- Biometric Pulse points on the wireframe dog -->
+                                     <circle cx="350" cy="350" r="20" class="gemelo-pulse-point" style="animation-delay: 0s;" />
+                                     <circle cx="320" cy="390" r="20" class="gemelo-pulse-point" style="animation-delay: 0.5s;" />
+                                     <circle cx="230" cy="390" r="20" class="gemelo-pulse-point" style="animation-delay: 1s;" />
+                                     <circle cx="220" cy="460" r="20" class="gemelo-pulse-point" style="animation-delay: 1.5s;" />
+                                     <circle cx="320" cy="490" r="20" class="gemelo-pulse-point" style="animation-delay: 2s;" />
+
+                                     <!-- Glowing wireframe sitting cat outline next to the dog -->
+                                     <g transform="translate(10, 0)">
+                                         <!-- Stylized Cat body path -->
+                                         <path d="M 430 510 
+                                                  C 420 460, 425 415, 435 390 
+                                                  C 438 380, 445 370, 450 370 
+                                                  L 455 388 
+                                                  L 468 388 
+                                                  L 473 370 
+                                                  C 478 370, 485 380, 488 390
+                                                  C 498 415, 502 460, 492 510
+                                                  C 492 520, 430 520, 430 510 Z"
+                                               fill="none" stroke="var(--clr-accent)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" class="wireframe-cat" filter="url(#glow-filter)" />
+                                         <!-- Cat tail -->
+                                         <path d="M 488 505 C 505 505, 515 480, 510 455" fill="none" stroke="var(--clr-accent)" stroke-width="3" stroke-linecap="round" class="wireframe-cat" />
+                                         
+                                         <!-- Biometric Pulse points on the wireframe cat -->
+                                         <circle cx="452" cy="405" r="15" class="gemelo-pulse-point-cat" style="animation-delay: 0.2s;" />
+                                         <circle cx="445" cy="455" r="15" class="gemelo-pulse-point-cat" style="animation-delay: 0.8s;" />
+                                         <circle cx="468" cy="490" r="15" class="gemelo-pulse-point-cat" style="animation-delay: 1.4s;" />
+                                     </g>
+
+                                     <!-- 94% Index Progress Ring (Shifted to center X=710 based on analysis) -->
+                                     <circle cx="710" cy="360" r="90" fill="none" stroke="var(--clr-accent)" stroke-width="12" class="digital-twin-ring" />
+                                     <!-- Glowing outer ring on 94% index -->
+                                     <circle cx="710" cy="360" r="105" fill="none" stroke="var(--clr-accent)" stroke-width="2" opacity="0.3">
+                                         <animate attributeName="r" values="95;115;95" dur="3s" repeatCount="indefinite" />
+                                     </circle>
+                                </svg>
+                            </div>
+                        </div>
+                        
+                        <!-- Large QR code card -->
+                        <div class="card-premium qr-card-holder-compact animate-item del-4" style="display:flex; flex-direction:row; align-items:center; padding:22px; gap:24px; width:100%; border-top:6px solid var(--clr-primary); border-radius:24px; box-shadow: 0 15px 35px rgba(0,0,0,0.06);">
+                            <img src="qr_code.png" alt="QR Ecosistema CUDI" style="width:160px; height:160px; border-radius:16px; border:4px solid white; box-shadow:0 8px 25px rgba(0,0,0,0.1); flex-shrink:0;">
+                            <div>
+                                <h3 style="font-size:1.35rem; font-family:var(--font-heading); color:var(--clr-secondary); margin:0 0 8px 0; font-weight:800; display:flex; align-items:center; gap:8px;">📱 ¡Prueba la App en tu móvil!</h3>
+                                <p style="font-size:0.95rem; color:var(--clr-text-muted); margin:0; line-height:1.5;">
+                                    Escanea este código QR con la cámara de tu smartphone para abrir el simulador interactivo en tiempo real o accede directamente en <a href="simulador-gemelo-digital-telemetria.html" target="_blank" style="color:var(--clr-primary); font-weight:700; text-decoration:none; border-bottom: 2px dashed rgba(0, 113, 227, 0.3);">cudi.ai/demo</a>
+                                </p>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- SLIDE 6: OBJETIVOS DE NEGOCIO (Camilo)  -->
+        <div class="slide" id="slide-6" data-speaker="camilo">
+            <div class="slide-header">
+                <span class="slide-category">Plan de negocio</span>
+                <h2 class="slide-title">Objetivos de Negocio: Hoja de Ruta Año 1</h2>
+            </div>
+            <div class="slide-content">
+                <div style="display:flex; flex-direction:column; justify-content:center; height:100%; width:100%; gap:20px;">
+                    <p style="font-size:1.05rem; color:var(--clr-text-muted); text-align:center; max-width:800px; margin:0 auto 10px; line-height:1.4;">
+                        Nuestra hoja de ruta para construir un ecosistema escalable, rentable y centrado en el bienestar animal.
+                    </p>
+                    
+                    <div style="display:grid; grid-template-columns: repeat(4, 1fr); gap: 20px; width:100%;">
+                        <!-- Column 1 -->
+                        <div class="metric-card-container animate-item del-1">
+                            <div class="metric-icon-container" style="background: var(--clr-primary);">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                    <circle cx="9" cy="7" r="4" />
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                                </svg>
+                            </div>
+                            <div class="metric-number-badge">1</div>
+                            <h4 class="metric-card-title">Validar la demanda del mercado</h4>
+                            <div class="metric-card-value" id="counter-obj-1">0</div>
+                            <p class="metric-card-label">suscriptores Premium activos</p>
+                            <div class="metric-progress-bar"><div class="metric-progress-fill fill-67"></div></div>
+                            <div class="metric-footer-badge">
+                                📅 En el primer año
+                            </div>
+                        </div>
+                        
+                        <!-- Column 2 -->
+                        <div class="metric-card-container animate-item del-2">
+                            <div class="metric-icon-container" style="background: var(--clr-primary);">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="m18 11-3.5-3.5L11 11M11 11l-4-4 4-4" />
+                                    <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" />
+                                </svg>
+                            </div>
+                            <div class="metric-number-badge">2</div>
+                            <h4 class="metric-card-title">Construir el ecosistema</h4>
+                            <div class="metric-card-value" id="counter-obj-2">0</div>
+                            <p class="metric-card-label">partners certificados</p>
+                            <div class="metric-progress-bar"><div class="metric-progress-fill fill-55"></div></div>
+                            <div class="metric-footer-badge">
+                                📅 En el primer año
+                            </div>
+                        </div>
+                        
+                        <!-- Column 3 -->
+                        <div class="metric-card-container animate-item del-3">
+                            <div class="metric-icon-container" style="background: var(--clr-primary);">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <line x1="2" y1="12" x2="22" y2="12" />
+                                    <path d="M12 2a15.3(15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                                </svg>
+                            </div>
+                            <div class="metric-number-badge">3</div>
+                            <h4 class="metric-card-title">Generar visibilidad</h4>
+                            <div class="metric-card-value">+<span id="counter-obj-3">0</span></div>
+                            <p class="metric-card-label">visitas web cualificadas</p>
+                            <div class="metric-progress-bar"><div class="metric-progress-fill fill-85"></div></div>
+                            <div class="metric-footer-badge">
+                                📅 En el primer año
+                            </div>
+                        </div>
+                        
+                        <!-- Column 4 -->
+                        <div class="metric-card-container animate-item del-4">
+                            <div class="metric-icon-container" style="background: var(--clr-primary);">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 20V10" />
+                                    <path d="M12 20V4" />
+                                    <path d="M6 20v-6" />
+                                    <path d="m17 4 5 5-5 5" stroke-width="2" />
+                                    <path d="M22 4h-8" stroke-width="2" />
+                                </svg>
+                            </div>
+                            <div class="metric-number-badge">4</div>
+                            <h4 class="metric-card-title">Generar crecimiento rentable</h4>
+                            <div class="metric-card-value"><span id="counter-obj-4">0</span>k €</div>
+                            <p class="metric-card-label">de facturación en el primer año</p>
+                            <div class="metric-progress-bar"><div class="metric-progress-fill fill-100"></div></div>
+                            <div class="metric-footer-badge">
+                                📅 En el primer año
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 7: KPIS CLAVE (Micaela)  -->
+        <div class="slide" id="slide-7" data-speaker="micaela">
+            <div class="slide-header">
+                <span class="slide-category">Rendimiento</span>
+                <h2 class="slide-title">KPIs Clave: Métricas de Tracción y Retención</h2>
+            </div>
+            <div class="slide-content">
+                <div style="display:flex; flex-direction:column; justify-content:center; height:100%; width:100%; gap:20px;">
+                    <p style="font-size:1.05rem; color:var(--clr-text-muted); text-align:center; max-width:800px; margin:0 auto 10px; line-height:1.4;">
+                        Indicadores que nos permiten medir el rendimiento y avanzar hacia nuestros objetivos de negocio.
+                    </p>
+                    
+                    <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:25px; width:100%; max-width:1000px; margin:0 auto;">
+                        <!-- KPI Column 1 -->
+                        <div class="metric-card-container animate-item del-1">
+                            <div class="metric-icon-container" style="background: var(--clr-primary);">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z" />
+                                </svg>
+                            </div>
+                            <div class="metric-number-badge">1</div>
+                            <h4 class="metric-card-title">Tasa de conversión</h4>
+                            <div class="metric-card-value"><span id="counter-kpi-1">0</span>%</div>
+                            <p class="metric-card-label">de usuarios que completan la suscripción Premium sobre el total de visitas web</p>
+                            <div class="metric-progress-bar"><div class="metric-progress-fill fill-10"></div></div>
+                            <div class="metric-footer-badge">
+                                📅 En el primer año
+                            </div>
+                        </div>
+                        
+                        <!-- KPI Column 2 -->
+                        <div class="metric-card-container animate-item del-2">
+                            <div class="metric-icon-container" style="background: var(--clr-primary);">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="m18 11-3.5-3.5L11 11M11 11l-4-4 4-4" />
+                                    <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" />
+                                </svg>
+                            </div>
+                            <div class="metric-number-badge">2</div>
+                            <h4 class="metric-card-title">Tasa de cierre de socios</h4>
+                            <div class="metric-card-value"><span id="counter-kpi-2">0</span>%</div>
+                            <p class="metric-card-label">de partners potenciales que se convierten en socios certificados activos</p>
+                            <div class="metric-progress-bar"><div class="metric-progress-fill fill-50"></div></div>
+                            <div class="metric-footer-badge">
+                                📅 En el primer año
+                            </div>
+                        </div>
+                        
+                        <!-- KPI Column 3 -->
+                        <div class="metric-card-container animate-item del-3">
+                            <div class="metric-icon-container" style="background: var(--clr-primary);">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="m22 17-8.5-8.5-5 5L2 7" />
+                                    <polyline points="22 17 22 11 16 11" />
+                                </svg>
+                            </div>
+                            <div class="metric-number-badge">3</div>
+                            <h4 class="metric-card-title">Tasa de cancelación</h4>
+                            <div class="metric-card-value">&lt; <span id="counter-kpi-3">0</span>%</div>
+                            <p class="metric-card-label">de suscriptores que cancelan la suscripción durante el primer año de contrato</p>
+                            <div class="metric-progress-bar"><div class="metric-progress-fill fill-48"></div></div>
+                            <div class="metric-footer-badge">
+                                📅 En el primer año
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            <!-- SLIDE 8: ECOSISTEMA ORGÁNICO (SEO y GEO) (Micaela)   -->
+        <div class="slide" id="slide-8" data-speaker="micaela">
+            <div class="slide-header">
+                <span class="slide-category">Estrategia Orgánica</span>
+                <h2 class="slide-title">Ecosistema Orgánico: Embudo de Captación (SEO y GEO)</h2>
+            </div>
+            <div class="slide-content">
+                <div class="grid-2" style="align-items: center; gap: 30px;">
+                    <!-- Left: Conversion Funnel (SEO/GEO) 6 stages -->
+                    <div style="width: 100%; display: flex; align-items: center; justify-content: center; position: relative;">
+                        <!-- Interactive Funnel Timeline -->
+                        <div class="funnel-timeline animate-item del-1">
+                            <div class="funnel-timeline-glow"></div>
+                            
+                            <!-- Stage 1 -->
+                            <div class="funnel-node-item active" onmouseover="activateFunnelNode(this)">
+                                <div class="funnel-node-circle">1</div>
+                                <h4 class="funnel-node-title">1. Problema del Usuario 🔍</h4>
+                                <p class="funnel-node-desc">Necesidad de Tranquilidad y Bienestar: "¿Mi mascota está bien cuidada cuando no estoy?"</p>
+                            </div>
+                            
+                            <!-- Stage 2 -->
+                            <div class="funnel-node-item" onmouseover="activateFunnelNode(this)">
+                                <div class="funnel-node-circle">2</div>
+                                <h4 class="funnel-node-title">2. Buscadores & Modelos IA 🤖</h4>
+                                <p class="funnel-node-desc">Google, ChatGPT, Gemini & Perplexity: Búsquedas como "mejor collar GPS" o "salud de gatos".</p>
+                            </div>
+                            
+                            <!-- Stage 3 -->
+                            <div class="funnel-node-item" onmouseover="activateFunnelNode(this)">
+                                <div class="funnel-node-circle">3</div>
+                                <h4 class="funnel-node-title">3. CUDI Journal & Schema 📚</h4>
+                                <p class="funnel-node-desc">Contenido Especializado de Valor: Microdatos estructurados que alimentan las respuestas de IA.</p>
+                            </div>
+                            
+                            <!-- Stage 4 -->
+                            <div class="funnel-node-item" onmouseover="activateFunnelNode(this)">
+                                <div class="funnel-node-circle">4</div>
+                                <h4 class="funnel-node-title">4. Landing Page (Conversión) 🌐</h4>
+                                <p class="funnel-node-desc">cudi.ai/demo interactiva: El usuario comprende los beneficios inmediatos del collar.</p>
+                            </div>
+                            
+                            <!-- Stage 5 -->
+                            <div class="funnel-node-item" onmouseover="activateFunnelNode(this)">
+                                <div class="funnel-node-circle">5</div>
+                                <h4 class="funnel-node-title">5. App Experiencia 📱</h4>
+                                <p class="funnel-node-desc">Monitoreo Diario & Salud: Telemetría en tiempo real y triajes predictivos en el móvil.</p>
+                            </div>
+                            
+                            <!-- Stage 6 -->
+                            <div class="funnel-node-item" onmouseover="activateFunnelNode(this)">
+                                <div class="funnel-node-circle">6</div>
+                                <h4 class="funnel-node-title">6. Suscripción Premium 👑</h4>
+                                <p class="funnel-node-desc">Cliente Premium Recurrente: Fidelización a largo plazo con servicios O2O integrados.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right: GEO and SGE Details (Boxless & Spacious Layout) -->
+                    <div class="animate-item del-2" style="height:100%; display:flex; flex-direction:column; justify-content:space-between; padding:10px;">
+                        <div>
+                            <span style="font-size:0.85rem; font-weight:700; color:var(--clr-primary); text-transform:uppercase; letter-spacing:1.5px; display:block; margin-bottom:8px;">Concepto GEO (Generative Engine Optimization)</span>
+                            <h3 style="font-size:1.9rem; font-family:var(--font-heading); font-weight:900; color:var(--clr-text); margin:0 0 10px 0; line-height:1.2;">Alimentando a las IAs con Autoridad</h3>
+                            <p style="font-size:1.05rem; color:var(--clr-text-muted); line-height:1.5; margin-bottom:20px;">
+                                No dependemos de pauta para captar orgánicamente. Usamos <strong>Schema Markup (JSON-LD)</strong> avanzado para que motores como ChatGPT Search y Gemini nos reconozcan como la referencia en Smart Collars.
+                            </p>
+                            
+                            <!-- Large Code & Image Grid -->
+                            <div style="display: grid; grid-template-columns: 1.1fr 1.1fr; gap: 24px; margin-bottom: 20px;">
+                                <div class="code-preview" style="background:#0f172a; border-radius:16px; padding:18px; font-family: 'Courier New', Courier, monospace; font-size:0.8rem; color:#f8fafc; overflow:hidden; position:relative; box-shadow:inset 0 4px 12px rgba(0,0,0,0.6); height:260px; border: 1px solid rgba(255,255,255,0.08);">
+                                    <div style="position:absolute; top:6px; right:12px; font-size:0.6rem; color:#64748b; font-weight:bold;">JSON-LD SCHEMA</div>
+                                    <div id="schema-code-block" style="line-height:1.4; white-space:pre-wrap;"></div>
+                                </div>
+                                <div style="height: 260px; border-radius: 16px; overflow: hidden; position: relative; border: 2px solid rgba(0,113,227,0.25); box-shadow: 0 8px 25px rgba(0,113,227,0.15); transition: all 0.3s ease;">
+                                    <img src="cudi_seo_geo_ai.png" alt="AI Recommendation Search" style="width: 100%; height: 100%; object-fit: contain; background: #0f172a;">
+                                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(15,23,42,0.95), transparent); padding: 8px 10px; font-size: 0.7rem; color: #FFFFFF; font-weight: bold; text-align: center;">
+                                        Recomendación IA (GEO)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="display:flex; align-items:center; gap:12px; background:rgba(0,113,227,0.05); padding:12px 16px; border-radius:12px; border:1.5px solid rgba(0,113,227,0.1); margin-top:10px;">
+                            <span style="font-size:1.5rem; filter: drop-shadow(0 2px 4px rgba(0,113,227,0.2));">🤖</span>
+                            <p style="font-size:0.85rem; color:var(--clr-text-muted); margin:0; line-height:1.45;">
+                                Las IAs recomiendan CUDI al procesar nuestros microdatos y los artículos del CUDI Journal sobre salud preventiva.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 9: SOCIAL ADS Y LANZAMIENTO (Micaela)   -->
+        <div class="slide" id="slide-9" data-speaker="micaela">
+            <div class="slide-header">
+                <span class="slide-category">Campaña de Lanzamiento</span>
+                <h2 class="slide-title">Estrategia Social Ads: Campaña "Aventuras sin Sustos"</h2>
+            </div>
+            <div class="slide-content">
+                <div style="display: grid; grid-template-columns: 1.35fr 0.95fr; gap: 40px; align-items: center; height: 100%;">
+                    <!-- Left: Web Browser Mockup of Aventuras Page & Social Capsules -->
+                    <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; width:100%; height:100%;">
+                        <div class="web-browser-mockup animate-item del-1">
+                            <div class="web-browser-header">
+                                <div class="web-browser-dots">
+                                    <div class="web-browser-dot red"></div>
+                                    <div class="web-browser-dot yellow"></div>
+                                    <div class="web-browser-dot green"></div>
+                                </div>
+                                <div class="web-browser-address">
+                                    cudi.ai/smart-collar-aventuras-sin-sustos.html
+                                </div>
+                            </div>
+                            <iframe id="aventuras-web-iframe" class="web-browser-iframe" src="smart-collar-aventuras-sin-sustos.html?autoscroll=true" scrolling="yes"></iframe>
+                        </div>
+                        
+                        <!-- Social Networks Capsules with QR Codes -->
+                        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; width: 100%; margin-top: 15px;" class="animate-item del-2">
+                            <!-- Instagram -->
+                            <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+                                <a href="https://www.instagram.com/cudi.ia?igsh=bjdmNXhyeHZvMXo0&utm_source=qr" target="_blank" class="social-capsule-btn instagram" style="width: 100%; justify-content: center; margin: 0; padding: 6px 4px;">
+                                    <i class="fa-brands fa-instagram"></i> Instagram
+                                </a>
+                                <div style="width: 70px; height: 70px; border-radius: 8px; border: 1.5px solid rgba(225,48,108,0.3); padding: 4px; background: white; box-shadow: 0 4px 10px rgba(225,48,108,0.1); display: flex; align-items: center; justify-content: center;">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://www.instagram.com/cudi.ia?igsh=bjdmNXhyeHZvMXo0%26utm_source=qr" alt="QR Instagram" style="width: 100%; height: 100%; object-fit: contain;">
+                                </div>
+                            </div>
+                            <!-- TikTok -->
+                            <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+                                <a href="https://www.tiktok.com/@cudi.ia?_r=1&_t=ZN-95icM5LsfCA" target="_blank" class="social-capsule-btn tiktok" style="width: 100%; justify-content: center; margin: 0; padding: 6px 4px;">
+                                    <i class="fa-brands fa-tiktok"></i> TikTok
+                                </a>
+                                <div style="width: 70px; height: 70px; border-radius: 8px; border: 1.5px solid rgba(0,0,0,0.3); padding: 4px; background: white; box-shadow: 0 4px 10px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center;">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://www.tiktok.com/@cudi.ia?_r=1%26_t=ZN-95icM5LsfCA" alt="QR TikTok" style="width: 100%; height: 100%; object-fit: contain;">
+                                </div>
+                            </div>
+                            <!-- Facebook -->
+                            <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+                                <a href="https://www.facebook.com/Cudi2026" target="_blank" class="social-capsule-btn facebook" style="width: 100%; justify-content: center; margin: 0; padding: 6px 4px;">
+                                    <i class="fa-brands fa-facebook-f"></i> Facebook
+                                </a>
+                                <div style="width: 70px; height: 70px; border-radius: 8px; border: 1.5px solid rgba(24,119,242,0.3); padding: 4px; background: white; box-shadow: 0 4px 10px rgba(24,119,242,0.1); display: flex; align-items: center; justify-content: center;">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://www.facebook.com/Cudi2026" alt="QR Facebook" style="width: 100%; height: 100%; object-fit: contain;">
+                                </div>
+                            </div>
+                            <!-- YouTube -->
+                            <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+                                <a href="https://www.youtube.com/@cudi-ia" target="_blank" class="social-capsule-btn youtube" style="width: 100%; justify-content: center; margin: 0; padding: 6px 4px;">
+                                    <i class="fa-brands fa-youtube"></i> YouTube
+                                </a>
+                                <div style="width: 70px; height: 70px; border-radius: 8px; border: 1.5px solid rgba(255,0,0,0.3); padding: 4px; background: white; box-shadow: 0 4px 10px rgba(255,0,0,0.1); display: flex; align-items: center; justify-content: center;">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://www.youtube.com/@cudi-ia" alt="QR YouTube" style="width: 100%; height: 100%; object-fit: contain;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right: Large Budget & Action Plan (Boxless & Spacious Layout) -->
+                    <div class="animate-item del-2" style="height:100%; display:flex; flex-direction:column; justify-content:center; padding:10px;">
+                        <span style="font-size:0.95rem; font-weight:700; color:var(--clr-accent); text-transform:uppercase; letter-spacing:1.5px; display:block; margin-bottom:8px;">Presupuesto de Marketing Anual</span>
+                        <div style="font-size:3.8rem; font-family:var(--font-heading); font-weight:900; color:var(--clr-text); margin:0 0 12px 0; line-height: 1;">69.156 €</div>
+                        <p style="font-size:1.15rem; color:var(--clr-text-muted); line-height:1.55; margin-bottom:30px;">
+                            Inversión estratégica en pauta pagada, retargeting y creadores de contenido para traccionar los 670 clientes iniciales.
+                        </p>
+                        
+                        <!-- Large Progress Bars with loading animation -->
+                        <div style="display:flex; flex-direction:column; gap:26px; width:100%;">
+                            <!-- UGC & Influencers -->
+                            <div>
+                                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; font-size:1.1rem;">
+                                    <span style="font-weight:700; color:var(--clr-secondary);">Creación UGC & Influencers</span>
+                                    <span style="font-weight:800; color:var(--clr-primary);">47.812 € (69.1%)</span>
+                                </div>
+                                <div class="metric-progress-bar" style="width:100%; height:18px; margin:0; background: rgba(16,185,129,0.1); border-radius: 9px;"><div class="metric-progress-fill fill-ugc" style="background:var(--clr-accent); height:100%; border-radius: 9px;"></div></div>
+                            </div>
+                            
+                            <!-- Paid Ads -->
+                            <div>
+                                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; font-size:1.1rem;">
+                                    <span style="font-weight:700; color:var(--clr-secondary);">Paid Ads (Meta / TikTok Campaign)</span>
+                                    <span style="font-weight:800; color:var(--clr-primary);">13.344 € (19.3%)</span>
+                                </div>
+                                <div class="metric-progress-bar" style="width:100%; height:18px; margin:0; background: rgba(0,113,227,0.1); border-radius: 9px;"><div class="metric-progress-fill fill-paid" style="background:var(--clr-primary); height:100%; border-radius: 9px;"></div></div>
+                            </div>
+                            
+                            <!-- Retargeting -->
+                            <div>
+                                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; font-size:1.1rem;">
+                                    <span style="font-weight:700; color:var(--clr-secondary);">Retargeting & Captación B2B</span>
+                                    <span style="font-weight:800; color:var(--clr-primary);">8.000 € (11.6%)</span>
+                                </div>
+                                <div class="metric-progress-bar" style="width:100%; height:18px; margin:0; background: rgba(245,158,11,0.1); border-radius: 9px;"><div class="metric-progress-fill fill-retarget" style="background:var(--clr-gold); height:100%; border-radius: 9px;"></div></div>
+                            </div>
+                        </div>
+                        
+                        <p style="font-size:0.8rem; color:var(--clr-text-muted); font-style:italic; border-top:1.5px solid rgba(0,0,0,0.08); padding-top:15px; margin-top:25px;">
+                            *Foco en UGC para tangibilizar el valor y rebajar el Coste de Adquisición de Clientes (CAC).
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 10: RETENCIÓN Y APP (FIDELIZACIÓN) (Melissa)   -->
+        <div class="slide" id="slide-10" data-speaker="melissa">
+            <div class="slide-header">
+                <span class="slide-category">Fidelización de usuarios</span>
+                <h2 class="slide-title">Retención y App: Inteligencia Relacional contra el Churn</h2>
+            </div>
+            <div class="slide-content">
+                <div style="display: grid; grid-template-columns: 1fr 1.05fr 1.2fr; gap: 24px; align-items: center; height: 100%;">
+                    <!-- Column 1: Animated Smartphone App alerts Mockup -->
+                    <div style="display:flex; justify-content:center; align-items:center; width:100%; height:100%;">
+                        <div class="iphone-mockup" style="width: 230px; height: 420px; border-radius: 32px; border: 8px solid #1e293b; background: #0f172a; box-shadow: 0 12px 25px rgba(0,0,0,0.15); overflow: hidden; position: relative;">
+                            <!-- Dynamic Island -->
+                            <div style="position: absolute; top: 6px; left: 50%; transform: translateX(-50%); width: 64px; height: 12px; background: #000000; border-radius: 8px; z-index: 10;"></div>
+                            
+                            <!-- Phone App screen -->
+                            <div style="padding: 24px 12px 12px 12px; display:flex; flex-direction:column; gap:10px; height:100%; justify-content:space-between; position:relative;">
+                                <!-- Header inside app -->
+                                <div style="display:flex; justify-content:space-between; align-items:center;">
+                                    <div style="font-family:var(--font-heading); font-size:0.8rem; font-weight:800; color:white;">CUDI Care</div>
+                                    <span style="font-size:0.75rem;">❤️</span>
+                                </div>
+                                
+                                <!-- Animated Biometric Sensor (ECG Pulse wave) -->
+                                <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:8px; text-align:center; position:relative; overflow:hidden; height:110px;">
+                                    <div style="font-size:0.55rem; color:var(--clr-primary-light); text-transform:uppercase; letter-spacing:1px; margin-bottom:2px;">Ritmo Cardíaco en Vivo</div>
+                                    <div style="font-size:1.4rem; font-weight:800; color:white; font-family:var(--font-heading); display:flex; align-items:center; justify-content:center; gap:6px;">
+                                        88 <span style="font-size:0.7rem; color:var(--clr-text-muted);">bpm</span>
+                                        <span class="pulsing-heart" style="font-size:1.1rem; color:var(--clr-red); display:inline-block;">❤️</span>
+                                    </div>
+                                    
+                                    <!-- Mini SVG Pulse wave animating -->
+                                    <svg viewBox="0 0 300 60" style="position:absolute; bottom:5px; left:0; width:100%; height:40px; pointer-events:none;">
+                                        <path d="M 0 30 L 70 30 L 80 15 L 90 45 L 100 30 L 170 30 L 180 10 L 190 50 L 200 30 L 270 30 L 280 15 L 290 45 L 300 30" fill="none" stroke="var(--clr-red)" stroke-width="3" stroke-dasharray="150" stroke-dashoffset="150">
+                                            <animate attributeName="stroke-dashoffset" values="150;0" dur="2.5s" repeatCount="indefinite" />
+                                        </path>
+                                    </svg>
+                                </div>
+                                
+                                <!-- Alert notifications stack sliding in -->
+                                <div style="display:flex; flex-direction:column; gap:6px;">
+                                    <!-- Notification 1 -->
+                                    <div class="animate-item stagger-1" style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.08); border-radius:8px; padding:6px 8px; display:flex; align-items:center; gap:6px;">
+                                        <span style="font-size:0.75rem; background:rgba(239,68,68,0.2); color:var(--clr-red); width:18px; height:18px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center;">⚠️</span>
+                                        <div style="text-align:left;">
+                                            <div style="font-size:0.6rem; font-weight:bold; color:white;">Alerta: Ritmo Inusual</div>
+                                            <div style="font-size:0.5rem; color:var(--clr-text-muted);">Rocky FC superior a 140 bpm</div>
+                                        </div>
+                                    </div>
+                                    <!-- Notification 2 -->
+                                    <div class="animate-item stagger-2" style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.08); border-radius:8px; padding:6px 8px; display:flex; align-items:center; gap:6px;">
+                                        <span style="font-size:0.75rem; background:rgba(16,185,129,0.2); color:var(--clr-accent); width:18px; height:18px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center;">📍</span>
+                                        <div style="text-align:left;">
+                                            <div style="font-size:0.6rem; font-weight:bold; color:white;">Rocky fuera de zona</div>
+                                            <div style="font-size:0.5rem; color:var(--clr-text-muted);">Entrando en Parque Natural</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Column 2: Happy Pets Card with AI Image -->
+                    <div style="display:flex; justify-content:center; align-items:center; width:100%;">
+                        <div class="happy-pets-card animate-item del-2" style="width: 250px; overflow: hidden; border-radius: 20px; background: white; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border: 1.5px solid rgba(0,113,227,0.1);">
+                            <div style="width: 100%; height: 260px; overflow: hidden; position: relative;">
+                                <img src="cudi_happy_pets.png" alt="Happy Mascotas CUDI" style="width: 100%; height: 100%; object-fit: cover;">
+                                <div style="position: absolute; top: 12px; right: 12px; background: rgba(16, 185, 129, 0.9); color: white; padding: 4px 10px; border-radius: 50px; font-size: 0.6rem; font-weight: 800; letter-spacing: 0.5px; backdrop-filter: blur(5px);">
+                                    <i class="fa-solid fa-heart-pulse"></i> 100% Protegidos
+                                </div>
+                            </div>
+                            <div style="padding: 16px; text-align: center;">
+                                <h4 style="font-family: var(--font-heading); font-size: 0.9rem; font-weight: 800; color: var(--clr-secondary); margin: 0 0 4px 0;">Mascotas Felices y Seguras</h4>
+                                <p style="font-size: 0.72rem; color: var(--clr-text-muted); margin: 0; line-height: 1.3;">
+                                    Monitoreo constante e inteligente que previene riesgos y refuerza el vínculo emocional con sus cuidadores.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Column 3: Intelligence Relational and Churn prevent detail -->
+                    <div class="animate-item del-3" style="height:100%; display:flex; flex-direction:column; justify-content:space-between; padding:10px 10px 10px 24px; border-left: 5px solid var(--clr-primary);">
+                        <div>
+                            <span style="font-size:0.85rem; font-weight:700; color:var(--clr-primary); text-transform:uppercase; letter-spacing:1px; display:block; margin-bottom:4px;">Fidelización & Retención</span>
+                            <h3 style="font-size:1.8rem; font-family:var(--font-heading); font-weight:900; color:var(--clr-text); margin:0 0 8px 0; line-height:1.2;">Inteligencia Relacional</h3>
+                            <p style="font-size:1.05rem; color:var(--clr-text-muted); line-height:1.5; margin-bottom:18px;">
+                                Evitamos la baja del usuario integrando la telemetría constante con servicios esenciales de O2O. La app no es solo un tracker, es el registro vitalicio de la mascota.
+                            </p>
+                            
+                            <!-- Features list -->
+                            <div style="display:flex; flex-direction:column; gap:18px; margin-bottom:18px;">
+                                <div style="display:flex; gap:12px; align-items:flex-start;">
+                                    <span style="font-size:1.5rem; color:var(--clr-primary); line-height: 1;">🩺</span>
+                                    <div style="text-align:left;">
+                                        <h4 style="font-size:1.05rem; font-weight:700; color:var(--clr-secondary); margin: 0 0 4px 0;">Historial Médico & Reservas O2O</h4>
+                                        <p style="font-size:0.88rem; color:var(--clr-text-muted); margin:0; line-height:1.45;">El Gemelo Digital se comparte con clínicas veterinarias y paseadores, centralizando el historial clínico.</p>
+                                    </div>
+                                </div>
+                                <div style="display:flex; gap:12px; align-items:flex-start;">
+                                    <span style="font-size:1.5rem; color:var(--clr-accent); line-height: 1;">🛡️</span>
+                                    <div style="text-align:left;">
+                                        <h4 style="font-size:1.05rem; font-weight:700; color:var(--clr-secondary); margin: 0 0 4px 0;">Prevención Activa del Churn</h4>
+                                        <p style="font-size:0.88rem; color:var(--clr-text-muted); margin:0; line-height:1.45;">La dependencia del ecosistema O2O (historial, seguros y contactos) hace que sea muy costoso darse de baja.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Churn reduction card with loading bar -->
+                        <div style="background:rgba(0,113,227,0.05); border:1px solid rgba(0,113,227,0.12); border-radius:14px; padding:18px; text-align:left; margin-top: 6px; box-shadow: 0 4px 15px rgba(0,113,227,0.05);">
+                            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                                <span style="font-size:0.95rem; font-weight:700; color:var(--clr-secondary);">Tasa de Cancelación Anual (Churn Rate Target)</span>
+                                <span style="font-size:1.3rem; font-weight:900; color:var(--clr-primary); font-family:var(--font-heading);">&lt; 4,8%</span>
+                            </div>
+                            <div class="metric-progress-bar" style="width:100%; margin:6px 0 0 0; height:12px; background: rgba(0,113,227,0.1); border-radius: 6px;"><div class="metric-progress-fill fill-48" style="height:100%; border-radius: 6px;"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 11: VIABILIDAD, UNIT ECONOMICS Y SOLVENCIA - WITH COMPARISON BARS (Melissa)   -->
+        <div class="slide" id="slide-11" data-speaker="melissa">
+            <div class="slide-header">
+                <span class="slide-category">Análisis Financiero</span>
+                <h2 class="slide-title">Viabilidad Financiera: Unit Economics Clave</h2>
+            </div>
+            <div class="slide-content">
+                <div class="grid-2" style="height: 100%; width: 100%; gap: 30px; align-items: center;">
+                    <!-- Left: 3 frosted glass squares in a vertical stack/grid -->
+                    <div style="display: flex; flex-direction: column; gap: 15px; width: 100%;">
+                        <div style="display: grid; grid-template-columns: 1fr; gap: 12px; width: 100%;">
+                            <!-- CAC Square -->
+                            <div class="frosted-square cac" style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; padding: 16px 24px; text-align: left; width: 100%; min-height: auto;">
+                                <div style="display: flex; flex-direction: column; gap: 2px;">
+                                    <span style="font-size:0.75rem; font-weight:700; color:var(--clr-text-muted); text-transform:uppercase; letter-spacing:1px;">CAC Blended</span>
+                                    <span style="font-size:0.75rem; color:var(--clr-text-muted);">Coste Adquisición Cliente</span>
+                                </div>
+                                <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 5px; min-width: 140px;">
+                                    <div class="counter-big-num" id="counter-cac" style="font-size: 2.1rem; margin: 0;">0,00 €</div>
+                                    <!-- Growing comparison bar red -->
+                                    <div class="growth-comparison-bar" style="width: 100%; height: 6px; margin: 0;">
+                                        <div class="growth-fill red" id="growth-cac-fill"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- LTV Square -->
+                            <div class="frosted-square ltv" style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; padding: 16px 24px; text-align: left; width: 100%; min-height: auto;">
+                                <div style="display: flex; flex-direction: column; gap: 2px;">
+                                    <span style="font-size:0.75rem; font-weight:700; color:var(--clr-text-muted); text-transform:uppercase; letter-spacing:1px;">LTV Consolidado</span>
+                                    <span style="font-size:0.75rem; color:var(--clr-text-muted);">Valor Vida Cliente</span>
+                                </div>
+                                <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 5px; min-width: 140px;">
+                                    <div class="counter-big-num" id="counter-ltv" style="font-size: 2.1rem; margin: 0;">0,00 €</div>
+                                    <!-- Growing comparison bar green -->
+                                    <div class="growth-comparison-bar" style="width: 100%; height: 6px; margin: 0;">
+                                        <div class="growth-fill green" id="growth-ltv-fill"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Ratio Square -->
+                            <div class="frosted-square ratio" style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; padding: 16px 24px; text-align: left; width: 100%; min-height: auto;">
+                                <div style="display: flex; flex-direction: column; gap: 2px;">
+                                    <span style="font-size:0.75rem; font-weight:700; color:var(--clr-text-muted); text-transform:uppercase; letter-spacing:1px;">Ratio LTV / CAC</span>
+                                    <span style="font-size:0.75rem; color:var(--clr-text-muted);">Rentabilidad Ecosistema</span>
+                                </div>
+                                <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 5px; min-width: 140px;">
+                                    <div class="counter-big-num" id="counter-ratio" style="font-size: 2.1rem; margin: 0;">0,00x</div>
+                                    <!-- Growing comparison bar gold -->
+                                    <div class="growth-comparison-bar" style="width: 100%; height: 6px; margin: 0;">
+                                        <div class="growth-fill gold" id="growth-ratio-fill"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p style="font-size:0.72rem; color:var(--clr-text-muted); text-align:left; margin: 5px 0 0 5px;">
+                            *Cifras proyectadas basadas estrictamente en el Escenario 2 (Equilibrio) a 3 años de la startup.
+                        </p>
+                    </div>
+                    
+                    <!-- Right: Large beautiful photo of wellness pets -->
+                    <div style="width: 100%; display: flex; justify-content: center; align-items: center; position: relative;">
+                        <div style="width: 100%; max-width: 380px; padding: 10px; background: #FFFFFF; border-radius: 20px; box-shadow: 0 12px 40px rgba(0,0,0,0.06); border: 1px solid rgba(0,0,0,0.03); transform: rotate(1.5deg);">
+                            <img src="wellness_pets.png" alt="Wellness Pets" style="width: 100%; height: auto; display: block; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.04);">
+                            <div style="font-family: var(--font-heading); font-weight: 800; font-size: 0.78rem; text-align: center; color: var(--clr-secondary); margin-top: 10px; letter-spacing: 1px; text-transform: uppercase;">
+                                Ecosistema de Bienestar CUDI
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 12: FINANCIACIÓN, CAP TABLE Y RUNWAY (Melissa)   -->
+        <div class="slide" id="slide-12" data-speaker="melissa">
+            <div class="slide-header">
+                <span class="slide-category">Finanzas y Estructura</span>
+                <h2 class="slide-title">Estructura Financiera: Cap Table y Supervivencia</h2>
+            </div>
+            <div class="slide-content">
+                <div class="grid-2" style="height: 100%; gap: 30px; align-items: stretch;">
+                    <!-- Left: Sources of Financing Card -->
+                    <div class="animate-item del-1" style="background: white; border-radius: 24px; border: 1.5px solid rgba(0,113,227,0.12); box-shadow: 0 10px 30px rgba(0,0,0,0.04); padding: 25px; display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+                        <h3 style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 800; color: var(--clr-secondary); text-align: center; margin: 0 0 15px 0; letter-spacing: 0.5px; text-transform: uppercase;">Fuentes de Financiación</h3>
+                        
+                        <!-- SVG Donut Chart -->
+                        <div style="position:relative; width:190px; height:190px; margin:0 auto;">
+                            <svg width="190" height="190" viewBox="0 0 250 250">
+                                <circle cx="125" cy="125" r="100" class="donut-bg"></circle>
+                                <circle cx="125" cy="125" r="100" class="donut-slice slice-fundadores" id="cap-slice-fundadores" stroke-dasharray="0 628.3" stroke-dashoffset="0"></circle>
+                                <circle cx="125" cy="125" r="100" class="donut-slice slice-investors" id="cap-slice-investors" stroke-dasharray="0 628.3" stroke-dashoffset="0"></circle>
+                                <circle cx="125" cy="125" r="100" class="donut-slice slice-enisa" id="cap-slice-enisa" stroke-dasharray="0 628.3" stroke-dashoffset="0"></circle>
+                            </svg>
+                            <div style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); text-align:center;">
+                                <div style="font-family:var(--font-heading); font-size:1.8rem; font-weight:900; color:var(--clr-secondary); line-height:1;">215k €</div>
+                                <div style="font-size:0.7rem; color:var(--clr-text-muted); text-transform:uppercase; margin-top:4px; font-weight:700; letter-spacing:0.5px;">Ronda Inicial</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Breakdown of values -->
+                        <div style="display:flex; flex-direction:column; gap:10px; margin-top: 15px;">
+                            <!-- Fundadores -->
+                            <div style="display:flex; align-items:center; gap:12px; background:rgba(0,113,227,0.02); padding:8px 12px; border-radius:12px; border:1px solid rgba(0,113,227,0.05);">
+                                <span style="font-size:1.4rem;">👥</span>
+                                <div style="display:flex; justify-content:space-between; align-items:center; width:100%;">
+                                    <div style="text-align:left;">
+                                        <h4 style="font-size:0.85rem; font-weight:700; color:var(--clr-secondary); margin:0;">Aporte de los socios (FFF)</h4>
+                                        <p style="font-size:0.75rem; color:var(--clr-text-muted); margin:0;">Socios Fundadores</p>
+                                    </div>
+                                    <span style="font-size:0.9rem; font-weight:800; color:var(--clr-primary-light);">60.000 € (28%)</span>
+                                </div>
+                            </div>
+                            <!-- Business Angels -->
+                            <div style="display:flex; align-items:center; gap:12px; background:rgba(0,113,227,0.02); padding:8px 12px; border-radius:12px; border:1px solid rgba(0,113,227,0.05);">
+                                <span style="font-size:1.4rem;">👼</span>
+                                <div style="display:flex; justify-content:space-between; align-items:center; width:100%;">
+                                    <div style="text-align:left;">
+                                        <h4 style="font-size:0.85rem; font-weight:700; color:var(--clr-secondary); margin:0;">Business Angels</h4>
+                                        <p style="font-size:0.75rem; color:var(--clr-text-muted); margin:0;">Inversores Estratégicos</p>
+                                    </div>
+                                    <span style="font-size:0.9rem; font-weight:800; color:var(--clr-turquoise);">80.000 € (37%)</span>
+                                </div>
+                            </div>
+                            <!-- ENISA -->
+                            <div style="display:flex; align-items:center; gap:12px; background:rgba(0,113,227,0.02); padding:8px 12px; border-radius:12px; border:1px solid rgba(0,113,227,0.05);">
+                                <span style="font-size:1.4rem;">🏛️</span>
+                                <div style="display:flex; justify-content:space-between; align-items:center; width:100%;">
+                                    <div style="text-align:left;">
+                                        <h4 style="font-size:0.85rem; font-weight:700; color:var(--clr-secondary); margin:0;">Préstamo de ENISA</h4>
+                                        <p style="font-size:0.75rem; color:var(--clr-text-muted); margin:0;">Financiación Pública Co-inversión</p>
+                                    </div>
+                                    <span style="font-size:0.9rem; font-weight:800; color:var(--clr-gold);">75.000 € (35%)</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Total bottom banner -->
+                        <div style="text-align:center; font-family:var(--font-heading); font-size:1.05rem; font-weight:900; color:var(--clr-secondary); border-top:1.5px solid rgba(0,0,0,0.06); padding-top:12px; margin-top:12px;">
+                            TOTAL: <span style="color:var(--clr-primary); font-size:1.25rem;">215.000 euros</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Column: Pets + Blue wave Area -->
+                    <div class="animate-item del-2" style="display:flex; flex-direction:column; justify-content:space-between; height:100%;">
+                        <!-- Pets image -->
+                        <div style="width:100%; height:230px; border-radius:20px; overflow:hidden; border:1.5px solid rgba(0,113,227,0.08); box-shadow:0 8px 25px rgba(0,0,0,0.05); background:white;">
+                            <img src="cudi_financial_pets.png" alt="CUDI Pets" style="width:100%; height:100%; object-fit:cover; object-position:center 45%;">
+                        </div>
+                        
+                        <!-- Blue wave card (Runway / Slogan / Icons) -->
+                        <div style="background:linear-gradient(135deg, #022b6c 0%, #0071e3 100%); border-radius:24px; padding:16px; color:white; display:flex; flex-direction:column; justify-content:space-between; flex-grow:1; margin-top:12px; box-shadow:0 12px 30px rgba(0,113,227,0.15); border:1px solid rgba(255,255,255,0.08);">
+                            <div>
+                                <!-- Logo & Slogan -->
+                                <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
+                                    <div style="font-family:var(--font-heading); font-size:1.3rem; font-weight:900; color:white; letter-spacing:-0.5px;">CUDI.</div>
+                                    <span style="font-size:0.65rem; background:rgba(255,255,255,0.15); padding:2px 8px; border-radius:20px; font-weight:bold; border:1px solid rgba(255,255,255,0.2);">BIENESTAR ANIMAL</span>
+                                </div>
+                                <p style="font-size:0.82rem; color:rgba(255,255,255,0.85); line-height:1.4; margin:0 0 10px 0; text-align:left;">
+                                    Cuidado inteligente para tus mascotas, vayas donde vayas.
+                                </p>
+                                
+                                <!-- Cash Runway Integration -->
+                                <div style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:16px; padding:10px 14px; text-align:left;">
+                                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                                        <span style="font-size:0.8rem; font-weight:700; color:rgba(255,255,255,0.9); text-transform:uppercase; letter-spacing:0.5px;">Supervivencia (Cash Runway)</span>
+                                        <span style="font-size:1.15rem; font-weight:900; color:#34d399;">8,07 Meses</span>
+                                    </div>
+                                    <!-- Runway Progress bar -->
+                                    <div style="width:100%; height:8px; background:rgba(255,255,255,0.2); border-radius:4px; overflow:hidden; margin-top:6px; position:relative;">
+                                        <div class="timeline-progress-bar" style="height:100%; background:#34d399; border-radius:4px;"></div>
+                                    </div>
+                                    <!-- Runway Scale Markers -->
+                                    <div style="width:100%; height:15px; margin-top:4px; position:relative; font-size:0.6rem; color:rgba(255,255,255,0.7);">
+                                        <span style="position:absolute; left:0%;">0m</span>
+                                        <span style="position:absolute; left:33.3%;">6m</span>
+                                        <span style="position:absolute; left:44.8%; transform:translateX(-50%); color:#34d399; font-weight:800;">8.1m ★</span>
+                                        <span style="position:absolute; left:66.7%; transform:translateX(-50%);">12m</span>
+                                        <span style="position:absolute; right:0%;">18m</span>
+                                        <!-- indicator vertical notch for 8.07m -->
+                                        <div style="position:absolute; left:44.8%; top:-10px; width:2px; height:6px; background:#34d399; z-index:10; opacity:0.7;"></div>
+                                    </div>
+                                    <p style="font-size:0.7rem; color:rgba(255,255,255,0.75); margin:6px 0 0 0; line-height:1.3;">
+                                        Autonomía financiera suficiente para alcanzar el Punto de Equilibrio (Break-Even) comercial.
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <!-- Three Icons bottom row (megáfono, chart, personas) -->
+                            <div style="display:flex; justify-content:space-around; align-items:center; border-top:1px solid rgba(255,255,255,0.12); padding-top:10px; margin-top:10px; font-size:0.68rem; font-weight:bold; color:rgba(255,255,255,0.9); letter-spacing:0.5px;">
+                                <div style="display:flex; align-items:center; gap:5px;">
+                                    <span>📢</span> ESTRATEGIA
+                                </div>
+                                <div style="display:flex; align-items:center; gap:5px;">
+                                    <span>📈</span> RESULTADOS
+                                </div>
+                                <div style="display:flex; align-items:center; gap:5px;">
+                                    <span>👥</span> COMUNIDAD
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 13: CIERRE MEMORABLE Y CALL TO ACTION (Melissa)   -->
+        <div class="slide" id="slide-13" data-speaker="melissa" style="padding:0; overflow:hidden; position:relative;">
+            <div class="closure-bg-image"></div>
+            <div style="position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.45); z-index:2;"></div>
+            
+            <div class="slide-content" style="position:relative; z-index:3; color:white; padding:45px; display:flex; flex-direction:column; justify-content:space-between; height:100%; width:100%;">
+                <!-- Title / Slogan -->
+                <div style="display:flex; flex-direction:column; justify-content:center; flex:1; align-items:center; text-align:center;">
+                    <video src="Video de logo CUDI.mp4" autoplay loop muted playsinline style="width:110px; height:110px; border-radius:22px; border:2px solid white; box-shadow:0 0 30px rgba(255,255,255,0.3); margin-bottom:15px; object-fit: contain; background: white;"></video>
+                    <h1 style="font-family:var(--font-heading); font-size:2.8rem; font-weight:800; line-height:1.2; text-shadow:0 4px 15px rgba(0,0,0,0.5); letter-spacing:-1px;">
+                        CUDI: Tu tranquilidad absoluta, su mejor vida.
+                    </h1>
+                    <!-- Presentation QR Code for scanning -->
+                    <div style="margin-top:20px; display:flex; flex-direction:column; align-items:center; gap:8px;">
+                        <div style="width: 120px; height: 120px; border-radius: 12px; border: 3px solid white; padding: 4px; background: white; box-shadow: 0 10px 25px rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center;">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://alejandro18000.github.io/CUDI/presentacion_cudi.html" alt="QR Presentación Pública" style="width: 100%; height: 100%; object-fit: contain;">
+                        </div>
+                        <a href="https://alejandro18000.github.io/CUDI/presentacion_cudi.html" target="_blank" style="color:white; font-size:0.9rem; font-weight:700; text-decoration:none; text-shadow: 0 2px 8px rgba(0,0,0,0.4); margin-top:4px; display:flex; align-items:center; gap:6px;">
+                            <span>📱 Presentación Pública:</span> 
+                            <span style="font-size:0.75rem; background:rgba(255,255,255,0.25); padding:2px 8px; border-radius:12px; font-weight:normal; border:1px solid rgba(255,255,255,0.3);">alejandro18000.github.io/CUDI</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- Bottom Directives & Thanks -->
+                <div style="display:flex; justify-content:space-between; align-items:flex-end; border-top:1px solid rgba(255,255,255,0.2); padding-top:15px; font-size:0.82rem; color:#e2e8f0; width:100%;">
+                    <div>
+                        <strong style="color:white; font-size:0.9rem;">Alejandro Ospina, Micaela Bernard, Camilo Cela, Melissa Paz</strong>
+                        <p style="margin-top:2px; font-size:0.75rem; color:#cbd5e1;">Equipo Directivo CUDI</p>
+                    </div>
+                    <div style="font-family:var(--font-heading); font-weight:700; font-size:1.1rem; color:white;">
+                        Gracias por su atención.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer Controls -->
+    <footer class="footer-controls">
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <div class="footer-brand-mark" style="font-family: var(--font-heading); font-weight: 800; font-size: 1.1rem; color: var(--clr-text); letter-spacing: -0.5px; min-width: 60px;">CUDI<span style="color: var(--clr-primary);">.</span></div>
+            <div class="web-promo-capsule" style="position: relative; z-index: 150;">
+                <a href="https://cudi.ai" target="_blank" class="promo-badge" style="display: flex; align-items: center; gap: 8px; background: rgba(0, 113, 227, 0.08); border: 1px solid rgba(0, 113, 227, 0.15); padding: 6px 14px; border-radius: 20px; font-family: var(--font-heading); font-size: 0.82rem; font-weight: 700; color: var(--clr-primary); text-decoration: none; cursor: pointer; transition: all 0.3s ease;">
+                    <span>🌐 cudi.ai</span>
+                    <span class="qr-trigger-icon" style="font-size: 0.9rem;">📱</span>
+                </a>
+                <!-- Hover QR Popover -->
+                <div class="qr-hover-dropdown" style="display: none; position: absolute; bottom: 45px; left: 0; background: #FFFFFF; border: 1px solid rgba(0,0,0,0.08); border-radius: 16px; padding: 15px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); width: 180px; text-align: center; z-index: 200;">
+                    <img src="qr_code.png" alt="QR cudi.ai" style="width: 150px; height: 150px; border-radius: 8px; margin-bottom: 8px;">
+                    <div style="font-size: 0.78rem; font-weight: 600; color: var(--clr-text); line-height: 1.3;">Escanea para visitar cudi.ai</div>
+                </div>
+            </div>
+        </div>
+        <div class="progress-indicator">
+            <div class="progress-bar-fill" id="progress-bar-fill"></div>
+        </div>
+        <div class="nav-buttons">
+            <button class="btn-nav" id="btn-prev" onclick="prevSlide()">←</button>
+            <button class="btn-nav" id="btn-next" onclick="nextSlide()">→</button>
+        </div>
+        <div class="slide-counter" id="slide-counter">1 / 13</div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 13;
+        let currentSubStep = 0;
+        
+        // Screenshot slide rotation state for Slide 5
+        let slideshowInterval = null;
+        let activeScreenshotIdx = 0;
+
+        // Initialize presentation
+        document.addEventListener("DOMContentLoaded", () => {
+            updateSlide(1);
+            setupKeylisteners();
+            setupSlide1VideoListener();
+        });
+
+        function setupKeylisteners() {
+            document.addEventListener("keydown", (e) => {
+                if (e.key === "ArrowRight" || e.key === "Space" || e.key === " ") {
+                    e.preventDefault();
+                    nextSlide();
+                } else if (e.key === "ArrowLeft") {
+                    e.preventDefault();
+                    prevSlide();
+                }
+            });
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides) {
+                currentSlide++;
+                updateSlide(currentSlide);
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 1) {
+                currentSlide--;
+                updateSlide(currentSlide);
+            }
+        }
+
+        function updateSlide(slideNum) {
+            // Update slides visibility classes
+            for (let i = 1; i <= totalSlides; i++) {
+                const s = document.getElementById(`slide-${i}`);
+                if (s) {
+                    s.classList.remove("active", "prev");
+                    if (i === slideNum) {
+                        s.classList.add("active");
+                    } else if (i < slideNum) {
+                        s.classList.add("prev");
+                    }
+                }
+            }
+
+            // Update footer controls
+            document.getElementById("btn-prev").disabled = (slideNum === 1);
+            document.getElementById("btn-next").disabled = (slideNum === totalSlides);
+            document.getElementById("slide-counter").innerText = `${slideNum} / ${totalSlides}`;
+            
+            const pct = (slideNum / totalSlides) * 100;
+            document.getElementById("progress-bar-fill").style.width = `${pct}%`;
+
+            // Highlight Block badges
+            const slideToBlock = {
+                1: 1, 2: 1,
+                3: 2, 4: 2, 5: 2,
+                6: 3, 7: 3,
+                8: 4, 9: 4, 10: 4,
+                11: 5, 12: 5, 13: 5
+            };
+            const activeBlock = slideToBlock[slideNum] || 1;
+            for (let b = 1; b <= 5; b++) {
+                const el = document.getElementById(`badge-block-${b}`);
+                if (el) {
+                    if (b === activeBlock) {
+                        el.classList.add("active");
+                    } else {
+                        el.classList.remove("active");
+                    }
+                }
+            }
+
+            // Stop/Start custom timers per slide type
+            clearInterval(slideshowInterval);
+            if (typeof stopFunnelCycling === 'function') stopFunnelCycling();
+            const partnerVideo = document.getElementById("partner-presentation-video");
+
+            if (slideNum === 1) {
+                // Autoplay partner video
+                if (partnerVideo) {
+                    partnerVideo.currentTime = 0;
+                    partnerVideo.play().catch(e => console.log("Autoplay blocked, user interaction required:", e));
+                }
+            } else {
+                if (partnerVideo) {
+                    partnerVideo.pause();
+                }
+            }
+
+            if (slideNum === 5) {
+                const appIframe = document.getElementById("app-demo-iframe");
+                if (appIframe) {
+                    appIframe.src = "simulador-solo-app.html?autoplay=true";
+                }
+            } else if (slideNum === 6) {
+                setTimeout(animateObjectivesCounters, 300);
+            } else if (slideNum === 7) {
+                setTimeout(animateKpisCounters, 300);
+            } else if (slideNum === 8) {
+                setTimeout(typeSchemaCode, 300);
+                if (typeof startFunnelCycling === 'function') startFunnelCycling();
+            } else if (slideNum === 9) {
+                const iframe = document.getElementById("aventuras-web-iframe");
+                if (iframe) {
+                    iframe.src = "smart-collar-aventuras-sin-sustos.html?autoscroll=true";
+                }
+            } else if (slideNum === 11) {
+                setTimeout(animateViabilidadCounters, 300);
+            } else if (slideNum === 12) {
+                setTimeout(animateCapTableDonut, 300);
+            }
+        }
+
+        // Slide 8: Funnel cycling and hover actions
+        let funnelInterval = null;
+        let activeFunnelIndex = 0;
+        
+        function startFunnelCycling() {
+            stopFunnelCycling();
+            const nodes = document.querySelectorAll('.funnel-node-item');
+            if (nodes.length === 0) return;
+            
+            // Set first active
+            nodes.forEach((n, idx) => {
+                if (idx === 0) n.classList.add('active');
+                else n.classList.remove('active');
+            });
+            activeFunnelIndex = 0;
+            
+            funnelInterval = setInterval(() => {
+                if (nodes[activeFunnelIndex]) nodes[activeFunnelIndex].classList.remove('active');
+                activeFunnelIndex = (activeFunnelIndex + 1) % nodes.length;
+                if (nodes[activeFunnelIndex]) nodes[activeFunnelIndex].classList.add('active');
+            }, 3000);
+        }
+        
+        function stopFunnelCycling() {
+            if (funnelInterval) {
+                clearInterval(funnelInterval);
+                funnelInterval = null;
+            }
+        }
+        
+        function activateFunnelNode(element) {
+            stopFunnelCycling();
+            const nodes = document.querySelectorAll('.funnel-node-item');
+            nodes.forEach(n => n.classList.remove('active'));
+            element.classList.add('active');
+        }
+
+        // Slide 1: Listen to video play/end and handle autoplay bypass
+        function setupSlide1VideoListener() {
+            const partnerVideo = document.getElementById("partner-presentation-video");
+            const playOverlay = document.getElementById("video-play-overlay");
+            
+            if (partnerVideo) {
+                // Try to autoplay
+                partnerVideo.play().then(() => {
+                    // Autoplay succeeded! Hide overlay immediately
+                    if (playOverlay) {
+                        playOverlay.style.opacity = "0";
+                        playOverlay.style.pointerEvents = "none";
+                        setTimeout(() => {
+                            playOverlay.style.display = "none";
+                        }, 500);
+                    }
+                }).catch(err => {
+                    // Autoplay blocked. Keep overlay visible.
+                    console.log("Autoplay blocked, user interaction required:", err);
+                });
+
+                // Clicking the overlay starts the video
+                if (playOverlay) {
+                    playOverlay.addEventListener("click", () => {
+                        partnerVideo.play().then(() => {
+                            playOverlay.style.opacity = "0";
+                            playOverlay.style.pointerEvents = "none";
+                            setTimeout(() => {
+                                playOverlay.style.display = "none";
+                            }, 500);
+                        }).catch(e => {
+                            console.error("Play failed on user click:", e);
+                        });
+                    });
+                }
+
+                partnerVideo.addEventListener("ended", () => {
+                    if (currentSlide === 1) {
+                        nextSlide();
+                    }
+                });
+            }
+        }
+
+        // Slide 5: Automatic screenshots slider
+        function startScreenshotSlideshow() {
+            const imgs = document.querySelectorAll("#iphone-slideshow-container img");
+            if (imgs.length === 0) return;
+            
+            // Reset to first
+            imgs.forEach(img => img.classList.remove("active"));
+            imgs[0].classList.add("active");
+            activeScreenshotIdx = 0;
+
+            slideshowInterval = setInterval(() => {
+                imgs[activeScreenshotIdx].classList.remove("active");
+                activeScreenshotIdx = (activeScreenshotIdx + 1) % imgs.length;
+                imgs[activeScreenshotIdx].classList.add("active");
+            }, 2000); // changes every 2 seconds automatically
+        }
+
+
+
+        function typeWriterEffect(el, text, speed = 25) {
+            el.innerHTML = "";
+            let i = 0;
+            const interval = setInterval(() => {
+                if (i < text.length) {
+                    el.innerHTML += text.charAt(i);
+                    i++;
+                } else {
+                    clearInterval(interval);
+                }
+            }, speed);
+        }
+
+        // Slide 9 Code typer
+        function typeSchemaCode() {
+            const el = document.getElementById("schema-code-block");
+            if (!el) return;
+            
+            const codeText = `{
+  "@context": "https://schema.org",
+  "@type": "MedicalDevice",
+  "name": "CUDI Smart Collar",
+  "manufacturer": "CUDI Pet-Tech",
+  "category": "GPS & Biometrics Tracker",
+  "offers": {
+    "@type": "Offer",
+    "price": "89.50",
+    "priceCurrency": "EUR"
+  }
+}`;
+            
+            el.innerHTML = "";
+            let i = 0;
+            const interval = setInterval(() => {
+                if (i < codeText.length) {
+                    el.innerHTML += codeText.charAt(i);
+                    i++;
+                } else {
+                    clearInterval(interval);
+                    el.innerHTML = syntaxHighlight(codeText);
+                }
+            }, 5);
+        }
+
+        function syntaxHighlight(json) {
+            json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+            return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+-]?\d+)?)/g, function (match) {
+                var cls = 'number';
+                if (/^"/.test(match)) {
+                    if (/:$/.test(match)) {
+                        cls = 'key';
+                    } else {
+                        cls = 'string';
+                    }
+                } else if (/true|false/.test(match)) {
+                    cls = 'boolean';
+                } else if (/null/.test(match)) {
+                    cls = 'null';
+                }
+                return '<span class="code-' + cls + '">' + match + '</span>';
+            });
+        }
+
+        // Slide 13 Cap Table Donut animation
+        function animateCapTableDonut() {
+            const slice1 = document.getElementById("cap-slice-fundadores");
+            const slice2 = document.getElementById("cap-slice-investors");
+            const slice3 = document.getElementById("cap-slice-enisa");
+            
+            if (slice1 && slice2 && slice3) {
+                slice1.setAttribute("stroke-dasharray", "0 628.3");
+                slice1.setAttribute("stroke-dashoffset", "0");
+                slice2.setAttribute("stroke-dasharray", "0 628.3");
+                slice2.setAttribute("stroke-dashoffset", "0");
+                slice3.setAttribute("stroke-dasharray", "0 628.3");
+                slice3.setAttribute("stroke-dashoffset", "0");
+                
+                setTimeout(() => {
+                    slice1.setAttribute("stroke-dasharray", "175.3 628.3");
+                    slice1.setAttribute("stroke-dashoffset", "0");
+                    
+                    slice2.setAttribute("stroke-dasharray", "233.8 628.3");
+                    slice2.setAttribute("stroke-dashoffset", "-175.3");
+                    
+                    slice3.setAttribute("stroke-dasharray", "219.2 628.3");
+                    slice3.setAttribute("stroke-dashoffset", "-409.1");
+                }, 50);
+            }
+        }
+
+        // Slide 6 Objectives Counters
+        function animateObjectivesCounters() {
+            const c1 = document.getElementById("counter-obj-1");
+            const c2 = document.getElementById("counter-obj-2");
+            const c3 = document.getElementById("counter-obj-3");
+            const c4 = document.getElementById("counter-obj-4");
+            
+            if (c1) c1.innerText = "0";
+            if (c2) c2.innerText = "0";
+            if (c3) c3.innerText = "0";
+            if (c4) c4.innerText = "0";
+            
+            runCounter("counter-obj-1", 670, 1500, "");
+            runCounter("counter-obj-2", 55, 1500, "");
+            runCounter("counter-obj-3", 67, 1500, ".000");
+            runCounter("counter-obj-4", 300, 1500, "");
+        }
+
+        // Slide 7 KPIs Counters
+        function animateKpisCounters() {
+            const c1 = document.getElementById("counter-kpi-1");
+            const c2 = document.getElementById("counter-kpi-2");
+            const c3 = document.getElementById("counter-kpi-3");
+            
+            if (c1) c1.innerText = "0";
+            if (c2) c2.innerText = "0";
+            if (c3) c3.innerText = "0";
+            
+            runCounter("counter-kpi-1", 1, 1500, "");
+            runCounter("counter-kpi-2", 5, 1500, "");
+            runCounter("counter-kpi-3", 4.8, 1500, "", true, 1);
+        }
+
+        // Slide 12 Counters
+        function animateViabilidadCounters() {
+            // reset widths
+            const f1 = document.getElementById("growth-cac-fill");
+            const f2 = document.getElementById("growth-ltv-fill");
+            const f3 = document.getElementById("growth-ratio-fill");
+            if (f1) f1.style.width = "0";
+            if (f2) f2.style.width = "0";
+            if (f3) f3.style.width = "0";
+            
+            // force reflow
+            setTimeout(() => {
+                if (f1) f1.style.width = "5.3%";
+                if (f2) f2.style.width = "100%";
+                if (f3) f3.style.width = "75.4%";
+            }, 50);
+
+            runCounter("counter-cac", 83.32, 1200, " €", true, 2);
+            runCounter("counter-ltv", 1571.39, 1500, " €", true, 2);
+            runCounter("counter-ratio", 18.86, 1800, "x", true, 2);
+        }
+
+        function runCounter(elementId, targetVal, duration = 1500, suffix = "", isFloat = false, decimals = 2) {
+            const el = document.getElementById(elementId);
+            if (!el) return;
+            const startTime = performance.now();
+            
+            function updateCount(timestamp) {
+                const progress = Math.min((timestamp - startTime) / duration, 1);
+                const current = progress * targetVal;
+                let valStr = "";
+                if (isFloat) {
+                    valStr = current.toFixed(decimals).replace(".", ",");
+                } else {
+                    valStr = Math.floor(current).toString();
+                }
+                el.innerText = valStr + suffix;
+                
+                if (progress < 1) {
+                    requestAnimationFrame(updateCount);
+                } else {
+                    el.innerText = (isFloat ? targetVal.toFixed(decimals).replace(".", ",") : Math.floor(targetVal).toString()) + suffix;
+                    if (elementId === "counter-ratio") {
+                        el.classList.add("pulse-ratio");
+                    }
+                }
+            }
+            requestAnimationFrame(updateCount);
+        }
+    </script>
+</body>
+</html>
