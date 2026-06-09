@@ -1,0 +1,520 @@
+<!-- Desarrollo 100% realizado por Sergio Alejandro Ospina Rocha -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta name="author" content="Sergio Alejandro Ospina Rocha">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CUDI | Simulador Financiero Interactivo</title>
+    <meta name="description" content="Simulador financiero interactivo del ecosistema CUDI. Proyecta ingresos, costes, caja y runway en tiempo real con diferentes escenarios de crecimiento.">
+
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="cudi-ai.css">
+    <link rel="stylesheet" href="simulador-financiero.css">
+</head>
+<body class="sim-page-body">
+
+    <!-- Barra de Contacto Superior Refinada -->
+    <div class="top-bar-refined">
+        <span><i class="fa-solid fa-envelope"></i> cudi.ai2026@gmail.com</span>
+        <span><i class="fa-solid fa-phone"></i> 900 123 456</span>
+        <div style="display:flex; align-items:center; gap:5px;">
+            <i class="fa-solid fa-globe"></i>
+            <select class="lang-selector" style="background:transparent; color:white; border:none; outline:none; font-family:var(--font-body); cursor:pointer; font-weight:700; font-size:0.75rem;">
+                <option value="es" style="color:#000;">ES</option>
+                <option value="ca" style="color:#000;">CA</option>
+                <option value="en" style="color:#000;">EN</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Navegación Estilo "Floating Island" -->
+    <nav class="navbar-island">
+        <div class="nav-capsule">
+            <a href="index.html" class="logo" style="display:flex; align-items:center;">
+                <img src="logo.jpeg" alt="CUDI" style="height:55px; width:auto; border-radius: 8px;">
+            </a>
+            <div class="nav-search-island">
+                <i class="fa-solid fa-magnifying-glass" style="color:var(--clr-primary); font-size:0.9rem;"></i>
+                <input type="text" placeholder="¿Qué necesita tu compañero hoy?">
+            </div>
+            <div class="nav-right-island">
+                <ul class="nav-links-island" style="gap:25px;">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="smart-collar-aventuras-sin-sustos.html">Lanzamiento</a></li>
+                    <li><a href="comunidad-cudi.html">Comunidad</a></li>
+                    <li><a href="simulador-financiero.html" class="active">Simulador</a></li>
+                    <li><a href="index.html#store-grid">Tienda</a></li>
+                    <li><a href="index.html#suscripciones">Planes</a></li>
+                    <li><a href="red-socios-clinicas-veterinarias.html">Partners</a></li>
+                    <li id="nav-session-item"></li>
+                </ul>
+                <div class="cart-trigger-island" onclick="toggleCart()" style="position:relative; display:flex; align-items:center; justify-content:center; cursor:pointer; min-width:44px; min-height:44px;">
+                    <i class="cart-icon-cudi" style="font-size:1.2rem; pointer-events:none;"></i>
+                    <span class="cart-badge" id="global-cart-badge" style="position:absolute;top:-6px;right:-6px;background:var(--clr-primary);color:white;font-size:0.65rem;font-weight:700;border-radius:50px;width:18px;height:18px;display:flex;align-items:center;justify-content:center;border: 2px solid white; pointer-events:none;">0</span>
+                </div>
+                <button class="menu-trigger-mobile" onclick="toggleMobileMenu()" style="touch-action:manipulation;"><i class="fa-solid fa-bars-staggered"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- PANEL LATERAL CARRITO (SIDE-CART) -->
+    <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+    <div class="side-cart" id="side-cart">
+        <div class="cart-header">
+            <h3><i class="fa-solid fa-bag-shopping"></i> Tu Cesta CUDI</h3>
+            <button class="close-cart" aria-label="Cerrar Carrito" onclick="toggleCart()"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="cart-items" id="cart-items-container"></div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total Estimado:</span>
+                <span id="cart-total-price">0.00 €</span>
+            </div>
+            <a href="contratar-plan-premium-cudi.html" class="btn-primary" aria-label="Acción principal" style="display:block; text-align:center; margin-top:10px;">Procesar Pago Seguro <i class="fa-solid fa-lock"></i></a>
+        </div>
+    </div>
+
+    <!-- Header de la Página del Simulador -->
+    <header class="sim-page-header">
+        <div class="sim-badge">
+            <i class="fa-solid fa-chart-line"></i> Planeación Financiera TFM CUDI
+        </div>
+        <h1>Simulador Financiero <span>5 Años</span></h1>
+        <p>Interactúa con los supuestos del plan de negocio Slidebean v6.1.7 adaptado a CUDI. Ajusta precios, ratios de captación y variables operativas para ver su impacto directo en el cash runway y la rentabilidad.</p>
+    </header>
+
+    <!-- Contenedor Principal en Grid -->
+    <main class="sim-grid-container">
+
+        <!-- Barra lateral izquierda (Controles y Sliders) -->
+        <aside class="sim-panel sim-sidebar">
+            <div class="sim-sidebar-title">
+                <i class="fa-solid fa-sliders"></i> Supuestos del Plan
+            </div>
+
+            <!-- Sección: Precios y Tarifas -->
+            <div class="sim-input-section">
+                <div class="sim-section-title">
+                    <i class="fa-solid fa-tag"></i> Precios del Catálogo
+                </div>
+                <div class="sim-control-group">
+                    <div class="sim-control-label-row">
+                        <label for="premiumPrice">Suscripción Premium Care</label>
+                        <span id="premiumPrice-val" class="sim-control-value">30 €</span>
+                    </div>
+                    <input type="range" id="premiumPrice" class="sim-slider" min="10" max="100" step="1" value="30">
+                </div>
+                <div class="sim-control-group">
+                    <div class="sim-control-label-row">
+                        <label for="shieldPrice">Seguro CUDI Shield Basic</label>
+                        <span id="shieldPrice-val" class="sim-control-value">18 €</span>
+                    </div>
+                    <input type="range" id="shieldPrice" class="sim-slider" min="5" max="50" step="1" value="18">
+                </div>
+                <div class="sim-control-group">
+                    <div class="sim-control-label-row">
+                        <label for="collarPrice">Smart Collar (Hardware)</label>
+                        <span id="collarPrice-val" class="sim-control-value">25 €</span>
+                    </div>
+                    <input type="range" id="collarPrice" class="sim-slider" min="10" max="100" step="1" value="25">
+                </div>
+                <div class="sim-control-group">
+                    <div class="sim-control-label-row">
+                        <label for="vethomePrice">Consulta VetHome</label>
+                        <span id="vethomePrice-val" class="sim-control-value">75 €</span>
+                    </div>
+                    <input type="range" id="vethomePrice" class="sim-slider" min="30" max="150" step="5" value="75">
+                </div>
+            </div>
+
+            <!-- Sección: Captación y Crecimiento -->
+            <div class="sim-input-section">
+                <div class="sim-section-title">
+                    <i class="fa-solid fa-arrow-trend-up"></i> Conversión y Churn
+                </div>
+                <div class="sim-control-group">
+                    <div class="sim-control-label-row">
+                        <label for="conversionRate">Conversión Web (Leads)</label>
+                        <span id="conversionRate-val" class="sim-control-value">5 %</span>
+                    </div>
+                    <input type="range" id="conversionRate" class="sim-slider" min="1" max="20" step="0.5" value="5">
+                </div>
+                <div class="sim-control-group">
+                    <div class="sim-control-label-row">
+                        <label for="churnRate">Tasa de Churn (Mensual)</label>
+                        <span id="churnRate-val" class="sim-control-value">5 %</span>
+                    </div>
+                    <input type="range" id="churnRate" class="sim-slider" min="1" max="25" step="0.5" value="5">
+                </div>
+                <div class="sim-control-group">
+                    <div class="sim-control-label-row">
+                        <label for="organicGrowth">Crecimiento Tráfico Org.</label>
+                        <span id="organicGrowth-val" class="sim-control-value">10 %</span>
+                    </div>
+                    <input type="range" id="organicGrowth" class="sim-slider" min="1" max="30" step="1" value="10">
+                </div>
+            </div>
+
+            <!-- Sección: Pauta Digital y Coste por Lead -->
+            <div class="sim-input-section">
+                <div class="sim-section-title">
+                    <i class="fa-solid fa-bullhorn"></i> Marketing Pagado (Ads)
+                </div>
+                <div class="sim-control-group">
+                    <div class="sim-control-label-row">
+                        <label for="paidBudgetStart">Pauta Inicial (Mes 1)</label>
+                        <span id="paidBudgetStart-val" class="sim-control-value">1.000 €</span>
+                    </div>
+                    <input type="range" id="paidBudgetStart" class="sim-slider" min="500" max="5000" step="100" value="1000">
+                </div>
+                <div class="sim-control-group">
+                    <div class="sim-control-label-row">
+                        <label for="paidBudgetMax">Tope de Pauta Mensual</label>
+                        <span id="paidBudgetMax-val" class="sim-control-value">10.000 €</span>
+                    </div>
+                    <input type="range" id="paidBudgetMax" class="sim-slider" min="5000" max="30000" step="1000" value="10000">
+                </div>
+                <div class="sim-control-group">
+                    <div class="sim-control-label-row">
+                        <label for="cplPaid">Coste por Lead Pagado</label>
+                        <span id="cplPaid-val" class="sim-control-value">10 €</span>
+                    </div>
+                    <input type="range" id="cplPaid" class="sim-slider" min="2" max="25" step="0.5" value="10">
+                </div>
+            </div>
+
+            <!-- Sección: Estructura Operativa (Multiplicadores) -->
+            <div class="sim-input-section">
+                <div class="sim-section-title">
+                    <i class="fa-solid fa-gears"></i> Multiplicadores OPEX
+                </div>
+                <div class="sim-control-group">
+                    <div class="sim-control-label-row">
+                        <label for="staffSalaryMultiplier">Coste Salarios Equipo</label>
+                        <span id="staffSalaryMultiplier-val" class="sim-control-value">100 %</span>
+                    </div>
+                    <input type="range" id="staffSalaryMultiplier" class="sim-slider" min="50" max="150" step="5" value="100">
+                </div>
+                <div class="sim-control-group">
+                    <div class="sim-control-label-row">
+                        <label for="fixedOpexMultiplier">Gastos Fijos y SaaS</label>
+                        <span id="fixedOpexMultiplier-val" class="sim-control-value">100 %</span>
+                    </div>
+                    <input type="range" id="fixedOpexMultiplier" class="sim-slider" min="50" max="150" step="5" value="100">
+                </div>
+            </div>
+
+            <!-- Botones de Control -->
+            <div class="sim-btn-group" style="flex-direction: column; width: 100%; margin-top: 15px;">
+                <button id="btn-reset-sim" class="sim-btn sim-btn-reset" style="justify-content: center; width: 100%;">
+                    <i class="fa-solid fa-arrows-rotate"></i> Restablecer Valores
+                </button>
+                <button id="btn-export-csv" class="sim-btn sim-btn-export" style="justify-content: center; width: 100%;">
+                    <i class="fa-solid fa-file-csv"></i> Descargar Datos CSV
+                </button>
+            </div>
+        </aside>
+
+        <!-- Columna Derecha (Dashboard, Gráficos y Tablas) -->
+        <section class="sim-main-content">
+
+            <!-- Card: Selector del Mes a visualizar -->
+            <div class="sim-panel sim-month-selector">
+                <div class="sim-month-row">
+                    <span class="sim-month-title"><i class="fa-regular fa-calendar-days"></i> Mes de Consulta en Dashboard</span>
+                    <span id="selected-month-val" class="sim-month-value">Dic-26</span>
+                </div>
+                <input type="range" id="selected-month-slider" min="0" max="59" value="11" style="width:100%; margin: 10px 0;">
+                <p style="font-size:0.78rem; color:var(--clr-text-muted); margin:0;">Arrastra este control para analizar el desglose detallado de gastos e ingresos de cualquier mes (Mes 1 a 60).</p>
+            </div>
+
+            <!-- Grid de Tarjetas KPI -->
+            <div class="sim-kpi-grid">
+                <!-- KPI 1: Ingresos -->
+                <div class="sim-kpi-card kpi-revenue">
+                    <div class="sim-kpi-header">
+                        <span>Ingresos Totales</span>
+                        <i class="fa-solid fa-arrow-trend-up"></i>
+                    </div>
+                    <div id="kpi-revenue-val" class="sim-kpi-val">0 €</div>
+                    <div class="sim-kpi-sub">Venta omnicanal consolidada</div>
+                </div>
+
+                <!-- KPI 2: Costes Directos -->
+                <div class="sim-kpi-card kpi-cogs">
+                    <div class="sim-kpi-header">
+                        <span>COGS (Coste Ventas)</span>
+                        <i class="fa-solid fa-boxes-packing"></i>
+                    </div>
+                    <div id="kpi-cogs-val" class="sim-kpi-val" style="color: #ef4444;">0 €</div>
+                    <div class="sim-kpi-sub">AWS, Stripe, APIs y Hardware</div>
+                </div>
+
+                <!-- KPI 3: Margen Bruto -->
+                <div class="sim-kpi-card kpi-margin">
+                    <div class="sim-kpi-header">
+                        <span>Margen Bruto</span>
+                        <i class="fa-solid fa-percent"></i>
+                    </div>
+                    <div id="kpi-margin-val" class="sim-kpi-val" style="color: var(--clr-accent);">0 %</div>
+                    <div class="sim-kpi-sub">Eficiencia comercial directa</div>
+                </div>
+
+                <!-- KPI 4: Gastos de Operación -->
+                <div class="sim-kpi-card kpi-sga">
+                    <div class="sim-kpi-header">
+                        <span>Gastos SG&A</span>
+                        <i class="fa-solid fa-building-user"></i>
+                    </div>
+                    <div id="kpi-sga-val" class="sim-kpi-val">0 €</div>
+                    <div class="sim-kpi-sub">Personal, Fijos y Pauta Ads</div>
+                </div>
+
+                <!-- KPI 5: EBITDA / Neto -->
+                <div class="sim-kpi-card kpi-net">
+                    <div class="sim-kpi-header">
+                        <span>Resultado Neto</span>
+                        <i class="fa-solid fa-scale-balanced"></i>
+                    </div>
+                    <div id="kpi-net-val" class="sim-kpi-val">0 €</div>
+                    <div class="sim-kpi-sub">Beneficio antes de impuestos</div>
+                </div>
+
+                <!-- KPI 6: Runway de Caja -->
+                <div class="sim-kpi-card kpi-runway">
+                    <div class="sim-kpi-header">
+                        <span>Cash Runway</span>
+                        <i class="fa-solid fa-hourglass-half"></i>
+                    </div>
+                    <div id="kpi-runway-val" class="sim-kpi-val">0 meses</div>
+                    <div class="sim-kpi-sub">Sostenibilidad (Caja: <span id="kpi-cash-val">0 €</span>)</div>
+                </div>
+            </div>
+
+            <!-- Desglose de Gastos e Ingresos del Mes Seleccionado -->
+            <div class="sim-panel sim-month-details-box">
+                <h5><i class="fa-solid fa-list-check"></i> Desglose Detallado: Mes Seleccionado</h5>
+                <div class="details-grid">
+                    <!-- Columna Ingresos -->
+                    <div class="details-column">
+                        <h6>Líneas de Ingresos</h6>
+                        <div class="details-row">
+                            <span>Suscripción Premium Care:</span>
+                            <span id="det-rev-premium">0 €</span>
+                        </div>
+                        <div class="details-row">
+                            <span>Seguro CUDI Shield Basic:</span>
+                            <span id="det-rev-shield">0 €</span>
+                        </div>
+                        <div class="details-row">
+                            <span>Venta Smart Collar:</span>
+                            <span id="det-rev-collar">0 €</span>
+                        </div>
+                        <div class="details-row">
+                            <span>Consulta Médica VetHome:</span>
+                            <span id="det-rev-vethome">0 €</span>
+                        </div>
+                        <div class="details-row">
+                            <span>Comisión Marketplace:</span>
+                            <span id="det-rev-market">0 €</span>
+                        </div>
+                        <div class="details-row" style="margin-top:15px; border-top:1px dashed var(--clr-border); padding-top:8px;">
+                            <span>Clientes Activos Premium:</span>
+                            <span id="det-cust-premium" style="color:var(--clr-primary);">0</span>
+                        </div>
+                        <div class="details-row">
+                            <span>Nuevos Clientes (Mes):</span>
+                            <span id="det-cust-new" style="color:var(--clr-primary);">0</span>
+                        </div>
+                    </div>
+
+                    <!-- Columna Costes (COGS y SG&A) -->
+                    <div class="details-column">
+                        <h6>Egresos y Gastos</h6>
+                        <div class="details-row">
+                            <span>AWS (Servidor/Usuario):</span>
+                            <span id="det-cogs-aws">0 €</span>
+                        </div>
+                        <div class="details-row">
+                            <span>APIs IA (Base + Claude):</span>
+                            <span id="det-cogs-api">0 €</span>
+                        </div>
+                        <div class="details-row">
+                            <span>Collar Hardware y Envío:</span>
+                            <span id="det-cogs-hardware">0 €</span>
+                        </div>
+                        <div class="details-row" style="margin-top:12px; border-top:1px solid var(--clr-border); padding-top:8px;">
+                            <span>Nómina Equipo (+30% SS):</span>
+                            <span id="det-sga-staff">0 €</span>
+                        </div>
+                        <div class="details-row">
+                            <span>Inversión Pauta Ads (Ads Spend):</span>
+                            <span id="det-sga-ads">0 €</span>
+                        </div>
+                        <div class="details-row">
+                            <span>Alquiler Aticco Coworking:</span>
+                            <span id="det-sga-rent">0 €</span>
+                        </div>
+                        <div class="details-row">
+                            <span>Otros fijos, SEO y Amortizaciones:</span>
+                            <span id="det-sga-other">0 €</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gráficos en Tiempo Real (Chart.js) -->
+            <div class="sim-charts-grid">
+                <!-- Gráfico 1: P&L -->
+                <div class="sim-panel sim-chart-card">
+                    <h4><i class="fa-solid fa-chart-column"></i> P&L Proyecciones (Primeros 12 meses)</h4>
+                    <div class="sim-chart-wrapper">
+                        <canvas id="plChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Gráfico 2: Cash Evolution -->
+                <div class="sim-panel sim-chart-card">
+                    <h4><i class="fa-solid fa-wallet"></i> Evolución de la Caja Acumulada</h4>
+                    <div class="sim-chart-wrapper">
+                        <canvas id="cashChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabla Consolidada a 5 Años (Collapsible) -->
+            <div id="collapsible-table-panel" class="sim-table-panel">
+                <div class="sim-table-header">
+                    <h3><i class="fa-solid fa-table"></i> P&L Consolidado Anual (5 Años de Operación)</h3>
+                    <i class="fa-solid fa-chevron-down sim-table-toggle-icon"></i>
+                </div>
+                <div class="sim-table-content">
+                    <table class="sim-data-table">
+                        <thead>
+                            <tr>
+                                <th style="text-align: left; width: 300px;">Concepto</th>
+                                <th>Año 1 (2026)</th>
+                                <th>Año 2 (2027)</th>
+                                <th>Año 3 (2028)</th>
+                                <th>Año 4 (2029)</th>
+                                <th>Año 5 (2030)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="annual-table-body">
+                            <!-- Inyectado por Javascript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer Premium Corporativo de CUDI -->
+    <footer class="premium-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo" style="margin-bottom:30px;display:inline-block;">
+                        <img src="logo.jpeg" alt="CUDI" style="height:70px;border-radius:12px;">
+                    </a>
+                    <p>CUDI es el primer ecosistema integral de salud y bienestar animal impulsado por IA. Monitorizamos, protegemos y conectamos todo el universo de tu compañero hoy para un mañana más sano.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Comunidad CUDI</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="index.html#store-grid">Tienda Marketplace</a></li>
+                        <li><a href="index.html#suscripciones">Planes de Protección</a></li>
+                        <li><a href="comunidad-cudi.html">Red Social</a></li>
+                        <li><a href="red-socios-clinicas-veterinarias.html">Partners</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Información Legal</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="terminos-condiciones-app.html">Términos y Condiciones</a></li>
+                        <li><a href="politica-cookies-plataforma.html">Política de Cookies</a></li>
+                        <li><a href="politica-privacidad-datos-mascotas.html">Política de Privacidad</a></li>
+                        <li><a href="politica-devoluciones-smart-collar.html">Devoluciones y Cambios</a></li>
+                        <li><a href="legal.html">Información Legal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Conecta con nosotros</h4>
+                    <p style="margin-bottom:20px;">Recibe consejos de salud preventiva validados por expertos.</p>
+                    <div class="footer-socials">
+                        <a href="https://www.instagram.com/cudi.ia?igsh=bjdmNXhyeHZvMXo0&utm_source=qr" target="_blank" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/Cudi2026" target="_blank" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.tiktok.com/@cudi.ia?_r=1&_t=ZN-95icM5LsfCA" class="social-btn"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="https://www.youtube.com/@cudi-ia" class="social-btn"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CUDI AI Ecosystem S.L. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Drawer (Menú Móvil) -->
+    <div class="mobile-drawer" id="mobile-drawer">
+        <button class="drawer-close" onclick="toggleMobileMenu()"><i class="fa-solid fa-xmark"></i></button>
+        <div style="text-align:center; margin-bottom:30px;">
+            <img src="logo.jpeg" alt="CUDI" style="height:60px; border-radius:10px;">
+        </div>
+        <ul class="drawer-links">
+            <li><a href="index.html" onclick="toggleMobileMenu()"><i class="fa-solid fa-house"></i> Inicio</a></li>
+            <li><a href="smart-collar-aventuras-sin-sustos.html" onclick="toggleMobileMenu()"><i class="fa-solid fa-rocket"></i> Lanzamiento</a></li>
+            <li><a href="comunidad-cudi.html" onclick="toggleMobileMenu()"><i class="fa-solid fa-people-group"></i> Comunidad</a></li>
+            <li><a href="simulador-financiero.html" onclick="toggleMobileMenu()"><i class="fa-solid fa-calculator"></i> Simulador</a></li>
+            <li><a href="index.html#store-grid" onclick="toggleMobileMenu()"><i class="fa-solid fa-store"></i> Tienda</a></li>
+            <li><a href="index.html#suscripciones" onclick="toggleMobileMenu()"><i class="fa-solid fa-shield-cat"></i> Planes</a></li>
+            <li><a href="red-socios-clinicas-veterinarias.html" onclick="toggleMobileMenu()"><i class="fa-solid fa-handshake"></i> Partners</a></li>
+            <li id="mobile-session-item"></li>
+        </ul>
+        <div style="margin-top:auto; padding:20px; background:#f8fafc; border-radius:15px; font-size:0.85rem; color:#64748b;">
+            <i class="fa-solid fa-envelope"></i> cudi.ai2026@gmail.com
+        </div>
+    </div>
+
+    <!-- PREMIUM REGISTRATION MODAL -->
+    <div id="cudi-auth-modal" class="cudi-modal-overlay">
+        <div class="cudi-modal-content">
+            <div class="modal-header-premium">
+                <button onclick="closeAuthModal()" style="position:absolute; top:20px; right:20px; background:transparent; border:none; color:white; cursor:pointer; font-size:1.5rem;"><i class="fa-solid fa-xmark"></i></button>
+                <i class="fa-solid fa-shield-dog" style="font-size:2.5rem; margin-bottom:15px;"></i>
+                <h2>Únete al Ecosistema CUDI</h2>
+                <p style="opacity:0.9; font-size:0.9rem;">Registra a tu mascota para activar su gemelo digital</p>
+            </div>
+            <div class="modal-body-premium">
+                <form onsubmit="handleWebRegister(event)">
+                    <div class="cudi-input-group">
+                        <label>Nombre de tu compañero</label>
+                        <input type="text" id="web-pet-name" class="cudi-input-premium" placeholder="Ej: Luna, Max..." required>
+                    </div>
+                    <div class="cudi-input-group">
+                        <label>Especie</label>
+                        <select id="web-pet-type" class="cudi-input-premium">
+                            <option value="perro">Perro</option>
+                            <option value="gato">Gato</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-primary" style="width:100%; padding:15px; border-radius:12px; font-weight:800; text-transform:uppercase; letter-spacing:1px; margin-top:10px;">Comenzar conexión <i class="fa-solid fa-heart-pulse"></i></button>
+                </form>
+                <p style="text-align:center; font-size:0.75rem; color:#94a3b8; margin-top:20px;">Al registrarte, aceptas que CUDI cuide de la felicidad de tu mascota 24/7.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS DE LA PLATAFORMA Y SIMULADOR -->
+    <script src="script.js"></script>
+    <script src="cudi-ai.js"></script>
+    <script src="simulador-financiero.js"></script>
+</body>
+</html>
