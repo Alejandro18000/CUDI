@@ -1880,33 +1880,40 @@
         /* Fullscreen Watermark Logo styling */
         .fs-watermark {
             position: fixed;
-            top: 20px;
-            left: 30px;
+            top: 25px;
+            right: 35px; /* Moved to top-right corner */
             display: flex;
             align-items: center;
-            gap: 10px;
-            z-index: 9999;
+            gap: 12px;
+            z-index: 99999;
             opacity: 0;
             pointer-events: none;
             transition: opacity 0.5s ease;
+            background: rgba(15, 23, 42, 0.75); /* Dark high-contrast glassmorphic capsule */
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 8px 18px;
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
         }
         body.fullscreen-mode .fs-watermark {
-            opacity: 0.65; /* Elegant semi-transparent watermarked look */
+            opacity: 0.85; /* Increased opacity for readability */
             pointer-events: auto;
         }
         .fs-watermark-logo {
-            width: 36px;
-            height: 36px;
+            width: 44px; /* Larger logo */
+            height: 44px;
             object-fit: contain;
-            border-radius: 8px;
+            border-radius: 10px;
             background: transparent;
         }
         .fs-watermark-text {
             font-family: var(--font-heading);
             font-weight: 800;
-            font-size: 1rem;
-            color: #FFFFFF;
-            letter-spacing: -0.3px;
+            font-size: 1.15rem; /* Larger text size */
+            color: #FFFFFF; /* High contrast on dark capsule background */
+            letter-spacing: -0.5px;
         }
         .fs-watermark-text span {
             color: var(--clr-primary);
