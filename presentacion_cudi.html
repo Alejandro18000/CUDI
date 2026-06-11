@@ -1768,6 +1768,106 @@
         .happy-pets-card:hover {
             box-shadow: 0 15px 35px rgba(0,113,227,0.12);
         }
+
+        /* Fullscreen presentation optimization */
+        body.fullscreen-mode {
+            background: #0f172a !important; /* Premium dark background behind the slide */
+            overflow: hidden;
+        }
+        body.fullscreen-mode .header-bar {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        body.fullscreen-mode .footer-controls {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        body.fullscreen-mode .presentation-container {
+            padding: 0 !important;
+            height: 100vh !important;
+            width: 100vw !important;
+        }
+        body.fullscreen-mode .slide {
+            top: 50% !important;
+            left: 50% !important;
+            transform: translate3d(-50%, -50%, 0) scale(1) !important;
+            width: 96vw !important;
+            height: 92vh !important;
+            max-width: 1920px !important;
+            max-height: 1080px !important;
+            border-radius: 20px !important;
+            box-shadow: 0 30px 90px rgba(0, 0, 0, 0.4) !important;
+        }
+        body.fullscreen-mode .slide.prev {
+            transform: translate3d(calc(-50% - 100vw), -50%, 0) scale(0.9) !important;
+            opacity: 0 !important;
+        }
+        body.fullscreen-mode .slide:not(.active) {
+            opacity: 0 !important;
+            pointer-events: none !important;
+        }
+        
+        /* Floating fullscreen overlay controls */
+        .fs-controls {
+            position: fixed;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 40px;
+            padding: 10px 24px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            z-index: 99999;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+            opacity: 0;
+            pointer-events: none;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+        body.fullscreen-mode .fs-controls.visible {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .fs-btn {
+            background: transparent;
+            border: none;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.2rem;
+            cursor: pointer;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+        .fs-btn:hover {
+            background: rgba(255, 255, 255, 0.15);
+            color: #FFFFFF;
+            transform: scale(1.05);
+        }
+        .fs-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+        .fs-counter {
+            color: rgba(255, 255, 255, 0.8);
+            font-family: var(--font-heading);
+            font-size: 0.9rem;
+            font-weight: 700;
+            min-width: 70px;
+            text-align: center;
+            letter-spacing: 0.5px;
+        }
     </style>
 </head>
 <body>
@@ -2977,6 +3077,14 @@
         <div class="slide-counter" id="slide-counter">1 / 13</div>
     </footer>
 
+    <!-- Floating Fullscreen Controls (hidden by default, shows on mousemove during fullscreen) -->
+    <div id="fullscreen-controls" class="fs-controls">
+        <button class="fs-btn" id="fs-btn-prev" onclick="prevSlide()" title="Diapositiva anterior (Flecha Izquierda / Flecha Arriba / PageUp)">←</button>
+        <span class="fs-counter" id="fs-slide-counter">1 / 13</span>
+        <button class="fs-btn" id="fs-btn-next" onclick="nextSlide()" title="Diapositiva siguiente (Flecha Derecha / Espacio / Flecha Abajo / PageDown)">→</button>
+        <button class="fs-btn" id="fs-btn-exit" onclick="toggleFullscreen()" title="Salir de pantalla completa (F)">⛶</button>
+    </div>
+
     <!-- Scripts -->
     <script>
         let currentSlide = 1;
@@ -2996,10 +3104,10 @@
 
         function setupKeylisteners() {
             document.addEventListener("keydown", (e) => {
-                if (e.key === "ArrowRight" || e.key === "Space" || e.key === " ") {
+                if (e.key === "ArrowRight" || e.key === "Space" || e.key === " " || e.key === "PageDown" || e.key === "ArrowDown") {
                     e.preventDefault();
                     nextSlide();
-                } else if (e.key === "ArrowLeft") {
+                } else if (e.key === "ArrowLeft" || e.key === "PageUp" || e.key === "ArrowUp") {
                     e.preventDefault();
                     prevSlide();
                 } else if (e.key === "f" || e.key === "F") {
@@ -3015,6 +3123,25 @@
                 updateSlide(currentSlide);
             }
         }
+
+        // Floating controls mouse move auto-hide logic
+        let fsTimeout = null;
+        function resetFsTimeout() {
+            const fsControls = document.getElementById("fullscreen-controls");
+            if (fsControls) {
+                fsControls.classList.add("visible");
+                clearTimeout(fsTimeout);
+                fsTimeout = setTimeout(() => {
+                    fsControls.classList.remove("visible");
+                }, 3000); // Hide after 3 seconds of inactivity
+            }
+        }
+
+        document.addEventListener("mousemove", () => {
+            if (document.body.classList.contains("fullscreen-mode")) {
+                resetFsTimeout();
+            }
+        });
 
         function prevSlide() {
             if (currentSlide > 1) {
@@ -3033,18 +3160,32 @@
             }
         }
 
-        // Listen for browser fullscreen changes to update button tooltips
+        // Listen for browser fullscreen changes to update button tooltips and body classes
         document.addEventListener("fullscreenchange", () => {
             const btn = document.getElementById("btn-fullscreen");
-            if (btn) {
-                if (document.fullscreenElement) {
+            const fsControls = document.getElementById("fullscreen-controls");
+            
+            if (document.fullscreenElement) {
+                document.body.classList.add("fullscreen-mode");
+                if (btn) {
                     btn.title = "Salir de pantalla completa (F)";
                     btn.style.background = "var(--clr-primary)";
                     btn.style.color = "white";
-                } else {
+                }
+                if (fsControls) {
+                    fsControls.classList.add("visible");
+                    resetFsTimeout();
+                }
+            } else {
+                document.body.classList.remove("fullscreen-mode");
+                if (btn) {
                     btn.title = "Pantalla completa (F)";
                     btn.style.background = "rgba(255, 255, 255, 0.8)";
                     btn.style.color = "var(--clr-text)";
+                }
+                if (fsControls) {
+                    fsControls.classList.remove("visible");
+                    clearTimeout(fsTimeout);
                 }
             }
         });
@@ -3067,6 +3208,14 @@
             document.getElementById("btn-prev").disabled = (slideNum === 1);
             document.getElementById("btn-next").disabled = (slideNum === totalSlides);
             document.getElementById("slide-counter").innerText = `${slideNum} / ${totalSlides}`;
+
+            // Update fullscreen controls if present
+            const fsPrev = document.getElementById("fs-btn-prev");
+            const fsNext = document.getElementById("fs-btn-next");
+            const fsCounter = document.getElementById("fs-slide-counter");
+            if (fsPrev) fsPrev.disabled = (slideNum === 1);
+            if (fsNext) fsNext.disabled = (slideNum === totalSlides);
+            if (fsCounter) fsCounter.innerText = `${slideNum} / ${totalSlides}`;
             
             const pct = (slideNum / totalSlides) * 100;
             document.getElementById("progress-bar-fill").style.width = `${pct}%`;
