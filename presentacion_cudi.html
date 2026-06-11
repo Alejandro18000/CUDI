@@ -2970,8 +2970,9 @@
             <div class="progress-bar-fill" id="progress-bar-fill"></div>
         </div>
         <div class="nav-buttons">
-            <button class="btn-nav" id="btn-prev" onclick="prevSlide()">←</button>
-            <button class="btn-nav" id="btn-next" onclick="nextSlide()">→</button>
+            <button class="btn-nav" id="btn-prev" onclick="prevSlide()" title="Diapositiva anterior (Flecha Izquierda)">←</button>
+            <button class="btn-nav" id="btn-fullscreen" onclick="toggleFullscreen()" title="Pantalla completa (F)">⛶</button>
+            <button class="btn-nav" id="btn-next" onclick="nextSlide()" title="Diapositiva siguiente (Flecha Derecha / Espacio)">→</button>
         </div>
         <div class="slide-counter" id="slide-counter">1 / 13</div>
     </footer>
@@ -3001,6 +3002,9 @@
                 } else if (e.key === "ArrowLeft") {
                     e.preventDefault();
                     prevSlide();
+                } else if (e.key === "f" || e.key === "F") {
+                    e.preventDefault();
+                    toggleFullscreen();
                 }
             });
         }
@@ -3018,6 +3022,32 @@
                 updateSlide(currentSlide);
             }
         }
+
+        function toggleFullscreen() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen().catch((err) => {
+                    console.error(`Error attempting to enable fullscreen: ${err.message}`);
+                });
+            } else {
+                document.exitFullscreen();
+            }
+        }
+
+        // Listen for browser fullscreen changes to update button tooltips
+        document.addEventListener("fullscreenchange", () => {
+            const btn = document.getElementById("btn-fullscreen");
+            if (btn) {
+                if (document.fullscreenElement) {
+                    btn.title = "Salir de pantalla completa (F)";
+                    btn.style.background = "var(--clr-primary)";
+                    btn.style.color = "white";
+                } else {
+                    btn.title = "Pantalla completa (F)";
+                    btn.style.background = "rgba(255, 255, 255, 0.8)";
+                    btn.style.color = "var(--clr-text)";
+                }
+            }
+        });
 
         function updateSlide(slideNum) {
             // Update slides visibility classes
