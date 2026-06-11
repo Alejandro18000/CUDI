@@ -3130,7 +3130,7 @@
 
     <!-- Floating Fullscreen Watermark Logo -->
     <div class="fs-watermark">
-        <video src="Video de logo CUDI.mp4" autoplay loop muted playsinline class="fs-watermark-logo"></video>
+        <video id="fs-watermark-video" src="Video%20de%20logo%20CUDI.mp4" autoplay loop muted playsinline class="fs-watermark-logo"></video>
         <span class="fs-watermark-text">CUDI<span>.</span></span>
     </div>
 
@@ -3225,11 +3225,16 @@
         }
 
         // Listen for browser fullscreen changes to update button tooltips and body classes
-        document.addEventListener("fullscreenchange", () => {
+        function checkFullscreenState() {
             const btn = document.getElementById("btn-fullscreen");
             const fsControls = document.getElementById("fullscreen-controls");
+            const watermarkVid = document.getElementById("fs-watermark-video");
             
-            if (document.fullscreenElement) {
+            const isNativeFS = !!document.fullscreenElement;
+            const isF11FS = Math.abs(window.innerWidth - screen.width) < 15 && Math.abs(window.innerHeight - screen.height) < 15;
+            const isFS = isNativeFS || isF11FS;
+            
+            if (isFS) {
                 document.body.classList.add("fullscreen-mode");
                 if (btn) {
                     btn.title = "Salir de pantalla completa (F)";
@@ -3237,8 +3242,13 @@
                     btn.style.color = "white";
                 }
                 if (fsControls) {
-                    fsControls.classList.add("visible");
-                    resetFsTimeout();
+                    if (!fsControls.classList.contains("visible")) {
+                        fsControls.classList.add("visible");
+                        resetFsTimeout();
+                    }
+                }
+                if (watermarkVid) {
+                    watermarkVid.play().catch((e) => console.log("Watermark play deferred:", e));
                 }
             } else {
                 document.body.classList.remove("fullscreen-mode");
@@ -3252,7 +3262,10 @@
                     clearTimeout(fsTimeout);
                 }
             }
-        });
+        }
+
+        document.addEventListener("fullscreenchange", checkFullscreenState);
+        window.addEventListener("resize", checkFullscreenState);
 
         function updateSlide(slideNum) {
             // Update slides visibility classes
