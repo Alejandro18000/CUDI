@@ -176,7 +176,15 @@
             font-weight: 600;
             color: var(--clr-text-muted);
             letter-spacing: 0.5px;
+            cursor: pointer;
             transition: var(--transition-smooth);
+        }
+
+        .speaker-badge:hover:not(.active) {
+            background: rgba(0, 113, 227, 0.08);
+            border-color: rgba(0, 113, 227, 0.15);
+            color: var(--clr-primary);
+            transform: translateY(-1px);
         }
 
         .speaker-badge.active {
@@ -1883,23 +1891,23 @@
             <div class="header-brand">CUDI<span>.</span></div>
         </div>
         <div class="speaker-badge-container">
-            <div class="speaker-badge" id="badge-block-1">
+            <div class="speaker-badge" id="badge-block-1" onclick="goToBlock(1)" title="Ir al Bloque 1 (Inicio)">
                 <span class="badge-lbl">Bloque 1</span>
                 <span class="badge-num">B1</span>
             </div>
-            <div class="speaker-badge" id="badge-block-2">
+            <div class="speaker-badge" id="badge-block-2" onclick="goToBlock(2)" title="Ir al Bloque 2 (Producto)">
                 <span class="badge-lbl">Bloque 2</span>
                 <span class="badge-num">B2</span>
             </div>
-            <div class="speaker-badge" id="badge-block-3">
+            <div class="speaker-badge" id="badge-block-3" onclick="goToBlock(3)" title="Ir al Bloque 3 (Mercado)">
                 <span class="badge-lbl">Bloque 3</span>
                 <span class="badge-num">B3</span>
             </div>
-            <div class="speaker-badge" id="badge-block-4">
+            <div class="speaker-badge" id="badge-block-4" onclick="goToBlock(4)" title="Ir al Bloque 4 (Marketing & Growth)">
                 <span class="badge-lbl">Bloque 4</span>
                 <span class="badge-num">B4</span>
             </div>
-            <div class="speaker-badge" id="badge-block-5">
+            <div class="speaker-badge" id="badge-block-5" onclick="goToBlock(5)" title="Ir al Bloque 5 (Viabilidad y Cierre)">
                 <span class="badge-lbl">Bloque 5</span>
                 <span class="badge-num">B5</span>
             </div>
@@ -3146,6 +3154,21 @@
         function prevSlide() {
             if (currentSlide > 1) {
                 currentSlide--;
+                updateSlide(currentSlide);
+            }
+        }
+
+        function goToBlock(blockNum) {
+            const blockStartSlides = {
+                1: 1,
+                2: 3,
+                3: 6,
+                4: 8,
+                5: 11
+            };
+            const targetSlide = blockStartSlides[blockNum];
+            if (targetSlide !== undefined) {
+                currentSlide = targetSlide;
                 updateSlide(currentSlide);
             }
         }
