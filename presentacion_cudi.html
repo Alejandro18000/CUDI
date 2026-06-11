@@ -1876,6 +1876,41 @@
             text-align: center;
             letter-spacing: 0.5px;
         }
+        
+        /* Fullscreen Watermark Logo styling */
+        .fs-watermark {
+            position: fixed;
+            top: 20px;
+            left: 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 9999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s ease;
+        }
+        body.fullscreen-mode .fs-watermark {
+            opacity: 0.65; /* Elegant semi-transparent watermarked look */
+            pointer-events: auto;
+        }
+        .fs-watermark-logo {
+            width: 36px;
+            height: 36px;
+            object-fit: contain;
+            border-radius: 8px;
+            background: transparent;
+        }
+        .fs-watermark-text {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 1rem;
+            color: #FFFFFF;
+            letter-spacing: -0.3px;
+        }
+        .fs-watermark-text span {
+            color: var(--clr-primary);
+        }
     </style>
 </head>
 <body>
@@ -3091,6 +3126,12 @@
         <span class="fs-counter" id="fs-slide-counter">1 / 13</span>
         <button class="fs-btn" id="fs-btn-next" onclick="nextSlide()" title="Diapositiva siguiente (Flecha Derecha / Espacio / Flecha Abajo / PageDown)">→</button>
         <button class="fs-btn" id="fs-btn-exit" onclick="toggleFullscreen()" title="Salir de pantalla completa (F)">⛶</button>
+    </div>
+
+    <!-- Floating Fullscreen Watermark Logo -->
+    <div class="fs-watermark">
+        <video src="Video de logo CUDI.mp4" autoplay loop muted playsinline class="fs-watermark-logo"></video>
+        <span class="fs-watermark-text">CUDI<span>.</span></span>
     </div>
 
     <!-- Scripts -->
