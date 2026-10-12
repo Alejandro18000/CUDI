@@ -1,0 +1,630 @@
+<!-- Desarrollo 100% realizado por Sergio Alejandro Ospina Rocha -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZWK5NC6Z51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZWK5NC6Z51');
+</script>
+<!-- Microsoft Clarity Tracking Code -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "ywsuqovlxx");
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Mascota | CUDI Dashboard Premium</title>
+    <meta name="description" content="Panel de control biométrico avanzado para tu mascota. Visualiza salud, energía y descanso en tiempo real.">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* Tooltip Premium para Chart.js */
+        #chartjs-tooltip {
+            opacity: 1;
+            position: absolute;
+            background: rgba(15, 23, 42, 0.9);
+            color: white;
+            border-radius: 8px;
+            padding: 10px;
+            pointer-events: none;
+            transform: translate(-50%, 0);
+            transition: all 0.1s ease;
+            font-size: 0.8rem;
+            z-index: 1000;
+        }
+    </style>
+    <link rel="stylesheet" href="cudi-ai.css?v=6.2">
+    
+    <script src="cudi-analytics.js?v=6.3"></script>
+</head>
+<body>
+        
+    </div>
+
+    <nav class="navbar-island">
+        <div class="nav-capsule">
+            <a href="index.html" class="logo" style="display:flex; align-items:center;">
+                <img src="logo.jpeg" alt="CUDI" style="height:55px; width:auto; border-radius: 8px;" decoding="async">
+            </a>
+            <div class="nav-search-island">
+                <i class="fa-solid fa-magnifying-glass" style="color:var(--clr-primary); font-size:0.9rem;"></i>
+                <input type="text" placeholder="¿Qué necesita tu compañero hoy?">
+            </div>
+            <div class="nav-right-island">
+                <ul class="nav-links-island" style="gap:25px;">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="smart-collar-aventuras-sin-sustos.html">Lanzamiento</a></li>
+                    <li><a href="comunidad-cudi.html">Comunidad</a></li>
+                    <li><a href="simulador-financiero.html">Simulador</a></li>
+                    <li><a href="index.html#store-grid">Tienda</a></li>
+                    <li><a href="index.html#suscripciones">Planes</a></li>
+                    <li><a href="red-socios-clinicas-veterinarias.html">Partners</a></li>
+                    <li id="nav-session-item"></li>
+                </ul>
+                <div class="cart-trigger-island" onclick="toggleCart()" style="position:relative; display:flex; align-items:center; justify-content:center; cursor:pointer; min-width:44px; min-height:44px;">
+                    <i class="cart-icon-cudi" style="font-size:1.2rem; pointer-events:none;"></i>
+                    <span class="cart-badge" id="global-cart-badge" style="position:absolute;top:-6px;right:-6px;background:var(--clr-primary);color:white;font-size:0.65rem;font-weight:700;border-radius:50px;width:18px;height:18px;display:flex;align-items:center;justify-content:center;border: 2px solid white; pointer-events:none;">0</span>
+                </div>
+                <button class="menu-trigger-mobile" onclick="toggleMobileMenu()" style="touch-action:manipulation;"><i class="fa-solid fa-bars-staggered"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="dashboard-web-wrapper">
+        <div class="dash-web-container">
+            
+            <!-- Hero Dashboard -->
+            <div class="dash-web-hero">
+                <div style="position:relative;">
+                    <img src="" id="dash-pet-photo" alt="Mascota" class="dash-web-avatar" decoding="async">
+                    <div style="position:absolute; bottom:5px; right:5px; width:25px; height:25px; background:#10b981; border:3px solid white; border-radius:50%; animation: pulse 2s infinite;"></div>
+                </div>
+                <div class="dash-web-info">
+                    <div style="display:flex; align-items:center; gap:10px; margin-bottom:5px;">
+                        <span class="badge-elite"><i class="fa-solid fa-crown"></i> PERFIL PREMIUM ELITE</span>
+                        <span style="color:var(--clr-primary); font-weight:800; font-size:0.75rem;">CONEXIÓN ACTIVA</span>
+                    </div>
+                    <h1 id="dash-pet-name">Cargando...</h1>
+                    <p id="dash-pet-meta" style="color: var(--clr-text-muted); font-size: 1.1rem;"></p>
+                </div>
+                <div style="margin-left:auto; display:flex; gap:15px;">
+                    <button class="btn-primary" style="padding:12px 25px; border-radius:50px; font-size:0.85rem;" onclick="window.location.href='simulador-gemelo-digital-telemetria.html'"><i class="fa-solid fa-mobile-screen"></i> Abrir Versión Móvil</button>
+                    <button class="btn-secondary" style="background:#f8fafc; padding:12px 18px; border-radius:50px; border:1px solid #e2e8f0;"><i class="fa-solid fa-gear"></i></button>
+                </div>
+            </div>
+
+            <!-- Ficha Técnica de la Mascota -->
+            <div class="dash-tech-info">
+                <div class="tech-card">
+                    <div class="tech-card-label">Raza / Identidad</div>
+                    <div class="tech-card-value" id="tech-breed">-</div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-label">Etapa de Vida</div>
+                    <div class="tech-card-value" id="tech-age">-</div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-label">Peso Corporal</div>
+                    <div class="tech-card-value" id="tech-weight">- kg</div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-label">Plan Nutricional</div>
+                    <div class="tech-card-value" id="tech-food">-</div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-label">Nivel de Energía</div>
+                    <div class="tech-card-value" id="tech-energy">-</div>
+                </div>
+            </div>
+
+            <!-- Grilla Principal de Métricas -->
+            <div class="dash-web-grid" id="web-sec-metricas" style="scroll-margin-top:110px;">
+                
+                <!-- Card 1: Corazón con Rango Saludable -->
+                <div class="dash-web-card">
+                    <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+                        <div>
+                            <h5><i class="fa-solid fa-heart-pulse" style="color: #ef4444;"></i> Frecuencia Cardíaca</h5>
+                            <div class="dash-web-value" id="val-bpm">-- <span style="font-size: 1rem; color: #94a3b8;">BPM</span></div>
+                        </div>
+                        <div style="background:#fef2f2; color:#ef4444; padding:5px 10px; border-radius:8px; font-size:0.7rem; font-weight:700;">NORMAL: 70-110</div>
+                    </div>
+                    <div class="dash-web-chart" style="height:120px; margin-top:10px;">
+                        <canvas id="chart-heart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Card 2: Energía (Desglose Actividad vs Reposo) -->
+                <div class="dash-web-card">
+                    <h5><i class="fa-solid fa-bolt" style="color: #f59e0b;"></i> Desglose de Energía</h5>
+                    <div class="dash-web-value" id="val-energy">--%</div>
+                    <div class="dash-web-chart" style="height:120px;">
+                        <canvas id="chart-energy"></canvas>
+                    </div>
+                    <div class="chart-legend-custom">
+                        <span><i class="fa-solid fa-circle" style="color:#f59e0b; font-size:0.6rem;"></i> Actividad</span>
+                        <span><i class="fa-solid fa-circle" style="color:#fde68a; font-size:0.6rem;"></i> Reposo</span>
+                    </div>
+                </div>
+
+                <!-- Card 3: Calidad del Sueño (REM vs Profundo) -->
+                <div class="dash-web-card">
+                    <h5><i class="fa-solid fa-moon" style="color: #6366f1;"></i> Ciclos de Descanso</h5>
+                    <div class="dash-web-value" id="val-sleep">-- <span style="font-size: 1rem; color: #94a3b8;">hrs</span></div>
+                    <div class="dash-web-chart" style="height:120px; display:flex; align-items:center; justify-content:center;">
+                        <canvas id="chart-sleep" style="max-width:140px;"></canvas>
+                    </div>
+                    <div class="chart-legend-custom">
+                        <span><i class="fa-solid fa-circle" style="color:#6366f1; font-size:0.6rem;"></i> Profundo</span>
+                        <span><i class="fa-solid fa-circle" style="color:#a5b4fc; font-size:0.6rem;"></i> REM</span>
+                    </div>
+                </div>
+
+                <!-- Card 4: Estrés (Balance Biométrico) -->
+                <div class="dash-web-card">
+                    <h5><i class="fa-solid fa-brain" style="color: #ec4899;"></i> Balance Biométrico</h5>
+                    <div class="dash-web-value" id="val-stress">Óptimo</div>
+                    <div class="dash-web-chart" style="height:120px;">
+                        <canvas id="chart-stress"></canvas>
+                    </div>
+                </div>
+
+                <!-- IA Insight Dinámico -->
+                <div class="dash-ai-insight" style="color: white !important;">
+                    <div class="dash-ai-icon">
+                        <i class="fa-solid fa-wand-magic-sparkles" style="color:#ffd700;"></i>
+                    </div>
+                    <div>
+                        <div style="display:flex; align-items:center; gap:10px; margin-bottom:5px;">
+                            <h3 style="margin:0; font-weight:800; font-size:1.2rem; color: white !important;">Análisis CUDI IA</h3>
+                            <span style="background:rgba(255,255,255,0.2); padding:3px 10px; border-radius:50px; font-size:0.7rem; font-weight:700; color: white !important;">ACTUALIZADO AHORA</span>
+                        </div>
+                        <p id="ai-suggestion" style="font-size: 1.1rem; opacity: 0.95; line-height:1.4; color: white !important;">Analizando el perfil genético y biometría actual para generar recomendaciones...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap:24px; margin:28px auto 0; max-width:1200px; padding:0 20px;">
+                <section id="web-sec-ubicacion" class="dash-web-card" style="scroll-margin-top:110px;">
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; flex-wrap:wrap; gap:8px;">
+                        <h4 style="margin:0; font-family:'Outfit',sans-serif; font-size:1.15rem; font-weight:800; color:#0f172a;">
+                            <i class="fa-solid fa-location-dot" style="color:#0284c7;"></i> Ubicación GPS y Geocerca Activa
+                        </h4>
+                        <span style="background:#dcfce7; color:#15803d; font-size:0.74rem; font-weight:800; padding:5px 12px; border-radius:999px;">
+                            <i class="fa-solid fa-shield-halved"></i> En Zona Segura (150m)
+                        </span>
+                    </div>
+                    <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:14px; padding:14px; font-size:0.88rem; line-height:1.7; color:#334155; margin-bottom:14px;">
+                        <div>📍 <strong>Zona Actual:</strong> Parc del Poblenou &bull; Jardín Principal (Vila Olímpica, Barcelona)</div>
+                        <div>🌐 <strong>Coordenadas GNSS (L1+L5):</strong> 41.4012° N, 2.2065° E (Precisión ± 1.2 m)</div>
+                        <div>📏 <strong>Distancia al Hogar:</strong> 45 metros &bull; <strong>Velocidad:</strong> 0.8 km/h</div>
+                        <div>🔋 <strong>Smart Collar 4G LTE-M:</strong> 94% batería &bull; Último ping hace 2 segundos</div>
+                    </div>
+                    <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                        <button class="btn-primary" style="padding:10px 16px; border-radius:10px; font-size:0.84rem; font-weight:800; border:none; cursor:pointer;" onclick="if(window.CudiAI) window.CudiAI.triggerCollarBeep();">
+                            <i class="fa-solid fa-volume-high"></i> Hacer Sonar Collar (85dB)
+                        </button>
+                        <a href="simulador-gemelo-digital-telemetria.html?tab=gps" style="display:inline-flex; align-items:center; gap:6px; padding:10px 16px; border-radius:10px; font-size:0.84rem; font-weight:700; background:#f1f5f9; color:#0f172a; text-decoration:none; border:1px solid #cbd5e1;">
+                            <i class="fa-solid fa-satellite-dish"></i> Abrir Radar Interactivo en App
+                        </a>
+                    </div>
+                </section>
+
+                <section id="web-sec-vacunas" class="dash-web-card" style="scroll-margin-top:110px;">
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; flex-wrap:wrap; gap:8px;">
+                        <h4 style="margin:0; font-family:'Outfit',sans-serif; font-size:1.15rem; font-weight:800; color:#0f172a;">
+                            <i class="fa-solid fa-syringe" style="color:#0284c7;"></i> Calendario de Vacunas y Prevención
+                        </h4>
+                        <span style="background:#fee2e2; color:#b91c1c; font-size:0.74rem; font-weight:800; padding:5px 12px; border-radius:999px;">
+                            <i class="fa-solid fa-bell"></i> 1 Dosis Pendiente Hoy
+                        </span>
+                    </div>
+                    <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:14px; padding:14px; font-size:0.86rem; line-height:1.75; color:#334155; margin-bottom:14px;">
+                        <div style="display:flex; justify-content:space-between; border-bottom:1px solid #e2e8f0; padding-bottom:6px; margin-bottom:6px;">
+                            <span>💉 <strong>Polivalente Anual (DHPPL / Trivalente)</strong></span>
+                            <strong style="color:#dc2626;">¡Vence Hoy! (35.00 €)</strong>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; border-bottom:1px solid #e2e8f0; padding-bottom:6px; margin-bottom:6px;">
+                            <span>🛡️ <strong>Vacuna Antirrábica (Rabia)</strong></span>
+                            <span style="color:#15803d; font-weight:700;">15 Mayo 2026</span>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; border-bottom:1px solid #e2e8f0; padding-bottom:6px; margin-bottom:6px;">
+                            <span>💊 <strong>Desparasitación Interna (Trimestral)</strong></span>
+                            <span style="color:#0369a1; font-weight:700;">01 Noviembre 2026</span>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; border-bottom:1px solid #e2e8f0; padding-bottom:6px; margin-bottom:6px;">
+                            <span>🦟 <strong>Pipeta Antiparasitaria Externa (Mensual)</strong></span>
+                            <span style="color:#0369a1; font-weight:700;">28 Octubre 2026</span>
+                        </div>
+                        <div style="display:flex; justify-content:space-between;">
+                            <span>📅 <strong>Próxima Cita: Revisión Clínica CUDI Centro</strong></span>
+                            <span style="color:#0f172a; font-weight:700;">22 Abril • 11:30h</span>
+                        </div>
+                    </div>
+                    <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                        <a href="producto-vethome-cudi.html" class="btn-primary" style="padding:10px 16px; border-radius:10px; font-size:0.84rem; font-weight:800; text-decoration:none; display:inline-flex; align-items:center; gap:6px;">
+                            <i class="fa-solid fa-calendar-plus"></i> Programar Vacunación a Domicilio
+                        </a>
+                        <a href="simulador-gemelo-digital-telemetria.html?tab=vax" style="display:inline-flex; align-items:center; gap:6px; padding:10px 16px; border-radius:10px; font-size:0.84rem; font-weight:700; background:#f1f5f9; color:#0f172a; text-decoration:none; border:1px solid #cbd5e1;">
+                            <i class="fa-solid fa-chart-line"></i> Ver Curva Inmunológica en App
+                        </a>
+                    </div>
+                </section>
+            </div>
+    </main>
+
+                        <footer class="premium-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo" style="margin-bottom:30px;display:inline-block;">
+                        <img src="logo.jpeg" alt="CUDI" style="height:70px;border-radius:12px;" decoding="async" loading="lazy">
+                    </a>
+                    <p>CUDI es el primer ecosistema integral de salud y bienestar animal impulsado por IA. Monitorizamos, protegemos y conectamos todo el universo de tu compañero hoy para un mañana más sano.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Comunidad CUDI</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="index.html#store-grid">Tienda Marketplace</a></li>
+                        <li><a href="index.html#suscripciones">Planes de Protección</a></li>
+                        <li><a href="comunidad-cudi.html">Red Social</a></li>
+                        <li><a href="red-socios-clinicas-veterinarias.html">Partners</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Información Legal</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="terminos-condiciones-app.html">Términos y Condiciones</a></li>
+                        <li><a href="politica-cookies-plataforma.html">Política de Cookies</a></li>
+                        <li><a href="politica-privacidad-datos-mascotas.html">Política de Privacidad</a></li>
+                        <li><a href="politica-devoluciones-smart-collar.html">Devoluciones y Cambios</a></li>
+                        <li><a href="legal.html">Información Legal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Conecta con nosotros</h4>
+                    <p style="margin-bottom:20px;">Recibe consejos de salud preventiva validados por expertos.</p>
+                    <div class="footer-socials">
+                        <a href="https://www.instagram.com/cudi.ia?igsh=bjdmNXhyeHZvMXo0&utm_source=qr" target="_blank" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/Cudi2026" target="_blank" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.tiktok.com/@cudi.ia?_r=1&_t=ZN-95icM5LsfCA" class="social-btn"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="https://www.youtube.com/@cudi-ia" class="social-btn"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CUDI AI Ecosystem S.L. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    
+    <!-- Side Cart Drawer -->
+    <div id="cart-overlay" onclick="closeAllPanels()" class="cart-overlay"></div>
+    <div class="side-cart" id="side-cart">
+        <div class="cart-header">
+            <h3><i class="cart-icon-cudi"></i> Tu Cesta CUDI</h3>
+            <button class="cart-close" onclick="toggleCart()"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="cart-items" id="cart-items-container">
+            <div class="cart-empty-state" id="cart-empty">
+                <i class="fa-solid fa-basket-shopping" style="font-size:3rem;color:#cbd5e1;margin-bottom:15px;display:block;"></i>
+                <p style="color:#94a3b8;font-weight:600;">Tu cesta esta vacia</p>
+                <a href="index.html#store-grid" onclick="toggleCart()" style="color:var(--clr-primary);font-weight:700;text-decoration:none;">Explorar tienda</a>
+            </div>
+        </div>
+        <div class="cart-footer" id="cart-footer" style="display:none;">
+            <div class="cart-total"><span>Total</span><span id="cart-total-price">0.00</span></div>
+            <button class="btn-primary" style="width:100%;padding:15px;border-radius:12px;font-size:1rem;font-weight:800;" onclick="alert('Pago disponible en version completa')"><i class="fa-solid fa-lock"></i> Pagar Seguro</button>
+        </div>
+    </div>
+
+    <script src="script.js?v=6.2"></script>
+    <script>
+        let heartChart, energyChart, sleepChart, stressChart;
+        let currentLiveInterval = null;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadAndRenderDashboard();
+
+            // Escuchar cambios de sesión globales
+            window.addEventListener('cudi:sessionChanged', (e) => {
+                loadAndRenderDashboard();
+            });
+        });
+
+        function loadAndRenderDashboard() {
+            const isLogged = typeof cudi_is_session_active === 'function' ? cudi_is_session_active() : (localStorage.getItem('cudi_session_active') === 'true');
+            let profile = null;
+
+            if (isLogged) {
+                try {
+                    profile = JSON.parse(localStorage.getItem('cudi_pet_profile'));
+                } catch(e) {
+                    console.error(e);
+                }
+            }
+
+            if (!profile) {
+                // Modo Vista Previa con mascota aleatoria seleccionada
+                profile = typeof cudi_get_random_pet_candidate === 'function' ? cudi_get_random_pet_candidate() : {
+                    name: 'Luna',
+                    photo: 'https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=800&q=80',
+                    breed: 'Husky Siberiano',
+                    age: 3,
+                    weight: 22,
+                    type: 'perro',
+                    energy: 'Alto',
+                    food: 'Pienso Energético & Salmón'
+                };
+                renderDashboard(profile, true);
+            } else {
+                renderDashboard(profile, false);
+            }
+        }
+
+        function renderDashboard(profile, isPreview) {
+            // Banner de vista previa interactiva
+            let previewBanner = document.getElementById('dash-preview-banner');
+            const container = document.querySelector('.dash-web-container');
+
+            if (isPreview) {
+                if (!previewBanner && container) {
+                    previewBanner = document.createElement('div');
+                    previewBanner.id = 'dash-preview-banner';
+                    previewBanner.className = 'dash-preview-banner';
+                    container.insertBefore(previewBanner, container.firstChild);
+                }
+                if (previewBanner) {
+                    previewBanner.innerHTML = `
+                        <div class="dash-preview-banner-text">
+                            <i class="fa-solid fa-sparkles" style="font-size:1.4rem; color:#fef08a;"></i>
+                            <div>
+                                <strong style="font-size:0.96rem; display:block;">Modo Vista Previa: Mascota Aleatoria (${profile.name} • ${profile.breed})</strong>
+                                <span style="font-size:0.8rem; opacity:0.95;">Inicia sesión para guardar tu mascota y mantener sus condiciones fijas en la comunidad y la app demo.</span>
+                            </div>
+                        </div>
+                        <div class="dash-preview-banner-btns">
+                            <button type="button" onclick="cudi_randomizeDashboardPreview()" style="background:rgba(255,255,255,0.2); color:white; border:1px solid rgba(255,255,255,0.4); padding:7px 13px; border-radius:10px; font-weight:700; font-size:0.8rem; cursor:pointer;">
+                                <i class="fa-solid fa-shuffle"></i> Probar otra
+                            </button>
+                            <button type="button" onclick="openAuthModal()" style="background:white; color:#0369a1; border:none; padding:8px 16px; border-radius:10px; font-weight:800; font-size:0.82rem; cursor:pointer; box-shadow:0 4px 12px rgba(0,0,0,0.15);">
+                                <i class="fa-solid fa-paw"></i> Iniciar Sesión / Registrar
+                            </button>
+                        </div>
+                    `;
+                    previewBanner.style.display = 'flex';
+                }
+            } else {
+                if (previewBanner) previewBanner.style.display = 'none';
+            }
+
+            // Actualizar Cabecera
+            document.getElementById('dash-pet-name').innerText = profile.name;
+            document.getElementById('dash-pet-photo').src = profile.photo;
+            document.getElementById('dash-pet-meta').innerText = `${profile.breed} • ${profile.age} años • ${profile.weight} kg`;
+
+            // Actualizar Ficha Técnica
+            document.getElementById('tech-breed').innerText = profile.breed;
+            document.getElementById('tech-age').innerText = profile.age + " años";
+            document.getElementById('tech-weight').innerText = profile.weight + " kg";
+            document.getElementById('tech-food').innerText = profile.food || "Natural Mixta";
+            document.getElementById('tech-energy').innerText = profile.energy || "Moderada";
+
+            initDashboardCharts(profile);
+            simulateLiveUpdate(profile);
+        }
+
+        function cudi_randomizeDashboardPreview() {
+            let nextPet;
+            const pets = (typeof CUDI_RANDOM_PETS !== 'undefined') ? CUDI_RANDOM_PETS : [];
+            if (pets.length > 0) {
+                do {
+                    const idx = Math.floor(Math.random() * pets.length);
+                    nextPet = pets[idx];
+                } while (window.currentRandomPet && nextPet.name === window.currentRandomPet.name && pets.length > 1);
+                window.currentRandomPet = nextPet;
+                renderDashboard(nextPet, true);
+                if (typeof showCudiToast === 'function') {
+                    showCudiToast(`✨ Vista previa cambiada a ${nextPet.name} (${nextPet.breed})`, 'info');
+                }
+            }
+        }
+
+        function initDashboardCharts(profile) {
+            Chart.defaults.font.family = "'Outfit', sans-serif";
+            Chart.defaults.color = '#94a3b8';
+
+            // 1. Corazón (Con Zona de Salud)
+            const ctxHeart = document.getElementById('chart-heart').getContext('2d');
+            heartChart = new Chart(ctxHeart, {
+                type: 'line',
+                data: {
+                    labels: ['10s', '8s', '6s', '4s', '2s', 'Ahora'],
+                    datasets: [
+                        {
+                            label: 'Latidos',
+                            data: [78, 82, 75, 88, 80, 85],
+                            borderColor: '#ef4444',
+                            borderWidth: 3,
+                            backgroundColor: 'rgba(239, 68, 68, 0.1)',
+                            fill: true,
+                            tension: 0.4,
+                            pointRadius: 0
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: { 
+                        x: { display: false }, 
+                        y: { 
+                            min: 50, max: 130, 
+                            ticks: { display: false },
+                            grid: { display: false }
+                        } 
+                    }
+                }
+            });
+
+            // 2. Energía (Apilado: Actividad vs Reposo)
+            const ctxEnergy = document.getElementById('chart-energy').getContext('2d');
+            energyChart = new Chart(ctxEnergy, {
+                type: 'bar',
+                data: {
+                    labels: ['L', 'M', 'X', 'J', 'V', 'S', 'D'],
+                    datasets: [
+                        { label: 'Actividad', data: [70, 85, 60, 95, 80, 100, 90], backgroundColor: '#f59e0b', borderRadius: 8 },
+                        { label: 'Reposo', data: [30, 15, 40, 5, 20, 0, 10], backgroundColor: '#fde68a', borderRadius: 8 }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: { 
+                        x: { stacked: true, grid: { display: false } }, 
+                        y: { stacked: true, display: false } 
+                    }
+                }
+            });
+
+            // 3. Sueño (Doughnut REM/Profundo)
+            const ctxSleep = document.getElementById('chart-sleep').getContext('2d');
+            sleepChart = new Chart(ctxSleep, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Profundo', 'REM'],
+                    datasets: [{
+                        data: [70, 30],
+                        backgroundColor: ['#6366f1', '#a5b4fc'],
+                        borderWidth: 0,
+                        cutout: '75%'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } }
+                }
+            });
+
+            // 4. Estrés / Balance (Radar Actual vs Ideal)
+            const ctxStress = document.getElementById('chart-stress').getContext('2d');
+            stressChart = new Chart(ctxStress, {
+                type: 'radar',
+                data: {
+                    labels: ['Pulso', 'Cortisol', 'Actividad', 'Descanso', 'Nutrición'],
+                    datasets: [
+                        {
+                            label: 'Actual',
+                            data: [85, 90, 75, 95, 80],
+                            borderColor: '#ec4899',
+                            backgroundColor: 'rgba(236, 72, 153, 0.2)',
+                            pointRadius: 0,
+                            borderWidth: 2
+                        },
+                        {
+                            label: 'Ideal',
+                            data: [100, 100, 100, 100, 100],
+                            borderColor: 'rgba(148, 163, 184, 0.3)',
+                            backgroundColor: 'transparent',
+                            pointRadius: 0,
+                            borderDash: [5, 5]
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: { 
+                        r: { 
+                            angleLines: { display: false },
+                            ticks: { display: false },
+                            grid: { color: 'rgba(0,0,0,0.05)' }
+                        } 
+                    }
+                }
+            });
+        }
+
+        function simulateLiveUpdate(profile) {
+            if (currentLiveInterval) clearInterval(currentLiveInterval);
+            const bpmVal = document.getElementById('val-bpm');
+            const energyVal = document.getElementById('val-energy');
+            const sleepVal = document.getElementById('val-sleep');
+            const aiText = document.getElementById('ai-suggestion');
+
+            const isCat = (profile.type === 'gato' || (profile.breed && profile.breed.toLowerCase().includes('gato')) || (profile.breed && ['siamés', 'persa', 'maine coon', 'bengalí'].some(b => profile.breed.toLowerCase().includes(b))));
+            const minBpm = isCat ? 128 : 72;
+            const maxBpm = isCat ? 165 : 102;
+
+            currentLiveInterval = setInterval(() => {
+                // Simulación de latidos adaptada a la especie
+                const bpm = Math.floor(Math.random() * (maxBpm - minBpm) + minBpm);
+                if (bpmVal) bpmVal.innerHTML = `${bpm} <span style="font-size: 1rem; color: #94a3b8;">BPM</span>`;
+                
+                // Actualizar gráfico de latidos
+                if (heartChart && heartChart.data && heartChart.data.datasets[0]) {
+                    heartChart.data.datasets[0].data.shift();
+                    heartChart.data.datasets[0].data.push(bpm);
+                    heartChart.update('none');
+                }
+
+                // Simulación de Energía
+                const energyPct = Math.floor(Math.random() * (98 - 88) + 88);
+                if (energyVal) energyVal.innerText = `${energyPct}%`;
+
+                // IA Insight Dinámico Personalizado
+                if (aiText) {
+                    if (bpm > (isCat ? 150 : 92)) {
+                        aiText.innerText = `He detectado que ${profile.name} está en un pico de actividad. Para un ${profile.breed}, esto es excelente; no olvides hidratarle tras el juego.`;
+                    } else {
+                        aiText.innerText = `Los sistemas de ${profile.name} están en equilibrio total. Su descanso de 9.2h ha sido reparador, optimizando su ${profile.food || 'alimentación'}.`;
+                    }
+                }
+            }, 3000);
+        }
+    </script>
+    <script src="cudi-ai.js?v=6.2"></script>
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" id="mobile-drawer">
+        <button class="drawer-close" onclick="toggleMobileMenu()"><i class="fa-solid fa-xmark"></i></button>
+        <div style="text-align:center; margin-bottom:30px;">
+            <img src="logo.jpeg" alt="CUDI" style="height:60px; border-radius:10px;" decoding="async" loading="lazy">
+        </div>
+                                <ul class="drawer-links">
+            <li><a href="index.html" onclick="toggleMobileMenu()"><i class="fa-solid fa-house"></i> Inicio</a></li>
+            <li><a href="smart-collar-aventuras-sin-sustos.html" onclick="toggleMobileMenu()"><i class="fa-solid fa-rocket"></i> Lanzamiento</a></li>
+            <li><a href="comunidad-cudi.html" onclick="toggleMobileMenu()"><i class="fa-solid fa-people-group"></i> Comunidad</a></li>
+            <li><a href="simulador-financiero.html" onclick="toggleMobileMenu()"><i class="fa-solid fa-calculator"></i> Simulador</a></li>
+            <li><a href="index.html#store-grid" onclick="toggleMobileMenu()"><i class="fa-solid fa-store"></i> Tienda</a></li>
+            <li><a href="index.html#suscripciones" onclick="toggleMobileMenu()"><i class="fa-solid fa-shield-cat"></i> Planes</a></li>
+            <li><a href="red-socios-clinicas-veterinarias.html" onclick="toggleMobileMenu()"><i class="fa-solid fa-handshake"></i> Partners</a></li>
+            <li id="mobile-session-item"></li>
+        </ul>
+        <div style="margin-top:auto; padding:20px; background:#f8fafc; border-radius:15px; font-size:0.85rem; color:#64748b;">
+            <i class="fa-solid fa-envelope"></i> cudi.ai2026@gmail.com
+        </div>
+    </div>
+    <!-- Módulos Transversales CUDI (Arquitectura Modular en Español) -->
+    <script src="modulos/estado-compartido.js?v=6.4"></script>
+    <script src="modulos/catalogo-unico.js?v=6.4"></script>
+    <script src="modulos/internacionalizacion.js?v=6.4"></script>
+    <script src="modulos/nucleo-transversal.js?v=6.4"></script>
+</body>
+</html>

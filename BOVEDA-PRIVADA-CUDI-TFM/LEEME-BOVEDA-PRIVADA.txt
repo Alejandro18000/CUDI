@@ -1,0 +1,22 @@
+================================================================================
+BÓVEDA PRIVADA LOCAL — PROYECTO CUDI (FUERA DE GITHUB)
+================================================================================
+
+Esta carpeta se encuentra FUERA del repositorio público de GitHub para proteger
+tu propiedad intelectual y tu documentación académica cuando compartas el enlace
+del proyecto en tu CV o LinkedIn.
+
+CONTENIDO DE ESTA BÓVEDA:
+1. /documentos-academicos-tfm/
+   - TFM_4_CUDI_definitivo.xlsx (Libro Excel maestro con fórmulas del TFM)
+   - TFM_APA_EDITION.html (Memoria académica completa en formato APA 7)
+   - presentacion_cudi.html (Presentación ejecutiva interactiva para defensa)
+   - CUDI_AUDIT_MASTER.html (Informe técnico de auditoría)
+   - QR_PRESENTATION.html (Lanzadera QR de la presentación)
+   - DOCUMENTACION_INTERNA_CUDI_IA_NOTEBOOKLM.txt (Corpus completo de notas TFM)
+
+2. /codigo-fuente-editable/
+   - Copia íntegra, legible y comentada de todos los módulos JavaScript (/modulos/)
+     y hojas de estilo (/estilos/) antes de aplicar la ofuscación y minificación
+     de producción en el repositorio público (C:\Users\sergi\Downloads\CUDI).
+================================================================================

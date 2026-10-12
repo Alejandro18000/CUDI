@@ -1,0 +1,893 @@
+<!-- Desarrollo 100% realizado por Sergio Alejandro Ospina Rocha -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZWK5NC6Z51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZWK5NC6Z51');
+</script>
+<!-- Microsoft Clarity Tracking Code -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "ywsuqovlxx");
+</script>
+    <meta name="author" content="Sergio Alejandro Ospina Rocha">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CUDI | Simulador Móvil Gemelo Digital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="styles.css?v=6.0">
+    <link rel="stylesheet" href="app-demo.css?v=6.2">
+    <link rel="stylesheet" href="cudi-ai.css?v=6.2">
+    <style>
+        body.app-demo-body {
+            padding: 0 !important;
+            margin: 0 !important;
+            background: transparent !important;
+            height: 100vh !important;
+            overflow: hidden !important;
+            display: block !important;
+        }
+        .mobile-notch {
+            display: none !important;
+        }
+        .mobile-screen {
+            border-radius: 0 !important;
+            height: 100% !important;
+        }
+    </style>
+    
+    <script src="cudi-analytics.js?v=6.3"></script>
+</head>
+<body class="app-demo-body">
+    <div class="mobile-device" style="width: 100% !important; height: 100% !important; border: none !important; border-radius: 0 !important; box-shadow: none !important; max-width: none !important; max-height: none !important; transform: none !important; margin: 0 !important; padding: 0 !important; top: 0 !important; left: 0 !important; position: absolute !important;">
+        <div class="mobile-screen">
+
+
+                        <!-- STATUS BAR (siempre visible cuando dashboard activo) -->
+                        <div class="app-status-bar" id="app-status-bar" style="display:none;">
+                            <div class="status-bar-left">
+                                <div class="sync-dot"></div>
+                                <span style="font-weight:700;font-size:0.72rem;color:#0f172a;">CUDI Live</span>
+                            </div>
+                            <div style="display:flex;align-items:center;gap:6px;cursor:pointer;" onclick="showOnboardingScreen()" title="Cambiar o editar mascota">
+                                <span id="status-pet-name" style="font-weight:800;color:#0f172a;font-size:0.85rem;">Mimi</span>
+                                <i class="fa-solid fa-chevron-down" style="font-size:0.6rem;color:#64748b;"></i>
+                            </div>
+                            <div class="status-bar-right" style="display:flex;align-items:center;gap:8px;">
+                                <button class="in-app-ai-header-btn" onclick="if(typeof CudiAI!=='undefined')CudiAI.toggle();" title="Abrir Asistente IA CUDI">
+                                    <i class="fa-solid fa-brain"></i> <span>IA</span>
+                                </button>
+                                <div style="position:relative;cursor:pointer;" onclick="toggleNotifications()">
+                                    <i class="fa-solid fa-bell" style="font-size:0.95rem;color:#475569;"></i>
+                                    <span id="notif-dot" style="display:none;position:absolute;top:-2px;right:-2px;width:7px;height:7px;background:#ef4444;border-radius:50%;border:1px solid white;"></span>
+                                </div>
+                                <div style="position:relative;cursor:pointer;" onclick="openFullCheckout()">
+                                    <i class="fa-solid fa-bag-shopping" style="font-size:0.95rem;color:#475569;"></i>
+                                    <span id="app-cart-badge" style="position:absolute;top:-6px;right:-8px;background:#0077b6;color:white;font-size:0.58rem;font-weight:700;border-radius:50%;width:15px;height:15px;display:flex;align-items:center;justify-content:center;">0</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PANEL NOTIFICACIONES -->
+                        <div id="notif-panel" class="notif-panel" style="display:none;">
+                            <div style="padding:12px 15px;border-bottom:1px solid var(--app-border);display:flex;justify-content:space-between;align-items:center;">
+                                <span style="font-weight:800;font-size:0.9rem;">Notificaciones</span>
+                                <span onclick="markAllRead()" style="font-size:0.75rem;color:var(--app-primary);font-weight:700;cursor:pointer;">Marcar leidas</span>
+                            </div>
+                            <div id="notif-list"></div>
+                        </div>
+
+                        <!-- ==========================================
+                             PANTALLA 1: ONBOARDING / REGISTRO INICIAL
+                             ========================================== -->
+                        <div id="screen-onboarding" class="app-screen active onboarding-screen" style="display:block;">
+                            <div class="onboarding-hero-card">
+                                <div id="onboarding-photo" class="onboarding-photo" style="background-image:url('https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=800&q=80');">
+                                    <div class="onboarding-photo-overlay">
+                                        <span style="font-size:0.68rem; font-weight:800; background:rgba(0,119,182,0.85); padding:3px 10px; border-radius:50px; width:fit-content; margin-bottom:4px; letter-spacing:0.5px;">PASO 1 &bull; REGISTRO VITAL</span>
+                                        <h4 style="margin:0; font-size:1.15rem; font-weight:800; line-height:1.2;">Conecta su Gemelo Digital</h4>
+                                        <p style="margin:2px 0 0; font-size:0.75rem; opacity:0.9;">Monitoreo biométrico y telemetría 24/7</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="onboarding-form">
+                                <h3 style="font-family:'Outfit';font-weight:800;font-size:1.25rem;margin:0 0 4px;color:#0f172a;">Identidad de tu Mascota</h3>
+                                <p style="font-size:0.78rem;color:var(--app-text-muted);margin:0 0 16px;">Configura el perfil biométrico para calibrar el algoritmo bio-neural del Smart Collar.</p>
+
+                                <!-- Tipo (perro/gato) -->
+                                <label class="app-label">Especie</label>
+                                <div class="species-row">
+                                    <button id="btn-species-perro" class="species-btn active" onclick="selectPetType('perro')">
+                                        <i class="fa-solid fa-dog" style="color:#3b82f6;"></i>
+                                        <span>Perro</span>
+                                    </button>
+                                    <button id="btn-species-gato" class="species-btn" onclick="selectPetType('gato')">
+                                        <i class="fa-solid fa-cat" style="color:#ec4899;"></i>
+                                        <span>Gato</span>
+                                    </button>
+                                </div>
+                                <input type="hidden" id="selected-pet-type" value="perro">
+
+                                <!-- Nombre -->
+                                <label class="app-label">Nombre</label>
+                                <input type="text" id="pet-name" class="app-input" placeholder="Ej. Luna" value="Mimi">
+
+                                <!-- Peso + Raza -->
+                                <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+                                    <div>
+                                        <label class="app-label">Peso (kg)</label>
+                                        <input type="number" id="pet-weight" class="app-input" placeholder="8" value="8">
+                                    </div>
+                                    <div>
+                                        <label class="app-label">Raza</label>
+                                        <select id="pet-breed" class="app-input">
+                                            <option value="Mestizo">Mestizo</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <!-- Etapa + Energia -->
+                                <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+                                    <div>
+                                        <label class="app-label">Etapa de vida</label>
+                                        <select id="pet-age" class="app-input">
+                                            <option value="primera">Cachorro</option>
+                                            <option value="explorer" selected>Adulto Joven</option>
+                                            <option value="plenitud">Adulto</option>
+                                            <option value="golden">Senior</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="app-label">Nivel energia</label>
+                                        <select id="pet-energy" class="app-input">
+                                            <option value="tranquilo">Tranquilo</option>
+                                            <option value="moderado" selected>Moderado</option>
+                                            <option value="activo">Imparable</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <!-- Alimentacion -->
+                                <label class="app-label">Tipo de alimentacion</label>
+                                <select id="pet-food" class="app-input">
+                                    <option value="pienso">Pienso Seco</option>
+                                    <option value="barf">Dieta Natural (BARF)</option>
+                                    <option value="mixta">Mixta</option>
+                                </select>
+
+                                <button class="app-btn primary" onclick="proceedToDashboard()" style="margin-top:8px;">
+                                    Conectar Corazones <i class="fa-solid fa-heart-pulse"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- ==========================================
+                             PANTALLA 2: APP PRINCIPAL (6 TABS)
+                             ========================================== -->
+                        <div id="screen-main" class="app-screen app-main">
+
+                            <!-- TAB 1: BIO-DASHBOARD (Limpio, Moderno y a un Vistazo) -->
+                            <div id="tab-dash" class="tab-view active">
+                                <!-- Tarjeta Resumen Compañero & Puntuación de Salud -->
+                                <div class="pet-overview-card">
+                                    <div class="pet-overview-left">
+                                        <div class="pet-avatar-ring" style="width:48px!important;height:48px!important;min-width:48px!important;max-width:48px!important;border-radius:50%!important;overflow:hidden!important;border:2.5px solid #0077b6!important;box-shadow:0 3px 10px rgba(0,119,182,0.25)!important;flex-shrink:0!important;display:flex!important;align-items:center!important;justify-content:center!important;background:#e2e8f0;">
+                                            <img id="dash-avatar-img" src="avatar-mascota-perfil-gemelo-digital.png" alt="Mascota" style="width:48px!important;height:48px!important;min-width:48px!important;max-width:48px!important;border-radius:50%!important;object-fit:cover!important;display:block!important;margin:0!important;" decoding="async">
+                                        </div>
+                                        <div class="pet-overview-meta">
+                                            <h3><span id="display-pet-name">Mimi</span> <span style="font-size:0.75rem; color:#f59e0b;"><i class="fa-solid fa-crown"></i></span></h3>
+                                            <p id="display-pet-breed-tag">Mestizo &bull; Adulto Joven</p>
+                                            <div class="pet-status-pill">
+                                                <i class="fa-solid fa-circle" style="font-size:0.5rem;"></i> Collar Activo &bull; 94% Bat
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pet-score-circle">
+                                        <div class="pet-score-num">98%</div>
+                                        <div class="pet-score-lbl">Salud Óptima</div>
+                                    </div>
+                                </div>
+
+                                <!-- Banner AI Sentinel Companion (Botón Prominente, Ticker y Escáner) -->
+                                <div class="ai-sentinel-banner" id="ia-integrated-btn">
+                                    <div class="ai-scan-beam"></div>
+                                    <div class="ai-sentinel-top">
+                                        <div class="ai-sentinel-title">
+                                            <i class="fa-solid fa-shield-halved"></i> Guardián CUDI Bio-Neural
+                                        </div>
+                                        <span class="ai-live-badge"><span class="ai-live-dot"></span> 24/7 ACTIVO</span>
+                                    </div>
+                                    <div class="ai-sentinel-body">
+                                        Telemetría continua en reposo. Gemelo digital sin anomalías en las últimas 24h.
+                                    </div>
+                                    <!-- Ticker dinámico de estado telemétrico -->
+                                    <div class="ai-sentinel-status-ticker" id="ai-sentinel-ticker">
+                                        <i class="fa-solid fa-wave-pulse" id="ai-ticker-icon" style="color:#38bdf8;"></i>
+                                        <span id="ai-ticker-text">Smart Collar vinculado • Telemetría estable</span>
+                                    </div>
+                                    <button class="ai-sentinel-btn" id="ai-main-analysis-btn" onclick="startAIAnalysisAnimated()">
+                                        <i class="fa-solid fa-bolt" id="ai-btn-icon" style="color:#f59e0b;"></i>
+                                        <span id="ai-btn-text">Simular Triaje Clínico con IA</span>
+                                    </button>
+                                </div>
+
+                                <!-- Grid de 4 Métricas Clave a un Vistazo (2x2) -->
+                                <div class="dash-grid">
+                                    <!-- Métrica 1: Ritmo Cardíaco -->
+                                    <div class="metric-card">
+                                        <div class="m-header-row">
+                                            <span class="m-label"><i class="fa-solid fa-heart-pulse" style="color:#ef4444;"></i> Corazón</span>
+                                            <span class="m-pill success">Óptimo</span>
+                                        </div>
+                                        <div class="m-value"><span id="val-heart">75</span> <span style="font-size:0.68rem; font-weight:600; color:#64748b;">bpm</span></div>
+                                        <div class="m-sub">Reposo (±2 bpm)</div>
+                                        <div class="m-chart"><canvas id="chart-heart"></canvas></div>
+                                    </div>
+
+                                    <!-- Métrica 2: Energía y Actividad -->
+                                    <div class="metric-card">
+                                        <div class="m-header-row">
+                                            <span class="m-label"><i class="fa-solid fa-bolt" style="color:#f59e0b;"></i> Vitalidad</span>
+                                            <span class="m-pill">86% Meta</span>
+                                        </div>
+                                        <div class="m-value"><span id="val-energy">82</span><span style="font-size:0.68rem; font-weight:600;">%</span></div>
+                                        <div class="m-sub">4.2 km &bull; 4,280 pasos</div>
+                                        <div class="m-chart"><canvas id="chart-energy"></canvas></div>
+                                    </div>
+
+                                    <!-- Métrica 3: Sueño y Descanso -->
+                                    <div class="metric-card">
+                                        <div class="m-header-row">
+                                            <span class="m-label"><i class="fa-solid fa-moon" style="color:#0077b6;"></i> Descanso</span>
+                                            <span class="m-pill success">Profundo</span>
+                                        </div>
+                                        <div class="m-value"><span id="val-sleep">8.5</span><span style="font-size:0.68rem; font-weight:600;">h</span></div>
+                                        <div class="m-sub">Calidad 94/100</div>
+                                        <div class="m-chart"><canvas id="chart-sleep"></canvas></div>
+                                    </div>
+
+                                    <!-- Métrica 4: Estrés y VFC -->
+                                    <div class="metric-card">
+                                        <div class="m-header-row">
+                                            <span class="m-label"><i class="fa-solid fa-brain" style="color:#8b5cf6;"></i> Estrés</span>
+                                            <span class="m-pill success">Mínimo</span>
+                                        </div>
+                                        <div class="m-value" id="val-stress" style="font-size:1.1rem;">Bajo</div>
+                                        <div class="m-sub">VFC 68ms (Relajado)</div>
+                                        <div class="m-chart"><canvas id="chart-stress"></canvas></div>
+                                    </div>
+                                </div>
+
+                                <!-- Selector de Telemetría Avanzada (Toggle limpio) -->
+                                <div style="margin-top:4px; margin-bottom:12px;">
+                                    <div class="telemetry-toggle-wrap">
+                                        <button class="telemetry-tab-btn active" id="btn-telem-radar" onclick="switchTelemetryView('radar')">
+                                            <i class="fa-solid fa-hexagon-nodes"></i> Equilibrio Hexagonal
+                                        </button>
+                                        <button class="telemetry-tab-btn" id="btn-telem-bpm" onclick="switchTelemetryView('bpm')">
+                                            <i class="fa-solid fa-wave-square"></i> Holter Cardíaco 24h
+                                        </button>
+                                    </div>
+
+                                    <!-- Gráfico Radar -->
+                                    <div class="chart-box" id="box-chart-radar" style="height:190px;">
+                                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                                            <h5 style="margin:0; font-size:0.75rem; font-weight:800; color:#334155;">Equilibrio Biométrico Multiaxial</h5>
+                                            <span style="font-size:0.65rem; color:#10b981; font-weight:700;">Índice General: 91/100</span>
+                                        </div>
+                                        <canvas id="chart-radar"></canvas>
+                                    </div>
+
+                                    <!-- Gráfico Holter BPM (Oculto inicialmente por el toggle) -->
+                                    <div class="chart-box" id="box-chart-bpm" style="height:190px; display:none;">
+                                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                                            <h5 style="margin:0; font-size:0.75rem; font-weight:800; color:#334155;">Ritmo Cardíaco Continuo (24h)</h5>
+                                            <span style="font-size:0.65rem; color:#0077b6; font-weight:700;">Promedio: 76 bpm</span>
+                                        </div>
+                                        <canvas id="chart-bpm"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- TAB 3: SALUD Y VACUNAS -->
+                            <div id="tab-vax" class="tab-view">
+                                <h3 style="font-family:'Outfit';font-weight:800;font-size:1.1rem;margin:0 0 6px;">Calendario y Salud</h3>
+                                <p style="font-size:0.82rem;color:var(--app-text-muted);margin:0 0 16px;">Control absoluto de su expediente y agenda.</p>
+
+                                <!-- Vacunas -->
+                                <div style="background:white;border-radius:16px;padding:15px;border:1px solid var(--app-border);margin-bottom:14px;">
+                                    <h4 style="font-size:0.9rem;font-weight:800;color:var(--app-primary);margin:0 0 12px;"><i class="fa-solid fa-syringe"></i> Proximas Vacunas</h4>
+                                    <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #f1f5f9;">
+                                        <span style="font-weight:600;font-size:0.85rem;">Rabia (Recordatorio)</span>
+                                        <span style="color:var(--app-text-muted);font-size:0.85rem;">15 Mayo, 2026</span>
+                                    </div>
+                                    <div style="display:flex;justify-content:space-between;padding:8px 0;margin-bottom:10px;">
+                                        <span style="font-weight:600;font-size:0.85rem;">Polivalente Anual</span>
+                                        <span style="color:var(--app-danger);font-size:0.85rem;font-weight:700;">Vence Hoy!</span>
+                                    </div>
+                                    <button class="app-btn secondary" style="padding:10px;font-size:0.82rem;" onclick="bookOption('Renovar Polivalente', 35.00)">Programar Vacuna</button>
+                                </div>
+
+                                <!-- Cita -->
+                                <div style="background:white;border-radius:16px;padding:15px;border:1px solid var(--app-border);margin-bottom:14px;">
+                                    <h4 style="font-size:0.9rem;font-weight:800;color:var(--app-secondary);margin:0 0 12px;"><i class="fa-solid fa-calendar-check"></i> Citas Reservadas</h4>
+                                    <div style="display:flex;align-items:center;gap:10px;background:#f8fafc;padding:10px;border-radius:12px;">
+                                        <div style="background:var(--app-secondary);color:white;width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;text-align:center;font-weight:700;line-height:1.1;font-size:0.8rem;">22<br>ABR</div>
+                                        <div style="flex:1;">
+                                            <div style="font-weight:700;font-size:0.9rem;">Revision Pediatrica</div>
+                                            <div style="font-size:0.75rem;color:var(--app-text-muted);">Clinica Veterinaria CUDI Centro</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Graficos de salud -->
+                                <div class="chart-box" style="height:170px;">
+                                    <h5>Curva Termica Post-Vacunacion</h5>
+                                    <canvas id="chart-temp"></canvas>
+                                </div>
+                                <div class="chart-box" style="height:170px;">
+                                    <h5>Desglose Inmunologico</h5>
+                                    <canvas id="chart-inmuno"></canvas>
+                                </div>
+                                <div class="chart-box" style="height:160px;">
+                                    <h5>Niveles de Estres en Consulta</h5>
+                                    <canvas id="chart-stress-area"></canvas>
+                                </div>
+                            </div>
+
+                            <!-- TAB 3: UBICACIÓN GPS EN TIEMPO REAL -->
+                            <div id="tab-gps" class="tab-view">
+                                <div class="gps-header-card">
+                                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                                        <div style="display:flex; align-items:center; gap:8px;">
+                                            <span class="live-beacon-pulse"></span>
+                                            <span style="font-weight:800; font-size:0.85rem; color:#0f172a;">Rastreo GNSS / 4G Multibanda</span>
+                                        </div>
+                                        <span class="gps-geofence-tag safe" id="gps-zone-tag"><i class="fa-solid fa-shield-check"></i> En Zona Segura</span>
+                                    </div>
+                                    <div style="font-size:0.75rem; color:#64748b; line-height:1.4;">
+                                        <i class="fa-solid fa-map-pin" style="color:var(--app-primary);"></i> <span id="gps-zone-text">Parc Poblenou &bull; Jardín Principal</span>
+                                    </div>
+                                    <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px; padding-top:6px; border-top:1px dashed #e2e8f0; font-size:0.72rem; color:#64748b;">
+                                        <span>Distancia: <strong id="gps-dist-text" style="color:#0f172a;">45 m de casa</strong></span>
+                                        <span>Velocidad: <strong id="gps-pin-speed" style="color:#0f172a;">0.8 km/h</strong></span>
+                                    </div>
+                                </div>
+
+                                <!-- Banner Alerta de Fuga de Geocerca (Interactivo) -->
+                                <div id="gps-alert-banner" class="gps-escape-banner" style="display:none;">
+                                    <div style="display:flex; align-items:center; gap:10px;">
+                                        <i class="fa-solid fa-triangle-exclamation fa-beat" style="font-size:1.3rem;"></i>
+                                        <div>
+                                            <div style="font-weight:900; font-size:0.82rem; text-transform:uppercase; letter-spacing:0.5px;">¡Alerta de Perímetro Seguro!</div>
+                                            <div id="gps-escape-msg" style="font-size:0.72rem; opacity:0.95;">Tu mascota ha salido de la geocerca de casa.</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Botón Simulador de Movimiento / Fuga -->
+                                <div class="gps-sim-toggle-pill">
+                                    <button id="btn-gps-sim" class="gps-sim-btn alert-sim" onclick="toggleSimulateEscape()">
+                                        <i class="fa-solid fa-person-running"></i>
+                                        <span id="txt-gps-sim">Simular Salida de Casa 🏃</span>
+                                    </button>
+                                </div>
+
+                                <!-- MAPA VECTORIAL INTERACTIVO CON GEOCERCA Y ÁREA DE CASA -->
+                                <div class="gps-map-container" id="gps-map-box">
+                                    <!-- Cartografía Urbana SVG -->
+                                    <svg class="gps-svg-streets" viewBox="0 0 400 320" preserveAspectRatio="none">
+                                        <!-- Manzanas / Bloques urbanos -->
+                                        <rect x="15" y="15" width="105" height="120" rx="8" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1.5" />
+                                        <rect x="145" y="15" width="110" height="120" rx="8" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1.5" />
+                                        <rect x="280" y="15" width="105" height="120" rx="8" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1.5" />
+                                        <rect x="15" y="165" width="105" height="140" rx="8" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1.5" />
+                                        <rect x="145" y="165" width="110" height="140" rx="8" fill="#e0f2fe" stroke="#bae6fd" stroke-width="1.5" />
+                                        <rect x="280" y="165" width="105" height="140" rx="8" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1.5" />
+
+                                        <!-- Jardín Poblenou / Área Casa -->
+                                        <rect x="135" y="70" width="130" height="135" rx="18" fill="#dcfce7" stroke="#86efac" stroke-width="2" opacity="0.85" />
+                                        <text x="200" y="92" text-anchor="middle" fill="#166534" font-size="8.5" font-family="'Plus Jakarta Sans',sans-serif" font-weight="800" letter-spacing="0.5">JARDÍN / HOGAR (ÁREA SEGURA)</text>
+
+                                        <!-- Calles principales de Barcelona -->
+                                        <line x1="0" y1="148" x2="400" y2="148" stroke="#ffffff" stroke-width="18" />
+                                        <line x1="0" y1="148" x2="400" y2="148" stroke="#cbd5e1" stroke-dasharray="6,6" stroke-width="2" />
+                                        <line x1="130" y1="0" x2="130" y2="320" stroke="#ffffff" stroke-width="15" />
+                                        <line x1="265" y1="0" x2="265" y2="320" stroke="#ffffff" stroke-width="15" />
+                                        <text x="45" y="145" fill="#64748b" font-size="7.5" font-weight="700">C/ Ramon Turró</text>
+                                        <text x="315" y="145" fill="#64748b" font-size="7.5" font-weight="700">C/ Pallars</text>
+
+                                        <!-- Rastro de paseo SVG -->
+                                        <path id="svg-walking-trail" d="M 180 140 Q 185 160 172 154" fill="none" stroke="#0077b6" stroke-width="3" stroke-linecap="round" stroke-dasharray="4,4" style="display:none;" />
+                                    </svg>
+
+                                    <!-- Geocerca circular de la casa con radar animado -->
+                                    <div class="gps-geofence-zone" id="gps-geofence-zone" style="top:47%; left:45%; width:170px; height:170px;">
+                                        <div class="geofence-radar-wave"></div>
+                                        <div class="geofence-label"><i class="fa-solid fa-shield-heart"></i> Geocerca Casa (150m)</div>
+                                    </div>
+
+                                    <!-- Marcador del Hogar Base -->
+                                    <div class="gps-home-marker" id="gps-home-marker" style="top:42%; left:38%;" onclick="centerGpsMap('home')" title="Hogar CUDI">
+                                        <div class="home-icon-wrap"><i class="fa-solid fa-house-chimney"></i></div>
+                                        <span class="home-marker-lbl">Casa (Base)</span>
+                                    </div>
+
+                                    <!-- Marcador en Tiempo Real de la Mascota -->
+                                    <div class="gps-pet-marker" id="gps-pet-pin" style="top:48%; left:43%;" onclick="centerGpsMap('pet')">
+                                        <div class="marker-beacon-outer"></div>
+                                        <div class="marker-beacon-inner"></div>
+                                        <div class="sound-wave-ping" id="sound-wave-ping" style="display:none;"></div>
+                                        <div class="collar-led-halo" id="collar-led-halo" style="display:none;"></div>
+                                        <div class="pet-pin-avatar-wrap">
+                                            <img id="gps-pet-avatar-pin" src="avatar-mascota-perfil-gemelo-digital.png" alt="Mascota Pin" decoding="async">
+                                            <div class="pet-compass-heading"></div>
+                                        </div>
+                                        <div class="pet-pin-tooltip">
+                                            <strong id="gps-marker-label">Mimi</strong> &bull; <span style="color:#10b981;">En vivo</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Controles flotantes sobre el mapa -->
+                                    <div class="gps-map-controls">
+                                        <button class="map-ctrl-btn" onclick="centerGpsMap('pet')" title="Centrar en Mascota"><i class="fa-solid fa-crosshairs"></i></button>
+                                        <button class="map-ctrl-btn" onclick="centerGpsMap('home')" title="Centrar en Hogar"><i class="fa-solid fa-house"></i></button>
+                                        <button class="map-ctrl-btn" onclick="toggleGpsRoute()" id="btn-toggle-route" title="Ver Historial de Ruta"><i class="fa-solid fa-route"></i></button>
+                                    </div>
+                                </div>
+
+                                <!-- TELEMETRÍA DEL COLLAR HARDWARE -->
+                                <div class="collar-hardware-vitals">
+                                    <div class="c-vital-item">
+                                        <div class="c-vital-icon" style="color:#10b981;"><i class="fa-solid fa-battery-three-quarters"></i></div>
+                                        <div class="c-vital-text">
+                                            <span class="label">Batería Collar</span>
+                                            <span class="val" id="gps-collar-battery">94% (4 días)</span>
+                                        </div>
+                                    </div>
+                                    <div class="c-vital-item">
+                                        <div class="c-vital-icon" style="color:#0077b6;"><i class="fa-solid fa-signal"></i></div>
+                                        <div class="c-vital-text">
+                                            <span class="label">Señal 4G LTE</span>
+                                            <span class="val">5/5 Barras</span>
+                                        </div>
+                                    </div>
+                                    <div class="c-vital-item">
+                                        <div class="c-vital-icon" style="color:#8b5cf6;"><i class="fa-solid fa-satellite-dish"></i></div>
+                                        <div class="c-vital-text">
+                                            <span class="label">Precisión GNSS</span>
+                                            <span class="val">± 1.2 metros</span>
+                                        </div>
+                                    </div>
+                                    <div class="c-vital-item">
+                                        <div class="c-vital-icon" style="color:#f59e0b;"><i class="fa-solid fa-shield-dog"></i></div>
+                                        <div class="c-vital-text">
+                                            <span class="label">Estado Sensor</span>
+                                            <span class="val">Ajustado al Cuello</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- ACCIONES RÁPIDAS DEL COLLAR -->
+                                <div class="collar-actions-grid">
+                                    <button class="collar-act-btn" onclick="triggerCollarSound()">
+                                        <i class="fa-solid fa-volume-high" style="color:var(--app-primary);"></i>
+                                        <span>Hacer Sonar</span>
+                                    </button>
+                                    <button class="collar-act-btn" onclick="toggleCollarLED()" id="btn-collar-led">
+                                        <i class="fa-solid fa-lightbulb" style="color:#f59e0b;"></i>
+                                        <span id="txt-collar-led">Luz Nocturna</span>
+                                    </button>
+                                    <button class="collar-act-btn danger" onclick="triggerLostMode()" id="btn-lost-mode">
+                                        <i class="fa-solid fa-triangle-exclamation"></i>
+                                        <span id="txt-lost-mode">Modo Pérdida</span>
+                                    </button>
+                                    <button class="collar-act-btn" onclick="adjustGeofence()">
+                                        <i class="fa-solid fa-draw-polygon" style="color:#10b981;"></i>
+                                        <span>Ajustar Valla</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- TAB 4: TIENDA -->
+                            <div id="tab-store" class="tab-view">
+                                <!-- Badge Premium -->
+                                <div style="background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);border-radius:18px;padding:16px;margin-bottom:16px;border:1px solid rgba(255,215,0,0.3);position:relative;overflow:hidden;">
+                                    <div style="position:absolute;top:0;right:0;padding:6px 12px;background:linear-gradient(90deg,#ffd700,#f59e0b);color:#0f172a;font-size:0.6rem;font-weight:900;border-bottom-left-radius:12px;">ACTIVA</div>
+                                    <div style="display:flex;align-items:center;gap:12px;">
+                                        <div style="width:42px;height:42px;background:rgba(255,215,0,0.1);border-radius:12px;display:flex;align-items:center;justify-content:center;color:#ffd700;"><i class="fa-solid fa-crown"></i></div>
+                                        <div>
+                                            <div style="color:white;font-weight:800;font-size:0.9rem;">Suscripcion Premium Elite</div>
+                                            <div style="color:#94a3b8;font-size:0.75rem;">Precios exclusivos y IA 24/7 activa</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Carrito inline -->
+                                <button id="cart-float-btn" onclick="toggleInlineCart()" style="display:none;width:100%;background:var(--app-primary);color:white;border:none;border-radius:14px;padding:12px;font-weight:700;font-size:0.85rem;cursor:pointer;margin-bottom:12px;align-items:center;justify-content:center;gap:8px;">
+                                    <i class="fa-solid fa-cart-shopping"></i> Ver Cesta (<span id="cart-float-count">0</span>)
+                                </button>
+
+                                <div id="inline-cart-panel" style="display:none;background:#f8fafc;border-radius:14px;padding:14px;margin-bottom:12px;border:1px solid var(--app-border);">
+                                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+                                        <span style="font-weight:800;font-size:0.9rem;"><i class="fa-solid fa-cart-shopping" style="color:var(--app-primary);"></i> Tu Cesta</span>
+                                        <button onclick="document.getElementById('inline-cart-panel').style.display='none'" style="background:none;border:none;cursor:pointer;color:#94a3b8;"><i class="fa-solid fa-xmark"></i></button>
+                                    </div>
+                                    <div id="inline-cart-items"></div>
+                                    <div style="border-top:1px solid var(--app-border);padding-top:10px;margin-top:8px;display:flex;justify-content:space-between;align-items:center;">
+                                        <span style="font-weight:800;color:var(--app-primary);">Total: <span id="inline-cart-total">0.00 &euro;</span></span>
+                                        <button class="app-btn primary" onclick="openFullCheckout()" style="padding:10px 16px;font-size:0.82rem;width:auto;">Pagar <i class="fa-solid fa-lock"></i></button>
+                                    </div>
+                                </div>
+
+                                <!-- Categorias -->
+                                <p style="font-size:0.75rem;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;">Servicios disponibles</p>
+
+                                <button class="store-cat-btn" onclick="openStoreCategory('hardware_planes')">
+                                    <div class="cat-icon" style="background:#0077b6;"><i class="fa-solid fa-shield-dog"></i></div>
+                                    <div><div style="font-weight:800;font-size:0.88rem;">Collar GPS & Planes CUDI</div><div style="font-size:0.75rem;color:var(--app-text-muted);">Smart Collar HW, Suscripción Premium e IA</div></div>
+                                    <i class="fa-solid fa-chevron-right" style="color:#ccc;margin-left:auto;"></i>
+                                </button>
+                                <button class="store-cat-btn" onclick="openStoreCategory('paseos')">
+                                    <div class="cat-icon" style="background:#3b82f6;"><i class="fa-solid fa-person-walking-dog"></i></div>
+                                    <div><div style="font-weight:800;font-size:0.88rem;">Paseos & Cuidadores</div><div style="font-size:0.75rem;color:var(--app-text-muted);">ActivePaws, Urban Walkers & NannyPets</div></div>
+                                    <i class="fa-solid fa-chevron-right" style="color:#ccc;margin-left:auto;"></i>
+                                </button>
+                                <button class="store-cat-btn" onclick="openStoreCategory('clinica')">
+                                    <div class="cat-icon" style="background:#ec4899;"><i class="fa-solid fa-stethoscope"></i></div>
+                                    <div><div style="font-weight:800;font-size:0.88rem;">Veterinaria & Salud</div><div style="font-size:0.75rem;color:var(--app-text-muted);">VetHome Domicilio, MediPet & Hospital Dual</div></div>
+                                    <i class="fa-solid fa-chevron-right" style="color:#ccc;margin-left:auto;"></i>
+                                </button>
+                                <button class="store-cat-btn" onclick="openStoreCategory('seguros')">
+                                    <div class="cat-icon" style="background:#f59e0b;"><i class="fa-solid fa-shield-heart"></i></div>
+                                    <div><div style="font-weight:800;font-size:0.88rem;">Seguros & Pólizas</div><div style="font-size:0.75rem;color:var(--app-text-muted);">CUDI Shield, SafeHome MultiPet & Global</div></div>
+                                    <i class="fa-solid fa-chevron-right" style="color:#ccc;margin-left:auto;"></i>
+                                </button>
+                                <button class="store-cat-btn" onclick="openStoreCategory('estetica')">
+                                    <div class="cat-icon" style="background:#16a34a;"><i class="fa-solid fa-scissors"></i></div>
+                                    <div><div style="font-weight:800;font-size:0.88rem;">Estética & Spa</div><div style="font-size:0.75rem;color:var(--app-text-muted);">Bubbles & Paws, Grooming & ZenPet Spa</div></div>
+                                    <i class="fa-solid fa-chevron-right" style="color:#ccc;margin-left:auto;"></i>
+                                </button>
+                                <button class="store-cat-btn" onclick="openStoreCategory('nutricion')">
+                                    <div class="cat-icon" style="background:#ea580c;"><i class="fa-solid fa-bowl-food"></i></div>
+                                    <div><div style="font-weight:800;font-size:0.88rem;">Nutrición de Precisión</div><div style="font-size:0.75rem;color:var(--app-text-muted);">Vitality Mix, EcoPet Organic & PureBites</div></div>
+                                    <i class="fa-solid fa-chevron-right" style="color:#ccc;margin-left:auto;"></i>
+                                </button>
+
+                                <div id="store-products-panel" style="display:none;margin-top:4px;"></div>
+                            </div>
+
+                            <!-- TAB 5: CUDI PAWS SOCIAL (COMUNIDAD INTEGRADA) -->
+                            <div id="tab-social" class="tab-view">
+                                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                                    <h3 style="font-family:'Outfit';font-weight:800;font-size:1.15rem;margin:0;color:#0f172a;">CUDI Paws Social</h3>
+                                    <span style="font-size:0.68rem; font-weight:800; background:#e0f2fe; color:#0284c7; padding:3px 8px; border-radius:12px;"><i class="fa-solid fa-radar"></i> En Vivo</span>
+                                </div>
+                                <p style="font-size:0.78rem;color:#64748b;margin:0 0 10px;">Comunidad multiespecie y mascotas verificadas por Smart Collar.</p>
+
+                                <!-- BARRA DE STORIES CON AVATARES DE VECINOS -->
+                                <div class="demo-stories-bar" id="demo-stories-bar"></div>
+
+                                <!-- BANNER ALGORITMO AFINIDAD IA -->
+                                <div style="background:linear-gradient(135deg,#07192f 0%,#0077b6 100%);border-radius:16px;padding:14px 16px;color:white;margin-bottom:14px;box-shadow:0 6px 18px rgba(0,119,182,0.22);position:relative;overflow:hidden;border:1px solid rgba(56,189,248,0.3);">
+                                    <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">
+                                        <div style="width:34px;height:34px;border-radius:10px;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;font-size:1.05rem;color:#38bdf8;">
+                                            <i class="fa-solid fa-microchip"></i>
+                                        </div>
+                                        <div>
+                                            <div style="font-weight:800;font-size:0.84rem;">Algoritmo de Compatibilidad IA</div>
+                                            <div style="font-size:0.68rem;opacity:0.85;">Paseos, ritmo cardiaco y compatibilidad</div>
+                                        </div>
+                                    </div>
+                                    <p style="font-size:0.74rem;margin:0 0 10px;line-height:1.4;opacity:0.95;">La IA analiza el perfil cinemático y gasto calórico para sugerir encuentros seguros en tu barrio.</p>
+                                    <button onclick="proposeOuting()" style="width:100%;background:white;color:#0077b6;border:none;border-radius:10px;padding:9px;font-weight:800;font-size:0.78rem;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;box-shadow:0 2px 8px rgba(0,0,0,0.15);">
+                                        <i class="fa-solid fa-paw"></i> Proponer Salida con Vecinos 🐾
+                                    </button>
+                                </div>
+
+                                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                                    <span style="font-size:0.75rem;font-weight:800;color:#0f172a;text-transform:uppercase;letter-spacing:0.5px;">Vecinos con Smart Collar</span>
+                                    <span style="font-size:0.68rem; color:#0284c7; font-weight:700;"><i class="fa-solid fa-location-crosshairs"></i> Radio 1.5 km</span>
+                                </div>
+                                <div id="social-pets-list"></div>
+
+                                <!-- Graficos de actividad -->
+                                <div class="chart-box" style="height:180px;margin-top:14px;">
+                                    <h5>Kilometros Recorridos (Semana)</h5>
+                                    <canvas id="chart-weekly"></canvas>
+                                </div>
+                                <div class="chart-box" style="height:180px;">
+                                    <h5>Consumo de Macronutrientes</h5>
+                                    <canvas id="chart-diet"></canvas>
+                                </div>
+                            </div>
+
+                            <!-- TAB 6: PERFIL -->
+                            <div id="tab-profile" class="tab-view">
+                                <div class="profile-avatar-wrap">
+                                    <div class="profile-avatar" style="background-image:url('avatar-mascota-perfil-gemelo-digital.png');background-color:#e2e8f0;"></div>
+                                    <h3 id="profile-pet-name" style="font-family:'Outfit';font-weight:800;font-size:1.5rem;margin:0 0 6px;"></h3>
+                                    <span style="background:#0f172a;color:#ffd700;padding:4px 14px;border-radius:50px;font-size:0.7rem;font-weight:900;letter-spacing:1px;border:1px solid #ffd700;">PREMIUM ELITE</span>
+                                </div>
+
+                                <!-- Tarjeta datos -->
+                                <div style="background:white;border-radius:18px;padding:18px;border:1px solid var(--app-border);margin-bottom:14px;">
+                                    <h4 style="font-size:0.9rem;font-weight:800;color:var(--app-primary);margin:0 0 14px;"><i class="fa-solid fa-id-card"></i> Ficha Digital</h4>
+                                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+                                        <div><div style="font-size:0.7rem;color:#94a3b8;font-weight:700;text-transform:uppercase;margin-bottom:3px;">Especie</div><div id="profile-pet-type" style="font-weight:700;font-size:0.9rem;">-</div></div>
+                                        <div><div style="font-size:0.7rem;color:#94a3b8;font-weight:700;text-transform:uppercase;margin-bottom:3px;">Raza</div><div id="profile-pet-breed" style="font-weight:700;font-size:0.9rem;">-</div></div>
+                                        <div><div style="font-size:0.7rem;color:#94a3b8;font-weight:700;text-transform:uppercase;margin-bottom:3px;">Etapa</div><div id="profile-pet-age" style="font-weight:700;font-size:0.9rem;">-</div></div>
+                                        <div><div style="font-size:0.7rem;color:#94a3b8;font-weight:700;text-transform:uppercase;margin-bottom:3px;">Peso</div><div id="profile-pet-weight" style="font-weight:700;font-size:0.9rem;">-</div></div>
+                                        <div><div style="font-size:0.7rem;color:#94a3b8;font-weight:700;text-transform:uppercase;margin-bottom:3px;">Energia</div><div id="profile-pet-energy" style="font-weight:700;font-size:0.9rem;">-</div></div>
+                                        <div><div style="font-size:0.7rem;color:#94a3b8;font-weight:700;text-transform:uppercase;margin-bottom:3px;">Dieta</div><div id="profile-pet-food" style="font-weight:700;font-size:0.9rem;">-</div></div>
+                                    </div>
+                                </div>
+
+                                <!-- Estado CUDI -->
+                                <div style="background:linear-gradient(135deg,#0077b6 0%,#0ea5e9 100%);border-radius:18px;padding:18px;color:white;margin-bottom:14px;">
+                                    <h4 style="font-size:0.9rem;font-weight:800;margin:0 0 12px;"><i class="fa-solid fa-shield-check"></i> Estado CUDI</h4>
+                                    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;text-align:center;">
+                                        <div><div style="font-size:1.4rem;font-weight:900;">98%</div><div style="font-size:0.7rem;opacity:0.8;">Salud Global</div></div>
+                                        <div><div style="font-size:1.4rem;font-weight:900;">4.2km</div><div style="font-size:0.7rem;opacity:0.8;">Hoy</div></div>
+                                        <div><div style="font-size:1.4rem;font-weight:900;">75bpm</div><div style="font-size:0.7rem;opacity:0.8;">Corazon</div></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- BOTTOM NAV (6 tabs ergonómicas) -->
+                            <div class="bottom-nav">
+                                <div class="nav-item active" onclick="switchTab('dash',this)"><i class="fa-solid fa-microchip"></i><span>IA</span></div>
+                                <div class="nav-item" onclick="switchTab('vax',this)"><i class="fa-solid fa-syringe"></i><span>Salud</span></div>
+                                <div class="nav-item" onclick="switchTab('gps',this)"><i class="fa-solid fa-location-dot"></i><span>Ubicación</span></div>
+                                <div class="nav-item" onclick="switchTab('store',this)"><i class="fa-solid fa-basket-shopping"></i><span>Tienda</span></div>
+                                <div class="nav-item" onclick="switchTab('social',this)"><i class="fa-solid fa-paw"></i><span>Social</span></div>
+                                <div class="nav-item" onclick="switchTab('profile',this)"><i class="fa-solid fa-id-card"></i><span>Perfil</span></div>
+                            </div>
+
+                        </div><!-- /screen-main -->
+
+                        <!-- ==========================================
+                             ALERT SCREEN (Triaje Clínico IA Avanzado)
+                             ========================================== -->
+                        <div id="alert-screen" class="dynamic-alert-screen">
+                            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+                                <button onclick="closeAlertScreen()" style="display:inline-flex; align-items:center; gap:6px; background:#f1f5f9; border:none; color:#475569; font-weight:700; font-size:0.78rem; padding:8px 14px; border-radius:50px; cursor:pointer;">
+                                    <i class="fa-solid fa-arrow-left"></i> Volver al panel
+                                </button>
+                                <span style="font-size:0.68rem; font-weight:800; background:#e0f2fe; color:#0284c7; padding:4px 10px; border-radius:50px;">
+                                    <i class="fa-solid fa-microchip"></i> BIO-NEURAL V4
+                                </span>
+                            </div>
+
+                            <!-- Selector de Escenarios Clínicos Interactivos -->
+                            <div style="margin-bottom:10px;">
+                                <div style="font-size:0.68rem; font-weight:800; color:#64748b; text-transform:uppercase; margin-bottom:6px;">
+                                    Casos de Simulación Veterinaria
+                                </div>
+                                <div class="triage-scenario-selector">
+                                    <div class="triage-chip active" id="chip-scen-calor" onclick="selectTriageScenario('calor')">
+                                        <i class="fa-solid fa-temperature-arrow-up" style="color:#ef4444;"></i> Golpe Calor
+                                    </div>
+                                    <div class="triage-chip" id="chip-scen-estres" onclick="selectTriageScenario('estres')">
+                                        <i class="fa-solid fa-bolt" style="color:#f59e0b;"></i> Ansiedad/Ruido
+                                    </div>
+                                    <div class="triage-chip" id="chip-scen-letargo" onclick="selectTriageScenario('letargo')">
+                                        <i class="fa-solid fa-heart-crack" style="color:#ec4899;"></i> Letargo/Dolor
+                                    </div>
+                                    <div class="triage-chip" id="chip-scen-sueno" onclick="selectTriageScenario('sueno')">
+                                        <i class="fa-solid fa-moon" style="color:#8b5cf6;"></i> Micro-Despertares
+                                    </div>
+                                    <div class="triage-chip" id="chip-scen-metab" onclick="selectTriageScenario('metab')">
+                                        <i class="fa-solid fa-bowl-food" style="color:#10b981;"></i> Desbalance Dieta
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Tarjeta de Escaneo Holter / ECG Animado -->
+                            <div class="triage-scan-card" id="triage-scan-card">
+                                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                                    <span style="font-size:0.72rem; font-weight:800; color:#38bdf8;">
+                                        <i class="fa-solid fa-wave-square fa-fade"></i> Holter ECG Cardíaco en Vivo
+                                    </span>
+                                    <span style="font-size:0.65rem; color:#94a3b8;" id="triage-scan-status">Analizando 1,440 pings...</span>
+                                </div>
+                                <canvas id="triage-ecg-canvas" width="290" height="55" class="triage-ecg-canvas" style="display:block; width:100%; height:55px; margin-bottom:8px; border-radius:8px;"></canvas>
+                                <div style="background:rgba(255,255,255,0.1); border-radius:50px; height:6px; overflow:hidden;">
+                                    <div id="ai-scan-bar" style="width:100%; height:100%; background:linear-gradient(90deg, #38bdf8, #10b981); transition:width 0.4s ease; border-radius:50px;"></div>
+                                </div>
+                            </div>
+
+                            <!-- Medidor de Nivel de Severidad -->
+                            <div class="severity-gauge-card">
+                                <div class="severity-meter-header">
+                                    <span style="font-size:0.72rem; font-weight:800; text-transform:uppercase; color:#64748b;">Nivel de Severidad Detectado</span>
+                                    <span id="triage-severity-badge" style="font-size:0.75rem; font-weight:900; color:#ef4444; background:#fee2e2; padding:3px 10px; border-radius:50px;">
+                                        88/100 Crítico
+                                    </span>
+                                </div>
+                                <div class="severity-track">
+                                    <div id="triage-severity-bar" class="severity-bar-fill" style="width:88%; background:linear-gradient(90deg, #f59e0b, #ef4444);"></div>
+                                </div>
+
+                                <!-- Tabla de Comparación de Biomarcadores -->
+                                <table class="biomarker-table">
+                                    <thead>
+                                        <tr style="color:#94a3b8; font-size:0.62rem; text-transform:uppercase;">
+                                            <th style="text-align:left; padding:4px;">Parámetro</th>
+                                            <th style="text-align:right; padding:4px;">Lectura</th>
+                                            <th style="text-align:right; padding:4px;">Desviación</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="triage-biomarkers-body">
+                                        <!-- Inyectado dinámicamente -->
+                                    </tbody>
+                                </table>
+
+                                <!-- Conclusión Diagnóstica IA -->
+                                <div class="triage-protocol-box">
+                                    <strong style="color:var(--app-primary); display:block; margin-bottom:4px;" id="triage-diag-title">
+                                        <i class="fa-solid fa-stethoscope"></i> Conclusión del Gemelo Digital:
+                                    </strong>
+                                    <span id="triage-diag-desc">
+                                        Riesgo de sobrecalentamiento por shock térmico. Taquicardia reactiva y estrés circulatorio.
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- Opciones y Protocolo de Acción Inmediata -->
+                            <div style="font-size:0.7rem; font-weight:800; color:#64748b; text-transform:uppercase; margin-bottom:8px;">
+                                Solución & Protocolo Recomendado
+                            </div>
+                            <div id="alert-options"></div>
+
+                            <button class="app-btn secondary" onclick="closeAlertScreen()" style="margin-top:10px; padding:10px; font-size:0.8rem;">
+                                Cerrar diagnóstico por ahora
+                            </button>
+                        </div>
+
+                        <!-- ==========================================
+                             CHECKOUT MODAL
+                             ========================================== -->
+                        <div id="checkout-modal" class="checkout-modal">
+                            <div class="checkout-panel">
+                                <div class="checkout-header">
+                                    <button onclick="closeModal('checkout-modal')" style="background:#f1f5f9;border:none;width:36px;height:36px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#64748b;"><i class="fa-solid fa-arrow-left"></i></button>
+                                    <div>
+                                        <div style="font-weight:800;font-size:0.95rem;">Checkout Seguro CUDI</div>
+                                        <div id="chk-step-label" style="font-size:0.75rem;color:#94a3b8;">Paso 1 de 3</div>
+                                    </div>
+                                    <div style="margin-left:auto;display:flex;gap:5px;">
+                                        <div id="chk-dot-1" style="width:8px;height:8px;border-radius:50%;background:var(--app-primary);"></div>
+                                        <div id="chk-dot-2" style="width:8px;height:8px;border-radius:50%;background:#e2e8f0;"></div>
+                                        <div id="chk-dot-3" style="width:8px;height:8px;border-radius:50%;background:#e2e8f0;"></div>
+                                    </div>
+                                </div>
+
+                                <div style="padding:20px;">
+                                    <!-- PASO 1 -->
+                                    <div id="chk-step-1">
+                                        <h4 style="font-weight:800;margin:0 0 14px;font-size:0.9rem;"><i class="fa-solid fa-cart-shopping" style="color:var(--app-primary);"></i> Tu pedido</h4>
+                                        <div id="chk-items-detail"></div>
+                                        <div style="background:#f8fafc;border-radius:12px;padding:14px;border:1px solid var(--app-border);">
+                                            <div style="display:flex;justify-content:space-between;margin-bottom:6px;font-size:0.85rem;color:#64748b;"><span>Subtotal</span><span id="chk-subtotal">0.00 &euro;</span></div>
+                                            <div style="display:flex;justify-content:space-between;margin-bottom:6px;font-size:0.85rem;color:#64748b;"><span>Envio CUDI</span><span style="color:#10b981;">Gratis</span></div>
+                                            <div style="display:flex;justify-content:space-between;font-size:1rem;font-weight:800;border-top:1px solid var(--app-border);padding-top:10px;margin-top:8px;"><span>Total</span><span id="chk-total" style="color:var(--app-primary);">0.00 &euro;</span></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- PASO 2 -->
+                                    <div id="chk-step-2" style="display:none;">
+                                        <h4 style="font-weight:800;margin:0 0 14px;font-size:0.9rem;"><i class="fa-solid fa-location-dot" style="color:var(--app-primary);"></i> Direccion de entrega</h4>
+                                        <input id="chk-name" class="app-input" type="text" placeholder="Nombre completo">
+                                        <input id="chk-address" class="app-input" type="text" placeholder="Calle y numero">
+                                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+                                            <input id="chk-city" class="app-input" type="text" placeholder="Ciudad">
+                                            <input id="chk-zip" class="app-input" type="text" placeholder="Codigo postal">
+                                        </div>
+                                        <h4 style="font-weight:800;margin:14px 0 10px;font-size:0.9rem;"><i class="fa-solid fa-lock" style="color:var(--app-primary);"></i> Metodo de pago</h4>
+                                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+                                            <label id="pay-opt-card" onclick="selectPayMethod('card')" style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 10px;background:var(--app-primary);color:white;border-radius:14px;cursor:pointer;font-size:0.8rem;font-weight:700;border:2px solid var(--app-primary);">
+                                                <i class="fa-brands fa-cc-visa" style="font-size:1.5rem;"></i>Tarjeta</label>
+                                            <label id="pay-opt-paypal" onclick="selectPayMethod('paypal')" style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 10px;background:white;color:#475569;border-radius:14px;cursor:pointer;font-size:0.8rem;font-weight:700;border:2px solid var(--app-border);">
+                                                <i class="fa-brands fa-paypal" style="font-size:1.5rem;color:#003087;"></i>PayPal</label>
+                                            <label id="pay-opt-bizum" onclick="selectPayMethod('bizum')" style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 10px;background:white;color:#475569;border-radius:14px;cursor:pointer;font-size:0.8rem;font-weight:700;border:2px solid var(--app-border);">
+                                                <i class="fa-solid fa-mobile-screen-button" style="font-size:1.5rem;color:#6d28d9;"></i>Bizum</label>
+                                            <label id="pay-opt-apple" onclick="selectPayMethod('apple')" style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 10px;background:white;color:#475569;border-radius:14px;cursor:pointer;font-size:0.8rem;font-weight:700;border:2px solid var(--app-border);">
+                                                <i class="fa-brands fa-apple" style="font-size:1.5rem;color:#000;"></i>Apple Pay</label>
+                                        </div>
+                                    </div>
+
+                                    <!-- PASO 3 -->
+                                    <div id="chk-step-3" style="display:none;text-align:center;">
+                                        <div style="font-size:3rem;color:var(--app-success);margin-bottom:10px;"><i class="fa-solid fa-check-circle"></i></div>
+                                        <h3 style="font-family:'Outfit';font-weight:800;margin-bottom:5px;">Pedido confirmado!</h3>
+                                        <p style="font-size:0.8rem;color:#64748b;margin-bottom:20px;">Numero de seguimiento: <strong id="chk-tracking-number" style="color:var(--app-primary);">-</strong></p>
+                                        <div style="text-align:left;background:#f8fafc;border-radius:16px;padding:18px;border:1px solid var(--app-border);">
+                                            <h4 style="font-size:0.85rem;font-weight:800;margin:0 0 14px;"><i class="fa-solid fa-truck-fast" style="color:var(--app-primary);"></i> Seguimiento en tiempo real</h4>
+                                            <div class="track-line">
+                                                <div class="track-step"><div class="track-dot done"></div><div style="font-weight:700;font-size:0.85rem;color:#10b981;">Pedido confirmado</div><div style="font-size:0.75rem;color:#94a3b8;">Ahora mismo</div></div>
+                                                <div class="track-step"><div id="track-dot-prepare" class="track-dot"></div><div style="font-weight:700;font-size:0.85rem;">Preparando pedido</div><div style="font-size:0.75rem;color:#94a3b8;">En los proximos minutos</div></div>
+                                                <div class="track-step"><div id="track-dot-transit" class="track-dot"></div><div style="font-weight:700;font-size:0.85rem;">En transito</div><div style="font-size:0.75rem;color:#94a3b8;">Estimado: 24-48h</div></div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div style="margin-top:20px; padding-bottom:15px;">
+                                        <button id="chk-action-btn" class="app-btn primary" onclick="checkoutNextStep()" style="position:relative; z-index:10; cursor:pointer;">
+                                            Continuar <i class="fa-solid fa-arrow-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ORDER SUCCESS -->
+                        <div id="order-success-screen" class="order-success-screen">
+                            <div style="background:linear-gradient(135deg,#0ea5e9,#0077b6);height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;text-align:center;padding:20px;flex-shrink:0;">
+                                <div style="width:70px;height:70px;background:rgba(255,255,255,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2.5rem;margin-bottom:15px;border:2px solid rgba(255,255,255,0.5);"><i class="fa-solid fa-check"></i></div>
+                                <h2 style="font-weight:900;margin-bottom:5px;font-size:1.4rem;">Pedido Confirmado!</h2>
+                                <p style="font-size:0.85rem;opacity:0.9;">Tu mascota te lo agradecera</p>
+                            </div>
+                            <div style="padding:25px;background:white;flex:1;border-radius:30px 30px 0 0;margin-top:-20px;">
+                                <button class="app-btn primary" onclick="closeOrderSuccess()">Volver al Panel</button>
+                            </div>
+                        </div>
+
+                        
+
+                        <!-- IN-APP AI CHAT WIDGET (Immersive Version) -->
+                        <div class="in-app-ia-wrapper">
+                            <div class="in-app-ia-btn" onclick="toggleInAppChat()">
+                                <img src="logo.jpeg" alt="CUDI AI" decoding="async" loading="lazy">
+                                <div class="ia-pulse-mini"></div>
+                            </div>
+                            <div class="in-app-ia-panel" id="in-app-ia-panel">
+                                <div class="ia-panel-mini-header">
+                                    <div class="ia-profile-mini">
+                                        <div class="ia-avatar-mini">
+                                            <img src="logo.jpeg" alt="CUDI" decoding="async" loading="lazy">
+                                        </div>
+                                        <div class="ia-meta-mini">
+                                            <span class="ia-name-mini">CUDI | Asistente de Salud</span>
+                                            <span class="ia-status-mini">En línea</span>
+                                        </div>
+                                    </div>
+                                    <button class="ia-close-mini" onclick="toggleInAppChat()"><i class="fa-solid fa-xmark"></i></button>
+                                </div>
+                                <div class="ia-panel-mini-body" id="in-app-ia-body">
+                                    <div class="ia-msg-bubble">¡Hola! Soy tu asistente CUDI. ¿Cómo puedo ayudarte hoy con tu compañero?</div>
+                                </div>
+                                <div class="ia-panel-mini-footer">
+                                    <input type="text" id="in-app-ia-input" placeholder="Pregúntame lo que necesites..." onkeypress="handleInAppChatEnter(event)">
+                                    <button onclick="sendInAppChatMessage()"><i class="fa-solid fa-paper-plane"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                    
+        </div><!-- /mobile-screen -->
+    </div><!-- /mobile-device -->
+
+    <!-- SCRIPTS -->
+    <script src="script.js?v=6.2"></script>
+    <script src="app-demo.js?v=6.2"></script>
+    <script src="cudi-ai.js?v=6.2"></script>
+    <!-- Módulos Transversales CUDI (Arquitectura Modular en Español) -->
+    <script src="modulos/estado-compartido.js?v=6.4"></script>
+    <script src="modulos/catalogo-unico.js?v=6.4"></script>
+    <script src="modulos/internacionalizacion.js?v=6.4"></script>
+    <script src="modulos/nucleo-transversal.js?v=6.4"></script>
+</body>
+</html>

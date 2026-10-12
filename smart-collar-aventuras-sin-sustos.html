@@ -1,0 +1,1282 @@
+<!-- Desarrollo 100% realizado por Sergio Alejandro Ospina Rocha -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZWK5NC6Z51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZWK5NC6Z51');
+</script>
+<!-- Microsoft Clarity Tracking Code -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "ywsuqovlxx");
+</script>
+    <meta name="author" content="Sergio Alejandro Ospina Rocha">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campaña Aventuras sin Sustos | CUDI</title>
+    <meta name="description" content="Únete al primer mapa colaborativo de rutas pet-friendly en España. Gana suscripciones compartiendo tus aventuras con CUDI.">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .campaign-hero {
+            background: linear-gradient(135deg, #F0F9FF 0%, #FFFFFF 100%);
+            padding: 120px 0 80px 0;
+            text-align: center;
+        }
+        .carousel-track {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding: 20px 5%;
+            scrollbar-width: none; /* Firefox */
+        }
+        .carousel-track::-webkit-scrollbar { display: none; }
+        .carousel-card {
+            flex: 0 0 300px;
+            scroll-snap-align: center;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border: 1px solid #f0f0f0;
+            overflow: hidden;
+            position: relative;
+        }
+        .carousel-img { width: 100%; height: 300px; object-fit: cover; }
+        .social-strategies {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 60px;
+        }
+        .strategy-card {
+            background: white; padding: 40px; border-radius: 25px; box-shadow: 0 15px 40px rgba(0,0,0,0.05); border: 1px solid #f1f5f9;
+        }
+        .simulator-ui {
+            background: white; padding: 25px; border-radius: 35px; box-shadow: 0 30px 60px rgba(0,119,182,0.15); border: 5px solid #0f172a; position: relative; overflow: hidden;
+        }
+        .sim-data {
+            background: rgba(255,255,255,0.9); padding: 15px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); margin-top: 15px; display:flex; justify-content:space-between; align-items:center; backdrop-filter: blur(5px);
+        }
+    </style>
+
+    
+    <!-- Meta Pixel Code for Funnel Tracking -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1029384756CUDI');
+      fbq('track', 'PageView');
+    </script>
+    <!-- End TFM Tracking Requirements -->
+
+    
+
+    <link rel="stylesheet" href="cudi-ai.css?v=6.2">
+    <script src="cudi-analytics.js?v=6.3"></script>
+</head>
+<body>
+    
+    <!-- Barra de Contacto Superior -->
+    <div class="top-bar-refined">
+        <span><i class="fa-solid fa-envelope"></i> cudi.ai2026@gmail.com</span>
+        <span><i class="fa-solid fa-phone"></i> 900 123 456</span>
+        <div style="display:flex; align-items:center; gap:5px;">
+            <i class="fa-solid fa-globe"></i>
+            <select class="lang-selector" style="background:transparent; color:white; border:none; outline:none; font-family:var(--font-body); cursor:pointer; font-weight:700; font-size:0.75rem;">
+                <option value="es" style="color:#000;">ES</option>
+                <option value="ca" style="color:#000;">CA</option>
+                <option value="en" style="color:#000;">EN</option>
+            </select>
+        </div>
+    </div>
+
+    <nav class="navbar-island">
+        <div class="nav-capsule">
+            <a href="index.html" class="logo" style="display:flex; align-items:center;">
+                <img src="logo.jpeg" alt="CUDI" style="height:55px; width:auto; border-radius: 8px;" decoding="async">
+            </a>
+            <div class="nav-search-island">
+                <i class="fa-solid fa-magnifying-glass" style="color:var(--clr-primary); font-size:0.9rem;"></i>
+                <input type="text" placeholder="¿Qué necesita tu compañero hoy?">
+            </div>
+            <div class="nav-right-island">
+                <ul class="nav-links-island" style="gap:25px;">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="smart-collar-aventuras-sin-sustos.html">Lanzamiento</a></li>
+                    <li><a href="comunidad-cudi.html">Comunidad</a></li>
+                    <li><a href="simulador-financiero.html">Simulador</a></li>
+                    <li><a href="index.html#store-grid">Tienda</a></li>
+                    <li><a href="index.html#suscripciones">Planes</a></li>
+                    <li><a href="red-socios-clinicas-veterinarias.html">Partners</a></li>
+                    <li id="nav-session-item"></li>
+                </ul>
+                <div class="cart-trigger-island" onclick="toggleCart()" style="position:relative; display:flex; align-items:center; justify-content:center; cursor:pointer; min-width:44px; min-height:44px;">
+                    <i class="cart-icon-cudi" style="font-size:1.2rem; pointer-events:none;"></i>
+                    <span class="cart-badge" id="global-cart-badge" style="position:absolute;top:-6px;right:-6px;background:var(--clr-primary);color:white;font-size:0.65rem;font-weight:700;border-radius:50px;width:18px;height:18px;display:flex;align-items:center;justify-content:center;border: 2px solid white; pointer-events:none;">0</span>
+                </div>
+                <button class="menu-trigger-mobile" onclick="toggleMobileMenu()" style="touch-action:manipulation;"><i class="fa-solid fa-bars-staggered"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- PANEL LATERAL CARRITO (SIDE-CART) -->
+    <div class="cart-overlay" id="cart-overlay" onclick="closeAllPanels()"></div>
+    <div class="side-cart" id="side-cart">
+        <div class="cart-header">
+            <h3><i class="fa-solid fa-bag-shopping"></i> Tu Cesta CUDI</h3>
+            <button class="close-cart" aria-label="Cerrar Carrito" onclick="toggleCart()"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="cart-items" id="cart-items-container"></div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total Estimado:</span>
+                <span id="cart-total-price">0.00 €</span>
+            </div>
+            <a href="contratar-plan-premium-cudi.html" class="btn-primary" aria-label="Acción principal" style="display:block; text-align:center; margin-top:10px;">Procesar Pago Seguro <i class="fa-solid fa-lock"></i></a>
+        </div>
+    </div>
+
+    <!-- HERO LIMPIO E ILUMINADO -->
+    <header class="campaign-hero">
+        <div class="container" style="max-width: 900px;">
+            <span style="display:inline-block; background:rgba(0,119,182,0.1); color:#0077b6; padding:8px 25px; border-radius:50px; font-weight:800; font-size:0.9rem; text-transform:uppercase; margin-bottom:20px; letter-spacing:1.5px;">Gana Premium Care Gratis</span>
+            <h1 style="font-size: 4rem; font-weight: 800; letter-spacing: -2px; margin-bottom: 25px; color: #0f172a; line-height: 1.1;">La Gran Ruta CUDI: <br><span style="color: #0077B6;">Aventuras sin sustos.</span></h1>
+            <p style="font-size: 1.3rem; color: #64748b; line-height: 1.7; margin-bottom: 40px;">Únete al mayor mapa colaborativo de exploración pet-friendly. Disfruta de la naturaleza sabiendo que, gracias a nuestra telemetría satelital, tu mejor amigo está siempre seguro. Comparte tus rutas en redes e inspira a la familia CUDI.</p>
+            <a href="#como-participar" class="btn-primary" aria-label="Acción principal" style="padding: 18px 45px; font-size: 1.1rem; border-radius: 50px; box-shadow: 0 15px 30px rgba(0,119,182,0.2); text-decoration:none;">Participar en el Reto Ahora <i class="fa-solid fa-arrow-down" style="margin-left:10px;"></i></a>
+        </div>
+    </header>
+
+    <!-- SIMULADOR INTERACTIVO -->
+    <section style="padding: 100px 0; background: white;">
+        <div class="container">
+            <div style="display: flex; gap: 60px; align-items: center; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 350px;">
+                    <h2 style="font-size: 2.8rem; font-weight: 800; margin-bottom: 25px; color: #0f172a; letter-spacing:-1px;">Sigue su rastro en directo.</h2>
+                    <p style="font-size: 1.2rem; color: #64748b; line-height: 1.7; margin-bottom: 30px;">Nuestro Smart Collar registra cada metro recorrido de forma precisa. Mientras tu mascota explora libremente, el simulador de rutas en tu App CUDI evalúa el gasto calórico y te muestra advertencias si se aleja de la Zona Segura que has delimitado.</p>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 20px; display: flex; align-items:flex-start; gap: 15px;"><i class="fa-solid fa-check-circle" style="color:#10b981; font-size:1.5rem; margin-top:3px;"></i> <div><strong style="display:block; font-size:1.1rem; color:#0f172a;">Mapa Colaborativo B2C</strong><span style="color:#64748b;">Descubre rutas subidas por otros usuarios verificados de la comunidad en Barcelona.</span></div></li>
+                        <li style="margin-bottom: 20px; display: flex; align-items:flex-start; gap: 15px;"><i class="fa-solid fa-check-circle" style="color:#10b981; font-size:1.5rem; margin-top:3px;"></i> <div><strong style="display:block; font-size:1.1rem; color:#0f172a;">Radar de Seguridad Local</strong><span style="color:#64748b;">Alertas sonoras y lumínicas (LED) si salen del perímetro que has dibujado con tu dedo.</span></div></li>
+                    </ul>
+                </div>
+                
+                <!-- UI Simulador -->
+                <div style="flex: 1; min-width: 350px; display:flex; justify-content:center;">
+                    <div class="simulator-ui" style="width:100%; max-width:420px; background:#0f172a; color:white; border:none; box-shadow: 0 40px 80px rgba(0,0,0,0.3); padding:30px;">
+                        <!-- Header -->
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+                            <span style="font-weight:800; color:#38bdf8; font-size:0.9rem; letter-spacing:1px;"><i class="fa-solid fa-satellite-dish" style="animation: pulse 2s infinite;"></i> SAT-LINK ACTIVO</span>
+                            <span style="background:rgba(16,185,129,0.15); color:#10b981; padding:6px 14px; border-radius:30px; font-weight:800; font-size:0.75rem; border:1px solid rgba(16,185,129,0.4);">BAT 82%</span>
+                        </div>
+
+                        <!-- Map container -->
+                        <div style="height: 280px; background-image:url('mapa-rutas-naturaleza-aventuras-sin-sustos.png'); background-size:cover; background-position:center; border-radius:20px; position:relative; overflow:hidden; border:2px solid #1e293b;">
+                            <!-- Radar Scanning line CSS animation -->
+                            <div class="radar-scan"></div>
+                            <!-- Fake marker pulse -->
+                            <div style="position:absolute; top:40%; left:50%; width:20px; height:20px; background:#10b981; border-radius:50%; border:3px solid white; transform:translate(-50%,-50%); box-shadow:0 0 0 0 rgba(16,185,129,0.7); animation: pulse-green 1.5s infinite;"></div>
+                            
+                            <!-- Live coordinates float -->
+                            <div style="position:absolute; bottom:15px; left:15px; background:rgba(15,23,42,0.85); backdrop-filter:blur(8px); padding:10px 15px; border-radius:12px; font-family:monospace; font-size:0.85rem; color:#38bdf8; line-height:1.4;" id="sim-coords">
+                                LAT: 41.3651 °N <br> LON: 2.1583 °E
+                            </div>
+                        </div>
+                        
+                        <!-- Expanded Stats Grid -->
+                        <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px;">
+                            <!-- Stat box 1: Heart Rate -->
+                            <div style="background:#1e293b; padding:15px; border-radius:15px; display:flex; align-items:center; gap:15px; border:1px solid #334155;">
+                                <i class="fa-solid fa-heart-pulse" style="color:#ef4444; font-size:2rem; animation: heartbeat 1.2s infinite;"></i>
+                                <div>
+                                    <div style="color:#94a3b8; font-size:0.75rem; font-weight:800; letter-spacing:1px; margin-bottom:3px;">FC (BPM)</div>
+                                    <div style="font-size:1.6rem; font-weight:800; color:white; line-height:1;" id="sim-bpm">115</div>
+                                </div>
+                            </div>
+
+                            <!-- Stat box 2: Speed -->
+                            <div style="background:#1e293b; padding:15px; border-radius:15px; display:flex; align-items:center; gap:15px; border:1px solid #334155;">
+                                <i class="fa-solid fa-gauge-high" style="color:#f59e0b; font-size:2rem;"></i>
+                                <div>
+                                    <div style="color:#94a3b8; font-size:0.75rem; font-weight:800; letter-spacing:1px; margin-bottom:3px;">VELOCIDAD</div>
+                                    <div style="font-size:1.6rem; font-weight:800; color:white; line-height:1;" id="sim-speed">6.5 <span style="font-size:0.9rem; color:#cbd5e1;">km/h</span></div>
+                                </div>
+                            </div>
+
+                            <!-- Stat box 3: Distance -->
+                            <div style="background:#1e293b; padding:15px; border-radius:15px; display:flex; align-items:center; gap:15px; border:1px solid #334155;">
+                                <i class="fa-solid fa-route" style="color:#8b5cf6; font-size:2rem;"></i>
+                                <div>
+                                    <div style="color:#94a3b8; font-size:0.75rem; font-weight:800; letter-spacing:1px; margin-bottom:3px;">DISTANCIA</div>
+                                    <div style="font-size:1.6rem; font-weight:800; color:white; line-height:1;" id="sim-dist">3.24 <span style="font-size:0.9rem; color:#cbd5e1;">km</span></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Stat box 4: Calories & Altitude -->
+                            <div style="background:#1e293b; padding:15px; border-radius:15px; display:flex; flex-direction:column; justify-content:center; border:1px solid #334155;">
+                                <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+                                    <span style="color:#cbd5e1; font-size:0.9rem; font-weight:800;"><i class="fa-solid fa-fire" style="color:#ef4444; margin-right:5px;"></i><span id="sim-cal">452</span></span>
+                                    <span style="color:#cbd5e1; font-size:0.9rem; font-weight:800;"><i class="fa-solid fa-mountain" style="color:#38bdf8; margin-right:5px;"></i><span id="sim-alt">180</span>m</span>
+                                </div>
+                                <div style="width:100%; height:6px; background:#0f172a; border-radius:3px; overflow:hidden;">
+                                    <div style="width:75%; height:100%; background:linear-gradient(90deg, #f59e0b, #ef4444); border-radius:3px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN GAMIFICACIÓN Y MAPA COLABORATIVO -->
+    <section style="padding: 100px 0; background: #fff; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
+        <div class="container">
+            <div style="text-align:center; max-width:800px; margin: 0 auto 50px auto;">
+                <h2 style="font-size: 2.8rem; font-weight: 800; color: #0f172a; margin-bottom: 20px;">El Gran Mapa Colaborativo</h2>
+                <p style="font-size: 1.15rem; color: #64748b; line-height: 1.7;">Descubre rutas validadas por otros Pet Parents en Barcelona. Comparte tus trayectos, clasifica puntos seguros y gana recompensas mediante la gamificación de la salud de tu mascota.</p>
+            </div>
+            
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:40px; align-items:center;">
+                <!-- Gamification Tasks -->
+                <div>
+                    <div style="background:white; padding:30px; border-radius:20px; box-shadow:0 10px 30px rgba(0,0,0,0.05); margin-bottom:20px; border-left: 5px solid #10b981;">
+                        <h4 style="font-weight:800; color:#0f172a; margin-bottom:10px;"><i class="fa-solid fa-location-dot" style="color:#ef4444;"></i> Registra tu Ruta</h4>
+                        <p style="font-size:0.95rem; color:#64748b;">Utiliza el monitor GPS para trazar tu camino en parques urbanos o montañas. Nuestra IA califica el nivel de estrés del trayecto.</p>
+                    </div>
+                    <div style="background:white; padding:30px; border-radius:20px; box-shadow:0 10px 30px rgba(0,0,0,0.05); margin-bottom:20px; border-left: 5px solid #38bdf8;">
+                        <h4 style="font-weight:800; color:#0f172a; margin-bottom:10px;"><i class="fa-brands fa-instagram" style="color:#e1306c;"></i> Comparte la Experiencia</h4>
+                        <p style="font-size:0.95rem; color:#64748b;">Al terminar, publica un reel o imagen con el hashtag <strong>#AventurasSinSustosCUDI</strong> mostrando tu reporte telemetrico.</p>
+                    </div>
+                    <div style="background:white; padding:30px; border-radius:20px; box-shadow:0 10px 30px rgba(0,0,0,0.05); border-left: 5px solid #f59e0b;">
+                        <h4 style="font-weight:800; color:#0f172a; margin-bottom:10px;"><i class="fa-solid fa-gift" style="color:#f59e0b;"></i> Desbloquea Recompensas</h4>
+                        <p style="font-size:0.95rem; color:#64748b;">Las 3 mejores rutas del mes serán publicadas globalmente y sus autores ganan <strong>Hardware CUDI Gratis</strong> y saldo de servicios.</p>
+                    </div>
+                </div>
+
+                <!-- Collaborative Map Image -->
+                <div style="position:relative; border-radius:20px; overflow:hidden; box-shadow:0 20px 40px rgba(0,0,0,0.15);">
+                    <img src="rutas-pet-friendly-barcelona.png" alt="Mapa Colaborativo CUDI Barcelona" style="width:100%; display:block;" decoding="async">
+                    <div style="position:absolute; bottom:20px; left:20px; background:rgba(255,255,255,0.95); padding:10px 20px; border-radius:30px; font-weight:800; font-size:0.85rem; color:#0f172a; backdrop-filter:blur(10px);">
+                        <i class="fa-solid fa-fire" style="color:#ef4444;"></i> Ruta Top Mes: Parque Güell Subida
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ESTRATEGIAS SOCIAL MEDIA UGC -->
+    <section id="como-participar" style="background: #f8fafc; padding: 100px 0; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
+        <div class="container">
+            <div style="text-align:center; max-width:800px; margin: 0 auto;">
+                <h2 style="font-size: 3rem; font-weight: 800; letter-spacing: -1px; margin-bottom: 20px; color: #0f172a;">Redes Sociales: Tu llave a la Suscripción</h2>
+                <p style="font-size: 1.2rem; color: #64748b; line-height: 1.7;">Queremos visibilizar tu compromiso con la salud animal. Completar cualquiera de estos objetivos en redes sociales cargará de inmediato meses de tu plan a nuestra cuenta. ¡Nosotros invitamos!</p>
+            </div>
+            
+            <div class="social-strategies">
+                <div class="strategy-card">
+                    <i class="fa-brands fa-instagram" style="font-size:3rem; color:#e1306c; margin-bottom:20px;"></i>
+                    <h3 style="font-size:1.5rem; font-weight:800; margin-bottom:15px;">Misión Instagram</h3>
+                    <p style="color:#64748b; line-height:1.6; margin-bottom:20px;">Publica un carrusel de fotografías o un story dinámico enseñando tu ruta y cómo llevas el Collar integrado de forma cómoda con el arnés del animal.</p>
+                    <ul style="font-size:0.9rem; color:#0f172a; font-weight:600; padding:0; list-style:none;">
+                        <li style="margin-bottom:8px;"><i class="fa-solid fa-tag" style="color:#38bdf8;"></i> Hashtag: <span style="background:#f1f5f9; padding:2px 5px; border-radius:4px;">#AventurasSinSustosCUDI</span></li>
+                        <li style="margin-bottom:8px;"><i class="fa-solid fa-at" style="color:#38bdf8;"></i> Etiqueta a @cudi.ai2026</li>
+                        <li><i class="fa-solid fa-gift" style="color:#f59e0b;"></i> Premio Incondicional: 1 Mes Premium</li>
+                    </ul>
+                </div>
+                <div class="strategy-card">
+                    <i class="fa-brands fa-tiktok" style="font-size:3rem; color:#000000; margin-bottom:20px;"></i>
+                    <h3 style="font-size:1.5rem; font-weight:800; margin-bottom:15px;">Reto TikTok</h3>
+                    <p style="color:#64748b; line-height:1.6; margin-bottom:20px;">Súmate al trend mostrando el "Antes/Después". De sufrir estrés porque se perdiera de vista, a disfrutar viéndolos correr libres con la protección por mapa y luz visible.</p>
+                    <ul style="font-size:0.9rem; color:#0f172a; font-weight:600; padding:0; list-style:none;">
+                        <li style="margin-bottom:8px;"><i class="fa-solid fa-music" style="color:#ff0050;"></i> Usa el Sonido CUDI Oficial</li>
+                        <li style="margin-bottom:8px;"><i class="fa-solid fa-tag" style="color:#00f2fe;"></i> Hashtag: <span style="background:#f1f5f9; padding:2px 5px; border-radius:4px;">#LibertadCUDI</span></li>
+                        <li><i class="fa-solid fa-gift" style="color:#f59e0b;"></i> Premio Viral: 3 Meses Premium CUDI</li>
+                    </ul>
+                </div>
+                <!-- Extra Network or Action -->
+                <div class="strategy-card">
+                    <i class="fa-solid fa-map-location-dot" style="font-size:3rem; color:#059669; margin-bottom:20px;"></i>
+                    <h3 style="font-size:1.5rem; font-weight:800; margin-bottom:15px;">Mapeador Destacado</h3>
+                    <p style="color:#64748b; line-height:1.6; margin-bottom:20px;">Si eres el primero en registrar y subir una ruta Pet-Friendly oculta de Barcelona sin peligros de procesionaria ni carreteras y la comunidad la valora con 5 estrellas.</p>
+                    <ul style="font-size:0.9rem; color:#0f172a; font-weight:600; padding:0; list-style:none;">
+                        <li style="margin-bottom:8px;"><i class="fa-solid fa-star" style="color:#f59e0b;"></i> Verificado en la App Activa</li>
+                        <li><i class="fa-solid fa-gift" style="color:#f59e0b;"></i> Recompensa: CUDI Care Anual Gratis</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CARRUSEL DE CLIENTES PARTICIPANDO (UGC VISUAL) -->
+    <section style="padding: 100px 0; background: white; overflow:hidden;">
+        <div class="container" style="text-align:center; margin-bottom:50px;">
+            <h2 style="font-size: 2.8rem; font-weight: 800; color: #0f172a;">Familias <span style="color:#0077b6;">CUDI</span> que ya disfrutan al máximo</h2>
+            <p style="font-size: 1.2rem; color: #64748b; margin-top: 15px;">Participaciones con la estética polaroid enseñando las ventajas de confiar en la tecnología.</p>
+        </div>
+        
+        <!-- Carrusel Scrolleable CSS -->
+        <div class="carousel-track">
+            <div class="carousel-card">
+                <img src="senderismo-familiar-mascota-naturaleza.png" class="carousel-img" alt="Paseo de mascota en entorno feliz" decoding="async" loading="lazy">
+                <div style="padding:20px; text-align:left;">
+                    <div style="font-weight:700; margin-bottom:5px;"><i class="fa-brands fa-instagram" style="color:#e1306c;"></i> @marta_y_boby</div>
+                    <p style="font-size:0.95rem; color:#64748b; line-height:1.5;">"Primera vez sin estresarme soltando a la bestiecilla. Lo mejor es el radio dinámico de la app CUDI. 🌲🐕 #AventurasSinSustosCUDI"</p>
+                </div>
+            </div>
+            <div class="carousel-card">
+                <img src="perro-urbano-barcelona-paseo.png" class="carousel-img" alt="Familia feliz con CUDI" decoding="async" loading="lazy">
+                <div style="padding:20px; text-align:left;">
+                    <div style="font-weight:700; margin-bottom:5px;"><i class="fa-brands fa-tiktok" style="color:#000;"></i> @familia_ruiz</div>
+                    <p style="font-size:0.95rem; color:#64748b; line-height:1.5;">"Verificando ruta segura para perros mayores cerca de Collserola. Las métricas de cansancio de la IA salvaron hoy las patitas de Thor 💚"</p>
+                </div>
+            </div>
+            <div class="carousel-card">
+                <img src="gato-explorando-seguro-collar-gps.png" class="carousel-img" alt="Ruta parque de la ciudad" decoding="async" loading="lazy">
+                <div style="padding:20px; text-align:left;">
+                    <div style="font-weight:700; margin-bottom:5px;"><i class="fa-brands fa-instagram" style="color:#e1306c;"></i> @sara_petlover</div>
+                    <p style="font-size:0.95rem; color:#64748b; line-height:1.5;">"Aprovechando lo chulo que es el hardware. Batería no gasta casi nada si compartes la ruta con el móvil. ☀️ #LibertadCUDI"</p>
+                </div>
+            </div>
+            <div class="carousel-card">
+                <img src="pareja-corriendo-mascota-activa.png" class="carousel-img" alt="Comportamiento del perro libre" decoding="async" loading="lazy">
+                <div style="padding:20px; text-align:left;">
+                    <div style="font-weight:700; margin-bottom:5px;"><i class="fa-brands fa-instagram" style="color:#e1306c;"></i> @javier_ad</div>
+                    <p style="font-size:0.95rem; color:#64748b; line-height:1.5;">"12km de montaña. El historial médico se actualiza al final con los datos del estrés cardiovascular de la perra. Impresionante IA. ⛰️🐾"</p>
+                </div>
+            </div>
+            <div class="carousel-card">
+                <img src="perro-senior-calidad-vida-longevidad.png" class="carousel-img" alt="Descanso post ruta" decoding="async" loading="lazy">
+                <div style="padding:20px; text-align:left;">
+                    <div style="font-weight:700; margin-bottom:5px;"><i class="fa-brands fa-tiktok" style="color:#000;"></i> @mia_golden</div>
+                    <p style="font-size:0.95rem; color:#64748b; line-height:1.5;">"Post-ruta. Quemó bastantes calorías para su tamaño. La aplicación manda hoy doble bol de agua preventivo y pienso extra. ✨"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIOS (Social Proof & Infinite Review Marquee) -->
+    <section id="testimonios" class="reviews-section-wrapper">
+        <div class="reviews-section-header">
+            <span class="reviews-badge-tag"><i class="fa-solid fa-comments"></i> Comunidad CUDI & Experiencias Reales</span>
+            <h2 style="font-size: 2.8rem; font-weight: 800; color: #0f172a; margin: 0 0 16px; font-family: var(--font-heading);">El impacto del Mapa Colaborativo</h2>
+            <p style="font-size: 1.15rem; color: #64748b; line-height: 1.6; margin: 0 auto; max-width: 720px;">
+                Cientos de familias, entrenadores y veterinarios en toda España exploran, protegen y comparten sus rutas favoritas cada día con el Smart Collar CUDI.
+            </p>
+            
+            <!-- Barra de métricas sociales -->
+            <div class="reviews-stats-bar">
+                <div class="reviews-stat-chip">
+                    <span style="color:#f59e0b; font-size:0.9rem;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
+                    <span><strong>4.9 / 5</strong> (+1,420 opiniones)</span>
+                </div>
+                <div class="reviews-stat-chip">
+                    <i class="fa-solid fa-shield-halved" style="color:#10b981;"></i>
+                    <span><strong>99.8%</strong> Pérdidas evitadas</span>
+                </div>
+                <div class="reviews-stat-chip">
+                    <i class="fa-solid fa-route" style="color:#0284c7;"></i>
+                    <span><strong>+18,500 km</strong> Senderos validados</span>
+                </div>
+                <div class="reviews-stat-chip">
+                    <i class="fa-solid fa-circle-check" style="color:#6366f1;"></i>
+                    <span><strong>100%</strong> Usuarios con Collar Activo</span>
+                </div>
+            </div>
+            <div style="margin-top:14px; font-size:0.8rem; color:#94a3b8; display:flex; align-items:center; justify-content:center; gap:6px;">
+                <i class="fa-solid fa-hand-pointer"></i> Pasa el cursor o mantén pulsado para pausar y leer cualquier opinión
+            </div>
+        </div>
+
+        <!-- FILA 1 DE OPINIONES (Desplazamiento continuo hacia la izquierda) -->
+        <div class="reviews-ticker-wrapper">
+            <div class="reviews-ticker-track track-left">
+                <!-- Tarjeta 1: Roberto & Max -->
+                <div class="review-ticker-card">
+                    <div class="review-card-header">
+                        <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=150&q=80" alt="Max" class="review-card-avatar" decoding="async" loading="lazy">
+                        <div class="review-user-info">
+                            <div class="review-user-name">Roberto D. <i class="fa-solid fa-circle-check" style="color:#0284c7; font-size:0.8rem;"></i></div>
+                            <div class="review-user-meta">y su perro Max (Golden Retriever) • Barcelona</div>
+                        </div>
+                    </div>
+                    <div class="review-stars-row">
+                        <div class="review-stars-gold"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <span class="review-badge-verified"><i class="fa-solid fa-check"></i> Verificado</span>
+                    </div>
+                    <h4 class="review-quote-title">"Un cambio radical en nuestra rutina de fin de semana"</h4>
+                    <p class="review-quote-text">"Antes no me atrevía a quitarle la correa a Max en Collserola por si salía corriendo persiguiendo un rastro. Con el Smart Collar en Live Tracking y la app CUDI puedo ver su punto exacto cada segundo. Ganamos la suscripción premium del mes gratis por subirlo a TikTok."</p>
+                    <div class="review-card-footer">
+                        <span class="review-source-tag"><i class="fa-brands fa-tiktok"></i> TikTok UGC</span>
+                        <span>Hace 2 horas</span>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 2: Dra. Elena Sánchez (Veterinaria) -->
+                <div class="review-ticker-card">
+                    <div class="review-card-header">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=150&q=80" alt="Dra. Elena" class="review-card-avatar" decoding="async" loading="lazy">
+                        <div class="review-user-info">
+                            <div class="review-user-name">Dra. Elena Sánchez <i class="fa-solid fa-certificate" style="color:#10b981; font-size:0.8rem;"></i></div>
+                            <div class="review-user-meta">Veterinaria Colegiada • Clínica VetCare Madrid</div>
+                        </div>
+                    </div>
+                    <div class="review-stars-row">
+                        <div class="review-stars-gold"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <span class="review-badge-verified"><i class="fa-solid fa-stethoscope"></i> Vet Partner</span>
+                    </div>
+                    <h4 class="review-quote-title">"La telemetría bio-neural previene urgencias reales"</h4>
+                    <p class="review-quote-text">"Recomiendo CUDI a mis pacientes con patologías cardiovasculares o animales senior. En dos ocasiones los datos de taquicardia temprana y subida térmica evitaron shocks térmicos graves antes de que el dueño notara síntomas visibles."</p>
+                    <div class="review-card-footer">
+                        <span class="review-source-tag"><i class="fa-solid fa-hospital"></i> Vet Network</span>
+                        <span>Hace 5 horas</span>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 3: Lucía M. & Coco -->
+                <div class="review-ticker-card">
+                    <div class="review-card-header">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Lucía" class="review-card-avatar" decoding="async" loading="lazy">
+                        <div class="review-user-info">
+                            <div class="review-user-name">Lucía M. <i class="fa-solid fa-circle-check" style="color:#0284c7; font-size:0.8rem;"></i></div>
+                            <div class="review-user-meta">y Coco (Pomerania Toy) • Barcelona</div>
+                        </div>
+                    </div>
+                    <div class="review-stars-row">
+                        <div class="review-stars-gold"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <span class="review-badge-verified"><i class="fa-solid fa-check"></i> Verificado</span>
+                    </div>
+                    <h4 class="review-quote-title">"Pagó la suscripción mi hashtag de Instagram, 10/10 UGC"</h4>
+                    <p class="review-quote-text">"Hicimos el recorrido sugerido por la montaña, subí la foto a mi perfil a mediodía mostrando el collar a prueba de agua (¡porque se tiró al charco!), y a las pocas horas mi cuenta CUDI tenía su mes Premium acreditado. Brutal nivel de confianza y comunidad."</p>
+                    <div class="review-card-footer">
+                        <span class="review-source-tag"><i class="fa-brands fa-instagram"></i> Instagram UGC</span>
+                        <span>Ayer</span>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 4: Carlos & Thor -->
+                <div class="review-ticker-card">
+                    <div class="review-card-header">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="Carlos" class="review-card-avatar" decoding="async" loading="lazy">
+                        <div class="review-user-info">
+                            <div class="review-user-name">Carlos V. & Thor <i class="fa-solid fa-circle-check" style="color:#0284c7; font-size:0.8rem;"></i></div>
+                            <div class="review-user-meta">Husky Siberiano • Ripollès, Pirineos</div>
+                        </div>
+                    </div>
+                    <div class="review-stars-row">
+                        <div class="review-stars-gold"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <span class="review-badge-verified"><i class="fa-solid fa-check"></i> Verificado</span>
+                    </div>
+                    <h4 class="review-quote-title">"El rastreo a 10 Hz nos devolvió a Thor en 6 minutos"</h4>
+                    <p class="review-quote-text">"Thor es un escapista nato. Saltó una cerca persiguiendo corzos en el bosque. En cuanto sonó la alerta de geovalla abrí la brújula en tiempo real y di exactamente con él detrás de una loma. Solo por ese susto evitado el collar vale cada euro."</p>
+                    <div class="review-card-footer">
+                        <span class="review-source-tag"><i class="fa-brands fa-google"></i> Google Reviews</span>
+                        <span>Hace 1 día</span>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 5: Marta & Kira (Gata) -->
+                <div class="review-ticker-card">
+                    <div class="review-card-header">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&q=80" alt="Marta" class="review-card-avatar" decoding="async" loading="lazy">
+                        <div class="review-user-info">
+                            <div class="review-user-name">Marta S. <i class="fa-solid fa-circle-check" style="color:#0284c7; font-size:0.8rem;"></i></div>
+                            <div class="review-user-meta">y Kira (Bosque de Noruega) • Valencia</div>
+                        </div>
+                    </div>
+                    <div class="review-stars-row">
+                        <div class="review-stars-gold"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <span class="review-badge-verified"><i class="fa-solid fa-cat"></i> Felino Activo</span>
+                    </div>
+                    <h4 class="review-quote-title">"La geovalla inteligente funciona de maravilla para gatos"</h4>
+                    <p class="review-quote-text">"Pensaba que estos collares eran pesados y solo para perros grandes. El collar es ultra liviano (32g) y a Kira no le molesta nada. Si sale del perímetro del chalet la app me envía notificación inmediata al smartwatch."</p>
+                    <div class="review-card-footer">
+                        <span class="review-source-tag"><i class="fa-brands fa-apple"></i> App Store 5.0</span>
+                        <span>Hace 2 días</span>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 6: Javier B. & Bruno -->
+                <div class="review-ticker-card">
+                    <div class="review-card-header">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80" alt="Javier" class="review-card-avatar" decoding="async" loading="lazy">
+                        <div class="review-user-info">
+                            <div class="review-user-name">Javier B. <i class="fa-solid fa-circle-check" style="color:#0284c7; font-size:0.8rem;"></i></div>
+                            <div class="review-user-meta">y Bruno (Labrador Retriever) • Sevilla</div>
+                        </div>
+                    </div>
+                    <div class="review-stars-row">
+                        <div class="review-stars-gold"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <span class="review-badge-verified"><i class="fa-solid fa-check"></i> Verificado</span>
+                    </div>
+                    <h4 class="review-quote-title">"Rutas frescas con fuentes comprobadas en verano"</h4>
+                    <p class="review-quote-text">"En Sevilla el calor es implacable. En el mapa colaborativo encontramos senderos de ribera sombreados con puntos de agua validados por la comunidad. La IA de hidratación me recuerda cuándo ofrecerle agua según sus calorías gastadas."</p>
+                    <div class="review-card-footer">
+                        <span class="review-source-tag"><i class="fa-solid fa-map-location-dot"></i> Mapa CUDI</span>
+                        <span>Hace 3 días</span>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 7: Sonia & Luna -->
+                <div class="review-ticker-card">
+                    <div class="review-card-header">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80" alt="Sonia" class="review-card-avatar" decoding="async" loading="lazy">
+                        <div class="review-user-info">
+                            <div class="review-user-name">Sonia R. & Luna <i class="fa-solid fa-circle-check" style="color:#0284c7; font-size:0.8rem;"></i></div>
+                            <div class="review-user-meta">Border Collie (Agility) • Bilbao</div>
+                        </div>
+                    </div>
+                    <div class="review-stars-row">
+                        <div class="review-stars-gold"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <span class="review-badge-verified"><i class="fa-solid fa-bolt"></i> Deporte Canino</span>
+                    </div>
+                    <h4 class="review-quote-title">"Monitoreo de fatiga y sueño profundo de otro nivel"</h4>
+                    <p class="review-quote-text">"Competimos en Agility y entrenamos duro. Ver en tiempo real la variabilidad de su ritmo cardíaco y cómo recupera por la noche nos ha permitido planificar los descansos y evitar lesiones musculares. Es ciencia aplicada."</p>
+                    <div class="review-card-footer">
+                        <span class="review-source-tag"><i class="fa-solid fa-heart-pulse"></i> Bio-Telemetría</span>
+                        <span>Hace 3 días</span>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 8: David P. (Paseador) -->
+                <div class="review-ticker-card">
+                    <div class="review-card-header">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=150&q=80" alt="David" class="review-card-avatar" decoding="async" loading="lazy">
+                        <div class="review-user-info">
+                            <div class="review-user-name">David P. <i class="fa-solid fa-shield-dog" style="color:#0284c7; font-size:0.8rem;"></i></div>
+                            <div class="review-user-meta">Paseador Certificado • Urban Pet Walkers BCN</div>
+                        </div>
+                    </div>
+                    <div class="review-stars-row">
+                        <div class="review-stars-gold"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <span class="review-badge-verified"><i class="fa-solid fa-id-badge"></i> Partner Pro</span>
+                    </div>
+                    <h4 class="review-quote-title">"Los clientes ven la ruta y el estado de su perro en vivo"</h4>
+                    <p class="review-quote-text">"Paseo manadas de hasta 6 perros. Los tutores reciben el link con la geolocalización satelital en directo y las pulsaciones de su compañero. La transparencia es total y me ha traído el triple de clientes recomendados."</p>
+                    <div class="review-card-footer">
+                        <span class="review-source-tag"><i class="fa-solid fa-handshake"></i> Red Partners</span>
+                        <span>Hace 4 días</span>
+                    </div>
+                </div>
+
+                <!-- DUPLICACIÓN EXACTA PARA BUCLE INFINITO CONTINUO SIN CORTES (FILA 1) -->
+                <div class="review-ticker-card">
+                    <div class="review-card-header">
+                        <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=150&q=80" alt="Max" class="review-card-avatar" decoding="async" loading="lazy">
+                        <div class="review-user-info">
+                            <div class="review-user-name">Roberto D. <i class="fa-solid fa-circle-check" style="color:#0284c7; font-size:0.8rem;"></i></div>
+                            <div class="review-user-meta">y su perro Max (Golden Retriever) • Barcelona</div>
+                        </div>
+                    </div>
+                    <div class="review-stars-row">
+                        <div class="review-stars-gold"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <span class="review-badge-verified"><i class="fa-solid fa-check"></i> Verificado</span>
+                    </div>
+                    <h4 class="review-quote-title">"Un cambio radical en nuestra rutina de fin de semana"</h4>
+                    <p class="review-quote-text">"Antes no me atrevía a quitarle la correa a Max en Collserola por si salía corriendo persiguiendo un rastro. Con el Smart Collar en Live Tracking y la app CUDI puedo ver su punto exacto cada segundo. Ganamos la suscripción premium del mes gratis por subirlo a TikTok."</p>
+                    <div class="review-card-footer">
+                        <span class="review-source-tag"><i class="fa-brands fa-tiktok"></i> TikTok UGC</span>
+                        <span>Hace 2 horas</span>
+                    </div>
+                </div>
+
+                <div class="review-ticker-card">
+                    <div class="review-card-header">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=150&q=80" alt="Dra. Elena" class="review-card-avatar" decoding="async" loading="lazy">
+                        <div class="review-user-info">
+                            <div class="review-user-name">Dra. Elena Sánchez <i class="fa-solid fa-certificate" style="color:#10b981; font-size:0.8rem;"></i></div>
+                            <div class="review-user-meta">Veterinaria Colegiada • Clínica VetCare Madrid</div>
+                        </div>
+                    </div>
+                    <div class="review-stars-row">
+                        <div class="review-stars-gold"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <span class="review-badge-verified"><i class="fa-solid fa-stethoscope"></i> Vet Partner</span>
+                    </div>
+                    <h4 class="review-quote-title">"La telemetría bio-neural previene urgencias reales"</h4>
+                    <p class="review-quote-text">"Recomiendo CUDI a mis pacientes con patologías cardiovasculares o animales senior. En dos ocasiones los datos de taquicardia temprana y subida térmica evitaron shocks térmicos graves antes de que el dueño notara síntomas visibles."</p>
+                    <div class="review-card-footer">
+                        <span class="review-source-tag"><i class="fa-solid fa-hospital"></i> Vet Network</span>
+                        <span>Hace 5 horas</span>
+                    </div>
+                </div>
+
+                <div class="review-ticker-card">
+                    <div class="review-card-header">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Lucía" class="review-card-avatar" decoding="async" loading="lazy">
+                        <div class="review-user-info">
+                            <div class="review-user-name">Lucía M. <i class="fa-solid fa-circle-check" style="color:#0284c7; font-size:0.8rem;"></i></div>
+                            <div class="review-user-meta">y Coco (Pomerania Toy) • Barcelona</div>
+                        </div>
+                    </div>
+                    <div class="review-stars-row">
+                        <div class="review-stars-gold"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <span class="review-badge-verified"><i class="fa-solid fa-check"></i> Verificado</span>
+                    </div>
+                    <h4 class="review-quote-title">"Pagó la suscripción mi hashtag de Instagram, 10/10 UGC"</h4>
+                    <p class="review-quote-text">"Hicimos el recorrido sugerido por la montaña, subí la foto a mi perfil a mediodía mostrando el collar a prueba de agua (¡porque se tiró al charco!), y a las pocas horas mi cuenta CUDI tenía su mes Premium acreditado. Brutal nivel de confianza y comunidad."</p>
+                    <div class="review-card-footer">
+                        <span class="review-source-tag"><i class="fa-brands fa-instagram"></i> Instagram UGC</span>
+                        <span>Ayer</span>
+                    </div>
+                </div>
+
+                <div class="review-ticker-card">
+                    <div class="review-card-header">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="Carlos" class="review-card-avatar" decoding="async" loading="lazy">
+                        <div class="review-user-info">
+                            <div class="review-user-name">Carlos V. & Thor <i class="fa-solid fa-circle-check" style="color:#0284c7; font-size:0.8rem;"></i></div>
+                            <div class="review-user-meta">Husky Siberiano • Ripollès, Pirineos</div>
+                        </div>
+                    </div>
+                    <div class="review-stars-row">
+                        <div class="review-stars-gold"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <span class="review-badge-verified"><i class="fa-solid fa-check"></i> Verificado</span>
+                    </div>
+                    <h4 class="review-quote-title">"El rastreo a 10 Hz nos devolvió a Thor en 6 minutos"</h4>
+                    <p class="review-quote-text">"Thor es un escapista nato. Saltó una cerca persiguiendo corzos en el bosque. En cuanto sonó la alerta de geovalla abrí la brújula en tiempo real y di exactamente con él detrás de una loma. Solo por ese susto evitado el collar vale cada euro."</p>
+                    <div class="review-card-footer">
+                        <span class="review-source-tag"><i class="fa-brands fa-google"></i> Google Reviews</span>
+                        <span>Hace 1 día</span>
+                    </div>
+                </div>
+
+                <div class="review-ticker-card">
+                    <div class="review-card-header">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&q=80" alt="Marta" class="review-card-avatar" decoding="async" loading="lazy">
+                        <div class="review-user-info">
+                            <div class="review-user-name">Marta S. <i class="fa-solid fa-circle-check" style="color:#0284c7; font-size:0.8rem;"></i></div>
+                            <div class="review-user-meta">y Kira (Bosque de Noruega) • Valencia</div>
+                        </div>
+                    </div>
+                    <div class="review-stars-row">
+                        <div class="review-stars-gold"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <span class="review-badge-verified"><i class="fa-solid fa-cat"></i> Felino Activo</span>
+                    </div>
+                    <h4 class="review-quote-title">"La geovalla inteligente funciona de maravilla para gatos"</h4>
+                    <p class="review-quote-text">"Pensaba que estos collares eran pesados y solo para perros grandes. El collar es ultra liviano (32g) y a Kira no le molesta nada. Si sale del perímetro del chalet la app me envía notificación inmediata al smartwatch."</p>
+                    <div class="review-card-footer">
+                        <span class="review-source-tag"><i class="fa-brands fa-apple"></i> App Store 5.0</span>
+                        <span>Hace 2 días</span>
+                    </div>
+                </div>
+
+                <div class="review-ticker-card">
+                    <div class="review-card-header">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80" alt="Javier" class="review-card-avatar" decoding="async" loading="lazy">
+                        <div class="review-user-info">
+                            <div class="review-user-name">Javier B. <i class="fa-solid fa-circle-check" style="color:#0284c7; font-size:0.8rem;"></i></div>
+                            <div class="review-user-meta">y Bruno (Labrador Retriever) • Sevilla</div>
+                        </div>
+                    </div>
+                    <div class="review-stars-row">
+                        <div class="review-stars-gold"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <span class="review-badge-verified"><i class="fa-solid fa-check"></i> Verificado</span>
+                    </div>
+                    <h4 class="review-quote-title">"Rutas frescas con fuentes comprobadas en verano"</h4>
+                    <p class="review-quote-text">"En Sevilla el calor es implacable. En el mapa colaborativo encontramos senderos de ribera sombreados con puntos de agua validados por la comunidad. La IA de hidratación me recuerda cuándo ofrecerle agua según sus calorías gastadas."</p>
+                    <div class="review-card-footer">
+                        <span class="review-source-tag"><i class="fa-solid fa-map-location-dot"></i> Mapa CUDI</span>
+                        <span>Hace 3 días</span>
+                    </div>
+                </div>
+
+                <div class="review-ticker-card">
+                    <div class="review-card-header">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80" alt="Sonia" class="review-card-avatar" decoding="async" loading="lazy">
+                        <div class="review-user-info">
+                            <div class="review-user-name">Sonia R. & Luna <i class="fa-solid fa-circle-check" style="color:#0284c7; font-size:0.8rem;"></i></div>
+                            <div class="review-user-meta">Border Collie (Agility) • Bilbao</div>
+                        </div>
+                    </div>
+                    <div class="review-stars-row">
+                        <div class="review-stars-gold"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <span class="review-badge-verified"><i class="fa-solid fa-bolt"></i> Deporte Canino</span>
+                    </div>
+                    <h4 class="review-quote-title">"Monitoreo de fatiga y sueño profundo de otro nivel"</h4>
+                    <p class="review-quote-text">"Competimos en Agility y entrenamos duro. Ver en tiempo real la variabilidad de su ritmo cardíaco y cómo recupera por la noche nos ha permitido planificar los descansos y evitar lesiones musculares. Es ciencia aplicada."</p>
+                    <div class="review-card-footer">
+                        <span class="review-source-tag"><i class="fa-solid fa-heart-pulse"></i> Bio-Telemetría</span>
+                        <span>Hace 3 días</span>
+                    </div>
+                </div>
+
+                <div class="review-ticker-card">
+                    <div class="review-card-header">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=150&q=80" alt="David" class="review-card-avatar" decoding="async" loading="lazy">
+                        <div class="review-user-info">
+                            <div class="review-user-name">David P. <i class="fa-solid fa-shield-dog" style="color:#0284c7; font-size:0.8rem;"></i></div>
+                            <div class="review-user-meta">Paseador Certificado • Urban Pet Walkers BCN</div>
+                        </div>
+                    </div>
+                    <div class="review-stars-row">
+                        <div class="review-stars-gold"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <span class="review-badge-verified"><i class="fa-solid fa-id-badge"></i> Partner Pro</span>
+                    </div>
+                    <h4 class="review-quote-title">"Los clientes ven la ruta y el estado de su perro en vivo"</h4>
+                    <p class="review-quote-text">"Paseo manadas de hasta 6 perros. Los tutores reciben el link con la geolocalización satelital en directo y las pulsaciones de su compañero. La transparencia es total y me ha traído el triple de clientes recomendados."</p>
+                    <div class="review-card-footer">
+                        <span class="review-source-tag"><i class="fa-solid fa-handshake"></i> Red Partners</span>
+                        <span>Hace 4 días</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FILA 2 DE OPINIONES (Desplazamiento continuo hacia la derecha) -->
+        <div class="reviews-ticker-wrapper" style="margin-top:10px;">
+            <div class="reviews-ticker-track track-right">
+                <!-- Tarjeta 9: Clara & Rocky -->
+                <div class="review-ticker-card">
+                    <div class="review-card-header">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=150&q=80" alt="Clara" class="review-card-avatar" decoding="async" loading="lazy">
+                        <div class="review-user-info">
+                            <div class="review-user-name">Clara N. <i class="fa-solid fa-circle-check" style="color:#0284c7; font-size:0.8rem;"></i></div>
+                            <div class="review-user-meta">y Rocky (Bulldog Francés) • Málaga</div>
+                        </div>
+                    </div>
+                    <div class="review-stars-row">
+                        <div class="review-stars-gold"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <span class="review-badge-verified"><i class="fa-solid fa-temperature-arrow-up"></i> Alerta Térmica</span>
+                    </div>
+                    <h4 class="review-quote-title">"Alerta térmica que evitó un golpe de calor en verano"</h4>
+                    <p class="review-quote-text">"Los braquicéfalos sufren mucho con el calor. El mes pasado a 29°C la app alertó: 'Temperatura corporal de Rocky en 39.4°C en ascenso'. Inmediatamente paramos, le humedecí las almohadillas y descansamos en sombra. CUDI salvó su vida."</p>
+                    <div class="review-card-footer">
+                        <span class="review-source-tag"><i class="fa-solid fa-bell"></i> Alerta Médica</span>
+                        <span>Hace 4 días</span>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 10: Guillermo & Simba -->
+                <div class="review-ticker-card">
+                    <div class="review-card-header">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&q=80" alt="Guillermo" class="review-card-avatar" decoding="async" loading="lazy">
+                        <div class="review-user-info">
+                            <div class="review-user-name">Guillermo T. <i class="fa-solid fa-circle-check" style="color:#0284c7; font-size:0.8rem;"></i></div>
+                            <div class="review-user-meta">y Simba (Gato Europeo) • Madrid Centro</div>
+                        </div>
+                    </div>
+                    <div class="review-stars-row">
+                        <div class="review-stars-gold"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <span class="review-badge-verified"><i class="fa-solid fa-battery-full"></i> 14 Días Autonomía</span>
+                    </div>
+                    <h4 class="review-quote-title">"Batería real de 14 días y carga magnética express"</h4>
+                    <p class="review-quote-text">"Tenía otros localizadores que había que cargar todas las noches. CUDI dura dos semanas completas con GPS activo inteligente. La carga magnética tarda menos de una hora y Simba no se queda desprotegido."</p>
+                    <div class="review-card-footer">
+                        <span class="review-source-tag"><i class="fa-brands fa-apple"></i> App Store</span>
+                        <span>Hace 5 días</span>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 11: Sergio & Bimba (Galgo) -->
+                <div class="review-ticker-card">
+                    <div class="review-card-header">
+                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=150&q=80" alt="Sergio" class="review-card-avatar" decoding="async" loading="lazy">
+                        <div class="review-user-info">
+                            <div class="review-user-name">Sergio M. & Bimba <i class="fa-solid fa-circle-check" style="color:#0284c7; font-size:0.8rem;"></i></div>
+                            <div class="review-user-meta">Galgo Español Rescatado • Toledo</div>
+                        </div>
+                    </div>
+                    <div class="review-stars-row">
+                        <div class="review-stars-gold"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <span class="review-badge-verified"><i class="fa-solid fa-satellite"></i> LTE-M Multibanda</span>
+                    </div>
+                    <h4 class="review-quote-title">"Con un galgo que corre a 60 km/h la cobertura es oro"</h4>
+                    <p class="review-quote-text">"Bimba es asustadiza y velocísima. La conexión satelital LTE-M no tiene zonas muertas en el campo. Saber que puedo activar el radar de proximidad por Bluetooth si entra en matorrales densos me quitó una angustia de años."</p>
+                    <div class="review-card-footer">
+                        <span class="review-source-tag"><i class="fa-brands fa-google"></i> Google Play</span>
+                        <span>Hace 5 días</span>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 12: Nuria & Oliver -->
+                <div class="review-ticker-card">
+                    <div class="review-card-header">
+                        <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=150&q=80" alt="Nuria" class="review-card-avatar" decoding="async" loading="lazy">
+                        <div class="review-user-info">
+                            <div class="review-user-name">Nuria L. <i class="fa-solid fa-circle-check" style="color:#0284c7; font-size:0.8rem;"></i></div>
+                            <div class="review-user-meta">y Oliver (Gato Siamés) • Madrid</div>
+                        </div>
+                    </div>
+                    <div class="review-stars-row">
+                        <div class="review-stars-gold"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <span class="review-badge-verified"><i class="fa-solid fa-brain"></i> IA Predictiva</span>
+                    </div>
+                    <h4 class="review-quote-title">"La IA detectó una disminución de consumo hídrico"</h4>
+                    <p class="review-quote-text">"La app lanzó un aviso: 'Oliver ha reducido su actividad nocturna un 40% y sus visitas al bebedero'. Lo llevé al veterinario y le diagnosticaron una cistitis incipiente que cogimos justo al principio. La medicina preventiva funciona."</p>
+                    <div class="review-card-footer">
+                        <span class="review-source-tag"><i class="fa-solid fa-shield-cat"></i> Salud Felina</span>
+                        <span>Hace 6 días</span>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 13: Marcos V. & Kai -->
+                <div class="review-ticker-card">
+                    <div class="review-card-header">
+                        <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=150&q=80" alt="Marcos" class="review-card-avatar" decoding="async" loading="lazy">
+                        <div class="review-user-info">
+                            <div class="review-user-name">Marcos V. & Kai <i class="fa-solid fa-circle-check" style="color:#0284c7; font-size:0.8rem;"></i></div>
+                            <div class="review-user-meta">Samoyedo • Sierra Nevada, Granada</div>
+                        </div>
+                    </div>
+                    <div class="review-stars-row">
+                        <div class="review-stars-gold"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <span class="review-badge-verified"><i class="fa-solid fa-snowflake"></i> Nieve & Frío</span>
+                    </div>
+                    <h4 class="review-quote-title">"3 meses Premium gratis compartiendo fotos en nieve"</h4>
+                    <p class="review-quote-text">"Hacemos raquetas en nieve cada invierno. El collar aguanta temperaturas bajo cero sin perder batería. Compartimos las fotos con #AventurasCUDI en Instagram y el sistema nos acreditó 3 meses gratis. La mejor comunidad pet-friendly."</p>
+                    <div class="review-card-footer">
+                        <span class="review-source-tag"><i class="fa-brands fa-instagram"></i> Instagram UGC</span>
+                        <span>Hace 1 semana</span>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 14: Andrea & Maya -->
+                <div class="review-ticker-card">
+                    <div class="review-card-header">
+                        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=150&q=80" alt="Andrea" class="review-card-avatar" decoding="async" loading="lazy">
+                        <div class="review-user-info">
+                            <div class="review-user-name">Andrea C. <i class="fa-solid fa-circle-check" style="color:#0284c7; font-size:0.8rem;"></i></div>
+                            <div class="review-user-meta">y Maya (Beagle Rastreadora) • Zaragoza</div>
+                        </div>
+                    </div>
+                    <div class="review-stars-row">
+                        <div class="review-stars-gold"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <span class="review-badge-verified"><i class="fa-solid fa-volume-high"></i> Acústica IA</span>
+                    </div>
+                    <h4 class="review-quote-title">"El análisis acústico entendió su ansiedad de separación"</h4>
+                    <p class="review-quote-text">"Maya aullaba cuando me iba a trabajar. El sensor acústico registró el momento exacto y la intensidad del estrés. Con las pautas de enriquecimiento ambiental que me sugirió el etólogo en la app, la ansiedad bajó un 85% en tres semanas."</p>
+                    <div class="review-card-footer">
+                        <span class="review-source-tag"><i class="fa-solid fa-waveform-lines"></i> Audio Telemetría</span>
+                        <span>Hace 1 semana</span>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 15: Alejandro & Nala -->
+                <div class="review-ticker-card">
+                    <div class="review-card-header">
+                        <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=150&q=80" alt="Alejandro" class="review-card-avatar" decoding="async" loading="lazy">
+                        <div class="review-user-info">
+                            <div class="review-user-name">Alejandro G. <i class="fa-solid fa-circle-check" style="color:#0284c7; font-size:0.8rem;"></i></div>
+                            <div class="review-user-meta">y Nala (Pastor Alemán) • Alicante</div>
+                        </div>
+                    </div>
+                    <div class="review-stars-row">
+                        <div class="review-stars-gold"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <span class="review-badge-verified"><i class="fa-solid fa-water"></i> IP68 Total</span>
+                    </div>
+                    <h4 class="review-quote-title">"Resistencia al agua y barro de verdad a prueba de bombas"</h4>
+                    <p class="review-quote-text">"Nala va directa a cualquier río, poza de barro o playa. El sellado impermeable IP68 del collar no ha fallado ni un solo día tras un año de uso extremo. Lo lavo bajo el grifo y sigue impecable. Excelente calidad de materiales."</p>
+                    <div class="review-card-footer">
+                        <span class="review-source-tag"><i class="fa-brands fa-google"></i> Google Reviews</span>
+                        <span>Hace 1 semana</span>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 16: Paula & Toby -->
+                <div class="review-ticker-card">
+                    <div class="review-card-header">
+                        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=150&q=80" alt="Paula" class="review-card-avatar" decoding="async" loading="lazy">
+                        <div class="review-user-info">
+                            <div class="review-user-name">Paula F. & Toby <i class="fa-solid fa-circle-check" style="color:#0284c7; font-size:0.8rem;"></i></div>
+                            <div class="review-user-meta">Teckel Pelo Duro • Santander, Cantabria</div>
+                        </div>
+                    </div>
+                    <div class="review-stars-row">
+                        <div class="review-stars-gold"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <span class="review-badge-verified"><i class="fa-solid fa-route"></i> Senderos Norte</span>
+                    </div>
+                    <h4 class="review-quote-title">"Senderos de costa seguros y clínicas veterinarias a 1 clic"</h4>
+                    <p class="review-quote-text">"Pasear por los acantilados de Cantabria requería una atención extrema. Con el mapa colaborativo encontramos caminos anchos vallados con fuentes. Además, tener las clínicas asociadas a 1 toque en la app da una tranquilidad inmensa."</p>
+                    <div class="review-card-footer">
+                        <span class="review-source-tag"><i class="fa-brands fa-apple"></i> App Store</span>
+                        <span>Hace 2 semanas</span>
+                    </div>
+                </div>
+
+                <!-- DUPLICACIÓN EXACTA PARA BUCLE INFINITO CONTINUO SIN CORTES (FILA 2) -->
+                <div class="review-ticker-card">
+                    <div class="review-card-header">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=150&q=80" alt="Clara" class="review-card-avatar" decoding="async" loading="lazy">
+                        <div class="review-user-info">
+                            <div class="review-user-name">Clara N. <i class="fa-solid fa-circle-check" style="color:#0284c7; font-size:0.8rem;"></i></div>
+                            <div class="review-user-meta">y Rocky (Bulldog Francés) • Málaga</div>
+                        </div>
+                    </div>
+                    <div class="review-stars-row">
+                        <div class="review-stars-gold"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <span class="review-badge-verified"><i class="fa-solid fa-temperature-arrow-up"></i> Alerta Térmica</span>
+                    </div>
+                    <h4 class="review-quote-title">"Alerta térmica que evitó un golpe de calor en verano"</h4>
+                    <p class="review-quote-text">"Los braquicéfalos sufren mucho con el calor. El mes pasado a 29°C la app alertó: 'Temperatura corporal de Rocky en 39.4°C en ascenso'. Inmediatamente paramos, le humedecí las almohadillas y descansamos en sombra. CUDI salvó su vida."</p>
+                    <div class="review-card-footer">
+                        <span class="review-source-tag"><i class="fa-solid fa-bell"></i> Alerta Médica</span>
+                        <span>Hace 4 días</span>
+                    </div>
+                </div>
+
+                <div class="review-ticker-card">
+                    <div class="review-card-header">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&q=80" alt="Guillermo" class="review-card-avatar" decoding="async" loading="lazy">
+                        <div class="review-user-info">
+                            <div class="review-user-name">Guillermo T. <i class="fa-solid fa-circle-check" style="color:#0284c7; font-size:0.8rem;"></i></div>
+                            <div class="review-user-meta">y Simba (Gato Europeo) • Madrid Centro</div>
+                        </div>
+                    </div>
+                    <div class="review-stars-row">
+                        <div class="review-stars-gold"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <span class="review-badge-verified"><i class="fa-solid fa-battery-full"></i> 14 Días Autonomía</span>
+                    </div>
+                    <h4 class="review-quote-title">"Batería real de 14 días y carga magnética express"</h4>
+                    <p class="review-quote-text">"Tenía otros localizadores que había que cargar todas las noches. CUDI dura dos semanas completas con GPS activo inteligente. La carga magnética tarda menos de una hora y Simba no se queda desprotegido."</p>
+                    <div class="review-card-footer">
+                        <span class="review-source-tag"><i class="fa-brands fa-apple"></i> App Store</span>
+                        <span>Hace 5 días</span>
+                    </div>
+                </div>
+
+                <div class="review-ticker-card">
+                    <div class="review-card-header">
+                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=150&q=80" alt="Sergio" class="review-card-avatar" decoding="async" loading="lazy">
+                        <div class="review-user-info">
+                            <div class="review-user-name">Sergio M. & Bimba <i class="fa-solid fa-circle-check" style="color:#0284c7; font-size:0.8rem;"></i></div>
+                            <div class="review-user-meta">Galgo Español Rescatado • Toledo</div>
+                        </div>
+                    </div>
+                    <div class="review-stars-row">
+                        <div class="review-stars-gold"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <span class="review-badge-verified"><i class="fa-solid fa-satellite"></i> LTE-M Multibanda</span>
+                    </div>
+                    <h4 class="review-quote-title">"Con un galgo que corre a 60 km/h la cobertura es oro"</h4>
+                    <p class="review-quote-text">"Bimba es asustadiza y velocísima. La conexión satelital LTE-M no tiene zonas muertas en el campo. Saber que puedo activar el radar de proximidad por Bluetooth si entra en matorrales densos me quitó una angustia de años."</p>
+                    <div class="review-card-footer">
+                        <span class="review-source-tag"><i class="fa-brands fa-google"></i> Google Play</span>
+                        <span>Hace 5 días</span>
+                    </div>
+                </div>
+
+                <div class="review-ticker-card">
+                    <div class="review-card-header">
+                        <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=150&q=80" alt="Nuria" class="review-card-avatar" decoding="async" loading="lazy">
+                        <div class="review-user-info">
+                            <div class="review-user-name">Nuria L. <i class="fa-solid fa-circle-check" style="color:#0284c7; font-size:0.8rem;"></i></div>
+                            <div class="review-user-meta">y Oliver (Gato Siamés) • Madrid</div>
+                        </div>
+                    </div>
+                    <div class="review-stars-row">
+                        <div class="review-stars-gold"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <span class="review-badge-verified"><i class="fa-solid fa-brain"></i> IA Predictiva</span>
+                    </div>
+                    <h4 class="review-quote-title">"La IA detectó una disminución de consumo hídrico"</h4>
+                    <p class="review-quote-text">"La app lanzó un aviso: 'Oliver ha reducido su actividad nocturna un 40% y sus visitas al bebedero'. Lo llevé al veterinario y le diagnosticaron una cistitis incipiente que cogimos justo al principio. La medicina preventiva funciona."</p>
+                    <div class="review-card-footer">
+                        <span class="review-source-tag"><i class="fa-solid fa-shield-cat"></i> Salud Felina</span>
+                        <span>Hace 6 días</span>
+                    </div>
+                </div>
+
+                <div class="review-ticker-card">
+                    <div class="review-card-header">
+                        <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=150&q=80" alt="Marcos" class="review-card-avatar" decoding="async" loading="lazy">
+                        <div class="review-user-info">
+                            <div class="review-user-name">Marcos V. & Kai <i class="fa-solid fa-circle-check" style="color:#0284c7; font-size:0.8rem;"></i></div>
+                            <div class="review-user-meta">Samoyedo • Sierra Nevada, Granada</div>
+                        </div>
+                    </div>
+                    <div class="review-stars-row">
+                        <div class="review-stars-gold"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <span class="review-badge-verified"><i class="fa-solid fa-snowflake"></i> Nieve & Frío</span>
+                    </div>
+                    <h4 class="review-quote-title">"3 meses Premium gratis compartiendo fotos en nieve"</h4>
+                    <p class="review-quote-text">"Hacemos raquetas en nieve cada invierno. El collar aguanta temperaturas bajo cero sin perder batería. Compartimos las fotos con #AventurasCUDI en Instagram y el sistema nos acreditó 3 meses gratis. La mejor comunidad pet-friendly."</p>
+                    <div class="review-card-footer">
+                        <span class="review-source-tag"><i class="fa-brands fa-instagram"></i> Instagram UGC</span>
+                        <span>Hace 1 semana</span>
+                    </div>
+                </div>
+
+                <div class="review-ticker-card">
+                    <div class="review-card-header">
+                        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=150&q=80" alt="Andrea" class="review-card-avatar" decoding="async" loading="lazy">
+                        <div class="review-user-info">
+                            <div class="review-user-name">Andrea C. <i class="fa-solid fa-circle-check" style="color:#0284c7; font-size:0.8rem;"></i></div>
+                            <div class="review-user-meta">y Maya (Beagle Rastreadora) • Zaragoza</div>
+                        </div>
+                    </div>
+                    <div class="review-stars-row">
+                        <div class="review-stars-gold"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <span class="review-badge-verified"><i class="fa-solid fa-volume-high"></i> Acústica IA</span>
+                    </div>
+                    <h4 class="review-quote-title">"El análisis acústico entendió su ansiedad de separación"</h4>
+                    <p class="review-quote-text">"Maya aullaba cuando me iba a trabajar. El sensor acústico registró el momento exacto y la intensidad del estrés. Con las pautas de enriquecimiento ambiental que me sugirió el etólogo en la app, la ansiedad bajó un 85% en tres semanas."</p>
+                    <div class="review-card-footer">
+                        <span class="review-source-tag"><i class="fa-solid fa-waveform-lines"></i> Audio Telemetría</span>
+                        <span>Hace 1 semana</span>
+                    </div>
+                </div>
+
+                <div class="review-ticker-card">
+                    <div class="review-card-header">
+                        <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=150&q=80" alt="Alejandro" class="review-card-avatar" decoding="async" loading="lazy">
+                        <div class="review-user-info">
+                            <div class="review-user-name">Alejandro G. <i class="fa-solid fa-circle-check" style="color:#0284c7; font-size:0.8rem;"></i></div>
+                            <div class="review-user-meta">y Nala (Pastor Alemán) • Alicante</div>
+                        </div>
+                    </div>
+                    <div class="review-stars-row">
+                        <div class="review-stars-gold"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <span class="review-badge-verified"><i class="fa-solid fa-water"></i> IP68 Total</span>
+                    </div>
+                    <h4 class="review-quote-title">"Resistencia al agua y barro de verdad a prueba de bombas"</h4>
+                    <p class="review-quote-text">"Nala va directa a cualquier río, poza de barro o playa. El sellado impermeable IP68 del collar no ha fallado ni un solo día tras un año de uso extremo. Lo lavo bajo el grifo y sigue impecable. Excelente calidad de materiales."</p>
+                    <div class="review-card-footer">
+                        <span class="review-source-tag"><i class="fa-brands fa-google"></i> Google Reviews</span>
+                        <span>Hace 1 semana</span>
+                    </div>
+                </div>
+
+                <div class="review-ticker-card">
+                    <div class="review-card-header">
+                        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=150&q=80" alt="Paula" class="review-card-avatar" decoding="async" loading="lazy">
+                        <div class="review-user-info">
+                            <div class="review-user-name">Paula F. & Toby <i class="fa-solid fa-circle-check" style="color:#0284c7; font-size:0.8rem;"></i></div>
+                            <div class="review-user-meta">Teckel Pelo Duro • Santander, Cantabria</div>
+                        </div>
+                    </div>
+                    <div class="review-stars-row">
+                        <div class="review-stars-gold"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <span class="review-badge-verified"><i class="fa-solid fa-route"></i> Senderos Norte</span>
+                    </div>
+                    <h4 class="review-quote-title">"Senderos de costa seguros y clínicas veterinarias a 1 clic"</h4>
+                    <p class="review-quote-text">"Pasear por los acantilados de Cantabria requería una atención extrema. Con el mapa colaborativo encontramos caminos anchos vallados con fuentes. Además, tener las clínicas asociadas a 1 toque en la app da una tranquilidad inmensa."</p>
+                    <div class="review-card-footer">
+                        <span class="review-source-tag"><i class="fa-brands fa-apple"></i> App Store</span>
+                        <span>Hace 2 semanas</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Banner inferior de invitación a compartir experiencia UGC -->
+        <div style="margin-top: 45px; text-align: center; padding: 0 20px;">
+            <div style="display: inline-flex; align-items: center; gap: 15px; background: white; padding: 14px 28px; border-radius: 50px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; flex-wrap: wrap; justify-content: center;">
+                <span style="font-size: 0.95rem; color: #0f172a; font-weight: 800; display:flex; align-items:center; gap:8px;">
+                    <i class="fa-solid fa-award" style="color: #f59e0b; font-size:1.1rem;"></i> ¿Tú también vives aventuras con CUDI?
+                </span>
+                <span style="font-size: 0.85rem; color: #64748b;">
+                    Sube tu foto con el hashtag <strong>#AventurasCUDI</strong> y consigue <strong>1 mes de Premium gratis</strong>.
+                </span>
+                <button type="button" class="btn-primary" onclick="openReferralModal()" style="padding: 8px 20px; border-radius: 20px; font-size: 0.82rem; font-weight: 800; cursor:pointer;">
+                    Unirme al Programa <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROGRAMA REFERIDOS -->
+    <section style="background: linear-gradient(135deg, #1e293b, #0f172a); color: white; padding: 80px 0; border-radius: 30px; margin: 80px 20px; text-align: center; position:relative; overflow:hidden; box-shadow:0 30px 60px rgba(0,0,0,0.3);">
+        <div style="position:absolute; top:-50%; left:-20%; width:300px; height:300px; background:rgba(56,189,248,0.2); border-radius:50%; filter:blur(100px);"></div>
+        <div style="position:absolute; bottom:-50%; right:-20%; width:300px; height:300px; background:rgba(16,185,129,0.2); border-radius:50%; filter:blur(100px);"></div>
+        
+        <div class="container" style="position:relative; z-index:2;">
+            <span style="background:rgba(255,255,255,0.1); padding:8px 20px; border-radius:30px; font-size:0.85rem; font-weight:800; letter-spacing:1px; margin-bottom:20px; display:inline-block;"><i class="fa-solid fa-bullhorn"></i> FESTIVAL DE RECOMENDACIONES</span>
+            <h2 style="font-size:3rem; font-weight:800; margin-bottom:15px; color:#fff;">Trae a un amigo. Gana tranquilidad.</h2>
+            <p style="font-size:1.2rem; max-width:600px; margin:0 auto 30px auto; color:#cbd5e1; line-height:1.6;">El cuidado preventivo sólido se construye en comunidad. Si recomiendas CUDI, tu referido recibe <strong>10€ de descuento</strong>, y tú te llevas <strong>1 Mes de Premium Care Gratis</strong> por cada amigo activado.</p>
+            <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap;">
+                <button class="app-btn primary" style="font-size:1.1rem; padding:15px 30px;" onclick="openReferralModal()"><i class="fa-solid fa-link"></i> Compartir mi Enlace Único</button>
+            </div>
+            <p style="font-size:0.8rem; color:#94a3b8; margin-top:20px;">*Recompensas automáticas procesadas por nuestro contrato inteligente. Sin límites mensuales.</p>
+        </div>
+    </section>
+
+    <!-- Footer Idéntico a index.html (Políticas de privacidad y Links Reales) -->
+                        <footer class="premium-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo" style="margin-bottom:30px;display:inline-block;">
+                        <img src="logo.jpeg" alt="CUDI" style="height:70px;border-radius:12px;" decoding="async" loading="lazy">
+                    </a>
+                    <p>CUDI es el primer ecosistema integral de salud y bienestar animal impulsado por IA. Monitorizamos, protegemos y conectamos todo el universo de tu compañero hoy para un mañana más sano.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Comunidad CUDI</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="index.html#store-grid">Tienda Marketplace</a></li>
+                        <li><a href="index.html#suscripciones">Planes de Protección</a></li>
+                        <li><a href="comunidad-cudi.html">Red Social</a></li>
+                        <li><a href="red-socios-clinicas-veterinarias.html">Partners</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Información Legal</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="terminos-condiciones-app.html">Términos y Condiciones</a></li>
+                        <li><a href="politica-cookies-plataforma.html">Política de Cookies</a></li>
+                        <li><a href="politica-privacidad-datos-mascotas.html">Política de Privacidad</a></li>
+                        <li><a href="politica-devoluciones-smart-collar.html">Devoluciones y Cambios</a></li>
+                        <li><a href="legal.html">Información Legal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Conecta con nosotros</h4>
+                    <p style="margin-bottom:20px;">Recibe consejos de salud preventiva validados por expertos.</p>
+                    <div class="footer-socials">
+                        <a href="https://www.instagram.com/cudi.ia?igsh=bjdmNXhyeHZvMXo0&utm_source=qr" target="_blank" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/Cudi2026" target="_blank" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.tiktok.com/@cudi.ia?_r=1&_t=ZN-95icM5LsfCA" class="social-btn"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="https://www.youtube.com/@cudi-ia" class="social-btn"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CUDI AI Ecosystem S.L. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <style>
+        /* Animación para el pulse continuo del mapa simulador integrado al CSS */
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(56,189,248, 0.7); }
+            70% { box-shadow: 0 0 0 20px rgba(56,189,248, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(56,189,248, 0); }
+        }
+        @keyframes pulse-green {
+            0% { box-shadow: 0 0 0 0 rgba(16,185,129, 0.7); }
+            70% { box-shadow: 0 0 0 20px rgba(16,185,129, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(16,185,129, 0); }
+        }
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            15% { transform: scale(1.15); }
+            30% { transform: scale(1); }
+            45% { transform: scale(1.15); }
+            60% { transform: scale(1); }
+        }
+        .radar-scan {
+            position:absolute; top:0; left:0; width:100%; height:15%; background:linear-gradient(to bottom, rgba(56,189,248,0), rgba(56,189,248,0.4)); border-bottom: 2px solid #38bdf8; animation: scan 3s linear infinite; z-index:10;
+        }
+        @keyframes scan {
+            0% { top: -15%; opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+    </style>
+
+    <script>
+        // Simulador de datos en tiempo real
+        if(document.getElementById('sim-coords')) {
+            let lat = 41.3651;
+            let lon = 2.1583;
+            let baseBpm = 115;
+            let baseSpeed = 6.5;
+            let dist = 3.24;
+            let cal = 452;
+            let alt = 180;
+
+            setInterval(() => {
+                // Fluctuaciones aleatorias realistas
+                lat = (lat + (Math.random() * 0.0002 - 0.0001)).toFixed(4);
+                lon = (lon + (Math.random() * 0.0002 - 0.0001)).toFixed(4);
+                
+                let curBpm = baseBpm + Math.floor(Math.random() * 9 - 4);
+                let curSpeed = (baseSpeed + (Math.random() * 1.5 - 0.75)).toFixed(1);
+                
+                dist += 0.01; // Increase slightly over time
+                cal += Math.floor(Math.random() * 2);
+                
+                if(Math.random() > 0.7) { alt += Math.floor(Math.random() * 3 - 1); }
+
+                document.getElementById('sim-coords').innerHTML = `LAT: ${lat} °N <br> LON: ${lon} °E`;
+                document.getElementById('sim-bpm').innerText = curBpm;
+                document.getElementById('sim-speed').innerHTML = `${curSpeed} <span style="font-size:0.9rem; color:#cbd5e1;">km/h</span>`;
+                document.getElementById('sim-dist').innerHTML = `${dist.toFixed(2)} <span style="font-size:0.9rem; color:#cbd5e1;">km</span>`;
+                document.getElementById('sim-cal').innerText = cal;
+                document.getElementById('sim-alt').innerText = alt;
+                
+                // Adjust heartbeat animation speed dynamically based on BPM
+                let heartIcon = document.querySelector('.fa-heart-pulse');
+                if(heartIcon) {
+                    let beatDur = 60 / curBpm;
+                    heartIcon.style.animationDuration = beatDur + 's';
+                }
+            }, 2000);
+        }
+    </script>
+
+    <script>
+        function openReferralModal() {
+            alert("¡Enlace dinámico generado con éxito! (https://cudi.app/ref/x8aBd9). Compártelo en tus redes sociales para que tu referido obtenga sus 10€ de descuento y tú actives 1 mes Premium gratis.");
+        }
+    </script>
+    <script src="script.js?v=6.2"></script>
+    <script src="i18n.js"></script>
+    <script src="cudi-ai.js?v=6.2"></script>
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" id="mobile-drawer">
+        <button class="drawer-close" onclick="toggleMobileMenu()"><i class="fa-solid fa-xmark"></i></button>
+        <div style="text-align:center; margin-bottom:30px;">
+            <img src="logo.jpeg" alt="CUDI" style="height:60px; border-radius:10px;" decoding="async" loading="lazy">
+        </div>
+                                <ul class="drawer-links">
+            <li><a href="index.html" onclick="toggleMobileMenu()"><i class="fa-solid fa-house"></i> Inicio</a></li>
+            <li><a href="smart-collar-aventuras-sin-sustos.html" onclick="toggleMobileMenu()"><i class="fa-solid fa-rocket"></i> Lanzamiento</a></li>
+            <li><a href="comunidad-cudi.html" onclick="toggleMobileMenu()"><i class="fa-solid fa-people-group"></i> Comunidad</a></li>
+            <li><a href="simulador-financiero.html" onclick="toggleMobileMenu()"><i class="fa-solid fa-calculator"></i> Simulador</a></li>
+            <li><a href="index.html#store-grid" onclick="toggleMobileMenu()"><i class="fa-solid fa-store"></i> Tienda</a></li>
+            <li><a href="index.html#suscripciones" onclick="toggleMobileMenu()"><i class="fa-solid fa-shield-cat"></i> Planes</a></li>
+            <li><a href="red-socios-clinicas-veterinarias.html" onclick="toggleMobileMenu()"><i class="fa-solid fa-handshake"></i> Partners</a></li>
+            <li id="mobile-session-item"></li>
+        </ul>
+        <div style="margin-top:auto; padding:20px; background:#f8fafc; border-radius:15px; font-size:0.85rem; color:#64748b;">
+            <i class="fa-solid fa-envelope"></i> cudi.ai2026@gmail.com
+        </div>
+    </div>
+    <script>
+        // Auto-scroll script for embedding in slide presentation iframe
+        if (window.location.search.includes('autoscroll=true') || window.self !== window.top) {
+            window.addEventListener('DOMContentLoaded', () => {
+                let scrollDirection = 1;
+                let scrollSpeed = 0.6; // Speed of scroll
+                
+                // Slowly scroll down and up
+                setInterval(() => {
+                    window.scrollBy(0, scrollDirection * scrollSpeed);
+                    
+                    // Check if we hit bottom
+                    if ((window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 2) {
+                        scrollDirection = -1; // change to scroll up
+                    }
+                    // Check if we hit top
+                    else if (window.scrollY <= 2) {
+                        scrollDirection = 1; // change to scroll down
+                    }
+                }, 16);
+            });
+        }
+    </script>
+    <!-- Módulos Transversales CUDI (Arquitectura Modular en Español) -->
+    <script src="modulos/estado-compartido.js?v=6.4"></script>
+    <script src="modulos/catalogo-unico.js?v=6.4"></script>
+    <script src="modulos/internacionalizacion.js?v=6.4"></script>
+    <script src="modulos/nucleo-transversal.js?v=6.4"></script>
+</body>
+</html>

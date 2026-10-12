@@ -1,0 +1,25 @@
+# ==============================================================================
+# CUDI ECOSYSTEM — REGLAS DE EXCLUSIÓN DE DOCUMENTACIÓN PRIVADA Y DATOS INTERNOS
+# ==============================================================================
+# Prohibir subida accidental de hojas de cálculo, memorias académicas y corpus privados
+*.xlsx
+*.xls
+*.docx
+*.doc
+*.pdf
+*.pptx
+*.ppt
+*.bak
+*.BACKUP.*
+diff.txt
+scratch/
+documentos-tfm/
+*TFM_4_CUDI*
+*TFM_APA*
+*NOTEBOOKLM*
+*AUDIT_MASTER*
+*presentacion_cudi*
+*QR_PRESENTATION*
+datos/documentacion-ia-rag.txt
+.DS_Store
+Thumbs.db

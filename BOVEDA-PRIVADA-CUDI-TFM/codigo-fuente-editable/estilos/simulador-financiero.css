@@ -1,0 +1,848 @@
+/* ===================================================
+   CUDI FINANCIAL SIMULATOR STYLESHEET
+   Desarrollo realizado por Sergio Alejandro Ospina Rocha
+   =================================================== */
+
+:root {
+    --glass-bg: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(226, 232, 240, 0.9);
+    --glass-shadow: 0 10px 35px 0 rgba(15, 23, 42, 0.07);
+    --glass-glow: 0 4px 20px 0 rgba(0, 119, 182, 0.08);
+}
+
+.sim-page-header {
+    background: linear-gradient(135deg, #F0F9FF 0%, #FFFFFF 100%);
+    padding: 120px 2rem 2.5rem;
+    text-align: center;
+    border-bottom: 1px solid var(--clr-border);
+}
+
+.sim-page-header h1 {
+    font-size: clamp(2.4rem, 5vw, 3.4rem);
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    margin-bottom: 0.8rem;
+    color: var(--clr-secondary);
+}
+
+.sim-page-header p {
+    max-width: 780px;
+    margin: 0 auto 2rem;
+    font-size: 1.1rem;
+    color: var(--clr-text-muted);
+}
+
+.sim-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--clr-primary-glow);
+    color: var(--clr-primary);
+    padding: 6px 18px;
+    border-radius: 50px;
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1.2rem;
+    border: 1px solid rgba(0, 119, 182, 0.2);
+}
+
+/* ===================================================
+   SELECTOR DE 3 ESCENARIOS FINANCIEROS (TFM 4)
+   =================================================== */
+.scenarios-selector-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    text-align: left;
+}
+
+.scenario-card-btn {
+    background: white;
+    border: 2px solid var(--clr-border);
+    border-radius: var(--radius-md);
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 4px 15px rgba(15, 23, 42, 0.04);
+    position: relative;
+    user-select: none;
+}
+
+.scenario-card-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 119, 182, 0.12);
+    border-color: var(--clr-primary-light);
+}
+
+.scenario-card-btn.active {
+    border-color: var(--clr-primary);
+    background: linear-gradient(180deg, #FFFFFF 0%, #F0F9FF 100%);
+    box-shadow: 0 10px 30px rgba(0, 119, 182, 0.18);
+}
+
+.scenario-card-btn.active::after {
+    content: 'ACTIVO';
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background: var(--clr-primary);
+    color: white;
+    font-size: 0.65rem;
+    font-weight: 900;
+    padding: 3px 10px;
+    border-radius: 50px;
+    letter-spacing: 0.8px;
+    box-shadow: 0 2px 8px rgba(0, 119, 182, 0.3);
+}
+
+.esc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.esc-badge {
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.badge-neg { background: #FEE2E2; color: #DC2626; }
+.badge-eq { background: #E0F2FE; color: #0284C7; }
+.badge-pos { background: #DCFCE7; color: #16A34A; }
+
+.esc-breakeven {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--clr-text-muted);
+}
+
+.scenario-card-btn h3 {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--clr-secondary);
+    margin: 0 0 6px 0;
+}
+
+.scenario-card-btn p {
+    font-size: 0.8rem;
+    color: var(--clr-text-muted);
+    margin: 0 0 14px 0;
+    line-height: 1.4;
+}
+
+.esc-kpis {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px dashed var(--clr-border);
+    padding-top: 10px;
+    font-size: 0.82rem;
+    color: var(--clr-text);
+}
+
+/* ===================================================
+   CONTENEDOR Y LAYOUT DEL SIMULADOR
+   =================================================== */
+.sim-grid-container {
+    max-width: 1400px;
+    margin: 2rem auto 5rem;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Glassmorphism Panel base */
+.sim-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--glass-shadow);
+    padding: 28px;
+    transition: var(--transition);
+}
+
+.sim-panel:hover {
+    box-shadow: 0 12px 40px 0 rgba(15, 23, 42, 0.09);
+}
+
+/* ===================================================
+   PANEL DESPLEGABLE DE SUPUESTOS / CONTROLES
+   =================================================== */
+.sim-assumptions-panel {
+    padding: 0;
+    overflow: hidden;
+    background: white;
+}
+
+.sim-assumptions-header {
+    padding: 20px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background: linear-gradient(90deg, #F8FAFC 0%, #FFFFFF 100%);
+    border-bottom: 1px solid var(--clr-border);
+    user-select: none;
+    transition: background 0.2s;
+}
+
+.sim-assumptions-header:hover {
+    background: #F1F5F9;
+}
+
+.esc-tag-pill {
+    font-size: 0.72rem;
+    background: #E0F2FE;
+    color: #0284C7;
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.sim-toggle-hint {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--clr-primary);
+}
+
+#assumptions-toggle-icon {
+    font-size: 1rem;
+    color: var(--clr-primary);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.sim-assumptions-panel.collapsed #assumptions-toggle-icon {
+    transform: rotate(-90deg);
+}
+
+.sim-assumptions-panel.collapsed .sim-assumptions-body {
+    display: none;
+}
+
+.sim-assumptions-body {
+    padding: 24px 28px;
+}
+
+.assumptions-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.sim-input-section {
+    margin-bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.sim-section-title {
+    font-family: var(--font-heading);
+    font-size: 0.92rem;
+    font-weight: 800;
+    color: var(--clr-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid var(--clr-border);
+    padding-bottom: 6px;
+}
+
+/* Slider Controls */
+.sim-control-group {
+    margin-bottom: 14px;
+}
+
+.sim-control-label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+    font-size: 0.84rem;
+    font-weight: 600;
+    color: var(--clr-text);
+}
+
+.sim-control-value {
+    color: var(--clr-primary);
+    font-family: var(--font-heading);
+    font-weight: 800;
+    background: var(--clr-primary-glow);
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    min-width: 48px;
+    text-align: center;
+}
+
+/* Custom Range Input */
+.sim-slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 6px;
+    border-radius: 5px;
+    background: #E2E8F0;
+    outline: none;
+    transition: background 0.3s;
+}
+
+.sim-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--clr-primary);
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 119, 182, 0.3);
+    transition: transform 0.1s, background-color 0.2s;
+}
+
+.sim-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+    background: var(--clr-primary-light);
+}
+
+.sim-slider::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border: none;
+    border-radius: 50%;
+    background: var(--clr-primary);
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 119, 182, 0.3);
+    transition: transform 0.1s;
+}
+
+.sim-slider::-moz-range-thumb:hover {
+    transform: scale(1.2);
+    background: var(--clr-primary-light);
+}
+
+/* Dashboard Panel */
+.sim-main-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+/* KPI Cards Grid */
+.sim-kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.sim-kpi-card {
+    background: white;
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius-md);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.sim-kpi-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+    border-color: var(--clr-primary-light);
+}
+
+.sim-kpi-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--clr-border);
+}
+
+.sim-kpi-card.kpi-revenue::before { background: var(--clr-primary); }
+.sim-kpi-card.kpi-cogs::before { background: #ef4444; }
+.sim-kpi-card.kpi-margin::before { background: var(--clr-accent); }
+.sim-kpi-card.kpi-sga::before { background: #3b82f6; }
+.sim-kpi-card.kpi-net::before { background: var(--clr-accent); }
+.sim-kpi-card.kpi-runway::before { background: #f59e0b; }
+
+.sim-kpi-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--clr-text-muted);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+}
+
+.sim-kpi-header i {
+    font-size: 1rem;
+    opacity: 0.7;
+}
+
+.kpi-revenue i { color: var(--clr-primary); }
+.kpi-cogs i { color: #ef4444; }
+.kpi-margin i { color: var(--clr-accent); }
+.kpi-sga i { color: #3b82f6; }
+.kpi-net i { color: var(--clr-accent); }
+.kpi-runway i { color: #f59e0b; }
+
+.sim-kpi-val {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--clr-secondary);
+    margin-bottom: 5px;
+}
+
+.sim-kpi-sub {
+    font-size: 0.75rem;
+    color: var(--clr-text-muted);
+}
+
+.sim-kpi-sub span.trend-up {
+    color: var(--clr-accent);
+    font-weight: 700;
+}
+
+.sim-kpi-sub span.trend-down {
+    color: #ef4444;
+    font-weight: 700;
+}
+
+/* Alert styling inside Runway card */
+.runway-critical {
+    color: #ef4444 !important;
+    animation: pulse-red 2s infinite;
+}
+
+.runway-profitable {
+    color: var(--clr-accent) !important;
+    font-weight: 800;
+}
+
+@keyframes pulse-red {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+/* Month Selector Capsule */
+.sim-month-selector {
+    background: #F1F5F9;
+    border-radius: var(--radius-md);
+    padding: 15px 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid var(--clr-border);
+}
+
+.sim-month-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sim-month-title {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--clr-secondary);
+}
+
+.sim-month-value {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--clr-primary);
+}
+
+/* Charts Grid */
+.sim-charts-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.sim-chart-card {
+    background: white;
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius-md);
+    padding: 25px;
+    min-height: 350px;
+}
+
+.sim-chart-card h4 {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--clr-secondary);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sim-chart-wrapper {
+    position: relative;
+    height: 270px;
+    width: 100%;
+}
+
+/* Action Bar */
+.sim-action-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--clr-border);
+    padding-top: 25px;
+}
+
+.sim-btn-group {
+    display: flex;
+    gap: 12px;
+}
+
+.sim-btn {
+    padding: 10px 20px;
+    border-radius: var(--radius-sm);
+    font-weight: 700;
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition);
+    border: none;
+}
+
+.sim-btn-reset {
+    background: #E2E8F0;
+    color: var(--clr-secondary);
+}
+
+.sim-btn-reset:hover {
+    background: #CBD5E1;
+}
+
+.sim-btn-export {
+    background: var(--clr-primary);
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 119, 182, 0.2);
+}
+
+.sim-btn-export:hover {
+    background: #00669c;
+    box-shadow: 0 6px 18px rgba(0, 119, 182, 0.3);
+}
+
+/* Collapsible Table Section */
+.sim-table-panel {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--glass-shadow);
+    padding: 30px;
+    margin-bottom: 50px;
+}
+
+.sim-table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding-bottom: 10px;
+}
+
+.sim-table-header h3 {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--clr-secondary);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sim-table-toggle-icon {
+    font-size: 1.2rem;
+    transition: transform 0.3s;
+    color: var(--clr-text-muted);
+}
+
+.sim-table-panel.collapsed .sim-table-toggle-icon {
+    transform: rotate(-90deg);
+}
+
+.sim-table-panel.collapsed .sim-table-content {
+    display: none;
+}
+
+.sim-table-content {
+    margin-top: 25px;
+    overflow-x: auto;
+}
+
+/* Data Table Styling */
+.sim-data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    font-family: var(--font-body);
+}
+
+.sim-data-table th, .sim-data-table td {
+    padding: 12px 16px;
+    text-align: right;
+    border-bottom: 1px solid var(--clr-border);
+}
+
+.sim-data-table th:first-child, .sim-data-table td:first-child {
+    text-align: left;
+    font-weight: 600;
+    position: sticky;
+    left: 0;
+    background: white;
+    z-index: 5;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.02);
+}
+
+.sim-data-table th {
+    background: #F8FAFC;
+    color: var(--clr-secondary);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.sim-data-table tr.table-row-group {
+    background: #F1F5F9;
+}
+
+.sim-data-table tr.table-row-group td {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--clr-secondary);
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 0.82rem;
+    letter-spacing: 0.5px;
+    padding: 10px 16px;
+}
+
+.sim-data-table tr.table-row-total td {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    color: var(--clr-secondary);
+    background: var(--clr-primary-glow);
+    border-top: 2px solid var(--clr-primary);
+    border-bottom: 2px double var(--clr-primary);
+    font-size: 0.95rem;
+}
+
+.sim-data-table tr.table-row-total td:first-child {
+    background: #E0F2FE;
+}
+
+.sim-data-table tr.table-row-subtotal td {
+    font-weight: 700;
+    border-top: 1px solid var(--clr-text-muted);
+}
+
+.sim-data-table td.negative-val {
+    color: #ef4444;
+}
+
+.sim-data-table td.positive-val {
+    color: var(--clr-accent);
+}
+
+.sim-data-table tr:hover td {
+    background-color: #F8FAFC;
+}
+
+/* Month Breakdown details container */
+.sim-month-details-box {
+    background: white;
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius-md);
+    padding: 25px;
+    margin-top: 5px;
+}
+
+.sim-month-details-box h5 {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--clr-secondary);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.details-column h6 {
+    font-family: var(--font-heading);
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--clr-primary);
+    border-bottom: 1px solid var(--clr-border);
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.details-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+}
+
+.details-row span:last-child {
+    font-weight: 600;
+    color: var(--clr-secondary);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+    .assumptions-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 900px) {
+    .scenarios-selector-wrap,
+    .scenarios-selector-grid {
+        grid-template-columns: 1fr !important;
+        gap: 14px !important;
+    }
+    .sim-kpi-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+    .sim-charts-grid {
+        grid-template-columns: 1fr;
+    }
+    .sim-grid-container,
+    .sim-main-content,
+    .sim-panel,
+    .sim-month-selector,
+    .sim-kpi-grid,
+    .sim-chart-card,
+    .sim-table-panel {
+        min-width: 0 !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+}
+
+@media (max-width: 650px) {
+    .sim-page-header {
+        padding: 90px 1rem 2rem;
+    }
+
+    .sim-page-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .sim-grid-container {
+        padding: 0 12px;
+        margin-top: 1rem;
+    }
+
+    .sim-panel {
+        padding: 16px 12px;
+    }
+
+    .sim-assumptions-header {
+        padding: 14px 16px;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .sim-assumptions-body {
+        padding: 16px 14px;
+    }
+
+    .assumptions-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sim-kpi-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .sim-month-selector {
+        padding: 12px 14px;
+    }
+
+    .sim-month-row {
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    .sim-chart-card {
+        padding: 16px 12px;
+    }
+
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sim-action-bar {
+        flex-direction: column;
+        gap: 15px;
+        align-items: stretch;
+    }
+
+    .sim-btn-group {
+        flex-direction: column;
+    }
+
+    .sim-table-panel {
+        padding: 18px 12px;
+    }
+}
+
+

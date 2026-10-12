@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+Disallow: /datos/
+Disallow: /documentos-tfm/
+Disallow: /*.xlsx$
+Disallow: /*.txt$
+Disallow: /*.json$
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+Sitemap: https://alejandro18000.github.io/cudi-bienestar-animal/sitemap.xml
