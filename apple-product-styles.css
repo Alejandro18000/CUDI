@@ -1,0 +1,643 @@
+/* ==========================================================================
+   VIEW TRANSITIONS & APPLE NATIVE NAVIGATION (2026 EDITION)
+   Transiciones fluidas entre páginas sin parpadeo blanco
+   ========================================================================== */
+@view-transition {
+    navigation: auto;
+}
+
+::view-transition-old(root) {
+    animation: applePageFadeOut 0.22s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+::view-transition-new(root) {
+    animation: applePageFadeIn 0.32s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes applePageFadeOut {
+    0% { opacity: 1; transform: scale(1); filter: blur(0); }
+    100% { opacity: 0; transform: scale(0.99); filter: blur(4px); }
+}
+
+@keyframes applePageFadeIn {
+    0% { opacity: 0; transform: scale(1.01); filter: blur(4px); }
+    100% { opacity: 1; transform: scale(1); filter: blur(0); }
+}
+
+/* ==========================================================================
+   APPLE STORE PRODUCT STAGE (PLANTILLA MAESTRA DE PRODUCTO)
+   ========================================================================== */
+.apple-product-page-root {
+    background: #fbfbfd;
+    color: #1d1d1f;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    min-height: 100vh;
+}
+
+/* Breadcrumb Bar */
+.apple-breadcrumbs-bar {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    font-size: 0.8rem;
+    color: #86868b;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    letter-spacing: -0.2px;
+}
+.apple-breadcrumbs-bar a {
+    color: #86868b;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+.apple-breadcrumbs-bar a:hover {
+    color: #0077b6;
+}
+.apple-breadcrumbs-bar span.separator {
+    opacity: 0.5;
+}
+.apple-breadcrumbs-bar span.current {
+    color: #1d1d1f;
+    font-weight: 600;
+}
+
+/* Hero Stage del Producto */
+.apple-product-stage-container {
+    max-width: 1280px;
+    margin: 0 auto 60px;
+    padding: 20px 24px;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+/* Galería Apple */
+.apple-product-gallery-pane {
+    position: sticky;
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.apple-main-image-viewport {
+    background: #ffffff;
+    border-radius: 28px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+    position: relative;
+    overflow: hidden;
+    min-height: 480px;
+}
+.apple-main-image-viewport img {
+    max-width: 100%;
+    max-height: 440px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 16px;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.apple-main-image-viewport:hover img {
+    transform: scale(1.03);
+}
+.apple-badge-floating {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 16px;
+    border-radius: 980px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+.apple-thumbs-strip {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.apple-thumb-slot {
+    width: 72px;
+    height: 72px;
+    border-radius: 16px;
+    background: #ffffff;
+    border: 2px solid transparent;
+    padding: 6px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    transition: all 0.25s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.apple-thumb-slot:hover,
+.apple-thumb-slot.active {
+    border-color: #0077b6;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 119, 182, 0.15);
+}
+.apple-thumb-slot img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+/* Columna de Detalles y Compra */
+.apple-product-info-pane {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+}
+.apple-product-kicker {
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #0077b6;
+    margin-bottom: 8px;
+}
+.apple-product-title {
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: clamp(2.2rem, 3.2vw, 3rem);
+    font-weight: 850;
+    line-height: 1.1;
+    letter-spacing: -1.2px;
+    color: #1d1d1f;
+    margin: 0 0 16px;
+}
+.apple-product-partner-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    font-size: 0.88rem;
+    color: #6e6e73;
+}
+.apple-partner-badge {
+    background: rgba(0, 119, 182, 0.08);
+    color: #0077b6;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 980px;
+    font-size: 0.78rem;
+}
+.apple-rating-stars {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #f59e0b;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+.apple-price-block {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+.apple-price-main {
+    font-family: 'Outfit', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 850;
+    color: #0077b6;
+    letter-spacing: -1px;
+}
+.apple-price-subtext {
+    font-size: 0.88rem;
+    color: #86868b;
+    font-weight: 500;
+}
+.apple-product-desc {
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: #424245;
+    margin-bottom: 28px;
+}
+
+/* Selector de Especie / Variante */
+.apple-variant-selector-box {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+    padding: 18px 22px;
+    margin-bottom: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.apple-variant-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #1d1d1f;
+}
+.apple-variant-subtitle {
+    font-size: 0.78rem;
+    color: #86868b;
+}
+.apple-variant-pills {
+    display: flex;
+    gap: 8px;
+}
+.apple-var-pill {
+    padding: 6px 14px;
+    border-radius: 980px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    border: 1px solid #d2d2d7;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.apple-var-pill.active {
+    background: #1d1d1f;
+    color: #ffffff;
+    border-color: #1d1d1f;
+}
+
+/* Botones Principales de Compra */
+.apple-buy-actions-dock {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 32px;
+}
+.apple-btn-buy-primary {
+    background: #0071e3;
+    color: #ffffff !important;
+    border: none;
+    padding: 18px 32px;
+    border-radius: 980px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 8px 24px rgba(0, 113, 227, 0.25);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    text-decoration: none;
+}
+.apple-btn-buy-primary:hover {
+    background: #0077ed;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(0, 113, 227, 0.35);
+}
+.apple-btn-buy-secondary {
+    background: rgba(0, 0, 0, 0.04);
+    color: #1d1d1f !important;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 16px 32px;
+    border-radius: 980px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+.apple-btn-buy-secondary:hover {
+    background: rgba(0, 0, 0, 0.08);
+}
+.apple-guarantee-strip {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 0.78rem;
+    color: #86868b;
+    padding-top: 12px;
+}
+.apple-guarantee-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.apple-guarantee-item i {
+    color: #10b981;
+}
+
+/* ==========================================================================
+   MATRIZ DE ESPECIFICACIONES TÉCNICAS (APPLE TECH SPECS)
+   ========================================================================== */
+.apple-section-specs {
+    background: #ffffff;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    padding: 80px 24px;
+}
+.apple-section-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+.apple-section-header {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 50px;
+}
+.apple-section-kicker {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #0077b6;
+    letter-spacing: 1.2px;
+    margin-bottom: 8px;
+}
+.apple-section-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 850;
+    letter-spacing: -1px;
+    color: #1d1d1f;
+    margin: 0 0 12px;
+}
+.apple-specs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+.apple-spec-card {
+    background: #fbfbfd;
+    border-radius: 20px;
+    padding: 28px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.apple-spec-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+.apple-spec-key {
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: #0077b6;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.apple-spec-val {
+    font-size: 1.05rem;
+    color: #1d1d1f;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   VEREDICTO CLÍNICO & RESEÑAS VERIFICADAS
+   ========================================================================== */
+.apple-section-expert {
+    padding: 80px 24px;
+    background: #fbfbfd;
+}
+.apple-expert-card {
+    background: #ffffff;
+    border-radius: 28px;
+    padding: 40px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.03);
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 30px;
+    align-items: center;
+    max-width: 960px;
+    margin: 0 auto 50px;
+}
+.apple-expert-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #0077b6, #00b4d8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 2rem;
+    box-shadow: 0 8px 20px rgba(0, 119, 182, 0.25);
+}
+.apple-expert-quote {
+    font-size: 1.15rem;
+    line-height: 1.65;
+    color: #1d1d1f;
+    font-weight: 500;
+    font-style: italic;
+    margin-bottom: 12px;
+}
+.apple-expert-author {
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: #0077b6;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.apple-reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+.apple-review-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 24px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+}
+.apple-review-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    align-items: center;
+}
+.apple-review-user {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #1d1d1f;
+}
+.apple-review-city {
+    font-size: 0.78rem;
+    color: #86868b;
+}
+.apple-review-comment {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #515154;
+}
+
+/* ==========================================================================
+   STICKY BUY DOCK INFERIOR (APPLE STORE FLOATING BAR)
+   ========================================================================== */
+.apple-sticky-buy-dock {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(28px) saturate(180%);
+    -webkit-backdrop-filter: blur(28px) saturate(180%);
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 12px 24px;
+    z-index: 998;
+    transform: translateY(120%);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.06);
+}
+.apple-sticky-buy-dock.visible {
+    transform: translateY(0);
+}
+.apple-sticky-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.apple-sticky-prod-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.apple-sticky-thumb {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    object-fit: contain;
+    background: #ffffff;
+    border: 1px solid rgba(0,0,0,0.06);
+}
+.apple-sticky-title {
+    font-weight: 800;
+    font-size: 0.95rem;
+    color: #1d1d1f;
+}
+.apple-sticky-price {
+    font-weight: 850;
+    color: #0077b6;
+    font-size: 1.1rem;
+}
+.apple-sticky-btn {
+    background: #0071e3;
+    color: #ffffff !important;
+    padding: 10px 24px;
+    border-radius: 980px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s ease;
+}
+.apple-sticky-btn:hover {
+    background: #0077ed;
+}
+
+/* ==========================================================================
+   RESPONSIVIDAD MÓVIL APPLE STORE (iPHONE VIEWPORT)
+   ========================================================================== */
+@media (max-width: 900px) {
+    .apple-product-stage-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .apple-product-gallery-pane {
+        position: relative;
+        top: 0;
+    }
+    .apple-main-image-viewport {
+        min-height: 340px;
+        padding: 20px;
+    }
+    .apple-main-image-viewport img {
+        max-height: 300px;
+    }
+    .apple-expert-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 20px;
+    }
+    .apple-expert-avatar {
+        margin: 0 auto;
+    }
+    .apple-sticky-buy-dock {
+        padding: 10px 16px;
+    }
+    .apple-sticky-prod-info {
+        gap: 10px;
+    }
+    .apple-sticky-title {
+        font-size: 0.82rem;
+        max-width: 140px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .apple-sticky-price {
+        font-size: 0.95rem;
+    }
+    .apple-sticky-btn {
+        padding: 9px 18px;
+        font-size: 0.82rem;
+    }
+}
+
+
+/* Hide redundant transversal breadcrumbs on Apple Store pages */
+.apple-product-page-root #cudi-transversal-breadcrumbs,
+.apple-product-page-root .cudi-breadcrumbs-bar {
+    display: none !important;
+}
+
+/* Ensure two-column layout on desktop: Gallery left, Info right */
+.apple-product-stage-container {
+    display: grid !important;
+    grid-template-columns: 1.15fr 0.85fr !important;
+    gap: 60px !important;
+    max-width: 1280px !important;
+    margin: 0 auto 60px !important;
+    padding: 20px 24px !important;
+    align-items: start !important;
+}
+
+.apple-product-gallery-pane {
+    order: 1 !important;
+    position: sticky !important;
+    top: 90px !important;
+}
+
+.apple-product-info-pane {
+    order: 2 !important;
+}
+
+@media (max-width: 900px) {
+    .apple-product-stage-container {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+    }
+    .apple-product-gallery-pane {
+        position: relative !important;
+        top: 0 !important;
+    }
+}
