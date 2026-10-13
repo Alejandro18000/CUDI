@@ -166,22 +166,71 @@
         </div>
     </div>
 
-    <header class="hero-dual">
-        <!-- Columna de Texto: Legibilidad y Mensaje -->
-        <div class="hero-dual-text" style="display:flex; align-items:center; background:linear-gradient(135deg, #F0F9FF 0%, #FFFFFF 100%);">
-            <div style="max-width:550px;">
-                <h1 style="font-size: clamp(2.8rem, 5vw, 4.2rem); margin-bottom:25px; font-weight:800; line-height:1.05; letter-spacing:-2px; color:var(--clr-text);">Cuidado inteligente para tus mascotas, <br><span style="color:var(--clr-primary);">vayas donde vayas.</span></h1>
-                <p style="font-size:1.15rem; line-height:1.7; color:var(--clr-text-muted); margin-bottom:45px;">Más que un collar, somos el ecosistema integral que vela por la salud, la seguridad y la felicidad de tu mejor amigo. Descubre la aplicación que traduce sus necesidades y te conecta al instante con los mejores especialistas. Tu tranquilidad absoluta, su mejor vida.</p>
-                <div class="hero-actions" style="display:flex; gap:15px; flex-wrap:wrap;">
-                    <button onclick="handleHeroAction()" class="btn-primary large massive-btn" style="padding:18px 40px; font-size:1.1rem; border-radius:8px; text-decoration:none; background:linear-gradient(135deg, #0077b6, #0ea5e9); color:white; font-weight:800; box-shadow:0 10px 25px rgba(0, 119, 182, 0.4); text-transform:uppercase; line-height:1.2; display:inline-flex; align-items:center; gap:10px; border:none; cursor:pointer;"><i class="fa-solid fa-paw" style="font-size:1.4rem;"></i> Registrar Mascota</button>
-                    <a href="simulador-gemelo-digital-telemetria.html" class="btn-secondary large massive-btn" style="padding:18px 40px; font-size:1.1rem; border-radius:8px; text-decoration:none; color:var(--clr-primary); font-weight:800; border:2px solid var(--clr-primary); line-height:1.2; display:inline-flex; align-items:center; gap:10px; background:transparent;">Probar Demo <i class="fa-solid fa-mobile-screen"></i></a>
+    <!-- HERO SECTION REDISEÑADA ESTILO APPLE CINEMATIC -->
+    <header class="hero-apple-cinematic">
+        <div class="hero-apple-container">
+            
+            <!-- Columna de Texto: Tipografía Apple & Copy Emocional -->
+            <div class="hero-apple-content">
+                <div class="hero-apple-eyebrow">
+                    <i class="fa-solid fa-sparkles"></i> Ecosistema de Bienestar Inteligente 2026
+                </div>
+                
+                <h1 class="hero-apple-title">
+                    Cuidado inteligente para tus mascotas, <br>
+                    <span class="hero-apple-gradient-text">vayas donde vayas.</span>
+                </h1>
+                
+                <p class="hero-apple-desc">
+                    Más que un collar, somos el ecosistema integral que vela por la salud, la seguridad y la felicidad de tu familia multiespecie. Monitoreo biométrico continuo, triaje veterinario bio-neural y conexión al instante con los mejores especialistas.
+                </p>
+                
+                <div class="hero-apple-actions">
+                    <button onclick="handleHeroAction()" class="hero-btn-apple-primary">
+                        <i class="fa-solid fa-heart-pulse"></i> Conectar Mi Mascota
+                    </button>
+                    <a href="simulador-gemelo-digital-telemetria.html" class="hero-btn-apple-secondary">
+                        <i class="fa-solid fa-mobile-screen-button"></i> Probar Demo App
+                    </a>
+                </div>
+
+                <!-- Tickers de confianza Apple Glass -->
+                <div class="hero-apple-features-row">
+                    <div class="hero-apple-feature-item">
+                        <i class="fa-solid fa-shield-halved"></i> Smart Collar GPS & ECG
+                    </div>
+                    <div class="hero-apple-feature-item">
+                        <i class="fa-solid fa-microchip"></i> Gemelo Digital en Vivo
+                    </div>
+                    <div class="hero-apple-feature-item">
+                        <i class="fa-solid fa-user-doctor"></i> Telemedicina 24/7
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- Columna de Imagen: Estética y Calidad -->
-        <div class="hero-dual-photo" style="background-image: url('familia-multiespecie-paz-mental.png'); background-size: cover; background-position: center; filter: contrast(1.05);">
-            <!-- Subtle blending overlay at the very bottom -->
-            <div style="position:absolute; bottom:0; left:0; width:100%; height:120px; background: linear-gradient(to bottom, transparent, var(--clr-bg));"></div>
+
+            <!-- Columna Visual: Fotografía Cinemática Apple con Telemetría Flotante -->
+            <div class="hero-apple-stage">
+                <div class="hero-apple-img-wrapper">
+                    <img src="cudi-family-apple-hero.jpg" alt="Familia feliz con perro Golden Retriever y gato Ragdoll protegidos con Smart Collars CUDI" class="hero-apple-main-img" loading="eager" decoding="async">
+                    
+                    <!-- Pill Flotante 1: Telemetría Golden Retriever -->
+                    <div class="hero-glass-pill top-right">
+                        <div class="hero-pulse-dot emerald"></div>
+                        <div style="font-size: 0.78rem; font-weight: 700; line-height: 1.2;">
+                            <span style="color: #38bdf8;">Max</span> &bull; 74 bpm <span style="color: #10b981; font-weight: 800;">Óptimo</span>
+                        </div>
+                    </div>
+
+                    <!-- Pill Flotante 2: Telemetría Gato Ragdoll -->
+                    <div class="hero-glass-pill bottom-left">
+                        <div class="hero-pulse-dot"></div>
+                        <div style="font-size: 0.78rem; font-weight: 700; line-height: 1.2;">
+                            <span style="color: #38bdf8;">Mimi</span> &bull; Smart Collar CUDI <span style="color: #38bdf8; font-weight: 800;">Enlazado</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </header>
 
