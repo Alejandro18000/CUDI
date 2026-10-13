@@ -1,0 +1,351 @@
+<!-- Desarrollo 100% realizado por Sergio Alejandro Ospina Rocha -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fijación ISOFIX con Sensor de Tensión CUDI CarSafe | CUDI Marketplace Apple Glass</title>
+    <meta name="description" content="Conector directo al sistema ISOFIX del vehículo certificado para crash-test con sensor que avisa si el perro se desengancha.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=7.4">
+    <link rel="stylesheet" href="cudi-ai.css?v=7.4">
+</head>
+<body style="background: #f8fafc; font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif); color: #0f172a; margin: 0; padding: 0;">
+
+    <!-- TOP NOTIFICATION BAR -->
+    <div class="top-bar-refined">
+        <span><i class="fa-solid fa-shield-halved"></i> Ecosistema Oficial CUDI &bull; Garantía Veterinaria Certificada</span>
+        <span><i class="fa-solid fa-truck-fast"></i> Envío Inmediato / Citas Prioritarias en Red</span>
+        <div style="display:flex; align-items:center; gap:5px;">
+            <i class="fa-solid fa-globe"></i>
+            <span style="font-weight:700; font-size:0.75rem;">ES</span>
+        </div>
+    </div>
+
+    <!-- NAVBAR FLOATING APPLE GLASS -->
+    <nav class="navbar-island">
+        <div class="nav-capsule">
+            <a href="index.html" class="logo" style="display:flex; align-items:center;">
+                <img src="logo.jpeg" alt="CUDI" style="height:42px; width:auto; border-radius: 10px;" decoding="async">
+            </a>
+            <div class="nav-search-island">
+                <i class="fa-solid fa-magnifying-glass" style="color:var(--clr-primary); font-size:0.85rem;"></i>
+                <input type="text" placeholder="¿Qué necesita tu compañero hoy?" onclick="window.location.href='index.html#store-grid'">
+            </div>
+            <div class="nav-right-island">
+                <ul class="nav-links-island">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="smart-collar-aventuras-sin-sustos.html">Lanzamiento</a></li>
+                    <li><a href="comunidad-cudi.html">Comunidad</a></li>
+                    <li><a href="simulador-financiero.html">Simulador</a></li>
+                    <li><a href="index.html#store-grid">Tienda</a></li>
+                    <li><a href="index.html#suscripciones">Planes</a></li>
+                    <li><a href="red-socios-clinicas-veterinarias.html">Partners</a></li>
+                    <li id="nav-session-item"></li>
+                </ul>
+                <div class="cart-trigger-island" onclick="toggleCart()" style="position:relative; display:flex; align-items:center; justify-content:center; cursor:pointer;">
+                    <i class="fa-solid fa-bag-shopping" style="font-size:1.05rem;"></i>
+                    <span class="cart-badge" id="global-cart-badge">0</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SIDE-CART PANEL -->
+    <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+    <div class="side-cart" id="side-cart">
+        <div class="cart-header">
+            <h3><i class="fa-solid fa-bag-shopping"></i> Tu Cesta CUDI</h3>
+            <button class="close-cart" aria-label="Cerrar Carrito" onclick="toggleCart()"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="cart-items" id="cart-items-container"></div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total Estimado:</span>
+                <span id="cart-total-price">0.00 €</span>
+            </div>
+            <a href="contratar-plan-premium-cudi.html" class="btn-primary" style="display:block; text-align:center; margin-top:10px; border-radius:50px; text-decoration:none;">Procesar Pago Seguro <i class="fa-solid fa-lock"></i></a>
+        </div>
+    </div>
+
+    <!-- MAIN PRODUCT DETAIL CONTAINER -->
+    <main class="container" style="max-width: 1280px; margin: 35px auto 80px; padding: 0 20px;">
+        
+        <!-- BREADCRUMBS APPLE GLASS -->
+        <div style="display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: #64748b; margin-bottom: 28px; flex-wrap: wrap;">
+            <a href="index.html" style="text-decoration:none; color: #0284c7; font-weight: 600;"><i class="fa-solid fa-house"></i> Inicio</a>
+            <span>/</span>
+            <a href="index.html#store-grid" style="text-decoration:none; color: #0284c7; font-weight: 600;">Tienda & Marketplace</a>
+            <span>/</span>
+            <a href="smart-collar-cudi-gps.html" style="text-decoration:none; color: #0284c7; font-weight: 600;">Hardware & Telemetría</a>
+            <span>/</span>
+            <span style="color: #0f172a; font-weight: 700;">Anclaje ISOFIX CUDI CarSafe</span>
+        </div>
+
+        <!-- HERO SECTION: 2-COLUMN APPLE GLASS LAYOUT -->
+        <div class="apple-glass-card" style="padding: 40px; border-radius: 32px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; margin-bottom: 50px;">
+            
+            <!-- COLUMN 1: INTERACTIVE IMAGE GALLERY -->
+            <div style="display: flex; flex-direction: column; gap: 16px;">
+                <div style="position: relative; border-radius: 24px; overflow: hidden; box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08);">
+                    
+            <div class="prod-gallery-slide active" data-slide="0" style="display: block; height: 440px; border-radius: 24px; overflow: hidden; position: relative;">
+                <img src="https://images.unsplash.com/photo-1507146426996-ef05306b995a?auto=format&fit=crop&w=800&q=80" alt="Fijación ISOFIX con Sensor de Tensión CUDI CarSafe" style="width: 100%; height: 100%; object-fit: cover; display: block;" loading="lazy">
+            </div>
+        
+                    <div style="position: absolute; top: 16px; left: 16px; display: flex; gap: 8px; z-index: 5;">
+                        <span class="cudi-badge-glass" style="background: rgba(255, 255, 255, 0.9); color: #64748b; font-weight: 800;">
+                            <i class="fa-solid fa-car"></i> Seguridad en Coche
+                        </span>
+                        <span class="cudi-badge-glass" style="background: rgba(16, 185, 129, 0.9); color: white; font-weight: 800;">
+                            <i class="fa-solid fa-circle-check"></i> Verificado CUDI
+                        </span>
+                    </div>
+                </div>
+
+                <!-- THUMBNAILS ROW -->
+                <div style="display: flex; gap: 12px; align-items: center;">
+                    
+            <div class="prod-thumb active" onclick="selectProductSlide(0)" style="cursor: pointer; width: 68px; height: 68px; border-radius: 14px; overflow: hidden; border: 2px solid #0284c7; transition: all 0.2s ease;">
+                <img src="https://images.unsplash.com/photo-1507146426996-ef05306b995a?auto=format&fit=crop&w=800&q=80" alt="Thumbnail" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+        
+                </div>
+            </div>
+
+            <!-- COLUMN 2: PRODUCT DATA & QUICK CART PURCHASE -->
+            <div style="display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+                        <div style="color: #f59e0b; font-size: 0.95rem;">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <span style="font-size: 0.85rem; font-weight: 700; color: #0f172a;">4.9</span>
+                        <span style="font-size: 0.82rem; color: #64748b;">(98 valoraciones de dueños)</span>
+                    </div>
+
+                    <h1 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 2.4rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.2;">
+                        Fijación ISOFIX con Sensor de Tensión CUDI CarSafe
+                    </h1>
+
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
+                        <span style="font-size: 0.88rem; color: #0284c7; font-weight: 700;">
+                            <i class="fa-solid fa-award"></i> SafeTravel Pets
+                        </span>
+                        <span style="font-size: 0.78rem; color: #94a3b8;">• Seguridad Vial Canina</span>
+                    </div>
+
+                    <div style="margin-bottom: 24px; display: flex; align-items: baseline; gap: 12px;">
+                        <span style="font-size: 2.6rem; font-weight: 900; color: #0284c7; letter-spacing: -1px;">
+                            29.90 €
+                        </span>
+                        <span style="font-size: 0.88rem; color: #10b981; font-weight: 700; background: #ecfdf5; padding: 4px 10px; border-radius: 20px;">
+                            <i class="fa-solid fa-check"></i> Stock Disponible / Cita Inmediata
+                        </span>
+                    </div>
+
+                    <p style="font-size: 1.05rem; color: #475569; line-height: 1.65; margin-bottom: 28px;">
+                        Cumple con la normativa europea de transporte de animales. Bloqueo de acero forjado y amortiguador cinético para frenazos bruscos.
+                    </p>
+
+                    <!-- BULLET ADVANTAGES -->
+                    <div style="background: rgba(240, 249, 255, 0.65); border: 1px solid rgba(186, 230, 253, 0.8); border-radius: 18px; padding: 18px 22px; margin-bottom: 30px;">
+                        <div style="font-size: 0.85rem; font-weight: 800; color: #0369a1; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px;">
+                            <i class="fa-solid fa-sparkles"></i> Ventajas Exclusivas Ecosistema CUDI
+                        </div>
+                        <ul style="margin: 0; padding-left: 20px; font-size: 0.88rem; color: #334155; line-height: 1.6;">
+                            <li>Sincronización automática con el Gemelo Digital y expediente biométrico.</li>
+                            <li>Atención y triaje preferente en toda la red veterinaria asociada.</li>
+                            <li>Garantía de reembolso de 30 días sin preguntas.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- ADD TO CART & ACTION CONTROLS -->
+                <div style="display: flex; gap: 14px; align-items: center; flex-wrap: wrap;">
+                    <button class="btn-primary" onclick="addToCart('Fijación ISOFIX con Sensor de Tensión CUDI CarSafe', 29.9, 'https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=800&q=80'); toggleCart();" style="flex: 1; padding: 16px 28px; font-size: 1.05rem; font-weight: 800; border-radius: 9999px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; box-shadow: 0 10px 24px rgba(2, 132, 199, 0.25);">
+                        <i class="fa-solid fa-cart-plus"></i> Añadir a la Cesta &bull; 29.90 €
+                    </button>
+                    <button type="button" class="apple-glass-card" onclick="askAiAboutProduct('Fijación ISOFIX con Sensor de Tensión CUDI CarSafe')" style="padding: 16px 22px; font-size: 0.92rem; font-weight: 800; color: #0284c7; border-radius: 9999px; cursor: pointer; display: flex; align-items: center; gap: 8px;">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i> Consultar a IA
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- TECHNICAL SPECS MATRIX -->
+        <div class="apple-glass-card" style="padding: 36px; border-radius: 28px; margin-bottom: 50px;">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 22px;">
+                <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(2, 132, 199, 0.1); color: #0284c7; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">
+                    <i class="fa-solid fa-list-check"></i>
+                </div>
+                <div>
+                    <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.45rem; font-weight: 800; margin: 0; color: #0f172a;">Ficha Técnica & Certificaciones</h3>
+                    <p style="margin: 0; font-size: 0.85rem; color: #64748b;">Estándares clínicos de seguridad biológica y homologación oficial</p>
+                </div>
+            </div>
+            
+            <div style="overflow-x: auto;">
+                <table style="width: 100%; border-collapse: collapse; font-size: 0.92rem;">
+                    <tbody>
+                        
+            <tr style="border-bottom: 1px solid rgba(226, 232, 240, 0.7);">
+                <td style="padding: 14px 18px; font-weight: 700; color: #0f172a; width: 35%; background: rgba(248, 250, 252, 0.5);">Anclaje</td>
+                <td style="padding: 14px 18px; color: #475569;">Enganche directo ISOFIX de acero forjado</td>
+            </tr>
+        
+            <tr style="border-bottom: 1px solid rgba(226, 232, 240, 0.7);">
+                <td style="padding: 14px 18px; font-weight: 700; color: #0f172a; width: 35%; background: rgba(248, 250, 252, 0.5);">Carga de Rotura</td>
+                <td style="padding: 14px 18px; color: #475569;">Homologado hasta 1.200 kg de fuerza cinética</td>
+            </tr>
+        
+            <tr style="border-bottom: 1px solid rgba(226, 232, 240, 0.7);">
+                <td style="padding: 14px 18px; font-weight: 700; color: #0f172a; width: 35%; background: rgba(248, 250, 252, 0.5);">Sensor Smart</td>
+                <td style="padding: 14px 18px; color: #475569;">Avisa al móvil en caso de que el perro manipule la hebilla</td>
+            </tr>
+        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- EXPERT CLINICAL VERDICT -->
+        <div class="apple-glass-card" style="padding: 32px; border-radius: 28px; margin-bottom: 50px; background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(240, 249, 255, 0.85) 100%); border-left: 6px solid #0284c7;">
+            <div style="display: flex; align-items: flex-start; gap: 18px;">
+                <div style="width: 52px; height: 52px; border-radius: 50%; background: #0284c7; color: white; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);">
+                    <i class="fa-solid fa-user-doctor"></i>
+                </div>
+                <div>
+                    <span style="font-size: 0.78rem; font-weight: 800; color: #0284c7; text-transform: uppercase; letter-spacing: 0.8px;">Veredicto del Comité Veterinario CUDI</span>
+                    <h4 style="font-size: 1.25rem; font-weight: 800; color: #0f172a; margin: 4px 0 10px;">Opinión Facultativa Colegiada</h4>
+                    <p style="font-size: 1rem; color: #334155; line-height: 1.6; margin: 0; font-style: italic;">
+                        Perito de Seguridad Vial A. Ramos: 'La única forma legal y físicamente segura de evitar que el animal salga proyectado en una colisión.'
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- USER REVIEWS SECTION -->
+        <div class="apple-glass-card" style="padding: 36px; border-radius: 28px; margin-bottom: 50px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 12px;">
+                <div>
+                    <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.45rem; font-weight: 800; margin: 0; color: #0f172a;">Opiniones Verificadas de la Comunidad</h3>
+                    <p style="margin: 0; font-size: 0.85rem; color: #64748b;">Comentarios auditados de usuarios con compra verificada</p>
+                </div>
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <div style="font-size: 2rem; font-weight: 900; color: #0f172a;">4.9 <span style="font-size: 1rem; color: #94a3b8; font-weight: 600;">/ 5.0</span></div>
+                    <div style="color: #f59e0b; font-size: 1rem;">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                
+            <div class="apple-glass-card" style="padding: 22px; border-radius: 20px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                    <div>
+                        <strong style="color: #0f172a; font-size: 0.95rem;">Rubén H.</strong>
+                        <span style="font-size: 0.78rem; color: #64748b; margin-left: 6px;">• Valladolid</span>
+                    </div>
+                    <div style="color: #f59e0b; font-size: 0.85rem;">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+                <p style="font-size: 0.88rem; color: #475569; line-height: 1.5; margin: 0; font-style: italic;">
+                    "Sólido como una roca, da muchísima tranquilidad viajar en autopista."
+                </p>
+            </div>
+        
+            </div>
+        </div>
+
+        <!-- RELATED PRODUCTS ROW -->
+        <div style="margin-top: 60px;">
+            <div style="text-align: center; margin-bottom: 30px;">
+                <span class="cudi-badge-glass" style="margin-bottom: 8px;"><i class="fa-solid fa-arrows-split-up-and-left"></i> Ecosistema Conectado CUDI</span>
+                <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.8rem; font-weight: 800; color: #0f172a; margin: 0;">Soluciones Complementarias Recomendadas</h3>
+                <p style="color: #64748b; font-size: 0.95rem; margin: 6px 0 0;">Productos y servicios que potencian los beneficios de Anclaje ISOFIX CUDI CarSafe</p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 26px;">
+                
+            <article class="apple-glass-card" style="padding: 20px; border-radius: 22px; display: flex; flex-direction: column;">
+                <div style="height: 180px; border-radius: 16px; overflow: hidden; margin-bottom: 14px;">
+                    <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=800&q=80" alt="Smart Collar CUDI GPS Ultra" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+                </div>
+                <span class="cudi-badge-glass" style="margin-bottom: 8px; font-size: 0.72rem; align-self: flex-start;">Hardware & Telemetría</span>
+                <h4 style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin: 0 0 6px; line-height: 1.3;">Smart Collar CUDI GPS Ultra</h4>
+                <p style="font-size: 0.82rem; color: #64748b; line-height: 1.4; margin: 0 0 14px; flex: 1;">Collar biométrico de titanio y polímero médico con GPS multibanda L1+L5 a 10 Hz, sensor PPG dual, electrocardi...</p>
+                <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 10px; border-top: 1px solid rgba(226, 232, 240, 0.6);">
+                    <div style="font-size: 1.15rem; font-weight: 800; color: #0284c7;">149.00 €</div>
+                    <a href="producto-collar-cudi-gps-ultra.html" class="btn-primary" style="padding: 7px 14px; font-size: 0.78rem; text-decoration: none; border-radius: 50px;">Ver Ficha</a>
+                </div>
+            </article>
+        
+            <article class="apple-glass-card" style="padding: 20px; border-radius: 22px; display: flex; flex-direction: column;">
+                <div style="height: 180px; border-radius: 16px; overflow: hidden; margin-bottom: 14px;">
+                    <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=800&q=80" alt="Smart Collar CUDI Feline Nano" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+                </div>
+                <span class="cudi-badge-glass" style="margin-bottom: 8px; font-size: 0.72rem; align-self: flex-start;">Hardware & Telemetría</span>
+                <h4 style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin: 0 0 6px; line-height: 1.3;">Smart Collar CUDI Feline Nano</h4>
+                <p style="font-size: 0.82rem; color: #64748b; line-height: 1.4; margin: 0 0 14px; flex: 1;">El localizador y monitor de salud más ligero del mundo para gatos (22g) con cierre de liberación de seguridad ...</p>
+                <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 10px; border-top: 1px solid rgba(226, 232, 240, 0.6);">
+                    <div style="font-size: 1.15rem; font-weight: 800; color: #0284c7;">129.00 €</div>
+                    <a href="producto-collar-cudi-feline-nano.html" class="btn-primary" style="padding: 7px 14px; font-size: 0.78rem; text-decoration: none; border-radius: 50px;">Ver Ficha</a>
+                </div>
+            </article>
+        
+            <article class="apple-glass-card" style="padding: 20px; border-radius: 22px; display: flex; flex-direction: column;">
+                <div style="height: 180px; border-radius: 16px; overflow: hidden; margin-bottom: 14px;">
+                    <img src="cudi-smart-collar-geolocalizacion-gps.png" alt="Base de Carga Rápida & Nodo Baliza CUDI" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+                </div>
+                <span class="cudi-badge-glass" style="margin-bottom: 8px; font-size: 0.72rem; align-self: flex-start;">Hardware & Telemetría</span>
+                <h4 style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin: 0 0 6px; line-height: 1.3;">Base de Carga Rápida & Nodo Baliza CUDI</h4>
+                <p style="font-size: 0.82rem; color: #64748b; line-height: 1.4; margin: 0 0 14px; flex: 1;">Estación de acoplamiento magnético con baliza BLE 5.4 integrada que establece la zona segura del hogar sin con...</p>
+                <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 10px; border-top: 1px solid rgba(226, 232, 240, 0.6);">
+                    <div style="font-size: 1.15rem; font-weight: 800; color: #0284c7;">39.00 €</div>
+                    <a href="producto-cudi-base-dock-pro.html" class="btn-primary" style="padding: 7px 14px; font-size: 0.78rem; text-decoration: none; border-radius: 50px;">Ver Ficha</a>
+                </div>
+            </article>
+        
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer style="background: white; border-top: 1px solid rgba(226, 232, 240, 0.8); padding: 50px 0 30px; text-align: center;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <p style="color: #94a3b8; font-size: 0.85rem; margin: 0;">&copy; 2026 CUDI Ecosystem. Plataforma Integral de Bienestar y Telemetría Animal.</p>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT LOGIC -->
+    <script>
+        function selectProductSlide(index) {
+            const slides = document.querySelectorAll('.prod-gallery-slide');
+            const thumbs = document.querySelectorAll('.prod-thumb');
+            slides.forEach((s, idx) => {
+                s.style.display = (idx === index) ? 'block' : 'none';
+            });
+            thumbs.forEach((t, idx) => {
+                t.style.borderColor = (idx === index) ? '#0284c7' : 'rgba(226, 232, 240, 0.8)';
+            });
+        }
+
+        function askAiAboutProduct(productName) {
+            if (window.CudiAI && typeof window.CudiAI.openModal === 'function') {
+                window.CudiAI.openModal();
+                window.CudiAI.handleSuggestion('Cuéntame más sobre el producto ' + productName + ' y si es adecuado para mi mascota.');
+            } else {
+                alert('Asistente IA CUDI listo. Preguntando sobre: ' + productName);
+            }
+        }
+    </script>
+    <script src="script.js?v=7.4"></script>
+    <script src="modulos/catalogo-unico.js?v=7.4"></script>
+    <script src="cudi-ai.js?v=7.4"></script>
+</body>
+</html>

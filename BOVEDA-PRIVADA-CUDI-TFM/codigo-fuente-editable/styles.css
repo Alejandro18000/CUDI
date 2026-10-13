@@ -4671,3 +4671,116 @@ section:nth-of-type(2) { animation-delay: 0.6s; }
         min-height: 38px !important;
     }
 }
+
+/* ============================================================================
+   APPLE LIQUID GLASS MARKETPLACE & PRODUCT ARCHITECTURE (v7.5)
+   ============================================================================ */
+
+.apple-glass-card {
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(32px) saturate(200%);
+    -webkit-backdrop-filter: blur(32px) saturate(200%);
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    box-shadow: 0 16px 36px -10px rgba(15, 23, 42, 0.06), 
+                0 4px 12px -2px rgba(15, 23, 42, 0.03), 
+                inset 0 1px 0 rgba(255, 255, 255, 0.95);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+}
+
+.apple-glass-card:hover {
+    transform: translateY(-6px);
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow: 0 24px 48px -10px rgba(2, 132, 199, 0.14), 
+                0 8px 18px -2px rgba(15, 23, 42, 0.05), 
+                inset 0 1px 0 rgba(255, 255, 255, 1);
+    border-color: rgba(56, 189, 248, 0.7);
+}
+
+.cudi-badge-glass {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    padding: 5px 12px;
+    border-radius: 9999px;
+    font-size: 0.76rem;
+    font-weight: 800;
+    border: 1px solid rgba(226, 232, 240, 0.85);
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+}
+
+.prod-thumb:hover {
+    transform: scale(1.06);
+    border-color: #0284c7 !important;
+}
+
+.prod-thumb.active {
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.35);
+}
+
+/* Marketplace Layout & Interactive Sidebar */
+.marketplace-layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 36px;
+    align-items: start;
+}
+
+@media (max-width: 960px) {
+    .marketplace-layout {
+        grid-template-columns: 1fr;
+    }
+    .filters-sidebar {
+        position: relative !important;
+        top: 0 !important;
+        margin-bottom: 30px;
+    }
+}
+
+.filters-sidebar {
+    position: sticky;
+    top: 90px;
+}
+
+.filter-group {
+    margin-bottom: 24px;
+}
+
+.filter-group h4 {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 12px;
+}
+
+.filter-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.88rem;
+    color: #475569;
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.filter-option:hover {
+    color: #0284c7;
+}
+
+.filter-option input[type="radio"],
+.filter-option input[type="checkbox"] {
+    accent-color: #0284c7;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+    gap: 28px;
+}

@@ -26,1746 +26,685 @@ const ONBOARDING_PHOTOS = {
 // ---- PRODUCTOS DEMO ----
 // ---- PRODUCTOS OFICIALES DE LA PLATAFORMA CUDI ----
 const STORE_CATEGORIES = {
-    hardware_planes: {
-        label: 'Dispositivos & Suscripción CUDI',
-        icon: 'fa-shield-dog',
-        color: '#e0f2fe',
-        iconColor: '#0077b6',
-        products: [
-            { name: 'Collar Inteligente CUDI', price: 89.50, img: 'cudi-smart-collar-geolocalizacion-gps.png', partner: 'Hardware Oficial CUDI', desc: 'GPS en tiempo real, ECG, temperatura y telemetría continua.' },
-            { name: 'CUDI Premium Care', price: 30.00, img: 'triaje-ia-veterinario-urgencias.png', partner: 'Suscripción CUDI AI', desc: 'Gemelo digital predictivo 24/7 y telemetría sin límites.' },
-            { name: 'CUDI Shield Basic', price: 18.00, img: 'seguros-gastos-veterinarios-perros-gatos.png', partner: 'CUDI Seguros', desc: 'Cobertura de urgencias y accidentes hasta 1.000€/año.' }
+    "hardware": {
+        "label": "Dispositivos & Hardware IoT",
+        "icon": "fa-satellite-dish",
+        "color": "#e0f2fe",
+        "iconColor": "#0284c7",
+        "products": [
+            {
+                "name": "Smart Collar CUDI GPS Ultra",
+                "price": 149.0,
+                "img": "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=800&q=80",
+                "partner": "CUDI Hardware Labs",
+                "desc": "Collar biométrico de titanio y polímero médico con GPS multibanda L1+L5 a 10 Hz, sensor PP..."
+            },
+            {
+                "name": "Smart Collar CUDI Feline Nano",
+                "price": 129.0,
+                "img": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=800&q=80",
+                "partner": "CUDI Feline Tech",
+                "desc": "El localizador y monitor de salud más ligero del mundo para gatos (22g) con cierre de libe..."
+            },
+            {
+                "name": "Base de Carga Rápida & Nodo Baliza CUDI",
+                "price": 39.0,
+                "img": "cudi-smart-collar-geolocalizacion-gps.png",
+                "partner": "CUDI Hardware Labs",
+                "desc": "Estación de acoplamiento magnético con baliza BLE 5.4 integrada que establece la zona segu..."
+            },
+            {
+                "name": "Arnés Ergonómico CUDI Explorer con Integración Bio",
+                "price": 64.0,
+                "img": "https://images.unsplash.com/photo-1535294435445-d7249524ef2e?auto=format&fit=crop&w=800&q=80",
+                "partner": "Adventure Paws Lab",
+                "desc": "Arnés antitirones con bolsillo blindado para módulo Smart Collar, costuras reflectantes 3M..."
+            },
+            {
+                "name": "Pack de Balizas Perimetrales CUDI Smart Beacons (3 uds)",
+                "price": 49.0,
+                "img": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=800&q=80",
+                "partner": "CUDI Hardware Labs",
+                "desc": "Microbalizas adhesivas para delimitar zonas prohibidas en casa (cocina, piscina, plantas t..."
+            },
+            {
+                "name": "Sensor Pod BioTemp para Almohadillas & Piel CUDI",
+                "price": 34.0,
+                "img": "https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&w=800&q=80",
+                "partner": "BioSense Vet Tech",
+                "desc": "Dispositivo infrarrojo de contacto suave para medir la inflamación podal y temperatura art..."
+            },
+            {
+                "name": "Dispensador Inteligente CUDI BioFeeder con IA",
+                "price": 119.0,
+                "img": "https://images.unsplash.com/photo-1561948955-570b270e7c36?auto=format&fit=crop&w=800&q=80",
+                "partner": "SmartPet Robotics",
+                "desc": "Tolva automatizada con báscula de precisión que ajusta los gramos de pienso exactos en fun..."
+            },
+            {
+                "name": "Fuente Hidratante CUDI PureWater con Sensor de Ingesta",
+                "price": 59.0,
+                "img": "https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=800&q=80",
+                "partner": "AquaPet BioSystems",
+                "desc": "Fuente de acero quirúrgico 304 con filtrado cuádruple UVC y conteo de mililitros bebidos r..."
+            },
+            {
+                "name": "Correa Amortiguadora CUDI SmartLead con Medidor de Tracción",
+                "price": 38.0,
+                "img": "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=800&q=80",
+                "partner": "Adventure Paws Lab",
+                "desc": "Correa de adiestramiento no tirón con dinamómetro Bluetooth que registra los picos de reac..."
+            },
+            {
+                "name": "Colchón Ortopédico CUDI SleepSense con Malla de Presión",
+                "price": 139.0,
+                "img": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=800&q=80",
+                "partner": "VetRest Technologies",
+                "desc": "Cama viscoelástica de grado médico con matriz de sensores piezoeléctricos para monitorizar..."
+            },
+            {
+                "name": "Clip LED Inteligente CUDI NightSafety RGB",
+                "price": 19.5,
+                "img": "https://images.unsplash.com/photo-1548802673-380ab8ebc7b7?auto=format&fit=crop&w=800&q=80",
+                "partner": "CUDI Hardware Labs",
+                "desc": "Faro de seguridad programable desde la app que se activa automáticamente al anochecer o cu..."
+            },
+            {
+                "name": "Fijación ISOFIX con Sensor de Tensión CUDI CarSafe",
+                "price": 29.9,
+                "img": "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=800&q=80",
+                "partner": "SafeTravel Pets",
+                "desc": "Conector directo al sistema ISOFIX del vehículo certificado para crash-test con sensor que..."
+            },
+            {
+                "name": "Bálsamo Regenerador & Botín Transpirable CUDI PawCare",
+                "price": 24.5,
+                "img": "https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=800&q=80",
+                "partner": "BioSense Vet Tech",
+                "desc": "Cera biológica reparadora de almohadillas con cera de abeja, caléndula y botines de trekki..."
+            },
+            {
+                "name": "Chapa Digital de Identificación CUDI BioID NFC + QR",
+                "price": 14.9,
+                "img": "https://images.unsplash.com/photo-1560807707-8cc77767d783?auto=format&fit=crop&w=800&q=80",
+                "partner": "CUDI Security Cloud",
+                "desc": "Chapa de resina epoxi indestructible con chip NFC y código QR dinámico que muestra histori..."
+            },
+            {
+                "name": "Repetidor Satelital CUDI WildRange para Rutas Sin Cobertura",
+                "price": 89.0,
+                "img": "https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?auto=format&fit=crop&w=800&q=80",
+                "partner": "Adventure Paws Lab",
+                "desc": "Transmisor LoRa de bolsillo que conecta directamente tu smartphone con el collar de tu per..."
+            }
         ]
     },
-    paseos: {
-        label: 'Paseos & Cuidadores',
-        icon: 'fa-person-walking-dog',
-        color: '#dbeafe',
-        iconColor: '#3b82f6',
-        products: [
-            { name: 'ActivePaws', price: 12.00, img: 'humanizacion-mascotas-familia.png', partner: 'Urban Pet Walkers', desc: 'Paseo guiado con telemetría de pasos y cortisol en vivo.' },
-            { name: 'Urban Pet Walkers', price: 15.00, img: 'paseadores-perros-actividad-fisica.png', partner: 'Urban Pet Walkers', desc: 'Paseo activo y estimulación cognitiva supervisada.' },
-            { name: 'NannyPets 24/7', price: 25.00, img: 'dashboard-biometrico-gemelo-digital-mascotas.png', partner: 'NannyPets', desc: 'Cuidador verificado a domicilio con reportes biométricos.' }
+    "nutricion": {
+        "label": "Nutrición & Dieta Biológica",
+        "icon": "fa-bowl-food",
+        "color": "#dcfce7",
+        "iconColor": "#15803d",
+        "products": [
+            {
+                "name": "EcoPet Organic - Dieta BARF Biológica",
+                "price": 45.0,
+                "img": "https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=800&q=80",
+                "partner": "EcoPet Biologics",
+                "desc": "Menús crudos biológicamente apropiados formulados con carne de pasto, vísceras nobles, ver..."
+            },
+            {
+                "name": "PureBites Clinic - Pienso Hipoalergénico Monoproteico",
+                "price": 38.5,
+                "img": "https://images.unsplash.com/photo-1571566882372-1598d88abd90?auto=format&fit=crop&w=800&q=80",
+                "partner": "PureBites Clinical",
+                "desc": "Receta clínica de caballo y boniato cocinada a baja temperatura para animales con intolera..."
+            },
+            {
+                "name": "Vitality Mix - Complejo Articular & Inmunológico Dual",
+                "price": 24.99,
+                "img": "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=800&q=80",
+                "partner": "BioSense Vet Tech",
+                "desc": "Polvo nutracéutico con Glucosamina pura, Condroitina marina, MSM, cúrcuma biodisponible y ..."
+            },
+            {
+                "name": "OceanPure - Aceite de Salmón Salvaje & Krill Antártico",
+                "price": 21.5,
+                "img": "https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13?auto=format&fit=crop&w=800&q=80",
+                "partner": "EcoPet Biologics",
+                "desc": "Aceite puro de prensado en frío con concentrado de fosfolípidos EPA y DHA para salud cardi..."
+            },
+            {
+                "name": "DigestShield - Probióticos Multicepa con Prebióticos FOS",
+                "price": 26.0,
+                "img": "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80",
+                "partner": "BioSense Vet Tech",
+                "desc": "Sobres monodosis con 10.000 millones de UFC viables de Enterococcus faecium y Lactobacillu..."
+            },
+            {
+                "name": "Dentapaws Sticks - Cuidado Dental con Espirulina & Ascophyllum",
+                "price": 16.5,
+                "img": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80",
+                "partner": "EcoPet Biologics",
+                "desc": "Snacks dentales masticables en forma de cruz que limpian mecánicamente la placa bacteriana..."
+            },
+            {
+                "name": "CalmPaws Chews - Bocaditos Antiestrés con L-Teanina & Ashwagandha",
+                "price": 22.9,
+                "img": "https://images.unsplash.com/photo-1519052537078-e6302a4968d4?auto=format&fit=crop&w=800&q=80",
+                "partner": "BioSense Vet Tech",
+                "desc": "Bocaditos masticables semihúmedos diseñados para tormentas, fuegos artificiales, visitas a..."
+            },
+            {
+                "name": "BioBroth - Caldo de Huesos Orgánico de Cocción Lenta (24h)",
+                "price": 14.5,
+                "img": "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=800&q=80",
+                "partner": "EcoPet Biologics",
+                "desc": "Elixir reconstituyente hervido a fuego lento durante 24 horas repleto de colágeno nativo, ..."
+            },
+            {
+                "name": "NephroProtect - Quelante de Fósforo & Soporte Renal Avanzado",
+                "price": 29.5,
+                "img": "https://images.unsplash.com/photo-1511044568932-338cba0ad803?auto=format&fit=crop&w=800&q=80",
+                "partner": "PureBites Clinical",
+                "desc": "Polvo insípido quelante intestinal de fósforo enriquecido con quitosano y astrágalo para r..."
+            },
+            {
+                "name": "TrainBites - Premios Liofilizados 100% Corazón de Ternera",
+                "price": 12.9,
+                "img": "https://images.unsplash.com/photo-1507146426996-ef05306b995a?auto=format&fit=crop&w=800&q=80",
+                "partner": "EcoPet Biologics",
+                "desc": "Snacks liofilizados al vacío en frío que conservan todo el aroma y sabor natural para sesi..."
+            },
+            {
+                "name": "LactoCudi - Leche de Inicio con Calostro & DHA para Cachorros",
+                "price": 28.0,
+                "img": "https://images.unsplash.com/photo-1529778873920-4da4926a72c2?auto=format&fit=crop&w=800&q=80",
+                "partner": "PureBites Clinical",
+                "desc": "Sustituto lácteo en polvo homogeneizado con calostro bovino rico en inmunoglobulinas IgG y..."
+            },
+            {
+                "name": "HepatoCare - Cardo Mariano (Silimarina 80%) & SAMe",
+                "price": 31.0,
+                "img": "dietas-personalizadas-longevidad-mascotas.png",
+                "partner": "BioSense Vet Tech",
+                "desc": "Cápsulas gastroprotegidas con S-Adenosilmetionina (SAMe) y extracto fitosomal de Silimarin..."
+            },
+            {
+                "name": "CocoPet - Aceite de Coco Virgen Extra Ecológico Prensado Frío",
+                "price": 13.9,
+                "img": "https://images.unsplash.com/photo-1577023311546-cdc07a8454d9?auto=format&fit=crop&w=800&q=80",
+                "partner": "EcoPet Biologics",
+                "desc": "Aceite de coco 100% puro rico en ácido láurico y MCT. Puede ingerirse para soporte metaból..."
+            },
+            {
+                "name": "FiberGlow - Cáscara de Psyllium Ecológica & Prebióticos",
+                "price": 15.5,
+                "img": "https://images.unsplash.com/photo-1533743983669-94fa5c4338ec?auto=format&fit=crop&w=800&q=80",
+                "partner": "PureBites Clinical",
+                "desc": "Fibra soluble formadora de mucílago que regula tanto el estreñimiento como las heces bland..."
+            },
+            {
+                "name": "SuperBerry Bites - Snack Antioxidante de Arándanos Rojos & Pavo",
+                "price": 11.5,
+                "img": "https://images.unsplash.com/photo-1495360010541-f48722b34f7d?auto=format&fit=crop&w=800&q=80",
+                "partner": "EcoPet Biologics",
+                "desc": "Galletitas semihúmedas con alto contenido de proantocianidinas (PACs) de arándano rojo que..."
+            }
         ]
     },
-    clinica: {
-        label: 'Veterinaria & Salud',
-        icon: 'fa-stethoscope',
-        color: '#fce7f3',
-        iconColor: '#ec4899',
-        products: [
-            { name: 'VetHome CUDI', price: 75.00, img: 'triaje-ia-veterinario-urgencias.png', partner: 'Red Clínicas Partners', desc: 'Consulta veterinaria oficial a domicilio con triaje previo.' },
-            { name: 'MediPet Express', price: 35.00, img: 'clinica-veterinaria-red-socios.png', partner: 'Hospital Clínico', desc: 'Teleconsulta veterinaria y prescripción digital inmediata.' },
-            { name: 'Hospital Clínico Dual', price: 60.00, img: 'servicios-telemedicina-veterinaria-domicilio.png', partner: 'Hospital Clínico', desc: 'Revisión exhaustiva con ecografía y análisis en clínica asociada.' }
+    "clinica": {
+        "label": "Veterinaria & Salud 24/7",
+        "icon": "fa-stethoscope",
+        "color": "#fee2e2",
+        "iconColor": "#ef4444",
+        "products": [
+            {
+                "name": "VetHome CUDI - Urgencias Veterinarias a Domicilio 24/7",
+                "price": 75.0,
+                "img": "https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=800&q=80",
+                "partner": "Red Clínicas Partners CUDI",
+                "desc": "Unidad móvil veterinaria con ecografía portátil y analítica sanguínea instantánea enviada ..."
+            },
+            {
+                "name": "MediPet Express - Teleconsulta Veterinaria Inmediata con Triaje IA",
+                "price": 35.0,
+                "img": "triaje-ia-veterinario-urgencias.png",
+                "partner": "TeleVet Specialists",
+                "desc": "Videoconsulta de alta definición con veterinario colegiado en menos de 3 minutos con recet..."
+            },
+            {
+                "name": "Hospital Clínico Dual - Chequeo Preventivo Integral Anual",
+                "price": 60.0,
+                "img": "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=800&q=80",
+                "partner": "Hospital Veterinario Central",
+                "desc": "Revisión física exhaustiva que incluye analítica de sangre completa, bioquímica de 16 pará..."
+            },
+            {
+                "name": "Pack Vacunación Oficial & Pasaporte Europeo de Mascota",
+                "price": 42.0,
+                "img": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=800&q=80",
+                "partner": "Red Clínicas Partners CUDI",
+                "desc": "Emisión del Pasaporte Oficial de la Unión Europea para animales de compañía con vacuna ant..."
+            },
+            {
+                "name": "Profilaxis Dental por Ultrasonidos & Pulido con Flúor",
+                "price": 95.0,
+                "img": "https://images.unsplash.com/photo-1583512603805-3cc6b41f3edb?auto=format&fit=crop&w=800&q=80",
+                "partner": "Hospital Veterinario Central",
+                "desc": "Limpieza profunda subgingival con escarificador ultrasónico y pulido de esmalte para preve..."
+            },
+            {
+                "name": "Esterilización / Castración por Laparoscopia Mínimamente Invasiva",
+                "price": 180.0,
+                "img": "https://images.unsplash.com/photo-1532386236358-a33d8a9434e3?auto=format&fit=crop&w=800&q=80",
+                "partner": "Hospital Veterinario Central",
+                "desc": "Intervención quirúrgica con óptica de alta resolución a través de dos microincisiones de 5..."
+            },
+            {
+                "name": "Test Genético CUDI BioDNA - Salud, Razas & Longevidad",
+                "price": 89.0,
+                "img": "https://images.unsplash.com/photo-1506755855567-92ff770e8d00?auto=format&fit=crop&w=800&q=80",
+                "partner": "BioSense Vet Tech",
+                "desc": "Hisopo bucal no invasivo que analiza más de 250 variantes de enfermedades hereditarias, se..."
+            },
+            {
+                "name": "Ecografía Abdominal Completa con Especialista de Imagen",
+                "price": 68.0,
+                "img": "https://images.unsplash.com/photo-1536590158209-e9d615d525e4?auto=format&fit=crop&w=800&q=80",
+                "partner": "Hospital Veterinario Central",
+                "desc": "Estudio ecográfico abdominal de 8 órganos con sondas de microconvex y lineal de alta frecu..."
+            },
+            {
+                "name": "Sesión de Fisioterapia & Hidroterapia Subacuática Canina",
+                "price": 50.0,
+                "img": "https://images.unsplash.com/photo-1583511655826-05700d52f4d9?auto=format&fit=crop&w=800&q=80",
+                "partner": "Red Clínicas Partners CUDI",
+                "desc": "Cinta subacuática con agua termal climatizada, láser terapéutico clase IV y magnetoterapia..."
+            },
+            {
+                "name": "Consulta Clínica de Etología & Modificación de Conducta",
+                "price": 70.0,
+                "img": "comportamiento-canino-barcelona.png",
+                "partner": "Red Clínicas Partners CUDI",
+                "desc": "Evaluación por veterinario especialista en etología clínica para tratar agresividad, miedo..."
+            },
+            {
+                "name": "Perfil Bioquímico & Hematológico Integral de Laboratorio",
+                "price": 48.0,
+                "img": "https://images.unsplash.com/photo-1516750484197-6b28d10c91ea?auto=format&fit=crop&w=800&q=80",
+                "partner": "Hospital Veterinario Central",
+                "desc": "Analítica en laboratorio acreditado con hemograma completo de 5 poblaciones, bioquímica ge..."
+            },
+            {
+                "name": "Ecocardiograma Color & Electrocardiograma Digital",
+                "price": 85.0,
+                "img": "https://images.unsplash.com/photo-1535268647677-300dbf3d78d1?auto=format&fit=crop&w=800&q=80",
+                "partner": "Hospital Veterinario Central",
+                "desc": "Estudio morfológico y hemodinámico de las cavidades cardíacas para diagnosticar soplos, va..."
+            },
+            {
+                "name": "Cribado Rápido Serológico de Leishmania, Filaria & Borrelia (4DX)",
+                "price": 32.0,
+                "img": "https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=800&q=80",
+                "partner": "Red Clínicas Partners CUDI",
+                "desc": "Test de sangre en 8 minutos para descartar enfermedades transmitidas por mosquitos (filari..."
+            },
+            {
+                "name": "Estudio Radiográfico Digital Directo de Alta Definición (2 Proyecciones)",
+                "price": 55.0,
+                "img": "https://images.unsplash.com/photo-1529429617124-95b109e86bb8?auto=format&fit=crop&w=800&q=80",
+                "partner": "Hospital Veterinario Central",
+                "desc": "Placas radiológicas digitales con revelado instantáneo para diagnóstico de fracturas, disp..."
+            },
+            {
+                "name": "Consulta Oncológica & Biopsia / Citología de Bultos con Informe",
+                "price": 65.0,
+                "img": "https://images.unsplash.com/photo-1544568100-847a948585b9?auto=format&fit=crop&w=800&q=80",
+                "partner": "Hospital Veterinario Central",
+                "desc": "Punción-aspiración con aguja fina (PAAF) de nódulos cutáneos y masas subcutáneas analizada..."
+            }
         ]
     },
-    seguros: {
-        label: 'Seguros & Protección',
-        icon: 'fa-shield-heart',
-        color: '#fef3c7',
-        iconColor: '#d97706',
-        products: [
-            { name: 'CUDI Shield Basic', price: 18.00, img: 'seguros-gastos-veterinarios-perros-gatos.png', partner: 'CUDI Shield', desc: 'Póliza base para accidentes y hospitalización.' },
-            { name: 'SafeHome MultiPet', price: 28.00, img: 'familia-multiespecie-paz-mental.png', partner: 'Global Protect', desc: 'Protección para hogares multiespecie (perros y gatos).' },
-            { name: 'Global Pet Protect', price: 35.00, img: 'clinica-veterinaria-red-socios.png', partner: 'CUDI Seguros', desc: 'Cobertura veterinaria total 100% y responsabilidad civil.' }
+    "paseos": {
+        "label": "Paseos & Cuidadores",
+        "icon": "fa-person-walking-dog",
+        "color": "#dbeafe",
+        "iconColor": "#3b82f6",
+        "products": [
+            {
+                "name": "ActivePaws - Paseo Guiado con Telemetría GPS en Vivo",
+                "price": 14.0,
+                "img": "perro-urbano-barcelona-paseo.png",
+                "partner": "Urban Pet Walkers",
+                "desc": "Paseo individualizado de 60 minutos con monitorización de ruta GPS en vivo, reporte de hid..."
+            },
+            {
+                "name": "Urban Pet Walkers - Paseo de Estimulación Olfativa & Cognitiva",
+                "price": 18.0,
+                "img": "paseadores-perros-actividad-fisica.png",
+                "partner": "Urban Pet Walkers",
+                "desc": "Paseo diseñado por educadores enfocado en juegos de rastro, calma y discriminación de olor..."
+            },
+            {
+                "name": "NannyPets 24/7 - Cuidador Certificado a Domicilio (Día & Noche)",
+                "price": 32.0,
+                "img": "reduccion-ansiedad-separacion-perros.png",
+                "partner": "NannyPets Care",
+                "desc": "Cuidado respetuoso en tu propia casa sin el trauma de hoteles caninos o jaulas para estanc..."
+            },
+            {
+                "name": "CampPaws - Guardería de Día en Finca Rústica Vallada con Transporte",
+                "price": 28.0,
+                "img": "guarderia-canina-confianza.png",
+                "partner": "Urban Pet Walkers",
+                "desc": "Día completo de juegos en praderas valladas con piscina para perros, zonas de sombra y fur..."
+            },
+            {
+                "name": "FeliCare - Cuidadora a Domicilio Exclusiva para Gatos (ISFM)",
+                "price": 19.0,
+                "img": "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=800&q=80",
+                "partner": "NannyPets Care",
+                "desc": "Visitas a domicilio respetuosas con los ritmos felinos: limpieza de areneros, cambio de ag..."
+            },
+            {
+                "name": "Paseo Matinal Express Higiénico (30 min)",
+                "price": 9.5,
+                "img": "rutas-paseos-seguros-barcelona.png",
+                "partner": "Urban Pet Walkers",
+                "desc": "Paseo funcional a primera hora de la mañana para necesidades fisiológicas y estiramiento a..."
+            },
+            {
+                "name": "Sesión de Adiestramiento Canino en Positivo a Domicilio",
+                "price": 45.0,
+                "img": "https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=800&q=80",
+                "partner": "Urban Pet Walkers",
+                "desc": "Clase particular de 60 minutos con educador canino profesional para pasear sin tirones, ll..."
+            },
+            {
+                "name": "PetTaxi CUDI - Vehículo Adaptado con Jaulas Crash-Tested",
+                "price": 22.0,
+                "img": "https://images.unsplash.com/photo-1517331156700-3c241d2b4d83?auto=format&fit=crop&w=800&q=80",
+                "partner": "SafeTravel Pets",
+                "desc": "Traslado puerta a puerta de animales al veterinario, peluquería o aeropuerto en furgonetas..."
+            },
+            {
+                "name": "Pack Senderismo Canino CUDI Trail (4 Horas en Naturaleza)",
+                "price": 38.0,
+                "img": "senderismo-familiar-mascota-naturaleza.png",
+                "partner": "Urban Pet Walkers",
+                "desc": "Excursión de medio día por senderos de montaña seguros con paradas en ríos, agua fresca y ..."
+            },
+            {
+                "name": "HomeStay CUDI - Alojamiento en Casa de Familia Certificada (24h)",
+                "price": 30.0,
+                "img": "https://images.unsplash.com/photo-1520315342629-6ea920342047?auto=format&fit=crop&w=800&q=80",
+                "partner": "NannyPets Care",
+                "desc": "Tu mascota duerme en el hogar cálido de una familia amante de los animales inspeccionada p..."
+            },
+            {
+                "name": "GentlePaws - Paseo Terapéutico para Perros Abuelos & Senior",
+                "price": 13.0,
+                "img": "perro-senior-calidad-vida-longevidad.png",
+                "partner": "Urban Pet Walkers",
+                "desc": "Paseo a paso muy pausado sobre césped suave con arnés de asistencia trasera para perros co..."
+            },
+            {
+                "name": "PuppyWalk - Sesión Grupal de Socialización Temprana para Cachorros",
+                "price": 20.0,
+                "img": "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=800&q=80",
+                "partner": "Urban Pet Walkers",
+                "desc": "Encuentros en recinto higienizado para cachorros con pauta vacunal al día con estímulos so..."
+            },
+            {
+                "name": "DuoWalk - Paseo Conjunto para Familias con 2 Perros",
+                "price": 21.0,
+                "img": "https://images.unsplash.com/photo-1568640347023-a616a30bc3bd?auto=format&fit=crop&w=800&q=80",
+                "partner": "Urban Pet Walkers",
+                "desc": "Paseo de 60 minutos para dos perros del mismo hogar con precio especial unificado y contro..."
+            },
+            {
+                "name": "Canicross Runner - Entrenamiento Deportivo & Carrera Guiada",
+                "price": 22.0,
+                "img": "pareja-corriendo-mascota-activa.png",
+                "partner": "Urban Pet Walkers",
+                "desc": "Salida de running continuo de 5 a 8 km con paseador corredor federado para perros con exce..."
+            },
+            {
+                "name": "FlashWalk - Paseo Urgente en Menos de 45 Minutos por Imprevisto",
+                "price": 19.5,
+                "img": "prevencion-golpes-calor-paseos.png",
+                "partner": "Urban Pet Walkers",
+                "desc": "Te ha surgido un viaje imprevisto, una reunión que se alarga o una urgencia médica: un pas..."
+            }
         ]
     },
-    estetica: {
-        label: 'Estética & Bienestar',
-        icon: 'fa-scissors',
-        color: '#f0fdf4',
-        iconColor: '#16a34a',
-        products: [
-            { name: 'Bubbles & Paws', price: 22.00, img: 'mejora-descanso-salud-felina.png', partner: 'Bubbles & Paws', desc: 'Baño dermoprotector con ozonoterapia antiestrés.' },
-            { name: 'Grooming Master', price: 30.00, img: 'estetica-canina-bienestar.png', partner: 'Grooming Master', desc: 'Corte higiénico y arreglo de raza con bajo estrés.' },
-            { name: 'ZenPet Spa', price: 50.00, img: 'reduccion-ansiedad-separacion-perros.png', partner: 'ZenPet Spa', desc: 'Sesión spa completa: hidroterapia, masaje y relajación.' }
+    "seguros": {
+        "label": "Seguros & Protección",
+        "icon": "fa-shield-heart",
+        "color": "#fef3c7",
+        "iconColor": "#d97706",
+        "products": [
+            {
+                "name": "CUDI Shield Basic - Cobertura Esencial de Accidentes & Urgencias",
+                "price": 18.0,
+                "img": "seguros-gastos-veterinarios-perros-gatos.png",
+                "partner": "CUDI Seguros & Reaseguros",
+                "desc": "Cobertura veterinaria de urgencias y accidentes de hasta 1.500€/año con libre elección de ..."
+            },
+            {
+                "name": "Global Pet Protect - Cobertura Total de Enfermedad & Cirugía",
+                "price": 34.0,
+                "img": "https://images.unsplash.com/photo-1504595403659-9088ce801e29?auto=format&fit=crop&w=800&q=80",
+                "partner": "CUDI Seguros & Reaseguros",
+                "desc": "El seguro más completo de España: hasta 3.500€/año tanto por accidentes como por enfermeda..."
+            },
+            {
+                "name": "SafeHome MultiPet - Póliza Familiar para Hogares Multiespecie",
+                "price": 28.0,
+                "img": "familia-multiespecie-paz-mental.png",
+                "partner": "CUDI Seguros & Reaseguros",
+                "desc": "Póliza combinada que asegura a perros y gatos del mismo hogar bajo una única cuota reducid..."
+            },
+            {
+                "name": "CUDI LegalGuard - Seguro de Responsabilidad Civil Oficial (Ley Bienestar)",
+                "price": 2.9,
+                "img": "https://images.unsplash.com/photo-1558788353-f76d92427f16?auto=format&fit=crop&w=800&q=80",
+                "partner": "CUDI Seguros & Reaseguros",
+                "desc": "Póliza obligatoria de RC de hasta 350.000€ adaptada a la Ley de Bienestar Animal con certi..."
+            },
+            {
+                "name": "CUDI TravelSafe - Seguro Médico Internacional para Viajes & Vacaciones",
+                "price": 15.0,
+                "img": "rutas-pet-friendly-barcelona.png",
+                "partner": "CUDI Seguros & Reaseguros",
+                "desc": "Cobertura veterinaria temporal en cualquier país de la UE y Reino Unido con repatriación d..."
+            },
+            {
+                "name": "SeniorPaws Protect - Póliza Especial para Mascotas de +9 Años",
+                "price": 39.0,
+                "img": "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=800&q=80",
+                "partner": "CUDI Seguros & Reaseguros",
+                "desc": "El único seguro que no excluye a tu mascota por edad avanzada. Cobertura de enfermedades c..."
+            },
+            {
+                "name": "DentalCare Plus - Cobertura Específica de Limpiezas & Cirugías Orales",
+                "price": 8.5,
+                "img": "https://images.unsplash.com/photo-1478098711619-5ab0b478d6e6?auto=format&fit=crop&w=800&q=80",
+                "partner": "CUDI Seguros & Reaseguros",
+                "desc": "Módulo complementario que cubre limpiezas dentales anuales, extracciones complejas de muel..."
+            },
+            {
+                "name": "WildRescue - Cobertura de Búsqueda, Rescate & Recompensa por Pérdida",
+                "price": 4.5,
+                "img": "mascota-sana-feliz.png",
+                "partner": "CUDI Seguros & Reaseguros",
+                "desc": "Cubre los costes de unidades de rescate canino, drones térmicos, publicidad y recompensa l..."
+            },
+            {
+                "name": "CatShield Total - Póliza de Salud Diseñada para las Patologías del Gato",
+                "price": 21.0,
+                "img": "gato-explorando-seguro-collar-gps.png",
+                "partner": "CUDI Seguros & Reaseguros",
+                "desc": "Cubre las enfermedades típicas felinas: obstrucciones urinarias (FLUTD), fallo renal cróni..."
+            },
+            {
+                "name": "FarewellCare - Cobertura de Eutanasia Digna, Incineración & Apoyo al Duelo",
+                "price": 3.5,
+                "img": "mejora-descanso-salud-felina.png",
+                "partner": "CUDI Seguros & Reaseguros",
+                "desc": "Garantiza una despedida serena en tu hogar con eutanasia compasiva sin dolor, incineración..."
+            },
+            {
+                "name": "ProBreed Safe - Seguro Especializado para Razas de Manejo Especial",
+                "price": 6.9,
+                "img": "bienestar-integral-perros-gatos.png",
+                "partner": "CUDI Seguros & Reaseguros",
+                "desc": "Póliza con cobertura ampliada de 500.000€ exigida para gatos catalogados de manejo especia..."
+            },
+            {
+                "name": "FieldGuard - Seguro para Perros de Caza, Pastoreo & Trabajo de Campo",
+                "price": 16.5,
+                "img": "https://images.unsplash.com/photo-1597633425046-08f5110420b5?auto=format&fit=crop&w=800&q=80",
+                "partner": "CUDI Seguros & Reaseguros",
+                "desc": "Cobertura especializada contra ataques de jabalíes, mordeduras de víboras, espigas clavada..."
+            },
+            {
+                "name": "PharmaPaws - Póliza de Cobertura Continua de Medicamentos Crónicos",
+                "price": 12.0,
+                "img": "https://images.unsplash.com/photo-1579202673506-ca3ce28943ef?auto=format&fit=crop&w=800&q=80",
+                "partner": "CUDI Seguros & Reaseguros",
+                "desc": "Reembolso del 80% en facturas de medicamentos de prescripción para tratamientos crónicos (..."
+            },
+            {
+                "name": "SecondOpinion Global - Acceso a Especialistas Universitarios Internacionales",
+                "price": 7.0,
+                "img": "https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?auto=format&fit=crop&w=800&q=80",
+                "partner": "CUDI Seguros & Reaseguros",
+                "desc": "Revisión del caso médico de tu mascota por catedráticos diplomados europeos (ECVIM, ECVS, ..."
+            },
+            {
+                "name": "HolisticVet Care - Seguro de Terapias Complementarias, Fisio & Acupuntura",
+                "price": 11.5,
+                "img": "https://images.unsplash.com/photo-1560114928-40f1f1eb26a0?auto=format&fit=crop&w=800&q=80",
+                "partner": "CUDI Seguros & Reaseguros",
+                "desc": "Cubre sesiones de acupuntura veterinaria, quiropráctica animal, hidroterapia y rehabilitac..."
+            }
         ]
     },
-    nutricion: {
-        label: 'Nutrición & Dieta',
-        icon: 'fa-bowl-food',
-        color: '#fff7ed',
-        iconColor: '#ea580c',
-        products: [
-            { name: 'Vitality Mix', price: 32.50, img: 'marketplace-alimentos-organicos-perros.png', partner: 'Vitality Care', desc: 'Nutrición biológica adaptada al gasto calórico del Smart Collar.' },
-            { name: 'EcoPet Organic', price: 45.00, img: 'dietas-personalizadas-longevidad-mascotas.png', partner: 'EcoPet Bio', desc: 'Alimento 100% orgánico certificado para salud digestiva.' },
-            { name: 'PureBites Clinic', price: 58.00, img: 'dietas-personalizadas-longevidad-mascotas.png', partner: 'PureBites Labs', desc: 'Dieta clínica de precisión para soporte articular y renal.' }
+    "estetica": {
+        "label": "Estética, Baño & Spa",
+        "icon": "fa-bath",
+        "color": "#f3e8ff",
+        "iconColor": "#7e22ce",
+        "products": [
+            {
+                "name": "Grooming Master - Baño Terapéutico con Ozonoterapia & Masaje",
+                "price": 42.0,
+                "img": "estetica-canina-bienestar.png",
+                "partner": "Bubbles & Paws Spa",
+                "desc": "Hidromasaje con microburbujas de ozono purificante que oxigena la piel, elimina olores en ..."
+            },
+            {
+                "name": "ZenPet Spa - Deslanado Técnico en Profundidad & Baño Antiprurito",
+                "price": 38.0,
+                "img": "https://images.unsplash.com/photo-1568152950566-c1bf43f4ab28?auto=format&fit=crop&w=800&q=80",
+                "partner": "ZenPet Grooming",
+                "desc": "Elimina hasta el 90% del pelo muerto de muda en mantos dobles (Golden, Husky, Pastor Alemá..."
+            },
+            {
+                "name": "Bubbles & Paws - Peluquería Felina Especializada (Cero Sedación)",
+                "price": 46.0,
+                "img": "https://images.unsplash.com/photo-1586042091284-bd35c8c1d917?auto=format&fit=crop&w=800&q=80",
+                "partner": "Bubbles & Paws Spa",
+                "desc": "Tratamiento de nudos, corte a tijera y baño en seco o con toallas tibias en sala libre de ..."
+            },
+            {
+                "name": "Stripping Tradicional a Mano para Perros de Pelo Duro",
+                "price": 55.0,
+                "img": "https://images.unsplash.com/photo-1554456854-55a089fd4cb2?auto=format&fit=crop&w=800&q=80",
+                "partner": "ZenPet Grooming",
+                "desc": "Técnica artesanal de renovación de manto muerto a mano con dedales de goma para Teckels, S..."
+            },
+            {
+                "name": "PawCure Spa - Limado Suave de Uñas con Torno & Masaje de Almohadillas",
+                "price": 16.0,
+                "img": "https://images.unsplash.com/photo-1503777119540-ce54b422baff?auto=format&fit=crop&w=800&q=80",
+                "partner": "Bubbles & Paws Spa",
+                "desc": "Olvídate del doloroso alicate: limado con dremel diamantado ultrasilencioso sin cortar la ..."
+            },
+            {
+                "name": "Haute Coiffure - Corte Integral a Tijera Personalizado por Raza",
+                "price": 50.0,
+                "img": "https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=800&q=80",
+                "partner": "ZenPet Grooming",
+                "desc": "Esculpido a mano con tijeras curvas japonesas adaptado a la morfología de Caniches, Bichon..."
+            },
+            {
+                "name": "SilkPaws - Tratamiento de Keratina & Aceite de Argán Puro de Marruecos",
+                "price": 25.0,
+                "img": "https://images.unsplash.com/photo-1513245543132-31f507417b26?auto=format&fit=crop&w=800&q=80",
+                "partner": "Bubbles & Paws Spa",
+                "desc": "Batería de aminoácidos y lípidos para mantos quebradizos, secos o castigados que regenera ..."
+            },
+            {
+                "name": "OtiClean Spa - Higiene Auricular Profunda & Eliminación de Vello Ótico",
+                "price": 14.5,
+                "img": "https://images.unsplash.com/photo-1517423440428-a5a00ad493e8?auto=format&fit=crop&w=800&q=80",
+                "partner": "Bubbles & Paws Spa",
+                "desc": "Limpieza del canal auditivo externo con limpiador enzimático vegetal y depilado suave de p..."
+            },
+            {
+                "name": "HydroZen - Baño de Hidromasaje con Sal Marina & Aromaterapia Canina",
+                "price": 48.0,
+                "img": "https://images.unsplash.com/photo-1587402092301-725e37c70fd8?auto=format&fit=crop&w=800&q=80",
+                "partner": "ZenPet Grooming",
+                "desc": "Inmersión en agua templada con sales ricas en magnesio del Mar Muerto y vapores de lavanda..."
+            },
+            {
+                "name": "ShieldBath - Baño Antiparasitario Natural con Neem & Citronela",
+                "price": 32.0,
+                "img": "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=80",
+                "partner": "Bubbles & Paws Spa",
+                "desc": "Eliminación activa de pulgas, garrapatas y ácaros con extracto de Margosa (Neem) ecológico..."
+            },
+            {
+                "name": "PawsMassage - Masaje Terapéutico Miofascial & Puntos Gatillo (45 min)",
+                "price": 35.0,
+                "img": "https://images.unsplash.com/photo-1560743641-3914f2c45636?auto=format&fit=crop&w=800&q=80",
+                "partner": "ZenPet Grooming",
+                "desc": "Terapia manual sobre fascias y grupos musculares de cuello, escápulas y lumbares para perr..."
+            },
+            {
+                "name": "CatClaws Care - Recorte & Limado Amable de Uñas Felinas",
+                "price": 12.0,
+                "img": "https://images.unsplash.com/photo-1518288774672-b94e808873ff?auto=format&fit=crop&w=800&q=80",
+                "partner": "Bubbles & Paws Spa",
+                "desc": "Recorte indoloro de la punta afilada transparente de las 18 uñas del gato sin tocar la mat..."
+            },
+            {
+                "name": "WhiteGlow - Tratamiento Óptico Antiamarilleo para Mantos Blancos",
+                "price": 36.0,
+                "img": "https://images.unsplash.com/photo-1588774069410-84ae30757c8e?auto=format&fit=crop&w=800&q=80",
+                "partner": "ZenPet Grooming",
+                "desc": "Champú azul óptico con pigmentos violetas botánicos que neutralizan el tono óxido y amaril..."
+            },
+            {
+                "name": "LuxeComb - Sesión de Cepillado Profundo & Apertura de Nudos sin Cortar",
+                "price": 29.0,
+                "img": "https://images.unsplash.com/photo-1541599540903-216a46ca1dc0?auto=format&fit=crop&w=800&q=80",
+                "partner": "Bubbles & Paws Spa",
+                "desc": "Desenredado paciente mechón a mechón con spray bifásico de siliconas vegetales solubles pa..."
+            },
+            {
+                "name": "PuppySpa - Bautismo de Agua & Primera Experiencia Positiva de Baño",
+                "price": 24.0,
+                "img": "https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&w=800&q=80",
+                "partner": "ZenPet Grooming",
+                "desc": "Sesión lúdica para cachorros (3 a 7 meses) donde conocen el agua tibia, el ruido del secad..."
+            }
         ]
     }
 };
-
-// ---- SIMULACIONES IA ALINEADAS CON CATÁLOGO ----
-// ---- ESCENARIOS DE TRIAJE IA VETERINARIOS Y PREDICTIVOS ----
-const IA_SCENARIOS = {
-    calor: {
-        title: 'Golpe de Calor & Taquicardia Severa',
-        desc: 'El sensor térmico y acelerómetro registran temperatura dérmica de 39.9 °C y FC de 148 bpm tras actividad en horas de alta radiación.',
-        severityScore: 88,
-        severityLabel: '88/100 Crítico',
-        severityColor: '#ef4444',
-        biomarkers: [
-            { name: 'Frecuencia Cardíaca', val: '148 bpm', dev: '+48% Taquicardia', color: '#ef4444' },
-            { name: 'Temperatura Dérmica', val: '39.9 °C', dev: '+1.4°C Hipertermia', color: '#ef4444' },
-            { name: 'VFC / Estrés (HRV)', val: '18 ms', dev: '-65% Fatiga Aguda', color: '#f59e0b' }
-        ],
-        diagTitle: 'Riesgo Inminente de Shock Térmico:',
-        diagDesc: 'Se detecta estrés circulatorio severo y sobrecalentamiento. Requiere enfriamiento gradual y atención veterinaria inmediata (< 30 min).',
-        options: [
-            STORE_CATEGORIES.clinica.products[0], // VetHome CUDI (75€)
-            STORE_CATEGORIES.hardware_planes.products[2], // CUDI Shield Basic (18€)
-            STORE_CATEGORIES.nutricion.products[0] // Vitality Mix (32.50€)
-        ]
-    },
-    estres: {
-        title: 'Pico de Estrés Agudo & Ansiedad Ambiental',
-        desc: 'El Smart Collar detecta taquicardia refleja y desorganización motriz compatible con detonaciones, ruidos o pirotecnia.',
-        severityScore: 64,
-        severityLabel: '64/100 Moderado',
-        severityColor: '#f59e0b',
-        biomarkers: [
-            { name: 'Frecuencia Cardíaca', val: '122 bpm', dev: '+28% Alerta Reactiva', color: '#f59e0b' },
-            { name: 'VFC / Cortisol', val: '24 ms', dev: '-45% Tensión Aguda', color: '#ef4444' },
-            { name: 'Acelerometría', val: 'Temblores', dev: 'Micro-sacudidas', color: '#f59e0b' }
-        ],
-        diagTitle: 'Ansiedad Reactiva por Fobia Acústica:',
-        diagDesc: 'Parámetros compatibles con estrés agudo fóbico. Recomendamos aislamiento en zona segura y sesión calmante o paseo terapéutico.',
-        options: [
-            STORE_CATEGORIES.estetica.products[2], // ZenPet Spa (50€)
-            STORE_CATEGORIES.paseos.products[0], // ActivePaws (12€)
-            STORE_CATEGORIES.seguros.products[0] // CUDI Shield (18€)
-        ]
-    },
-    letargo: {
-        title: 'Letargo Pronunciado & Caída de Vitalidad',
-        desc: 'El gemelo digital detecta un descenso del 72% en el movimiento y pulso basal apagado durante las horas activas habituales.',
-        severityScore: 78,
-        severityLabel: '78/100 Severo',
-        severityColor: '#ec4899',
-        biomarkers: [
-            { name: 'Actividad Diaria', val: '1.1 km', dev: '-72% vs Media Basal', color: '#ec4899' },
-            { name: 'Temperatura Corporal', val: '37.8 °C', dev: 'Hipotermia leve', color: '#f59e0b' },
-            { name: 'Frecuencia Cardíaca', val: '58 bpm', dev: 'Bradicardia en reposo', color: '#ec4899' }
-        ],
-        diagTitle: 'Sospecha de Cuadro Infeccioso o Dolor Oculto:',
-        diagDesc: 'El cese drástico de actividad sugiere malestar físico o proceso inflamatorio interno. Se aconseja revisión clínica preventiva.',
-        options: [
-            STORE_CATEGORIES.clinica.products[0], // VetHome CUDI (75€)
-            STORE_CATEGORIES.clinica.products[1], // MediPet Express (35€)
-            STORE_CATEGORIES.seguros.products[1] // SafeHome MultiPet (28€)
-        ]
-    },
-    sueno: {
-        title: 'Sueño Fragmentado & Malestar Articular',
-        desc: 'Se registran más de 14 micro-despertares nocturnos y rigidez postural al iniciar la mañana en la telemetría del collar.',
-        severityScore: 52,
-        severityLabel: '52/100 Preventivo',
-        severityColor: '#8b5cf6',
-        biomarkers: [
-            { name: 'Calidad de Sueño', val: '58/100', dev: '-36% Sueño Profundo', color: '#8b5cf6' },
-            { name: 'Micro-Despertares', val: '14 veces', dev: 'Alta Inquietud', color: '#8b5cf6' },
-            { name: 'Temperatura Articular', val: 'Normal', dev: 'Sin inflamación externa', color: '#10b981' }
-        ],
-        diagTitle: 'Fase Preventiva de Soporte Osteoarticular:',
-        diagDesc: 'Indicativo de dolor articular postural o incomodidad en descanso. Se sugiere suplementación condroprotectora y descanso adaptado.',
-        options: [
-            STORE_CATEGORIES.nutricion.products[2], // PureBites Clinic (58€)
-            STORE_CATEGORIES.estetica.products[1], // Grooming / Masaje (30€)
-            STORE_CATEGORIES.hardware_planes.products[1] // CUDI Premium Care (30€)
-        ]
-    },
-    metab: {
-        title: 'Desbalance Calórico & Recalibración Dietética',
-        desc: 'El gasto energético superó en un 28% la ingesta nutricional estimada, con aceleración del metabolismo basal esta semana.',
-        severityScore: 35,
-        severityLabel: '35/100 Leve',
-        severityColor: '#10b981',
-        biomarkers: [
-            { name: 'Gasto Calórico', val: '640 kcal/d', dev: '+28% Aumento', color: '#10b981' },
-            { name: 'Masa Estimada', val: '-0.3 kg', dev: 'Tendencia a la baja', color: '#f59e0b' },
-            { name: 'Hidratación Basal', val: '92%', dev: 'Óptima', color: '#10b981' }
-        ],
-        diagTitle: 'Ajuste Metabólico Requerido:',
-        diagDesc: 'Tu compañero está rindiendo al máximo, pero requiere mayor densidad calórica y proteínas biológicas de alto valor para mantener peso.',
-        options: [
-            STORE_CATEGORIES.nutricion.products[0], // Vitality Mix (32.50€)
-            STORE_CATEGORIES.nutricion.products[1], // EcoPet Organic (45€)
-            STORE_CATEGORIES.paseos.products[1] // Urban Walkers (15€)
-        ]
-    }
-};
-
-
-// ---- NOTIFICACIONES ----
-const NOTIFICATIONS_DATA = [
-    { title: 'Frecuencia cardiaca optima', desc: 'Tus signos vitales son excelentes hoy.', icon: 'fa-heart-pulse', color: '#10b981', time: 'Hace 5 min', read: false },
-    { title: 'Recordatorio de vacuna', desc: 'Vacuna polivalente vence en 3 dias.', icon: 'fa-syringe', color: '#f59e0b', time: 'Hace 1h', read: false },
-    { title: 'Paseo programado', desc: 'Tu paseador llega en 30 minutos.', icon: 'fa-person-walking-dog', color: '#0077b6', time: 'Hace 2h', read: true }
-];
-
-// ---- SOCIAL PETS & MURO SINCRONIZADO CON CUDI COMUNIDAD ----
-const DEMO_SHARED_SOCIAL_KEY = 'cudi_community_shared_state_v1';
-
-const DEMO_DEFAULT_SHARED_POSTS = [
-    {
-        id: 'post_cooper_1',
-        petId: 'cooper',
-        author: 'Cooper',
-        verified: true,
-        avatar: 'https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=300&h=300&q=80',
-        timeLoc: 'Hace 2 horas • Parque del Retiro',
-        text: 'Disfrutando de un paseo matutino. ¡Mis niveles de energía están por las nubes según mi CUDI Smart Collar! 🦴✨',
-        image: 'https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=800&q=80',
-        likes: 45,
-        liked: true,
-        commentsCount: 12
-    },
-    {
-        id: 'post_bella_2',
-        petId: 'bella',
-        author: 'Bella',
-        verified: true,
-        avatar: 'https://images.unsplash.com/photo-1517423440428-a5a00ad493e8?auto=format&fit=crop&w=300&h=300&q=80',
-        timeLoc: 'Hace 5 horas • Barcelona',
-        text: '¿Quién más está listo para el fin de semana de juegos? La IA dice que soy un 98% compatible con Labradores hoy. ¡A jugar! 🎾',
-        image: '',
-        likes: 32,
-        liked: false,
-        commentsCount: 8
-    },
-    {
-        id: 'post_luna_3',
-        petId: 'luna',
-        author: 'Luna',
-        verified: true,
-        avatar: 'https://images.unsplash.com/photo-1605568427561-40dd23c2acea?auto=format&fit=crop&w=300&h=300&q=80',
-        timeLoc: 'Hace 8 horas • Sierra de Guadarrama',
-        text: '14 km recorridos hoy en la ruta pet-friendly con el Collar CUDI GPS. Batería al 91% y ritmo cardíaco estable en 74 bpm. ❄️🐺 ¿Quién se apunta al próximo encuentro?',
-        image: 'https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=800&q=80',
-        likes: 68,
-        liked: false,
-        commentsCount: 19
-    }
-];
-
-function resolveDemoPetPhoto(input, petType, petName) {
-    if (typeof window.cudi_resolve_pet_photo === 'function') {
-        return window.cudi_resolve_pet_photo(input, petType, petName);
-    }
-    const rawUrl = (input && typeof input === 'object') ? (input.photo || input.avatar || input.img || '') : String(input || '');
-    const clean = rawUrl.trim();
-    const isCat = (petType === 'gato') || (input && input.type === 'gato');
-    if (!clean || clean === 'undefined' || clean === 'null' || clean.includes('1513360309081-36f20ca480d0') || clean.includes('1524511751214-b0a50a01b1da')) {
-        return isCat ? 'gato-explorando-seguro-collar-gps.png' : 'avatar-mascota-perfil-gemelo-digital.png';
-    }
-    return clean;
-}
-
-function getDemoSharedSocialState() {
-    try {
-        const raw = localStorage.getItem(DEMO_SHARED_SOCIAL_KEY);
-        if (raw) {
-            const parsed = JSON.parse(raw);
-            if (parsed && Array.isArray(parsed.posts)) {
-                parsed.posts.forEach(p => {
-                    if (p) p.avatar = resolveDemoPetPhoto(p.avatar, p.type, p.author);
-                });
-                return {
-                    posts: parsed.posts,
-                    followedIds: Array.isArray(parsed.followedIds) ? parsed.followedIds : []
-                };
-            }
-        }
-    } catch (e) {}
-    const initial = {
-        posts: JSON.parse(JSON.stringify(DEMO_DEFAULT_SHARED_POSTS)),
-        followedIds: []
-    };
-    try {
-        localStorage.setItem(DEMO_SHARED_SOCIAL_KEY, JSON.stringify(initial));
-    } catch (e) {}
-    return initial;
-}
-
-function saveDemoSharedSocialState(state) {
-    try {
-        localStorage.setItem(DEMO_SHARED_SOCIAL_KEY, JSON.stringify(state));
-        window.dispatchEvent(new CustomEvent('cudi:socialUpdated', { detail: state }));
-    } catch (e) {}
-}
-
-const SOCIAL_PETS = [
-    {
-        id: 'max',
-        name: 'Max',
-        breed: 'Border Collie',
-        type: 'perro',
-        dist: '0.3 km',
-        photo: 'https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=300&h=300&q=80',
-        compat: 98,
-        energy: 'Extrema',
-        bio: 'Competidor de Agility y fan de las caminatas con Urban Pet Walkers.',
-        badges: ['Medalla Agility', 'Paseo Activo'],
-        collar: 'GPS Activo &bull; 76 bpm'
-    },
-    {
-        id: 'cooper',
-        name: 'Cooper',
-        breed: 'Beagle Tricolor',
-        type: 'perro',
-        dist: '0.35 km',
-        photo: 'https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=300&h=300&q=80',
-        compat: 95,
-        energy: 'Muy Alta',
-        bio: 'Explorador profesional de senderos y olfateador de ardillas.',
-        badges: ['Rastreador', 'Social Star'],
-        collar: 'GPS Activo &bull; 84 bpm'
-    },
-    {
-        id: 'luna',
-        name: 'Luna',
-        breed: 'Husky Siberiano',
-        type: 'perro',
-        dist: '0.5 km',
-        photo: 'https://images.unsplash.com/photo-1605568427561-40dd23c2acea?auto=format&fit=crop&w=300&h=300&q=80',
-        compat: 95,
-        energy: 'Muy Alta',
-        bio: 'Espíritu libre y pasión por las rutas de senderismo pet-friendly.',
-        badges: ['Ruta Aventuras', 'Match IA 95%'],
-        collar: 'GPS Activo &bull; 74 bpm'
-    },
-    {
-        id: 'cleo',
-        name: 'Cleo',
-        breed: 'Podenco & Mestizo Ágil',
-        type: 'perro',
-        dist: '0.65 km',
-        photo: 'https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&w=300&h=300&q=80',
-        compat: 89,
-        energy: 'Equilibrada',
-        bio: 'Adoptada y mimada al máximo. Fanática del queso suave y las carreras cortas.',
-        badges: ['Rescate Amoroso', 'Compañero Fiel'],
-        collar: 'GPS Activo &bull; 88 bpm'
-    },
-    {
-        id: 'bella',
-        name: 'Bella',
-        breed: 'Pug Negro Elegante',
-        type: 'perro',
-        dist: '0.8 km',
-        photo: 'https://images.unsplash.com/photo-1517423440428-a5a00ad493e8?auto=format&fit=crop&w=300&h=300&q=80',
-        compat: 86,
-        energy: 'Tranquila / Zen',
-        bio: 'Reina de las siestas, catadora certificada de EcoPet Organic y cliente VIP de ZenPet Spa.',
-        badges: ['Cliente VIP Spa', 'Gourmet BARF'],
-        collar: 'GPS Activo &bull; 90 bpm'
-    },
-    {
-        id: 'rex',
-        name: 'Rex',
-        breed: 'Golden Retriever Cachorro',
-        type: 'perro',
-        dist: '0.95 km',
-        photo: 'https://images.unsplash.com/photo-1583511655826-05700d52f4d9?auto=format&fit=crop&w=300&h=300&q=80',
-        compat: 94,
-        energy: 'Juguetón',
-        bio: 'Todo el mundo es mi mejor amigo. Aprendiendo comandos positivos en el parque.',
-        badges: ['Cachorro Escuela', 'Amigable 100%'],
-        collar: 'GPS Activo &bull; 96 bpm'
-    },
-    {
-        id: 'simba',
-        name: 'Simba',
-        breed: 'Pomerania Toy',
-        type: 'perro',
-        dist: '1.15 km',
-        photo: 'https://images.unsplash.com/photo-1601979031925-424e53b6caaa?auto=format&fit=crop&w=300&h=300&q=80',
-        compat: 82,
-        energy: 'Vivaz',
-        bio: 'Mini melena de león y porte real. Adoro pasear por zonas pet-friendly.',
-        badges: ['Mochilero Técnico', 'Top Model'],
-        collar: 'GPS Activo &bull; 98 bpm'
-    },
-    {
-        id: 'thor',
-        name: 'Thor',
-        breed: 'Golden Retriever',
-        type: 'perro',
-        dist: '1.3 km',
-        photo: 'https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=300&h=300&q=80',
-        compat: 94,
-        energy: 'Alta',
-        bio: 'Extremadamente dulce y juguetón con cualquier perro o gato del parque.',
-        badges: ['Amante del Agua', 'Terapia Canina'],
-        collar: 'GPS Activo &bull; 72 bpm'
-    }
-];
-
-// ==========================
-// REGISTRO / ONBOARDING
-// ==========================
-function selectPetType(type) {
-    activePetType = type;
-    document.getElementById('selected-pet-type').value = type;
-
-    document.getElementById('btn-species-perro').classList.toggle('active', type === 'perro');
-    document.getElementById('btn-species-gato').classList.toggle('active', type === 'gato');
-
-    // Cambiar foto de fondo
-    const photo = document.getElementById('onboarding-photo');
-    if (photo) photo.style.backgroundImage = `url('${ONBOARDING_PHOTOS[type]}')`;
-
-    // Cargar razas
-    const breedSel = document.getElementById('pet-breed');
-    if (breedSel) {
-        breedSel.innerHTML = '<option value="">Selecciona raza</option>';
-        (BREEDS[type] || []).forEach(b => {
-            const opt = document.createElement('option');
-            opt.value = b; opt.textContent = b;
-            breedSel.appendChild(opt);
-        });
-    }
-}
-
-function initPetType() {
-    selectPetType('perro');
-}
-
-function formatPetAgeStage(age) {
-    if (!age && age !== 0) return 'Adulto Joven';
-    const stageMap = {
-        primera: 'Cachorro (< 1 año)',
-        explorer: 'Adulto Joven',
-        plenitud: 'Adulto',
-        golden: 'Senior'
-    };
-    const key = String(age).toLowerCase().trim();
-    if (stageMap[key]) return stageMap[key];
-    const num = parseFloat(age);
-    if (!isNaN(num)) {
-        if (num <= 1) return `${num} año (Cachorro)`;
-        if (num <= 3) return `${num} años (Adulto Joven)`;
-        if (num <= 7) return `${num} años (Adulto)`;
-        return `${num} años (Senior)`;
-    }
-    return String(age);
-}
-
-function syncSimulatorDOMWithProfile(p) {
-    if (!p || !p.name) return;
-
-    const safePhoto = resolveDemoPetPhoto(p, p.type, p.name);
-    p.photo = safePhoto;
-    const localFallback = p.type === 'gato' ? 'gato-explorando-seguro-collar-gps.png' : 'avatar-mascota-perfil-gemelo-digital.png';
-
-    // 1. Poblar campos del formulario de onboarding por si el usuario desea editarlo
-    const nameInput = document.getElementById('pet-name');
-    if (nameInput) nameInput.value = p.name;
-    const weightInput = document.getElementById('pet-weight');
-    if (weightInput) weightInput.value = p.weight || '8';
-    if (typeof selectPetType === 'function' && p.type) {
-        selectPetType(p.type === 'gato' ? 'gato' : 'perro');
-    }
-    const breedSelect = document.getElementById('pet-breed');
-    if (breedSelect && p.breed) {
-        let found = false;
-        for (let i = 0; i < breedSelect.options.length; i++) {
-            if (breedSelect.options[i].value.toLowerCase() === p.breed.toLowerCase()) {
-                breedSelect.selectedIndex = i;
-                found = true;
-                break;
-            }
-        }
-        if (!found) {
-            const opt = document.createElement('option');
-            opt.value = p.breed;
-            opt.textContent = p.breed;
-            breedSelect.appendChild(opt);
-            breedSelect.value = p.breed;
-        }
-    }
-    const onboardingPhoto = document.getElementById('onboarding-photo');
-    if (onboardingPhoto && safePhoto) {
-        onboardingPhoto.style.backgroundImage = `url('${safePhoto}'), url('${localFallback}')`;
-    }
-
-    // 2. Mostrar pantalla principal y barra de estado
-    const onboarding = document.getElementById('screen-onboarding');
-    if (onboarding) {
-        onboarding.classList.remove('active');
-        onboarding.style.display = 'none';
-    }
-    const main = document.getElementById('screen-main');
-    if (main) {
-        main.classList.add('active');
-        main.style.display = 'flex';
-    }
-    const statusBar = document.getElementById('app-status-bar');
-    if (statusBar) statusBar.style.display = 'flex';
-
-    // 3. Actualizar nombre, raza, etapa y foto en el Dashboard y Status Bar
-    const statusName = document.getElementById('status-pet-name');
-    if (statusName) statusName.textContent = p.name;
-    const displayName = document.getElementById('display-pet-name');
-    if (displayName) displayName.textContent = p.name;
-
-    const breedTag = document.getElementById('display-pet-breed-tag');
-    if (breedTag) {
-        const cleanBreed = p.breed || (p.type === 'gato' ? 'Europeo Común' : 'Mestizo');
-        breedTag.innerHTML = `${cleanBreed} &bull; ${formatPetAgeStage(p.age)}`;
-    }
-
-    const dashAvatar = document.getElementById('dash-avatar-img');
-    if (dashAvatar) {
-        dashAvatar.onerror = function() { this.onerror = null; this.src = localFallback; };
-        dashAvatar.src = safePhoto;
-        dashAvatar.alt = p.name;
-        dashAvatar.style.width = '48px';
-        dashAvatar.style.height = '48px';
-        dashAvatar.style.borderRadius = '50%';
-        dashAvatar.style.objectFit = 'cover';
-    }
-
-    const heartVal = document.getElementById('val-heart');
-    if (heartVal) {
-        heartVal.textContent = p.bpm || (p.type === 'gato' ? '138' : '74');
-    }
-
-    // 4. Sincronizar Pin GPS
-    const gpsPinImg = document.getElementById('gps-pet-avatar-pin');
-    if (gpsPinImg) {
-        gpsPinImg.onerror = function() { this.onerror = null; this.src = localFallback; };
-        gpsPinImg.src = safePhoto;
-    }
-    const gpsPinName = document.getElementById('gps-pin-name');
-    if (gpsPinName) gpsPinName.textContent = p.name;
-    const gpsMarkerLabel = document.getElementById('gps-marker-label');
-    if (gpsMarkerLabel) {
-        gpsMarkerLabel.textContent = p.name;
-    }
-
-    // 5. Sincronizar Cabecera Web y Asistente IA
-    if (typeof cudi_check_session === 'function') {
-        cudi_check_session();
-    }
-    if (typeof CudiAI !== 'undefined' && typeof CudiAI.loadProfile === 'function') {
-        CudiAI.loadProfile();
-        const aiAvatar = document.getElementById('ai-avatar');
-        if (aiAvatar) {
-            aiAvatar.onerror = function() { this.onerror = null; this.src = localFallback; };
-            aiAvatar.src = safePhoto;
-        }
-        const aiPetTag = document.getElementById('ai-header-pet-name');
-        if (aiPetTag) aiPetTag.innerHTML = `<i class="fa-solid fa-paw"></i> ${p.name}`;
-    }
-
-    const inAppIaAvatar = document.getElementById('in-app-ia-pet-avatar');
-    if (inAppIaAvatar) {
-        inAppIaAvatar.onerror = function() { this.onerror = null; this.src = localFallback; };
-        inAppIaAvatar.src = safePhoto;
-    }
-    const inAppIaName = document.getElementById('in-app-ia-pet-name');
-    if (inAppIaName) inAppIaName.textContent = p.name;
-
-    setTimeout(() => {
-        initCharts();
-        renderSocialPets();
-        renderProfileCard();
-        simulateNotifications();
-        populateStoreCats();
-    }, 120);
-}
-
-function loadSavedProfile() {
-    let saved = null;
-    const isSessionActive = typeof cudi_is_session_active === 'function'
-        ? cudi_is_session_active()
-        : (localStorage.getItem('cudi_session_active') !== 'false' && !!localStorage.getItem('cudi_pet_profile'));
-
-    try {
-        const str = localStorage.getItem('cudi_pet_profile');
-        if (str) saved = JSON.parse(str);
-    } catch (e) {
-        console.error("Error reading cudi_pet_profile", e);
-    }
-
-    if (saved && saved.name && isSessionActive) {
-        const inferredType = saved.type || (saved.breed && saved.breed.toLowerCase().includes('gato') ? 'gato' : 'perro');
-        const safePhoto = resolveDemoPetPhoto(saved, inferredType, saved.name);
-        petProfile = {
-            name: saved.name,
-            type: inferredType,
-            weight: String(saved.weight || (inferredType === 'gato' ? '4.2' : '8')),
-            age: saved.age || 'explorer',
-            energy: saved.energy || 'Moderado',
-            food: saved.food || 'Pienso Seco',
-            breed: saved.breed || (inferredType === 'gato' ? 'Europeo Común' : 'Mestizo'),
-            photo: safePhoto,
-            bpm: saved.bpm || (inferredType === 'gato' ? 138 : 74)
-        };
-
-        if (saved.photo !== safePhoto) {
-            saved.photo = safePhoto;
-            try { localStorage.setItem('cudi_pet_profile', JSON.stringify(saved)); } catch (e) {}
-        }
-
-        syncSimulatorDOMWithProfile(petProfile);
-        return true;
-    }
-
-    // Si NO hay sesión iniciada, activar autollenado aleatorio en onboarding
-    setupDemoOnboardingAutoFill();
-    return false;
-}
-
-function showOnboardingScreen(initialTab = 'login') {
-    const onboarding = document.getElementById('screen-onboarding');
-    const main = document.getElementById('screen-main');
-    const statusBar = document.getElementById('app-status-bar');
-
-    if (onboarding) {
-        onboarding.classList.add('active');
-        onboarding.style.display = 'flex';
-    }
-    if (main) {
-        main.classList.remove('active');
-        main.style.display = 'none';
-    }
-    if (statusBar) {
-        statusBar.style.display = 'none';
-    }
-    setupDemoOnboardingAutoFill();
-    if (typeof switchDemoOnboardingTab === 'function') {
-        switchDemoOnboardingTab(initialTab);
-    }
-}
-
-function getDemoPreloadedAccount() {
-    if (typeof cudi_get_preloaded_login_account === 'function') {
-        return cudi_get_preloaded_login_account();
-    }
-    if (typeof CUDI_RANDOM_PETS !== 'undefined' && CUDI_RANDOM_PETS.length > 0) {
-        return CUDI_RANDOM_PETS[0];
-    }
-    return {
-        name: 'Luna',
-        type: 'perro',
-        breed: 'Husky Siberiano',
-        age: 3,
-        weight: 22.0,
-        energy: 'Alto',
-        food: 'Pienso Seco Premium',
-        photo: 'https://images.unsplash.com/photo-1605568427561-40dd23c2acea?auto=format&fit=crop&w=600&h=600&q=80',
-        bpm: 78,
-        temp: 38.4,
-        battery: 94,
-        collarId: 'CUDI-GPS-9482',
-        tutorEmail: 'luna.husky@cudi.pet'
-    };
-}
-
-function setupDemoOnboardingAutoFill() {
-    const onboardingForm = document.querySelector('.onboarding-form');
-    if (!onboardingForm) return;
-
-    // Asegurar step="0.1" y min="0.5" en #pet-weight para evitar errores de rango decimal
-    const weightInput = document.getElementById('pet-weight');
-    if (weightInput) {
-        weightInput.setAttribute('step', '0.1');
-        weightInput.setAttribute('min', '0.5');
-        weightInput.setAttribute('max', '100');
-    }
-
-    if (document.getElementById('demo-auth-tabs-bar')) {
-        updateDemoLoginCardUI(getDemoPreloadedAccount());
-        return;
-    }
-
-    const loginAcc = getDemoPreloadedAccount();
-    const candidate = (typeof cudi_get_random_pet_candidate === 'function') ? cudi_get_random_pet_candidate() : loginAcc;
-    const petsPool = (typeof CUDI_RANDOM_PETS !== 'undefined' && CUDI_RANDOM_PETS.length) ? CUDI_RANDOM_PETS : [loginAcc];
-
-    // Envolver los elementos originales del formulario de registro dentro de #demo-view-register
-    const existingChildren = Array.from(onboardingForm.children);
-    const registerContainer = document.createElement('div');
-    registerContainer.id = 'demo-view-register';
-    registerContainer.style.display = 'none';
-
-    // Banner compacto de autollenado IA para la pestaña de Registro
-    const banner = document.createElement('div');
-    banner.id = 'demo-autofill-banner';
-    banner.className = 'demo-autofill-banner';
-    banner.style.cssText = 'margin-bottom:10px; background:rgba(240,249,255,0.92); backdrop-filter:blur(16px); border:1px solid rgba(186,230,253,0.95); border-radius:12px; padding:8px 10px; display:flex; align-items:center; justify-content:space-between; gap:6px;';
-    banner.innerHTML = `
-        <div style="min-width:0;">
-            <span style="font-size:0.62rem; font-weight:800; color:#0284c7; text-transform:uppercase; display:block;">Autollenado IA</span>
-            <span style="font-size:0.7rem; color:#334155; font-weight:700; display:block; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;" id="demo-autofill-info-label">${candidate.name} (${candidate.breed})</span>
-        </div>
-        <div style="display:flex; align-items:center; gap:4px; flex-shrink:0;">
-            <button type="button" onclick="appDemoAutoFill('perro')" style="background:#ffffff; color:#0369a1; border:1px solid #bae6fd; border-radius:8px; padding:5px 7px; font-size:0.66rem; font-weight:800; cursor:pointer;" title="Caso Perro">🐶</button>
-            <button type="button" onclick="appDemoAutoFill('gato')" style="background:#ffffff; color:#be185d; border:1px solid #fbcfe8; border-radius:8px; padding:5px 7px; font-size:0.66rem; font-weight:800; cursor:pointer;" title="Caso Gato">🐱</button>
-            <button type="button" onclick="appDemoAutoFill()" style="background:linear-gradient(135deg, #0284c7, #0ea5e9); color:white; border:none; padding:5px 9px; border-radius:8px; font-weight:800; font-size:0.68rem; cursor:pointer; display:flex; align-items:center; gap:4px;">
-                <i class="fa-solid fa-bolt"></i> Llenar
-            </button>
-        </div>
-    `;
-
-    registerContainer.appendChild(banner);
-    existingChildren.forEach(ch => registerContainer.appendChild(ch));
-
-    // Crear Barra de Pestañas Apple Glass (Iniciar Sesión vs Registrar Mascota)
-    const tabsBar = document.createElement('div');
-    tabsBar.id = 'demo-auth-tabs-bar';
-    tabsBar.style.cssText = 'display:grid; grid-template-columns:1fr 1fr; background:rgba(226,232,240,0.75); backdrop-filter:blur(14px); padding:3.5px; border-radius:12px; gap:4px; margin-bottom:12px; border:1px solid rgba(255,255,255,0.9);';
-    tabsBar.innerHTML = `
-        <button type="button" id="demo-tab-btn-login" onclick="switchDemoOnboardingTab('login')" style="border:none; padding:7px 8px; border-radius:9px; font-size:0.73rem; font-weight:800; cursor:pointer; transition:all 0.2s; background:#ffffff; color:#0284c7; box-shadow:0 2px 8px rgba(2,132,199,0.14);">
-            Iniciar Sesión
-        </button>
-        <button type="button" id="demo-tab-btn-register" onclick="switchDemoOnboardingTab('register')" style="border:none; padding:7px 8px; border-radius:9px; font-size:0.73rem; font-weight:800; cursor:pointer; transition:all 0.2s; background:transparent; color:#475569;">
-            Registrar Mascota
-        </button>
-    `;
-
-    // Crear Vista de Inicio de Sesión Limpia con Cuenta Pre-cargada Automáticamente
-    const loginContainer = document.createElement('div');
-    loginContainer.id = 'demo-view-login';
-    loginContainer.style.display = 'block';
-
-    const quickChipsHtml = petsPool.slice(0, 4).map((pet, idx) => {
-        const pPhoto = resolveDemoPetPhoto(pet, pet.type, pet.name);
-        const active = pet.name.toLowerCase() === String(loginAcc.name).toLowerCase();
-        return `
-            <button type="button" class="demo-login-chip" data-demo-pet-idx="${idx}" onclick="appDemoSelectLoginAccount(${idx})" style="display:inline-flex; align-items:center; gap:5px; padding:3px 8px 3px 3px; border-radius:999px; border:1.5px solid ${active ? '#0284c7' : 'rgba(203,213,225,0.85)'}; background:${active ? 'rgba(224,242,254,0.95)' : 'rgba(255,255,255,0.9)'}; color:${active ? '#0369a1' : '#334155'}; font-size:0.68rem; font-weight:700; cursor:pointer;">
-                <img src="${pPhoto}" alt="${pet.name}" onerror="if(window.cudi_img_fallback)cudi_img_fallback(this,'${pet.type}','${pet.name}');" style="width:18px !important; height:18px !important; min-width:18px !important; min-height:18px !important; border-radius:50% !important; object-fit:cover !important;">
-                <span>${pet.name}</span>
-            </button>
-        `;
-    }).join('');
-
-    const safeLoginPhoto = resolveDemoPetPhoto(loginAcc, loginAcc.type, loginAcc.name);
-    const loginEmail = loginAcc.tutorEmail || `${String(loginAcc.name).toLowerCase()}@cudi.pet`;
-
-    loginContainer.innerHTML = `
-        <div style="background:rgba(255,255,255,0.94); border:1px solid rgba(203,213,225,0.85); border-radius:16px; padding:14px 12px 12px; box-shadow:0 8px 20px -6px rgba(15,23,42,0.08); text-align:center; margin-bottom:10px;">
-            <img id="demo-login-photo" src="${safeLoginPhoto}" alt="${loginAcc.name}" onerror="if(window.cudi_img_fallback)cudi_img_fallback(this,'${loginAcc.type}','${loginAcc.name}');" style="width:58px !important; height:58px !important; min-width:58px !important; min-height:58px !important; aspect-ratio:1/1 !important; border-radius:50% !important; object-fit:cover !important; border:2px solid #0284c7; margin:0 auto 8px; display:block; box-shadow:0 4px 12px rgba(2,132,199,0.18);">
-            <div style="display:flex; align-items:center; justify-content:center; gap:6px; margin-bottom:2px;">
-                <strong id="demo-login-name" style="font-size:1.02rem; font-weight:800; color:#0f172a;">${loginAcc.name}</strong>
-                <span id="demo-login-species-pill" style="font-size:0.62rem; font-weight:800; padding:1px 7px; border-radius:999px; background:${loginAcc.type === 'gato' ? '#fdf2f8' : '#eff6ff'}; color:${loginAcc.type === 'gato' ? '#be185d' : '#0284c7'};">${loginAcc.type === 'gato' ? 'Gato' : 'Perro'}</span>
-            </div>
-            <div id="demo-login-meta" style="font-size:0.74rem; color:#64748b; font-weight:600; margin-bottom:10px;">${loginAcc.breed} &bull; ${loginAcc.age}a</div>
-
-            <div style="display:flex; align-items:center; justify-content:space-between; background:#f8fafc; border:1px solid #e2e8f0; border-radius:10px; padding:6px 10px; margin-bottom:11px; font-size:0.69rem;">
-                <span id="demo-login-email" style="color:#334155; font-weight:700; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">${loginEmail}</span>
-                <span style="color:#16a34a; font-weight:800;"><i class="fa-solid fa-circle-check"></i> Activa</span>
-            </div>
-
-            <button type="button" class="app-btn primary" onclick="appDemoLoginWithPreloaded()" style="margin-top:0; padding:11px; font-size:0.82rem; display:flex; align-items:center; justify-content:center; gap:8px;">
-                <i class="fa-solid fa-right-to-bracket"></i>
-                <span id="demo-login-submit-text">Continuar con ${loginAcc.name}</span>
-            </button>
-        </div>
-
-        <div style="display:flex; align-items:center; justify-content:space-between; gap:4px; flex-wrap:wrap;">
-            <div style="display:flex; align-items:center; gap:4px; flex-wrap:wrap;">
-                ${quickChipsHtml}
-            </div>
-            <button type="button" onclick="appDemoCycleLoginAccount()" style="background:#ffffff; color:#0284c7; border:1px solid #bae6fd; border-radius:999px; padding:4px 9px; font-size:0.66rem; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:4px;">
-                <i class="fa-solid fa-arrows-rotate"></i> Otra
-            </button>
-        </div>
-    `;
-
-    onboardingForm.appendChild(tabsBar);
-    onboardingForm.appendChild(loginContainer);
-    onboardingForm.appendChild(registerContainer);
-
-    updateDemoLoginCardUI(loginAcc);
-}
-
-function switchDemoOnboardingTab(mode) {
-    const loginView = document.getElementById('demo-view-login');
-    const regView = document.getElementById('demo-view-register');
-    const loginBtn = document.getElementById('demo-tab-btn-login');
-    const regBtn = document.getElementById('demo-tab-btn-register');
-    const isReg = mode === 'register';
-
-    if (loginView && regView) {
-        loginView.style.display = isReg ? 'none' : 'block';
-        regView.style.display = isReg ? 'block' : 'none';
-    }
-    if (loginBtn && regBtn) {
-        if (isReg) {
-            regBtn.style.background = '#ffffff';
-            regBtn.style.color = '#0284c7';
-            regBtn.style.boxShadow = '0 2px 8px rgba(2,132,199,0.14)';
-            loginBtn.style.background = 'transparent';
-            loginBtn.style.color = '#475569';
-            loginBtn.style.boxShadow = 'none';
-        } else {
-            loginBtn.style.background = '#ffffff';
-            loginBtn.style.color = '#0284c7';
-            loginBtn.style.boxShadow = '0 2px 8px rgba(2,132,199,0.14)';
-            regBtn.style.background = 'transparent';
-            regBtn.style.color = '#475569';
-            regBtn.style.boxShadow = 'none';
-            updateDemoLoginCardUI(getDemoPreloadedAccount());
-        }
-    }
-}
-
-function updateDemoLoginCardUI(acc) {
-    if (!acc) return;
-    const safePhoto = resolveDemoPetPhoto(acc, acc.type, acc.name);
-    acc.photo = safePhoto;
-    window.currentLoginAccount = acc;
-
-    const photoEl = document.getElementById('demo-login-photo');
-    if (photoEl) {
-        photoEl.dataset.cudiFallbackDone = 'false';
-        photoEl.src = safePhoto;
-        photoEl.alt = acc.name;
-    }
-    const nameEl = document.getElementById('demo-login-name');
-    if (nameEl) nameEl.textContent = acc.name;
-
-    const pillEl = document.getElementById('demo-login-species-pill');
-    if (pillEl) {
-        const isCat = acc.type === 'gato';
-        pillEl.textContent = isCat ? 'Gato' : 'Perro';
-        pillEl.style.background = isCat ? '#fdf2f8' : '#eff6ff';
-        pillEl.style.color = isCat ? '#be185d' : '#0284c7';
-    }
-
-    const metaEl = document.getElementById('demo-login-meta');
-    if (metaEl) metaEl.innerHTML = `${acc.breed} &bull; ${acc.age}a`;
-
-    const emailEl = document.getElementById('demo-login-email');
-    if (emailEl) {
-        emailEl.textContent = acc.tutorEmail || `${String(acc.name).toLowerCase()}@cudi.pet`;
-    }
-
-    const submitTextEl = document.getElementById('demo-login-submit-text');
-    if (submitTextEl) submitTextEl.textContent = `Continuar con ${acc.name}`;
-
-    const heroPhoto = document.getElementById('onboarding-photo');
-    if (heroPhoto && safePhoto) {
-        const localFallback = acc.type === 'gato' ? 'gato-explorando-seguro-collar-gps.png' : 'avatar-mascota-perfil-gemelo-digital.png';
-        heroPhoto.style.backgroundImage = `url('${safePhoto}'), url('${localFallback}')`;
-    }
-
-    const petsPool = (typeof CUDI_RANDOM_PETS !== 'undefined' && CUDI_RANDOM_PETS.length) ? CUDI_RANDOM_PETS : [];
-    document.querySelectorAll('.demo-login-chip').forEach(chip => {
-        const idx = Number(chip.getAttribute('data-demo-pet-idx'));
-        const p = petsPool[idx];
-        const active = p && p.name.toLowerCase() === String(acc.name).toLowerCase();
-        chip.style.borderColor = active ? '#0284c7' : 'rgba(203,213,225,0.85)';
-        chip.style.background = active ? 'rgba(224,242,254,0.95)' : 'rgba(255,255,255,0.9)';
-        chip.style.color = active ? '#0369a1' : '#334155';
-    });
-}
-
-function appDemoSelectLoginAccount(idx) {
-    if (typeof CUDI_RANDOM_PETS === 'undefined' || !CUDI_RANDOM_PETS[idx]) return;
-    updateDemoLoginCardUI(Object.assign({}, CUDI_RANDOM_PETS[idx]));
-}
-
-function appDemoCycleLoginAccount() {
-    if (typeof CUDI_RANDOM_PETS === 'undefined' || !CUDI_RANDOM_PETS.length) return;
-    const curr = getDemoPreloadedAccount();
-    const currIdx = CUDI_RANDOM_PETS.findIndex(p => p.name.toLowerCase() === String(curr.name).toLowerCase());
-    const nextIdx = (currIdx + 1) % CUDI_RANDOM_PETS.length;
-    updateDemoLoginCardUI(Object.assign({}, CUDI_RANDOM_PETS[nextIdx]));
-}
-
-function appDemoLoginWithPreloaded() {
-    const acc = getDemoPreloadedAccount();
-    if (!acc || !acc.name) return;
-    const safePhoto = resolveDemoPetPhoto(acc, acc.type, acc.name);
-
-    petProfile = {
-        name: acc.name,
-        type: acc.type || 'perro',
-        weight: String(acc.weight || (acc.type === 'gato' ? '4.2' : '12')),
-        age: acc.age || 2,
-        ageStageKey: Number(acc.age) > 4 ? 'golden' : (Number(acc.age) > 2 ? 'plenitud' : 'explorer'),
-        energy: acc.energy || 'Moderado',
-        food: acc.food || 'Pienso Seco Premium',
-        breed: acc.breed || (acc.type === 'gato' ? 'Europeo Común' : 'Mestizo'),
-        photo: safePhoto,
-        avatar: safePhoto,
-        bpm: acc.bpm || (acc.type === 'gato' ? 142 : 78),
-        temp: acc.temp || 38.5,
-        battery: acc.battery || 95,
-        collarId: acc.collarId || (acc.type === 'gato' ? 'CUDI-CAT-7781' : 'CUDI-GPS-9482'),
-        tutorEmail: acc.tutorEmail || `${String(acc.name).toLowerCase()}@cudi.pet`,
-        sessionActive: true,
-        savedAt: new Date().toISOString()
-    };
-
-    localStorage.setItem('cudi_pet_profile', JSON.stringify(petProfile));
-    localStorage.setItem('cudi_last_registered_pet', JSON.stringify(petProfile));
-    localStorage.setItem('cudi_session_active', 'true');
-    window.dispatchEvent(new CustomEvent('cudi:sessionChanged', { detail: petProfile }));
-
-    syncSimulatorDOMWithProfile(petProfile);
-    if (typeof showCudiToast === 'function') {
-        showCudiToast(`🎉 ¡Sesión iniciada con ${petProfile.name} (${petProfile.breed})!`, 'success');
-    }
-}
-
-function appDemoAutoFill(preferredSpecies) {
-    let pet;
-    if (typeof CUDI_RANDOM_PETS !== 'undefined' && CUDI_RANDOM_PETS.length > 0) {
-        const pool = preferredSpecies
-            ? CUDI_RANDOM_PETS.filter(p => p.type === preferredSpecies)
-            : CUDI_RANDOM_PETS;
-        const currentName = document.getElementById('pet-name')?.value || '';
-        const currIdx = pool.findIndex(p => p.name.toLowerCase() === currentName.toLowerCase());
-        const nextIdx = currIdx !== -1 ? (currIdx + 1) % pool.length : Math.floor(Math.random() * pool.length);
-        pet = Object.assign({}, pool[nextIdx]);
-        window.currentRandomPet = pet;
-    } else {
-        pet = {
-            name: 'Luna',
-            type: 'perro',
-            breed: 'Husky Siberiano',
-            weight: '22',
-            age: 3,
-            energy: 'Alto',
-            food: 'Pienso Seco Premium',
-            photo: 'https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=600&h=600&q=80'
-        };
-    }
-
-    selectPetType(pet.type);
-
-    const nameInput = document.getElementById('pet-name');
-    if (nameInput) { nameInput.value = pet.name; nameInput.setCustomValidity(''); }
-    const weightInput = document.getElementById('pet-weight');
-    if (weightInput) {
-        weightInput.setAttribute('step', '0.1');
-        weightInput.setAttribute('min', '0.5');
-        weightInput.setAttribute('max', '100');
-        weightInput.value = pet.weight;
-        weightInput.setCustomValidity('');
-    }
-
-    const breedSelect = document.getElementById('pet-breed');
-    if (breedSelect) {
-        let optExists = Array.from(breedSelect.options).some(o => o.value === pet.breed);
-        if (!optExists) {
-            const opt = document.createElement('option');
-            opt.value = pet.breed;
-            opt.textContent = pet.breed;
-            breedSelect.appendChild(opt);
-        }
-        breedSelect.value = pet.breed;
-    }
-
-    const ageSelect = document.getElementById('pet-age');
-    if (ageSelect) {
-        const numAge = Number(pet.age) || 2;
-        ageSelect.value = numAge > 4 ? 'golden' : (numAge > 2.5 ? 'plenitud' : (numAge <= 1 ? 'primera' : 'explorer'));
-    }
-
-    const energySelect = document.getElementById('pet-energy');
-    if (energySelect) {
-        const en = (pet.energy || '').toLowerCase();
-        energySelect.value = en.includes('tranquilo') ? 'tranquilo' : (en.includes('extremo') || en.includes('atleta') || en.includes('alto') ? 'activo' : 'moderado');
-    }
-
-    const foodSelect = document.getElementById('pet-food');
-    if (foodSelect) {
-        const fd = (pet.food || '').toLowerCase();
-        foodSelect.value = fd.includes('barf') ? 'barf' : (fd.includes('mixta') || fd.includes('húmeda') ? 'mixta' : 'pienso');
-    }
-
-    const safeAutoPhoto = resolveDemoPetPhoto(pet, pet.type, pet.name);
-    window.appDemoSelectedPhoto = safeAutoPhoto;
-    const photoEl = document.getElementById('onboarding-photo');
-    if (photoEl && safeAutoPhoto) {
-        const localFallback = pet.type === 'gato' ? 'gato-explorando-seguro-collar-gps.png' : 'avatar-mascota-perfil-gemelo-digital.png';
-        photoEl.style.backgroundImage = `url('${safeAutoPhoto}'), url('${localFallback}')`;
-    }
-
-    [nameInput, weightInput, breedSelect].forEach(el => {
-        if (el) {
-            el.style.borderColor = '#0284c7';
-            el.style.backgroundColor = '#eff6ff';
-            setTimeout(() => {
-                el.style.borderColor = '';
-                el.style.backgroundColor = '';
-            }, 600);
-        }
-    });
-
-    const infoLabel = document.getElementById('demo-autofill-info-label');
-    if (infoLabel) {
-        infoLabel.innerHTML = `✨ Autollenado: <strong>${pet.name}</strong> (${pet.breed} • ${pet.weight} kg)`;
-    }
-}
-
-function proceedToDashboard() {
-    const name   = (document.getElementById('pet-name')?.value || 'Luna').trim() || 'Luna';
-    const type   = document.getElementById('selected-pet-type')?.value || 'perro';
-    const rawW   = parseFloat(String(document.getElementById('pet-weight')?.value || (type === 'gato' ? '4.2' : '14')).replace(',', '.'));
-    const weight = String(isNaN(rawW) ? (type === 'gato' ? 4.2 : 14) : Math.min(100, Math.max(0.5, rawW)));
-    const ageRaw = document.getElementById('pet-age')?.value || 'explorer';
-    const energyRaw = document.getElementById('pet-energy')?.value || 'moderado';
-    const foodRaw   = document.getElementById('pet-food')?.value || 'pienso';
-    const breed  = document.getElementById('pet-breed')?.value || (type === 'gato' ? 'Europeo Común' : 'Mestizo');
-    const rawPhoto = window.appDemoSelectedPhoto || ONBOARDING_PHOTOS[type] || ONBOARDING_PHOTOS.perro;
-    const photo  = resolveDemoPetPhoto(rawPhoto, type, name);
-
-    const energyMap = { tranquilo: 'Tranquilo', moderado: 'Moderado', activo: 'Alto' };
-    const foodMap = { pienso: 'Pienso Seco Premium', barf: 'Dieta Natural BARF', mixta: 'Mixta (Pienso + Húmeda)' };
-    const ageNumMap = { primera: 1, explorer: 2, plenitud: 4, golden: 8 };
-
-    petProfile = { 
-        name, 
-        type, 
-        weight, 
-        age: ageNumMap[ageRaw] || ageRaw, 
-        ageStageKey: ageRaw,
-        energy: energyMap[energyRaw] || energyRaw, 
-        food: foodMap[foodRaw] || foodRaw, 
-        breed, 
-        photo,
-        avatar: photo,
-        bpm: type === 'gato' ? 138 : 74,
-        collarId: type === 'gato' ? 'CUDI-CAT-7781' : 'CUDI-GPS-9482',
-        tutorEmail: `${name.toLowerCase().replace(/[^a-z0-9]/g, '')}@cudi.pet`,
-        sessionActive: true,
-        savedAt: new Date().toISOString()
-    };
-
-    window.currentLoginAccount = petProfile;
-    localStorage.setItem('cudi_pet_profile', JSON.stringify(petProfile));
-    localStorage.setItem('cudi_last_registered_pet', JSON.stringify(petProfile));
-    localStorage.setItem('cudi_session_active', 'true');
-    window.dispatchEvent(new CustomEvent('cudi:sessionChanged', { detail: petProfile }));
-
-    syncSimulatorDOMWithProfile(petProfile);
-}
-
-function appDemoResetSession() {
-    if (confirm('¿Deseas desconectar o cambiar la mascota en la demo?')) {
-        const currentProfile = localStorage.getItem('cudi_pet_profile');
-        if (currentProfile) {
-            localStorage.setItem('cudi_last_registered_pet', currentProfile);
-        }
-        localStorage.removeItem('cudi_pet_profile');
-        localStorage.removeItem('cudi_session_active');
-        window.currentRandomPet = null;
-        window.dispatchEvent(new CustomEvent('cudi:sessionChanged', { detail: null }));
-
-        const main = document.getElementById('screen-main');
-        if (main) {
-            main.classList.remove('active');
-            main.style.display = 'none';
-        }
-        const statusBar = document.getElementById('app-status-bar');
-        if (statusBar) statusBar.style.display = 'none';
-
-        const onboarding = document.getElementById('screen-onboarding');
-        if (onboarding) {
-            onboarding.classList.add('active');
-            onboarding.style.display = 'block';
-        }
-
-        setupDemoOnboardingAutoFill();
-        switchDemoOnboardingTab('login');
-    }
-}
-
-// ==========================
-// TABS
-// ==========================
-function switchTab(tabId, el) {
-    document.querySelectorAll('.tab-view').forEach(t => t.classList.remove('active'));
-    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-    const tab = document.getElementById('tab-' + tabId);
-    if (tab) tab.classList.add('active');
-    if (el) el.classList.add('active');
-
-    // Cerrar notificaciones si estaban abiertas
-    const notifPanel = document.getElementById('notif-panel');
-    if (notifPanel) notifPanel.style.display = 'none';
-}
-
-// ==========================
-// CHARTS (10 en tiempo real)
-// ==========================
-const CHART_COLORS = {
-    primary: '#0077b6',
-    secondary: '#10b981',
-    warning: '#f59e0b',
-    danger: '#ef4444',
-    purple: '#7c3aed'
-};
-
-function makeSparklineData(base, variance, count = 12) {
-    return Array.from({length: count}, () => base + (Math.random() - 0.5) * variance * 2);
-}
-
-function createSparkline(id, data, color) {
-    const canvas = document.getElementById(id);
-    if (!canvas) return null;
-    if (charts[id]) charts[id].destroy();
-    const config = {
-        type: 'line',
-        data: {
-            labels: Array(data.length).fill(''),
-            datasets: [{
-                data: data,
-                borderColor: color,
-                borderWidth: 2,
-                fill: false,
-                tension: 0.4,
-                pointRadius: 0
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            animation: {
-                duration: 2000,
-                easing: 'easeOutQuart'
-            },
-            plugins: { legend: { display: false }, tooltip: { enabled: false } },
-            scales: { x: { display: false }, y: { display: false } }
-        }
-    };
-    charts[id] = new Chart(canvas, config);
-    return charts[id];
-}
-
-function getDemoPetCalibratedMetrics(p) {
-    const prof = p || petProfile || { name: 'Luna', type: 'perro', weight: 14 };
-    const name = String(prof.name || 'Luna');
-    const seed = name.split('').reduce((acc, ch) => acc + ch.charCodeAt(0), 0);
-    const isCat = prof.type === 'gato' || (prof.breed && ['gato', 'siamés', 'persa', 'maine coon', 'bengalí', 'ragdoll', 'azul ruso', 'british', 'sphynx', 'bosque'].some(b => prof.breed.toLowerCase().includes(b)));
-    const baseBpm = Number(prof.bpm) || (isCat ? 138 + (seed % 14) : 74 + (seed % 14));
-    const baseSleep = isCat ? Number((11.2 + (seed % 18) * 0.1).toFixed(1)) : Number((8.4 + (seed % 16) * 0.1).toFixed(1));
-    const baseEnergy = 84 + (seed % 13);
-    const baseStress = 18 + (seed % 12);
-    const dailyKm = isCat ? Number((1.8 + (seed % 15) * 0.1).toFixed(1)) : Number((3.8 + (seed % 28) * 0.1).toFixed(1));
-    const radarScores = [
-        90 + (seed % 9),
-        baseEnergy,
-        Math.min(98, Math.round(baseSleep * (isCat ? 7.8 : 10.4))),
-        88 + ((seed * 3) % 11),
-        91 + ((seed * 7) % 8),
-        93 + ((seed * 5) % 7)
-    ];
-    const weeklyKm = [
-        Number((dailyKm * 0.85).toFixed(1)),
-        Number((dailyKm * 1.05).toFixed(1)),
-        Number((dailyKm * 0.78).toFixed(1)),
-        Number((dailyKm * 1.18).toFixed(1)),
-        Number((dailyKm * 0.96).toFixed(1)),
-        Number((dailyKm * 1.32).toFixed(1)),
-        Number((dailyKm * 1.10).toFixed(1))
-    ];
-    return { isCat, baseBpm, baseSleep, baseEnergy, baseStress, dailyKm, radarScores, weeklyKm };
-}
-
-function createRadarChart(id) {
-    const canvas = document.getElementById(id);
-    if (!canvas) return;
-    if (charts[id]) charts[id].destroy();
-    const m = getDemoPetCalibratedMetrics(petProfile);
-    charts[id] = new Chart(canvas, {
-        type: 'radar',
-        data: {
-            labels: ['Salud', 'Energia', 'Sueno', 'Social', 'Nutricion', 'Humor'],
-            datasets: [{
-                label: petProfile.name || 'Mascota',
-                data: m.radarScores,
-                backgroundColor: CHART_COLORS.primary + '20',
-                borderColor: CHART_COLORS.primary,
-                borderWidth: 2,
-                pointBackgroundColor: CHART_COLORS.primary
-            }]
-        },
-        options: {
-            responsive: true, maintainAspectRatio: false,
-            plugins: { legend: { display: false } },
-            scales: { r: { min: 50, max: 100, ticks: { display: false }, grid: { color: '#f1f5f9' } } }
-        }
-    });
-}
-
-function createBarChart(id, labels, data, color) {
-    const canvas = document.getElementById(id);
-    if (!canvas) return;
-    if (charts[id]) charts[id].destroy();
-    charts[id] = new Chart(canvas, {
-        type: 'bar',
-        data: {
-            labels,
-            datasets: [{ data, backgroundColor: color + '80', borderColor: color, borderWidth: 2, borderRadius: 8 }]
-        },
-        options: {
-            responsive: true, maintainAspectRatio: false,
-            plugins: { legend: { display: false } },
-            scales: { x: { ticks: { font: { size: 10 } } }, y: { ticks: { font: { size: 10 } } } }
-        }
-    });
-}
-
-function createDoughnutChart(id, labels, data, colors) {
-    const canvas = document.getElementById(id);
-    if (!canvas) return;
-    if (charts[id]) charts[id].destroy();
-    charts[id] = new Chart(canvas, {
-        type: 'doughnut',
-        data: { labels, datasets: [{ data, backgroundColor: colors, borderWidth: 0 }] },
-        options: {
-            responsive: true, maintainAspectRatio: false,
-            animation: {
-                animateRotate: true,
-                animateScale: true,
-                duration: 2000,
-                easing: 'easeOutCirc'
-            },
-            plugins: { legend: { position: 'bottom', labels: { font: { size: 10 }, boxWidth: 10, padding: 8 } } },
-            cutout: '65%'
-        }
-    });
-}
-
-function initCharts() {
-    const m = getDemoPetCalibratedMetrics(petProfile);
-
-    const heartEl = document.getElementById('val-heart');
-    if (heartEl) heartEl.textContent = m.baseBpm;
-    const energyEl = document.getElementById('val-energy');
-    if (energyEl) energyEl.textContent = m.baseEnergy;
-    const sleepEl = document.getElementById('val-sleep');
-    if (sleepEl) sleepEl.textContent = m.baseSleep;
-    const stressEl = document.getElementById('val-stress');
-    if (stressEl) stressEl.textContent = m.baseStress + '%';
-
-    // 4 sparklines del dashboard
-    createSparkline('chart-heart',  makeSparklineData(m.baseBpm, 6), CHART_COLORS.danger);
-    createSparkline('chart-energy', makeSparklineData(m.baseEnergy, 6), CHART_COLORS.warning);
-    createSparkline('chart-sleep',  makeSparklineData(m.baseSleep, 0.8), CHART_COLORS.primary);
-    createSparkline('chart-stress', makeSparklineData(m.baseStress, 5), CHART_COLORS.purple);
-
-    // Radar en dashboard
-    createRadarChart('chart-radar');
-
-    // BPM line chart
-    const bpmCanvas = document.getElementById('chart-bpm');
-    if (bpmCanvas) {
-        if (charts['chart-bpm']) charts['chart-bpm'].destroy();
-        const holterCurve = [-8, -11, -4, +6, +3, +12, +4, -3, -7].map(d => m.baseBpm + d);
-        charts['chart-bpm'] = new Chart(bpmCanvas, {
-            type: 'line',
-            data: {
-                labels: ['00h','03h','06h','09h','12h','15h','18h','21h','24h'],
-                datasets: [{
-                    label: 'BPM',
-                    data: holterCurve,
-                    borderColor: CHART_COLORS.danger,
-                    borderWidth: 2.5,
-                    fill: true,
-                    backgroundColor: CHART_COLORS.danger + '15',
-                    tension: 0.4,
-                    pointRadius: 4,
-                    pointBackgroundColor: CHART_COLORS.danger
-                }]
-            },
-            options: {
-                responsive: true, maintainAspectRatio: false,
-                animation: {
-                    duration: 2000,
-                    easing: 'easeOutCubic'
-                },
-                plugins: { legend: { display: false } },
-                scales: {
-                    x: { ticks: { font: { size: 9 } } },
-                    y: { ticks: { font: { size: 9 } }, min: m.isCat ? 105 : 50, max: m.isCat ? 175 : 120 }
-                }
-            }
-        });
-    }
-
-    // Bar semanal
-    createBarChart('chart-weekly',
-        ['Lun','Mar','Mie','Jue','Vie','Sab','Dom'],
-        m.weeklyKm,
-        CHART_COLORS.primary
-    );
-
-    // Doughnut dieta
-    createDoughnutChart('chart-diet',
-        ['Proteinas', 'Grasas', 'Carbos', 'Fibra'],
-        m.isCat ? [48, 26, 16, 10] : [40, 25, 25, 10],
-        [CHART_COLORS.primary, CHART_COLORS.warning, CHART_COLORS.secondary, CHART_COLORS.purple]
-    );
-
-    // Pie inmunologico
-    createDoughnutChart('chart-inmuno',
-        ['Activa', 'Pendiente', 'Vencida'],
-        [75, 15, 10],
-        [CHART_COLORS.secondary, CHART_COLORS.warning, CHART_COLORS.danger]
-    );
-
-    // Area estres
-    const stressCanvas = document.getElementById('chart-stress-area');
-    if (stressCanvas) {
-        if (charts['chart-stress-area']) charts['chart-stress-area'].destroy();
-        charts['chart-stress-area'] = new Chart(stressCanvas, {
-            type: 'line',
-            data: {
-                labels: ['Lun','Mar','Mie','Jue','Vie','Sab','Dom'],
-                datasets: [{
-                    label: 'Estres',
-                    data: [m.baseStress + 4, m.baseStress + 10, m.baseStress - 2, m.baseStress + 16, m.baseStress + 2, m.baseStress - 4, m.baseStress],
-                    borderColor: CHART_COLORS.purple,
-                    backgroundColor: CHART_COLORS.purple + '20',
-                    fill: true, tension: 0.5, borderWidth: 2.5
-                }]
-            },
-            options: {
-                responsive: true, maintainAspectRatio: false,
-                animation: {
-                    duration: 2000,
-                    easing: 'easeOutBack'
-                },
-                plugins: { legend: { display: false } },
-                scales: { x: { ticks: { font: { size: 9 } } }, y: { display: false } }
-            }
-        });
-    }
-
-    // Temperatura stacked
-    const tempCanvas = document.getElementById('chart-temp');
-    if (tempCanvas) {
-        if (charts['chart-temp']) charts['chart-temp'].destroy();
-        charts['chart-temp'] = new Chart(tempCanvas, {
-            type: 'bar',
-            data: {
-                labels: ['Dia 1','Dia 2','Dia 3','Dia 4','Dia 5'],
-                datasets: [
-                    { label: 'Normal', data: [38.5, 38.3, 38.7, 38.4, 38.6], backgroundColor: CHART_COLORS.secondary + '80', borderRadius: 6, borderWidth: 0 },
-                    { label: 'Elevada', data: [0, 0, 0.3, 0, 0], backgroundColor: CHART_COLORS.danger + '80', borderRadius: 6, borderWidth: 0 }
-                ]
-            },
-            options: {
-                responsive: true, maintainAspectRatio: false,
-                plugins: { legend: { position: 'bottom', labels: { font: { size: 9 }, boxWidth: 10 } } },
-                scales: { x: { stacked: true, ticks: { font: { size: 9 } } }, y: { stacked: true, ticks: { font: { size: 9 } } } }
-            }
-        });
-    }
-
-    // Telemetria en tiempo real
-    startLiveMetrics();
-}
-
-// ---- TELEMETRIA EN TIEMPO REAL ----
-function startLiveMetrics() {
-    if (window.cudiLiveMetricsInterval) {
-        clearInterval(window.cudiLiveMetricsInterval);
-    }
-    const metrics = [
-        { valId: 'val-heart',  chartId: 'chart-heart',  getBase: () => getDemoPetCalibratedMetrics(petProfile).baseBpm,    var: 5,   suffix: 'bpm', color: CHART_COLORS.danger,  isInt: true },
-        { valId: 'val-energy', chartId: 'chart-energy', getBase: () => getDemoPetCalibratedMetrics(petProfile).baseEnergy, var: 4,   suffix: '%',   color: CHART_COLORS.warning, isInt: true },
-        { valId: 'val-sleep',  chartId: 'chart-sleep',  getBase: () => getDemoPetCalibratedMetrics(petProfile).baseSleep,  var: 0.3, suffix: 'h',   color: CHART_COLORS.primary, isInt: false },
-        { valId: 'val-stress', chartId: 'chart-stress', getBase: () => getDemoPetCalibratedMetrics(petProfile).baseStress, var: 3,   suffix: '%',   color: CHART_COLORS.purple,  isInt: true }
-    ];
-
-    window.cudiLiveMetricsInterval = setInterval(() => {
-        metrics.forEach(m => {
-            const base = m.getBase();
-            const val = base + (Math.random() - 0.5) * m.var * 2;
-            const el = document.getElementById(m.valId);
-            if (el) el.textContent = m.isInt ? (m.valId === 'val-stress' ? Math.round(val) + '%' : Math.round(val)) : val.toFixed(1);
-
-            const c = charts[m.chartId];
-            if (c) {
-                c.data.datasets[0].data.push(val);
-                c.data.datasets[0].data.shift();
-                c.data.labels.push('');
-                c.data.labels.shift();
-                c.update('none');
-            }
-        });
-    }, 2500);
-}
-
-// ==========================
-// SOCIAL PETS & MURO SINCRONIZADO (COMUNIDAD COMPLETA EN LA DEMO)
-// ==========================
-function renderSocialPets() {
-    const sharedState = getDemoSharedSocialState();
-    const currentPet = petProfile.name ? petProfile : {
-        name: 'Mi Mascota',
-        photo: 'avatar-mascota-perfil-gemelo-digital.png',
-        type: 'perro'
-    };
-    const currentPetPhoto = resolveDemoPetPhoto(currentPet, currentPet.type, currentPet.name);
-    const localFallback = currentPet.type === 'gato' ? 'gato-explorando-seguro-collar-gps.png' : 'avatar-mascota-perfil-gemelo-digital.png';
-
-    // 1. BARRA DE STORIES SINCRONIZADA
-    const storiesBar = document.getElementById('demo-stories-bar');
-    if (storiesBar) {
-        const allStories = [
-            { id: 'user', name: `Tú (${currentPet.name})`, photo: currentPetPhoto, isUser: true },
-            ...SOCIAL_PETS
-        ];
-
-        storiesBar.innerHTML = allStories.map(s => {
-            const sPhoto = resolveDemoPetPhoto(s.photo, s.type, s.name);
-            return `
-            <div class="demo-story-item" onclick="openStoryDetail('${s.id}')" title="${s.name}">
-                <div class="demo-story-ring ${s.isUser ? 'active-pulse' : ''}">
-                    <img src="${sPhoto}" alt="${s.name}" class="demo-story-avatar" onerror="this.onerror=null;this.src='avatar-mascota-perfil-gemelo-digital.png';">
-                </div>
-                <span class="demo-story-name">${s.name}</span>
-            </div>
-        `}).join('');
-    }
-
-    // 2. MURO DE PUBLICACIONES SINCRONIZADO CON COMUNIDAD-CUDI.HTML
-    let feedContainer = document.getElementById('demo-social-feed-list');
-    const petsContainer = document.getElementById('social-pets-list');
-    if (!feedContainer && petsContainer && petsContainer.parentNode) {
-        feedContainer = document.createElement('div');
-        feedContainer.id = 'demo-social-feed-list';
-        const neighborsHeader = petsContainer.previousElementSibling;
-        petsContainer.parentNode.insertBefore(feedContainer, neighborsHeader || petsContainer);
-    }
-
-    if (feedContainer) {
-        feedContainer.innerHTML = `
-            <div style="display:flex; justify-content:space-between; align-items:center; margin:4px 0 8px;">
-                <span style="font-size:0.74rem; font-weight:800; color:#0f172a; text-transform:uppercase; letter-spacing:0.4px;">
-                    <i class="fa-solid fa-newspaper" style="color:#0284c7;"></i> Muro Comunidad CUDI
-                </span>
-                <a href="comunidad-cudi.html" style="font-size:0.68rem; color:#0284c7; font-weight:800; text-decoration:none; display:inline-flex; align-items:center; gap:4px;">
-                    Abrir Red Web <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.6rem;"></i>
-                </a>
-            </div>
-            <div class="demo-quick-post-bar">
-                <img src="${currentPetPhoto}" alt="${currentPet.name}" class="demo-feed-author-img" onerror="this.onerror=null;this.src='${localFallback}';">
-                <input type="text" id="demo-quick-post-input" class="demo-quick-post-input" placeholder="Publicar como ${currentPet.name} en Comunidad...">
-                <button type="button" class="demo-quick-post-btn" onclick="publishFromDemoSocial()">
-                    <i class="fa-solid fa-paper-plane"></i> Publicar
-                </button>
-            </div>
-            ${sharedState.posts.slice(0, 4).map(post => {
-                const isFollowed = sharedState.followedIds.includes(post.petId);
-                const postAvatar = resolveDemoPetPhoto(post.avatar, post.type, post.author);
-                return `
-                    <div class="demo-social-feed-card">
-                        <div class="demo-feed-header">
-                            <img src="${postAvatar}" alt="${post.author}" class="demo-feed-author-img" onerror="this.onerror=null;this.src='avatar-mascota-perfil-gemelo-digital.png';" onclick="openAppPetModal('${post.petId}')" style="cursor:pointer;">
-                            <div style="flex:1; min-width:0;">
-                                <div style="font-size:0.84rem; font-weight:800; color:#0f172a; display:flex; align-items:center; gap:4px; cursor:pointer;" onclick="openAppPetModal('${post.petId}')">
-                                    ${post.author} <i class="fa-solid fa-circle-check" style="color:#0284c7; font-size:0.72rem;"></i>
-                                </div>
-                                <div style="font-size:0.66rem; color:#64748b;">${post.timeLoc}</div>
-                            </div>
-                            ${post.petId !== 'user' ? `
-                                <button type="button" onclick="contactPet('${post.petId}', '${post.author}')" style="background:${isFollowed ? '#dcfce7' : '#e0f2fe'}; color:${isFollowed ? '#15803d' : '#0284c7'}; border:none; border-radius:50px; padding:4px 10px; font-size:0.66rem; font-weight:800; cursor:pointer;">
-                                    ${isFollowed ? '<i class="fa-solid fa-check"></i> Siguiendo' : 'Seguir +'}
-                                </button>
-                            ` : `
-                                <span style="background:#dcfce7; color:#15803d; padding:3px 8px; border-radius:50px; font-size:0.64rem; font-weight:800;">Tú</span>
-                            `}
-                        </div>
-                        <p style="font-size:0.75rem; color:#334155; margin:0 0 8px; line-height:1.45;">${post.text}</p>
-                        ${post.image ? `<img src="${post.image}" alt="${post.author}" class="demo-post-image" onerror="this.onerror=null;this.style.display='none';">` : ''}
-                        <div style="display:flex; align-items:center; justify-content:space-between; border-top:1px solid rgba(226,232,240,0.75); padding-top:8px; margin-top:4px;">
-                            <button type="button" onclick="toggleDemoPostLike('${post.id}')" style="background:none; border:none; color:${post.liked ? '#ef4444' : '#64748b'}; font-size:0.74rem; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:5px;">
-                                <i class="fa-solid fa-heart"></i> ${post.likes} Me gusta
-                            </button>
-                            <span style="font-size:0.7rem; color:#64748b; font-weight:600;">
-                                <i class="fa-solid fa-comment"></i> ${post.commentsCount || 0} comentarios
-                            </span>
-                            <span style="font-size:0.66rem; color:#10b981; font-weight:700;">
-                                <i class="fa-solid fa-rotate"></i> Sync Web
-                            </span>
-                        </div>
-                    </div>
-                `;
-            }).join('')}
-        `;
-    }
-
-    // 3. LISTA DE MASCOTAS VECINAS (8 COMPAÑEROS SINCRONIZADOS)
-    if (!petsContainer) return;
-
-    petsContainer.innerHTML = SOCIAL_PETS.map(p => {
-        const isGreeted = sharedState.followedIds.includes(p.id);
-        const safePPhoto = resolveDemoPetPhoto(p.photo, p.type, p.name);
-        return `
-        <div class="pet-social-card-rich" id="social-card-${p.id}">
-            <div class="pet-social-card-top">
-                <div class="pet-avatar-rich-wrap">
-                    <img src="${safePPhoto}" alt="${p.name}" class="pet-avatar-rich" onerror="this.onerror=null;this.src='avatar-mascota-perfil-gemelo-digital.png';" onclick="openAppPetModal('${p.id}')" style="cursor:pointer;">
-                    <span class="pet-online-beacon" title="Smart Collar GPS Activo"></span>
-                </div>
-                <div class="pet-rich-meta">
-                    <div class="pet-rich-name-row">
-                        <span class="pet-rich-name" onclick="openAppPetModal('${p.id}')" style="cursor:pointer;">
-                            ${p.name} <i class="fa-solid fa-circle-check" style="color:#0284c7; font-size:0.75rem;"></i>
-                        </span>
-                        <span class="pet-match-badge"><i class="fa-solid fa-heart" style="color:#ef4444;"></i> ${p.compat}% Match</span>
-                    </div>
-                    <div class="pet-rich-sub">
-                        ${p.breed} &bull; <strong style="color:#0f172a;">${p.dist}</strong> de ti
-                    </div>
-                    <div style="font-size:0.7rem; color:#10b981; font-weight:700;">
-                        <i class="fa-solid fa-shield-dog"></i> ${p.collar}
-                    </div>
-                </div>
-            </div>
-            
-            <p style="font-size:0.73rem; color:#475569; margin:8px 0 6px; line-height:1.4;">${p.bio}</p>
-
-            <div class="pet-badges-row">
-                ${(p.badges || []).map(b => `<span class="pet-badge-tag">${b}</span>`).join('')}
-            </div>
-
-            <div class="pet-rich-actions">
-                <button type="button" class="btn-social-saludar ${isGreeted ? 'saludado' : ''}" id="btn-saludar-${p.id}" onclick="contactPet('${p.id}', '${p.name}')">
-                    ${isGreeted ? '<i class="fa-solid fa-check"></i> ¡Saludado! 🐾' : '<i class="fa-solid fa-paw"></i> Saludar 🐾'}
-                </button>
-                <button type="button" class="btn-social-ficha" onclick="openAppPetModal('${p.id}')">
-                    <i class="fa-solid fa-address-card"></i> Ver Ficha
-                </button>
-            </div>
-        </div>
-        `;
-    }).join('');
-}
-
-function toggleDemoPostLike(postId) {
-    const state = getDemoSharedSocialState();
-    const post = state.posts.find(p => p.id === postId);
-    if (!post) return;
-    post.liked = !post.liked;
-    post.likes = Math.max(0, (post.likes || 0) + (post.liked ? 1 : -1));
-    saveDemoSharedSocialState(state);
-    renderSocialPets();
-}
-
-function publishFromDemoSocial() {
-    const input = document.getElementById('demo-quick-post-input');
-    const text = (input ? input.value.trim() : '') || `¡Listos para el paseo de hoy con el Smart Collar CUDI activo! 🐾✨`;
-    const currentPet = petProfile.name ? petProfile : {
-        name: 'Mi Mascota',
-        photo: 'avatar-mascota-perfil-gemelo-digital.png',
-        type: 'perro'
-    };
-
-    const state = getDemoSharedSocialState();
-    state.posts.unshift({
-        id: 'post_demo_' + Date.now(),
-        petId: 'user',
-        author: currentPet.name,
-        verified: true,
-        avatar: resolveDemoPetPhoto(currentPet, currentPet.type, currentPet.name),
-        timeLoc: 'Justo ahora • Desde CUDI App Demo',
-        text: text,
-        image: '',
-        likes: 1,
-        liked: true,
-        commentsCount: 0
-    });
-    saveDemoSharedSocialState(state);
-    if (input) input.value = '';
-    renderSocialPets();
-    showToast(`✨ Publicación de ${currentPet.name} sincronizada con Comunidad CUDI`);
-}
-
-window.addEventListener('storage', (e) => {
-    if (e.key === DEMO_SHARED_SOCIAL_KEY) {
-        renderSocialPets();
-    }
-});
-
-function openStoryDetail(petId) {
-    if (petId === 'user') {
-        showToast(`📸 ${petProfile.name || 'Tu mascota'}: Collar activo y sincronizado con Comunidad CUDI.`);
-        return;
-    }
-    const pet = SOCIAL_PETS.find(p => p.id === petId);
-    if (pet) {
-        showToast(`✨ Story de ${pet.name}: ¡Paseo activo en el parque (${pet.dist} de ti)!`);
-        openAppPetModal(petId);
-    }
-}
-
-function openAppPetModal(petId) {
-    const pet = SOCIAL_PETS.find(p => p.id === petId) || SOCIAL_PETS[0];
-    if (!pet) return;
-
-    const existing = document.getElementById('demo-inapp-modal');
-    if (existing) existing.remove();
-
-    const screen = document.querySelector('.mobile-screen');
-    if (!screen) return;
-
-    const sharedState = getDemoSharedSocialState();
-    const isGreeted = sharedState.followedIds.includes(pet.id);
-    const safeModalPhoto = resolveDemoPetPhoto(pet.photo, pet.type, pet.name);
-
-    const modal = document.createElement('div');
-    modal.id = 'demo-inapp-modal';
-    modal.className = 'app-inapp-modal';
-    modal.innerHTML = `
-        <div class="app-inapp-modal-sheet">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
-                <span style="font-size:0.7rem; font-weight:800; background:#dbeafe; color:#0284c7; padding:3px 10px; border-radius:50px;">
-                    <i class="fa-solid fa-paw"></i> FICHA SINCRONIZADA CUDI
-                </span>
-                <button onclick="document.getElementById('demo-inapp-modal').remove()" style="background:#f1f5f9; border:none; width:28px; height:28px; border-radius:50%; cursor:pointer; color:#64748b; font-weight:800;">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
-
-            <div style="display:flex; gap:12px; align-items:center; margin-bottom:14px;">
-                <img src="${safeModalPhoto}" alt="${pet.name}" onerror="this.onerror=null;this.src='avatar-mascota-perfil-gemelo-digital.png';" style="width:64px !important; height:64px !important; min-width:64px !important; max-width:64px !important; min-height:64px !important; max-height:64px !important; aspect-ratio:1/1 !important; border-radius:50% !important; object-fit:cover !important; border:3px solid #0284c7; box-shadow:0 4px 14px rgba(2,132,199,0.25);">
-                <div>
-                    <h3 style="margin:0; font-size:1.15rem; color:#0f172a; font-weight:800; display:flex; align-items:center; gap:6px;">
-                        ${pet.name} <i class="fa-solid fa-circle-check" style="color:#0284c7; font-size:0.85rem;"></i>
-                    </h3>
-                    <p style="margin:2px 0 0; font-size:0.75rem; color:#64748b;">${pet.breed} &bull; ${pet.dist} de ti</p>
-                    <span style="font-size:0.7rem; font-weight:800; color:#15803d; background:#dcfce7; padding:2px 8px; border-radius:12px; display:inline-block; margin-top:4px;">
-                        <i class="fa-solid fa-heart"></i> ${pet.compat}% Afinidad con ${petProfile.name || 'tu mascota'}
-                    </span>
-                </div>
-            </div>
-
-            <p style="font-size:0.8rem; color:#334155; line-height:1.5; margin-bottom:14px; background:rgba(248,250,252,0.9); padding:10px 12px; border-radius:12px; border:1px solid #e2e8f0;">
-                "${pet.bio}"
-            </p>
-
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:16px;">
-                <div style="background:#eff6ff; padding:10px; border-radius:12px; text-align:center;">
-                    <div style="font-size:0.65rem; color:#1e40af; font-weight:700; text-transform:uppercase;">Nivel de Energía</div>
-                    <div style="font-size:0.95rem; font-weight:900; color:#0284c7;">${pet.energy}</div>
-                </div>
-                <div style="background:#f0fdf4; padding:10px; border-radius:12px; text-align:center;">
-                    <div style="font-size:0.65rem; color:#166534; font-weight:700; text-transform:uppercase;">Smart Collar</div>
-                    <div style="font-size:0.95rem; font-weight:900; color:#16a34a;">Conectado</div>
-                </div>
-            </div>
-
-            <div style="display:flex; gap:8px;">
-                <button type="button" class="btn-social-saludar ${isGreeted ? 'saludado' : ''}" style="flex:1; padding:12px;" onclick="contactPet('${pet.id}', '${pet.name}'); document.getElementById('demo-inapp-modal').remove();">
-                    <i class="fa-solid fa-paw"></i> ${isGreeted ? '¡Ya sigues a ' + pet.name + '!' : 'Saludar y Seguir en Comunidad 🐾'}
-                </button>
-            </div>
-        </div>
-    `;
-
-    screen.appendChild(modal);
-}
-
-function contactPet(petId, name) {
-    const state = getDemoSharedSocialState();
-    const idx = state.followedIds.indexOf(petId);
-    if (idx === -1) {
-        state.followedIds.push(petId);
-        showToast(`🎉 ¡Saludo enviado y siguiendo a ${name} en la App y en la Web! 🐾`);
-    } else {
-        state.followedIds.splice(idx, 1);
-        showToast(`Dejaste de seguir a ${name}`);
-    }
-    saveDemoSharedSocialState(state);
-    renderSocialPets();
-}
-
-function proposeOuting() {
-    showToast('📍 Propuesta de paseo CUDI sincronizada con tus vecinos compatibles.');
-}
-
-// ==========================
-// PERFIL (CON SINCRONIZACIÓN TRANSVERSAL)
-// ==========================
-function renderProfileCard() {
-    const p = petProfile;
-    const ageLabels = { primera: 'Primera Aventura (1 año)', explorer: 'Energía Desatada (2 años)', plenitud: 'Plenitud Vital (4 años)', golden: 'Sabiduría Golden (8+ años)' };
-    const energyLabels = { tranquilo: 'Tranquilo', moderado: 'Moderado', activo: 'Alto' };
-    const foodLabels = { pienso: 'Pienso Seco', barf: 'Dieta BARF', mixta: 'Dieta Mixta' };
-
-    const ageText = ageLabels[p.ageStageKey] || ageLabels[p.age] || formatPetAgeStage(p.age);
-    const energyText = energyLabels[String(p.energy || '').toLowerCase()] || p.energy || 'Moderado';
-    const foodText = foodLabels[String(p.food || '').toLowerCase()] || p.food || 'Pienso Seco';
-
-    const els = {
-        'profile-pet-name': p.name || 'Mi Mascota',
-        'profile-pet-type': p.type === 'gato' ? '🐱 Gato' : '🐶 Perro',
-        'profile-pet-breed': p.breed || (p.type === 'gato' ? 'Europeo Común' : 'Mestizo'),
-        'profile-pet-age': ageText,
-        'profile-pet-weight': p.weight ? String(p.weight).replace(/\s*kg$/i, '') + ' kg' : '-',
-        'profile-pet-energy': energyText,
-        'profile-pet-food': foodText
-    };
-
-    Object.entries(els).forEach(([id, val]) => {
-        const el = document.getElementById(id);
-        if (el) el.textContent = val;
-    });
-
-    const avatar = document.querySelector('#tab-profile .profile-avatar');
-    if (avatar) {
-        const safeProfilePhoto = resolveDemoPetPhoto(p, p.type, p.name);
-        const localFallback = p.type === 'gato' ? 'gato-explorando-seguro-collar-gps.png' : 'avatar-mascota-perfil-gemelo-digital.png';
-        avatar.style.backgroundImage = `url('${safeProfilePhoto}'), url('${localFallback}')`;
-        avatar.innerHTML = `<img src="${safeProfilePhoto}" alt="${p.name || 'Mascota'}" onerror="this.onerror=null;this.src='${localFallback}';" style="width:100% !important; height:100% !important; object-fit:cover !important; object-position:center !important; border-radius:50% !important; display:block;">`;
-    }
-
-    const tabProfile = document.getElementById('tab-profile');
-    if (tabProfile && !document.getElementById('demo-btn-switch-pet')) {
-        const switchBtn = document.createElement('button');
-        switchBtn.id = 'demo-btn-switch-pet';
-        switchBtn.type = 'button';
-        switchBtn.onclick = appDemoResetSession;
-        switchBtn.style.cssText = 'width:100%; margin-top:14px; margin-bottom:10px; padding:12px; background:#f8fafc; border:1px solid #cbd5e1; border-radius:14px; color:#475569; font-weight:800; font-size:0.8rem; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:8px;';
-        switchBtn.innerHTML = '<i class="fa-solid fa-arrows-rotate"></i> Cambiar Mascota / Probar Otra';
-        tabProfile.appendChild(switchBtn);
-
-        const loginSyncBtn = document.createElement('button');
-        loginSyncBtn.id = 'demo-btn-login-sync';
-        loginSyncBtn.type = 'button';
-        loginSyncBtn.onclick = function() {
-            if (typeof openAuthModal === 'function') openAuthModal();
-        };
-        loginSyncBtn.style.cssText = 'width:100%; margin-bottom:24px; padding:12px; background:linear-gradient(135deg, #0284c7, #0077b6); color:white; border:none; border-radius:14px; font-weight:800; font-size:0.8rem; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:8px; box-shadow:0 3px 10px rgba(2,132,199,0.25);';
-        loginSyncBtn.innerHTML = '<i class="fa-solid fa-paw"></i> Iniciar Sesión / Sincronizar en la Web';
-        tabProfile.appendChild(loginSyncBtn);
-    }
-}
-
-// Escuchar cambios de sesión externos (desde modal web o mi mascota)
-window.addEventListener('cudi:sessionChanged', (e) => {
-    if (e.detail && e.detail.name) {
-        loadSavedProfile();
-    } else {
-        // Sesión cerrada
-        const main = document.getElementById('screen-main');
-        if (main) {
-            main.classList.remove('active');
-            main.style.display = 'none';
-        }
-        const statusBar = document.getElementById('app-status-bar');
-        if (statusBar) statusBar.style.display = 'none';
-
-        const onboarding = document.getElementById('screen-onboarding');
-        if (onboarding) {
-            onboarding.classList.add('active');
-            onboarding.style.display = 'block';
-        }
-        setupDemoOnboardingAutoFill();
-    }
-});
 
 // ==========================
 // TIENDA / STORE
@@ -2791,4 +1730,4 @@ window.addEventListener('storage', (e) => {
         updateCartBadge();
     }
 });
-
+
