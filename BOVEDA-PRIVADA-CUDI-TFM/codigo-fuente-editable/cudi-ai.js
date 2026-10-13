@@ -1469,6 +1469,298 @@ REGLAS: Responde siempre en español de forma empática, precisa y breve (máxim
         }
 
         // ---------------------------------------------------------------------
+        
+        // ---------------------------------------------------------------------
+        // SECCIÓN ESPECÍFICA: CATÁLOGO COMPLETO DE ALIMENTACIÓN, COMIDA Y NUTRICIÓN CUDI (15 PRODUCTOS)
+        // ---------------------------------------------------------------------
+        if (has('comida', 'comidas', 'alimento', 'alimentos', 'alimentacion', 'pienso', 'piensos', 'barf', 'dieta', 'dietas', 'nutricion', 'suplemento', 'suplementos', 'que alimentos venden', 'que comida venden', 'que productos de comida', 'catalogo de comida')) {
+            return `
+                <div class="ai-source-badge"><i class="fa-solid fa-bowl-food"></i> Catálogo Oficial CUDI &bull; Nutrición &amp; Alimentación Animal</div><br>
+                En <strong>CUDI</strong> disponemos de una línea completa de <strong>15 productos de nutrición biológica, dietas BARF, piensos hipoalergénicos clínicos y suplementos funcionales</strong> diseñados según la biometría y telemetría de tu mascota (${p.name}):
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:14px; padding:12px; margin:10px 0; max-height:360px; overflow-y:auto;">
+
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <img src="cudi-nutricion-organica-hero.jpg" alt="EcoPet Organic - Dieta BARF Biológica" style="width:52px; height:52px; border-radius:8px; object-fit:cover; flex-shrink:0; border:1px solid #e2e8f0;">
+                        <div style="flex:1; min-width:0;">
+                            <div style="font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px;">EcoPet Organic - Dieta BARF Biológica</div>
+                            <div style="font-size:0.75rem; color:#64748b; line-height:1.4; margin-bottom:4px;">Menús crudos biológicamente apropiados formulados con carne de pasto, vísceras nobles, verdura ecológica y ace...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">45.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-ecopet-organic-barf-integral.html', 'EcoPet Organic - Dieta BARF Biológica', 45.0, 'cudi-nutricion-organica-hero.jpg')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-ecopet-organic-barf-integral.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <img src="https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=1200&q=85" alt="PureBites Clinic - Pienso Hipoalergénico Monoproteico" style="width:52px; height:52px; border-radius:8px; object-fit:cover; flex-shrink:0; border:1px solid #e2e8f0;">
+                        <div style="flex:1; min-width:0;">
+                            <div style="font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px;">PureBites Clinic - Pienso Hipoalergénico Monoproteico</div>
+                            <div style="font-size:0.75rem; color:#64748b; line-height:1.4; margin-bottom:4px;">Receta clínica de caballo y boniato cocinada a baja temperatura para animales con intolerancias alimentarias y...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">38.50 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-purebites-clinic-pienso-hipoalergenico.html', 'PureBites Clinic - Pienso Hipoalergénico Monoproteico', 38.5, 'https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-purebites-clinic-pienso-hipoalergenico.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <img src="https://images.unsplash.com/photo-1568640347023-a616a30bc3bd?auto=format&fit=crop&w=1200&q=85" alt="Vitality Mix - Complejo Articular & Inmunológico Dual" style="width:52px; height:52px; border-radius:8px; object-fit:cover; flex-shrink:0; border:1px solid #e2e8f0;">
+                        <div style="flex:1; min-width:0;">
+                            <div style="font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px;">Vitality Mix - Complejo Articular & Inmunológico Dual</div>
+                            <div style="font-size:0.75rem; color:#64748b; line-height:1.4; margin-bottom:4px;">Polvo nutracéutico con Glucosamina pura, Condroitina marina, MSM, cúrcuma biodisponible y colágeno hidrolizado...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">24.99 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-vitality-mix-suplemento-inmune.html', 'Vitality Mix - Complejo Articular & Inmunológico Dual', 24.99, 'https://images.unsplash.com/photo-1568640347023-a616a30bc3bd?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-vitality-mix-suplemento-inmune.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <img src="https://images.unsplash.com/photo-1585846416120-3a7354ed7d39?auto=format&fit=crop&w=1200&q=85" alt="OceanPure - Aceite de Salmón Salvaje & Krill Antártico" style="width:52px; height:52px; border-radius:8px; object-fit:cover; flex-shrink:0; border:1px solid #e2e8f0;">
+                        <div style="flex:1; min-width:0;">
+                            <div style="font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px;">OceanPure - Aceite de Salmón Salvaje & Krill Antártico</div>
+                            <div style="font-size:0.75rem; color:#64748b; line-height:1.4; margin-bottom:4px;">Aceite puro de prensado en frío con concentrado de fosfolípidos EPA y DHA para salud cardiovascular, cerebral ...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">21.50 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-ocean-pure-omega3-salmon-salvaje.html', 'OceanPure - Aceite de Salmón Salvaje & Krill Antártico', 21.5, 'https://images.unsplash.com/photo-1585846416120-3a7354ed7d39?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-ocean-pure-omega3-salmon-salvaje.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <img src="https://images.unsplash.com/photo-1563460716037-460b3dd14ba9?auto=format&fit=crop&w=1200&q=85" alt="DigestShield - Probióticos Multicepa con Prebióticos FOS" style="width:52px; height:52px; border-radius:8px; object-fit:cover; flex-shrink:0; border:1px solid #e2e8f0;">
+                        <div style="flex:1; min-width:0;">
+                            <div style="font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px;">DigestShield - Probióticos Multicepa con Prebióticos FOS</div>
+                            <div style="font-size:0.75rem; color:#64748b; line-height:1.4; margin-bottom:4px;">Sobres monodosis con 10.000 millones de UFC viables de Enterococcus faecium y Lactobacillus rhamnosus para fre...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">26.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-cudi-probioticos-digest-shield.html', 'DigestShield - Probióticos Multicepa con Prebióticos FOS', 26.0, 'https://images.unsplash.com/photo-1563460716037-460b3dd14ba9?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-cudi-probioticos-digest-shield.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <img src="https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=1200&q=85" alt="Dentapaws Sticks - Cuidado Dental con Espirulina & Ascophyllum" style="width:52px; height:52px; border-radius:8px; object-fit:cover; flex-shrink:0; border:1px solid #e2e8f0;">
+                        <div style="flex:1; min-width:0;">
+                            <div style="font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px;">Dentapaws Sticks - Cuidado Dental con Espirulina & Ascophyllum</div>
+                            <div style="font-size:0.75rem; color:#64748b; line-height:1.4; margin-bottom:4px;">Snacks dentales masticables en forma de cruz que limpian mecánicamente la placa bacteriana y combaten el mal a...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">16.50 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-cudi-dental-sticks-espirena.html', 'Dentapaws Sticks - Cuidado Dental con Espirulina & Ascophyllum', 16.5, 'https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-cudi-dental-sticks-espirena.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <img src="https://images.unsplash.com/photo-1583512603805-3cc6b41f3edb?auto=format&fit=crop&w=1200&q=85" alt="CalmPaws Chews - Bocaditos Antiestrés con L-Teanina & Ashwagandha" style="width:52px; height:52px; border-radius:8px; object-fit:cover; flex-shrink:0; border:1px solid #e2e8f0;">
+                        <div style="flex:1; min-width:0;">
+                            <div style="font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px;">CalmPaws Chews - Bocaditos Antiestrés con L-Teanina & Ashwagandha</div>
+                            <div style="font-size:0.75rem; color:#64748b; line-height:1.4; margin-bottom:4px;">Bocaditos masticables semihúmedos diseñados para tormentas, fuegos artificiales, visitas al veterinario y ansi...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">22.90 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-calming-chews-valeriana-l-teanina.html', 'CalmPaws Chews - Bocaditos Antiestrés con L-Teanina & Ashwagandha', 22.9, 'https://images.unsplash.com/photo-1583512603805-3cc6b41f3edb?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-calming-chews-valeriana-l-teanina.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1200&q=85" alt="BioBroth - Caldo de Huesos Orgánico de Cocción Lenta (24h)" style="width:52px; height:52px; border-radius:8px; object-fit:cover; flex-shrink:0; border:1px solid #e2e8f0;">
+                        <div style="flex:1; min-width:0;">
+                            <div style="font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px;">BioBroth - Caldo de Huesos Orgánico de Cocción Lenta (24h)</div>
+                            <div style="font-size:0.75rem; color:#64748b; line-height:1.4; margin-bottom:4px;">Elixir reconstituyente hervido a fuego lento durante 24 horas repleto de colágeno nativo, glucosamina y aminoá...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">14.50 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-caldo-huesos-organico-cudi-bonebroth.html', 'BioBroth - Caldo de Huesos Orgánico de Cocción Lenta (24h)', 14.5, 'https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-caldo-huesos-organico-cudi-bonebroth.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <img src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=1200&q=85" alt="NephroProtect - Quelante de Fósforo & Soporte Renal Avanzado" style="width:52px; height:52px; border-radius:8px; object-fit:cover; flex-shrink:0; border:1px solid #e2e8f0;">
+                        <div style="flex:1; min-width:0;">
+                            <div style="font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px;">NephroProtect - Quelante de Fósforo & Soporte Renal Avanzado</div>
+                            <div style="font-size:0.75rem; color:#64748b; line-height:1.4; margin-bottom:4px;">Polvo insípido quelante intestinal de fósforo enriquecido con quitosano y astrágalo para ralentizar la progres...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">29.50 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-suplemento-renal-cudi-nephroprotect.html', 'NephroProtect - Quelante de Fósforo & Soporte Renal Avanzado', 29.5, 'https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-suplemento-renal-cudi-nephroprotect.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <img src="https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&w=1200&q=85" alt="TrainBites - Premios Liofilizados 100% Corazón de Ternera" style="width:52px; height:52px; border-radius:8px; object-fit:cover; flex-shrink:0; border:1px solid #e2e8f0;">
+                        <div style="flex:1; min-width:0;">
+                            <div style="font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px;">TrainBites - Premios Liofilizados 100% Corazón de Ternera</div>
+                            <div style="font-size:0.75rem; color:#64748b; line-height:1.4; margin-bottom:4px;">Snacks liofilizados al vacío en frío que conservan todo el aroma y sabor natural para sesiones de educación y ...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">12.90 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-premios-entrenamiento-monoproteicos-cudi.html', 'TrainBites - Premios Liofilizados 100% Corazón de Ternera', 12.9, 'https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-premios-entrenamiento-monoproteicos-cudi.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=85" alt="LactoCudi - Leche de Inicio con Calostro & DHA para Cachorros" style="width:52px; height:52px; border-radius:8px; object-fit:cover; flex-shrink:0; border:1px solid #e2e8f0;">
+                        <div style="flex:1; min-width:0;">
+                            <div style="font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px;">LactoCudi - Leche de Inicio con Calostro & DHA para Cachorros</div>
+                            <div style="font-size:0.75rem; color:#64748b; line-height:1.4; margin-bottom:4px;">Sustituto lácteo en polvo homogeneizado con calostro bovino rico en inmunoglobulinas IgG y perfil de ácidos gr...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">28.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-leche-maternizada-lactocudi-cchorros.html', 'LactoCudi - Leche de Inicio con Calostro & DHA para Cachorros', 28.0, 'https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-leche-maternizada-lactocudi-cchorros.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <img src="https://images.unsplash.com/photo-1535930891776-0c2dfb7fda1a?auto=format&fit=crop&w=1200&q=85" alt="HepatoCare - Cardo Mariano (Silimarina 80%) & SAMe" style="width:52px; height:52px; border-radius:8px; object-fit:cover; flex-shrink:0; border:1px solid #e2e8f0;">
+                        <div style="flex:1; min-width:0;">
+                            <div style="font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px;">HepatoCare - Cardo Mariano (Silimarina 80%) & SAMe</div>
+                            <div style="font-size:0.75rem; color:#64748b; line-height:1.4; margin-bottom:4px;">Cápsulas gastroprotegidas con S-Adenosilmetionina (SAMe) y extracto fitosomal de Silimarina para recuperar tra...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">31.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-purificador-hepatico-cudi-hepatho-care.html', 'HepatoCare - Cardo Mariano (Silimarina 80%) & SAMe', 31.0, 'https://images.unsplash.com/photo-1535930891776-0c2dfb7fda1a?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-purificador-hepatico-cudi-hepatho-care.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <img src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=1200&q=85" alt="CocoPet - Aceite de Coco Virgen Extra Ecológico Prensado Frío" style="width:52px; height:52px; border-radius:8px; object-fit:cover; flex-shrink:0; border:1px solid #e2e8f0;">
+                        <div style="flex:1; min-width:0;">
+                            <div style="font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px;">CocoPet - Aceite de Coco Virgen Extra Ecológico Prensado Frío</div>
+                            <div style="font-size:0.75rem; color:#64748b; line-height:1.4; margin-bottom:4px;">Aceite de coco 100% puro rico en ácido láurico y MCT. Puede ingerirse para soporte metabólico o aplicarse tópi...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">13.90 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-aceite-coco-organico-cudi-cocopet.html', 'CocoPet - Aceite de Coco Virgen Extra Ecológico Prensado Frío', 13.9, 'https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-aceite-coco-organico-cudi-cocopet.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <img src="https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13?auto=format&fit=crop&w=1200&q=85" alt="FiberGlow - Cáscara de Psyllium Ecológica & Prebióticos" style="width:52px; height:52px; border-radius:8px; object-fit:cover; flex-shrink:0; border:1px solid #e2e8f0;">
+                        <div style="flex:1; min-width:0;">
+                            <div style="font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px;">FiberGlow - Cáscara de Psyllium Ecológica & Prebióticos</div>
+                            <div style="font-size:0.75rem; color:#64748b; line-height:1.4; margin-bottom:4px;">Fibra soluble formadora de mucílago que regula tanto el estreñimiento como las heces blandas, favoreciendo el ...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">15.50 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-fibra-psyllium-cudi-fiber-glow.html', 'FiberGlow - Cáscara de Psyllium Ecológica & Prebióticos', 15.5, 'https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-fibra-psyllium-cudi-fiber-glow.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <img src="https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?auto=format&fit=crop&w=1200&q=85" alt="SuperBerry Bites - Snack Antioxidante de Arándanos Rojos & Pavo" style="width:52px; height:52px; border-radius:8px; object-fit:cover; flex-shrink:0; border:1px solid #e2e8f0;">
+                        <div style="flex:1; min-width:0;">
+                            <div style="font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px;">SuperBerry Bites - Snack Antioxidante de Arándanos Rojos & Pavo</div>
+                            <div style="font-size:0.75rem; color:#64748b; line-height:1.4; margin-bottom:4px;">Galletitas semihúmedas con alto contenido de proantocianidinas (PACs) de arándano rojo que evitan la adherenci...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">11.50 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-snack-antioxidante-arandanos-cudi-superberry.html', 'SuperBerry Bites - Snack Antioxidante de Arándanos Rojos & Pavo', 11.5, 'https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-snack-antioxidante-arandanos-cudi-superberry.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ai-actions-wrap">
+                    <button class="ai-btn-action primary" onclick="window.location.href='nutricion-personalizada-perros-gatos.html'">
+                        <i class="fa-solid fa-store"></i> Ver Tienda de Nutrición Completa
+                    </button>
+                    <button class="ai-btn-action secondary" onclick="window.location.href='index.html#ciencia'">
+                        <i class="fa-solid fa-microscope"></i> Ver Ensayos Clínicos de Dieta
+                    </button>
+                </div>
+            `;
+        }
+
         // A10. PRODUCTOS Y SERVICIOS ESPECÍFICOS DEL MARKETPLACE (15 FICHAS + CATÁLOGO)
         // ---------------------------------------------------------------------
         if (has('safehome', 'multipet', 'safehome multipet')) {
