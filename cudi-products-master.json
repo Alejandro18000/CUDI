@@ -16,7 +16,7 @@
     "badge": "Buque Insignia",
     "badgeIcon": "fa-satellite-dish",
     "badgeColor": "#0284c7",
-    "img": "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=800&q=80",
+    "img": "https://images.dog.ceo/breeds/brabancon/n02112706_1394.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=800&q=80",
       "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=800&q=80",
@@ -49,7 +49,8 @@
     "url": "producto-collar-cudi-gps-ultra.html",
     "priceFormatted": "149.00 €",
     "target_species": "perro",
-    "gallery_img": "cudi-smart-collar-geolocalizacion-gps.png"
+    "gallery_img": "https://images.dog.ceo/breeds/pyrenees/n02111500_7937.jpg",
+    "gallery_img_2": "https://images.dog.ceo/breeds/retriever-golden/joey_img_20210906_091617_3.jpg"
   },
   {
     "id": "SKU-COLLAR-GPS-02",
@@ -68,7 +69,7 @@
     "badge": "Especial Gatos",
     "badgeIcon": "fa-cat",
     "badgeColor": "#8b5cf6",
-    "img": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=800&q=80",
+    "img": "https://cdn2.thecatapi.com/images/cs7.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=800&q=80",
       "https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=800&q=80",
@@ -101,7 +102,8 @@
     "url": "producto-collar-cudi-feline-nano.html",
     "priceFormatted": "129.00 €",
     "target_species": "gato",
-    "gallery_img": "gato-explorando-seguro-collar-gps.png"
+    "gallery_img": "https://cdn2.thecatapi.com/images/MTkwMjQ1OA.jpg",
+    "gallery_img_2": "https://cdn2.thecatapi.com/images/c5j.jpg"
   },
   {
     "id": "SKU-COLLAR-GPS-03",
@@ -120,7 +122,7 @@
     "badge": "Accesorio Clave",
     "badgeIcon": "fa-bolt",
     "badgeColor": "#f59e0b",
-    "img": "cudi-smart-collar-geolocalizacion-gps.png",
+    "img": "https://images.dog.ceo/breeds/shihtzu/oscar.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80",
       "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=800&q=80"
@@ -145,7 +147,8 @@
     "url": "producto-cudi-base-dock-pro.html",
     "priceFormatted": "39.00 €",
     "target_species": "perro",
-    "gallery_img": "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=800&q=80"
+    "gallery_img": "https://images.dog.ceo/breeds/spaniel-blenheim/n02086646_672.jpg",
+    "gallery_img_2": "https://images.dog.ceo/breeds/terrier-norwich/n02094258_1106.jpg"
   },
   {
     "id": "SKU-COLLAR-GPS-04",
@@ -164,7 +167,7 @@
     "badge": "Aventura Segura",
     "badgeIcon": "fa-mountain",
     "badgeColor": "#059669",
-    "img": "https://images.unsplash.com/photo-1535294435445-d7249524ef2e?auto=format&fit=crop&w=800&q=80",
+    "img": "https://images.dog.ceo/breeds/wolfhound-irish/n02090721_847.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1535294435445-d7249524ef2e?auto=format&fit=crop&w=800&q=80",
       "https://images.unsplash.com/photo-1507146426996-ef05306b995a?auto=format&fit=crop&w=800&q=80"
@@ -189,7 +192,8 @@
     "url": "producto-arnes-tactico-cudi-explorer.html",
     "priceFormatted": "64.00 €",
     "target_species": "perro",
-    "gallery_img": "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=800&q=80"
+    "gallery_img": "https://images.dog.ceo/breeds/collie-border/n02106166_1822.jpg",
+    "gallery_img_2": "https://images.dog.ceo/breeds/keeshond/n02112350_9680.jpg"
   },
   {
     "id": "SKU-COLLAR-GPS-05",
@@ -208,7 +212,7 @@
     "badge": "Delimitación Hogar",
     "badgeIcon": "fa-bullseye",
     "badgeColor": "#6366f1",
-    "img": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=800&q=80",
+    "img": "https://images.dog.ceo/breeds/shiba/shiba_20.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1558865869-c93f6f8482af?auto=format&fit=crop&w=800&q=80"
     ],
@@ -231,8 +235,9 @@
     ],
     "url": "producto-cudi-beacons-multizone.html",
     "priceFormatted": "49.00 €",
-    "target_species": "gato",
-    "gallery_img": "gato-explorando-seguro-collar-gps.png"
+    "target_species": "perro",
+    "gallery_img": "https://images.dog.ceo/breeds/terrier-toy/n02087046_5838.jpg",
+    "gallery_img_2": "https://images.dog.ceo/breeds/chow/n02112137_16815.jpg"
   },
   {
     "id": "SKU-COLLAR-GPS-06",
@@ -251,7 +256,7 @@
     "badge": "Diagnóstico",
     "badgeIcon": "fa-temperature-high",
     "badgeColor": "#ef4444",
-    "img": "https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&w=800&q=80",
+    "img": "https://cdn2.thecatapi.com/images/cao.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=800&q=80"
     ],
@@ -274,8 +279,9 @@
     ],
     "url": "producto-cudi-termometro-biometrico-pata.html",
     "priceFormatted": "34.00 €",
-    "target_species": "perro",
-    "gallery_img": "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=800&q=80"
+    "target_species": "gato",
+    "gallery_img": "https://cdn2.thecatapi.com/images/b58.jpg",
+    "gallery_img_2": "https://cdn2.thecatapi.com/images/70c.jpg"
   },
   {
     "id": "SKU-COLLAR-GPS-07",
@@ -294,7 +300,7 @@
     "badge": "Alimentación Conectada",
     "badgeIcon": "fa-bowl-food",
     "badgeColor": "#10b981",
-    "img": "https://images.unsplash.com/photo-1561948955-570b270e7c36?auto=format&fit=crop&w=800&q=80",
+    "img": "https://images.dog.ceo/breeds/hound-walker/n02089867_454.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=800&q=80"
     ],
@@ -317,8 +323,9 @@
     ],
     "url": "producto-dispensador-inteligente-cudi-feeder.html",
     "priceFormatted": "119.00 €",
-    "target_species": "gato",
-    "gallery_img": "https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=800&q=80"
+    "target_species": "perro",
+    "gallery_img": "https://images.dog.ceo/breeds/boxer/n02108089_1775.jpg",
+    "gallery_img_2": "https://images.dog.ceo/breeds/keeshond/n02112350_9071.jpg"
   },
   {
     "id": "SKU-COLLAR-GPS-08",
@@ -337,7 +344,7 @@
     "badge": "Salud Renal",
     "badgeIcon": "fa-droplet",
     "badgeColor": "#06b6d4",
-    "img": "https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=800&q=80",
+    "img": "https://cdn2.thecatapi.com/images/cau.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=800&q=80"
     ],
@@ -361,7 +368,8 @@
     "url": "producto-fuente-agua-cudi-purewater.html",
     "priceFormatted": "59.00 €",
     "target_species": "gato",
-    "gallery_img": "mejora-descanso-salud-felina.png"
+    "gallery_img": "https://cdn2.thecatapi.com/images/hxlto6Z4I.jpg",
+    "gallery_img_2": "https://cdn2.thecatapi.com/images/aqu.jpg"
   },
   {
     "id": "SKU-COLLAR-GPS-09",
@@ -380,7 +388,7 @@
     "badge": "Educación Canina",
     "badgeIcon": "fa-dog",
     "badgeColor": "#f97316",
-    "img": "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=800&q=80",
+    "img": "https://images.dog.ceo/breeds/retriever-golden/n02099601_1768.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=800&q=80"
     ],
@@ -404,7 +412,8 @@
     "url": "producto-correa-inteligente-cudi-lead.html",
     "priceFormatted": "38.00 €",
     "target_species": "perro",
-    "gallery_img": "perro-urbano-barcelona-paseo.png"
+    "gallery_img": "https://images.dog.ceo/breeds/collie/n02106030_873.jpg",
+    "gallery_img_2": "https://images.dog.ceo/breeds/chihuahua/n02085620_949.jpg"
   },
   {
     "id": "SKU-COLLAR-GPS-10",
@@ -423,7 +432,7 @@
     "badge": "Descanso & Artrosis",
     "badgeIcon": "fa-bed",
     "badgeColor": "#3b82f6",
-    "img": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=800&q=80",
+    "img": "https://cdn2.thecatapi.com/images/ch5.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1541599540903-216a46ca1dc0?auto=format&fit=crop&w=800&q=80"
     ],
@@ -446,8 +455,9 @@
     ],
     "url": "producto-cudi-cama-ortopedica-biometrica.html",
     "priceFormatted": "139.00 €",
-    "target_species": "perro",
-    "gallery_img": "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=800&q=80"
+    "target_species": "gato",
+    "gallery_img": "https://cdn2.thecatapi.com/images/a3i.jpg",
+    "gallery_img_2": "https://cdn2.thecatapi.com/images/737.jpg"
   },
   {
     "id": "SKU-COLLAR-GPS-11",
@@ -466,7 +476,7 @@
     "badge": "Visibilidad 360°",
     "badgeIcon": "fa-lightbulb",
     "badgeColor": "#eab308",
-    "img": "https://images.unsplash.com/photo-1548802673-380ab8ebc7b7?auto=format&fit=crop&w=800&q=80",
+    "img": "https://cdn2.thecatapi.com/images/9ib.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=800&q=80"
     ],
@@ -490,7 +500,8 @@
     "url": "producto-cudi-luz-led-nocturna-smart.html",
     "priceFormatted": "19.50 €",
     "target_species": "gato",
-    "gallery_img": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=800&q=80"
+    "gallery_img": "https://cdn2.thecatapi.com/images/efa.gif",
+    "gallery_img_2": "https://cdn2.thecatapi.com/images/5cq.jpg"
   },
   {
     "id": "SKU-COLLAR-GPS-12",
@@ -509,7 +520,7 @@
     "badge": "Seguridad en Coche",
     "badgeIcon": "fa-car",
     "badgeColor": "#64748b",
-    "img": "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=800&q=80",
+    "img": "https://images.dog.ceo/breeds/retriever-curly/n02099429_2149.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1507146426996-ef05306b995a?auto=format&fit=crop&w=800&q=80"
     ],
@@ -532,7 +543,8 @@
     "url": "producto-cudi-cinturon-seguridad-coche.html",
     "priceFormatted": "29.90 €",
     "target_species": "perro",
-    "gallery_img": "https://images.unsplash.com/photo-1560807707-8cc77767d783?auto=format&fit=crop&w=800&q=80"
+    "gallery_img": "https://images.dog.ceo/breeds/wolfhound-irish/n02090721_6232.jpg",
+    "gallery_img_2": "https://images.dog.ceo/breeds/retriever-chesapeake/n02099849_544.jpg"
   },
   {
     "id": "SKU-COLLAR-GPS-13",
@@ -551,7 +563,7 @@
     "badge": "Protección Almohadillas",
     "badgeIcon": "fa-shield",
     "badgeColor": "#14b8a6",
-    "img": "https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=800&q=80",
+    "img": "https://images.dog.ceo/breeds/rottweiler/n02106550_10375.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1535294435445-d7249524ef2e?auto=format&fit=crop&w=800&q=80"
     ],
@@ -573,8 +585,9 @@
     ],
     "url": "producto-cudi-kit-cuidado-almohadillas.html",
     "priceFormatted": "24.50 €",
-    "target_species": "gato",
-    "gallery_img": "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=800&q=80"
+    "target_species": "perro",
+    "gallery_img": "https://images.dog.ceo/breeds/poodle-miniature/n02113712_291.jpg",
+    "gallery_img_2": "https://images.dog.ceo/breeds/hound-basset/n02088238_10063.jpg"
   },
   {
     "id": "SKU-COLLAR-GPS-14",
@@ -593,7 +606,7 @@
     "badge": "ID Inteligente",
     "badgeIcon": "fa-id-card",
     "badgeColor": "#0ea5e9",
-    "img": "https://images.unsplash.com/photo-1560807707-8cc77767d783?auto=format&fit=crop&w=800&q=80",
+    "img": "https://cdn2.thecatapi.com/images/bgn.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=800&q=80"
     ],
@@ -616,8 +629,9 @@
     ],
     "url": "producto-cudi-chapa-id-nfc-qr.html",
     "priceFormatted": "14.90 €",
-    "target_species": "perro",
-    "gallery_img": "https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?auto=format&fit=crop&w=800&q=80"
+    "target_species": "gato",
+    "gallery_img": "https://cdn2.thecatapi.com/images/OUfeISEoi.jpg",
+    "gallery_img_2": "https://cdn2.thecatapi.com/images/MjAwNTQ2OA.jpg"
   },
   {
     "id": "SKU-COLLAR-GPS-15",
@@ -636,7 +650,7 @@
     "badge": "Offline 100%",
     "badgeIcon": "fa-tower-broadcast",
     "badgeColor": "#1e293b",
-    "img": "https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?auto=format&fit=crop&w=800&q=80",
+    "img": "https://images.dog.ceo/breeds/pug/n02110958_15130.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80"
     ],
@@ -660,7 +674,8 @@
     "url": "producto-cudi-antena-repeater-rural.html",
     "priceFormatted": "89.00 €",
     "target_species": "perro",
-    "gallery_img": "https://images.unsplash.com/photo-1535294435445-d7249524ef2e?auto=format&fit=crop&w=800&q=80"
+    "gallery_img": "https://images.dog.ceo/breeds/labrador/n02099712_1941.jpg",
+    "gallery_img_2": "https://images.dog.ceo/breeds/labrador/n02099712_4160.jpg"
   },
   {
     "id": "SKU-NUTRI-01",
@@ -679,7 +694,7 @@
     "badge": "100% Orgánico",
     "badgeIcon": "fa-leaf",
     "badgeColor": "#15803d",
-    "img": "https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=800&q=80",
+    "img": "https://cdn2.thecatapi.com/images/MjAzMTMwNw.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=800&q=80",
       "https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=800&q=80"
@@ -709,8 +724,9 @@
     ],
     "url": "producto-ecopet-organic-barf-integral.html",
     "priceFormatted": "45.00 €",
-    "target_species": "perro",
-    "gallery_img": "marketplace-alimentos-organicos-perros.png"
+    "target_species": "gato",
+    "gallery_img": "https://cdn2.thecatapi.com/images/c4o.gif",
+    "gallery_img_2": "https://cdn2.thecatapi.com/images/4ua.jpg"
   },
   {
     "id": "SKU-NUTRI-02",
@@ -729,7 +745,7 @@
     "badge": "Prescripción Vet",
     "badgeIcon": "fa-stethoscope",
     "badgeColor": "#0284c7",
-    "img": "https://images.unsplash.com/photo-1571566882372-1598d88abd90?auto=format&fit=crop&w=800&q=80",
+    "img": "https://images.dog.ceo/breeds/labrador/n02099712_854.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=800&q=80",
       "https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=800&q=80"
@@ -759,8 +775,9 @@
     ],
     "url": "producto-purebites-clinic-pienso-hipoalergenico.html",
     "priceFormatted": "38.50 €",
-    "target_species": "gato",
-    "gallery_img": "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=800&q=80"
+    "target_species": "perro",
+    "gallery_img": "https://images.dog.ceo/breeds/doberman/n02107142_10647.jpg",
+    "gallery_img_2": "https://images.dog.ceo/breeds/spaniel-irish/n02102973_3750.jpg"
   },
   {
     "id": "SKU-NUTRI-03",
@@ -779,7 +796,7 @@
     "badge": "Condroprotector Top",
     "badgeIcon": "fa-bone",
     "badgeColor": "#f59e0b",
-    "img": "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=800&q=80",
+    "img": "https://cdn2.thecatapi.com/images/1tt.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=800&q=80"
     ],
@@ -808,8 +825,9 @@
     ],
     "url": "producto-vitality-mix-suplemento-inmune.html",
     "priceFormatted": "24.99 €",
-    "target_species": "perro",
-    "gallery_img": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80"
+    "target_species": "gato",
+    "gallery_img": "https://cdn2.thecatapi.com/images/c7u.jpg",
+    "gallery_img_2": "https://cdn2.thecatapi.com/images/2UAyYkzVK.jpg"
   },
   {
     "id": "SKU-NUTRI-04",
@@ -828,7 +846,7 @@
     "badge": "Brillo & Corazón",
     "badgeIcon": "fa-fish",
     "badgeColor": "#0284c7",
-    "img": "https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13?auto=format&fit=crop&w=800&q=80",
+    "img": "https://images.dog.ceo/breeds/puggle/img_174753.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80"
     ],
@@ -851,8 +869,9 @@
     ],
     "url": "producto-ocean-pure-omega3-salmon-salvaje.html",
     "priceFormatted": "21.50 €",
-    "target_species": "gato",
-    "gallery_img": "https://images.unsplash.com/photo-1548247416-ec66f4900b2e?auto=format&fit=crop&w=800&q=80"
+    "target_species": "perro",
+    "gallery_img": "https://images.dog.ceo/breeds/papillon/n02086910_26.jpg",
+    "gallery_img_2": "https://images.dog.ceo/breeds/ridgeback-rhodesian/n02087394_330.jpg"
   },
   {
     "id": "SKU-NUTRI-05",
@@ -871,7 +890,7 @@
     "badge": "Salud Intestinal",
     "badgeIcon": "fa-shield-virus",
     "badgeColor": "#10b981",
-    "img": "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80",
+    "img": "https://cdn2.thecatapi.com/images/3h0.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=800&q=80"
     ],
@@ -894,8 +913,9 @@
     ],
     "url": "producto-cudi-probioticos-digest-shield.html",
     "priceFormatted": "26.00 €",
-    "target_species": "perro,gato",
-    "gallery_img": "bienestar-integral-perros-gatos.png"
+    "target_species": "gato",
+    "gallery_img": "https://cdn2.thecatapi.com/images/GAMgbdB4H.jpg",
+    "gallery_img_2": "https://cdn2.thecatapi.com/images/d1i.jpg"
   },
   {
     "id": "SKU-NUTRI-06",
@@ -914,7 +934,7 @@
     "badge": "Antisarro Clínico",
     "badgeIcon": "fa-tooth",
     "badgeColor": "#06b6d4",
-    "img": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80",
+    "img": "https://images.dog.ceo/breeds/spaniel-cocker/n02102318_7190.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=800&q=80"
     ],
@@ -938,7 +958,8 @@
     "url": "producto-cudi-dental-sticks-espirena.html",
     "priceFormatted": "16.50 €",
     "target_species": "perro",
-    "gallery_img": "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=800&q=80"
+    "gallery_img": "https://images.dog.ceo/breeds/pomeranian/n02112018_888.jpg",
+    "gallery_img_2": "https://images.dog.ceo/breeds/setter-gordon/n02101006_3026.jpg"
   },
   {
     "id": "SKU-NUTRI-07",
@@ -957,7 +978,7 @@
     "badge": "Antiestrés Suave",
     "badgeIcon": "fa-spa",
     "badgeColor": "#a855f7",
-    "img": "https://images.unsplash.com/photo-1519052537078-e6302a4968d4?auto=format&fit=crop&w=800&q=80",
+    "img": "https://cdn2.thecatapi.com/images/5d4.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=800&q=80"
     ],
@@ -981,7 +1002,8 @@
     "url": "producto-calming-chews-valeriana-l-teanina.html",
     "priceFormatted": "22.90 €",
     "target_species": "gato",
-    "gallery_img": "mejora-descanso-salud-felina.png"
+    "gallery_img": "https://cdn2.thecatapi.com/images/a1s.jpg",
+    "gallery_img_2": "https://cdn2.thecatapi.com/images/ehh.jpg"
   },
   {
     "id": "SKU-NUTRI-08",
@@ -1000,7 +1022,7 @@
     "badge": "Colágeno Puro",
     "badgeIcon": "fa-mug-hot",
     "badgeColor": "#ea580c",
-    "img": "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=800&q=80",
+    "img": "https://images.dog.ceo/breeds/labrador/n02099712_7608.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=800&q=80"
     ],
@@ -1024,7 +1046,8 @@
     "url": "producto-caldo-huesos-organico-cudi-bonebroth.html",
     "priceFormatted": "14.50 €",
     "target_species": "perro",
-    "gallery_img": "https://images.unsplash.com/photo-1507146426996-ef05306b995a?auto=format&fit=crop&w=800&q=80"
+    "gallery_img": "https://images.dog.ceo/breeds/dalmatian/cooper1.jpg",
+    "gallery_img_2": "https://images.dog.ceo/breeds/beagle/n02088364_16695.jpg"
   },
   {
     "id": "SKU-NUTRI-09",
@@ -1043,7 +1066,7 @@
     "badge": "Salud Renal Felina",
     "badgeIcon": "fa-notes-medical",
     "badgeColor": "#3b82f6",
-    "img": "https://images.unsplash.com/photo-1511044568932-338cba0ad803?auto=format&fit=crop&w=800&q=80",
+    "img": "https://cdn2.thecatapi.com/images/32a.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=800&q=80"
     ],
@@ -1067,7 +1090,8 @@
     "url": "producto-suplemento-renal-cudi-nephroprotect.html",
     "priceFormatted": "29.50 €",
     "target_species": "gato",
-    "gallery_img": "https://images.unsplash.com/photo-1577023311546-cdc07a8454d9?auto=format&fit=crop&w=800&q=80"
+    "gallery_img": "https://cdn2.thecatapi.com/images/MTcxNTc1MA.jpg",
+    "gallery_img_2": "https://cdn2.thecatapi.com/images/i7.jpg"
   },
   {
     "id": "SKU-NUTRI-10",
@@ -1086,7 +1110,7 @@
     "badge": "Premio de Alto Valor",
     "badgeIcon": "fa-award",
     "badgeColor": "#f59e0b",
-    "img": "https://images.unsplash.com/photo-1507146426996-ef05306b995a?auto=format&fit=crop&w=800&q=80",
+    "img": "https://images.dog.ceo/breeds/samoyed/n02111889_4679.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=800&q=80"
     ],
@@ -1110,7 +1134,8 @@
     "url": "producto-premios-entrenamiento-monoproteicos-cudi.html",
     "priceFormatted": "12.90 €",
     "target_species": "perro",
-    "gallery_img": "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=800&q=80"
+    "gallery_img": "https://images.dog.ceo/breeds/poodle-standard/n02113799_5600.jpg",
+    "gallery_img_2": "https://images.dog.ceo/breeds/spaniel-cocker/n02102318_13800.jpg"
   },
   {
     "id": "SKU-NUTRI-11",
@@ -1129,7 +1154,7 @@
     "badge": "Cachorros & Gatitos",
     "badgeIcon": "fa-baby",
     "badgeColor": "#ec4899",
-    "img": "https://images.unsplash.com/photo-1529778873920-4da4926a72c2?auto=format&fit=crop&w=800&q=80",
+    "img": "https://cdn2.thecatapi.com/images/c9g.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=800&q=80"
     ],
@@ -1153,7 +1178,8 @@
     "url": "producto-leche-maternizada-lactocudi-cchorros.html",
     "priceFormatted": "28.00 €",
     "target_species": "gato",
-    "gallery_img": "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=800&q=80"
+    "gallery_img": "https://cdn2.thecatapi.com/images/A2Wrn8uNj.jpg",
+    "gallery_img_2": "https://cdn2.thecatapi.com/images/bnp.gif"
   },
   {
     "id": "SKU-NUTRI-12",
@@ -1172,7 +1198,7 @@
     "badge": "Detox Hepático",
     "badgeIcon": "fa-capsules",
     "badgeColor": "#10b981",
-    "img": "dietas-personalizadas-longevidad-mascotas.png",
+    "img": "https://images.dog.ceo/breeds/setter-gordon/n02101006_585.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=800&q=80"
     ],
@@ -1196,7 +1222,8 @@
     "url": "producto-purificador-hepatico-cudi-hepatho-care.html",
     "priceFormatted": "31.00 €",
     "target_species": "perro",
-    "gallery_img": "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=800&q=80"
+    "gallery_img": "https://images.dog.ceo/breeds/mix/xeshabelka_(39).jpg",
+    "gallery_img_2": "https://images.dog.ceo/breeds/otterhound/n02091635_390.jpg"
   },
   {
     "id": "SKU-NUTRI-13",
@@ -1215,7 +1242,7 @@
     "badge": "Uso Dual In/Out",
     "badgeIcon": "fa-spa",
     "badgeColor": "#f59e0b",
-    "img": "https://images.unsplash.com/photo-1577023311546-cdc07a8454d9?auto=format&fit=crop&w=800&q=80",
+    "img": "https://cdn2.thecatapi.com/images/acv.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80"
     ],
@@ -1239,7 +1266,8 @@
     "url": "producto-aceite-coco-organico-cudi-cocopet.html",
     "priceFormatted": "13.90 €",
     "target_species": "gato",
-    "gallery_img": "https://images.unsplash.com/photo-1533743983669-94fa5c4338ec?auto=format&fit=crop&w=800&q=80"
+    "gallery_img": "https://cdn2.thecatapi.com/images/3vu.jpg",
+    "gallery_img_2": "https://cdn2.thecatapi.com/images/-8roc4viS.jpg"
   },
   {
     "id": "SKU-NUTRI-14",
@@ -1258,7 +1286,7 @@
     "badge": "Vaciado Glándulas",
     "badgeIcon": "fa-circle-notch",
     "badgeColor": "#15803d",
-    "img": "https://images.unsplash.com/photo-1533743983669-94fa5c4338ec?auto=format&fit=crop&w=800&q=80",
+    "img": "https://images.dog.ceo/breeds/rottweiler/n02106550_4920.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=800&q=80"
     ],
@@ -1281,8 +1309,9 @@
     ],
     "url": "producto-fibra-psyllium-cudi-fiber-glow.html",
     "priceFormatted": "15.50 €",
-    "target_species": "gato",
-    "gallery_img": "https://images.unsplash.com/photo-1495360010541-f48722b34f7d?auto=format&fit=crop&w=800&q=80"
+    "target_species": "perro",
+    "gallery_img": "https://images.dog.ceo/breeds/chihuahua/n02085620_14413.jpg",
+    "gallery_img_2": "https://images.dog.ceo/breeds/doberman/n02107142_3412.jpg"
   },
   {
     "id": "SKU-NUTRI-15",
@@ -1301,7 +1330,7 @@
     "badge": "Tracto Urinario",
     "badgeIcon": "fa-shield-halved",
     "badgeColor": "#ef4444",
-    "img": "https://images.unsplash.com/photo-1495360010541-f48722b34f7d?auto=format&fit=crop&w=800&q=80",
+    "img": "https://cdn2.thecatapi.com/images/KLpZzAE_a.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=800&q=80"
     ],
@@ -1324,8 +1353,9 @@
     ],
     "url": "producto-snack-antioxidante-arandanos-cudi-superberry.html",
     "priceFormatted": "11.50 €",
-    "target_species": "perro,gato",
-    "gallery_img": "familia-multiespecie-paz-mental.png"
+    "target_species": "gato",
+    "gallery_img": "https://cdn2.thecatapi.com/images/cla.jpg",
+    "gallery_img_2": "https://cdn2.thecatapi.com/images/dq.jpg"
   },
   {
     "id": "SKU-CLINIC-01",
@@ -1344,7 +1374,7 @@
     "badge": "24/7 Urgencias",
     "badgeIcon": "fa-truck-medical",
     "badgeColor": "#ef4444",
-    "img": "https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=800&q=80",
+    "img": "https://images.dog.ceo/breeds/corgi-cardigan/n02113186_8414.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=800&q=80",
       "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=800&q=80"
@@ -1374,8 +1404,9 @@
     ],
     "url": "producto-vethome-urgencias-domicilio.html",
     "priceFormatted": "75.00 €",
-    "target_species": "gato",
-    "gallery_img": "servicios-telemedicina-veterinaria-domicilio.png"
+    "target_species": "perro",
+    "gallery_img": "https://images.dog.ceo/breeds/spaniel-irish/n02102973_944.jpg",
+    "gallery_img_2": "https://images.dog.ceo/breeds/pomeranian/n02112018_2786.jpg"
   },
   {
     "id": "SKU-CLINIC-02",
@@ -1394,7 +1425,7 @@
     "badge": "Respuesta < 3 min",
     "badgeIcon": "fa-video",
     "badgeColor": "#0284c7",
-    "img": "triaje-ia-veterinario-urgencias.png",
+    "img": "https://cdn2.thecatapi.com/images/94.gif",
     "gallery": [
       "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=800&q=80"
     ],
@@ -1417,8 +1448,9 @@
     ],
     "url": "producto-medipet-express-teleconsulta-ia.html",
     "priceFormatted": "35.00 €",
-    "target_species": "perro",
-    "gallery_img": "servicios-telemedicina-veterinaria-domicilio.png"
+    "target_species": "gato",
+    "gallery_img": "https://cdn2.thecatapi.com/images/aef.jpg",
+    "gallery_img_2": "https://cdn2.thecatapi.com/images/y0wAin0Ei.jpg"
   },
   {
     "id": "SKU-CLINIC-03",
@@ -1437,7 +1469,7 @@
     "badge": "Medicina Preventiva",
     "badgeIcon": "fa-hospital",
     "badgeColor": "#10b981",
-    "img": "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=800&q=80",
+    "img": "https://images.dog.ceo/breeds/poodle-standard/n02113799_3945.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=800&q=80"
     ],
@@ -1460,8 +1492,9 @@
     ],
     "url": "producto-hospital-clinico-dual-chequeo-anual.html",
     "priceFormatted": "60.00 €",
-    "target_species": "perro,gato",
-    "gallery_img": "clinica-veterinaria-red-socios.png"
+    "target_species": "perro",
+    "gallery_img": "https://images.dog.ceo/breeds/african-wild/n02116738_431.jpg",
+    "gallery_img_2": "https://images.dog.ceo/breeds/wolfhound-irish/n02090721_4092.jpg"
   },
   {
     "id": "SKU-CLINIC-04",
@@ -1480,7 +1513,7 @@
     "badge": "Documentación Oficial",
     "badgeIcon": "fa-passport",
     "badgeColor": "#6366f1",
-    "img": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=800&q=80",
+    "img": "https://cdn2.thecatapi.com/images/43o.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=800&q=80"
     ],
@@ -1504,7 +1537,8 @@
     "url": "producto-cudi-vacunacion-pasaporte-rabia.html",
     "priceFormatted": "42.00 €",
     "target_species": "gato",
-    "gallery_img": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=800&q=80"
+    "gallery_img": "https://cdn2.thecatapi.com/images/b38.jpg",
+    "gallery_img_2": "https://cdn2.thecatapi.com/images/76k.jpg"
   },
   {
     "id": "SKU-CLINIC-05",
@@ -1523,7 +1557,7 @@
     "badge": "Salud Gingival",
     "badgeIcon": "fa-teeth",
     "badgeColor": "#06b6d4",
-    "img": "https://images.unsplash.com/photo-1583512603805-3cc6b41f3edb?auto=format&fit=crop&w=800&q=80",
+    "img": "https://images.dog.ceo/breeds/retriever-golden/z6a_4525_200809.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=800&q=80"
     ],
@@ -1547,7 +1581,8 @@
     "url": "producto-limpieza-dental-ultrasonidos-cudi.html",
     "priceFormatted": "95.00 €",
     "target_species": "perro",
-    "gallery_img": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80"
+    "gallery_img": "https://images.dog.ceo/breeds/mountain-bernese/n02107683_6999.jpg",
+    "gallery_img_2": "https://images.dog.ceo/breeds/terrier-bedlington/n02093647_3414.jpg"
   },
   {
     "id": "SKU-CLINIC-06",
@@ -1566,7 +1601,7 @@
     "badge": "Cirugía Mínima Invasión",
     "badgeIcon": "fa-scissors",
     "badgeColor": "#8b5cf6",
-    "img": "https://images.unsplash.com/photo-1532386236358-a33d8a9434e3?auto=format&fit=crop&w=800&q=80",
+    "img": "https://cdn2.thecatapi.com/images/MTc5NjU2OA.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=800&q=80"
     ],
@@ -1590,7 +1625,8 @@
     "url": "producto-castracion-laparoscopica-avanzada.html",
     "priceFormatted": "180.00 €",
     "target_species": "gato",
-    "gallery_img": "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=800&q=80"
+    "gallery_img": "https://cdn2.thecatapi.com/images/178.jpg",
+    "gallery_img_2": "https://cdn2.thecatapi.com/images/MjEa4UzfB.jpg"
   },
   {
     "id": "SKU-CLINIC-07",
@@ -1609,7 +1645,7 @@
     "badge": "Genética Preventiva",
     "badgeIcon": "fa-dna",
     "badgeColor": "#ec4899",
-    "img": "https://images.unsplash.com/photo-1506755855567-92ff770e8d00?auto=format&fit=crop&w=800&q=80",
+    "img": "https://images.dog.ceo/breeds/terrier-toy/n02087046_5203.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80"
     ],
@@ -1632,8 +1668,9 @@
     ],
     "url": "producto-test-genetico-adn-longevidad-cudi.html",
     "priceFormatted": "89.00 €",
-    "target_species": "gato",
-    "gallery_img": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=800&q=80"
+    "target_species": "perro",
+    "gallery_img": "https://images.dog.ceo/breeds/rottweiler/n02106550_5222.jpg",
+    "gallery_img_2": "https://images.dog.ceo/breeds/borzoi/n02090622_8745.jpg"
   },
   {
     "id": "SKU-CLINIC-08",
@@ -1652,7 +1689,7 @@
     "badge": "Ecografía Doppler",
     "badgeIcon": "fa-wave-square",
     "badgeColor": "#0284c7",
-    "img": "https://images.unsplash.com/photo-1536590158209-e9d615d525e4?auto=format&fit=crop&w=800&q=80",
+    "img": "https://cdn2.thecatapi.com/images/4MEAQffKS.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=800&q=80"
     ],
@@ -1676,7 +1713,8 @@
     "url": "producto-ecografia-abdominal-alta-resolucion.html",
     "priceFormatted": "68.00 €",
     "target_species": "gato",
-    "gallery_img": "mejora-descanso-salud-felina.png"
+    "gallery_img": "https://cdn2.thecatapi.com/images/q7izjTTa4.jpg",
+    "gallery_img_2": "https://cdn2.thecatapi.com/images/YyxE3DfnS.jpg"
   },
   {
     "id": "SKU-CLINIC-09",
@@ -1695,7 +1733,7 @@
     "badge": "Recuperación Articular",
     "badgeIcon": "fa-water",
     "badgeColor": "#06b6d4",
-    "img": "https://images.unsplash.com/photo-1583511655826-05700d52f4d9?auto=format&fit=crop&w=800&q=80",
+    "img": "https://images.dog.ceo/breeds/spaniel-irish/n02102973_4913.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1535294435445-d7249524ef2e?auto=format&fit=crop&w=800&q=80"
     ],
@@ -1719,7 +1757,8 @@
     "url": "producto-fisioterapia-rehabilitacion-hidroterapia.html",
     "priceFormatted": "50.00 €",
     "target_species": "perro",
-    "gallery_img": "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=800&q=80"
+    "gallery_img": "https://images.dog.ceo/breeds/schnauzer-miniature/n02097047_5046.jpg",
+    "gallery_img_2": "https://images.dog.ceo/breeds/terrier-dandie/n02096437_294.jpg"
   },
   {
     "id": "SKU-CLINIC-10",
@@ -1738,7 +1777,7 @@
     "badge": "Psicología Animal",
     "badgeIcon": "fa-brain",
     "badgeColor": "#f59e0b",
-    "img": "comportamiento-canino-barcelona.png",
+    "img": "https://cdn2.thecatapi.com/images/3qm.gif",
     "gallery": [
       "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=800&q=80"
     ],
@@ -1761,8 +1800,9 @@
     ],
     "url": "producto-consulta-etologia-comportamiento-canino.html",
     "priceFormatted": "70.00 €",
-    "target_species": "perro",
-    "gallery_img": "https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=800&q=80"
+    "target_species": "gato",
+    "gallery_img": "https://cdn2.thecatapi.com/images/MjAzNTEwNA.jpg",
+    "gallery_img_2": "https://cdn2.thecatapi.com/images/bpZGfNLW1.png"
   },
   {
     "id": "SKU-CLINIC-11",
@@ -1781,7 +1821,7 @@
     "badge": "Laboratorio Central",
     "badgeIcon": "fa-vial",
     "badgeColor": "#ef4444",
-    "img": "https://images.unsplash.com/photo-1516750484197-6b28d10c91ea?auto=format&fit=crop&w=800&q=80",
+    "img": "https://images.dog.ceo/breeds/sheepdog-english/n02105641_696.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=800&q=80"
     ],
@@ -1803,8 +1843,9 @@
     ],
     "url": "producto-analisis-sangre-completo-bioquimica.html",
     "priceFormatted": "48.00 €",
-    "target_species": "gato",
-    "gallery_img": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=800&q=80"
+    "target_species": "perro",
+    "gallery_img": "https://images.dog.ceo/breeds/pyrenees/n02111500_7080.jpg",
+    "gallery_img_2": "https://images.dog.ceo/breeds/beagle/n02088364_8871.jpg"
   },
   {
     "id": "SKU-CLINIC-12",
@@ -1823,7 +1864,7 @@
     "badge": "Cardiología Avanzada",
     "badgeIcon": "fa-heart-pulse",
     "badgeColor": "#e11d48",
-    "img": "https://images.unsplash.com/photo-1535268647677-300dbf3d78d1?auto=format&fit=crop&w=800&q=80",
+    "img": "https://cdn2.thecatapi.com/images/MjA0NDU5Mw.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=800&q=80"
     ],
@@ -1847,7 +1888,8 @@
     "url": "producto-ecocardiograma-doppler-cardiaco.html",
     "priceFormatted": "85.00 €",
     "target_species": "gato",
-    "gallery_img": "https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=800&q=80"
+    "gallery_img": "https://cdn2.thecatapi.com/images/cme.gif",
+    "gallery_img_2": "https://cdn2.thecatapi.com/images/DSsW2Fl2d.jpg"
   },
   {
     "id": "SKU-CLINIC-13",
@@ -1866,7 +1908,7 @@
     "badge": "Cribado Vectorial",
     "badgeIcon": "fa-bug",
     "badgeColor": "#f97316",
-    "img": "https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=800&q=80",
+    "img": "https://images.dog.ceo/breeds/rottweiler/n02106550_148.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=800&q=80"
     ],
@@ -1889,7 +1931,8 @@
     "url": "producto-test-leishmania-cribado-vectoriales.html",
     "priceFormatted": "32.00 €",
     "target_species": "perro",
-    "gallery_img": "perro-urbano-barcelona-paseo.png"
+    "gallery_img": "https://images.dog.ceo/breeds/schnauzer-miniature/n02097047_1917.jpg",
+    "gallery_img_2": "https://images.dog.ceo/breeds/terrier-border/n02093754_897.jpg"
   },
   {
     "id": "SKU-CLINIC-14",
@@ -1908,7 +1951,7 @@
     "badge": "Rayos X Digital",
     "badgeIcon": "fa-x-ray",
     "badgeColor": "#475569",
-    "img": "https://images.unsplash.com/photo-1529429617124-95b109e86bb8?auto=format&fit=crop&w=800&q=80",
+    "img": "https://cdn2.thecatapi.com/images/dmf.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=800&q=80"
     ],
@@ -1930,8 +1973,9 @@
     ],
     "url": "producto-radiografia-digital-traumatologia.html",
     "priceFormatted": "55.00 €",
-    "target_species": "perro",
-    "gallery_img": "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=800&q=80"
+    "target_species": "gato",
+    "gallery_img": "https://cdn2.thecatapi.com/images/139.jpg",
+    "gallery_img_2": "https://cdn2.thecatapi.com/images/2uc.jpg"
   },
   {
     "id": "SKU-CLINIC-15",
@@ -1950,7 +1994,7 @@
     "badge": "Oncología Especializada",
     "badgeIcon": "fa-microscope",
     "badgeColor": "#7c3aed",
-    "img": "https://images.unsplash.com/photo-1544568100-847a948585b9?auto=format&fit=crop&w=800&q=80",
+    "img": "https://images.dog.ceo/breeds/samoyed/n02111889_6249.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=800&q=80"
     ],
@@ -1972,8 +2016,9 @@
     ],
     "url": "producto-plan-oncologico-cribado-biopsia.html",
     "priceFormatted": "65.00 €",
-    "target_species": "perro,gato",
-    "gallery_img": "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=800&q=80"
+    "target_species": "perro",
+    "gallery_img": "https://images.dog.ceo/breeds/malamute/n02110063_4302.jpg",
+    "gallery_img_2": "https://images.dog.ceo/breeds/pug/bruiser.jpg"
   },
   {
     "id": "SKU-WALK-01",
@@ -1992,7 +2037,7 @@
     "badge": "Paseo Seguro",
     "badgeIcon": "fa-person-walking-dog",
     "badgeColor": "#3b82f6",
-    "img": "perro-urbano-barcelona-paseo.png",
+    "img": "https://cdn2.thecatapi.com/images/MTc4NDg3Nw.png",
     "gallery": [
       "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=800&q=80",
       "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=800&q=80"
@@ -2022,8 +2067,9 @@
     ],
     "url": "producto-activepaws-paseo-guiado-telemetria.html",
     "priceFormatted": "14.00 €",
-    "target_species": "perro",
-    "gallery_img": "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=800&q=80"
+    "target_species": "gato",
+    "gallery_img": "https://cdn2.thecatapi.com/images/eaa.jpg",
+    "gallery_img_2": "https://cdn2.thecatapi.com/images/3le.jpg"
   },
   {
     "id": "SKU-WALK-02",
@@ -2042,7 +2088,7 @@
     "badge": "Estimulación Olfativa",
     "badgeIcon": "fa-brain",
     "badgeColor": "#f59e0b",
-    "img": "paseadores-perros-actividad-fisica.png",
+    "img": "https://images.dog.ceo/breeds/spaniel-cocker/n02102318_5690.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=800&q=80"
     ],
@@ -2065,7 +2111,8 @@
     "url": "producto-urban-pet-walkers-estimulacion-cognitiva.html",
     "priceFormatted": "18.00 €",
     "target_species": "perro",
-    "gallery_img": "rutas-paseos-seguros-barcelona.png"
+    "gallery_img": "https://images.dog.ceo/breeds/setter-english/n02100735_9861.jpg",
+    "gallery_img_2": "https://images.dog.ceo/breeds/corgi-cardigan/miss-muffin.jpg"
   },
   {
     "id": "SKU-WALK-03",
@@ -2084,7 +2131,7 @@
     "badge": "Cero Jaulas",
     "badgeIcon": "fa-house-chimney-heart",
     "badgeColor": "#10b981",
-    "img": "reduccion-ansiedad-separacion-perros.png",
+    "img": "https://images.dog.ceo/breeds/doberman/n02107142_3227.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=800&q=80"
     ],
@@ -2106,8 +2153,9 @@
     ],
     "url": "producto-nannypets-cuidador-domicilio-24-7.html",
     "priceFormatted": "32.00 €",
-    "target_species": "perro,gato",
-    "gallery_img": "familia-multiespecie-paz-mental.png"
+    "target_species": "perro",
+    "gallery_img": "https://images.dog.ceo/breeds/shihtzu/n02086240_1621.jpg",
+    "gallery_img_2": "https://images.dog.ceo/breeds/shiba/shiba-16.jpg"
   },
   {
     "id": "SKU-WALK-04",
@@ -2126,7 +2174,7 @@
     "badge": "Finca 5 Hectáreas",
     "badgeIcon": "fa-tree",
     "badgeColor": "#059669",
-    "img": "guarderia-canina-confianza.png",
+    "img": "https://images.dog.ceo/breeds/mastiff-bull/n02108422_3440.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1535294435445-d7249524ef2e?auto=format&fit=crop&w=800&q=80"
     ],
@@ -2149,7 +2197,8 @@
     "url": "producto-cudi-guarderia-campestre-daycare.html",
     "priceFormatted": "28.00 €",
     "target_species": "perro",
-    "gallery_img": "https://images.unsplash.com/photo-1535294435445-d7249524ef2e?auto=format&fit=crop&w=800&q=80"
+    "gallery_img": "https://images.dog.ceo/breeds/terrier-norfolk/n02094114_1610.jpg",
+    "gallery_img_2": "https://images.dog.ceo/breeds/beagle/n02088364_11836.jpg"
   },
   {
     "id": "SKU-WALK-05",
@@ -2168,7 +2217,7 @@
     "badge": "Certificado ISFM",
     "badgeIcon": "fa-cat",
     "badgeColor": "#8b5cf6",
-    "img": "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=800&q=80",
+    "img": "https://cdn2.thecatapi.com/images/cv6.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=800&q=80"
     ],
@@ -2191,7 +2240,8 @@
     "url": "producto-cat-sitting-visita-especialista-felino.html",
     "priceFormatted": "19.00 €",
     "target_species": "gato",
-    "gallery_img": "gato-explorando-seguro-collar-gps.png"
+    "gallery_img": "https://cdn2.thecatapi.com/images/dlb.jpg",
+    "gallery_img_2": "https://cdn2.thecatapi.com/images/55l.jpg"
   },
   {
     "id": "SKU-WALK-06",
@@ -2210,7 +2260,7 @@
     "badge": "Rápido & Práctico",
     "badgeIcon": "fa-clock",
     "badgeColor": "#64748b",
-    "img": "rutas-paseos-seguros-barcelona.png",
+    "img": "https://images.dog.ceo/breeds/pekinese/n02086079_4456.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=800&q=80"
     ],
@@ -2233,7 +2283,8 @@
     "url": "producto-paseo-matinal-express-higienico.html",
     "priceFormatted": "9.50 €",
     "target_species": "perro",
-    "gallery_img": "perro-urbano-barcelona-paseo.png"
+    "gallery_img": "https://images.dog.ceo/breeds/springer-english/n02102040_2099.jpg",
+    "gallery_img_2": "https://images.dog.ceo/breeds/african-wild/n02116738_4461.jpg"
   },
   {
     "id": "SKU-WALK-07",
@@ -2252,7 +2303,7 @@
     "badge": "Sin Tirones ni Castigos",
     "badgeIcon": "fa-graduation-cap",
     "badgeColor": "#0284c7",
-    "img": "https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=800&q=80",
+    "img": "https://images.dog.ceo/breeds/terrier-australian/n02096294_8467.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1507146426996-ef05306b995a?auto=format&fit=crop&w=800&q=80"
     ],
@@ -2275,7 +2326,8 @@
     "url": "producto-adiestramiento-canino-base-positivo.html",
     "priceFormatted": "45.00 €",
     "target_species": "perro",
-    "gallery_img": "comportamiento-canino-barcelona.png"
+    "gallery_img": "https://images.dog.ceo/breeds/hound-blood/n02088466_7502.jpg",
+    "gallery_img_2": "https://images.dog.ceo/breeds/terrier-tibetan/n02097474_124.jpg"
   },
   {
     "id": "SKU-WALK-08",
@@ -2294,7 +2346,7 @@
     "badge": "Crash-Test Seguro",
     "badgeIcon": "fa-taxi",
     "badgeColor": "#f59e0b",
-    "img": "https://images.unsplash.com/photo-1517331156700-3c241d2b4d83?auto=format&fit=crop&w=800&q=80",
+    "img": "https://images.dog.ceo/breeds/maltese/n02085936_24178.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80"
     ],
@@ -2316,8 +2368,9 @@
     ],
     "url": "producto-taxi-mascotas-transporte-veterinario.html",
     "priceFormatted": "22.00 €",
-    "target_species": "gato",
-    "gallery_img": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=800&q=80"
+    "target_species": "perro",
+    "gallery_img": "https://images.dog.ceo/breeds/bulldog-french/n02108915_341.jpg",
+    "gallery_img_2": "https://images.dog.ceo/breeds/rottweiler/n02106550_4339.jpg"
   },
   {
     "id": "SKU-WALK-09",
@@ -2336,7 +2389,7 @@
     "badge": "Aventura en Bosque",
     "badgeIcon": "fa-mountain-sun",
     "badgeColor": "#059669",
-    "img": "senderismo-familiar-mascota-naturaleza.png",
+    "img": "https://images.dog.ceo/breeds/terrier-norfolk/n02094114_2706.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=800&q=80"
     ],
@@ -2359,7 +2412,8 @@
     "url": "producto-paseo-senderismo-montana-aventura.html",
     "priceFormatted": "38.00 €",
     "target_species": "perro",
-    "gallery_img": "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=800&q=80"
+    "gallery_img": "https://images.dog.ceo/breeds/poodle-standard/n02113799_2729.jpg",
+    "gallery_img_2": "https://images.dog.ceo/breeds/spaniel-cocker/n02102318_89.jpg"
   },
   {
     "id": "SKU-WALK-10",
@@ -2378,7 +2432,7 @@
     "badge": "100% Familiar",
     "badgeIcon": "fa-couch",
     "badgeColor": "#ec4899",
-    "img": "https://images.unsplash.com/photo-1520315342629-6ea920342047?auto=format&fit=crop&w=800&q=80",
+    "img": "https://images.dog.ceo/breeds/collie-border/n02106166_884.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=800&q=80"
     ],
@@ -2400,8 +2454,9 @@
     ],
     "url": "producto-hospedaje-familiar-sin-jaulas-cudi.html",
     "priceFormatted": "30.00 €",
-    "target_species": "gato",
-    "gallery_img": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=800&q=80"
+    "target_species": "perro",
+    "gallery_img": "https://images.dog.ceo/breeds/samoyed/n02111889_3918.jpg",
+    "gallery_img_2": "https://images.dog.ceo/breeds/german-shepherd/n02106662_16817.jpg"
   },
   {
     "id": "SKU-WALK-11",
@@ -2420,7 +2475,7 @@
     "badge": "Ritmo Muy Lento",
     "badgeIcon": "fa-heart",
     "badgeColor": "#f43f5e",
-    "img": "perro-senior-calidad-vida-longevidad.png",
+    "img": "https://images.dog.ceo/breeds/terrier-dandie/n02096437_1614.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=800&q=80"
     ],
@@ -2443,7 +2498,8 @@
     "url": "producto-paseo-perros-senior-movilidad-reducida.html",
     "priceFormatted": "13.00 €",
     "target_species": "perro",
-    "gallery_img": "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=800&q=80"
+    "gallery_img": "https://images.dog.ceo/breeds/pinscher-miniature/n02107312_6598.jpg",
+    "gallery_img_2": "https://images.dog.ceo/breeds/bulldog-french/n02108915_5201.jpg"
   },
   {
     "id": "SKU-WALK-12",
@@ -2462,7 +2518,7 @@
     "badge": "Cachorros 2 a 6 meses",
     "badgeIcon": "fa-paw",
     "badgeColor": "#14b8a6",
-    "img": "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=800&q=80",
+    "img": "https://images.dog.ceo/breeds/pomeranian/n02112018_2811.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1507146426996-ef05306b995a?auto=format&fit=crop&w=800&q=80"
     ],
@@ -2485,7 +2541,8 @@
     "url": "producto-socializacion-cachorros-puppy-class.html",
     "priceFormatted": "20.00 €",
     "target_species": "perro",
-    "gallery_img": "https://images.unsplash.com/photo-1507146426996-ef05306b995a?auto=format&fit=crop&w=800&q=80"
+    "gallery_img": "https://images.dog.ceo/breeds/dalmatian/cooper2.jpg",
+    "gallery_img_2": "https://images.dog.ceo/breeds/collie-border/n02106166_3033.jpg"
   },
   {
     "id": "SKU-WALK-13",
@@ -2504,7 +2561,7 @@
     "badge": "Ahorro Familiar",
     "badgeIcon": "fa-users",
     "badgeColor": "#6366f1",
-    "img": "https://images.unsplash.com/photo-1568640347023-a616a30bc3bd?auto=format&fit=crop&w=800&q=80",
+    "img": "https://images.dog.ceo/breeds/hound-basset/n02088238_13908.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=800&q=80"
     ],
@@ -2527,7 +2584,8 @@
     "url": "producto-paseo-doble-pack-dos-perros.html",
     "priceFormatted": "21.00 €",
     "target_species": "perro",
-    "gallery_img": "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=800&q=80"
+    "gallery_img": "https://images.dog.ceo/breeds/appenzeller/n02107908_4891.jpg",
+    "gallery_img_2": "https://images.dog.ceo/breeds/whippet/n02091134_12827.jpg"
   },
   {
     "id": "SKU-WALK-14",
@@ -2546,7 +2604,7 @@
     "badge": "Alta Intensidad",
     "badgeIcon": "fa-person-running",
     "badgeColor": "#ea580c",
-    "img": "pareja-corriendo-mascota-activa.png",
+    "img": "https://images.dog.ceo/breeds/vizsla/n02100583_11553.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1535294435445-d7249524ef2e?auto=format&fit=crop&w=800&q=80"
     ],
@@ -2569,7 +2627,8 @@
     "url": "producto-cudi-running-canino-canicross.html",
     "priceFormatted": "22.00 €",
     "target_species": "perro",
-    "gallery_img": "https://images.unsplash.com/photo-1535294435445-d7249524ef2e?auto=format&fit=crop&w=800&q=80"
+    "gallery_img": "https://images.dog.ceo/breeds/mexicanhairless/n02113978_1854.jpg",
+    "gallery_img_2": "https://images.dog.ceo/breeds/hound-afghan/n02088094_4352.jpg"
   },
   {
     "id": "SKU-WALK-15",
@@ -2588,7 +2647,7 @@
     "badge": "Llegada < 45 min",
     "badgeIcon": "fa-bolt",
     "badgeColor": "#eab308",
-    "img": "prevencion-golpes-calor-paseos.png",
+    "img": "https://cdn2.thecatapi.com/images/MjAyMjk3OQ.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=800&q=80"
     ],
@@ -2610,8 +2669,9 @@
     ],
     "url": "producto-visita-urgente-paseo-inmediato.html",
     "priceFormatted": "19.50 €",
-    "target_species": "perro",
-    "gallery_img": "rutas-paseos-seguros-barcelona.png"
+    "target_species": "gato",
+    "gallery_img": "https://cdn2.thecatapi.com/images/14a.gif",
+    "gallery_img_2": "https://cdn2.thecatapi.com/images/c1k.jpg"
   },
   {
     "id": "SKU-INS-01",
@@ -2630,7 +2690,7 @@
     "badge": "Más Popular",
     "badgeIcon": "fa-shield-heart",
     "badgeColor": "#0284c7",
-    "img": "seguros-gastos-veterinarios-perros-gatos.png",
+    "img": "https://images.dog.ceo/breeds/dane-great/n02109047_9604.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80",
       "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=800&q=80"
@@ -2661,7 +2721,8 @@
     "url": "producto-cudi-shield-basic-accidentes.html",
     "priceFormatted": "18.00 €",
     "target_species": "perro",
-    "gallery_img": "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=800&q=80"
+    "gallery_img": "https://images.dog.ceo/breeds/schnauzer-miniature/n02097047_1419.jpg",
+    "gallery_img_2": "https://images.dog.ceo/breeds/doberman/n02107142_34.jpg"
   },
   {
     "id": "SKU-INS-02",
@@ -2680,7 +2741,7 @@
     "badge": "Cobertura 100% Enfermedad",
     "badgeIcon": "fa-shield-halved",
     "badgeColor": "#10b981",
-    "img": "https://images.unsplash.com/photo-1504595403659-9088ce801e29?auto=format&fit=crop&w=800&q=80",
+    "img": "https://cdn2.thecatapi.com/images/e7g.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=800&q=80"
     ],
@@ -2703,8 +2764,9 @@
     ],
     "url": "producto-global-pet-protect-enfermedad-accidente.html",
     "priceFormatted": "34.00 €",
-    "target_species": "perro",
-    "gallery_img": "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=800&q=80"
+    "target_species": "gato",
+    "gallery_img": "https://cdn2.thecatapi.com/images/bgv.jpg",
+    "gallery_img_2": "https://cdn2.thecatapi.com/images/ab8.jpg"
   },
   {
     "id": "SKU-INS-03",
@@ -2723,7 +2785,7 @@
     "badge": "Hasta 3 Mascotas",
     "badgeIcon": "fa-people-roof",
     "badgeColor": "#f59e0b",
-    "img": "familia-multiespecie-paz-mental.png",
+    "img": "https://cdn2.thecatapi.com/images/cga.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=800&q=80"
     ],
@@ -2746,8 +2808,9 @@
     ],
     "url": "producto-safehome-multipet-familiar.html",
     "priceFormatted": "28.00 €",
-    "target_species": "perro,gato",
-    "gallery_img": "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80"
+    "target_species": "gato",
+    "gallery_img": "https://cdn2.thecatapi.com/images/b5b.jpg",
+    "gallery_img_2": "https://cdn2.thecatapi.com/images/d9f.jpg"
   },
   {
     "id": "SKU-INS-04",
@@ -2766,7 +2829,7 @@
     "badge": "Cumple Ley 100%",
     "badgeIcon": "fa-scale-balanced",
     "badgeColor": "#1e293b",
-    "img": "https://images.unsplash.com/photo-1558788353-f76d92427f16?auto=format&fit=crop&w=800&q=80",
+    "img": "https://cdn2.thecatapi.com/images/4mksJzUgG.png",
     "gallery": [
       "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=800&q=80"
     ],
@@ -2789,8 +2852,9 @@
     ],
     "url": "producto-seguro-responsabilidad-civil-ley-bienestar.html",
     "priceFormatted": "2.90 €",
-    "target_species": "perro",
-    "gallery_img": "seguros-gastos-veterinarios-perros-gatos.png"
+    "target_species": "gato",
+    "gallery_img": "https://cdn2.thecatapi.com/images/3p6.jpg",
+    "gallery_img_2": "https://cdn2.thecatapi.com/images/3ra.jpg"
   },
   {
     "id": "SKU-INS-05",
@@ -2809,7 +2873,7 @@
     "badge": "Europa & Mundo",
     "badgeIcon": "fa-plane-departure",
     "badgeColor": "#0ea5e9",
-    "img": "rutas-pet-friendly-barcelona.png",
+    "img": "https://images.dog.ceo/breeds/chihuahua/n02085620_1502.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80"
     ],
@@ -2833,7 +2897,8 @@
     "url": "producto-cudi-travel-seguro-viajes-mascota.html",
     "priceFormatted": "15.00 €",
     "target_species": "perro",
-    "gallery_img": "https://images.unsplash.com/photo-1507146426996-ef05306b995a?auto=format&fit=crop&w=800&q=80"
+    "gallery_img": "https://images.dog.ceo/breeds/retriever-golden/n02099601_7706.jpg",
+    "gallery_img_2": "https://images.dog.ceo/breeds/boxer/n02108089_836.jpg"
   },
   {
     "id": "SKU-INS-06",
@@ -2852,7 +2917,7 @@
     "badge": "Acepta Animales Mayores",
     "badgeIcon": "fa-heart",
     "badgeColor": "#f43f5e",
-    "img": "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=800&q=80",
+    "img": "https://cdn2.thecatapi.com/images/1ms.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=800&q=80"
     ],
@@ -2876,7 +2941,8 @@
     "url": "producto-seguro-perros-senior-mayores-9-anos.html",
     "priceFormatted": "39.00 €",
     "target_species": "gato",
-    "gallery_img": "mejora-descanso-salud-felina.png"
+    "gallery_img": "https://cdn2.thecatapi.com/images/3k3.jpg",
+    "gallery_img_2": "https://cdn2.thecatapi.com/images/o81wWm6-Z.jpg"
   },
   {
     "id": "SKU-INS-07",
@@ -2895,7 +2961,7 @@
     "badge": "Higiene Oral Cubierta",
     "badgeIcon": "fa-tooth",
     "badgeColor": "#06b6d4",
-    "img": "https://images.unsplash.com/photo-1478098711619-5ab0b478d6e6?auto=format&fit=crop&w=800&q=80",
+    "img": "https://images.dog.ceo/breeds/corgi-cardigan/n02113186_2413.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=800&q=80"
     ],
@@ -2917,8 +2983,9 @@
     ],
     "url": "producto-seguro-odontologia-animal-dentalcare.html",
     "priceFormatted": "8.50 €",
-    "target_species": "gato",
-    "gallery_img": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=800&q=80"
+    "target_species": "perro",
+    "gallery_img": "https://images.dog.ceo/breeds/terrier-dandie/n02096437_725.jpg",
+    "gallery_img_2": "https://images.dog.ceo/breeds/coonhound/n02089078_2110.jpg"
   },
   {
     "id": "SKU-INS-08",
@@ -2937,7 +3004,7 @@
     "badge": "Rescate en Montaña",
     "badgeIcon": "fa-tower-broadcast",
     "badgeColor": "#ea580c",
-    "img": "mascota-sana-feliz.png",
+    "img": "https://cdn2.thecatapi.com/images/d70.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=800&q=80"
     ],
@@ -2960,8 +3027,9 @@
     ],
     "url": "producto-cudi-seguro-rescate-extravio-wild.html",
     "priceFormatted": "4.50 €",
-    "target_species": "perro",
-    "gallery_img": "radar-gps-prevencion-perdidas.png"
+    "target_species": "gato",
+    "gallery_img": "https://cdn2.thecatapi.com/images/aqr.jpg",
+    "gallery_img_2": "https://cdn2.thecatapi.com/images/7hp.jpg"
   },
   {
     "id": "SKU-INS-09",
@@ -2980,7 +3048,7 @@
     "badge": "Especial Gatos",
     "badgeIcon": "fa-cat",
     "badgeColor": "#8b5cf6",
-    "img": "gato-explorando-seguro-collar-gps.png",
+    "img": "https://cdn2.thecatapi.com/images/wMndw0twO.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=800&q=80"
     ],
@@ -3004,7 +3072,8 @@
     "url": "producto-seguro-felino-total-catshield.html",
     "priceFormatted": "21.00 €",
     "target_species": "gato",
-    "gallery_img": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=800&q=80"
+    "gallery_img": "https://cdn2.thecatapi.com/images/dns.jpg",
+    "gallery_img_2": "https://cdn2.thecatapi.com/images/5lo.jpg"
   },
   {
     "id": "SKU-INS-10",
@@ -3023,7 +3092,7 @@
     "badge": "Paz & Dignidad",
     "badgeIcon": "fa-dove",
     "badgeColor": "#64748b",
-    "img": "mejora-descanso-salud-felina.png",
+    "img": "https://cdn2.thecatapi.com/images/9pf.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80"
     ],
@@ -3047,7 +3116,8 @@
     "url": "producto-seguro-decesos-duelo-respetuoso.html",
     "priceFormatted": "3.50 €",
     "target_species": "gato",
-    "gallery_img": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=800&q=80"
+    "gallery_img": "https://cdn2.thecatapi.com/images/laq3GvUgh.jpg",
+    "gallery_img_2": "https://cdn2.thecatapi.com/images/484.jpg"
   },
   {
     "id": "SKU-INS-11",
@@ -3066,7 +3136,7 @@
     "badge": "RC 500.000€ Oficial",
     "badgeIcon": "fa-shield-dog",
     "badgeColor": "#b91c1c",
-    "img": "bienestar-integral-perros-gatos.png",
+    "img": "https://cdn2.thecatapi.com/images/6ss.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1535294435445-d7249524ef2e?auto=format&fit=crop&w=800&q=80"
     ],
@@ -3089,8 +3159,9 @@
     ],
     "url": "producto-seguro-ppp-razas-potencialmente-peligrosas.html",
     "priceFormatted": "6.90 €",
-    "target_species": "perro",
-    "gallery_img": "https://images.unsplash.com/photo-1535294435445-d7249524ef2e?auto=format&fit=crop&w=800&q=80"
+    "target_species": "gato",
+    "gallery_img": "https://cdn2.thecatapi.com/images/99v.jpg",
+    "gallery_img_2": "https://cdn2.thecatapi.com/images/cAEw7R6pi.jpg"
   },
   {
     "id": "SKU-INS-12",
@@ -3109,7 +3180,7 @@
     "badge": "Campo & Jabalí",
     "badgeIcon": "fa-tree",
     "badgeColor": "#15803d",
-    "img": "https://images.unsplash.com/photo-1597633425046-08f5110420b5?auto=format&fit=crop&w=800&q=80",
+    "img": "https://images.dog.ceo/breeds/bulldog-boston/n02096585_1281.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1507146426996-ef05306b995a?auto=format&fit=crop&w=800&q=80"
     ],
@@ -3133,7 +3204,8 @@
     "url": "producto-seguro-perros-caza-trabajo-campo.html",
     "priceFormatted": "16.50 €",
     "target_species": "perro",
-    "gallery_img": "senderismo-familiar-mascota-naturaleza.png"
+    "gallery_img": "https://images.dog.ceo/breeds/terrier-tibetan/n02097474_756.jpg",
+    "gallery_img_2": "https://images.dog.ceo/breeds/shiba/shiba-7.jpg"
   },
   {
     "id": "SKU-INS-13",
@@ -3152,7 +3224,7 @@
     "badge": "Medicación al 80%",
     "badgeIcon": "fa-pills",
     "badgeColor": "#0ea5e9",
-    "img": "https://images.unsplash.com/photo-1579202673506-ca3ce28943ef?auto=format&fit=crop&w=800&q=80",
+    "img": "https://images.dog.ceo/breeds/samoyed/n02111889_5489.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=800&q=80"
     ],
@@ -3175,8 +3247,9 @@
     ],
     "url": "producto-seguro-reembolso-medicacion-cronica.html",
     "priceFormatted": "12.00 €",
-    "target_species": "gato",
-    "gallery_img": "https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=800&q=80"
+    "target_species": "perro",
+    "gallery_img": "https://images.dog.ceo/breeds/pomeranian/n02112018_4583.jpg",
+    "gallery_img_2": "https://images.dog.ceo/breeds/husky/n02110185_10273.jpg"
   },
   {
     "id": "SKU-INS-14",
@@ -3195,7 +3268,7 @@
     "badge": "Especialistas Diplomados",
     "badgeIcon": "fa-user-doctor",
     "badgeColor": "#6366f1",
-    "img": "https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?auto=format&fit=crop&w=800&q=80",
+    "img": "https://cdn2.thecatapi.com/images/9u9.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=800&q=80"
     ],
@@ -3219,7 +3292,8 @@
     "url": "producto-cudi-seguro-segunda-opinion-medica.html",
     "priceFormatted": "7.00 €",
     "target_species": "gato",
-    "gallery_img": "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=800&q=80"
+    "gallery_img": "https://cdn2.thecatapi.com/images/d10.jpg",
+    "gallery_img_2": "https://cdn2.thecatapi.com/images/5rg.jpg"
   },
   {
     "id": "SKU-INS-15",
@@ -3238,7 +3312,7 @@
     "badge": "Terapias Holísticas",
     "badgeIcon": "fa-spa",
     "badgeColor": "#14b8a6",
-    "img": "https://images.unsplash.com/photo-1560114928-40f1f1eb26a0?auto=format&fit=crop&w=800&q=80",
+    "img": "https://images.dog.ceo/breeds/schipperke/n02104365_481.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1535294435445-d7249524ef2e?auto=format&fit=crop&w=800&q=80"
     ],
@@ -3260,8 +3334,9 @@
     ],
     "url": "producto-seguro-reembolso-fisioterapia-acupuntura.html",
     "priceFormatted": "11.50 €",
-    "target_species": "gato",
-    "gallery_img": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=800&q=80"
+    "target_species": "perro",
+    "gallery_img": "https://images.dog.ceo/breeds/terrier-norfolk/n02094114_2206.jpg",
+    "gallery_img_2": "https://images.dog.ceo/breeds/ridgeback-rhodesian/n02087394_9712.jpg"
   },
   {
     "id": "SKU-SPA-01",
@@ -3280,7 +3355,7 @@
     "badge": "Spa Premium",
     "badgeIcon": "fa-bath",
     "badgeColor": "#7e22ce",
-    "img": "estetica-canina-bienestar.png",
+    "img": "https://cdn2.thecatapi.com/images/lm.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=800&q=80",
       "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80"
@@ -3310,8 +3385,9 @@
     ],
     "url": "producto-grooming-master-bano-ozonoterapia.html",
     "priceFormatted": "42.00 €",
-    "target_species": "perro",
-    "gallery_img": "https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=800&q=80"
+    "target_species": "gato",
+    "gallery_img": "https://cdn2.thecatapi.com/images/wu1YzlB9q.jpg",
+    "gallery_img_2": "https://cdn2.thecatapi.com/images/5mm.jpg"
   },
   {
     "id": "SKU-SPA-02",
@@ -3330,7 +3406,7 @@
     "badge": "Adiós Pelos en Casa",
     "badgeIcon": "fa-shield",
     "badgeColor": "#0284c7",
-    "img": "https://images.unsplash.com/photo-1568152950566-c1bf43f4ab28?auto=format&fit=crop&w=800&q=80",
+    "img": "https://cdn2.thecatapi.com/images/MjAxMTk1Mw.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1535294435445-d7249524ef2e?auto=format&fit=crop&w=800&q=80"
     ],
@@ -3353,7 +3429,8 @@
     "url": "producto-zenpet-spa-deslanado-completo.html",
     "priceFormatted": "38.00 €",
     "target_species": "gato",
-    "gallery_img": "https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=800&q=80"
+    "gallery_img": "https://cdn2.thecatapi.com/images/alc.gif",
+    "gallery_img_2": "https://cdn2.thecatapi.com/images/d6s.jpg"
   },
   {
     "id": "SKU-SPA-03",
@@ -3372,7 +3449,7 @@
     "badge": "Sin Sedar al Gato",
     "badgeIcon": "fa-cat",
     "badgeColor": "#ec4899",
-    "img": "https://images.unsplash.com/photo-1586042091284-bd35c8c1d917?auto=format&fit=crop&w=800&q=80",
+    "img": "https://cdn2.thecatapi.com/images/bq3.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=800&q=80"
     ],
@@ -3395,7 +3472,8 @@
     "url": "producto-bubbles-paws-peluqueria-felina-sin-sedacion.html",
     "priceFormatted": "46.00 €",
     "target_species": "gato",
-    "gallery_img": "gato-explorando-seguro-collar-gps.png"
+    "gallery_img": "https://cdn2.thecatapi.com/images/3m4.jpg",
+    "gallery_img_2": "https://cdn2.thecatapi.com/images/MTY5NDA2NQ.jpg"
   },
   {
     "id": "SKU-SPA-04",
@@ -3414,7 +3492,7 @@
     "badge": "Stripping Manual",
     "badgeIcon": "fa-hand",
     "badgeColor": "#f59e0b",
-    "img": "https://images.unsplash.com/photo-1554456854-55a089fd4cb2?auto=format&fit=crop&w=800&q=80",
+    "img": "https://images.dog.ceo/breeds/terrier-irish/n02093991_877.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80"
     ],
@@ -3437,7 +3515,8 @@
     "url": "producto-corte-raza-stripping-terriers.html",
     "priceFormatted": "55.00 €",
     "target_species": "perro",
-    "gallery_img": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80"
+    "gallery_img": "https://images.dog.ceo/breeds/terrier-australian/n02096294_5176.jpg",
+    "gallery_img_2": "https://images.dog.ceo/breeds/spaniel-cocker/n02102318_8784.jpg"
   },
   {
     "id": "SKU-SPA-05",
@@ -3456,7 +3535,7 @@
     "badge": "Cero Miedo al Corte",
     "badgeIcon": "fa-paw",
     "badgeColor": "#10b981",
-    "img": "https://images.unsplash.com/photo-1503777119540-ce54b422baff?auto=format&fit=crop&w=800&q=80",
+    "img": "https://cdn2.thecatapi.com/images/efm.gif",
     "gallery": [
       "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=800&q=80"
     ],
@@ -3479,7 +3558,8 @@
     "url": "producto-pedicura-spa-almohadillas-cudi-pawcure.html",
     "priceFormatted": "16.00 €",
     "target_species": "gato",
-    "gallery_img": "https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=800&q=80"
+    "gallery_img": "https://cdn2.thecatapi.com/images/MTg1MDA0Nw.jpg",
+    "gallery_img_2": "https://cdn2.thecatapi.com/images/a4u.jpg"
   },
   {
     "id": "SKU-SPA-06",
@@ -3498,7 +3578,7 @@
     "badge": "Acabado de Exposición",
     "badgeIcon": "fa-scissors",
     "badgeColor": "#ec4899",
-    "img": "https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=800&q=80",
+    "img": "https://images.dog.ceo/breeds/spaniel-sussex/n02102480_3771.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=800&q=80"
     ],
@@ -3521,7 +3601,8 @@
     "url": "producto-corte-tijera-alta-costura-canina.html",
     "priceFormatted": "50.00 €",
     "target_species": "perro",
-    "gallery_img": "estetica-canina-bienestar.png"
+    "gallery_img": "https://images.dog.ceo/breeds/beagle/603525417_milo.jpg",
+    "gallery_img_2": "https://images.dog.ceo/breeds/hound-walker/n02089867_614.jpg"
   },
   {
     "id": "SKU-SPA-07",
@@ -3540,7 +3621,7 @@
     "badge": "Pelo Extra Suave",
     "badgeIcon": "fa-wand-magic-sparkles",
     "badgeColor": "#f59e0b",
-    "img": "https://images.unsplash.com/photo-1513245543132-31f507417b26?auto=format&fit=crop&w=800&q=80",
+    "img": "https://cdn2.thecatapi.com/images/aii.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80"
     ],
@@ -3563,7 +3644,8 @@
     "url": "producto-mascarilla-hidronutritiva-keratina-argan.html",
     "priceFormatted": "25.00 €",
     "target_species": "gato",
-    "gallery_img": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=800&q=80"
+    "gallery_img": "https://cdn2.thecatapi.com/images/2uv.jpg",
+    "gallery_img_2": "https://cdn2.thecatapi.com/images/cjp.jpg"
   },
   {
     "id": "SKU-SPA-08",
@@ -3582,7 +3664,7 @@
     "badge": "Prevención Otitis",
     "badgeIcon": "fa-ear-listen",
     "badgeColor": "#06b6d4",
-    "img": "https://images.unsplash.com/photo-1517423440428-a5a00ad493e8?auto=format&fit=crop&w=800&q=80",
+    "img": "https://images.dog.ceo/breeds/pyrenees/n02111500_1787.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=800&q=80"
     ],
@@ -3605,7 +3687,8 @@
     "url": "producto-limpieza-auricular-otica-spa.html",
     "priceFormatted": "14.50 €",
     "target_species": "perro",
-    "gallery_img": "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=800&q=80"
+    "gallery_img": "https://images.dog.ceo/breeds/husky/n02110185_9846.jpg",
+    "gallery_img_2": "https://images.dog.ceo/breeds/husky/n02110185_14650.jpg"
   },
   {
     "id": "SKU-SPA-09",
@@ -3624,7 +3707,7 @@
     "badge": "Relajación Total",
     "badgeIcon": "fa-water",
     "badgeColor": "#3b82f6",
-    "img": "https://images.unsplash.com/photo-1587402092301-725e37c70fd8?auto=format&fit=crop&w=800&q=80",
+    "img": "https://images.dog.ceo/breeds/spaniel-cocker/n02102318_2073.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=800&q=80"
     ],
@@ -3647,7 +3730,8 @@
     "url": "producto-hidromasaje-terapeutico-aromatoterapia.html",
     "priceFormatted": "48.00 €",
     "target_species": "perro",
-    "gallery_img": "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=800&q=80"
+    "gallery_img": "https://images.dog.ceo/breeds/spaniel-brittany/n02101388_3357.jpg",
+    "gallery_img_2": "https://images.dog.ceo/breeds/chihuahua/n02085620_8585.jpg"
   },
   {
     "id": "SKU-SPA-10",
@@ -3666,7 +3750,7 @@
     "badge": "Repelente 100% BIO",
     "badgeIcon": "fa-shield-halved",
     "badgeColor": "#15803d",
-    "img": "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=80",
+    "img": "https://images.dog.ceo/breeds/chihuahua/n02085620_3880.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1535294435445-d7249524ef2e?auto=format&fit=crop&w=800&q=80"
     ],
@@ -3688,8 +3772,9 @@
     ],
     "url": "producto-bano-desparasitante-natural-repelente.html",
     "priceFormatted": "32.00 €",
-    "target_species": "gato",
-    "gallery_img": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=800&q=80"
+    "target_species": "perro",
+    "gallery_img": "https://images.dog.ceo/breeds/appenzeller/n02107908_1777.jpg",
+    "gallery_img_2": "https://images.dog.ceo/breeds/pembroke/n02113023_1825.jpg"
   },
   {
     "id": "SKU-SPA-11",
@@ -3708,7 +3793,7 @@
     "badge": "Alivio de Contracturas",
     "badgeIcon": "fa-hand-holding-heart",
     "badgeColor": "#f43f5e",
-    "img": "https://images.unsplash.com/photo-1560743641-3914f2c45636?auto=format&fit=crop&w=800&q=80",
+    "img": "https://images.dog.ceo/breeds/pomeranian/n02112018_161.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=800&q=80"
     ],
@@ -3731,7 +3816,8 @@
     "url": "producto-masaje-miofascial-relajante-perros.html",
     "priceFormatted": "35.00 €",
     "target_species": "perro",
-    "gallery_img": "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=800&q=80"
+    "gallery_img": "https://images.dog.ceo/breeds/appenzeller/n02107908_7364.jpg",
+    "gallery_img_2": "https://images.dog.ceo/breeds/newfoundland/n02111277_3056.jpg"
   },
   {
     "id": "SKU-SPA-12",
@@ -3750,7 +3836,7 @@
     "badge": "Cero Rasguños en Muebles",
     "badgeIcon": "fa-cat",
     "badgeColor": "#8b5cf6",
-    "img": "https://images.unsplash.com/photo-1518288774672-b94e808873ff?auto=format&fit=crop&w=800&q=80",
+    "img": "https://cdn2.thecatapi.com/images/13MkvUreZ.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=800&q=80"
     ],
@@ -3773,7 +3859,8 @@
     "url": "producto-corte-unas-gatos-limado-seguro.html",
     "priceFormatted": "12.00 €",
     "target_species": "gato",
-    "gallery_img": "mejora-descanso-salud-felina.png"
+    "gallery_img": "https://cdn2.thecatapi.com/images/aat.jpg",
+    "gallery_img_2": "https://cdn2.thecatapi.com/images/c0t.jpg"
   },
   {
     "id": "SKU-SPA-13",
@@ -3792,7 +3879,7 @@
     "badge": "Blanco Puro sin Lejía",
     "badgeIcon": "fa-snowflake",
     "badgeColor": "#0284c7",
-    "img": "https://images.unsplash.com/photo-1588774069410-84ae30757c8e?auto=format&fit=crop&w=800&q=80",
+    "img": "https://cdn2.thecatapi.com/images/MjA3NDI1MQ.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=800&q=80"
     ],
@@ -3814,8 +3901,9 @@
     ],
     "url": "producto-blanqueamiento-manto-blanco-optico.html",
     "priceFormatted": "36.00 €",
-    "target_species": "perro",
-    "gallery_img": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=800&q=80"
+    "target_species": "gato",
+    "gallery_img": "https://cdn2.thecatapi.com/images/de8.gif",
+    "gallery_img_2": "https://cdn2.thecatapi.com/images/dev.jpg"
   },
   {
     "id": "SKU-SPA-14",
@@ -3834,7 +3922,7 @@
     "badge": "Salva el Pelo Largo",
     "badgeIcon": "fa-brush",
     "badgeColor": "#f59e0b",
-    "img": "https://images.unsplash.com/photo-1541599540903-216a46ca1dc0?auto=format&fit=crop&w=800&q=80",
+    "img": "https://images.dog.ceo/breeds/pomeranian/n02112018_5697.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=800&q=80"
     ],
@@ -3857,7 +3945,8 @@
     "url": "producto-peinado-desenredado-manto-largo-afgano.html",
     "priceFormatted": "29.00 €",
     "target_species": "perro",
-    "gallery_img": "estetica-canina-bienestar.png"
+    "gallery_img": "https://images.dog.ceo/breeds/labrador/n02099712_2228.jpg",
+    "gallery_img_2": "https://images.dog.ceo/breeds/pug/n02110958_12128.jpg"
   },
   {
     "id": "SKU-SPA-15",
@@ -3876,7 +3965,7 @@
     "badge": "Primer Baño del Cachorro",
     "badgeIcon": "fa-baby",
     "badgeColor": "#ec4899",
-    "img": "https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&w=800&q=80",
+    "img": "https://cdn2.thecatapi.com/images/hq.jpg",
     "gallery": [
       "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=800&q=80"
     ],
@@ -3898,7 +3987,8 @@
     ],
     "url": "producto-spa-express-cachorros-bautismo.html",
     "priceFormatted": "24.00 €",
-    "target_species": "perro",
-    "gallery_img": "https://images.unsplash.com/photo-1507146426996-ef05306b995a?auto=format&fit=crop&w=800&q=80"
+    "target_species": "gato",
+    "gallery_img": "https://cdn2.thecatapi.com/images/MTkxNDYwMw.jpg",
+    "gallery_img_2": "https://cdn2.thecatapi.com/images/MTg4NTAyOA.jpg"
   }
 ]

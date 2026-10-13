@@ -176,14 +176,14 @@ const STORE_CATEGORIES = {
             {
                 "name": "DigestShield - Probióticos Multicepa con Prebióticos FOS",
                 "price": 26.0,
-                "img": "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80",
+                "img": "https://cdn2.thecatapi.com/images/cao.jpg",
                 "partner": "BioSense Vet Tech",
                 "desc": "Sobres monodosis con 10.000 millones de UFC viables de Enterococcus faecium y Lactobacillu..."
             },
             {
                 "name": "Dentapaws Sticks - Cuidado Dental con Espirulina & Ascophyllum",
                 "price": 16.5,
-                "img": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.dog.ceo/breeds/hound-walker/n02089867_454.jpg",
                 "partner": "EcoPet Biologics",
                 "desc": "Snacks dentales masticables en forma de cruz que limpian mecánicamente la placa bacteriana..."
             },

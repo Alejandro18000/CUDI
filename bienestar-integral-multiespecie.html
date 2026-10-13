@@ -1,101 +1,63 @@
-<!-- Desarrollo 100% realizado por Sergio Alejandro Ospina Rocha -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peluquería Canina, Spa de Ozonoterapia & Cuidado Felino | CUDI Marketplace Apple Glass</title>
+    <title>Peluquería Canina, Spa de Ozonoterapia & Cuidado Felino | CUDI Marketplace</title>
     <meta name="description" content="Tratamientos dérmicos de alta gama, deslanado técnico, cortes a tijera y peluquería felina libre de estrés y sin sedación.">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css?v=7.4">
     <link rel="stylesheet" href="cudi-ai.css?v=7.4">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body style="background: #f8fafc; font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif); color: #0f172a; margin: 0; padding: 0;">
-
-    <!-- TOP NOTIFICATION BAR -->
-    <div class="top-bar-refined">
-        <span><i class="fa-solid fa-envelope"></i> cudi.ai2026@gmail.com</span>
-        <span><i class="fa-solid fa-phone"></i> 900 123 456</span>
-        <div style="display:flex; align-items:center; gap:5px;">
-            <i class="fa-solid fa-globe"></i>
-            <span style="font-weight:700; font-size:0.75rem;">ES</span>
-        </div>
-    </div>
-
-    <!-- NAVBAR FLOATING APPLE GLASS -->
-    <nav class="navbar-island">
-        <div class="nav-capsule">
-            <a href="index.html" class="logo" style="display:flex; align-items:center;">
-                <img src="logo.jpeg" alt="CUDI" style="height:42px; width:auto; border-radius: 10px;" decoding="async">
+<body>
+    <header class="navbar" style="position: sticky; top: 0; z-index: 1000;">
+        <div class="nav-container" style="max-width: 1280px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 14px 24px;">
+            <a href="index.html" class="logo" style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
+                <img src="logo.jpeg" alt="CUDI Logo" style="height: 38px; border-radius: 10px;">
             </a>
-            <div class="nav-search-island">
-                <i class="fa-solid fa-magnifying-glass" style="color:var(--clr-primary); font-size:0.85rem;"></i>
-                <input type="text" id="cat-search-input" placeholder="Buscar en Higiene & Dermatología..." oninput="filterCategoryProducts()">
-            </div>
-            <div class="nav-right-island">
-                <ul class="nav-links-island">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="smart-collar-aventuras-sin-sustos.html">Lanzamiento</a></li>
-                    <li><a href="comunidad-cudi.html">Comunidad</a></li>
-                    <li><a href="simulador-financiero.html">Simulador</a></li>
-                    <li><a href="index.html#store-grid">Tienda</a></li>
-                    <li><a href="index.html#suscripciones">Planes</a></li>
-                    <li><a href="red-socios-clinicas-veterinarias.html">Partners</a></li>
-                    <li id="nav-session-item"></li>
-                </ul>
-                <div class="cart-trigger-island" onclick="toggleCart()" style="position:relative; display:flex; align-items:center; justify-content:center; cursor:pointer;">
-                    <i class="fa-solid fa-bag-shopping" style="font-size:1.05rem;"></i>
-                    <span class="cart-badge" id="global-cart-badge">0</span>
-                </div>
+            <nav class="nav-menu" style="display: flex; gap: 20px; align-items: center;">
+                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="index.html#store-grid" class="nav-link active">Tienda</a>
+                <a href="planes-suscripcion-bienestar-animal.html" class="nav-link">Planes</a>
+                <a href="red-socios-clinicas-veterinarias.html" class="nav-link">Partners</a>
+                <a href="simulador-gemelo-digital-telemetria.html" class="nav-link">Demo App</a>
+            </nav>
+            <div style="display: flex; align-items: center; gap: 14px;">
+                <button type="button" class="btn-primary" onclick="if(typeof openAuthModal==='function') openAuthModal(); else window.location.href='index.html#login';" style="padding: 8px 18px; border-radius: 50px; font-size: 0.85rem;">
+                    <i class="fa-solid fa-paw"></i> Iniciar Sesión
+                </button>
+                <button type="button" onclick="if(typeof toggleCart==='function') toggleCart();" class="apple-glass-card" style="width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; border: 1px solid rgba(226, 232, 240, 0.9);" title="Mi Cesta">
+                    <i class="fa-solid fa-cart-shopping" style="color: #0284c7;"></i>
+                </button>
             </div>
         </div>
-    </nav>
+    </header>
 
-    <!-- SIDE-CART PANEL -->
-    <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
-    <div class="side-cart" id="side-cart">
-        <div class="cart-header">
-            <h3><i class="fa-solid fa-bag-shopping"></i> Tu Cesta CUDI</h3>
-            <button class="close-cart" aria-label="Cerrar Carrito" onclick="toggleCart()"><i class="fa-solid fa-xmark"></i></button>
-        </div>
-        <div class="cart-items" id="cart-items-container"></div>
-        <div class="cart-footer">
-            <div class="cart-total">
-                <span>Total Estimado:</span>
-                <span id="cart-total-price">0.00 €</span>
-            </div>
-            <a href="contratar-plan-premium-cudi.html" class="btn-primary" style="display:block; text-align:center; margin-top:10px; border-radius:50px; text-decoration:none;">Procesar Pago Seguro <i class="fa-solid fa-lock"></i></a>
-        </div>
-    </div>
-
-    <!-- CATEGORY HERO & MAIN CONTAINER -->
-    <main class="container" style="max-width: 1320px; margin: 30px auto 90px; padding: 0 20px;">
-        
-        <!-- BREADCRUMBS -->
-        <div style="display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: #64748b; margin-bottom: 24px;">
-            <a href="index.html" style="text-decoration:none; color: #0284c7; font-weight: 600;">Inicio</a>
+    <div style="max-width: 1280px; margin: 0 auto; padding: 28px 24px 60px;">
+        <nav style="font-size: 0.82rem; color: #64748b; margin-bottom: 24px; display: flex; gap: 8px;">
+            <a href="index.html" style="color: #64748b; text-decoration: none;">Inicio</a>
             <span>/</span>
-            <a href="index.html#store-grid" style="text-decoration:none; color: #0284c7; font-weight: 600;">Catálogo Omnicanal</a>
+            <a href="index.html#store-grid" style="color: #64748b; text-decoration: none;">Catálogo Omnicanal</a>
             <span>/</span>
-            <span style="color: #0f172a; font-weight: 700;">Higiene & Dermatología</span>
-        </div>
+            <span style="color: #0284c7; font-weight: 700;">Higiene & Dermatología</span>
+        </nav>
 
-        <!-- HERO HEADER APPLE GLASS -->
-        <div class="apple-glass-card" style="padding: 40px; border-radius: 30px; margin-bottom: 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; position: relative; overflow: hidden;">
-            <div style="max-width: 780px;">
-                <span class="cudi-badge-glass" style="margin-bottom: 12px; color: #7e22ce;">
+        <div class="apple-glass-card" style="padding: 36px; border-radius: 28px; margin-bottom: 36px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px;">
+            <div style="max-width: 720px;">
+                <span class="cudi-badge-glass" style="margin-bottom: 12px; color: #ec4899;">
                     <i class="fa-solid fa-bath"></i> Categoría Oficial Certificada CUDI
                 </span>
-                <h1 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 2.6rem; font-weight: 800; color: #0f172a; margin: 0 0 12px; line-height: 1.2;">
+                <h1 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 2.2rem; font-weight: 900; color: #0f172a; margin: 0 0 12px; line-height: 1.2;">
                     Peluquería Canina, Spa de Ozonoterapia & Cuidado Felino
                 </h1>
-                <p style="font-size: 1.1rem; color: #64748b; line-height: 1.6; margin: 0;">
+                <p style="font-size: 0.95rem; color: #64748b; margin: 0; line-height: 1.6;">
                     Tratamientos dérmicos de alta gama, deslanado técnico, cortes a tijera y peluquería felina libre de estrés y sin sedación.
                 </p>
             </div>
-            
-            <div style="display: flex; gap: 14px; align-items: center; flex-wrap: wrap;">
+            <div style="display: flex; gap: 14px;">
                 <div style="text-align: center; background: rgba(255, 255, 255, 0.85); padding: 14px 22px; border-radius: 20px; border: 1px solid rgba(226, 232, 240, 0.8);">
                     <div style="font-size: 1.6rem; font-weight: 900; color: #0284c7;">15</div>
                     <div style="font-size: 0.75rem; color: #64748b; font-weight: 700;">Soluciones Activas</div>
@@ -107,25 +69,20 @@
             </div>
         </div>
 
-        <!-- MARKETPLACE LAYOUT WITH WORKING FILTERS -->
         <div class="marketplace-layout">
-            
-            <!-- SIDEBAR FILTERS (APPLE GLASS) -->
             <aside class="filters-sidebar apple-glass-card" style="padding: 28px; border-radius: 24px;">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 22px; padding-bottom: 14px; border-bottom: 1px solid rgba(226, 232, 240, 0.8);">
                     <h3 style="font-size: 1.05rem; font-weight: 800; margin: 0; color: #0f172a;"><i class="fa-solid fa-sliders"></i> Filtros Activos</h3>
                     <button type="button" onclick="resetFilters()" style="background: none; border: none; color: #0284c7; font-size: 0.78rem; font-weight: 700; cursor: pointer;">Limpiar</button>
                 </div>
 
-                <!-- ESPECIE -->
                 <div class="filter-group">
                     <h4>Especie / Destinatario</h4>
                     <label class="filter-option"><input type="radio" name="speciesFilter" value="all" checked onchange="filterCategoryProducts()"> Todas las especies</label>
-                    <label class="filter-option"><input type="radio" name="speciesFilter" value="dog" onchange="filterCategoryProducts()"> Perros</label>
-                    <label class="filter-option"><input type="radio" name="speciesFilter" value="cat" onchange="filterCategoryProducts()"> Gatos</label>
+                    <label class="filter-option"><input type="radio" name="speciesFilter" value="dog" onchange="filterCategoryProducts()"> 🐶 Perros</label>
+                    <label class="filter-option"><input type="radio" name="speciesFilter" value="cat" onchange="filterCategoryProducts()"> 🐱 Gatos</label>
                 </div>
 
-                <!-- RANGO DE PRECIO -->
                 <div class="filter-group">
                     <h4>Rango de Precio</h4>
                     <label class="filter-option"><input type="radio" name="priceFilter" value="all" checked onchange="filterCategoryProducts()"> Todos los precios</label>
@@ -134,7 +91,6 @@
                     <label class="filter-option"><input type="radio" name="priceFilter" value="over50" onchange="filterCategoryProducts()"> Más de 50 €</label>
                 </div>
 
-                <!-- ORDENACIÓN -->
                 <div class="filter-group">
                     <h4>Ordenar Por</h4>
                     <select id="sort-select" onchange="filterCategoryProducts()" style="width: 100%; padding: 10px 14px; border-radius: 14px; border: 1px solid rgba(226, 232, 240, 0.85); background: white; font-family: inherit; font-size: 0.85rem; color: #0f172a; outline: none; cursor: pointer;">
@@ -145,16 +101,14 @@
                     </select>
                 </div>
 
-                <!-- BANNER ASISTENTE IA -->
                 <div style="background: rgba(240, 249, 255, 0.8); border: 1px solid rgba(186, 230, 253, 0.9); border-radius: 18px; padding: 18px; margin-top: 24px; text-align: center;">
                     <div style="color: #0284c7; font-size: 1.3rem; margin-bottom: 6px;"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
                     <div style="font-weight: 800; font-size: 0.88rem; color: #0f172a; margin-bottom: 4px;">¿Dudas con qué elegir?</div>
                     <p style="font-size: 0.78rem; color: #64748b; margin: 0 0 12px; line-height: 1.4;">Pregunta a la IA de CUDI por la opción idónea para tu mascota.</p>
-                    <button type="button" class="btn-primary" onclick="window.CudiAI && window.CudiAI.openModal ? window.CudiAI.openModal() : alert('Abriendo IA')" style="padding: 7px 16px; font-size: 0.78rem; border-radius: 50px; cursor: pointer; width: 100%;">Consultar Asistente</button>
+                    <button type="button" class="btn-primary" onclick="if(window.CudiAI && window.CudiAI.open) window.CudiAI.open(); else alert('Abriendo IA');" style="padding: 7px 16px; font-size: 0.78rem; border-radius: 50px; cursor: pointer; width: 100%;">Consultar Asistente</button>
                 </div>
             </aside>
 
-            <!-- RESULTS GRID -->
             <main>
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
                     <div id="results-count-text" style="font-size: 0.92rem; font-weight: 700; color: #64748b;">
@@ -164,679 +118,831 @@
 
                 <div class="results-grid" id="category-products-grid">
                     
-        <article class="partner-card apple-glass-card" data-species="both" data-price="42.0" data-rating="5.0" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column;">
-            <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
-                <img src="estetica-canina-bienestar.png" alt="Grooming Master - Baño Terapéutico con Ozonoterapia & Masaje" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.92); color: #7e22ce; font-weight: 800; font-size: 0.72rem;">
-                    <i class="fa-solid fa-bath"></i> Spa Premium
-                </span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> Bubbles & Paws Spa</span>
-                <div style="color: #f59e0b; font-size: 0.8rem;">
-                    <i class="fa-solid fa-star"></i> 5.0 <span style="color: #94a3b8; font-size: 0.75rem;">(290)</span>
+        <article class="partner-card apple-glass-card" data-species="cat" data-price="42.0" data-rating="5.0" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column; cursor: pointer; transition: all 0.3s ease;" onclick="if(event.target.tagName !== 'BUTTON' && !event.target.closest('button')) window.location.href='producto-grooming-master-bano-ozonoterapia.html';">
+            <a href="producto-grooming-master-bano-ozonoterapia.html" style="text-decoration: none; color: inherit; display: block;">
+                <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
+                    <img src="https://cdn2.thecatapi.com/images/lm.jpg" alt="Grooming Master - Baño Terapéutico con Ozonoterapia & Masaje" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.94); color: #ec4899; font-weight: 800; font-size: 0.72rem;">
+                        <i class="fa-solid fa-bath"></i> Spa Premium
+                    </span>
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; right: 12px; background: rgba(15, 23, 42, 0.75); color: white; font-weight: 800; font-size: 0.72rem; backdrop-filter: blur(8px);">
+                        🐱 Gatos
+                    </span>
                 </div>
-            </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Homologado</span>
+                    <div style="color: #f59e0b; font-size: 0.8rem;">
+                        <i class="fa-solid fa-star"></i> 5.0 <span style="color: #94a3b8; font-size: 0.75rem;">(180)</span>
+                    </div>
+                </div>
 
-            <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
-                Grooming Master - Baño Terapéutico con Ozonoterapia & Masaje
-            </h3>
-            
-            <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
-                Hidromasaje con microburbujas de ozono purificante que oxigena la piel, elimina olores en profundidad y calma dermatitis y alergias dérmicas.
-            </p>
+                <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
+                    Grooming Master - Baño Terapéutico con Ozonoterapia & Masaje
+                </h3>
+                
+                <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
+                    Hidromasaje con microburbujas de ozono purificante que oxigena la piel, elimina olores en profundidad y calma dermatitis y alergias dérmicas.
+                </p>
+            </a>
 
             <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid rgba(226, 232, 240, 0.7); margin-top: auto;">
                 <div style="font-size: 1.35rem; font-weight: 900; color: #0284c7;">
                     42.00 €
                 </div>
                 <div style="display: flex; gap: 8px;">
-                    <button type="button" class="btn-primary" onclick="addToCart('Grooming Master - Baño Terapéutico con Ozonoterapia & Masaje', 42.0, 'estetica-canina-bienestar.png'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
+                    <button type="button" class="btn-primary" onclick="event.stopPropagation(); addToCart('Grooming Master - Baño Terapéutico con Ozonoterapia & Masaje', 42.0, 'https://cdn2.thecatapi.com/images/lm.jpg'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
-                    <a href="producto-grooming-master-bano-ozonoterapia.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a;" title="Ver Ficha Completa">
-                        Ver Detalles <i class="fa-solid fa-arrow-right"></i>
+                    <a href="producto-grooming-master-bano-ozonoterapia.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a; display: inline-flex; align-items: center; gap: 6px;" title="Ver Ficha Steam">
+                        Ver Ficha <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </article>
         
-        <article class="partner-card apple-glass-card" data-species="both" data-price="38.0" data-rating="4.9" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column;">
-            <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
-                <img src="https://images.unsplash.com/photo-1568152950566-c1bf43f4ab28?auto=format&fit=crop&w=800&q=80" alt="ZenPet Spa - Deslanado Técnico en Profundidad & Baño Antiprurito" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.92); color: #0284c7; font-weight: 800; font-size: 0.72rem;">
-                    <i class="fa-solid fa-shield"></i> Adiós Pelos en Casa
-                </span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> ZenPet Grooming</span>
-                <div style="color: #f59e0b; font-size: 0.8rem;">
-                    <i class="fa-solid fa-star"></i> 4.9 <span style="color: #94a3b8; font-size: 0.75rem;">(240)</span>
+        <article class="partner-card apple-glass-card" data-species="cat" data-price="38.0" data-rating="4.9" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column; cursor: pointer; transition: all 0.3s ease;" onclick="if(event.target.tagName !== 'BUTTON' && !event.target.closest('button')) window.location.href='producto-zenpet-spa-deslanado-completo.html';">
+            <a href="producto-zenpet-spa-deslanado-completo.html" style="text-decoration: none; color: inherit; display: block;">
+                <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
+                    <img src="https://cdn2.thecatapi.com/images/MjAxMTk1Mw.jpg" alt="ZenPet Spa - Deslanado Técnico en Profundidad & Baño Antiprurito" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.94); color: #ec4899; font-weight: 800; font-size: 0.72rem;">
+                        <i class="fa-solid fa-bath"></i> Adiós Pelos en Casa
+                    </span>
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; right: 12px; background: rgba(15, 23, 42, 0.75); color: white; font-weight: 800; font-size: 0.72rem; backdrop-filter: blur(8px);">
+                        🐱 Gatos
+                    </span>
                 </div>
-            </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Homologado</span>
+                    <div style="color: #f59e0b; font-size: 0.8rem;">
+                        <i class="fa-solid fa-star"></i> 4.9 <span style="color: #94a3b8; font-size: 0.75rem;">(180)</span>
+                    </div>
+                </div>
 
-            <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
-                ZenPet Spa - Deslanado Técnico en Profundidad & Baño Antiprurito
-            </h3>
-            
-            <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
-                Elimina hasta el 90% del pelo muerto de muda en mantos dobles (Golden, Husky, Pastor Alemán, gatos de pelo largo) sin cortar ni estropear la capa de cobertura.
-            </p>
+                <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
+                    ZenPet Spa - Deslanado Técnico en Profundidad & Baño Antiprurito
+                </h3>
+                
+                <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
+                    Elimina hasta el 90% del pelo muerto de muda en mantos dobles (Golden, Husky, Pastor Alemán, gatos de pelo largo) sin cortar ni estropear la capa de cobertura.
+                </p>
+            </a>
 
             <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid rgba(226, 232, 240, 0.7); margin-top: auto;">
                 <div style="font-size: 1.35rem; font-weight: 900; color: #0284c7;">
                     38.00 €
                 </div>
                 <div style="display: flex; gap: 8px;">
-                    <button type="button" class="btn-primary" onclick="addToCart('ZenPet Spa - Deslanado Técnico en Profundidad & Baño Antiprurito', 38.0, 'https://images.unsplash.com/photo-1568152950566-c1bf43f4ab28?auto=format&fit=crop&w=800&q=80'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
+                    <button type="button" class="btn-primary" onclick="event.stopPropagation(); addToCart('ZenPet Spa - Deslanado Técnico en Profundidad & Baño Antiprurito', 38.0, 'https://cdn2.thecatapi.com/images/MjAxMTk1Mw.jpg'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
-                    <a href="producto-zenpet-spa-deslanado-completo.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a;" title="Ver Ficha Completa">
-                        Ver Detalles <i class="fa-solid fa-arrow-right"></i>
+                    <a href="producto-zenpet-spa-deslanado-completo.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a; display: inline-flex; align-items: center; gap: 6px;" title="Ver Ficha Steam">
+                        Ver Ficha <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </article>
         
-        <article class="partner-card apple-glass-card" data-species="cat" data-price="46.0" data-rating="5.0" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column;">
-            <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
-                <img src="https://images.unsplash.com/photo-1586042091284-bd35c8c1d917?auto=format&fit=crop&w=800&q=80" alt="Bubbles & Paws - Peluquería Felina Especializada (Cero Sedación)" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.92); color: #ec4899; font-weight: 800; font-size: 0.72rem;">
-                    <i class="fa-solid fa-cat"></i> Sin Sedar al Gato
-                </span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> Bubbles & Paws Spa</span>
-                <div style="color: #f59e0b; font-size: 0.8rem;">
-                    <i class="fa-solid fa-star"></i> 5.0 <span style="color: #94a3b8; font-size: 0.75rem;">(180)</span>
+        <article class="partner-card apple-glass-card" data-species="cat" data-price="46.0" data-rating="5.0" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column; cursor: pointer; transition: all 0.3s ease;" onclick="if(event.target.tagName !== 'BUTTON' && !event.target.closest('button')) window.location.href='producto-bubbles-paws-peluqueria-felina-sin-sedacion.html';">
+            <a href="producto-bubbles-paws-peluqueria-felina-sin-sedacion.html" style="text-decoration: none; color: inherit; display: block;">
+                <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
+                    <img src="https://cdn2.thecatapi.com/images/bq3.jpg" alt="Bubbles & Paws - Peluquería Felina Especializada (Cero Sedación)" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.94); color: #ec4899; font-weight: 800; font-size: 0.72rem;">
+                        <i class="fa-solid fa-bath"></i> Sin Sedar al Gato
+                    </span>
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; right: 12px; background: rgba(15, 23, 42, 0.75); color: white; font-weight: 800; font-size: 0.72rem; backdrop-filter: blur(8px);">
+                        🐱 Gatos
+                    </span>
                 </div>
-            </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Homologado</span>
+                    <div style="color: #f59e0b; font-size: 0.8rem;">
+                        <i class="fa-solid fa-star"></i> 5.0 <span style="color: #94a3b8; font-size: 0.75rem;">(180)</span>
+                    </div>
+                </div>
 
-            <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
-                Bubbles & Paws - Peluquería Felina Especializada (Cero Sedación)
-            </h3>
-            
-            <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
-                Tratamiento de nudos, corte a tijera y baño en seco o con toallas tibias en sala libre de gatos con técnicas Low Stress certificadas.
-            </p>
+                <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
+                    Bubbles & Paws - Peluquería Felina Especializada (Cero Sedación)
+                </h3>
+                
+                <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
+                    Tratamiento de nudos, corte a tijera y baño en seco o con toallas tibias en sala libre de gatos con técnicas Low Stress certificadas.
+                </p>
+            </a>
 
             <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid rgba(226, 232, 240, 0.7); margin-top: auto;">
                 <div style="font-size: 1.35rem; font-weight: 900; color: #0284c7;">
                     46.00 €
                 </div>
                 <div style="display: flex; gap: 8px;">
-                    <button type="button" class="btn-primary" onclick="addToCart('Bubbles & Paws - Peluquería Felina Especializada (Cero Sedación)', 46.0, 'https://images.unsplash.com/photo-1586042091284-bd35c8c1d917?auto=format&fit=crop&w=800&q=80'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
+                    <button type="button" class="btn-primary" onclick="event.stopPropagation(); addToCart('Bubbles & Paws - Peluquería Felina Especializada (Cero Sedación)', 46.0, 'https://cdn2.thecatapi.com/images/bq3.jpg'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
-                    <a href="producto-bubbles-paws-peluqueria-felina-sin-sedacion.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a;" title="Ver Ficha Completa">
-                        Ver Detalles <i class="fa-solid fa-arrow-right"></i>
+                    <a href="producto-bubbles-paws-peluqueria-felina-sin-sedacion.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a; display: inline-flex; align-items: center; gap: 6px;" title="Ver Ficha Steam">
+                        Ver Ficha <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </article>
         
-        <article class="partner-card apple-glass-card" data-species="dog" data-price="55.0" data-rating="4.9" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column;">
-            <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
-                <img src="https://images.unsplash.com/photo-1554456854-55a089fd4cb2?auto=format&fit=crop&w=800&q=80" alt="Stripping Tradicional a Mano para Perros de Pelo Duro" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.92); color: #f59e0b; font-weight: 800; font-size: 0.72rem;">
-                    <i class="fa-solid fa-hand"></i> Stripping Manual
-                </span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> ZenPet Grooming</span>
-                <div style="color: #f59e0b; font-size: 0.8rem;">
-                    <i class="fa-solid fa-star"></i> 4.9 <span style="color: #94a3b8; font-size: 0.75rem;">(132)</span>
+        <article class="partner-card apple-glass-card" data-species="dog" data-price="55.0" data-rating="4.9" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column; cursor: pointer; transition: all 0.3s ease;" onclick="if(event.target.tagName !== 'BUTTON' && !event.target.closest('button')) window.location.href='producto-corte-raza-stripping-terriers.html';">
+            <a href="producto-corte-raza-stripping-terriers.html" style="text-decoration: none; color: inherit; display: block;">
+                <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
+                    <img src="https://images.dog.ceo/breeds/terrier-irish/n02093991_877.jpg" alt="Stripping Tradicional a Mano para Perros de Pelo Duro" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.94); color: #ec4899; font-weight: 800; font-size: 0.72rem;">
+                        <i class="fa-solid fa-bath"></i> Stripping Manual
+                    </span>
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; right: 12px; background: rgba(15, 23, 42, 0.75); color: white; font-weight: 800; font-size: 0.72rem; backdrop-filter: blur(8px);">
+                        🐶 Perros
+                    </span>
                 </div>
-            </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Homologado</span>
+                    <div style="color: #f59e0b; font-size: 0.8rem;">
+                        <i class="fa-solid fa-star"></i> 4.9 <span style="color: #94a3b8; font-size: 0.75rem;">(180)</span>
+                    </div>
+                </div>
 
-            <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
-                Stripping Tradicional a Mano para Perros de Pelo Duro
-            </h3>
-            
-            <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
-                Técnica artesanal de renovación de manto muerto a mano con dedales de goma para Teckels, Schnauzers, Fox Terriers y Westies.
-            </p>
+                <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
+                    Stripping Tradicional a Mano para Perros de Pelo Duro
+                </h3>
+                
+                <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
+                    Técnica artesanal de renovación de manto muerto a mano con dedales de goma para Teckels, Schnauzers, Fox Terriers y Westies.
+                </p>
+            </a>
 
             <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid rgba(226, 232, 240, 0.7); margin-top: auto;">
                 <div style="font-size: 1.35rem; font-weight: 900; color: #0284c7;">
                     55.00 €
                 </div>
                 <div style="display: flex; gap: 8px;">
-                    <button type="button" class="btn-primary" onclick="addToCart('Stripping Tradicional a Mano para Perros de Pelo Duro', 55.0, 'https://images.unsplash.com/photo-1554456854-55a089fd4cb2?auto=format&fit=crop&w=800&q=80'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
+                    <button type="button" class="btn-primary" onclick="event.stopPropagation(); addToCart('Stripping Tradicional a Mano para Perros de Pelo Duro', 55.0, 'https://images.dog.ceo/breeds/terrier-irish/n02093991_877.jpg'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
-                    <a href="producto-corte-raza-stripping-terriers.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a;" title="Ver Ficha Completa">
-                        Ver Detalles <i class="fa-solid fa-arrow-right"></i>
+                    <a href="producto-corte-raza-stripping-terriers.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a; display: inline-flex; align-items: center; gap: 6px;" title="Ver Ficha Steam">
+                        Ver Ficha <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </article>
         
-        <article class="partner-card apple-glass-card" data-species="both" data-price="16.0" data-rating="5.0" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column;">
-            <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
-                <img src="https://images.unsplash.com/photo-1503777119540-ce54b422baff?auto=format&fit=crop&w=800&q=80" alt="PawCure Spa - Limado Suave de Uñas con Torno & Masaje de Almohadillas" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.92); color: #10b981; font-weight: 800; font-size: 0.72rem;">
-                    <i class="fa-solid fa-paw"></i> Cero Miedo al Corte
-                </span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> Bubbles & Paws Spa</span>
-                <div style="color: #f59e0b; font-size: 0.8rem;">
-                    <i class="fa-solid fa-star"></i> 5.0 <span style="color: #94a3b8; font-size: 0.75rem;">(310)</span>
+        <article class="partner-card apple-glass-card" data-species="cat" data-price="16.0" data-rating="5.0" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column; cursor: pointer; transition: all 0.3s ease;" onclick="if(event.target.tagName !== 'BUTTON' && !event.target.closest('button')) window.location.href='producto-pedicura-spa-almohadillas-cudi-pawcure.html';">
+            <a href="producto-pedicura-spa-almohadillas-cudi-pawcure.html" style="text-decoration: none; color: inherit; display: block;">
+                <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
+                    <img src="https://cdn2.thecatapi.com/images/efm.gif" alt="PawCure Spa - Limado Suave de Uñas con Torno & Masaje de Almohadillas" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.94); color: #ec4899; font-weight: 800; font-size: 0.72rem;">
+                        <i class="fa-solid fa-bath"></i> Cero Miedo al Corte
+                    </span>
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; right: 12px; background: rgba(15, 23, 42, 0.75); color: white; font-weight: 800; font-size: 0.72rem; backdrop-filter: blur(8px);">
+                        🐱 Gatos
+                    </span>
                 </div>
-            </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Homologado</span>
+                    <div style="color: #f59e0b; font-size: 0.8rem;">
+                        <i class="fa-solid fa-star"></i> 5.0 <span style="color: #94a3b8; font-size: 0.75rem;">(180)</span>
+                    </div>
+                </div>
 
-            <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
-                PawCure Spa - Limado Suave de Uñas con Torno & Masaje de Almohadillas
-            </h3>
-            
-            <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
-                Olvídate del doloroso alicate: limado con dremel diamantado ultrasilencioso sin cortar la vena viva, recorte interdigital y cera nutritiva.
-            </p>
+                <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
+                    PawCure Spa - Limado Suave de Uñas con Torno & Masaje de Almohadillas
+                </h3>
+                
+                <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
+                    Olvídate del doloroso alicate: limado con dremel diamantado ultrasilencioso sin cortar la vena viva, recorte interdigital y cera nutritiva.
+                </p>
+            </a>
 
             <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid rgba(226, 232, 240, 0.7); margin-top: auto;">
                 <div style="font-size: 1.35rem; font-weight: 900; color: #0284c7;">
                     16.00 €
                 </div>
                 <div style="display: flex; gap: 8px;">
-                    <button type="button" class="btn-primary" onclick="addToCart('PawCure Spa - Limado Suave de Uñas con Torno & Masaje de Almohadillas', 16.0, 'https://images.unsplash.com/photo-1503777119540-ce54b422baff?auto=format&fit=crop&w=800&q=80'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
+                    <button type="button" class="btn-primary" onclick="event.stopPropagation(); addToCart('PawCure Spa - Limado Suave de Uñas con Torno & Masaje de Almohadillas', 16.0, 'https://cdn2.thecatapi.com/images/efm.gif'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
-                    <a href="producto-pedicura-spa-almohadillas-cudi-pawcure.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a;" title="Ver Ficha Completa">
-                        Ver Detalles <i class="fa-solid fa-arrow-right"></i>
+                    <a href="producto-pedicura-spa-almohadillas-cudi-pawcure.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a; display: inline-flex; align-items: center; gap: 6px;" title="Ver Ficha Steam">
+                        Ver Ficha <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </article>
         
-        <article class="partner-card apple-glass-card" data-species="dog" data-price="50.0" data-rating="4.9" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column;">
-            <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
-                <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=800&q=80" alt="Haute Coiffure - Corte Integral a Tijera Personalizado por Raza" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.92); color: #ec4899; font-weight: 800; font-size: 0.72rem;">
-                    <i class="fa-solid fa-scissors"></i> Acabado de Exposición
-                </span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> ZenPet Grooming</span>
-                <div style="color: #f59e0b; font-size: 0.8rem;">
-                    <i class="fa-solid fa-star"></i> 4.9 <span style="color: #94a3b8; font-size: 0.75rem;">(210)</span>
+        <article class="partner-card apple-glass-card" data-species="dog" data-price="50.0" data-rating="4.9" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column; cursor: pointer; transition: all 0.3s ease;" onclick="if(event.target.tagName !== 'BUTTON' && !event.target.closest('button')) window.location.href='producto-corte-tijera-alta-costura-canina.html';">
+            <a href="producto-corte-tijera-alta-costura-canina.html" style="text-decoration: none; color: inherit; display: block;">
+                <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
+                    <img src="https://images.dog.ceo/breeds/spaniel-sussex/n02102480_3771.jpg" alt="Haute Coiffure - Corte Integral a Tijera Personalizado por Raza" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.94); color: #ec4899; font-weight: 800; font-size: 0.72rem;">
+                        <i class="fa-solid fa-bath"></i> Acabado de Exposición
+                    </span>
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; right: 12px; background: rgba(15, 23, 42, 0.75); color: white; font-weight: 800; font-size: 0.72rem; backdrop-filter: blur(8px);">
+                        🐶 Perros
+                    </span>
                 </div>
-            </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Homologado</span>
+                    <div style="color: #f59e0b; font-size: 0.8rem;">
+                        <i class="fa-solid fa-star"></i> 4.9 <span style="color: #94a3b8; font-size: 0.75rem;">(180)</span>
+                    </div>
+                </div>
 
-            <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
-                Haute Coiffure - Corte Integral a Tijera Personalizado por Raza
-            </h3>
-            
-            <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
-                Esculpido a mano con tijeras curvas japonesas adaptado a la morfología de Caniches, Bichones Malteses, Shih Tzu y Cobradores.
-            </p>
+                <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
+                    Haute Coiffure - Corte Integral a Tijera Personalizado por Raza
+                </h3>
+                
+                <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
+                    Esculpido a mano con tijeras curvas japonesas adaptado a la morfología de Caniches, Bichones Malteses, Shih Tzu y Cobradores.
+                </p>
+            </a>
 
             <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid rgba(226, 232, 240, 0.7); margin-top: auto;">
                 <div style="font-size: 1.35rem; font-weight: 900; color: #0284c7;">
                     50.00 €
                 </div>
                 <div style="display: flex; gap: 8px;">
-                    <button type="button" class="btn-primary" onclick="addToCart('Haute Coiffure - Corte Integral a Tijera Personalizado por Raza', 50.0, 'https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=800&q=80'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
+                    <button type="button" class="btn-primary" onclick="event.stopPropagation(); addToCart('Haute Coiffure - Corte Integral a Tijera Personalizado por Raza', 50.0, 'https://images.dog.ceo/breeds/spaniel-sussex/n02102480_3771.jpg'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
-                    <a href="producto-corte-tijera-alta-costura-canina.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a;" title="Ver Ficha Completa">
-                        Ver Detalles <i class="fa-solid fa-arrow-right"></i>
+                    <a href="producto-corte-tijera-alta-costura-canina.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a; display: inline-flex; align-items: center; gap: 6px;" title="Ver Ficha Steam">
+                        Ver Ficha <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </article>
         
-        <article class="partner-card apple-glass-card" data-species="both" data-price="25.0" data-rating="5.0" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column;">
-            <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
-                <img src="https://images.unsplash.com/photo-1513245543132-31f507417b26?auto=format&fit=crop&w=800&q=80" alt="SilkPaws - Tratamiento de Keratina & Aceite de Argán Puro de Marruecos" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.92); color: #f59e0b; font-weight: 800; font-size: 0.72rem;">
-                    <i class="fa-solid fa-wand-magic-sparkles"></i> Pelo Extra Suave
-                </span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> Bubbles & Paws Spa</span>
-                <div style="color: #f59e0b; font-size: 0.8rem;">
-                    <i class="fa-solid fa-star"></i> 5.0 <span style="color: #94a3b8; font-size: 0.75rem;">(165)</span>
+        <article class="partner-card apple-glass-card" data-species="cat" data-price="25.0" data-rating="5.0" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column; cursor: pointer; transition: all 0.3s ease;" onclick="if(event.target.tagName !== 'BUTTON' && !event.target.closest('button')) window.location.href='producto-mascarilla-hidronutritiva-keratina-argan.html';">
+            <a href="producto-mascarilla-hidronutritiva-keratina-argan.html" style="text-decoration: none; color: inherit; display: block;">
+                <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
+                    <img src="https://cdn2.thecatapi.com/images/aii.jpg" alt="SilkPaws - Tratamiento de Keratina & Aceite de Argán Puro de Marruecos" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.94); color: #ec4899; font-weight: 800; font-size: 0.72rem;">
+                        <i class="fa-solid fa-bath"></i> Pelo Extra Suave
+                    </span>
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; right: 12px; background: rgba(15, 23, 42, 0.75); color: white; font-weight: 800; font-size: 0.72rem; backdrop-filter: blur(8px);">
+                        🐱 Gatos
+                    </span>
                 </div>
-            </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Homologado</span>
+                    <div style="color: #f59e0b; font-size: 0.8rem;">
+                        <i class="fa-solid fa-star"></i> 5.0 <span style="color: #94a3b8; font-size: 0.75rem;">(180)</span>
+                    </div>
+                </div>
 
-            <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
-                SilkPaws - Tratamiento de Keratina & Aceite de Argán Puro de Marruecos
-            </h3>
-            
-            <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
-                Batería de aminoácidos y lípidos para mantos quebradizos, secos o castigados que regenera la cutícula y previene nuevos enredos durante semanas.
-            </p>
+                <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
+                    SilkPaws - Tratamiento de Keratina & Aceite de Argán Puro de Marruecos
+                </h3>
+                
+                <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
+                    Batería de aminoácidos y lípidos para mantos quebradizos, secos o castigados que regenera la cutícula y previene nuevos enredos durante semanas.
+                </p>
+            </a>
 
             <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid rgba(226, 232, 240, 0.7); margin-top: auto;">
                 <div style="font-size: 1.35rem; font-weight: 900; color: #0284c7;">
                     25.00 €
                 </div>
                 <div style="display: flex; gap: 8px;">
-                    <button type="button" class="btn-primary" onclick="addToCart('SilkPaws - Tratamiento de Keratina & Aceite de Argán Puro de Marruecos', 25.0, 'https://images.unsplash.com/photo-1513245543132-31f507417b26?auto=format&fit=crop&w=800&q=80'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
+                    <button type="button" class="btn-primary" onclick="event.stopPropagation(); addToCart('SilkPaws - Tratamiento de Keratina & Aceite de Argán Puro de Marruecos', 25.0, 'https://cdn2.thecatapi.com/images/aii.jpg'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
-                    <a href="producto-mascarilla-hidronutritiva-keratina-argan.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a;" title="Ver Ficha Completa">
-                        Ver Detalles <i class="fa-solid fa-arrow-right"></i>
+                    <a href="producto-mascarilla-hidronutritiva-keratina-argan.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a; display: inline-flex; align-items: center; gap: 6px;" title="Ver Ficha Steam">
+                        Ver Ficha <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </article>
         
-        <article class="partner-card apple-glass-card" data-species="both" data-price="14.5" data-rating="4.8" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column;">
-            <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
-                <img src="https://images.unsplash.com/photo-1517423440428-a5a00ad493e8?auto=format&fit=crop&w=800&q=80" alt="OtiClean Spa - Higiene Auricular Profunda & Eliminación de Vello Ótico" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.92); color: #06b6d4; font-weight: 800; font-size: 0.72rem;">
-                    <i class="fa-solid fa-ear-listen"></i> Prevención Otitis
-                </span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> Bubbles & Paws Spa</span>
-                <div style="color: #f59e0b; font-size: 0.8rem;">
-                    <i class="fa-solid fa-star"></i> 4.8 <span style="color: #94a3b8; font-size: 0.75rem;">(190)</span>
+        <article class="partner-card apple-glass-card" data-species="dog" data-price="14.5" data-rating="4.8" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column; cursor: pointer; transition: all 0.3s ease;" onclick="if(event.target.tagName !== 'BUTTON' && !event.target.closest('button')) window.location.href='producto-limpieza-auricular-otica-spa.html';">
+            <a href="producto-limpieza-auricular-otica-spa.html" style="text-decoration: none; color: inherit; display: block;">
+                <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
+                    <img src="https://images.dog.ceo/breeds/pyrenees/n02111500_1787.jpg" alt="OtiClean Spa - Higiene Auricular Profunda & Eliminación de Vello Ótico" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.94); color: #ec4899; font-weight: 800; font-size: 0.72rem;">
+                        <i class="fa-solid fa-bath"></i> Prevención Otitis
+                    </span>
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; right: 12px; background: rgba(15, 23, 42, 0.75); color: white; font-weight: 800; font-size: 0.72rem; backdrop-filter: blur(8px);">
+                        🐶 Perros
+                    </span>
                 </div>
-            </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Homologado</span>
+                    <div style="color: #f59e0b; font-size: 0.8rem;">
+                        <i class="fa-solid fa-star"></i> 4.8 <span style="color: #94a3b8; font-size: 0.75rem;">(180)</span>
+                    </div>
+                </div>
 
-            <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
-                OtiClean Spa - Higiene Auricular Profunda & Eliminación de Vello Ótico
-            </h3>
-            
-            <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
-                Limpieza del canal auditivo externo con limpiador enzimático vegetal y depilado suave de pelos en razas de orejas caídas propensas a infecciones.
-            </p>
+                <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
+                    OtiClean Spa - Higiene Auricular Profunda & Eliminación de Vello Ótico
+                </h3>
+                
+                <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
+                    Limpieza del canal auditivo externo con limpiador enzimático vegetal y depilado suave de pelos en razas de orejas caídas propensas a infecciones.
+                </p>
+            </a>
 
             <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid rgba(226, 232, 240, 0.7); margin-top: auto;">
                 <div style="font-size: 1.35rem; font-weight: 900; color: #0284c7;">
                     14.50 €
                 </div>
                 <div style="display: flex; gap: 8px;">
-                    <button type="button" class="btn-primary" onclick="addToCart('OtiClean Spa - Higiene Auricular Profunda & Eliminación de Vello Ótico', 14.5, 'https://images.unsplash.com/photo-1517423440428-a5a00ad493e8?auto=format&fit=crop&w=800&q=80'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
+                    <button type="button" class="btn-primary" onclick="event.stopPropagation(); addToCart('OtiClean Spa - Higiene Auricular Profunda & Eliminación de Vello Ótico', 14.5, 'https://images.dog.ceo/breeds/pyrenees/n02111500_1787.jpg'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
-                    <a href="producto-limpieza-auricular-otica-spa.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a;" title="Ver Ficha Completa">
-                        Ver Detalles <i class="fa-solid fa-arrow-right"></i>
+                    <a href="producto-limpieza-auricular-otica-spa.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a; display: inline-flex; align-items: center; gap: 6px;" title="Ver Ficha Steam">
+                        Ver Ficha <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </article>
         
-        <article class="partner-card apple-glass-card" data-species="dog" data-price="48.0" data-rating="5.0" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column;">
-            <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
-                <img src="https://images.unsplash.com/photo-1587402092301-725e37c70fd8?auto=format&fit=crop&w=800&q=80" alt="HydroZen - Baño de Hidromasaje con Sal Marina & Aromaterapia Canina" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.92); color: #3b82f6; font-weight: 800; font-size: 0.72rem;">
-                    <i class="fa-solid fa-water"></i> Relajación Total
-                </span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> ZenPet Grooming</span>
-                <div style="color: #f59e0b; font-size: 0.8rem;">
-                    <i class="fa-solid fa-star"></i> 5.0 <span style="color: #94a3b8; font-size: 0.75rem;">(125)</span>
+        <article class="partner-card apple-glass-card" data-species="dog" data-price="48.0" data-rating="5.0" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column; cursor: pointer; transition: all 0.3s ease;" onclick="if(event.target.tagName !== 'BUTTON' && !event.target.closest('button')) window.location.href='producto-hidromasaje-terapeutico-aromatoterapia.html';">
+            <a href="producto-hidromasaje-terapeutico-aromatoterapia.html" style="text-decoration: none; color: inherit; display: block;">
+                <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
+                    <img src="https://images.dog.ceo/breeds/spaniel-cocker/n02102318_2073.jpg" alt="HydroZen - Baño de Hidromasaje con Sal Marina & Aromaterapia Canina" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.94); color: #ec4899; font-weight: 800; font-size: 0.72rem;">
+                        <i class="fa-solid fa-bath"></i> Relajación Total
+                    </span>
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; right: 12px; background: rgba(15, 23, 42, 0.75); color: white; font-weight: 800; font-size: 0.72rem; backdrop-filter: blur(8px);">
+                        🐶 Perros
+                    </span>
                 </div>
-            </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Homologado</span>
+                    <div style="color: #f59e0b; font-size: 0.8rem;">
+                        <i class="fa-solid fa-star"></i> 5.0 <span style="color: #94a3b8; font-size: 0.75rem;">(180)</span>
+                    </div>
+                </div>
 
-            <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
-                HydroZen - Baño de Hidromasaje con Sal Marina & Aromaterapia Canina
-            </h3>
-            
-            <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
-                Inmersión en agua templada con sales ricas en magnesio del Mar Muerto y vapores de lavanda y manzanilla para aliviar contracturas musculares.
-            </p>
+                <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
+                    HydroZen - Baño de Hidromasaje con Sal Marina & Aromaterapia Canina
+                </h3>
+                
+                <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
+                    Inmersión en agua templada con sales ricas en magnesio del Mar Muerto y vapores de lavanda y manzanilla para aliviar contracturas musculares.
+                </p>
+            </a>
 
             <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid rgba(226, 232, 240, 0.7); margin-top: auto;">
                 <div style="font-size: 1.35rem; font-weight: 900; color: #0284c7;">
                     48.00 €
                 </div>
                 <div style="display: flex; gap: 8px;">
-                    <button type="button" class="btn-primary" onclick="addToCart('HydroZen - Baño de Hidromasaje con Sal Marina & Aromaterapia Canina', 48.0, 'https://images.unsplash.com/photo-1587402092301-725e37c70fd8?auto=format&fit=crop&w=800&q=80'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
+                    <button type="button" class="btn-primary" onclick="event.stopPropagation(); addToCart('HydroZen - Baño de Hidromasaje con Sal Marina & Aromaterapia Canina', 48.0, 'https://images.dog.ceo/breeds/spaniel-cocker/n02102318_2073.jpg'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
-                    <a href="producto-hidromasaje-terapeutico-aromatoterapia.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a;" title="Ver Ficha Completa">
-                        Ver Detalles <i class="fa-solid fa-arrow-right"></i>
+                    <a href="producto-hidromasaje-terapeutico-aromatoterapia.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a; display: inline-flex; align-items: center; gap: 6px;" title="Ver Ficha Steam">
+                        Ver Ficha <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </article>
         
-        <article class="partner-card apple-glass-card" data-species="both" data-price="32.0" data-rating="4.9" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column;">
-            <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
-                <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=80" alt="ShieldBath - Baño Antiparasitario Natural con Neem & Citronela" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.92); color: #15803d; font-weight: 800; font-size: 0.72rem;">
-                    <i class="fa-solid fa-shield-halved"></i> Repelente 100% BIO
-                </span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> Bubbles & Paws Spa</span>
-                <div style="color: #f59e0b; font-size: 0.8rem;">
-                    <i class="fa-solid fa-star"></i> 4.9 <span style="color: #94a3b8; font-size: 0.75rem;">(210)</span>
+        <article class="partner-card apple-glass-card" data-species="dog" data-price="32.0" data-rating="4.9" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column; cursor: pointer; transition: all 0.3s ease;" onclick="if(event.target.tagName !== 'BUTTON' && !event.target.closest('button')) window.location.href='producto-bano-desparasitante-natural-repelente.html';">
+            <a href="producto-bano-desparasitante-natural-repelente.html" style="text-decoration: none; color: inherit; display: block;">
+                <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
+                    <img src="https://images.dog.ceo/breeds/chihuahua/n02085620_3880.jpg" alt="ShieldBath - Baño Antiparasitario Natural con Neem & Citronela" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.94); color: #ec4899; font-weight: 800; font-size: 0.72rem;">
+                        <i class="fa-solid fa-bath"></i> Repelente 100% BIO
+                    </span>
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; right: 12px; background: rgba(15, 23, 42, 0.75); color: white; font-weight: 800; font-size: 0.72rem; backdrop-filter: blur(8px);">
+                        🐶 Perros
+                    </span>
                 </div>
-            </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Homologado</span>
+                    <div style="color: #f59e0b; font-size: 0.8rem;">
+                        <i class="fa-solid fa-star"></i> 4.9 <span style="color: #94a3b8; font-size: 0.75rem;">(180)</span>
+                    </div>
+                </div>
 
-            <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
-                ShieldBath - Baño Antiparasitario Natural con Neem & Citronela
-            </h3>
-            
-            <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
-                Eliminación activa de pulgas, garrapatas y ácaros con extracto de Margosa (Neem) ecológico que crea una barrera repelente sin insecticidas químicos.
-            </p>
+                <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
+                    ShieldBath - Baño Antiparasitario Natural con Neem & Citronela
+                </h3>
+                
+                <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
+                    Eliminación activa de pulgas, garrapatas y ácaros con extracto de Margosa (Neem) ecológico que crea una barrera repelente sin insecticidas químicos.
+                </p>
+            </a>
 
             <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid rgba(226, 232, 240, 0.7); margin-top: auto;">
                 <div style="font-size: 1.35rem; font-weight: 900; color: #0284c7;">
                     32.00 €
                 </div>
                 <div style="display: flex; gap: 8px;">
-                    <button type="button" class="btn-primary" onclick="addToCart('ShieldBath - Baño Antiparasitario Natural con Neem & Citronela', 32.0, 'https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=80'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
+                    <button type="button" class="btn-primary" onclick="event.stopPropagation(); addToCart('ShieldBath - Baño Antiparasitario Natural con Neem & Citronela', 32.0, 'https://images.dog.ceo/breeds/chihuahua/n02085620_3880.jpg'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
-                    <a href="producto-bano-desparasitante-natural-repelente.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a;" title="Ver Ficha Completa">
-                        Ver Detalles <i class="fa-solid fa-arrow-right"></i>
+                    <a href="producto-bano-desparasitante-natural-repelente.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a; display: inline-flex; align-items: center; gap: 6px;" title="Ver Ficha Steam">
+                        Ver Ficha <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </article>
         
-        <article class="partner-card apple-glass-card" data-species="dog" data-price="35.0" data-rating="5.0" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column;">
-            <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
-                <img src="https://images.unsplash.com/photo-1560743641-3914f2c45636?auto=format&fit=crop&w=800&q=80" alt="PawsMassage - Masaje Terapéutico Miofascial & Puntos Gatillo (45 min)" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.92); color: #f43f5e; font-weight: 800; font-size: 0.72rem;">
-                    <i class="fa-solid fa-hand-holding-heart"></i> Alivio de Contracturas
-                </span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> ZenPet Grooming</span>
-                <div style="color: #f59e0b; font-size: 0.8rem;">
-                    <i class="fa-solid fa-star"></i> 5.0 <span style="color: #94a3b8; font-size: 0.75rem;">(110)</span>
+        <article class="partner-card apple-glass-card" data-species="dog" data-price="35.0" data-rating="5.0" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column; cursor: pointer; transition: all 0.3s ease;" onclick="if(event.target.tagName !== 'BUTTON' && !event.target.closest('button')) window.location.href='producto-masaje-miofascial-relajante-perros.html';">
+            <a href="producto-masaje-miofascial-relajante-perros.html" style="text-decoration: none; color: inherit; display: block;">
+                <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
+                    <img src="https://images.dog.ceo/breeds/pomeranian/n02112018_161.jpg" alt="PawsMassage - Masaje Terapéutico Miofascial & Puntos Gatillo (45 min)" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.94); color: #ec4899; font-weight: 800; font-size: 0.72rem;">
+                        <i class="fa-solid fa-bath"></i> Alivio de Contracturas
+                    </span>
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; right: 12px; background: rgba(15, 23, 42, 0.75); color: white; font-weight: 800; font-size: 0.72rem; backdrop-filter: blur(8px);">
+                        🐶 Perros
+                    </span>
                 </div>
-            </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Homologado</span>
+                    <div style="color: #f59e0b; font-size: 0.8rem;">
+                        <i class="fa-solid fa-star"></i> 5.0 <span style="color: #94a3b8; font-size: 0.75rem;">(180)</span>
+                    </div>
+                </div>
 
-            <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
-                PawsMassage - Masaje Terapéutico Miofascial & Puntos Gatillo (45 min)
-            </h3>
-            
-            <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
-                Terapia manual sobre fascias y grupos musculares de cuello, escápulas y lumbares para perros con tensión postural, estrés o sobrecargas.
-            </p>
+                <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
+                    PawsMassage - Masaje Terapéutico Miofascial & Puntos Gatillo (45 min)
+                </h3>
+                
+                <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
+                    Terapia manual sobre fascias y grupos musculares de cuello, escápulas y lumbares para perros con tensión postural, estrés o sobrecargas.
+                </p>
+            </a>
 
             <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid rgba(226, 232, 240, 0.7); margin-top: auto;">
                 <div style="font-size: 1.35rem; font-weight: 900; color: #0284c7;">
                     35.00 €
                 </div>
                 <div style="display: flex; gap: 8px;">
-                    <button type="button" class="btn-primary" onclick="addToCart('PawsMassage - Masaje Terapéutico Miofascial & Puntos Gatillo (45 min)', 35.0, 'https://images.unsplash.com/photo-1560743641-3914f2c45636?auto=format&fit=crop&w=800&q=80'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
+                    <button type="button" class="btn-primary" onclick="event.stopPropagation(); addToCart('PawsMassage - Masaje Terapéutico Miofascial & Puntos Gatillo (45 min)', 35.0, 'https://images.dog.ceo/breeds/pomeranian/n02112018_161.jpg'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
-                    <a href="producto-masaje-miofascial-relajante-perros.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a;" title="Ver Ficha Completa">
-                        Ver Detalles <i class="fa-solid fa-arrow-right"></i>
+                    <a href="producto-masaje-miofascial-relajante-perros.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a; display: inline-flex; align-items: center; gap: 6px;" title="Ver Ficha Steam">
+                        Ver Ficha <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </article>
         
-        <article class="partner-card apple-glass-card" data-species="cat" data-price="12.0" data-rating="4.9" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column;">
-            <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
-                <img src="https://images.unsplash.com/photo-1518288774672-b94e808873ff?auto=format&fit=crop&w=800&q=80" alt="CatClaws Care - Recorte & Limado Amable de Uñas Felinas" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.92); color: #8b5cf6; font-weight: 800; font-size: 0.72rem;">
-                    <i class="fa-solid fa-cat"></i> Cero Rasguños en Muebles
-                </span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> Bubbles & Paws Spa</span>
-                <div style="color: #f59e0b; font-size: 0.8rem;">
-                    <i class="fa-solid fa-star"></i> 4.9 <span style="color: #94a3b8; font-size: 0.75rem;">(260)</span>
+        <article class="partner-card apple-glass-card" data-species="cat" data-price="12.0" data-rating="4.9" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column; cursor: pointer; transition: all 0.3s ease;" onclick="if(event.target.tagName !== 'BUTTON' && !event.target.closest('button')) window.location.href='producto-corte-unas-gatos-limado-seguro.html';">
+            <a href="producto-corte-unas-gatos-limado-seguro.html" style="text-decoration: none; color: inherit; display: block;">
+                <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
+                    <img src="https://cdn2.thecatapi.com/images/13MkvUreZ.jpg" alt="CatClaws Care - Recorte & Limado Amable de Uñas Felinas" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.94); color: #ec4899; font-weight: 800; font-size: 0.72rem;">
+                        <i class="fa-solid fa-bath"></i> Cero Rasguños en Muebles
+                    </span>
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; right: 12px; background: rgba(15, 23, 42, 0.75); color: white; font-weight: 800; font-size: 0.72rem; backdrop-filter: blur(8px);">
+                        🐱 Gatos
+                    </span>
                 </div>
-            </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Homologado</span>
+                    <div style="color: #f59e0b; font-size: 0.8rem;">
+                        <i class="fa-solid fa-star"></i> 4.9 <span style="color: #94a3b8; font-size: 0.75rem;">(180)</span>
+                    </div>
+                </div>
 
-            <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
-                CatClaws Care - Recorte & Limado Amable de Uñas Felinas
-            </h3>
-            
-            <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
-                Recorte indoloro de la punta afilada transparente de las 18 uñas del gato sin tocar la matriz vascular viva y sin peleas en casa.
-            </p>
+                <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
+                    CatClaws Care - Recorte & Limado Amable de Uñas Felinas
+                </h3>
+                
+                <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
+                    Recorte indoloro de la punta afilada transparente de las 18 uñas del gato sin tocar la matriz vascular viva y sin peleas en casa.
+                </p>
+            </a>
 
             <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid rgba(226, 232, 240, 0.7); margin-top: auto;">
                 <div style="font-size: 1.35rem; font-weight: 900; color: #0284c7;">
                     12.00 €
                 </div>
                 <div style="display: flex; gap: 8px;">
-                    <button type="button" class="btn-primary" onclick="addToCart('CatClaws Care - Recorte & Limado Amable de Uñas Felinas', 12.0, 'https://images.unsplash.com/photo-1518288774672-b94e808873ff?auto=format&fit=crop&w=800&q=80'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
+                    <button type="button" class="btn-primary" onclick="event.stopPropagation(); addToCart('CatClaws Care - Recorte & Limado Amable de Uñas Felinas', 12.0, 'https://cdn2.thecatapi.com/images/13MkvUreZ.jpg'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
-                    <a href="producto-corte-unas-gatos-limado-seguro.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a;" title="Ver Ficha Completa">
-                        Ver Detalles <i class="fa-solid fa-arrow-right"></i>
+                    <a href="producto-corte-unas-gatos-limado-seguro.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a; display: inline-flex; align-items: center; gap: 6px;" title="Ver Ficha Steam">
+                        Ver Ficha <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </article>
         
-        <article class="partner-card apple-glass-card" data-species="both" data-price="36.0" data-rating="4.9" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column;">
-            <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
-                <img src="https://images.unsplash.com/photo-1588774069410-84ae30757c8e?auto=format&fit=crop&w=800&q=80" alt="WhiteGlow - Tratamiento Óptico Antiamarilleo para Mantos Blancos" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.92); color: #0284c7; font-weight: 800; font-size: 0.72rem;">
-                    <i class="fa-solid fa-snowflake"></i> Blanco Puro sin Lejía
-                </span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> ZenPet Grooming</span>
-                <div style="color: #f59e0b; font-size: 0.8rem;">
-                    <i class="fa-solid fa-star"></i> 4.9 <span style="color: #94a3b8; font-size: 0.75rem;">(175)</span>
+        <article class="partner-card apple-glass-card" data-species="cat" data-price="36.0" data-rating="4.9" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column; cursor: pointer; transition: all 0.3s ease;" onclick="if(event.target.tagName !== 'BUTTON' && !event.target.closest('button')) window.location.href='producto-blanqueamiento-manto-blanco-optico.html';">
+            <a href="producto-blanqueamiento-manto-blanco-optico.html" style="text-decoration: none; color: inherit; display: block;">
+                <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
+                    <img src="https://cdn2.thecatapi.com/images/MjA3NDI1MQ.jpg" alt="WhiteGlow - Tratamiento Óptico Antiamarilleo para Mantos Blancos" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.94); color: #ec4899; font-weight: 800; font-size: 0.72rem;">
+                        <i class="fa-solid fa-bath"></i> Blanco Puro sin Lejía
+                    </span>
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; right: 12px; background: rgba(15, 23, 42, 0.75); color: white; font-weight: 800; font-size: 0.72rem; backdrop-filter: blur(8px);">
+                        🐱 Gatos
+                    </span>
                 </div>
-            </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Homologado</span>
+                    <div style="color: #f59e0b; font-size: 0.8rem;">
+                        <i class="fa-solid fa-star"></i> 4.9 <span style="color: #94a3b8; font-size: 0.75rem;">(180)</span>
+                    </div>
+                </div>
 
-            <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
-                WhiteGlow - Tratamiento Óptico Antiamarilleo para Mantos Blancos
-            </h3>
-            
-            <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
-                Champú azul óptico con pigmentos violetas botánicos que neutralizan el tono óxido y amarillo de patas, babas y lagrimales en Bichones, Caniches y Westies.
-            </p>
+                <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
+                    WhiteGlow - Tratamiento Óptico Antiamarilleo para Mantos Blancos
+                </h3>
+                
+                <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
+                    Champú azul óptico con pigmentos violetas botánicos que neutralizan el tono óxido y amarillo de patas, babas y lagrimales en Bichones, Caniches y Westies.
+                </p>
+            </a>
 
             <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid rgba(226, 232, 240, 0.7); margin-top: auto;">
                 <div style="font-size: 1.35rem; font-weight: 900; color: #0284c7;">
                     36.00 €
                 </div>
                 <div style="display: flex; gap: 8px;">
-                    <button type="button" class="btn-primary" onclick="addToCart('WhiteGlow - Tratamiento Óptico Antiamarilleo para Mantos Blancos', 36.0, 'https://images.unsplash.com/photo-1588774069410-84ae30757c8e?auto=format&fit=crop&w=800&q=80'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
+                    <button type="button" class="btn-primary" onclick="event.stopPropagation(); addToCart('WhiteGlow - Tratamiento Óptico Antiamarilleo para Mantos Blancos', 36.0, 'https://cdn2.thecatapi.com/images/MjA3NDI1MQ.jpg'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
-                    <a href="producto-blanqueamiento-manto-blanco-optico.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a;" title="Ver Ficha Completa">
-                        Ver Detalles <i class="fa-solid fa-arrow-right"></i>
+                    <a href="producto-blanqueamiento-manto-blanco-optico.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a; display: inline-flex; align-items: center; gap: 6px;" title="Ver Ficha Steam">
+                        Ver Ficha <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </article>
         
-        <article class="partner-card apple-glass-card" data-species="both" data-price="29.0" data-rating="4.8" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column;">
-            <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
-                <img src="https://images.unsplash.com/photo-1541599540903-216a46ca1dc0?auto=format&fit=crop&w=800&q=80" alt="LuxeComb - Sesión de Cepillado Profundo & Apertura de Nudos sin Cortar" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.92); color: #f59e0b; font-weight: 800; font-size: 0.72rem;">
-                    <i class="fa-solid fa-brush"></i> Salva el Pelo Largo
-                </span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> Bubbles & Paws Spa</span>
-                <div style="color: #f59e0b; font-size: 0.8rem;">
-                    <i class="fa-solid fa-star"></i> 4.8 <span style="color: #94a3b8; font-size: 0.75rem;">(140)</span>
+        <article class="partner-card apple-glass-card" data-species="dog" data-price="29.0" data-rating="4.8" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column; cursor: pointer; transition: all 0.3s ease;" onclick="if(event.target.tagName !== 'BUTTON' && !event.target.closest('button')) window.location.href='producto-peinado-desenredado-manto-largo-afgano.html';">
+            <a href="producto-peinado-desenredado-manto-largo-afgano.html" style="text-decoration: none; color: inherit; display: block;">
+                <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
+                    <img src="https://images.dog.ceo/breeds/pomeranian/n02112018_5697.jpg" alt="LuxeComb - Sesión de Cepillado Profundo & Apertura de Nudos sin Cortar" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.94); color: #ec4899; font-weight: 800; font-size: 0.72rem;">
+                        <i class="fa-solid fa-bath"></i> Salva el Pelo Largo
+                    </span>
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; right: 12px; background: rgba(15, 23, 42, 0.75); color: white; font-weight: 800; font-size: 0.72rem; backdrop-filter: blur(8px);">
+                        🐶 Perros
+                    </span>
                 </div>
-            </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Homologado</span>
+                    <div style="color: #f59e0b; font-size: 0.8rem;">
+                        <i class="fa-solid fa-star"></i> 4.8 <span style="color: #94a3b8; font-size: 0.75rem;">(180)</span>
+                    </div>
+                </div>
 
-            <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
-                LuxeComb - Sesión de Cepillado Profundo & Apertura de Nudos sin Cortar
-            </h3>
-            
-            <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
-                Desenredado paciente mechón a mechón con spray bifásico de siliconas vegetales solubles para no tener que rapar al animal cuando tiene nudos.
-            </p>
+                <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
+                    LuxeComb - Sesión de Cepillado Profundo & Apertura de Nudos sin Cortar
+                </h3>
+                
+                <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
+                    Desenredado paciente mechón a mechón con spray bifásico de siliconas vegetales solubles para no tener que rapar al animal cuando tiene nudos.
+                </p>
+            </a>
 
             <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid rgba(226, 232, 240, 0.7); margin-top: auto;">
                 <div style="font-size: 1.35rem; font-weight: 900; color: #0284c7;">
                     29.00 €
                 </div>
                 <div style="display: flex; gap: 8px;">
-                    <button type="button" class="btn-primary" onclick="addToCart('LuxeComb - Sesión de Cepillado Profundo & Apertura de Nudos sin Cortar', 29.0, 'https://images.unsplash.com/photo-1541599540903-216a46ca1dc0?auto=format&fit=crop&w=800&q=80'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
+                    <button type="button" class="btn-primary" onclick="event.stopPropagation(); addToCart('LuxeComb - Sesión de Cepillado Profundo & Apertura de Nudos sin Cortar', 29.0, 'https://images.dog.ceo/breeds/pomeranian/n02112018_5697.jpg'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
-                    <a href="producto-peinado-desenredado-manto-largo-afgano.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a;" title="Ver Ficha Completa">
-                        Ver Detalles <i class="fa-solid fa-arrow-right"></i>
+                    <a href="producto-peinado-desenredado-manto-largo-afgano.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a; display: inline-flex; align-items: center; gap: 6px;" title="Ver Ficha Steam">
+                        Ver Ficha <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </article>
         
-        <article class="partner-card apple-glass-card" data-species="both" data-price="24.0" data-rating="5.0" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column;">
-            <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
-                <img src="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&w=800&q=80" alt="PuppySpa - Bautismo de Agua & Primera Experiencia Positiva de Baño" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.92); color: #ec4899; font-weight: 800; font-size: 0.72rem;">
-                    <i class="fa-solid fa-baby"></i> Primer Baño del Cachorro
-                </span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> ZenPet Grooming</span>
-                <div style="color: #f59e0b; font-size: 0.8rem;">
-                    <i class="fa-solid fa-star"></i> 5.0 <span style="color: #94a3b8; font-size: 0.75rem;">(235)</span>
+        <article class="partner-card apple-glass-card" data-species="cat" data-price="24.0" data-rating="5.0" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column; cursor: pointer; transition: all 0.3s ease;" onclick="if(event.target.tagName !== 'BUTTON' && !event.target.closest('button')) window.location.href='producto-spa-express-cachorros-bautismo.html';">
+            <a href="producto-spa-express-cachorros-bautismo.html" style="text-decoration: none; color: inherit; display: block;">
+                <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
+                    <img src="https://cdn2.thecatapi.com/images/hq.jpg" alt="PuppySpa - Bautismo de Agua & Primera Experiencia Positiva de Baño" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.94); color: #ec4899; font-weight: 800; font-size: 0.72rem;">
+                        <i class="fa-solid fa-bath"></i> Primer Baño del Cachorro
+                    </span>
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; right: 12px; background: rgba(15, 23, 42, 0.75); color: white; font-weight: 800; font-size: 0.72rem; backdrop-filter: blur(8px);">
+                        🐱 Gatos
+                    </span>
                 </div>
-            </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Homologado</span>
+                    <div style="color: #f59e0b; font-size: 0.8rem;">
+                        <i class="fa-solid fa-star"></i> 5.0 <span style="color: #94a3b8; font-size: 0.75rem;">(180)</span>
+                    </div>
+                </div>
 
-            <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
-                PuppySpa - Bautismo de Agua & Primera Experiencia Positiva de Baño
-            </h3>
-            
-            <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
-                Sesión lúdica para cachorros (3 a 7 meses) donde conocen el agua tibia, el ruido del secador y los peines con caricias y comida rica.
-            </p>
+                <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
+                    PuppySpa - Bautismo de Agua & Primera Experiencia Positiva de Baño
+                </h3>
+                
+                <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
+                    Sesión lúdica para cachorros (3 a 7 meses) donde conocen el agua tibia, el ruido del secador y los peines con caricias y comida rica.
+                </p>
+            </a>
 
             <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid rgba(226, 232, 240, 0.7); margin-top: auto;">
                 <div style="font-size: 1.35rem; font-weight: 900; color: #0284c7;">
                     24.00 €
                 </div>
                 <div style="display: flex; gap: 8px;">
-                    <button type="button" class="btn-primary" onclick="addToCart('PuppySpa - Bautismo de Agua & Primera Experiencia Positiva de Baño', 24.0, 'https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&w=800&q=80'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
+                    <button type="button" class="btn-primary" onclick="event.stopPropagation(); addToCart('PuppySpa - Bautismo de Agua & Primera Experiencia Positiva de Baño', 24.0, 'https://cdn2.thecatapi.com/images/hq.jpg'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
-                    <a href="producto-spa-express-cachorros-bautismo.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a;" title="Ver Ficha Completa">
-                        Ver Detalles <i class="fa-solid fa-arrow-right"></i>
+                    <a href="producto-spa-express-cachorros-bautismo.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a; display: inline-flex; align-items: center; gap: 6px;" title="Ver Ficha Steam">
+                        Ver Ficha <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </article>
         
                 </div>
-                
-                <div id="no-results-message" style="display: none; text-align: center; padding: 60px 20px; background: white; border-radius: 24px; border: 1px solid rgba(226, 232, 240, 0.8);">
-                    <i class="fa-solid fa-search" style="font-size: 2.5rem; color: #cbd5e1; margin-bottom: 14px;"></i>
-                    <h3 style="font-size: 1.25rem; font-weight: 800; color: #0f172a; margin: 0 0 8px;">No se encontraron productos</h3>
-                    <p style="color: #64748b; font-size: 0.9rem; margin: 0 0 18px;">Prueba a modificar los filtros seleccionados o realiza una búsqueda más amplia.</p>
-                    <button type="button" class="btn-primary" onclick="resetFilters()" style="padding: 8px 22px; border-radius: 50px; font-size: 0.85rem; cursor: pointer;">Restablecer Filtros</button>
-                </div>
             </main>
         </div>
+    </div>
 
-    </main>
-
-    <!-- FOOTER -->
-    <footer style="background: white; border-top: 1px solid rgba(226, 232, 240, 0.8); padding: 50px 0 30px; text-align: center;">
-        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
-            <p style="color: #94a3b8; font-size: 0.85rem; margin: 0;">&copy; 2026 CUDI Ecosystem. Plataforma Integral de Bienestar y Telemetría Animal.</p>
-        </div>
-    </footer>
-
-    <!-- INTERACTIVE JAVASCRIPT FILTERING SCRIPT -->
+    <script src="script.js?v=7.4"></script>
+    <script src="cudi-ai.js?v=7.4"></script>
     <script>
         function filterCategoryProducts() {
-            const searchInput = document.getElementById('cat-search-input');
-            const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
-
-            const speciesRadio = document.querySelector('input[name="speciesFilter"]:checked');
-            const speciesVal = speciesRadio ? speciesRadio.value : 'all';
-
-            const priceRadio = document.querySelector('input[name="priceFilter"]:checked');
-            const priceVal = priceRadio ? priceRadio.value : 'all';
-
-            const sortSelect = document.getElementById('sort-select');
-            const sortVal = sortSelect ? sortSelect.value : 'featured';
-
-            const grid = document.getElementById('category-products-grid');
-            const cards = Array.from(grid.querySelectorAll('.partner-card'));
+            const speciesVal = document.querySelector('input[name="speciesFilter"]:checked').value;
+            const priceVal = document.querySelector('input[name="priceFilter"]:checked').value;
+            const sortVal = document.getElementById('sort-select').value;
+            
+            const cards = Array.from(document.querySelectorAll('#category-products-grid .partner-card'));
             let visibleCount = 0;
-
+            
             cards.forEach(card => {
-                const name = card.querySelector('h3').textContent.toLowerCase();
-                const desc = card.querySelector('p').textContent.toLowerCase();
-                const cardSpecies = card.dataset.species || 'both';
-                const cardPrice = parseFloat(card.dataset.price) || 0;
-
-                let matchesQuery = query === '' || name.includes(query) || desc.includes(query);
-                let matchesSpecies = (speciesVal === 'all') || (cardSpecies === 'both') || (cardSpecies === speciesVal);
+                const sp = card.getAttribute('data-species');
+                const pr = parseFloat(card.getAttribute('data-price'));
                 
+                let matchesSpecies = (speciesVal === 'all') || (sp === speciesVal) || (sp === 'both');
                 let matchesPrice = true;
-                if (priceVal === 'under25') matchesPrice = cardPrice < 25;
-                else if (priceVal === '25to50') matchesPrice = cardPrice >= 25 && cardPrice <= 50;
-                else if (priceVal === 'over50') matchesPrice = cardPrice > 50;
-
-                if (matchesQuery && matchesSpecies && matchesPrice) {
+                if (priceVal === 'under25') matchesPrice = (pr < 25);
+                else if (priceVal === '25to50') matchesPrice = (pr >= 25 && pr <= 50);
+                else if (priceVal === 'over50') matchesPrice = (pr > 50);
+                
+                if (matchesSpecies && matchesPrice) {
                     card.style.display = 'flex';
                     visibleCount++;
                 } else {
                     card.style.display = 'none';
                 }
             });
-
-            // Sorting logic
+            
+            const grid = document.getElementById('category-products-grid');
             const visibleCards = cards.filter(c => c.style.display !== 'none');
-            visibleCards.sort((a, b) => {
-                const priceA = parseFloat(a.dataset.price) || 0;
-                const priceB = parseFloat(b.dataset.price) || 0;
-                const ratingA = parseFloat(a.dataset.rating) || 5;
-                const ratingB = parseFloat(b.dataset.rating) || 5;
-
-                if (sortVal === 'price-asc') return priceA - priceB;
-                if (sortVal === 'price-desc') return priceB - priceA;
-                if (sortVal === 'rating') return ratingB - ratingA;
-                return 0; // default order
-            });
-
-            visibleCards.forEach(c => grid.appendChild(c));
-
-            // Counter update & empty state
-            const counterText = document.getElementById('results-count-text');
-            if (counterText) counterText.textContent = 'Mostrando ' + visibleCount + ' soluciones encontradas';
-
-            const emptyMsg = document.getElementById('no-results-message');
-            if (emptyMsg) emptyMsg.style.display = visibleCount === 0 ? 'block' : 'none';
+            
+            if (sortVal === 'price-asc') {
+                visibleCards.sort((a,b) => parseFloat(a.getAttribute('data-price')) - parseFloat(b.getAttribute('data-price')));
+                visibleCards.forEach(c => grid.appendChild(c));
+            } else if (sortVal === 'price-desc') {
+                visibleCards.sort((a,b) => parseFloat(b.getAttribute('data-price')) - parseFloat(a.getAttribute('data-price')));
+                visibleCards.forEach(c => grid.appendChild(c));
+            } else if (sortVal === 'rating') {
+                visibleCards.sort((a,b) => parseFloat(b.getAttribute('data-rating')) - parseFloat(a.getAttribute('data-rating')));
+                visibleCards.forEach(c => grid.appendChild(c));
+            }
+            
+            document.getElementById('results-count-text').innerText = 'Mostrando ' + visibleCount + ' soluciones certificadas';
         }
 
         function resetFilters() {
-            const searchInput = document.getElementById('cat-search-input');
-            if (searchInput) searchInput.value = '';
-
-            const defaultSpecies = document.querySelector('input[name="speciesFilter"][value="all"]');
-            if (defaultSpecies) defaultSpecies.checked = true;
-
-            const defaultPrice = document.querySelector('input[name="priceFilter"][value="all"]');
-            if (defaultPrice) defaultPrice.checked = true;
-
-            const sortSelect = document.getElementById('sort-select');
-            if (sortSelect) sortSelect.value = 'featured';
-
+            document.querySelector('input[name="speciesFilter"][value="all"]').checked = true;
+            document.querySelector('input[name="priceFilter"][value="all"]').checked = true;
+            document.getElementById('sort-select').value = 'featured';
             filterCategoryProducts();
         }
     </script>
-    <script src="script.js?v=7.4"></script>
-    <script src="modulos/catalogo-unico.js?v=7.4"></script>
-    <script src="cudi-ai.js?v=7.4"></script>
+
+    <!-- =====================================================================
+         MODULO OFICIAL DE PIE DE PAGINA INSTITUCIONAL & MARCO LEGAL CUDI
+         ===================================================================== -->
+    <footer class="cudi-apple-glass-footer" style="margin-top: 80px; background: rgba(15, 23, 42, 0.96); backdrop-filter: blur(32px) saturate(180%); -webkit-backdrop-filter: blur(32px) saturate(180%); color: #f8fafc; border-top: 1px solid rgba(255, 255, 255, 0.12); padding: 60px 24px 36px; font-family: 'Plus Jakarta Sans', sans-serif;">
+        <div style="max-width: 1280px; margin: 0 auto;">
+            
+            <!-- TRUST & COMPLIANCE BADGES -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; margin-bottom: 50px; padding-bottom: 40px; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+                <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 16px 20px; display: flex; align-items: center; gap: 14px;">
+                    <div style="color: #38bdf8; font-size: 1.6rem;"><i class="fa-solid fa-shield-halved"></i></div>
+                    <div>
+                        <div style="font-size: 0.88rem; font-weight: 800; color: white;">Ley Bienestar Animal</div>
+                        <div style="font-size: 0.75rem; color: #94a3b8;">Homologación Ley 7/2023 España</div>
+                    </div>
+                </div>
+                <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 16px 20px; display: flex; align-items: center; gap: 14px;">
+                    <div style="color: #10b981; font-size: 1.6rem;"><i class="fa-solid fa-lock"></i></div>
+                    <div>
+                        <div style="font-size: 0.88rem; font-weight: 800; color: white;">Seguridad Bancaria CUDI Pay</div>
+                        <div style="font-size: 0.75rem; color: #94a3b8;">Cifrado SSL 256-bit y Stripe</div>
+                    </div>
+                </div>
+                <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 16px 20px; display: flex; align-items: center; gap: 14px;">
+                    <div style="color: #f59e0b; font-size: 1.6rem;"><i class="fa-solid fa-stethoscope"></i></div>
+                    <div>
+                        <div style="font-size: 0.88rem; font-weight: 800; color: white;">Comité Veterinario Oficial</div>
+                        <div style="font-size: 0.75rem; color: #94a3b8;">Supervisión Facultativa 24/7</div>
+                    </div>
+                </div>
+                <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 16px 20px; display: flex; align-items: center; gap: 14px;">
+                    <div style="color: #a855f7; font-size: 1.6rem;"><i class="fa-solid fa-rotate-left"></i></div>
+                    <div>
+                        <div style="font-size: 0.88rem; font-weight: 800; color: white;">Garantía de Satisfacción</div>
+                        <div style="font-size: 0.75rem; color: #94a3b8;">30 días de prueba sin preguntas</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4 DETAILED COLUMNS -->
+            <div style="display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 50px;">
+                
+                <!-- COL 1: INSTITUTIONAL -->
+                <div>
+                    <a href="index.html" style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px; text-decoration: none;">
+                        <img src="logo.jpeg" alt="CUDI Ecosystem" style="height: 48px; border-radius: 10px;">
+                    </a>
+                    <p style="font-size: 0.84rem; color: #94a3b8; line-height: 1.7; margin: 0 0 20px 0;">
+                        CUDI es el primer ecosistema integral de salud, telemetría IoT y bienestar preventivo multiespecie (perros y gatos) con gemelos digitales y triaje bio-neural conectado a clínicas físicas.
+                    </p>
+                    <div style="font-size: 0.82rem; color: #cbd5e1; margin-bottom: 8px;">
+                        <i class="fa-solid fa-phone" style="color: #38bdf8; margin-right: 8px;"></i> Atención Gratuita: <strong>900 123 456</strong>
+                    </div>
+                    <div style="font-size: 0.82rem; color: #cbd5e1; margin-bottom: 20px;">
+                        <i class="fa-solid fa-envelope" style="color: #38bdf8; margin-right: 8px;"></i> <strong>cudi.ai2026@gmail.com</strong>
+                    </div>
+                    <div style="display: flex; gap: 10px;">
+                        <a href="https://www.instagram.com/cudi.ia?igsh=bjdmNXhyeHZvMXo0&utm_source=qr" target="_blank" style="width: 38px; height: 38px; border-radius: 50%; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; transition: all 0.25s ease;" title="Instagram CUDI"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@cudi.ia?_r=1&_t=ZN-95icM5LsfCA" target="_blank" style="width: 38px; height: 38px; border-radius: 50%; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; transition: all 0.25s ease;" title="TikTok CUDI"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="https://www.youtube.com/@cudi-ia" target="_blank" style="width: 38px; height: 38px; border-radius: 50%; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; transition: all 0.25s ease;" title="YouTube CUDI"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="https://www.facebook.com/Cudi2026" target="_blank" style="width: 38px; height: 38px; border-radius: 50%; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; transition: all 0.25s ease;" title="Facebook CUDI"><i class="fa-brands fa-facebook-f"></i></a>
+                    </div>
+                </div>
+
+                <!-- COL 2: MARKETPLACE -->
+                <div>
+                    <h4 style="font-size: 0.95rem; font-weight: 800; color: white; margin: 0 0 18px 0; text-transform: uppercase; letter-spacing: 0.5px;">
+                        Marketplace CUDI
+                    </h4>
+                    <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.84rem; line-height: 2.2;">
+                        <li><a href="smart-collar-cudi-gps.html" style="color: #94a3b8; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#38bdf8'" onmouseout="this.style.color='#94a3b8'">Smart Collar IoT & Geocercas</a></li>
+                        <li><a href="nutricion-personalizada-perros-gatos.html" style="color: #94a3b8; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#38bdf8'" onmouseout="this.style.color='#94a3b8'">Nutrición BARF & Microbioma</a></li>
+                        <li><a href="telemedicina-veterinaria-24-7.html" style="color: #94a3b8; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#38bdf8'" onmouseout="this.style.color='#94a3b8'">Telemedicina & Clínicas 24/7</a></li>
+                        <li><a href="paseadores-perros-certificados-barcelona.html" style="color: #94a3b8; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#38bdf8'" onmouseout="this.style.color='#94a3b8'">Paseadores & Cuidadores Homologados</a></li>
+                        <li><a href="seguros-salud-mascotas-barcelona.html" style="color: #94a3b8; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#38bdf8'" onmouseout="this.style.color='#94a3b8'">Seguros de Salud & Resp. Civil</a></li>
+                        <li><a href="bienestar-integral-multiespecie.html" style="color: #94a3b8; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#38bdf8'" onmouseout="this.style.color='#94a3b8'">Peluquería, Ozonoterapia & Spa</a></li>
+                    </ul>
+                </div>
+
+                <!-- COL 3: MARCO LEGAL Y CUMPLIMIENTO -->
+                <div>
+                    <h4 style="font-size: 0.95rem; font-weight: 800; color: white; margin: 0 0 18px 0; text-transform: uppercase; letter-spacing: 0.5px;">
+                        Marco Legal & Regulación
+                    </h4>
+                    <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.84rem; line-height: 2.2;">
+                        <li><a href="legal.html" style="color: #38bdf8; font-weight: 700; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#7dd3fc'" onmouseout="this.style.color='#38bdf8'"><i class="fa-solid fa-scale-balanced" style="font-size: 0.75rem;"></i> Aviso Legal & Titularidad</a></li>
+                        <li><a href="terminos-condiciones-app.html" style="color: #94a3b8; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#38bdf8'" onmouseout="this.style.color='#94a3b8'">Términos y Condiciones del Servicio</a></li>
+                        <li><a href="politica-privacidad-datos-mascotas.html" style="color: #94a3b8; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#38bdf8'" onmouseout="this.style.color='#94a3b8'">Privacidad y Telemetría Biológica (RGPD)</a></li>
+                        <li><a href="politica-cookies-plataforma.html" style="color: #94a3b8; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#38bdf8'" onmouseout="this.style.color='#94a3b8'">Política de Cookies y Almacenamiento</a></li>
+                        <li><a href="politica-devoluciones-smart-collar.html" style="color: #94a3b8; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#38bdf8'" onmouseout="this.style.color='#94a3b8'">Garantía, Devoluciones y Desistimiento</a></li>
+                    </ul>
+                </div>
+
+                <!-- COL 4: SUSCRIPCIONES Y PLATAFORMA -->
+                <div>
+                    <h4 style="font-size: 0.95rem; font-weight: 800; color: white; margin: 0 0 18px 0; text-transform: uppercase; letter-spacing: 0.5px;">
+                        Plataforma & Ecosistema
+                    </h4>
+                    <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.84rem; line-height: 2.2;">
+                        <li><a href="planes-suscripcion-bienestar-animal.html" style="color: #94a3b8; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#38bdf8'" onmouseout="this.style.color='#94a3b8'">Planes de Cuidado & Suscripciones</a></li>
+                        <li><a href="comunidad-cudi.html" style="color: #94a3b8; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#38bdf8'" onmouseout="this.style.color='#94a3b8'">Red Social de Familias CUDI Paws</a></li>
+                        <li><a href="red-socios-clinicas-veterinarias.html" style="color: #94a3b8; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#38bdf8'" onmouseout="this.style.color='#94a3b8'">Red de Partners B2B para Clínicas</a></li>
+                        <li><a href="simulador-gemelo-digital-telemetria.html" style="color: #94a3b8; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#38bdf8'" onmouseout="this.style.color='#94a3b8'">Simulador de Gemelo Digital App</a></li>
+                        <li><a href="simulador-financiero.html" style="color: #94a3b8; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#38bdf8'" onmouseout="this.style.color='#94a3b8'">Simulador Financiero & Modelo TFM</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- BOTTOM COPYRIGHT BAR -->
+            <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 28px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; font-size: 0.78rem; color: #64748b;">
+                <div>
+                    &copy; 2026 CUDI AI Ecosystem S.L. &bull; NIF: B-12345678 &bull; Inscrita en el Registro Mercantil de Madrid, Tomo 1234, Folio 56, Hoja M-7890. Propiedad Intelectual Protegida.
+                </div>
+                <div style="display: flex; gap: 16px; align-items: center;">
+                    <span style="color: #94a3b8;"><i class="fa-solid fa-server" style="color: #10b981;"></i> Servidores Cloud UE (GDPR Ready)</span>
+                    <span style="color: #94a3b8;"><i class="fa-solid fa-microchip" style="color: #38bdf8;"></i> Algoritmos Bio-Neurales Patentados</span>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
 </body>
 </html>

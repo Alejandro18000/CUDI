@@ -1,101 +1,63 @@
-<!-- Desarrollo 100% realizado por Sergio Alejandro Ospina Rocha -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atención Veterinaria 24/7 & Telemedicina Integrada | CUDI Marketplace Apple Glass</title>
+    <title>Atención Veterinaria 24/7 & Telemedicina Integrada | CUDI Marketplace</title>
     <meta name="description" content="Videoconsulta instantánea, urgencias a domicilio y red de hospitales asociados con triaje biométrico por IA.">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css?v=7.4">
     <link rel="stylesheet" href="cudi-ai.css?v=7.4">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body style="background: #f8fafc; font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif); color: #0f172a; margin: 0; padding: 0;">
-
-    <!-- TOP NOTIFICATION BAR -->
-    <div class="top-bar-refined">
-        <span><i class="fa-solid fa-envelope"></i> cudi.ai2026@gmail.com</span>
-        <span><i class="fa-solid fa-phone"></i> 900 123 456</span>
-        <div style="display:flex; align-items:center; gap:5px;">
-            <i class="fa-solid fa-globe"></i>
-            <span style="font-weight:700; font-size:0.75rem;">ES</span>
-        </div>
-    </div>
-
-    <!-- NAVBAR FLOATING APPLE GLASS -->
-    <nav class="navbar-island">
-        <div class="nav-capsule">
-            <a href="index.html" class="logo" style="display:flex; align-items:center;">
-                <img src="logo.jpeg" alt="CUDI" style="height:42px; width:auto; border-radius: 10px;" decoding="async">
+<body>
+    <header class="navbar" style="position: sticky; top: 0; z-index: 1000;">
+        <div class="nav-container" style="max-width: 1280px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 14px 24px;">
+            <a href="index.html" class="logo" style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
+                <img src="logo.jpeg" alt="CUDI Logo" style="height: 38px; border-radius: 10px;">
             </a>
-            <div class="nav-search-island">
-                <i class="fa-solid fa-magnifying-glass" style="color:var(--clr-primary); font-size:0.85rem;"></i>
-                <input type="text" id="cat-search-input" placeholder="Buscar en Salud Clínica 24/7..." oninput="filterCategoryProducts()">
-            </div>
-            <div class="nav-right-island">
-                <ul class="nav-links-island">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="smart-collar-aventuras-sin-sustos.html">Lanzamiento</a></li>
-                    <li><a href="comunidad-cudi.html">Comunidad</a></li>
-                    <li><a href="simulador-financiero.html">Simulador</a></li>
-                    <li><a href="index.html#store-grid">Tienda</a></li>
-                    <li><a href="index.html#suscripciones">Planes</a></li>
-                    <li><a href="red-socios-clinicas-veterinarias.html">Partners</a></li>
-                    <li id="nav-session-item"></li>
-                </ul>
-                <div class="cart-trigger-island" onclick="toggleCart()" style="position:relative; display:flex; align-items:center; justify-content:center; cursor:pointer;">
-                    <i class="fa-solid fa-bag-shopping" style="font-size:1.05rem;"></i>
-                    <span class="cart-badge" id="global-cart-badge">0</span>
-                </div>
+            <nav class="nav-menu" style="display: flex; gap: 20px; align-items: center;">
+                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="index.html#store-grid" class="nav-link active">Tienda</a>
+                <a href="planes-suscripcion-bienestar-animal.html" class="nav-link">Planes</a>
+                <a href="red-socios-clinicas-veterinarias.html" class="nav-link">Partners</a>
+                <a href="simulador-gemelo-digital-telemetria.html" class="nav-link">Demo App</a>
+            </nav>
+            <div style="display: flex; align-items: center; gap: 14px;">
+                <button type="button" class="btn-primary" onclick="if(typeof openAuthModal==='function') openAuthModal(); else window.location.href='index.html#login';" style="padding: 8px 18px; border-radius: 50px; font-size: 0.85rem;">
+                    <i class="fa-solid fa-paw"></i> Iniciar Sesión
+                </button>
+                <button type="button" onclick="if(typeof toggleCart==='function') toggleCart();" class="apple-glass-card" style="width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; border: 1px solid rgba(226, 232, 240, 0.9);" title="Mi Cesta">
+                    <i class="fa-solid fa-cart-shopping" style="color: #0284c7;"></i>
+                </button>
             </div>
         </div>
-    </nav>
+    </header>
 
-    <!-- SIDE-CART PANEL -->
-    <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
-    <div class="side-cart" id="side-cart">
-        <div class="cart-header">
-            <h3><i class="fa-solid fa-bag-shopping"></i> Tu Cesta CUDI</h3>
-            <button class="close-cart" aria-label="Cerrar Carrito" onclick="toggleCart()"><i class="fa-solid fa-xmark"></i></button>
-        </div>
-        <div class="cart-items" id="cart-items-container"></div>
-        <div class="cart-footer">
-            <div class="cart-total">
-                <span>Total Estimado:</span>
-                <span id="cart-total-price">0.00 €</span>
-            </div>
-            <a href="contratar-plan-premium-cudi.html" class="btn-primary" style="display:block; text-align:center; margin-top:10px; border-radius:50px; text-decoration:none;">Procesar Pago Seguro <i class="fa-solid fa-lock"></i></a>
-        </div>
-    </div>
-
-    <!-- CATEGORY HERO & MAIN CONTAINER -->
-    <main class="container" style="max-width: 1320px; margin: 30px auto 90px; padding: 0 20px;">
-        
-        <!-- BREADCRUMBS -->
-        <div style="display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: #64748b; margin-bottom: 24px;">
-            <a href="index.html" style="text-decoration:none; color: #0284c7; font-weight: 600;">Inicio</a>
+    <div style="max-width: 1280px; margin: 0 auto; padding: 28px 24px 60px;">
+        <nav style="font-size: 0.82rem; color: #64748b; margin-bottom: 24px; display: flex; gap: 8px;">
+            <a href="index.html" style="color: #64748b; text-decoration: none;">Inicio</a>
             <span>/</span>
-            <a href="index.html#store-grid" style="text-decoration:none; color: #0284c7; font-weight: 600;">Catálogo Omnicanal</a>
+            <a href="index.html#store-grid" style="color: #64748b; text-decoration: none;">Catálogo Omnicanal</a>
             <span>/</span>
-            <span style="color: #0f172a; font-weight: 700;">Salud Clínica 24/7</span>
-        </div>
+            <span style="color: #0284c7; font-weight: 700;">Salud Clínica 24/7</span>
+        </nav>
 
-        <!-- HERO HEADER APPLE GLASS -->
-        <div class="apple-glass-card" style="padding: 40px; border-radius: 30px; margin-bottom: 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; position: relative; overflow: hidden;">
-            <div style="max-width: 780px;">
-                <span class="cudi-badge-glass" style="margin-bottom: 12px; color: #ef4444;">
+        <div class="apple-glass-card" style="padding: 36px; border-radius: 28px; margin-bottom: 36px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px;">
+            <div style="max-width: 720px;">
+                <span class="cudi-badge-glass" style="margin-bottom: 12px; color: #0284c7;">
                     <i class="fa-solid fa-stethoscope"></i> Categoría Oficial Certificada CUDI
                 </span>
-                <h1 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 2.6rem; font-weight: 800; color: #0f172a; margin: 0 0 12px; line-height: 1.2;">
+                <h1 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 2.2rem; font-weight: 900; color: #0f172a; margin: 0 0 12px; line-height: 1.2;">
                     Atención Veterinaria 24/7 & Telemedicina Integrada
                 </h1>
-                <p style="font-size: 1.1rem; color: #64748b; line-height: 1.6; margin: 0;">
+                <p style="font-size: 0.95rem; color: #64748b; margin: 0; line-height: 1.6;">
                     Videoconsulta instantánea, urgencias a domicilio y red de hospitales asociados con triaje biométrico por IA.
                 </p>
             </div>
-            
-            <div style="display: flex; gap: 14px; align-items: center; flex-wrap: wrap;">
+            <div style="display: flex; gap: 14px;">
                 <div style="text-align: center; background: rgba(255, 255, 255, 0.85); padding: 14px 22px; border-radius: 20px; border: 1px solid rgba(226, 232, 240, 0.8);">
                     <div style="font-size: 1.6rem; font-weight: 900; color: #0284c7;">15</div>
                     <div style="font-size: 0.75rem; color: #64748b; font-weight: 700;">Soluciones Activas</div>
@@ -107,25 +69,20 @@
             </div>
         </div>
 
-        <!-- MARKETPLACE LAYOUT WITH WORKING FILTERS -->
         <div class="marketplace-layout">
-            
-            <!-- SIDEBAR FILTERS (APPLE GLASS) -->
             <aside class="filters-sidebar apple-glass-card" style="padding: 28px; border-radius: 24px;">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 22px; padding-bottom: 14px; border-bottom: 1px solid rgba(226, 232, 240, 0.8);">
                     <h3 style="font-size: 1.05rem; font-weight: 800; margin: 0; color: #0f172a;"><i class="fa-solid fa-sliders"></i> Filtros Activos</h3>
                     <button type="button" onclick="resetFilters()" style="background: none; border: none; color: #0284c7; font-size: 0.78rem; font-weight: 700; cursor: pointer;">Limpiar</button>
                 </div>
 
-                <!-- ESPECIE -->
                 <div class="filter-group">
                     <h4>Especie / Destinatario</h4>
                     <label class="filter-option"><input type="radio" name="speciesFilter" value="all" checked onchange="filterCategoryProducts()"> Todas las especies</label>
-                    <label class="filter-option"><input type="radio" name="speciesFilter" value="dog" onchange="filterCategoryProducts()"> Perros</label>
-                    <label class="filter-option"><input type="radio" name="speciesFilter" value="cat" onchange="filterCategoryProducts()"> Gatos</label>
+                    <label class="filter-option"><input type="radio" name="speciesFilter" value="dog" onchange="filterCategoryProducts()"> 🐶 Perros</label>
+                    <label class="filter-option"><input type="radio" name="speciesFilter" value="cat" onchange="filterCategoryProducts()"> 🐱 Gatos</label>
                 </div>
 
-                <!-- RANGO DE PRECIO -->
                 <div class="filter-group">
                     <h4>Rango de Precio</h4>
                     <label class="filter-option"><input type="radio" name="priceFilter" value="all" checked onchange="filterCategoryProducts()"> Todos los precios</label>
@@ -134,7 +91,6 @@
                     <label class="filter-option"><input type="radio" name="priceFilter" value="over50" onchange="filterCategoryProducts()"> Más de 50 €</label>
                 </div>
 
-                <!-- ORDENACIÓN -->
                 <div class="filter-group">
                     <h4>Ordenar Por</h4>
                     <select id="sort-select" onchange="filterCategoryProducts()" style="width: 100%; padding: 10px 14px; border-radius: 14px; border: 1px solid rgba(226, 232, 240, 0.85); background: white; font-family: inherit; font-size: 0.85rem; color: #0f172a; outline: none; cursor: pointer;">
@@ -145,16 +101,14 @@
                     </select>
                 </div>
 
-                <!-- BANNER ASISTENTE IA -->
                 <div style="background: rgba(240, 249, 255, 0.8); border: 1px solid rgba(186, 230, 253, 0.9); border-radius: 18px; padding: 18px; margin-top: 24px; text-align: center;">
                     <div style="color: #0284c7; font-size: 1.3rem; margin-bottom: 6px;"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
                     <div style="font-weight: 800; font-size: 0.88rem; color: #0f172a; margin-bottom: 4px;">¿Dudas con qué elegir?</div>
                     <p style="font-size: 0.78rem; color: #64748b; margin: 0 0 12px; line-height: 1.4;">Pregunta a la IA de CUDI por la opción idónea para tu mascota.</p>
-                    <button type="button" class="btn-primary" onclick="window.CudiAI && window.CudiAI.openModal ? window.CudiAI.openModal() : alert('Abriendo IA')" style="padding: 7px 16px; font-size: 0.78rem; border-radius: 50px; cursor: pointer; width: 100%;">Consultar Asistente</button>
+                    <button type="button" class="btn-primary" onclick="if(window.CudiAI && window.CudiAI.open) window.CudiAI.open(); else alert('Abriendo IA');" style="padding: 7px 16px; font-size: 0.78rem; border-radius: 50px; cursor: pointer; width: 100%;">Consultar Asistente</button>
                 </div>
             </aside>
 
-            <!-- RESULTS GRID -->
             <main>
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
                     <div id="results-count-text" style="font-size: 0.92rem; font-weight: 700; color: #64748b;">
@@ -164,679 +118,831 @@
 
                 <div class="results-grid" id="category-products-grid">
                     
-        <article class="partner-card apple-glass-card" data-species="both" data-price="75.0" data-rating="5.0" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column;">
-            <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
-                <img src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=800&q=80" alt="VetHome CUDI - Urgencias Veterinarias a Domicilio 24/7" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.92); color: #ef4444; font-weight: 800; font-size: 0.72rem;">
-                    <i class="fa-solid fa-truck-medical"></i> 24/7 Urgencias
-                </span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> Red Clínicas Partners CUDI</span>
-                <div style="color: #f59e0b; font-size: 0.8rem;">
-                    <i class="fa-solid fa-star"></i> 5.0 <span style="color: #94a3b8; font-size: 0.75rem;">(230)</span>
+        <article class="partner-card apple-glass-card" data-species="dog" data-price="75.0" data-rating="5.0" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column; cursor: pointer; transition: all 0.3s ease;" onclick="if(event.target.tagName !== 'BUTTON' && !event.target.closest('button')) window.location.href='producto-vethome-urgencias-domicilio.html';">
+            <a href="producto-vethome-urgencias-domicilio.html" style="text-decoration: none; color: inherit; display: block;">
+                <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
+                    <img src="https://images.dog.ceo/breeds/corgi-cardigan/n02113186_8414.jpg" alt="VetHome CUDI - Urgencias Veterinarias a Domicilio 24/7" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.94); color: #0284c7; font-weight: 800; font-size: 0.72rem;">
+                        <i class="fa-solid fa-stethoscope"></i> 24/7 Urgencias
+                    </span>
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; right: 12px; background: rgba(15, 23, 42, 0.75); color: white; font-weight: 800; font-size: 0.72rem; backdrop-filter: blur(8px);">
+                        🐶 Perros
+                    </span>
                 </div>
-            </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Homologado</span>
+                    <div style="color: #f59e0b; font-size: 0.8rem;">
+                        <i class="fa-solid fa-star"></i> 5.0 <span style="color: #94a3b8; font-size: 0.75rem;">(180)</span>
+                    </div>
+                </div>
 
-            <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
-                VetHome CUDI - Urgencias Veterinarias a Domicilio 24/7
-            </h3>
-            
-            <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
-                Unidad móvil veterinaria con ecografía portátil y analítica sanguínea instantánea enviada a tu hogar en menos de 35 minutos.
-            </p>
+                <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
+                    VetHome CUDI - Urgencias Veterinarias a Domicilio 24/7
+                </h3>
+                
+                <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
+                    Unidad móvil veterinaria con ecografía portátil y analítica sanguínea instantánea enviada a tu hogar en menos de 35 minutos.
+                </p>
+            </a>
 
             <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid rgba(226, 232, 240, 0.7); margin-top: auto;">
                 <div style="font-size: 1.35rem; font-weight: 900; color: #0284c7;">
                     75.00 €
                 </div>
                 <div style="display: flex; gap: 8px;">
-                    <button type="button" class="btn-primary" onclick="addToCart('VetHome CUDI - Urgencias Veterinarias a Domicilio 24/7', 75.0, 'https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=800&q=80'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
+                    <button type="button" class="btn-primary" onclick="event.stopPropagation(); addToCart('VetHome CUDI - Urgencias Veterinarias a Domicilio 24/7', 75.0, 'https://images.dog.ceo/breeds/corgi-cardigan/n02113186_8414.jpg'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
-                    <a href="producto-vethome-urgencias-domicilio.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a;" title="Ver Ficha Completa">
-                        Ver Detalles <i class="fa-solid fa-arrow-right"></i>
+                    <a href="producto-vethome-urgencias-domicilio.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a; display: inline-flex; align-items: center; gap: 6px;" title="Ver Ficha Steam">
+                        Ver Ficha <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </article>
         
-        <article class="partner-card apple-glass-card" data-species="both" data-price="35.0" data-rating="4.9" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column;">
-            <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
-                <img src="triaje-ia-veterinario-urgencias.png" alt="MediPet Express - Teleconsulta Veterinaria Inmediata con Triaje IA" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.92); color: #0284c7; font-weight: 800; font-size: 0.72rem;">
-                    <i class="fa-solid fa-video"></i> Respuesta < 3 min
-                </span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> TeleVet Specialists</span>
-                <div style="color: #f59e0b; font-size: 0.8rem;">
-                    <i class="fa-solid fa-star"></i> 4.9 <span style="color: #94a3b8; font-size: 0.75rem;">(312)</span>
+        <article class="partner-card apple-glass-card" data-species="cat" data-price="35.0" data-rating="4.9" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column; cursor: pointer; transition: all 0.3s ease;" onclick="if(event.target.tagName !== 'BUTTON' && !event.target.closest('button')) window.location.href='producto-medipet-express-teleconsulta-ia.html';">
+            <a href="producto-medipet-express-teleconsulta-ia.html" style="text-decoration: none; color: inherit; display: block;">
+                <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
+                    <img src="https://cdn2.thecatapi.com/images/94.gif" alt="MediPet Express - Teleconsulta Veterinaria Inmediata con Triaje IA" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.94); color: #0284c7; font-weight: 800; font-size: 0.72rem;">
+                        <i class="fa-solid fa-stethoscope"></i> Respuesta < 3 min
+                    </span>
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; right: 12px; background: rgba(15, 23, 42, 0.75); color: white; font-weight: 800; font-size: 0.72rem; backdrop-filter: blur(8px);">
+                        🐱 Gatos
+                    </span>
                 </div>
-            </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Homologado</span>
+                    <div style="color: #f59e0b; font-size: 0.8rem;">
+                        <i class="fa-solid fa-star"></i> 4.9 <span style="color: #94a3b8; font-size: 0.75rem;">(180)</span>
+                    </div>
+                </div>
 
-            <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
-                MediPet Express - Teleconsulta Veterinaria Inmediata con Triaje IA
-            </h3>
-            
-            <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
-                Videoconsulta de alta definición con veterinario colegiado en menos de 3 minutos con receta electrónica oficial válida en farmacias.
-            </p>
+                <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
+                    MediPet Express - Teleconsulta Veterinaria Inmediata con Triaje IA
+                </h3>
+                
+                <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
+                    Videoconsulta de alta definición con veterinario colegiado en menos de 3 minutos con receta electrónica oficial válida en farmacias.
+                </p>
+            </a>
 
             <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid rgba(226, 232, 240, 0.7); margin-top: auto;">
                 <div style="font-size: 1.35rem; font-weight: 900; color: #0284c7;">
                     35.00 €
                 </div>
                 <div style="display: flex; gap: 8px;">
-                    <button type="button" class="btn-primary" onclick="addToCart('MediPet Express - Teleconsulta Veterinaria Inmediata con Triaje IA', 35.0, 'triaje-ia-veterinario-urgencias.png'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
+                    <button type="button" class="btn-primary" onclick="event.stopPropagation(); addToCart('MediPet Express - Teleconsulta Veterinaria Inmediata con Triaje IA', 35.0, 'https://cdn2.thecatapi.com/images/94.gif'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
-                    <a href="producto-medipet-express-teleconsulta-ia.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a;" title="Ver Ficha Completa">
-                        Ver Detalles <i class="fa-solid fa-arrow-right"></i>
+                    <a href="producto-medipet-express-teleconsulta-ia.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a; display: inline-flex; align-items: center; gap: 6px;" title="Ver Ficha Steam">
+                        Ver Ficha <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </article>
         
-        <article class="partner-card apple-glass-card" data-species="both" data-price="60.0" data-rating="4.9" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column;">
-            <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
-                <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=800&q=80" alt="Hospital Clínico Dual - Chequeo Preventivo Integral Anual" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.92); color: #10b981; font-weight: 800; font-size: 0.72rem;">
-                    <i class="fa-solid fa-hospital"></i> Medicina Preventiva
-                </span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> Hospital Veterinario Central</span>
-                <div style="color: #f59e0b; font-size: 0.8rem;">
-                    <i class="fa-solid fa-star"></i> 4.9 <span style="color: #94a3b8; font-size: 0.75rem;">(189)</span>
+        <article class="partner-card apple-glass-card" data-species="dog" data-price="60.0" data-rating="4.9" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column; cursor: pointer; transition: all 0.3s ease;" onclick="if(event.target.tagName !== 'BUTTON' && !event.target.closest('button')) window.location.href='producto-hospital-clinico-dual-chequeo-anual.html';">
+            <a href="producto-hospital-clinico-dual-chequeo-anual.html" style="text-decoration: none; color: inherit; display: block;">
+                <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
+                    <img src="https://images.dog.ceo/breeds/poodle-standard/n02113799_3945.jpg" alt="Hospital Clínico Dual - Chequeo Preventivo Integral Anual" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.94); color: #0284c7; font-weight: 800; font-size: 0.72rem;">
+                        <i class="fa-solid fa-stethoscope"></i> Medicina Preventiva
+                    </span>
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; right: 12px; background: rgba(15, 23, 42, 0.75); color: white; font-weight: 800; font-size: 0.72rem; backdrop-filter: blur(8px);">
+                        🐶 Perros
+                    </span>
                 </div>
-            </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Homologado</span>
+                    <div style="color: #f59e0b; font-size: 0.8rem;">
+                        <i class="fa-solid fa-star"></i> 4.9 <span style="color: #94a3b8; font-size: 0.75rem;">(180)</span>
+                    </div>
+                </div>
 
-            <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
-                Hospital Clínico Dual - Chequeo Preventivo Integral Anual
-            </h3>
-            
-            <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
-                Revisión física exhaustiva que incluye analítica de sangre completa, bioquímica de 16 parámetros, ecografía abdominal básica y vacunas anuales.
-            </p>
+                <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
+                    Hospital Clínico Dual - Chequeo Preventivo Integral Anual
+                </h3>
+                
+                <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
+                    Revisión física exhaustiva que incluye analítica de sangre completa, bioquímica de 16 parámetros, ecografía abdominal básica y vacunas anuales.
+                </p>
+            </a>
 
             <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid rgba(226, 232, 240, 0.7); margin-top: auto;">
                 <div style="font-size: 1.35rem; font-weight: 900; color: #0284c7;">
                     60.00 €
                 </div>
                 <div style="display: flex; gap: 8px;">
-                    <button type="button" class="btn-primary" onclick="addToCart('Hospital Clínico Dual - Chequeo Preventivo Integral Anual', 60.0, 'https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=800&q=80'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
+                    <button type="button" class="btn-primary" onclick="event.stopPropagation(); addToCart('Hospital Clínico Dual - Chequeo Preventivo Integral Anual', 60.0, 'https://images.dog.ceo/breeds/poodle-standard/n02113799_3945.jpg'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
-                    <a href="producto-hospital-clinico-dual-chequeo-anual.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a;" title="Ver Ficha Completa">
-                        Ver Detalles <i class="fa-solid fa-arrow-right"></i>
+                    <a href="producto-hospital-clinico-dual-chequeo-anual.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a; display: inline-flex; align-items: center; gap: 6px;" title="Ver Ficha Steam">
+                        Ver Ficha <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </article>
         
-        <article class="partner-card apple-glass-card" data-species="both" data-price="42.0" data-rating="4.8" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column;">
-            <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
-                <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=800&q=80" alt="Pack Vacunación Oficial & Pasaporte Europeo de Mascota" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.92); color: #6366f1; font-weight: 800; font-size: 0.72rem;">
-                    <i class="fa-solid fa-passport"></i> Documentación Oficial
-                </span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> Red Clínicas Partners CUDI</span>
-                <div style="color: #f59e0b; font-size: 0.8rem;">
-                    <i class="fa-solid fa-star"></i> 4.8 <span style="color: #94a3b8; font-size: 0.75rem;">(140)</span>
+        <article class="partner-card apple-glass-card" data-species="cat" data-price="42.0" data-rating="4.8" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column; cursor: pointer; transition: all 0.3s ease;" onclick="if(event.target.tagName !== 'BUTTON' && !event.target.closest('button')) window.location.href='producto-cudi-vacunacion-pasaporte-rabia.html';">
+            <a href="producto-cudi-vacunacion-pasaporte-rabia.html" style="text-decoration: none; color: inherit; display: block;">
+                <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
+                    <img src="https://cdn2.thecatapi.com/images/43o.jpg" alt="Pack Vacunación Oficial & Pasaporte Europeo de Mascota" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.94); color: #0284c7; font-weight: 800; font-size: 0.72rem;">
+                        <i class="fa-solid fa-stethoscope"></i> Documentación Oficial
+                    </span>
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; right: 12px; background: rgba(15, 23, 42, 0.75); color: white; font-weight: 800; font-size: 0.72rem; backdrop-filter: blur(8px);">
+                        🐱 Gatos
+                    </span>
                 </div>
-            </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Homologado</span>
+                    <div style="color: #f59e0b; font-size: 0.8rem;">
+                        <i class="fa-solid fa-star"></i> 4.8 <span style="color: #94a3b8; font-size: 0.75rem;">(180)</span>
+                    </div>
+                </div>
 
-            <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
-                Pack Vacunación Oficial & Pasaporte Europeo de Mascota
-            </h3>
-            
-            <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
-                Emisión del Pasaporte Oficial de la Unión Europea para animales de compañía con vacuna antirrábica y desparasitación equinocócica para viajar.
-            </p>
+                <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
+                    Pack Vacunación Oficial & Pasaporte Europeo de Mascota
+                </h3>
+                
+                <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
+                    Emisión del Pasaporte Oficial de la Unión Europea para animales de compañía con vacuna antirrábica y desparasitación equinocócica para viajar.
+                </p>
+            </a>
 
             <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid rgba(226, 232, 240, 0.7); margin-top: auto;">
                 <div style="font-size: 1.35rem; font-weight: 900; color: #0284c7;">
                     42.00 €
                 </div>
                 <div style="display: flex; gap: 8px;">
-                    <button type="button" class="btn-primary" onclick="addToCart('Pack Vacunación Oficial & Pasaporte Europeo de Mascota', 42.0, 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=800&q=80'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
+                    <button type="button" class="btn-primary" onclick="event.stopPropagation(); addToCart('Pack Vacunación Oficial & Pasaporte Europeo de Mascota', 42.0, 'https://cdn2.thecatapi.com/images/43o.jpg'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
-                    <a href="producto-cudi-vacunacion-pasaporte-rabia.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a;" title="Ver Ficha Completa">
-                        Ver Detalles <i class="fa-solid fa-arrow-right"></i>
+                    <a href="producto-cudi-vacunacion-pasaporte-rabia.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a; display: inline-flex; align-items: center; gap: 6px;" title="Ver Ficha Steam">
+                        Ver Ficha <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </article>
         
-        <article class="partner-card apple-glass-card" data-species="both" data-price="95.0" data-rating="4.9" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column;">
-            <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
-                <img src="https://images.unsplash.com/photo-1583512603805-3cc6b41f3edb?auto=format&fit=crop&w=800&q=80" alt="Profilaxis Dental por Ultrasonidos & Pulido con Flúor" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.92); color: #06b6d4; font-weight: 800; font-size: 0.72rem;">
-                    <i class="fa-solid fa-teeth"></i> Salud Gingival
-                </span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> Hospital Veterinario Central</span>
-                <div style="color: #f59e0b; font-size: 0.8rem;">
-                    <i class="fa-solid fa-star"></i> 4.9 <span style="color: #94a3b8; font-size: 0.75rem;">(118)</span>
+        <article class="partner-card apple-glass-card" data-species="dog" data-price="95.0" data-rating="4.9" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column; cursor: pointer; transition: all 0.3s ease;" onclick="if(event.target.tagName !== 'BUTTON' && !event.target.closest('button')) window.location.href='producto-limpieza-dental-ultrasonidos-cudi.html';">
+            <a href="producto-limpieza-dental-ultrasonidos-cudi.html" style="text-decoration: none; color: inherit; display: block;">
+                <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
+                    <img src="https://images.dog.ceo/breeds/retriever-golden/z6a_4525_200809.jpg" alt="Profilaxis Dental por Ultrasonidos & Pulido con Flúor" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.94); color: #0284c7; font-weight: 800; font-size: 0.72rem;">
+                        <i class="fa-solid fa-stethoscope"></i> Salud Gingival
+                    </span>
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; right: 12px; background: rgba(15, 23, 42, 0.75); color: white; font-weight: 800; font-size: 0.72rem; backdrop-filter: blur(8px);">
+                        🐶 Perros
+                    </span>
                 </div>
-            </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Homologado</span>
+                    <div style="color: #f59e0b; font-size: 0.8rem;">
+                        <i class="fa-solid fa-star"></i> 4.9 <span style="color: #94a3b8; font-size: 0.75rem;">(180)</span>
+                    </div>
+                </div>
 
-            <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
-                Profilaxis Dental por Ultrasonidos & Pulido con Flúor
-            </h3>
-            
-            <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
-                Limpieza profunda subgingival con escarificador ultrasónico y pulido de esmalte para prevenir periodontitis y pérdida prematura de piezas dentales.
-            </p>
+                <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
+                    Profilaxis Dental por Ultrasonidos & Pulido con Flúor
+                </h3>
+                
+                <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
+                    Limpieza profunda subgingival con escarificador ultrasónico y pulido de esmalte para prevenir periodontitis y pérdida prematura de piezas dentales.
+                </p>
+            </a>
 
             <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid rgba(226, 232, 240, 0.7); margin-top: auto;">
                 <div style="font-size: 1.35rem; font-weight: 900; color: #0284c7;">
                     95.00 €
                 </div>
                 <div style="display: flex; gap: 8px;">
-                    <button type="button" class="btn-primary" onclick="addToCart('Profilaxis Dental por Ultrasonidos & Pulido con Flúor', 95.0, 'https://images.unsplash.com/photo-1583512603805-3cc6b41f3edb?auto=format&fit=crop&w=800&q=80'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
+                    <button type="button" class="btn-primary" onclick="event.stopPropagation(); addToCart('Profilaxis Dental por Ultrasonidos & Pulido con Flúor', 95.0, 'https://images.dog.ceo/breeds/retriever-golden/z6a_4525_200809.jpg'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
-                    <a href="producto-limpieza-dental-ultrasonidos-cudi.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a;" title="Ver Ficha Completa">
-                        Ver Detalles <i class="fa-solid fa-arrow-right"></i>
+                    <a href="producto-limpieza-dental-ultrasonidos-cudi.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a; display: inline-flex; align-items: center; gap: 6px;" title="Ver Ficha Steam">
+                        Ver Ficha <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </article>
         
-        <article class="partner-card apple-glass-card" data-species="both" data-price="180.0" data-rating="5.0" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column;">
-            <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
-                <img src="https://images.unsplash.com/photo-1532386236358-a33d8a9434e3?auto=format&fit=crop&w=800&q=80" alt="Esterilización / Castración por Laparoscopia Mínimamente Invasiva" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.92); color: #8b5cf6; font-weight: 800; font-size: 0.72rem;">
-                    <i class="fa-solid fa-scissors"></i> Cirugía Mínima Invasión
-                </span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> Hospital Veterinario Central</span>
-                <div style="color: #f59e0b; font-size: 0.8rem;">
-                    <i class="fa-solid fa-star"></i> 5.0 <span style="color: #94a3b8; font-size: 0.75rem;">(156)</span>
+        <article class="partner-card apple-glass-card" data-species="cat" data-price="180.0" data-rating="5.0" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column; cursor: pointer; transition: all 0.3s ease;" onclick="if(event.target.tagName !== 'BUTTON' && !event.target.closest('button')) window.location.href='producto-castracion-laparoscopica-avanzada.html';">
+            <a href="producto-castracion-laparoscopica-avanzada.html" style="text-decoration: none; color: inherit; display: block;">
+                <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
+                    <img src="https://cdn2.thecatapi.com/images/MTc5NjU2OA.jpg" alt="Esterilización / Castración por Laparoscopia Mínimamente Invasiva" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.94); color: #0284c7; font-weight: 800; font-size: 0.72rem;">
+                        <i class="fa-solid fa-stethoscope"></i> Cirugía Mínima Invasión
+                    </span>
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; right: 12px; background: rgba(15, 23, 42, 0.75); color: white; font-weight: 800; font-size: 0.72rem; backdrop-filter: blur(8px);">
+                        🐱 Gatos
+                    </span>
                 </div>
-            </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Homologado</span>
+                    <div style="color: #f59e0b; font-size: 0.8rem;">
+                        <i class="fa-solid fa-star"></i> 5.0 <span style="color: #94a3b8; font-size: 0.75rem;">(180)</span>
+                    </div>
+                </div>
 
-            <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
-                Esterilización / Castración por Laparoscopia Mínimamente Invasiva
-            </h3>
-            
-            <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
-                Intervención quirúrgica con óptica de alta resolución a través de dos microincisiones de 5mm con recuperación en 48 horas y sin collar isabelino.
-            </p>
+                <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
+                    Esterilización / Castración por Laparoscopia Mínimamente Invasiva
+                </h3>
+                
+                <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
+                    Intervención quirúrgica con óptica de alta resolución a través de dos microincisiones de 5mm con recuperación en 48 horas y sin collar isabelino.
+                </p>
+            </a>
 
             <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid rgba(226, 232, 240, 0.7); margin-top: auto;">
                 <div style="font-size: 1.35rem; font-weight: 900; color: #0284c7;">
                     180.00 €
                 </div>
                 <div style="display: flex; gap: 8px;">
-                    <button type="button" class="btn-primary" onclick="addToCart('Esterilización / Castración por Laparoscopia Mínimamente Invasiva', 180.0, 'https://images.unsplash.com/photo-1532386236358-a33d8a9434e3?auto=format&fit=crop&w=800&q=80'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
+                    <button type="button" class="btn-primary" onclick="event.stopPropagation(); addToCart('Esterilización / Castración por Laparoscopia Mínimamente Invasiva', 180.0, 'https://cdn2.thecatapi.com/images/MTc5NjU2OA.jpg'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
-                    <a href="producto-castracion-laparoscopica-avanzada.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a;" title="Ver Ficha Completa">
-                        Ver Detalles <i class="fa-solid fa-arrow-right"></i>
+                    <a href="producto-castracion-laparoscopica-avanzada.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a; display: inline-flex; align-items: center; gap: 6px;" title="Ver Ficha Steam">
+                        Ver Ficha <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </article>
         
-        <article class="partner-card apple-glass-card" data-species="both" data-price="89.0" data-rating="4.9" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column;">
-            <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
-                <img src="https://images.unsplash.com/photo-1506755855567-92ff770e8d00?auto=format&fit=crop&w=800&q=80" alt="Test Genético CUDI BioDNA - Salud, Razas & Longevidad" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.92); color: #ec4899; font-weight: 800; font-size: 0.72rem;">
-                    <i class="fa-solid fa-dna"></i> Genética Preventiva
-                </span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> BioSense Vet Tech</span>
-                <div style="color: #f59e0b; font-size: 0.8rem;">
-                    <i class="fa-solid fa-star"></i> 4.9 <span style="color: #94a3b8; font-size: 0.75rem;">(204)</span>
+        <article class="partner-card apple-glass-card" data-species="dog" data-price="89.0" data-rating="4.9" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column; cursor: pointer; transition: all 0.3s ease;" onclick="if(event.target.tagName !== 'BUTTON' && !event.target.closest('button')) window.location.href='producto-test-genetico-adn-longevidad-cudi.html';">
+            <a href="producto-test-genetico-adn-longevidad-cudi.html" style="text-decoration: none; color: inherit; display: block;">
+                <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
+                    <img src="https://images.dog.ceo/breeds/terrier-toy/n02087046_5203.jpg" alt="Test Genético CUDI BioDNA - Salud, Razas & Longevidad" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.94); color: #0284c7; font-weight: 800; font-size: 0.72rem;">
+                        <i class="fa-solid fa-stethoscope"></i> Genética Preventiva
+                    </span>
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; right: 12px; background: rgba(15, 23, 42, 0.75); color: white; font-weight: 800; font-size: 0.72rem; backdrop-filter: blur(8px);">
+                        🐶 Perros
+                    </span>
                 </div>
-            </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Homologado</span>
+                    <div style="color: #f59e0b; font-size: 0.8rem;">
+                        <i class="fa-solid fa-star"></i> 4.9 <span style="color: #94a3b8; font-size: 0.75rem;">(180)</span>
+                    </div>
+                </div>
 
-            <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
-                Test Genético CUDI BioDNA - Salud, Razas & Longevidad
-            </h3>
-            
-            <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
-                Hisopo bucal no invasivo que analiza más de 250 variantes de enfermedades hereditarias, sensibilidad a fármacos (MDR1) y porcentaje de razas.
-            </p>
+                <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
+                    Test Genético CUDI BioDNA - Salud, Razas & Longevidad
+                </h3>
+                
+                <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
+                    Hisopo bucal no invasivo que analiza más de 250 variantes de enfermedades hereditarias, sensibilidad a fármacos (MDR1) y porcentaje de razas.
+                </p>
+            </a>
 
             <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid rgba(226, 232, 240, 0.7); margin-top: auto;">
                 <div style="font-size: 1.35rem; font-weight: 900; color: #0284c7;">
                     89.00 €
                 </div>
                 <div style="display: flex; gap: 8px;">
-                    <button type="button" class="btn-primary" onclick="addToCart('Test Genético CUDI BioDNA - Salud, Razas & Longevidad', 89.0, 'https://images.unsplash.com/photo-1506755855567-92ff770e8d00?auto=format&fit=crop&w=800&q=80'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
+                    <button type="button" class="btn-primary" onclick="event.stopPropagation(); addToCart('Test Genético CUDI BioDNA - Salud, Razas & Longevidad', 89.0, 'https://images.dog.ceo/breeds/terrier-toy/n02087046_5203.jpg'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
-                    <a href="producto-test-genetico-adn-longevidad-cudi.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a;" title="Ver Ficha Completa">
-                        Ver Detalles <i class="fa-solid fa-arrow-right"></i>
+                    <a href="producto-test-genetico-adn-longevidad-cudi.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a; display: inline-flex; align-items: center; gap: 6px;" title="Ver Ficha Steam">
+                        Ver Ficha <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </article>
         
-        <article class="partner-card apple-glass-card" data-species="both" data-price="68.0" data-rating="4.9" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column;">
-            <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
-                <img src="https://images.unsplash.com/photo-1536590158209-e9d615d525e4?auto=format&fit=crop&w=800&q=80" alt="Ecografía Abdominal Completa con Especialista de Imagen" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.92); color: #0284c7; font-weight: 800; font-size: 0.72rem;">
-                    <i class="fa-solid fa-wave-square"></i> Ecografía Doppler
-                </span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> Hospital Veterinario Central</span>
-                <div style="color: #f59e0b; font-size: 0.8rem;">
-                    <i class="fa-solid fa-star"></i> 4.9 <span style="color: #94a3b8; font-size: 0.75rem;">(97)</span>
+        <article class="partner-card apple-glass-card" data-species="cat" data-price="68.0" data-rating="4.9" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column; cursor: pointer; transition: all 0.3s ease;" onclick="if(event.target.tagName !== 'BUTTON' && !event.target.closest('button')) window.location.href='producto-ecografia-abdominal-alta-resolucion.html';">
+            <a href="producto-ecografia-abdominal-alta-resolucion.html" style="text-decoration: none; color: inherit; display: block;">
+                <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
+                    <img src="https://cdn2.thecatapi.com/images/4MEAQffKS.jpg" alt="Ecografía Abdominal Completa con Especialista de Imagen" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.94); color: #0284c7; font-weight: 800; font-size: 0.72rem;">
+                        <i class="fa-solid fa-stethoscope"></i> Ecografía Doppler
+                    </span>
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; right: 12px; background: rgba(15, 23, 42, 0.75); color: white; font-weight: 800; font-size: 0.72rem; backdrop-filter: blur(8px);">
+                        🐱 Gatos
+                    </span>
                 </div>
-            </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Homologado</span>
+                    <div style="color: #f59e0b; font-size: 0.8rem;">
+                        <i class="fa-solid fa-star"></i> 4.9 <span style="color: #94a3b8; font-size: 0.75rem;">(180)</span>
+                    </div>
+                </div>
 
-            <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
-                Ecografía Abdominal Completa con Especialista de Imagen
-            </h3>
-            
-            <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
-                Estudio ecográfico abdominal de 8 órganos con sondas de microconvex y lineal de alta frecuencia para diagnóstico de patologías ocultas.
-            </p>
+                <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
+                    Ecografía Abdominal Completa con Especialista de Imagen
+                </h3>
+                
+                <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
+                    Estudio ecográfico abdominal de 8 órganos con sondas de microconvex y lineal de alta frecuencia para diagnóstico de patologías ocultas.
+                </p>
+            </a>
 
             <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid rgba(226, 232, 240, 0.7); margin-top: auto;">
                 <div style="font-size: 1.35rem; font-weight: 900; color: #0284c7;">
                     68.00 €
                 </div>
                 <div style="display: flex; gap: 8px;">
-                    <button type="button" class="btn-primary" onclick="addToCart('Ecografía Abdominal Completa con Especialista de Imagen', 68.0, 'https://images.unsplash.com/photo-1536590158209-e9d615d525e4?auto=format&fit=crop&w=800&q=80'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
+                    <button type="button" class="btn-primary" onclick="event.stopPropagation(); addToCart('Ecografía Abdominal Completa con Especialista de Imagen', 68.0, 'https://cdn2.thecatapi.com/images/4MEAQffKS.jpg'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
-                    <a href="producto-ecografia-abdominal-alta-resolucion.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a;" title="Ver Ficha Completa">
-                        Ver Detalles <i class="fa-solid fa-arrow-right"></i>
+                    <a href="producto-ecografia-abdominal-alta-resolucion.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a; display: inline-flex; align-items: center; gap: 6px;" title="Ver Ficha Steam">
+                        Ver Ficha <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </article>
         
-        <article class="partner-card apple-glass-card" data-species="dog" data-price="50.0" data-rating="5.0" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column;">
-            <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
-                <img src="https://images.unsplash.com/photo-1583511655826-05700d52f4d9?auto=format&fit=crop&w=800&q=80" alt="Sesión de Fisioterapia & Hidroterapia Subacuática Canina" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.92); color: #06b6d4; font-weight: 800; font-size: 0.72rem;">
-                    <i class="fa-solid fa-water"></i> Recuperación Articular
-                </span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> Red Clínicas Partners CUDI</span>
-                <div style="color: #f59e0b; font-size: 0.8rem;">
-                    <i class="fa-solid fa-star"></i> 5.0 <span style="color: #94a3b8; font-size: 0.75rem;">(110)</span>
+        <article class="partner-card apple-glass-card" data-species="dog" data-price="50.0" data-rating="5.0" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column; cursor: pointer; transition: all 0.3s ease;" onclick="if(event.target.tagName !== 'BUTTON' && !event.target.closest('button')) window.location.href='producto-fisioterapia-rehabilitacion-hidroterapia.html';">
+            <a href="producto-fisioterapia-rehabilitacion-hidroterapia.html" style="text-decoration: none; color: inherit; display: block;">
+                <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
+                    <img src="https://images.dog.ceo/breeds/spaniel-irish/n02102973_4913.jpg" alt="Sesión de Fisioterapia & Hidroterapia Subacuática Canina" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.94); color: #0284c7; font-weight: 800; font-size: 0.72rem;">
+                        <i class="fa-solid fa-stethoscope"></i> Recuperación Articular
+                    </span>
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; right: 12px; background: rgba(15, 23, 42, 0.75); color: white; font-weight: 800; font-size: 0.72rem; backdrop-filter: blur(8px);">
+                        🐶 Perros
+                    </span>
                 </div>
-            </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Homologado</span>
+                    <div style="color: #f59e0b; font-size: 0.8rem;">
+                        <i class="fa-solid fa-star"></i> 5.0 <span style="color: #94a3b8; font-size: 0.75rem;">(180)</span>
+                    </div>
+                </div>
 
-            <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
-                Sesión de Fisioterapia & Hidroterapia Subacuática Canina
-            </h3>
-            
-            <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
-                Cinta subacuática con agua termal climatizada, láser terapéutico clase IV y magnetoterapia para recuperar movilidad tras cirugías o artrosis.
-            </p>
+                <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
+                    Sesión de Fisioterapia & Hidroterapia Subacuática Canina
+                </h3>
+                
+                <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
+                    Cinta subacuática con agua termal climatizada, láser terapéutico clase IV y magnetoterapia para recuperar movilidad tras cirugías o artrosis.
+                </p>
+            </a>
 
             <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid rgba(226, 232, 240, 0.7); margin-top: auto;">
                 <div style="font-size: 1.35rem; font-weight: 900; color: #0284c7;">
                     50.00 €
                 </div>
                 <div style="display: flex; gap: 8px;">
-                    <button type="button" class="btn-primary" onclick="addToCart('Sesión de Fisioterapia & Hidroterapia Subacuática Canina', 50.0, 'https://images.unsplash.com/photo-1583511655826-05700d52f4d9?auto=format&fit=crop&w=800&q=80'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
+                    <button type="button" class="btn-primary" onclick="event.stopPropagation(); addToCart('Sesión de Fisioterapia & Hidroterapia Subacuática Canina', 50.0, 'https://images.dog.ceo/breeds/spaniel-irish/n02102973_4913.jpg'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
-                    <a href="producto-fisioterapia-rehabilitacion-hidroterapia.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a;" title="Ver Ficha Completa">
-                        Ver Detalles <i class="fa-solid fa-arrow-right"></i>
+                    <a href="producto-fisioterapia-rehabilitacion-hidroterapia.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a; display: inline-flex; align-items: center; gap: 6px;" title="Ver Ficha Steam">
+                        Ver Ficha <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </article>
         
-        <article class="partner-card apple-glass-card" data-species="both" data-price="70.0" data-rating="4.9" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column;">
-            <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
-                <img src="comportamiento-canino-barcelona.png" alt="Consulta Clínica de Etología & Modificación de Conducta" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.92); color: #f59e0b; font-weight: 800; font-size: 0.72rem;">
-                    <i class="fa-solid fa-brain"></i> Psicología Animal
-                </span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> Red Clínicas Partners CUDI</span>
-                <div style="color: #f59e0b; font-size: 0.8rem;">
-                    <i class="fa-solid fa-star"></i> 4.9 <span style="color: #94a3b8; font-size: 0.75rem;">(142)</span>
+        <article class="partner-card apple-glass-card" data-species="cat" data-price="70.0" data-rating="4.9" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column; cursor: pointer; transition: all 0.3s ease;" onclick="if(event.target.tagName !== 'BUTTON' && !event.target.closest('button')) window.location.href='producto-consulta-etologia-comportamiento-canino.html';">
+            <a href="producto-consulta-etologia-comportamiento-canino.html" style="text-decoration: none; color: inherit; display: block;">
+                <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
+                    <img src="https://cdn2.thecatapi.com/images/3qm.gif" alt="Consulta Clínica de Etología & Modificación de Conducta" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.94); color: #0284c7; font-weight: 800; font-size: 0.72rem;">
+                        <i class="fa-solid fa-stethoscope"></i> Psicología Animal
+                    </span>
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; right: 12px; background: rgba(15, 23, 42, 0.75); color: white; font-weight: 800; font-size: 0.72rem; backdrop-filter: blur(8px);">
+                        🐱 Gatos
+                    </span>
                 </div>
-            </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Homologado</span>
+                    <div style="color: #f59e0b; font-size: 0.8rem;">
+                        <i class="fa-solid fa-star"></i> 4.9 <span style="color: #94a3b8; font-size: 0.75rem;">(180)</span>
+                    </div>
+                </div>
 
-            <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
-                Consulta Clínica de Etología & Modificación de Conducta
-            </h3>
-            
-            <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
-                Evaluación por veterinario especialista en etología clínica para tratar agresividad, miedos fóbicos, ansiedad por separación o eliminación inadecuada.
-            </p>
+                <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
+                    Consulta Clínica de Etología & Modificación de Conducta
+                </h3>
+                
+                <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
+                    Evaluación por veterinario especialista en etología clínica para tratar agresividad, miedos fóbicos, ansiedad por separación o eliminación inadecuada.
+                </p>
+            </a>
 
             <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid rgba(226, 232, 240, 0.7); margin-top: auto;">
                 <div style="font-size: 1.35rem; font-weight: 900; color: #0284c7;">
                     70.00 €
                 </div>
                 <div style="display: flex; gap: 8px;">
-                    <button type="button" class="btn-primary" onclick="addToCart('Consulta Clínica de Etología & Modificación de Conducta', 70.0, 'comportamiento-canino-barcelona.png'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
+                    <button type="button" class="btn-primary" onclick="event.stopPropagation(); addToCart('Consulta Clínica de Etología & Modificación de Conducta', 70.0, 'https://cdn2.thecatapi.com/images/3qm.gif'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
-                    <a href="producto-consulta-etologia-comportamiento-canino.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a;" title="Ver Ficha Completa">
-                        Ver Detalles <i class="fa-solid fa-arrow-right"></i>
+                    <a href="producto-consulta-etologia-comportamiento-canino.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a; display: inline-flex; align-items: center; gap: 6px;" title="Ver Ficha Steam">
+                        Ver Ficha <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </article>
         
-        <article class="partner-card apple-glass-card" data-species="both" data-price="48.0" data-rating="4.9" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column;">
-            <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
-                <img src="https://images.unsplash.com/photo-1516750484197-6b28d10c91ea?auto=format&fit=crop&w=800&q=80" alt="Perfil Bioquímico & Hematológico Integral de Laboratorio" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.92); color: #ef4444; font-weight: 800; font-size: 0.72rem;">
-                    <i class="fa-solid fa-vial"></i> Laboratorio Central
-                </span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> Hospital Veterinario Central</span>
-                <div style="color: #f59e0b; font-size: 0.8rem;">
-                    <i class="fa-solid fa-star"></i> 4.9 <span style="color: #94a3b8; font-size: 0.75rem;">(165)</span>
+        <article class="partner-card apple-glass-card" data-species="dog" data-price="48.0" data-rating="4.9" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column; cursor: pointer; transition: all 0.3s ease;" onclick="if(event.target.tagName !== 'BUTTON' && !event.target.closest('button')) window.location.href='producto-analisis-sangre-completo-bioquimica.html';">
+            <a href="producto-analisis-sangre-completo-bioquimica.html" style="text-decoration: none; color: inherit; display: block;">
+                <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
+                    <img src="https://images.dog.ceo/breeds/sheepdog-english/n02105641_696.jpg" alt="Perfil Bioquímico & Hematológico Integral de Laboratorio" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.94); color: #0284c7; font-weight: 800; font-size: 0.72rem;">
+                        <i class="fa-solid fa-stethoscope"></i> Laboratorio Central
+                    </span>
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; right: 12px; background: rgba(15, 23, 42, 0.75); color: white; font-weight: 800; font-size: 0.72rem; backdrop-filter: blur(8px);">
+                        🐶 Perros
+                    </span>
                 </div>
-            </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Homologado</span>
+                    <div style="color: #f59e0b; font-size: 0.8rem;">
+                        <i class="fa-solid fa-star"></i> 4.9 <span style="color: #94a3b8; font-size: 0.75rem;">(180)</span>
+                    </div>
+                </div>
 
-            <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
-                Perfil Bioquímico & Hematológico Integral de Laboratorio
-            </h3>
-            
-            <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
-                Analítica en laboratorio acreditado con hemograma completo de 5 poblaciones, bioquímica general de 18 parámetros y electrolitos séricos.
-            </p>
+                <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
+                    Perfil Bioquímico & Hematológico Integral de Laboratorio
+                </h3>
+                
+                <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
+                    Analítica en laboratorio acreditado con hemograma completo de 5 poblaciones, bioquímica general de 18 parámetros y electrolitos séricos.
+                </p>
+            </a>
 
             <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid rgba(226, 232, 240, 0.7); margin-top: auto;">
                 <div style="font-size: 1.35rem; font-weight: 900; color: #0284c7;">
                     48.00 €
                 </div>
                 <div style="display: flex; gap: 8px;">
-                    <button type="button" class="btn-primary" onclick="addToCart('Perfil Bioquímico & Hematológico Integral de Laboratorio', 48.0, 'https://images.unsplash.com/photo-1516750484197-6b28d10c91ea?auto=format&fit=crop&w=800&q=80'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
+                    <button type="button" class="btn-primary" onclick="event.stopPropagation(); addToCart('Perfil Bioquímico & Hematológico Integral de Laboratorio', 48.0, 'https://images.dog.ceo/breeds/sheepdog-english/n02105641_696.jpg'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
-                    <a href="producto-analisis-sangre-completo-bioquimica.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a;" title="Ver Ficha Completa">
-                        Ver Detalles <i class="fa-solid fa-arrow-right"></i>
+                    <a href="producto-analisis-sangre-completo-bioquimica.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a; display: inline-flex; align-items: center; gap: 6px;" title="Ver Ficha Steam">
+                        Ver Ficha <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </article>
         
-        <article class="partner-card apple-glass-card" data-species="both" data-price="85.0" data-rating="5.0" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column;">
-            <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
-                <img src="https://images.unsplash.com/photo-1535268647677-300dbf3d78d1?auto=format&fit=crop&w=800&q=80" alt="Ecocardiograma Color & Electrocardiograma Digital" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.92); color: #e11d48; font-weight: 800; font-size: 0.72rem;">
-                    <i class="fa-solid fa-heart-pulse"></i> Cardiología Avanzada
-                </span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> Hospital Veterinario Central</span>
-                <div style="color: #f59e0b; font-size: 0.8rem;">
-                    <i class="fa-solid fa-star"></i> 5.0 <span style="color: #94a3b8; font-size: 0.75rem;">(82)</span>
+        <article class="partner-card apple-glass-card" data-species="cat" data-price="85.0" data-rating="5.0" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column; cursor: pointer; transition: all 0.3s ease;" onclick="if(event.target.tagName !== 'BUTTON' && !event.target.closest('button')) window.location.href='producto-ecocardiograma-doppler-cardiaco.html';">
+            <a href="producto-ecocardiograma-doppler-cardiaco.html" style="text-decoration: none; color: inherit; display: block;">
+                <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
+                    <img src="https://cdn2.thecatapi.com/images/MjA0NDU5Mw.jpg" alt="Ecocardiograma Color & Electrocardiograma Digital" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.94); color: #0284c7; font-weight: 800; font-size: 0.72rem;">
+                        <i class="fa-solid fa-stethoscope"></i> Cardiología Avanzada
+                    </span>
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; right: 12px; background: rgba(15, 23, 42, 0.75); color: white; font-weight: 800; font-size: 0.72rem; backdrop-filter: blur(8px);">
+                        🐱 Gatos
+                    </span>
                 </div>
-            </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Homologado</span>
+                    <div style="color: #f59e0b; font-size: 0.8rem;">
+                        <i class="fa-solid fa-star"></i> 5.0 <span style="color: #94a3b8; font-size: 0.75rem;">(180)</span>
+                    </div>
+                </div>
 
-            <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
-                Ecocardiograma Color & Electrocardiograma Digital
-            </h3>
-            
-            <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
-                Estudio morfológico y hemodinámico de las cavidades cardíacas para diagnosticar soplos, valvulopatía mitral o miocardiopatía hipertrófica felina.
-            </p>
+                <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
+                    Ecocardiograma Color & Electrocardiograma Digital
+                </h3>
+                
+                <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
+                    Estudio morfológico y hemodinámico de las cavidades cardíacas para diagnosticar soplos, valvulopatía mitral o miocardiopatía hipertrófica felina.
+                </p>
+            </a>
 
             <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid rgba(226, 232, 240, 0.7); margin-top: auto;">
                 <div style="font-size: 1.35rem; font-weight: 900; color: #0284c7;">
                     85.00 €
                 </div>
                 <div style="display: flex; gap: 8px;">
-                    <button type="button" class="btn-primary" onclick="addToCart('Ecocardiograma Color & Electrocardiograma Digital', 85.0, 'https://images.unsplash.com/photo-1535268647677-300dbf3d78d1?auto=format&fit=crop&w=800&q=80'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
+                    <button type="button" class="btn-primary" onclick="event.stopPropagation(); addToCart('Ecocardiograma Color & Electrocardiograma Digital', 85.0, 'https://cdn2.thecatapi.com/images/MjA0NDU5Mw.jpg'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
-                    <a href="producto-ecocardiograma-doppler-cardiaco.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a;" title="Ver Ficha Completa">
-                        Ver Detalles <i class="fa-solid fa-arrow-right"></i>
+                    <a href="producto-ecocardiograma-doppler-cardiaco.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a; display: inline-flex; align-items: center; gap: 6px;" title="Ver Ficha Steam">
+                        Ver Ficha <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </article>
         
-        <article class="partner-card apple-glass-card" data-species="dog" data-price="32.0" data-rating="4.9" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column;">
-            <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
-                <img src="https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=800&q=80" alt="Cribado Rápido Serológico de Leishmania, Filaria & Borrelia (4DX)" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.92); color: #f97316; font-weight: 800; font-size: 0.72rem;">
-                    <i class="fa-solid fa-bug"></i> Cribado Vectorial
-                </span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> Red Clínicas Partners CUDI</span>
-                <div style="color: #f59e0b; font-size: 0.8rem;">
-                    <i class="fa-solid fa-star"></i> 4.9 <span style="color: #94a3b8; font-size: 0.75rem;">(218)</span>
+        <article class="partner-card apple-glass-card" data-species="dog" data-price="32.0" data-rating="4.9" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column; cursor: pointer; transition: all 0.3s ease;" onclick="if(event.target.tagName !== 'BUTTON' && !event.target.closest('button')) window.location.href='producto-test-leishmania-cribado-vectoriales.html';">
+            <a href="producto-test-leishmania-cribado-vectoriales.html" style="text-decoration: none; color: inherit; display: block;">
+                <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
+                    <img src="https://images.dog.ceo/breeds/rottweiler/n02106550_148.jpg" alt="Cribado Rápido Serológico de Leishmania, Filaria & Borrelia (4DX)" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.94); color: #0284c7; font-weight: 800; font-size: 0.72rem;">
+                        <i class="fa-solid fa-stethoscope"></i> Cribado Vectorial
+                    </span>
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; right: 12px; background: rgba(15, 23, 42, 0.75); color: white; font-weight: 800; font-size: 0.72rem; backdrop-filter: blur(8px);">
+                        🐶 Perros
+                    </span>
                 </div>
-            </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Homologado</span>
+                    <div style="color: #f59e0b; font-size: 0.8rem;">
+                        <i class="fa-solid fa-star"></i> 4.9 <span style="color: #94a3b8; font-size: 0.75rem;">(180)</span>
+                    </div>
+                </div>
 
-            <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
-                Cribado Rápido Serológico de Leishmania, Filaria & Borrelia (4DX)
-            </h3>
-            
-            <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
-                Test de sangre en 8 minutos para descartar enfermedades transmitidas por mosquitos (filaria, leishmaniosis) y garrapatas (anaplasma, lyme).
-            </p>
+                <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
+                    Cribado Rápido Serológico de Leishmania, Filaria & Borrelia (4DX)
+                </h3>
+                
+                <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
+                    Test de sangre en 8 minutos para descartar enfermedades transmitidas por mosquitos (filaria, leishmaniosis) y garrapatas (anaplasma, lyme).
+                </p>
+            </a>
 
             <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid rgba(226, 232, 240, 0.7); margin-top: auto;">
                 <div style="font-size: 1.35rem; font-weight: 900; color: #0284c7;">
                     32.00 €
                 </div>
                 <div style="display: flex; gap: 8px;">
-                    <button type="button" class="btn-primary" onclick="addToCart('Cribado Rápido Serológico de Leishmania, Filaria & Borrelia (4DX)', 32.0, 'https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=800&q=80'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
+                    <button type="button" class="btn-primary" onclick="event.stopPropagation(); addToCart('Cribado Rápido Serológico de Leishmania, Filaria & Borrelia (4DX)', 32.0, 'https://images.dog.ceo/breeds/rottweiler/n02106550_148.jpg'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
-                    <a href="producto-test-leishmania-cribado-vectoriales.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a;" title="Ver Ficha Completa">
-                        Ver Detalles <i class="fa-solid fa-arrow-right"></i>
+                    <a href="producto-test-leishmania-cribado-vectoriales.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a; display: inline-flex; align-items: center; gap: 6px;" title="Ver Ficha Steam">
+                        Ver Ficha <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </article>
         
-        <article class="partner-card apple-glass-card" data-species="both" data-price="55.0" data-rating="4.8" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column;">
-            <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
-                <img src="https://images.unsplash.com/photo-1529429617124-95b109e86bb8?auto=format&fit=crop&w=800&q=80" alt="Estudio Radiográfico Digital Directo de Alta Definición (2 Proyecciones)" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.92); color: #475569; font-weight: 800; font-size: 0.72rem;">
-                    <i class="fa-solid fa-x-ray"></i> Rayos X Digital
-                </span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> Hospital Veterinario Central</span>
-                <div style="color: #f59e0b; font-size: 0.8rem;">
-                    <i class="fa-solid fa-star"></i> 4.8 <span style="color: #94a3b8; font-size: 0.75rem;">(114)</span>
+        <article class="partner-card apple-glass-card" data-species="cat" data-price="55.0" data-rating="4.8" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column; cursor: pointer; transition: all 0.3s ease;" onclick="if(event.target.tagName !== 'BUTTON' && !event.target.closest('button')) window.location.href='producto-radiografia-digital-traumatologia.html';">
+            <a href="producto-radiografia-digital-traumatologia.html" style="text-decoration: none; color: inherit; display: block;">
+                <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
+                    <img src="https://cdn2.thecatapi.com/images/dmf.jpg" alt="Estudio Radiográfico Digital Directo de Alta Definición (2 Proyecciones)" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.94); color: #0284c7; font-weight: 800; font-size: 0.72rem;">
+                        <i class="fa-solid fa-stethoscope"></i> Rayos X Digital
+                    </span>
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; right: 12px; background: rgba(15, 23, 42, 0.75); color: white; font-weight: 800; font-size: 0.72rem; backdrop-filter: blur(8px);">
+                        🐱 Gatos
+                    </span>
                 </div>
-            </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Homologado</span>
+                    <div style="color: #f59e0b; font-size: 0.8rem;">
+                        <i class="fa-solid fa-star"></i> 4.8 <span style="color: #94a3b8; font-size: 0.75rem;">(180)</span>
+                    </div>
+                </div>
 
-            <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
-                Estudio Radiográfico Digital Directo de Alta Definición (2 Proyecciones)
-            </h3>
-            
-            <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
-                Placas radiológicas digitales con revelado instantáneo para diagnóstico de fracturas, displasias, artrosis o cuerpos extraños radiopacos.
-            </p>
+                <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
+                    Estudio Radiográfico Digital Directo de Alta Definición (2 Proyecciones)
+                </h3>
+                
+                <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
+                    Placas radiológicas digitales con revelado instantáneo para diagnóstico de fracturas, displasias, artrosis o cuerpos extraños radiopacos.
+                </p>
+            </a>
 
             <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid rgba(226, 232, 240, 0.7); margin-top: auto;">
                 <div style="font-size: 1.35rem; font-weight: 900; color: #0284c7;">
                     55.00 €
                 </div>
                 <div style="display: flex; gap: 8px;">
-                    <button type="button" class="btn-primary" onclick="addToCart('Estudio Radiográfico Digital Directo de Alta Definición (2 Proyecciones)', 55.0, 'https://images.unsplash.com/photo-1529429617124-95b109e86bb8?auto=format&fit=crop&w=800&q=80'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
+                    <button type="button" class="btn-primary" onclick="event.stopPropagation(); addToCart('Estudio Radiográfico Digital Directo de Alta Definición (2 Proyecciones)', 55.0, 'https://cdn2.thecatapi.com/images/dmf.jpg'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
-                    <a href="producto-radiografia-digital-traumatologia.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a;" title="Ver Ficha Completa">
-                        Ver Detalles <i class="fa-solid fa-arrow-right"></i>
+                    <a href="producto-radiografia-digital-traumatologia.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a; display: inline-flex; align-items: center; gap: 6px;" title="Ver Ficha Steam">
+                        Ver Ficha <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </article>
         
-        <article class="partner-card apple-glass-card" data-species="both" data-price="65.0" data-rating="4.9" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column;">
-            <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
-                <img src="https://images.unsplash.com/photo-1544568100-847a948585b9?auto=format&fit=crop&w=800&q=80" alt="Consulta Oncológica & Biopsia / Citología de Bultos con Informe" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.92); color: #7c3aed; font-weight: 800; font-size: 0.72rem;">
-                    <i class="fa-solid fa-microscope"></i> Oncología Especializada
-                </span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> Hospital Veterinario Central</span>
-                <div style="color: #f59e0b; font-size: 0.8rem;">
-                    <i class="fa-solid fa-star"></i> 4.9 <span style="color: #94a3b8; font-size: 0.75rem;">(79)</span>
+        <article class="partner-card apple-glass-card" data-species="dog" data-price="65.0" data-rating="4.9" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column; cursor: pointer; transition: all 0.3s ease;" onclick="if(event.target.tagName !== 'BUTTON' && !event.target.closest('button')) window.location.href='producto-plan-oncologico-cribado-biopsia.html';">
+            <a href="producto-plan-oncologico-cribado-biopsia.html" style="text-decoration: none; color: inherit; display: block;">
+                <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
+                    <img src="https://images.dog.ceo/breeds/samoyed/n02111889_6249.jpg" alt="Consulta Oncológica & Biopsia / Citología de Bultos con Informe" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.94); color: #0284c7; font-weight: 800; font-size: 0.72rem;">
+                        <i class="fa-solid fa-stethoscope"></i> Oncología Especializada
+                    </span>
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; right: 12px; background: rgba(15, 23, 42, 0.75); color: white; font-weight: 800; font-size: 0.72rem; backdrop-filter: blur(8px);">
+                        🐶 Perros
+                    </span>
                 </div>
-            </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Homologado</span>
+                    <div style="color: #f59e0b; font-size: 0.8rem;">
+                        <i class="fa-solid fa-star"></i> 4.9 <span style="color: #94a3b8; font-size: 0.75rem;">(180)</span>
+                    </div>
+                </div>
 
-            <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
-                Consulta Oncológica & Biopsia / Citología de Bultos con Informe
-            </h3>
-            
-            <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
-                Punción-aspiración con aguja fina (PAAF) de nódulos cutáneos y masas subcutáneas analizada por patólogo veterinario para diagnóstico precoz.
-            </p>
+                <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
+                    Consulta Oncológica & Biopsia / Citología de Bultos con Informe
+                </h3>
+                
+                <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
+                    Punción-aspiración con aguja fina (PAAF) de nódulos cutáneos y masas subcutáneas analizada por patólogo veterinario para diagnóstico precoz.
+                </p>
+            </a>
 
             <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid rgba(226, 232, 240, 0.7); margin-top: auto;">
                 <div style="font-size: 1.35rem; font-weight: 900; color: #0284c7;">
                     65.00 €
                 </div>
                 <div style="display: flex; gap: 8px;">
-                    <button type="button" class="btn-primary" onclick="addToCart('Consulta Oncológica & Biopsia / Citología de Bultos con Informe', 65.0, 'https://images.unsplash.com/photo-1544568100-847a948585b9?auto=format&fit=crop&w=800&q=80'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
+                    <button type="button" class="btn-primary" onclick="event.stopPropagation(); addToCart('Consulta Oncológica & Biopsia / Citología de Bultos con Informe', 65.0, 'https://images.dog.ceo/breeds/samoyed/n02111889_6249.jpg'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
-                    <a href="producto-plan-oncologico-cribado-biopsia.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a;" title="Ver Ficha Completa">
-                        Ver Detalles <i class="fa-solid fa-arrow-right"></i>
+                    <a href="producto-plan-oncologico-cribado-biopsia.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a; display: inline-flex; align-items: center; gap: 6px;" title="Ver Ficha Steam">
+                        Ver Ficha <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </article>
         
                 </div>
-                
-                <div id="no-results-message" style="display: none; text-align: center; padding: 60px 20px; background: white; border-radius: 24px; border: 1px solid rgba(226, 232, 240, 0.8);">
-                    <i class="fa-solid fa-search" style="font-size: 2.5rem; color: #cbd5e1; margin-bottom: 14px;"></i>
-                    <h3 style="font-size: 1.25rem; font-weight: 800; color: #0f172a; margin: 0 0 8px;">No se encontraron productos</h3>
-                    <p style="color: #64748b; font-size: 0.9rem; margin: 0 0 18px;">Prueba a modificar los filtros seleccionados o realiza una búsqueda más amplia.</p>
-                    <button type="button" class="btn-primary" onclick="resetFilters()" style="padding: 8px 22px; border-radius: 50px; font-size: 0.85rem; cursor: pointer;">Restablecer Filtros</button>
-                </div>
             </main>
         </div>
+    </div>
 
-    </main>
-
-    <!-- FOOTER -->
-    <footer style="background: white; border-top: 1px solid rgba(226, 232, 240, 0.8); padding: 50px 0 30px; text-align: center;">
-        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
-            <p style="color: #94a3b8; font-size: 0.85rem; margin: 0;">&copy; 2026 CUDI Ecosystem. Plataforma Integral de Bienestar y Telemetría Animal.</p>
-        </div>
-    </footer>
-
-    <!-- INTERACTIVE JAVASCRIPT FILTERING SCRIPT -->
+    <script src="script.js?v=7.4"></script>
+    <script src="cudi-ai.js?v=7.4"></script>
     <script>
         function filterCategoryProducts() {
-            const searchInput = document.getElementById('cat-search-input');
-            const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
-
-            const speciesRadio = document.querySelector('input[name="speciesFilter"]:checked');
-            const speciesVal = speciesRadio ? speciesRadio.value : 'all';
-
-            const priceRadio = document.querySelector('input[name="priceFilter"]:checked');
-            const priceVal = priceRadio ? priceRadio.value : 'all';
-
-            const sortSelect = document.getElementById('sort-select');
-            const sortVal = sortSelect ? sortSelect.value : 'featured';
-
-            const grid = document.getElementById('category-products-grid');
-            const cards = Array.from(grid.querySelectorAll('.partner-card'));
+            const speciesVal = document.querySelector('input[name="speciesFilter"]:checked').value;
+            const priceVal = document.querySelector('input[name="priceFilter"]:checked').value;
+            const sortVal = document.getElementById('sort-select').value;
+            
+            const cards = Array.from(document.querySelectorAll('#category-products-grid .partner-card'));
             let visibleCount = 0;
-
+            
             cards.forEach(card => {
-                const name = card.querySelector('h3').textContent.toLowerCase();
-                const desc = card.querySelector('p').textContent.toLowerCase();
-                const cardSpecies = card.dataset.species || 'both';
-                const cardPrice = parseFloat(card.dataset.price) || 0;
-
-                let matchesQuery = query === '' || name.includes(query) || desc.includes(query);
-                let matchesSpecies = (speciesVal === 'all') || (cardSpecies === 'both') || (cardSpecies === speciesVal);
+                const sp = card.getAttribute('data-species');
+                const pr = parseFloat(card.getAttribute('data-price'));
                 
+                let matchesSpecies = (speciesVal === 'all') || (sp === speciesVal) || (sp === 'both');
                 let matchesPrice = true;
-                if (priceVal === 'under25') matchesPrice = cardPrice < 25;
-                else if (priceVal === '25to50') matchesPrice = cardPrice >= 25 && cardPrice <= 50;
-                else if (priceVal === 'over50') matchesPrice = cardPrice > 50;
-
-                if (matchesQuery && matchesSpecies && matchesPrice) {
+                if (priceVal === 'under25') matchesPrice = (pr < 25);
+                else if (priceVal === '25to50') matchesPrice = (pr >= 25 && pr <= 50);
+                else if (priceVal === 'over50') matchesPrice = (pr > 50);
+                
+                if (matchesSpecies && matchesPrice) {
                     card.style.display = 'flex';
                     visibleCount++;
                 } else {
                     card.style.display = 'none';
                 }
             });
-
-            // Sorting logic
+            
+            const grid = document.getElementById('category-products-grid');
             const visibleCards = cards.filter(c => c.style.display !== 'none');
-            visibleCards.sort((a, b) => {
-                const priceA = parseFloat(a.dataset.price) || 0;
-                const priceB = parseFloat(b.dataset.price) || 0;
-                const ratingA = parseFloat(a.dataset.rating) || 5;
-                const ratingB = parseFloat(b.dataset.rating) || 5;
-
-                if (sortVal === 'price-asc') return priceA - priceB;
-                if (sortVal === 'price-desc') return priceB - priceA;
-                if (sortVal === 'rating') return ratingB - ratingA;
-                return 0; // default order
-            });
-
-            visibleCards.forEach(c => grid.appendChild(c));
-
-            // Counter update & empty state
-            const counterText = document.getElementById('results-count-text');
-            if (counterText) counterText.textContent = 'Mostrando ' + visibleCount + ' soluciones encontradas';
-
-            const emptyMsg = document.getElementById('no-results-message');
-            if (emptyMsg) emptyMsg.style.display = visibleCount === 0 ? 'block' : 'none';
+            
+            if (sortVal === 'price-asc') {
+                visibleCards.sort((a,b) => parseFloat(a.getAttribute('data-price')) - parseFloat(b.getAttribute('data-price')));
+                visibleCards.forEach(c => grid.appendChild(c));
+            } else if (sortVal === 'price-desc') {
+                visibleCards.sort((a,b) => parseFloat(b.getAttribute('data-price')) - parseFloat(a.getAttribute('data-price')));
+                visibleCards.forEach(c => grid.appendChild(c));
+            } else if (sortVal === 'rating') {
+                visibleCards.sort((a,b) => parseFloat(b.getAttribute('data-rating')) - parseFloat(a.getAttribute('data-rating')));
+                visibleCards.forEach(c => grid.appendChild(c));
+            }
+            
+            document.getElementById('results-count-text').innerText = 'Mostrando ' + visibleCount + ' soluciones certificadas';
         }
 
         function resetFilters() {
-            const searchInput = document.getElementById('cat-search-input');
-            if (searchInput) searchInput.value = '';
-
-            const defaultSpecies = document.querySelector('input[name="speciesFilter"][value="all"]');
-            if (defaultSpecies) defaultSpecies.checked = true;
-
-            const defaultPrice = document.querySelector('input[name="priceFilter"][value="all"]');
-            if (defaultPrice) defaultPrice.checked = true;
-
-            const sortSelect = document.getElementById('sort-select');
-            if (sortSelect) sortSelect.value = 'featured';
-
+            document.querySelector('input[name="speciesFilter"][value="all"]').checked = true;
+            document.querySelector('input[name="priceFilter"][value="all"]').checked = true;
+            document.getElementById('sort-select').value = 'featured';
             filterCategoryProducts();
         }
     </script>
-    <script src="script.js?v=7.4"></script>
-    <script src="modulos/catalogo-unico.js?v=7.4"></script>
-    <script src="cudi-ai.js?v=7.4"></script>
+
+    <!-- =====================================================================
+         MODULO OFICIAL DE PIE DE PAGINA INSTITUCIONAL & MARCO LEGAL CUDI
+         ===================================================================== -->
+    <footer class="cudi-apple-glass-footer" style="margin-top: 80px; background: rgba(15, 23, 42, 0.96); backdrop-filter: blur(32px) saturate(180%); -webkit-backdrop-filter: blur(32px) saturate(180%); color: #f8fafc; border-top: 1px solid rgba(255, 255, 255, 0.12); padding: 60px 24px 36px; font-family: 'Plus Jakarta Sans', sans-serif;">
+        <div style="max-width: 1280px; margin: 0 auto;">
+            
+            <!-- TRUST & COMPLIANCE BADGES -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; margin-bottom: 50px; padding-bottom: 40px; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+                <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 16px 20px; display: flex; align-items: center; gap: 14px;">
+                    <div style="color: #38bdf8; font-size: 1.6rem;"><i class="fa-solid fa-shield-halved"></i></div>
+                    <div>
+                        <div style="font-size: 0.88rem; font-weight: 800; color: white;">Ley Bienestar Animal</div>
+                        <div style="font-size: 0.75rem; color: #94a3b8;">Homologación Ley 7/2023 España</div>
+                    </div>
+                </div>
+                <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 16px 20px; display: flex; align-items: center; gap: 14px;">
+                    <div style="color: #10b981; font-size: 1.6rem;"><i class="fa-solid fa-lock"></i></div>
+                    <div>
+                        <div style="font-size: 0.88rem; font-weight: 800; color: white;">Seguridad Bancaria CUDI Pay</div>
+                        <div style="font-size: 0.75rem; color: #94a3b8;">Cifrado SSL 256-bit y Stripe</div>
+                    </div>
+                </div>
+                <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 16px 20px; display: flex; align-items: center; gap: 14px;">
+                    <div style="color: #f59e0b; font-size: 1.6rem;"><i class="fa-solid fa-stethoscope"></i></div>
+                    <div>
+                        <div style="font-size: 0.88rem; font-weight: 800; color: white;">Comité Veterinario Oficial</div>
+                        <div style="font-size: 0.75rem; color: #94a3b8;">Supervisión Facultativa 24/7</div>
+                    </div>
+                </div>
+                <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 16px 20px; display: flex; align-items: center; gap: 14px;">
+                    <div style="color: #a855f7; font-size: 1.6rem;"><i class="fa-solid fa-rotate-left"></i></div>
+                    <div>
+                        <div style="font-size: 0.88rem; font-weight: 800; color: white;">Garantía de Satisfacción</div>
+                        <div style="font-size: 0.75rem; color: #94a3b8;">30 días de prueba sin preguntas</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4 DETAILED COLUMNS -->
+            <div style="display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 50px;">
+                
+                <!-- COL 1: INSTITUTIONAL -->
+                <div>
+                    <a href="index.html" style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px; text-decoration: none;">
+                        <img src="logo.jpeg" alt="CUDI Ecosystem" style="height: 48px; border-radius: 10px;">
+                    </a>
+                    <p style="font-size: 0.84rem; color: #94a3b8; line-height: 1.7; margin: 0 0 20px 0;">
+                        CUDI es el primer ecosistema integral de salud, telemetría IoT y bienestar preventivo multiespecie (perros y gatos) con gemelos digitales y triaje bio-neural conectado a clínicas físicas.
+                    </p>
+                    <div style="font-size: 0.82rem; color: #cbd5e1; margin-bottom: 8px;">
+                        <i class="fa-solid fa-phone" style="color: #38bdf8; margin-right: 8px;"></i> Atención Gratuita: <strong>900 123 456</strong>
+                    </div>
+                    <div style="font-size: 0.82rem; color: #cbd5e1; margin-bottom: 20px;">
+                        <i class="fa-solid fa-envelope" style="color: #38bdf8; margin-right: 8px;"></i> <strong>cudi.ai2026@gmail.com</strong>
+                    </div>
+                    <div style="display: flex; gap: 10px;">
+                        <a href="https://www.instagram.com/cudi.ia?igsh=bjdmNXhyeHZvMXo0&utm_source=qr" target="_blank" style="width: 38px; height: 38px; border-radius: 50%; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; transition: all 0.25s ease;" title="Instagram CUDI"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@cudi.ia?_r=1&_t=ZN-95icM5LsfCA" target="_blank" style="width: 38px; height: 38px; border-radius: 50%; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; transition: all 0.25s ease;" title="TikTok CUDI"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="https://www.youtube.com/@cudi-ia" target="_blank" style="width: 38px; height: 38px; border-radius: 50%; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; transition: all 0.25s ease;" title="YouTube CUDI"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="https://www.facebook.com/Cudi2026" target="_blank" style="width: 38px; height: 38px; border-radius: 50%; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; transition: all 0.25s ease;" title="Facebook CUDI"><i class="fa-brands fa-facebook-f"></i></a>
+                    </div>
+                </div>
+
+                <!-- COL 2: MARKETPLACE -->
+                <div>
+                    <h4 style="font-size: 0.95rem; font-weight: 800; color: white; margin: 0 0 18px 0; text-transform: uppercase; letter-spacing: 0.5px;">
+                        Marketplace CUDI
+                    </h4>
+                    <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.84rem; line-height: 2.2;">
+                        <li><a href="smart-collar-cudi-gps.html" style="color: #94a3b8; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#38bdf8'" onmouseout="this.style.color='#94a3b8'">Smart Collar IoT & Geocercas</a></li>
+                        <li><a href="nutricion-personalizada-perros-gatos.html" style="color: #94a3b8; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#38bdf8'" onmouseout="this.style.color='#94a3b8'">Nutrición BARF & Microbioma</a></li>
+                        <li><a href="telemedicina-veterinaria-24-7.html" style="color: #94a3b8; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#38bdf8'" onmouseout="this.style.color='#94a3b8'">Telemedicina & Clínicas 24/7</a></li>
+                        <li><a href="paseadores-perros-certificados-barcelona.html" style="color: #94a3b8; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#38bdf8'" onmouseout="this.style.color='#94a3b8'">Paseadores & Cuidadores Homologados</a></li>
+                        <li><a href="seguros-salud-mascotas-barcelona.html" style="color: #94a3b8; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#38bdf8'" onmouseout="this.style.color='#94a3b8'">Seguros de Salud & Resp. Civil</a></li>
+                        <li><a href="bienestar-integral-multiespecie.html" style="color: #94a3b8; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#38bdf8'" onmouseout="this.style.color='#94a3b8'">Peluquería, Ozonoterapia & Spa</a></li>
+                    </ul>
+                </div>
+
+                <!-- COL 3: MARCO LEGAL Y CUMPLIMIENTO -->
+                <div>
+                    <h4 style="font-size: 0.95rem; font-weight: 800; color: white; margin: 0 0 18px 0; text-transform: uppercase; letter-spacing: 0.5px;">
+                        Marco Legal & Regulación
+                    </h4>
+                    <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.84rem; line-height: 2.2;">
+                        <li><a href="legal.html" style="color: #38bdf8; font-weight: 700; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#7dd3fc'" onmouseout="this.style.color='#38bdf8'"><i class="fa-solid fa-scale-balanced" style="font-size: 0.75rem;"></i> Aviso Legal & Titularidad</a></li>
+                        <li><a href="terminos-condiciones-app.html" style="color: #94a3b8; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#38bdf8'" onmouseout="this.style.color='#94a3b8'">Términos y Condiciones del Servicio</a></li>
+                        <li><a href="politica-privacidad-datos-mascotas.html" style="color: #94a3b8; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#38bdf8'" onmouseout="this.style.color='#94a3b8'">Privacidad y Telemetría Biológica (RGPD)</a></li>
+                        <li><a href="politica-cookies-plataforma.html" style="color: #94a3b8; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#38bdf8'" onmouseout="this.style.color='#94a3b8'">Política de Cookies y Almacenamiento</a></li>
+                        <li><a href="politica-devoluciones-smart-collar.html" style="color: #94a3b8; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#38bdf8'" onmouseout="this.style.color='#94a3b8'">Garantía, Devoluciones y Desistimiento</a></li>
+                    </ul>
+                </div>
+
+                <!-- COL 4: SUSCRIPCIONES Y PLATAFORMA -->
+                <div>
+                    <h4 style="font-size: 0.95rem; font-weight: 800; color: white; margin: 0 0 18px 0; text-transform: uppercase; letter-spacing: 0.5px;">
+                        Plataforma & Ecosistema
+                    </h4>
+                    <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.84rem; line-height: 2.2;">
+                        <li><a href="planes-suscripcion-bienestar-animal.html" style="color: #94a3b8; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#38bdf8'" onmouseout="this.style.color='#94a3b8'">Planes de Cuidado & Suscripciones</a></li>
+                        <li><a href="comunidad-cudi.html" style="color: #94a3b8; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#38bdf8'" onmouseout="this.style.color='#94a3b8'">Red Social de Familias CUDI Paws</a></li>
+                        <li><a href="red-socios-clinicas-veterinarias.html" style="color: #94a3b8; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#38bdf8'" onmouseout="this.style.color='#94a3b8'">Red de Partners B2B para Clínicas</a></li>
+                        <li><a href="simulador-gemelo-digital-telemetria.html" style="color: #94a3b8; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#38bdf8'" onmouseout="this.style.color='#94a3b8'">Simulador de Gemelo Digital App</a></li>
+                        <li><a href="simulador-financiero.html" style="color: #94a3b8; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#38bdf8'" onmouseout="this.style.color='#94a3b8'">Simulador Financiero & Modelo TFM</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- BOTTOM COPYRIGHT BAR -->
+            <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 28px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; font-size: 0.78rem; color: #64748b;">
+                <div>
+                    &copy; 2026 CUDI AI Ecosystem S.L. &bull; NIF: B-12345678 &bull; Inscrita en el Registro Mercantil de Madrid, Tomo 1234, Folio 56, Hoja M-7890. Propiedad Intelectual Protegida.
+                </div>
+                <div style="display: flex; gap: 16px; align-items: center;">
+                    <span style="color: #94a3b8;"><i class="fa-solid fa-server" style="color: #10b981;"></i> Servidores Cloud UE (GDPR Ready)</span>
+                    <span style="color: #94a3b8;"><i class="fa-solid fa-microchip" style="color: #38bdf8;"></i> Algoritmos Bio-Neurales Patentados</span>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
 </body>
 </html>

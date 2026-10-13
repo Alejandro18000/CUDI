@@ -1,101 +1,63 @@
-<!-- Desarrollo 100% realizado por Sergio Alejandro Ospina Rocha -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seguros de Salud, Responsabilidad Civil & Cirugías | CUDI Marketplace Apple Glass</title>
-    <meta name="description" content="Protección total ante accidentes, enfermedades crónicas y cobertura legal obligatoria sin letra pequeña ni trámites lentos.">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Seguros de Salud & Blindaje Legal para Mascotas | CUDI Marketplace</title>
+    <meta name="description" content="Coberturas de urgencias, hospitalización, cirugías y seguro obligatorio de responsabilidad civil.">
     <link rel="stylesheet" href="styles.css?v=7.4">
     <link rel="stylesheet" href="cudi-ai.css?v=7.4">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body style="background: #f8fafc; font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif); color: #0f172a; margin: 0; padding: 0;">
-
-    <!-- TOP NOTIFICATION BAR -->
-    <div class="top-bar-refined">
-        <span><i class="fa-solid fa-envelope"></i> cudi.ai2026@gmail.com</span>
-        <span><i class="fa-solid fa-phone"></i> 900 123 456</span>
-        <div style="display:flex; align-items:center; gap:5px;">
-            <i class="fa-solid fa-globe"></i>
-            <span style="font-weight:700; font-size:0.75rem;">ES</span>
-        </div>
-    </div>
-
-    <!-- NAVBAR FLOATING APPLE GLASS -->
-    <nav class="navbar-island">
-        <div class="nav-capsule">
-            <a href="index.html" class="logo" style="display:flex; align-items:center;">
-                <img src="logo.jpeg" alt="CUDI" style="height:42px; width:auto; border-radius: 10px;" decoding="async">
+<body>
+    <header class="navbar" style="position: sticky; top: 0; z-index: 1000;">
+        <div class="nav-container" style="max-width: 1280px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 14px 24px;">
+            <a href="index.html" class="logo" style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
+                <img src="logo.jpeg" alt="CUDI Logo" style="height: 38px; border-radius: 10px;">
             </a>
-            <div class="nav-search-island">
-                <i class="fa-solid fa-magnifying-glass" style="color:var(--clr-primary); font-size:0.85rem;"></i>
-                <input type="text" id="cat-search-input" placeholder="Buscar en Protección & Tranquilidad..." oninput="filterCategoryProducts()">
-            </div>
-            <div class="nav-right-island">
-                <ul class="nav-links-island">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="smart-collar-aventuras-sin-sustos.html">Lanzamiento</a></li>
-                    <li><a href="comunidad-cudi.html">Comunidad</a></li>
-                    <li><a href="simulador-financiero.html">Simulador</a></li>
-                    <li><a href="index.html#store-grid">Tienda</a></li>
-                    <li><a href="index.html#suscripciones">Planes</a></li>
-                    <li><a href="red-socios-clinicas-veterinarias.html">Partners</a></li>
-                    <li id="nav-session-item"></li>
-                </ul>
-                <div class="cart-trigger-island" onclick="toggleCart()" style="position:relative; display:flex; align-items:center; justify-content:center; cursor:pointer;">
-                    <i class="fa-solid fa-bag-shopping" style="font-size:1.05rem;"></i>
-                    <span class="cart-badge" id="global-cart-badge">0</span>
-                </div>
+            <nav class="nav-menu" style="display: flex; gap: 20px; align-items: center;">
+                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="index.html#store-grid" class="nav-link active">Tienda</a>
+                <a href="planes-suscripcion-bienestar-animal.html" class="nav-link">Planes</a>
+                <a href="red-socios-clinicas-veterinarias.html" class="nav-link">Partners</a>
+                <a href="simulador-gemelo-digital-telemetria.html" class="nav-link">Demo App</a>
+            </nav>
+            <div style="display: flex; align-items: center; gap: 14px;">
+                <button type="button" class="btn-primary" onclick="if(typeof openAuthModal==='function') openAuthModal(); else window.location.href='index.html#login';" style="padding: 8px 18px; border-radius: 50px; font-size: 0.85rem;">
+                    <i class="fa-solid fa-paw"></i> Iniciar Sesión
+                </button>
+                <button type="button" onclick="if(typeof toggleCart==='function') toggleCart();" class="apple-glass-card" style="width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; border: 1px solid rgba(226, 232, 240, 0.9);" title="Mi Cesta">
+                    <i class="fa-solid fa-cart-shopping" style="color: #0284c7;"></i>
+                </button>
             </div>
         </div>
-    </nav>
+    </header>
 
-    <!-- SIDE-CART PANEL -->
-    <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
-    <div class="side-cart" id="side-cart">
-        <div class="cart-header">
-            <h3><i class="fa-solid fa-bag-shopping"></i> Tu Cesta CUDI</h3>
-            <button class="close-cart" aria-label="Cerrar Carrito" onclick="toggleCart()"><i class="fa-solid fa-xmark"></i></button>
-        </div>
-        <div class="cart-items" id="cart-items-container"></div>
-        <div class="cart-footer">
-            <div class="cart-total">
-                <span>Total Estimado:</span>
-                <span id="cart-total-price">0.00 €</span>
-            </div>
-            <a href="contratar-plan-premium-cudi.html" class="btn-primary" style="display:block; text-align:center; margin-top:10px; border-radius:50px; text-decoration:none;">Procesar Pago Seguro <i class="fa-solid fa-lock"></i></a>
-        </div>
-    </div>
-
-    <!-- CATEGORY HERO & MAIN CONTAINER -->
-    <main class="container" style="max-width: 1320px; margin: 30px auto 90px; padding: 0 20px;">
-        
-        <!-- BREADCRUMBS -->
-        <div style="display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: #64748b; margin-bottom: 24px;">
-            <a href="index.html" style="text-decoration:none; color: #0284c7; font-weight: 600;">Inicio</a>
+    <div style="max-width: 1280px; margin: 0 auto; padding: 28px 24px 60px;">
+        <nav style="font-size: 0.82rem; color: #64748b; margin-bottom: 24px; display: flex; gap: 8px;">
+            <a href="index.html" style="color: #64748b; text-decoration: none;">Inicio</a>
             <span>/</span>
-            <a href="index.html#store-grid" style="text-decoration:none; color: #0284c7; font-weight: 600;">Catálogo Omnicanal</a>
+            <a href="index.html#store-grid" style="color: #64748b; text-decoration: none;">Catálogo Omnicanal</a>
             <span>/</span>
-            <span style="color: #0f172a; font-weight: 700;">Protección & Tranquilidad</span>
-        </div>
+            <span style="color: #0284c7; font-weight: 700;">Protección & Seguros</span>
+        </nav>
 
-        <!-- HERO HEADER APPLE GLASS -->
-        <div class="apple-glass-card" style="padding: 40px; border-radius: 30px; margin-bottom: 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; position: relative; overflow: hidden;">
-            <div style="max-width: 780px;">
-                <span class="cudi-badge-glass" style="margin-bottom: 12px; color: #0284c7;">
-                    <i class="fa-solid fa-shield-heart"></i> Categoría Oficial Certificada CUDI
+        <div class="apple-glass-card" style="padding: 36px; border-radius: 28px; margin-bottom: 36px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px;">
+            <div style="max-width: 720px;">
+                <span class="cudi-badge-glass" style="margin-bottom: 12px; color: #6366f1;">
+                    <i class="fa-solid fa-shield-halved"></i> Categoría Oficial Certificada CUDI
                 </span>
-                <h1 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 2.6rem; font-weight: 800; color: #0f172a; margin: 0 0 12px; line-height: 1.2;">
-                    Seguros de Salud, Responsabilidad Civil & Cirugías
+                <h1 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 2.2rem; font-weight: 900; color: #0f172a; margin: 0 0 12px; line-height: 1.2;">
+                    Seguros de Salud & Blindaje Legal para Mascotas
                 </h1>
-                <p style="font-size: 1.1rem; color: #64748b; line-height: 1.6; margin: 0;">
-                    Protección total ante accidentes, enfermedades crónicas y cobertura legal obligatoria sin letra pequeña ni trámites lentos.
+                <p style="font-size: 0.95rem; color: #64748b; margin: 0; line-height: 1.6;">
+                    Coberturas de urgencias, hospitalización, cirugías y seguro obligatorio de responsabilidad civil.
                 </p>
             </div>
-            
-            <div style="display: flex; gap: 14px; align-items: center; flex-wrap: wrap;">
+            <div style="display: flex; gap: 14px;">
                 <div style="text-align: center; background: rgba(255, 255, 255, 0.85); padding: 14px 22px; border-radius: 20px; border: 1px solid rgba(226, 232, 240, 0.8);">
                     <div style="font-size: 1.6rem; font-weight: 900; color: #0284c7;">15</div>
                     <div style="font-size: 0.75rem; color: #64748b; font-weight: 700;">Soluciones Activas</div>
@@ -107,25 +69,20 @@
             </div>
         </div>
 
-        <!-- MARKETPLACE LAYOUT WITH WORKING FILTERS -->
         <div class="marketplace-layout">
-            
-            <!-- SIDEBAR FILTERS (APPLE GLASS) -->
             <aside class="filters-sidebar apple-glass-card" style="padding: 28px; border-radius: 24px;">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 22px; padding-bottom: 14px; border-bottom: 1px solid rgba(226, 232, 240, 0.8);">
                     <h3 style="font-size: 1.05rem; font-weight: 800; margin: 0; color: #0f172a;"><i class="fa-solid fa-sliders"></i> Filtros Activos</h3>
                     <button type="button" onclick="resetFilters()" style="background: none; border: none; color: #0284c7; font-size: 0.78rem; font-weight: 700; cursor: pointer;">Limpiar</button>
                 </div>
 
-                <!-- ESPECIE -->
                 <div class="filter-group">
                     <h4>Especie / Destinatario</h4>
                     <label class="filter-option"><input type="radio" name="speciesFilter" value="all" checked onchange="filterCategoryProducts()"> Todas las especies</label>
-                    <label class="filter-option"><input type="radio" name="speciesFilter" value="dog" onchange="filterCategoryProducts()"> Perros</label>
-                    <label class="filter-option"><input type="radio" name="speciesFilter" value="cat" onchange="filterCategoryProducts()"> Gatos</label>
+                    <label class="filter-option"><input type="radio" name="speciesFilter" value="dog" onchange="filterCategoryProducts()"> 🐶 Perros</label>
+                    <label class="filter-option"><input type="radio" name="speciesFilter" value="cat" onchange="filterCategoryProducts()"> 🐱 Gatos</label>
                 </div>
 
-                <!-- RANGO DE PRECIO -->
                 <div class="filter-group">
                     <h4>Rango de Precio</h4>
                     <label class="filter-option"><input type="radio" name="priceFilter" value="all" checked onchange="filterCategoryProducts()"> Todos los precios</label>
@@ -134,7 +91,6 @@
                     <label class="filter-option"><input type="radio" name="priceFilter" value="over50" onchange="filterCategoryProducts()"> Más de 50 €</label>
                 </div>
 
-                <!-- ORDENACIÓN -->
                 <div class="filter-group">
                     <h4>Ordenar Por</h4>
                     <select id="sort-select" onchange="filterCategoryProducts()" style="width: 100%; padding: 10px 14px; border-radius: 14px; border: 1px solid rgba(226, 232, 240, 0.85); background: white; font-family: inherit; font-size: 0.85rem; color: #0f172a; outline: none; cursor: pointer;">
@@ -145,16 +101,14 @@
                     </select>
                 </div>
 
-                <!-- BANNER ASISTENTE IA -->
                 <div style="background: rgba(240, 249, 255, 0.8); border: 1px solid rgba(186, 230, 253, 0.9); border-radius: 18px; padding: 18px; margin-top: 24px; text-align: center;">
                     <div style="color: #0284c7; font-size: 1.3rem; margin-bottom: 6px;"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
                     <div style="font-weight: 800; font-size: 0.88rem; color: #0f172a; margin-bottom: 4px;">¿Dudas con qué elegir?</div>
                     <p style="font-size: 0.78rem; color: #64748b; margin: 0 0 12px; line-height: 1.4;">Pregunta a la IA de CUDI por la opción idónea para tu mascota.</p>
-                    <button type="button" class="btn-primary" onclick="window.CudiAI && window.CudiAI.openModal ? window.CudiAI.openModal() : alert('Abriendo IA')" style="padding: 7px 16px; font-size: 0.78rem; border-radius: 50px; cursor: pointer; width: 100%;">Consultar Asistente</button>
+                    <button type="button" class="btn-primary" onclick="if(window.CudiAI && window.CudiAI.open) window.CudiAI.open(); else alert('Abriendo IA');" style="padding: 7px 16px; font-size: 0.78rem; border-radius: 50px; cursor: pointer; width: 100%;">Consultar Asistente</button>
                 </div>
             </aside>
 
-            <!-- RESULTS GRID -->
             <main>
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
                     <div id="results-count-text" style="font-size: 0.92rem; font-weight: 700; color: #64748b;">
@@ -164,679 +118,831 @@
 
                 <div class="results-grid" id="category-products-grid">
                     
-        <article class="partner-card apple-glass-card" data-species="both" data-price="18.0" data-rating="4.9" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column;">
-            <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
-                <img src="seguros-gastos-veterinarios-perros-gatos.png" alt="CUDI Shield Basic - Cobertura Esencial de Accidentes & Urgencias" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.92); color: #0284c7; font-weight: 800; font-size: 0.72rem;">
-                    <i class="fa-solid fa-shield-heart"></i> Más Popular
-                </span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Seguros & Reaseguros</span>
-                <div style="color: #f59e0b; font-size: 0.8rem;">
-                    <i class="fa-solid fa-star"></i> 4.9 <span style="color: #94a3b8; font-size: 0.75rem;">(260)</span>
+        <article class="partner-card apple-glass-card" data-species="dog" data-price="18.0" data-rating="4.9" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column; cursor: pointer; transition: all 0.3s ease;" onclick="if(event.target.tagName !== 'BUTTON' && !event.target.closest('button')) window.location.href='producto-cudi-shield-basic-accidentes.html';">
+            <a href="producto-cudi-shield-basic-accidentes.html" style="text-decoration: none; color: inherit; display: block;">
+                <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
+                    <img src="https://images.dog.ceo/breeds/dane-great/n02109047_9604.jpg" alt="CUDI Shield Basic - Cobertura Esencial de Accidentes & Urgencias" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.94); color: #6366f1; font-weight: 800; font-size: 0.72rem;">
+                        <i class="fa-solid fa-shield-halved"></i> Más Popular
+                    </span>
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; right: 12px; background: rgba(15, 23, 42, 0.75); color: white; font-weight: 800; font-size: 0.72rem; backdrop-filter: blur(8px);">
+                        🐶 Perros
+                    </span>
                 </div>
-            </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Homologado</span>
+                    <div style="color: #f59e0b; font-size: 0.8rem;">
+                        <i class="fa-solid fa-star"></i> 4.9 <span style="color: #94a3b8; font-size: 0.75rem;">(180)</span>
+                    </div>
+                </div>
 
-            <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
-                CUDI Shield Basic - Cobertura Esencial de Accidentes & Urgencias
-            </h3>
-            
-            <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
-                Cobertura veterinaria de urgencias y accidentes de hasta 1.500€/año con libre elección de clínica y reembolso en 48 horas.
-            </p>
+                <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
+                    CUDI Shield Basic - Cobertura Esencial de Accidentes & Urgencias
+                </h3>
+                
+                <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
+                    Cobertura veterinaria de urgencias y accidentes de hasta 1.500€/año con libre elección de clínica y reembolso en 48 horas.
+                </p>
+            </a>
 
             <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid rgba(226, 232, 240, 0.7); margin-top: auto;">
                 <div style="font-size: 1.35rem; font-weight: 900; color: #0284c7;">
                     18.00 €
                 </div>
                 <div style="display: flex; gap: 8px;">
-                    <button type="button" class="btn-primary" onclick="addToCart('CUDI Shield Basic - Cobertura Esencial de Accidentes & Urgencias', 18.0, 'seguros-gastos-veterinarios-perros-gatos.png'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
+                    <button type="button" class="btn-primary" onclick="event.stopPropagation(); addToCart('CUDI Shield Basic - Cobertura Esencial de Accidentes & Urgencias', 18.0, 'https://images.dog.ceo/breeds/dane-great/n02109047_9604.jpg'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
-                    <a href="producto-cudi-shield-basic-accidentes.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a;" title="Ver Ficha Completa">
-                        Ver Detalles <i class="fa-solid fa-arrow-right"></i>
+                    <a href="producto-cudi-shield-basic-accidentes.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a; display: inline-flex; align-items: center; gap: 6px;" title="Ver Ficha Steam">
+                        Ver Ficha <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </article>
         
-        <article class="partner-card apple-glass-card" data-species="both" data-price="34.0" data-rating="5.0" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column;">
-            <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
-                <img src="https://images.unsplash.com/photo-1504595403659-9088ce801e29?auto=format&fit=crop&w=800&q=80" alt="Global Pet Protect - Cobertura Total de Enfermedad & Cirugía" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.92); color: #10b981; font-weight: 800; font-size: 0.72rem;">
-                    <i class="fa-solid fa-shield-halved"></i> Cobertura 100% Enfermedad
-                </span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Seguros & Reaseguros</span>
-                <div style="color: #f59e0b; font-size: 0.8rem;">
-                    <i class="fa-solid fa-star"></i> 5.0 <span style="color: #94a3b8; font-size: 0.75rem;">(195)</span>
+        <article class="partner-card apple-glass-card" data-species="cat" data-price="34.0" data-rating="5.0" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column; cursor: pointer; transition: all 0.3s ease;" onclick="if(event.target.tagName !== 'BUTTON' && !event.target.closest('button')) window.location.href='producto-global-pet-protect-enfermedad-accidente.html';">
+            <a href="producto-global-pet-protect-enfermedad-accidente.html" style="text-decoration: none; color: inherit; display: block;">
+                <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
+                    <img src="https://cdn2.thecatapi.com/images/e7g.jpg" alt="Global Pet Protect - Cobertura Total de Enfermedad & Cirugía" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.94); color: #6366f1; font-weight: 800; font-size: 0.72rem;">
+                        <i class="fa-solid fa-shield-halved"></i> Cobertura 100% Enfermedad
+                    </span>
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; right: 12px; background: rgba(15, 23, 42, 0.75); color: white; font-weight: 800; font-size: 0.72rem; backdrop-filter: blur(8px);">
+                        🐱 Gatos
+                    </span>
                 </div>
-            </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Homologado</span>
+                    <div style="color: #f59e0b; font-size: 0.8rem;">
+                        <i class="fa-solid fa-star"></i> 5.0 <span style="color: #94a3b8; font-size: 0.75rem;">(180)</span>
+                    </div>
+                </div>
 
-            <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
-                Global Pet Protect - Cobertura Total de Enfermedad & Cirugía
-            </h3>
-            
-            <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
-                El seguro más completo de España: hasta 3.500€/año tanto por accidentes como por enfermedades imprevistas (cáncer, diabetes, artrosis, alergias).
-            </p>
+                <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
+                    Global Pet Protect - Cobertura Total de Enfermedad & Cirugía
+                </h3>
+                
+                <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
+                    El seguro más completo de España: hasta 3.500€/año tanto por accidentes como por enfermedades imprevistas (cáncer, diabetes, artrosis, alergias).
+                </p>
+            </a>
 
             <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid rgba(226, 232, 240, 0.7); margin-top: auto;">
                 <div style="font-size: 1.35rem; font-weight: 900; color: #0284c7;">
                     34.00 €
                 </div>
                 <div style="display: flex; gap: 8px;">
-                    <button type="button" class="btn-primary" onclick="addToCart('Global Pet Protect - Cobertura Total de Enfermedad & Cirugía', 34.0, 'https://images.unsplash.com/photo-1504595403659-9088ce801e29?auto=format&fit=crop&w=800&q=80'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
+                    <button type="button" class="btn-primary" onclick="event.stopPropagation(); addToCart('Global Pet Protect - Cobertura Total de Enfermedad & Cirugía', 34.0, 'https://cdn2.thecatapi.com/images/e7g.jpg'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
-                    <a href="producto-global-pet-protect-enfermedad-accidente.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a;" title="Ver Ficha Completa">
-                        Ver Detalles <i class="fa-solid fa-arrow-right"></i>
+                    <a href="producto-global-pet-protect-enfermedad-accidente.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a; display: inline-flex; align-items: center; gap: 6px;" title="Ver Ficha Steam">
+                        Ver Ficha <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </article>
         
-        <article class="partner-card apple-glass-card" data-species="both" data-price="28.0" data-rating="4.9" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column;">
-            <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
-                <img src="familia-multiespecie-paz-mental.png" alt="SafeHome MultiPet - Póliza Familiar para Hogares Multiespecie" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.92); color: #f59e0b; font-weight: 800; font-size: 0.72rem;">
-                    <i class="fa-solid fa-people-roof"></i> Hasta 3 Mascotas
-                </span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Seguros & Reaseguros</span>
-                <div style="color: #f59e0b; font-size: 0.8rem;">
-                    <i class="fa-solid fa-star"></i> 4.9 <span style="color: #94a3b8; font-size: 0.75rem;">(140)</span>
+        <article class="partner-card apple-glass-card" data-species="cat" data-price="28.0" data-rating="4.9" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column; cursor: pointer; transition: all 0.3s ease;" onclick="if(event.target.tagName !== 'BUTTON' && !event.target.closest('button')) window.location.href='producto-safehome-multipet-familiar.html';">
+            <a href="producto-safehome-multipet-familiar.html" style="text-decoration: none; color: inherit; display: block;">
+                <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
+                    <img src="https://cdn2.thecatapi.com/images/cga.jpg" alt="SafeHome MultiPet - Póliza Familiar para Hogares Multiespecie" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.94); color: #6366f1; font-weight: 800; font-size: 0.72rem;">
+                        <i class="fa-solid fa-shield-halved"></i> Hasta 3 Mascotas
+                    </span>
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; right: 12px; background: rgba(15, 23, 42, 0.75); color: white; font-weight: 800; font-size: 0.72rem; backdrop-filter: blur(8px);">
+                        🐱 Gatos
+                    </span>
                 </div>
-            </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Homologado</span>
+                    <div style="color: #f59e0b; font-size: 0.8rem;">
+                        <i class="fa-solid fa-star"></i> 4.9 <span style="color: #94a3b8; font-size: 0.75rem;">(180)</span>
+                    </div>
+                </div>
 
-            <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
-                SafeHome MultiPet - Póliza Familiar para Hogares Multiespecie
-            </h3>
-            
-            <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
-                Póliza combinada que asegura a perros y gatos del mismo hogar bajo una única cuota reducida con bolsa compartida de gastos médicos de 4.000€.
-            </p>
+                <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
+                    SafeHome MultiPet - Póliza Familiar para Hogares Multiespecie
+                </h3>
+                
+                <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
+                    Póliza combinada que asegura a perros y gatos del mismo hogar bajo una única cuota reducida con bolsa compartida de gastos médicos de 4.000€.
+                </p>
+            </a>
 
             <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid rgba(226, 232, 240, 0.7); margin-top: auto;">
                 <div style="font-size: 1.35rem; font-weight: 900; color: #0284c7;">
                     28.00 €
                 </div>
                 <div style="display: flex; gap: 8px;">
-                    <button type="button" class="btn-primary" onclick="addToCart('SafeHome MultiPet - Póliza Familiar para Hogares Multiespecie', 28.0, 'familia-multiespecie-paz-mental.png'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
+                    <button type="button" class="btn-primary" onclick="event.stopPropagation(); addToCart('SafeHome MultiPet - Póliza Familiar para Hogares Multiespecie', 28.0, 'https://cdn2.thecatapi.com/images/cga.jpg'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
-                    <a href="producto-safehome-multipet-familiar.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a;" title="Ver Ficha Completa">
-                        Ver Detalles <i class="fa-solid fa-arrow-right"></i>
+                    <a href="producto-safehome-multipet-familiar.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a; display: inline-flex; align-items: center; gap: 6px;" title="Ver Ficha Steam">
+                        Ver Ficha <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </article>
         
-        <article class="partner-card apple-glass-card" data-species="dog" data-price="2.9" data-rating="5.0" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column;">
-            <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
-                <img src="https://images.unsplash.com/photo-1558788353-f76d92427f16?auto=format&fit=crop&w=800&q=80" alt="CUDI LegalGuard - Seguro de Responsabilidad Civil Oficial (Ley Bienestar)" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.92); color: #1e293b; font-weight: 800; font-size: 0.72rem;">
-                    <i class="fa-solid fa-scale-balanced"></i> Cumple Ley 100%
-                </span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Seguros & Reaseguros</span>
-                <div style="color: #f59e0b; font-size: 0.8rem;">
-                    <i class="fa-solid fa-star"></i> 5.0 <span style="color: #94a3b8; font-size: 0.75rem;">(420)</span>
+        <article class="partner-card apple-glass-card" data-species="cat" data-price="2.9" data-rating="5.0" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column; cursor: pointer; transition: all 0.3s ease;" onclick="if(event.target.tagName !== 'BUTTON' && !event.target.closest('button')) window.location.href='producto-seguro-responsabilidad-civil-ley-bienestar.html';">
+            <a href="producto-seguro-responsabilidad-civil-ley-bienestar.html" style="text-decoration: none; color: inherit; display: block;">
+                <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
+                    <img src="https://cdn2.thecatapi.com/images/4mksJzUgG.png" alt="CUDI LegalGuard - Seguro de Responsabilidad Civil Oficial (Ley Bienestar)" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.94); color: #6366f1; font-weight: 800; font-size: 0.72rem;">
+                        <i class="fa-solid fa-shield-halved"></i> Cumple Ley 100%
+                    </span>
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; right: 12px; background: rgba(15, 23, 42, 0.75); color: white; font-weight: 800; font-size: 0.72rem; backdrop-filter: blur(8px);">
+                        🐱 Gatos
+                    </span>
                 </div>
-            </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Homologado</span>
+                    <div style="color: #f59e0b; font-size: 0.8rem;">
+                        <i class="fa-solid fa-star"></i> 5.0 <span style="color: #94a3b8; font-size: 0.75rem;">(180)</span>
+                    </div>
+                </div>
 
-            <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
-                CUDI LegalGuard - Seguro de Responsabilidad Civil Oficial (Ley Bienestar)
-            </h3>
-            
-            <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
-                Póliza obligatoria de RC de hasta 350.000€ adaptada a la Ley de Bienestar Animal con certificado digital instantáneo descargable para presentar.
-            </p>
+                <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
+                    CUDI LegalGuard - Seguro de Responsabilidad Civil Oficial (Ley Bienestar)
+                </h3>
+                
+                <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
+                    Póliza obligatoria de RC de hasta 350.000€ adaptada a la Ley de Bienestar Animal con certificado digital instantáneo descargable para presentar.
+                </p>
+            </a>
 
             <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid rgba(226, 232, 240, 0.7); margin-top: auto;">
                 <div style="font-size: 1.35rem; font-weight: 900; color: #0284c7;">
                     2.90 €
                 </div>
                 <div style="display: flex; gap: 8px;">
-                    <button type="button" class="btn-primary" onclick="addToCart('CUDI LegalGuard - Seguro de Responsabilidad Civil Oficial (Ley Bienestar)', 2.9, 'https://images.unsplash.com/photo-1558788353-f76d92427f16?auto=format&fit=crop&w=800&q=80'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
+                    <button type="button" class="btn-primary" onclick="event.stopPropagation(); addToCart('CUDI LegalGuard - Seguro de Responsabilidad Civil Oficial (Ley Bienestar)', 2.9, 'https://cdn2.thecatapi.com/images/4mksJzUgG.png'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
-                    <a href="producto-seguro-responsabilidad-civil-ley-bienestar.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a;" title="Ver Ficha Completa">
-                        Ver Detalles <i class="fa-solid fa-arrow-right"></i>
+                    <a href="producto-seguro-responsabilidad-civil-ley-bienestar.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a; display: inline-flex; align-items: center; gap: 6px;" title="Ver Ficha Steam">
+                        Ver Ficha <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </article>
         
-        <article class="partner-card apple-glass-card" data-species="both" data-price="15.0" data-rating="4.9" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column;">
-            <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
-                <img src="rutas-pet-friendly-barcelona.png" alt="CUDI TravelSafe - Seguro Médico Internacional para Viajes & Vacaciones" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.92); color: #0ea5e9; font-weight: 800; font-size: 0.72rem;">
-                    <i class="fa-solid fa-plane-departure"></i> Europa & Mundo
-                </span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Seguros & Reaseguros</span>
-                <div style="color: #f59e0b; font-size: 0.8rem;">
-                    <i class="fa-solid fa-star"></i> 4.9 <span style="color: #94a3b8; font-size: 0.75rem;">(110)</span>
+        <article class="partner-card apple-glass-card" data-species="dog" data-price="15.0" data-rating="4.9" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column; cursor: pointer; transition: all 0.3s ease;" onclick="if(event.target.tagName !== 'BUTTON' && !event.target.closest('button')) window.location.href='producto-cudi-travel-seguro-viajes-mascota.html';">
+            <a href="producto-cudi-travel-seguro-viajes-mascota.html" style="text-decoration: none; color: inherit; display: block;">
+                <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
+                    <img src="https://images.dog.ceo/breeds/chihuahua/n02085620_1502.jpg" alt="CUDI TravelSafe - Seguro Médico Internacional para Viajes & Vacaciones" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.94); color: #6366f1; font-weight: 800; font-size: 0.72rem;">
+                        <i class="fa-solid fa-shield-halved"></i> Europa & Mundo
+                    </span>
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; right: 12px; background: rgba(15, 23, 42, 0.75); color: white; font-weight: 800; font-size: 0.72rem; backdrop-filter: blur(8px);">
+                        🐶 Perros
+                    </span>
                 </div>
-            </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Homologado</span>
+                    <div style="color: #f59e0b; font-size: 0.8rem;">
+                        <i class="fa-solid fa-star"></i> 4.9 <span style="color: #94a3b8; font-size: 0.75rem;">(180)</span>
+                    </div>
+                </div>
 
-            <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
-                CUDI TravelSafe - Seguro Médico Internacional para Viajes & Vacaciones
-            </h3>
-            
-            <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
-                Cobertura veterinaria temporal en cualquier país de la UE y Reino Unido con repatriación del animal y gastos de hotel por prolongación médica.
-            </p>
+                <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
+                    CUDI TravelSafe - Seguro Médico Internacional para Viajes & Vacaciones
+                </h3>
+                
+                <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
+                    Cobertura veterinaria temporal en cualquier país de la UE y Reino Unido con repatriación del animal y gastos de hotel por prolongación médica.
+                </p>
+            </a>
 
             <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid rgba(226, 232, 240, 0.7); margin-top: auto;">
                 <div style="font-size: 1.35rem; font-weight: 900; color: #0284c7;">
                     15.00 €
                 </div>
                 <div style="display: flex; gap: 8px;">
-                    <button type="button" class="btn-primary" onclick="addToCart('CUDI TravelSafe - Seguro Médico Internacional para Viajes & Vacaciones', 15.0, 'rutas-pet-friendly-barcelona.png'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
+                    <button type="button" class="btn-primary" onclick="event.stopPropagation(); addToCart('CUDI TravelSafe - Seguro Médico Internacional para Viajes & Vacaciones', 15.0, 'https://images.dog.ceo/breeds/chihuahua/n02085620_1502.jpg'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
-                    <a href="producto-cudi-travel-seguro-viajes-mascota.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a;" title="Ver Ficha Completa">
-                        Ver Detalles <i class="fa-solid fa-arrow-right"></i>
+                    <a href="producto-cudi-travel-seguro-viajes-mascota.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a; display: inline-flex; align-items: center; gap: 6px;" title="Ver Ficha Steam">
+                        Ver Ficha <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </article>
         
-        <article class="partner-card apple-glass-card" data-species="both" data-price="39.0" data-rating="4.8" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column;">
-            <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
-                <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=800&q=80" alt="SeniorPaws Protect - Póliza Especial para Mascotas de +9 Años" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.92); color: #f43f5e; font-weight: 800; font-size: 0.72rem;">
-                    <i class="fa-solid fa-heart"></i> Acepta Animales Mayores
-                </span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Seguros & Reaseguros</span>
-                <div style="color: #f59e0b; font-size: 0.8rem;">
-                    <i class="fa-solid fa-star"></i> 4.8 <span style="color: #94a3b8; font-size: 0.75rem;">(98)</span>
+        <article class="partner-card apple-glass-card" data-species="cat" data-price="39.0" data-rating="4.8" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column; cursor: pointer; transition: all 0.3s ease;" onclick="if(event.target.tagName !== 'BUTTON' && !event.target.closest('button')) window.location.href='producto-seguro-perros-senior-mayores-9-anos.html';">
+            <a href="producto-seguro-perros-senior-mayores-9-anos.html" style="text-decoration: none; color: inherit; display: block;">
+                <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
+                    <img src="https://cdn2.thecatapi.com/images/1ms.jpg" alt="SeniorPaws Protect - Póliza Especial para Mascotas de +9 Años" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.94); color: #6366f1; font-weight: 800; font-size: 0.72rem;">
+                        <i class="fa-solid fa-shield-halved"></i> Acepta Animales Mayores
+                    </span>
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; right: 12px; background: rgba(15, 23, 42, 0.75); color: white; font-weight: 800; font-size: 0.72rem; backdrop-filter: blur(8px);">
+                        🐱 Gatos
+                    </span>
                 </div>
-            </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Homologado</span>
+                    <div style="color: #f59e0b; font-size: 0.8rem;">
+                        <i class="fa-solid fa-star"></i> 4.8 <span style="color: #94a3b8; font-size: 0.75rem;">(180)</span>
+                    </div>
+                </div>
 
-            <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
-                SeniorPaws Protect - Póliza Especial para Mascotas de +9 Años
-            </h3>
-            
-            <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
-                El único seguro que no excluye a tu mascota por edad avanzada. Cobertura de enfermedades crónicas, artrosis y medicación paliativa continua.
-            </p>
+                <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
+                    SeniorPaws Protect - Póliza Especial para Mascotas de +9 Años
+                </h3>
+                
+                <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
+                    El único seguro que no excluye a tu mascota por edad avanzada. Cobertura de enfermedades crónicas, artrosis y medicación paliativa continua.
+                </p>
+            </a>
 
             <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid rgba(226, 232, 240, 0.7); margin-top: auto;">
                 <div style="font-size: 1.35rem; font-weight: 900; color: #0284c7;">
                     39.00 €
                 </div>
                 <div style="display: flex; gap: 8px;">
-                    <button type="button" class="btn-primary" onclick="addToCart('SeniorPaws Protect - Póliza Especial para Mascotas de +9 Años', 39.0, 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=800&q=80'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
+                    <button type="button" class="btn-primary" onclick="event.stopPropagation(); addToCart('SeniorPaws Protect - Póliza Especial para Mascotas de +9 Años', 39.0, 'https://cdn2.thecatapi.com/images/1ms.jpg'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
-                    <a href="producto-seguro-perros-senior-mayores-9-anos.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a;" title="Ver Ficha Completa">
-                        Ver Detalles <i class="fa-solid fa-arrow-right"></i>
+                    <a href="producto-seguro-perros-senior-mayores-9-anos.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a; display: inline-flex; align-items: center; gap: 6px;" title="Ver Ficha Steam">
+                        Ver Ficha <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </article>
         
-        <article class="partner-card apple-glass-card" data-species="both" data-price="8.5" data-rating="4.9" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column;">
-            <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
-                <img src="https://images.unsplash.com/photo-1478098711619-5ab0b478d6e6?auto=format&fit=crop&w=800&q=80" alt="DentalCare Plus - Cobertura Específica de Limpiezas & Cirugías Orales" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.92); color: #06b6d4; font-weight: 800; font-size: 0.72rem;">
-                    <i class="fa-solid fa-tooth"></i> Higiene Oral Cubierta
-                </span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Seguros & Reaseguros</span>
-                <div style="color: #f59e0b; font-size: 0.8rem;">
-                    <i class="fa-solid fa-star"></i> 4.9 <span style="color: #94a3b8; font-size: 0.75rem;">(160)</span>
+        <article class="partner-card apple-glass-card" data-species="dog" data-price="8.5" data-rating="4.9" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column; cursor: pointer; transition: all 0.3s ease;" onclick="if(event.target.tagName !== 'BUTTON' && !event.target.closest('button')) window.location.href='producto-seguro-odontologia-animal-dentalcare.html';">
+            <a href="producto-seguro-odontologia-animal-dentalcare.html" style="text-decoration: none; color: inherit; display: block;">
+                <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
+                    <img src="https://images.dog.ceo/breeds/corgi-cardigan/n02113186_2413.jpg" alt="DentalCare Plus - Cobertura Específica de Limpiezas & Cirugías Orales" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.94); color: #6366f1; font-weight: 800; font-size: 0.72rem;">
+                        <i class="fa-solid fa-shield-halved"></i> Higiene Oral Cubierta
+                    </span>
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; right: 12px; background: rgba(15, 23, 42, 0.75); color: white; font-weight: 800; font-size: 0.72rem; backdrop-filter: blur(8px);">
+                        🐶 Perros
+                    </span>
                 </div>
-            </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Homologado</span>
+                    <div style="color: #f59e0b; font-size: 0.8rem;">
+                        <i class="fa-solid fa-star"></i> 4.9 <span style="color: #94a3b8; font-size: 0.75rem;">(180)</span>
+                    </div>
+                </div>
 
-            <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
-                DentalCare Plus - Cobertura Específica de Limpiezas & Cirugías Orales
-            </h3>
-            
-            <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
-                Módulo complementario que cubre limpiezas dentales anuales, extracciones complejas de muelas rotas y fístulas oronasales.
-            </p>
+                <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
+                    DentalCare Plus - Cobertura Específica de Limpiezas & Cirugías Orales
+                </h3>
+                
+                <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
+                    Módulo complementario que cubre limpiezas dentales anuales, extracciones complejas de muelas rotas y fístulas oronasales.
+                </p>
+            </a>
 
             <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid rgba(226, 232, 240, 0.7); margin-top: auto;">
                 <div style="font-size: 1.35rem; font-weight: 900; color: #0284c7;">
                     8.50 €
                 </div>
                 <div style="display: flex; gap: 8px;">
-                    <button type="button" class="btn-primary" onclick="addToCart('DentalCare Plus - Cobertura Específica de Limpiezas & Cirugías Orales', 8.5, 'https://images.unsplash.com/photo-1478098711619-5ab0b478d6e6?auto=format&fit=crop&w=800&q=80'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
+                    <button type="button" class="btn-primary" onclick="event.stopPropagation(); addToCart('DentalCare Plus - Cobertura Específica de Limpiezas & Cirugías Orales', 8.5, 'https://images.dog.ceo/breeds/corgi-cardigan/n02113186_2413.jpg'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
-                    <a href="producto-seguro-odontologia-animal-dentalcare.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a;" title="Ver Ficha Completa">
-                        Ver Detalles <i class="fa-solid fa-arrow-right"></i>
+                    <a href="producto-seguro-odontologia-animal-dentalcare.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a; display: inline-flex; align-items: center; gap: 6px;" title="Ver Ficha Steam">
+                        Ver Ficha <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </article>
         
-        <article class="partner-card apple-glass-card" data-species="dog" data-price="4.5" data-rating="5.0" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column;">
-            <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
-                <img src="mascota-sana-feliz.png" alt="WildRescue - Cobertura de Búsqueda, Rescate & Recompensa por Pérdida" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.92); color: #ea580c; font-weight: 800; font-size: 0.72rem;">
-                    <i class="fa-solid fa-tower-broadcast"></i> Rescate en Montaña
-                </span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Seguros & Reaseguros</span>
-                <div style="color: #f59e0b; font-size: 0.8rem;">
-                    <i class="fa-solid fa-star"></i> 5.0 <span style="color: #94a3b8; font-size: 0.75rem;">(178)</span>
+        <article class="partner-card apple-glass-card" data-species="cat" data-price="4.5" data-rating="5.0" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column; cursor: pointer; transition: all 0.3s ease;" onclick="if(event.target.tagName !== 'BUTTON' && !event.target.closest('button')) window.location.href='producto-cudi-seguro-rescate-extravio-wild.html';">
+            <a href="producto-cudi-seguro-rescate-extravio-wild.html" style="text-decoration: none; color: inherit; display: block;">
+                <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
+                    <img src="https://cdn2.thecatapi.com/images/d70.jpg" alt="WildRescue - Cobertura de Búsqueda, Rescate & Recompensa por Pérdida" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.94); color: #6366f1; font-weight: 800; font-size: 0.72rem;">
+                        <i class="fa-solid fa-shield-halved"></i> Rescate en Montaña
+                    </span>
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; right: 12px; background: rgba(15, 23, 42, 0.75); color: white; font-weight: 800; font-size: 0.72rem; backdrop-filter: blur(8px);">
+                        🐱 Gatos
+                    </span>
                 </div>
-            </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Homologado</span>
+                    <div style="color: #f59e0b; font-size: 0.8rem;">
+                        <i class="fa-solid fa-star"></i> 5.0 <span style="color: #94a3b8; font-size: 0.75rem;">(180)</span>
+                    </div>
+                </div>
 
-            <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
-                WildRescue - Cobertura de Búsqueda, Rescate & Recompensa por Pérdida
-            </h3>
-            
-            <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
-                Cubre los costes de unidades de rescate canino, drones térmicos, publicidad y recompensa legal de hasta 800€ si tu mascota se extravía.
-            </p>
+                <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
+                    WildRescue - Cobertura de Búsqueda, Rescate & Recompensa por Pérdida
+                </h3>
+                
+                <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
+                    Cubre los costes de unidades de rescate canino, drones térmicos, publicidad y recompensa legal de hasta 800€ si tu mascota se extravía.
+                </p>
+            </a>
 
             <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid rgba(226, 232, 240, 0.7); margin-top: auto;">
                 <div style="font-size: 1.35rem; font-weight: 900; color: #0284c7;">
                     4.50 €
                 </div>
                 <div style="display: flex; gap: 8px;">
-                    <button type="button" class="btn-primary" onclick="addToCart('WildRescue - Cobertura de Búsqueda, Rescate & Recompensa por Pérdida', 4.5, 'mascota-sana-feliz.png'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
+                    <button type="button" class="btn-primary" onclick="event.stopPropagation(); addToCart('WildRescue - Cobertura de Búsqueda, Rescate & Recompensa por Pérdida', 4.5, 'https://cdn2.thecatapi.com/images/d70.jpg'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
-                    <a href="producto-cudi-seguro-rescate-extravio-wild.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a;" title="Ver Ficha Completa">
-                        Ver Detalles <i class="fa-solid fa-arrow-right"></i>
+                    <a href="producto-cudi-seguro-rescate-extravio-wild.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a; display: inline-flex; align-items: center; gap: 6px;" title="Ver Ficha Steam">
+                        Ver Ficha <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </article>
         
-        <article class="partner-card apple-glass-card" data-species="cat" data-price="21.0" data-rating="4.9" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column;">
-            <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
-                <img src="gato-explorando-seguro-collar-gps.png" alt="CatShield Total - Póliza de Salud Diseñada para las Patologías del Gato" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.92); color: #8b5cf6; font-weight: 800; font-size: 0.72rem;">
-                    <i class="fa-solid fa-cat"></i> Especial Gatos
-                </span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Seguros & Reaseguros</span>
-                <div style="color: #f59e0b; font-size: 0.8rem;">
-                    <i class="fa-solid fa-star"></i> 4.9 <span style="color: #94a3b8; font-size: 0.75rem;">(185)</span>
+        <article class="partner-card apple-glass-card" data-species="cat" data-price="21.0" data-rating="4.9" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column; cursor: pointer; transition: all 0.3s ease;" onclick="if(event.target.tagName !== 'BUTTON' && !event.target.closest('button')) window.location.href='producto-seguro-felino-total-catshield.html';">
+            <a href="producto-seguro-felino-total-catshield.html" style="text-decoration: none; color: inherit; display: block;">
+                <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
+                    <img src="https://cdn2.thecatapi.com/images/wMndw0twO.jpg" alt="CatShield Total - Póliza de Salud Diseñada para las Patologías del Gato" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.94); color: #6366f1; font-weight: 800; font-size: 0.72rem;">
+                        <i class="fa-solid fa-shield-halved"></i> Especial Gatos
+                    </span>
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; right: 12px; background: rgba(15, 23, 42, 0.75); color: white; font-weight: 800; font-size: 0.72rem; backdrop-filter: blur(8px);">
+                        🐱 Gatos
+                    </span>
                 </div>
-            </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Homologado</span>
+                    <div style="color: #f59e0b; font-size: 0.8rem;">
+                        <i class="fa-solid fa-star"></i> 4.9 <span style="color: #94a3b8; font-size: 0.75rem;">(180)</span>
+                    </div>
+                </div>
 
-            <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
-                CatShield Total - Póliza de Salud Diseñada para las Patologías del Gato
-            </h3>
-            
-            <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
-                Cubre las enfermedades típicas felinas: obstrucciones urinarias (FLUTD), fallo renal crónico, caídas desde balcones (síndrome paracaidista) y diabetes.
-            </p>
+                <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
+                    CatShield Total - Póliza de Salud Diseñada para las Patologías del Gato
+                </h3>
+                
+                <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
+                    Cubre las enfermedades típicas felinas: obstrucciones urinarias (FLUTD), fallo renal crónico, caídas desde balcones (síndrome paracaidista) y diabetes.
+                </p>
+            </a>
 
             <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid rgba(226, 232, 240, 0.7); margin-top: auto;">
                 <div style="font-size: 1.35rem; font-weight: 900; color: #0284c7;">
                     21.00 €
                 </div>
                 <div style="display: flex; gap: 8px;">
-                    <button type="button" class="btn-primary" onclick="addToCart('CatShield Total - Póliza de Salud Diseñada para las Patologías del Gato', 21.0, 'gato-explorando-seguro-collar-gps.png'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
+                    <button type="button" class="btn-primary" onclick="event.stopPropagation(); addToCart('CatShield Total - Póliza de Salud Diseñada para las Patologías del Gato', 21.0, 'https://cdn2.thecatapi.com/images/wMndw0twO.jpg'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
-                    <a href="producto-seguro-felino-total-catshield.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a;" title="Ver Ficha Completa">
-                        Ver Detalles <i class="fa-solid fa-arrow-right"></i>
+                    <a href="producto-seguro-felino-total-catshield.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a; display: inline-flex; align-items: center; gap: 6px;" title="Ver Ficha Steam">
+                        Ver Ficha <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </article>
         
-        <article class="partner-card apple-glass-card" data-species="both" data-price="3.5" data-rating="5.0" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column;">
-            <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
-                <img src="mejora-descanso-salud-felina.png" alt="FarewellCare - Cobertura de Eutanasia Digna, Incineración & Apoyo al Duelo" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.92); color: #64748b; font-weight: 800; font-size: 0.72rem;">
-                    <i class="fa-solid fa-dove"></i> Paz & Dignidad
-                </span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Seguros & Reaseguros</span>
-                <div style="color: #f59e0b; font-size: 0.8rem;">
-                    <i class="fa-solid fa-star"></i> 5.0 <span style="color: #94a3b8; font-size: 0.75rem;">(142)</span>
+        <article class="partner-card apple-glass-card" data-species="cat" data-price="3.5" data-rating="5.0" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column; cursor: pointer; transition: all 0.3s ease;" onclick="if(event.target.tagName !== 'BUTTON' && !event.target.closest('button')) window.location.href='producto-seguro-decesos-duelo-respetuoso.html';">
+            <a href="producto-seguro-decesos-duelo-respetuoso.html" style="text-decoration: none; color: inherit; display: block;">
+                <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
+                    <img src="https://cdn2.thecatapi.com/images/9pf.jpg" alt="FarewellCare - Cobertura de Eutanasia Digna, Incineración & Apoyo al Duelo" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.94); color: #6366f1; font-weight: 800; font-size: 0.72rem;">
+                        <i class="fa-solid fa-shield-halved"></i> Paz & Dignidad
+                    </span>
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; right: 12px; background: rgba(15, 23, 42, 0.75); color: white; font-weight: 800; font-size: 0.72rem; backdrop-filter: blur(8px);">
+                        🐱 Gatos
+                    </span>
                 </div>
-            </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Homologado</span>
+                    <div style="color: #f59e0b; font-size: 0.8rem;">
+                        <i class="fa-solid fa-star"></i> 5.0 <span style="color: #94a3b8; font-size: 0.75rem;">(180)</span>
+                    </div>
+                </div>
 
-            <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
-                FarewellCare - Cobertura de Eutanasia Digna, Incineración & Apoyo al Duelo
-            </h3>
-            
-            <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
-                Garantiza una despedida serena en tu hogar con eutanasia compasiva sin dolor, incineración individual ecológica y devolución de cenizas en urna de madera.
-            </p>
+                <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
+                    FarewellCare - Cobertura de Eutanasia Digna, Incineración & Apoyo al Duelo
+                </h3>
+                
+                <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
+                    Garantiza una despedida serena en tu hogar con eutanasia compasiva sin dolor, incineración individual ecológica y devolución de cenizas en urna de madera.
+                </p>
+            </a>
 
             <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid rgba(226, 232, 240, 0.7); margin-top: auto;">
                 <div style="font-size: 1.35rem; font-weight: 900; color: #0284c7;">
                     3.50 €
                 </div>
                 <div style="display: flex; gap: 8px;">
-                    <button type="button" class="btn-primary" onclick="addToCart('FarewellCare - Cobertura de Eutanasia Digna, Incineración & Apoyo al Duelo', 3.5, 'mejora-descanso-salud-felina.png'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
+                    <button type="button" class="btn-primary" onclick="event.stopPropagation(); addToCart('FarewellCare - Cobertura de Eutanasia Digna, Incineración & Apoyo al Duelo', 3.5, 'https://cdn2.thecatapi.com/images/9pf.jpg'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
-                    <a href="producto-seguro-decesos-duelo-respetuoso.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a;" title="Ver Ficha Completa">
-                        Ver Detalles <i class="fa-solid fa-arrow-right"></i>
+                    <a href="producto-seguro-decesos-duelo-respetuoso.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a; display: inline-flex; align-items: center; gap: 6px;" title="Ver Ficha Steam">
+                        Ver Ficha <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </article>
         
-        <article class="partner-card apple-glass-card" data-species="dog" data-price="6.9" data-rating="4.9" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column;">
-            <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
-                <img src="bienestar-integral-perros-gatos.png" alt="ProBreed Safe - Seguro Especializado para Razas de Manejo Especial" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.92); color: #b91c1c; font-weight: 800; font-size: 0.72rem;">
-                    <i class="fa-solid fa-shield-dog"></i> RC 500.000€ Oficial
-                </span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Seguros & Reaseguros</span>
-                <div style="color: #f59e0b; font-size: 0.8rem;">
-                    <i class="fa-solid fa-star"></i> 4.9 <span style="color: #94a3b8; font-size: 0.75rem;">(210)</span>
+        <article class="partner-card apple-glass-card" data-species="cat" data-price="6.9" data-rating="4.9" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column; cursor: pointer; transition: all 0.3s ease;" onclick="if(event.target.tagName !== 'BUTTON' && !event.target.closest('button')) window.location.href='producto-seguro-ppp-razas-potencialmente-peligrosas.html';">
+            <a href="producto-seguro-ppp-razas-potencialmente-peligrosas.html" style="text-decoration: none; color: inherit; display: block;">
+                <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
+                    <img src="https://cdn2.thecatapi.com/images/6ss.jpg" alt="ProBreed Safe - Seguro Especializado para Razas de Manejo Especial" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.94); color: #6366f1; font-weight: 800; font-size: 0.72rem;">
+                        <i class="fa-solid fa-shield-halved"></i> RC 500.000€ Oficial
+                    </span>
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; right: 12px; background: rgba(15, 23, 42, 0.75); color: white; font-weight: 800; font-size: 0.72rem; backdrop-filter: blur(8px);">
+                        🐱 Gatos
+                    </span>
                 </div>
-            </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Homologado</span>
+                    <div style="color: #f59e0b; font-size: 0.8rem;">
+                        <i class="fa-solid fa-star"></i> 4.9 <span style="color: #94a3b8; font-size: 0.75rem;">(180)</span>
+                    </div>
+                </div>
 
-            <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
-                ProBreed Safe - Seguro Especializado para Razas de Manejo Especial
-            </h3>
-            
-            <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
-                Póliza con cobertura ampliada de 500.000€ exigida para gatos catalogados de manejo especial (Rottweiler, Pitbull, Dogo, Staffordshire).
-            </p>
+                <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
+                    ProBreed Safe - Seguro Especializado para Razas de Manejo Especial
+                </h3>
+                
+                <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
+                    Póliza con cobertura ampliada de 500.000€ exigida para gatos catalogados de manejo especial (Rottweiler, Pitbull, Dogo, Staffordshire).
+                </p>
+            </a>
 
             <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid rgba(226, 232, 240, 0.7); margin-top: auto;">
                 <div style="font-size: 1.35rem; font-weight: 900; color: #0284c7;">
                     6.90 €
                 </div>
                 <div style="display: flex; gap: 8px;">
-                    <button type="button" class="btn-primary" onclick="addToCart('ProBreed Safe - Seguro Especializado para Razas de Manejo Especial', 6.9, 'bienestar-integral-perros-gatos.png'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
+                    <button type="button" class="btn-primary" onclick="event.stopPropagation(); addToCart('ProBreed Safe - Seguro Especializado para Razas de Manejo Especial', 6.9, 'https://cdn2.thecatapi.com/images/6ss.jpg'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
-                    <a href="producto-seguro-ppp-razas-potencialmente-peligrosas.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a;" title="Ver Ficha Completa">
-                        Ver Detalles <i class="fa-solid fa-arrow-right"></i>
+                    <a href="producto-seguro-ppp-razas-potencialmente-peligrosas.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a; display: inline-flex; align-items: center; gap: 6px;" title="Ver Ficha Steam">
+                        Ver Ficha <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </article>
         
-        <article class="partner-card apple-glass-card" data-species="dog" data-price="16.5" data-rating="4.8" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column;">
-            <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
-                <img src="https://images.unsplash.com/photo-1597633425046-08f5110420b5?auto=format&fit=crop&w=800&q=80" alt="FieldGuard - Seguro para Perros de Caza, Pastoreo & Trabajo de Campo" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.92); color: #15803d; font-weight: 800; font-size: 0.72rem;">
-                    <i class="fa-solid fa-tree"></i> Campo & Jabalí
-                </span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Seguros & Reaseguros</span>
-                <div style="color: #f59e0b; font-size: 0.8rem;">
-                    <i class="fa-solid fa-star"></i> 4.8 <span style="color: #94a3b8; font-size: 0.75rem;">(115)</span>
+        <article class="partner-card apple-glass-card" data-species="dog" data-price="16.5" data-rating="4.8" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column; cursor: pointer; transition: all 0.3s ease;" onclick="if(event.target.tagName !== 'BUTTON' && !event.target.closest('button')) window.location.href='producto-seguro-perros-caza-trabajo-campo.html';">
+            <a href="producto-seguro-perros-caza-trabajo-campo.html" style="text-decoration: none; color: inherit; display: block;">
+                <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
+                    <img src="https://images.dog.ceo/breeds/bulldog-boston/n02096585_1281.jpg" alt="FieldGuard - Seguro para Perros de Caza, Pastoreo & Trabajo de Campo" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.94); color: #6366f1; font-weight: 800; font-size: 0.72rem;">
+                        <i class="fa-solid fa-shield-halved"></i> Campo & Jabalí
+                    </span>
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; right: 12px; background: rgba(15, 23, 42, 0.75); color: white; font-weight: 800; font-size: 0.72rem; backdrop-filter: blur(8px);">
+                        🐶 Perros
+                    </span>
                 </div>
-            </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Homologado</span>
+                    <div style="color: #f59e0b; font-size: 0.8rem;">
+                        <i class="fa-solid fa-star"></i> 4.8 <span style="color: #94a3b8; font-size: 0.75rem;">(180)</span>
+                    </div>
+                </div>
 
-            <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
-                FieldGuard - Seguro para Perros de Caza, Pastoreo & Trabajo de Campo
-            </h3>
-            
-            <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
-                Cobertura especializada contra ataques de jabalíes, mordeduras de víboras, espigas clavadas, cortes de zarzas y golpes de calor en jornadas rurales.
-            </p>
+                <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
+                    FieldGuard - Seguro para Perros de Caza, Pastoreo & Trabajo de Campo
+                </h3>
+                
+                <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
+                    Cobertura especializada contra ataques de jabalíes, mordeduras de víboras, espigas clavadas, cortes de zarzas y golpes de calor en jornadas rurales.
+                </p>
+            </a>
 
             <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid rgba(226, 232, 240, 0.7); margin-top: auto;">
                 <div style="font-size: 1.35rem; font-weight: 900; color: #0284c7;">
                     16.50 €
                 </div>
                 <div style="display: flex; gap: 8px;">
-                    <button type="button" class="btn-primary" onclick="addToCart('FieldGuard - Seguro para Perros de Caza, Pastoreo & Trabajo de Campo', 16.5, 'https://images.unsplash.com/photo-1597633425046-08f5110420b5?auto=format&fit=crop&w=800&q=80'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
+                    <button type="button" class="btn-primary" onclick="event.stopPropagation(); addToCart('FieldGuard - Seguro para Perros de Caza, Pastoreo & Trabajo de Campo', 16.5, 'https://images.dog.ceo/breeds/bulldog-boston/n02096585_1281.jpg'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
-                    <a href="producto-seguro-perros-caza-trabajo-campo.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a;" title="Ver Ficha Completa">
-                        Ver Detalles <i class="fa-solid fa-arrow-right"></i>
+                    <a href="producto-seguro-perros-caza-trabajo-campo.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a; display: inline-flex; align-items: center; gap: 6px;" title="Ver Ficha Steam">
+                        Ver Ficha <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </article>
         
-        <article class="partner-card apple-glass-card" data-species="both" data-price="12.0" data-rating="4.9" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column;">
-            <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
-                <img src="https://images.unsplash.com/photo-1579202673506-ca3ce28943ef?auto=format&fit=crop&w=800&q=80" alt="PharmaPaws - Póliza de Cobertura Continua de Medicamentos Crónicos" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.92); color: #0ea5e9; font-weight: 800; font-size: 0.72rem;">
-                    <i class="fa-solid fa-pills"></i> Medicación al 80%
-                </span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Seguros & Reaseguros</span>
-                <div style="color: #f59e0b; font-size: 0.8rem;">
-                    <i class="fa-solid fa-star"></i> 4.9 <span style="color: #94a3b8; font-size: 0.75rem;">(150)</span>
+        <article class="partner-card apple-glass-card" data-species="dog" data-price="12.0" data-rating="4.9" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column; cursor: pointer; transition: all 0.3s ease;" onclick="if(event.target.tagName !== 'BUTTON' && !event.target.closest('button')) window.location.href='producto-seguro-reembolso-medicacion-cronica.html';">
+            <a href="producto-seguro-reembolso-medicacion-cronica.html" style="text-decoration: none; color: inherit; display: block;">
+                <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
+                    <img src="https://images.dog.ceo/breeds/samoyed/n02111889_5489.jpg" alt="PharmaPaws - Póliza de Cobertura Continua de Medicamentos Crónicos" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.94); color: #6366f1; font-weight: 800; font-size: 0.72rem;">
+                        <i class="fa-solid fa-shield-halved"></i> Medicación al 80%
+                    </span>
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; right: 12px; background: rgba(15, 23, 42, 0.75); color: white; font-weight: 800; font-size: 0.72rem; backdrop-filter: blur(8px);">
+                        🐶 Perros
+                    </span>
                 </div>
-            </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Homologado</span>
+                    <div style="color: #f59e0b; font-size: 0.8rem;">
+                        <i class="fa-solid fa-star"></i> 4.9 <span style="color: #94a3b8; font-size: 0.75rem;">(180)</span>
+                    </div>
+                </div>
 
-            <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
-                PharmaPaws - Póliza de Cobertura Continua de Medicamentos Crónicos
-            </h3>
-            
-            <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
-                Reembolso del 80% en facturas de medicamentos de prescripción para tratamientos crónicos (insulina, leishmania, epilepsia, cardiopatías, tiroides).
-            </p>
+                <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
+                    PharmaPaws - Póliza de Cobertura Continua de Medicamentos Crónicos
+                </h3>
+                
+                <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
+                    Reembolso del 80% en facturas de medicamentos de prescripción para tratamientos crónicos (insulina, leishmania, epilepsia, cardiopatías, tiroides).
+                </p>
+            </a>
 
             <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid rgba(226, 232, 240, 0.7); margin-top: auto;">
                 <div style="font-size: 1.35rem; font-weight: 900; color: #0284c7;">
                     12.00 €
                 </div>
                 <div style="display: flex; gap: 8px;">
-                    <button type="button" class="btn-primary" onclick="addToCart('PharmaPaws - Póliza de Cobertura Continua de Medicamentos Crónicos', 12.0, 'https://images.unsplash.com/photo-1579202673506-ca3ce28943ef?auto=format&fit=crop&w=800&q=80'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
+                    <button type="button" class="btn-primary" onclick="event.stopPropagation(); addToCart('PharmaPaws - Póliza de Cobertura Continua de Medicamentos Crónicos', 12.0, 'https://images.dog.ceo/breeds/samoyed/n02111889_5489.jpg'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
-                    <a href="producto-seguro-reembolso-medicacion-cronica.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a;" title="Ver Ficha Completa">
-                        Ver Detalles <i class="fa-solid fa-arrow-right"></i>
+                    <a href="producto-seguro-reembolso-medicacion-cronica.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a; display: inline-flex; align-items: center; gap: 6px;" title="Ver Ficha Steam">
+                        Ver Ficha <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </article>
         
-        <article class="partner-card apple-glass-card" data-species="both" data-price="7.0" data-rating="5.0" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column;">
-            <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
-                <img src="https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?auto=format&fit=crop&w=800&q=80" alt="SecondOpinion Global - Acceso a Especialistas Universitarios Internacionales" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.92); color: #6366f1; font-weight: 800; font-size: 0.72rem;">
-                    <i class="fa-solid fa-user-doctor"></i> Especialistas Diplomados
-                </span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Seguros & Reaseguros</span>
-                <div style="color: #f59e0b; font-size: 0.8rem;">
-                    <i class="fa-solid fa-star"></i> 5.0 <span style="color: #94a3b8; font-size: 0.75rem;">(92)</span>
+        <article class="partner-card apple-glass-card" data-species="cat" data-price="7.0" data-rating="5.0" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column; cursor: pointer; transition: all 0.3s ease;" onclick="if(event.target.tagName !== 'BUTTON' && !event.target.closest('button')) window.location.href='producto-cudi-seguro-segunda-opinion-medica.html';">
+            <a href="producto-cudi-seguro-segunda-opinion-medica.html" style="text-decoration: none; color: inherit; display: block;">
+                <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
+                    <img src="https://cdn2.thecatapi.com/images/9u9.jpg" alt="SecondOpinion Global - Acceso a Especialistas Universitarios Internacionales" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.94); color: #6366f1; font-weight: 800; font-size: 0.72rem;">
+                        <i class="fa-solid fa-shield-halved"></i> Especialistas Diplomados
+                    </span>
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; right: 12px; background: rgba(15, 23, 42, 0.75); color: white; font-weight: 800; font-size: 0.72rem; backdrop-filter: blur(8px);">
+                        🐱 Gatos
+                    </span>
                 </div>
-            </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Homologado</span>
+                    <div style="color: #f59e0b; font-size: 0.8rem;">
+                        <i class="fa-solid fa-star"></i> 5.0 <span style="color: #94a3b8; font-size: 0.75rem;">(180)</span>
+                    </div>
+                </div>
 
-            <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
-                SecondOpinion Global - Acceso a Especialistas Universitarios Internacionales
-            </h3>
-            
-            <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
-                Revisión del caso médico de tu mascota por catedráticos diplomados europeos (ECVIM, ECVS, ECVN) ante diagnósticos difíciles o cirugías de alto riesgo.
-            </p>
+                <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
+                    SecondOpinion Global - Acceso a Especialistas Universitarios Internacionales
+                </h3>
+                
+                <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
+                    Revisión del caso médico de tu mascota por catedráticos diplomados europeos (ECVIM, ECVS, ECVN) ante diagnósticos difíciles o cirugías de alto riesgo.
+                </p>
+            </a>
 
             <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid rgba(226, 232, 240, 0.7); margin-top: auto;">
                 <div style="font-size: 1.35rem; font-weight: 900; color: #0284c7;">
                     7.00 €
                 </div>
                 <div style="display: flex; gap: 8px;">
-                    <button type="button" class="btn-primary" onclick="addToCart('SecondOpinion Global - Acceso a Especialistas Universitarios Internacionales', 7.0, 'https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?auto=format&fit=crop&w=800&q=80'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
+                    <button type="button" class="btn-primary" onclick="event.stopPropagation(); addToCart('SecondOpinion Global - Acceso a Especialistas Universitarios Internacionales', 7.0, 'https://cdn2.thecatapi.com/images/9u9.jpg'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
-                    <a href="producto-cudi-seguro-segunda-opinion-medica.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a;" title="Ver Ficha Completa">
-                        Ver Detalles <i class="fa-solid fa-arrow-right"></i>
+                    <a href="producto-cudi-seguro-segunda-opinion-medica.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a; display: inline-flex; align-items: center; gap: 6px;" title="Ver Ficha Steam">
+                        Ver Ficha <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </article>
         
-        <article class="partner-card apple-glass-card" data-species="both" data-price="11.5" data-rating="4.9" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column;">
-            <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
-                <img src="https://images.unsplash.com/photo-1560114928-40f1f1eb26a0?auto=format&fit=crop&w=800&q=80" alt="HolisticVet Care - Seguro de Terapias Complementarias, Fisio & Acupuntura" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.92); color: #14b8a6; font-weight: 800; font-size: 0.72rem;">
-                    <i class="fa-solid fa-spa"></i> Terapias Holísticas
-                </span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Seguros & Reaseguros</span>
-                <div style="color: #f59e0b; font-size: 0.8rem;">
-                    <i class="fa-solid fa-star"></i> 4.9 <span style="color: #94a3b8; font-size: 0.75rem;">(105)</span>
+        <article class="partner-card apple-glass-card" data-species="dog" data-price="11.5" data-rating="4.9" style="border-radius: 24px; padding: 22px; display: flex; flex-direction: column; cursor: pointer; transition: all 0.3s ease;" onclick="if(event.target.tagName !== 'BUTTON' && !event.target.closest('button')) window.location.href='producto-seguro-reembolso-fisioterapia-acupuntura.html';">
+            <a href="producto-seguro-reembolso-fisioterapia-acupuntura.html" style="text-decoration: none; color: inherit; display: block;">
+                <div style="position: relative; height: 210px; border-radius: 18px; overflow: hidden; margin-bottom: 16px;">
+                    <img src="https://images.dog.ceo/breeds/schipperke/n02104365_481.jpg" alt="HolisticVet Care - Seguro de Terapias Complementarias, Fisio & Acupuntura" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.94); color: #6366f1; font-weight: 800; font-size: 0.72rem;">
+                        <i class="fa-solid fa-shield-halved"></i> Terapias Holísticas
+                    </span>
+                    <span class="cudi-badge-glass" style="position: absolute; top: 12px; right: 12px; background: rgba(15, 23, 42, 0.75); color: white; font-weight: 800; font-size: 0.72rem; backdrop-filter: blur(8px);">
+                        🐶 Perros
+                    </span>
                 </div>
-            </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7;"><i class="fa-solid fa-circle-check"></i> CUDI Homologado</span>
+                    <div style="color: #f59e0b; font-size: 0.8rem;">
+                        <i class="fa-solid fa-star"></i> 4.9 <span style="color: #94a3b8; font-size: 0.75rem;">(180)</span>
+                    </div>
+                </div>
 
-            <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
-                HolisticVet Care - Seguro de Terapias Complementarias, Fisio & Acupuntura
-            </h3>
-            
-            <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
-                Cubre sesiones de acupuntura veterinaria, quiropráctica animal, hidroterapia y rehabilitación articular prescritas por tu veterinario.
-            </p>
+                <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">
+                    HolisticVet Care - Seguro de Terapias Complementarias, Fisio & Acupuntura
+                </h3>
+                
+                <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0 0 16px; flex: 1;">
+                    Cubre sesiones de acupuntura veterinaria, quiropráctica animal, hidroterapia y rehabilitación articular prescritas por tu veterinario.
+                </p>
+            </a>
 
             <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid rgba(226, 232, 240, 0.7); margin-top: auto;">
                 <div style="font-size: 1.35rem; font-weight: 900; color: #0284c7;">
                     11.50 €
                 </div>
                 <div style="display: flex; gap: 8px;">
-                    <button type="button" class="btn-primary" onclick="addToCart('HolisticVet Care - Seguro de Terapias Complementarias, Fisio & Acupuntura', 11.5, 'https://images.unsplash.com/photo-1560114928-40f1f1eb26a0?auto=format&fit=crop&w=800&q=80'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
+                    <button type="button" class="btn-primary" onclick="event.stopPropagation(); addToCart('HolisticVet Care - Seguro de Terapias Complementarias, Fisio & Acupuntura', 11.5, 'https://images.dog.ceo/breeds/schipperke/n02104365_481.jpg'); toggleCart();" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 50px; cursor: pointer;" title="Añadir a la Cesta">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
-                    <a href="producto-seguro-reembolso-fisioterapia-acupuntura.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a;" title="Ver Ficha Completa">
-                        Ver Detalles <i class="fa-solid fa-arrow-right"></i>
+                    <a href="producto-seguro-reembolso-fisioterapia-acupuntura.html" class="apple-glass-card" style="padding: 8px 14px; font-size: 0.82rem; text-decoration: none; border-radius: 50px; font-weight: 800; color: #0f172a; display: inline-flex; align-items: center; gap: 6px;" title="Ver Ficha Steam">
+                        Ver Ficha <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </article>
         
                 </div>
-                
-                <div id="no-results-message" style="display: none; text-align: center; padding: 60px 20px; background: white; border-radius: 24px; border: 1px solid rgba(226, 232, 240, 0.8);">
-                    <i class="fa-solid fa-search" style="font-size: 2.5rem; color: #cbd5e1; margin-bottom: 14px;"></i>
-                    <h3 style="font-size: 1.25rem; font-weight: 800; color: #0f172a; margin: 0 0 8px;">No se encontraron productos</h3>
-                    <p style="color: #64748b; font-size: 0.9rem; margin: 0 0 18px;">Prueba a modificar los filtros seleccionados o realiza una búsqueda más amplia.</p>
-                    <button type="button" class="btn-primary" onclick="resetFilters()" style="padding: 8px 22px; border-radius: 50px; font-size: 0.85rem; cursor: pointer;">Restablecer Filtros</button>
-                </div>
             </main>
         </div>
+    </div>
 
-    </main>
-
-    <!-- FOOTER -->
-    <footer style="background: white; border-top: 1px solid rgba(226, 232, 240, 0.8); padding: 50px 0 30px; text-align: center;">
-        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
-            <p style="color: #94a3b8; font-size: 0.85rem; margin: 0;">&copy; 2026 CUDI Ecosystem. Plataforma Integral de Bienestar y Telemetría Animal.</p>
-        </div>
-    </footer>
-
-    <!-- INTERACTIVE JAVASCRIPT FILTERING SCRIPT -->
+    <script src="script.js?v=7.4"></script>
+    <script src="cudi-ai.js?v=7.4"></script>
     <script>
         function filterCategoryProducts() {
-            const searchInput = document.getElementById('cat-search-input');
-            const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
-
-            const speciesRadio = document.querySelector('input[name="speciesFilter"]:checked');
-            const speciesVal = speciesRadio ? speciesRadio.value : 'all';
-
-            const priceRadio = document.querySelector('input[name="priceFilter"]:checked');
-            const priceVal = priceRadio ? priceRadio.value : 'all';
-
-            const sortSelect = document.getElementById('sort-select');
-            const sortVal = sortSelect ? sortSelect.value : 'featured';
-
-            const grid = document.getElementById('category-products-grid');
-            const cards = Array.from(grid.querySelectorAll('.partner-card'));
+            const speciesVal = document.querySelector('input[name="speciesFilter"]:checked').value;
+            const priceVal = document.querySelector('input[name="priceFilter"]:checked').value;
+            const sortVal = document.getElementById('sort-select').value;
+            
+            const cards = Array.from(document.querySelectorAll('#category-products-grid .partner-card'));
             let visibleCount = 0;
-
+            
             cards.forEach(card => {
-                const name = card.querySelector('h3').textContent.toLowerCase();
-                const desc = card.querySelector('p').textContent.toLowerCase();
-                const cardSpecies = card.dataset.species || 'both';
-                const cardPrice = parseFloat(card.dataset.price) || 0;
-
-                let matchesQuery = query === '' || name.includes(query) || desc.includes(query);
-                let matchesSpecies = (speciesVal === 'all') || (cardSpecies === 'both') || (cardSpecies === speciesVal);
+                const sp = card.getAttribute('data-species');
+                const pr = parseFloat(card.getAttribute('data-price'));
                 
+                let matchesSpecies = (speciesVal === 'all') || (sp === speciesVal) || (sp === 'both');
                 let matchesPrice = true;
-                if (priceVal === 'under25') matchesPrice = cardPrice < 25;
-                else if (priceVal === '25to50') matchesPrice = cardPrice >= 25 && cardPrice <= 50;
-                else if (priceVal === 'over50') matchesPrice = cardPrice > 50;
-
-                if (matchesQuery && matchesSpecies && matchesPrice) {
+                if (priceVal === 'under25') matchesPrice = (pr < 25);
+                else if (priceVal === '25to50') matchesPrice = (pr >= 25 && pr <= 50);
+                else if (priceVal === 'over50') matchesPrice = (pr > 50);
+                
+                if (matchesSpecies && matchesPrice) {
                     card.style.display = 'flex';
                     visibleCount++;
                 } else {
                     card.style.display = 'none';
                 }
             });
-
-            // Sorting logic
+            
+            const grid = document.getElementById('category-products-grid');
             const visibleCards = cards.filter(c => c.style.display !== 'none');
-            visibleCards.sort((a, b) => {
-                const priceA = parseFloat(a.dataset.price) || 0;
-                const priceB = parseFloat(b.dataset.price) || 0;
-                const ratingA = parseFloat(a.dataset.rating) || 5;
-                const ratingB = parseFloat(b.dataset.rating) || 5;
-
-                if (sortVal === 'price-asc') return priceA - priceB;
-                if (sortVal === 'price-desc') return priceB - priceA;
-                if (sortVal === 'rating') return ratingB - ratingA;
-                return 0; // default order
-            });
-
-            visibleCards.forEach(c => grid.appendChild(c));
-
-            // Counter update & empty state
-            const counterText = document.getElementById('results-count-text');
-            if (counterText) counterText.textContent = 'Mostrando ' + visibleCount + ' soluciones encontradas';
-
-            const emptyMsg = document.getElementById('no-results-message');
-            if (emptyMsg) emptyMsg.style.display = visibleCount === 0 ? 'block' : 'none';
+            
+            if (sortVal === 'price-asc') {
+                visibleCards.sort((a,b) => parseFloat(a.getAttribute('data-price')) - parseFloat(b.getAttribute('data-price')));
+                visibleCards.forEach(c => grid.appendChild(c));
+            } else if (sortVal === 'price-desc') {
+                visibleCards.sort((a,b) => parseFloat(b.getAttribute('data-price')) - parseFloat(a.getAttribute('data-price')));
+                visibleCards.forEach(c => grid.appendChild(c));
+            } else if (sortVal === 'rating') {
+                visibleCards.sort((a,b) => parseFloat(b.getAttribute('data-rating')) - parseFloat(a.getAttribute('data-rating')));
+                visibleCards.forEach(c => grid.appendChild(c));
+            }
+            
+            document.getElementById('results-count-text').innerText = 'Mostrando ' + visibleCount + ' soluciones certificadas';
         }
 
         function resetFilters() {
-            const searchInput = document.getElementById('cat-search-input');
-            if (searchInput) searchInput.value = '';
-
-            const defaultSpecies = document.querySelector('input[name="speciesFilter"][value="all"]');
-            if (defaultSpecies) defaultSpecies.checked = true;
-
-            const defaultPrice = document.querySelector('input[name="priceFilter"][value="all"]');
-            if (defaultPrice) defaultPrice.checked = true;
-
-            const sortSelect = document.getElementById('sort-select');
-            if (sortSelect) sortSelect.value = 'featured';
-
+            document.querySelector('input[name="speciesFilter"][value="all"]').checked = true;
+            document.querySelector('input[name="priceFilter"][value="all"]').checked = true;
+            document.getElementById('sort-select').value = 'featured';
             filterCategoryProducts();
         }
     </script>
-    <script src="script.js?v=7.4"></script>
-    <script src="modulos/catalogo-unico.js?v=7.4"></script>
-    <script src="cudi-ai.js?v=7.4"></script>
+
+    <!-- =====================================================================
+         MODULO OFICIAL DE PIE DE PAGINA INSTITUCIONAL & MARCO LEGAL CUDI
+         ===================================================================== -->
+    <footer class="cudi-apple-glass-footer" style="margin-top: 80px; background: rgba(15, 23, 42, 0.96); backdrop-filter: blur(32px) saturate(180%); -webkit-backdrop-filter: blur(32px) saturate(180%); color: #f8fafc; border-top: 1px solid rgba(255, 255, 255, 0.12); padding: 60px 24px 36px; font-family: 'Plus Jakarta Sans', sans-serif;">
+        <div style="max-width: 1280px; margin: 0 auto;">
+            
+            <!-- TRUST & COMPLIANCE BADGES -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; margin-bottom: 50px; padding-bottom: 40px; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+                <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 16px 20px; display: flex; align-items: center; gap: 14px;">
+                    <div style="color: #38bdf8; font-size: 1.6rem;"><i class="fa-solid fa-shield-halved"></i></div>
+                    <div>
+                        <div style="font-size: 0.88rem; font-weight: 800; color: white;">Ley Bienestar Animal</div>
+                        <div style="font-size: 0.75rem; color: #94a3b8;">Homologación Ley 7/2023 España</div>
+                    </div>
+                </div>
+                <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 16px 20px; display: flex; align-items: center; gap: 14px;">
+                    <div style="color: #10b981; font-size: 1.6rem;"><i class="fa-solid fa-lock"></i></div>
+                    <div>
+                        <div style="font-size: 0.88rem; font-weight: 800; color: white;">Seguridad Bancaria CUDI Pay</div>
+                        <div style="font-size: 0.75rem; color: #94a3b8;">Cifrado SSL 256-bit y Stripe</div>
+                    </div>
+                </div>
+                <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 16px 20px; display: flex; align-items: center; gap: 14px;">
+                    <div style="color: #f59e0b; font-size: 1.6rem;"><i class="fa-solid fa-stethoscope"></i></div>
+                    <div>
+                        <div style="font-size: 0.88rem; font-weight: 800; color: white;">Comité Veterinario Oficial</div>
+                        <div style="font-size: 0.75rem; color: #94a3b8;">Supervisión Facultativa 24/7</div>
+                    </div>
+                </div>
+                <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 16px 20px; display: flex; align-items: center; gap: 14px;">
+                    <div style="color: #a855f7; font-size: 1.6rem;"><i class="fa-solid fa-rotate-left"></i></div>
+                    <div>
+                        <div style="font-size: 0.88rem; font-weight: 800; color: white;">Garantía de Satisfacción</div>
+                        <div style="font-size: 0.75rem; color: #94a3b8;">30 días de prueba sin preguntas</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4 DETAILED COLUMNS -->
+            <div style="display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 50px;">
+                
+                <!-- COL 1: INSTITUTIONAL -->
+                <div>
+                    <a href="index.html" style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px; text-decoration: none;">
+                        <img src="logo.jpeg" alt="CUDI Ecosystem" style="height: 48px; border-radius: 10px;">
+                    </a>
+                    <p style="font-size: 0.84rem; color: #94a3b8; line-height: 1.7; margin: 0 0 20px 0;">
+                        CUDI es el primer ecosistema integral de salud, telemetría IoT y bienestar preventivo multiespecie (perros y gatos) con gemelos digitales y triaje bio-neural conectado a clínicas físicas.
+                    </p>
+                    <div style="font-size: 0.82rem; color: #cbd5e1; margin-bottom: 8px;">
+                        <i class="fa-solid fa-phone" style="color: #38bdf8; margin-right: 8px;"></i> Atención Gratuita: <strong>900 123 456</strong>
+                    </div>
+                    <div style="font-size: 0.82rem; color: #cbd5e1; margin-bottom: 20px;">
+                        <i class="fa-solid fa-envelope" style="color: #38bdf8; margin-right: 8px;"></i> <strong>cudi.ai2026@gmail.com</strong>
+                    </div>
+                    <div style="display: flex; gap: 10px;">
+                        <a href="https://www.instagram.com/cudi.ia?igsh=bjdmNXhyeHZvMXo0&utm_source=qr" target="_blank" style="width: 38px; height: 38px; border-radius: 50%; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; transition: all 0.25s ease;" title="Instagram CUDI"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@cudi.ia?_r=1&_t=ZN-95icM5LsfCA" target="_blank" style="width: 38px; height: 38px; border-radius: 50%; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; transition: all 0.25s ease;" title="TikTok CUDI"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="https://www.youtube.com/@cudi-ia" target="_blank" style="width: 38px; height: 38px; border-radius: 50%; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; transition: all 0.25s ease;" title="YouTube CUDI"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="https://www.facebook.com/Cudi2026" target="_blank" style="width: 38px; height: 38px; border-radius: 50%; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; transition: all 0.25s ease;" title="Facebook CUDI"><i class="fa-brands fa-facebook-f"></i></a>
+                    </div>
+                </div>
+
+                <!-- COL 2: MARKETPLACE -->
+                <div>
+                    <h4 style="font-size: 0.95rem; font-weight: 800; color: white; margin: 0 0 18px 0; text-transform: uppercase; letter-spacing: 0.5px;">
+                        Marketplace CUDI
+                    </h4>
+                    <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.84rem; line-height: 2.2;">
+                        <li><a href="smart-collar-cudi-gps.html" style="color: #94a3b8; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#38bdf8'" onmouseout="this.style.color='#94a3b8'">Smart Collar IoT & Geocercas</a></li>
+                        <li><a href="nutricion-personalizada-perros-gatos.html" style="color: #94a3b8; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#38bdf8'" onmouseout="this.style.color='#94a3b8'">Nutrición BARF & Microbioma</a></li>
+                        <li><a href="telemedicina-veterinaria-24-7.html" style="color: #94a3b8; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#38bdf8'" onmouseout="this.style.color='#94a3b8'">Telemedicina & Clínicas 24/7</a></li>
+                        <li><a href="paseadores-perros-certificados-barcelona.html" style="color: #94a3b8; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#38bdf8'" onmouseout="this.style.color='#94a3b8'">Paseadores & Cuidadores Homologados</a></li>
+                        <li><a href="seguros-salud-mascotas-barcelona.html" style="color: #94a3b8; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#38bdf8'" onmouseout="this.style.color='#94a3b8'">Seguros de Salud & Resp. Civil</a></li>
+                        <li><a href="bienestar-integral-multiespecie.html" style="color: #94a3b8; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#38bdf8'" onmouseout="this.style.color='#94a3b8'">Peluquería, Ozonoterapia & Spa</a></li>
+                    </ul>
+                </div>
+
+                <!-- COL 3: MARCO LEGAL Y CUMPLIMIENTO -->
+                <div>
+                    <h4 style="font-size: 0.95rem; font-weight: 800; color: white; margin: 0 0 18px 0; text-transform: uppercase; letter-spacing: 0.5px;">
+                        Marco Legal & Regulación
+                    </h4>
+                    <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.84rem; line-height: 2.2;">
+                        <li><a href="legal.html" style="color: #38bdf8; font-weight: 700; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#7dd3fc'" onmouseout="this.style.color='#38bdf8'"><i class="fa-solid fa-scale-balanced" style="font-size: 0.75rem;"></i> Aviso Legal & Titularidad</a></li>
+                        <li><a href="terminos-condiciones-app.html" style="color: #94a3b8; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#38bdf8'" onmouseout="this.style.color='#94a3b8'">Términos y Condiciones del Servicio</a></li>
+                        <li><a href="politica-privacidad-datos-mascotas.html" style="color: #94a3b8; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#38bdf8'" onmouseout="this.style.color='#94a3b8'">Privacidad y Telemetría Biológica (RGPD)</a></li>
+                        <li><a href="politica-cookies-plataforma.html" style="color: #94a3b8; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#38bdf8'" onmouseout="this.style.color='#94a3b8'">Política de Cookies y Almacenamiento</a></li>
+                        <li><a href="politica-devoluciones-smart-collar.html" style="color: #94a3b8; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#38bdf8'" onmouseout="this.style.color='#94a3b8'">Garantía, Devoluciones y Desistimiento</a></li>
+                    </ul>
+                </div>
+
+                <!-- COL 4: SUSCRIPCIONES Y PLATAFORMA -->
+                <div>
+                    <h4 style="font-size: 0.95rem; font-weight: 800; color: white; margin: 0 0 18px 0; text-transform: uppercase; letter-spacing: 0.5px;">
+                        Plataforma & Ecosistema
+                    </h4>
+                    <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.84rem; line-height: 2.2;">
+                        <li><a href="planes-suscripcion-bienestar-animal.html" style="color: #94a3b8; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#38bdf8'" onmouseout="this.style.color='#94a3b8'">Planes de Cuidado & Suscripciones</a></li>
+                        <li><a href="comunidad-cudi.html" style="color: #94a3b8; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#38bdf8'" onmouseout="this.style.color='#94a3b8'">Red Social de Familias CUDI Paws</a></li>
+                        <li><a href="red-socios-clinicas-veterinarias.html" style="color: #94a3b8; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#38bdf8'" onmouseout="this.style.color='#94a3b8'">Red de Partners B2B para Clínicas</a></li>
+                        <li><a href="simulador-gemelo-digital-telemetria.html" style="color: #94a3b8; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#38bdf8'" onmouseout="this.style.color='#94a3b8'">Simulador de Gemelo Digital App</a></li>
+                        <li><a href="simulador-financiero.html" style="color: #94a3b8; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#38bdf8'" onmouseout="this.style.color='#94a3b8'">Simulador Financiero & Modelo TFM</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- BOTTOM COPYRIGHT BAR -->
+            <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 28px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; font-size: 0.78rem; color: #64748b;">
+                <div>
+                    &copy; 2026 CUDI AI Ecosystem S.L. &bull; NIF: B-12345678 &bull; Inscrita en el Registro Mercantil de Madrid, Tomo 1234, Folio 56, Hoja M-7890. Propiedad Intelectual Protegida.
+                </div>
+                <div style="display: flex; gap: 16px; align-items: center;">
+                    <span style="color: #94a3b8;"><i class="fa-solid fa-server" style="color: #10b981;"></i> Servidores Cloud UE (GDPR Ready)</span>
+                    <span style="color: #94a3b8;"><i class="fa-solid fa-microchip" style="color: #38bdf8;"></i> Algoritmos Bio-Neurales Patentados</span>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
 </body>
 </html>
