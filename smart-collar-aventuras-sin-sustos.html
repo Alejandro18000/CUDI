@@ -245,41 +245,962 @@
         </div>
     </section>
 
-    <!-- SECCIÓN GAMIFICACIÓN Y MAPA COLABORATIVO -->
-    <section style="padding: 100px 0; background: #fff; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
-        <div class="container">
-            <div style="text-align:center; max-width:800px; margin: 0 auto 50px auto;">
-                <h2 style="font-size: 2.8rem; font-weight: 800; color: #0f172a; margin-bottom: 20px;">El Gran Mapa Colaborativo</h2>
-                <p style="font-size: 1.15rem; color: #64748b; line-height: 1.7;">Descubre rutas validadas por otros Pet Parents en Barcelona. Comparte tus trayectos, clasifica puntos seguros y gana recompensas mediante la gamificación de la salud de tu mascota.</p>
+    <!-- SECCIÓN GAMIFICACIÓN Y MAPA COLABORATIVO (APPLE GLASS & LIVE SIMULATION) -->
+    <section id="mapa-colaborativo-section" style="padding: 100px 0; background: linear-gradient(180deg, #f8fafc 0%, #ffffff 50%, #f1f5f9 100%); border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0; position: relative; overflow: hidden;">
+        <!-- Elementos decorativos de fondo con desenfoque / glow -->
+        <div style="position: absolute; top: -100px; left: -100px; width: 450px; height: 450px; background: radial-gradient(circle, rgba(16,185,129,0.12) 0%, transparent 70%); border-radius: 50%; pointer-events: none; filter: blur(40px);"></div>
+        <div style="position: absolute; bottom: -120px; right: -80px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(56,189,248,0.14) 0%, transparent 70%); border-radius: 50%; pointer-events: none; filter: blur(50px);"></div>
+
+        <div class="container" style="position: relative; z-index: 2;">
+            <!-- Header Sección -->
+            <div style="text-align:center; max-width:850px; margin: 0 auto 40px auto;">
+                <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.25); color:#059669; padding:6px 16px; border-radius:30px; font-size:0.85rem; font-weight:700; margin-bottom:15px; backdrop-filter:blur(10px); box-shadow:0 4px 15px rgba(16,185,129,0.1);">
+                    <span style="display:inline-block; width:8px; height:8px; background:#10b981; border-radius:50%; box-shadow:0 0 10px #10b981; animation: pulseRadar 2s infinite;"></span>
+                    RED TELEMÉTRICA COMUNITARIA BARCELONA
+                </div>
+                <h2 style="font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 800; color: #0f172a; margin-bottom: 16px; letter-spacing: -0.02em;">El Gran Mapa Colaborativo</h2>
+                <p style="font-size: 1.15rem; color: #64748b; line-height: 1.7; margin-bottom: 25px;">
+                    Explora y valida trayectos en tiempo real creados por la comunidad de Pet Parents. Sincroniza la telemetría del Smart Collar, califica zonas seguras y desbloquea recompensas exclusivas.
+                </p>
+
+                <!-- Selector Interactivo de Rutas Apple Glass -->
+                <div class="cudi-route-pills" style="display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-bottom:10px;">
+                    <button type="button" class="cudi-route-btn active" data-route="ciutadella" onclick="seleccionarRutaColab('ciutadella')">
+                        <i class="fa-solid fa-tree" style="color:#10b981;"></i> Ciutadella Loop
+                        <span class="route-badge">2.4 km</span>
+                    </button>
+                    <button type="button" class="cudi-route-btn" data-route="parqueguell" onclick="seleccionarRutaColab('parqueguell')">
+                        <i class="fa-solid fa-fire" style="color:#ef4444;"></i> Parc Güell Subida
+                        <span class="route-badge">3.8 km</span>
+                    </button>
+                    <button type="button" class="cudi-route-btn" data-route="maritim" onclick="seleccionarRutaColab('maritim')">
+                        <i class="fa-solid fa-water" style="color:#38bdf8;"></i> Passeig Marítim
+                        <span class="route-badge">4.1 km</span>
+                    </button>
+                    <button type="button" class="cudi-route-btn" data-route="collserola" onclick="seleccionarRutaColab('collserola')">
+                        <i class="fa-solid fa-mountain" style="color:#8b5cf6;"></i> Collserola Trail
+                        <span class="route-badge">5.6 km</span>
+                    </button>
+                </div>
             </div>
             
-            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:40px; align-items:center;">
-                <!-- Gamification Tasks -->
-                <div>
-                    <div style="background:white; padding:30px; border-radius:20px; box-shadow:0 10px 30px rgba(0,0,0,0.05); margin-bottom:20px; border-left: 5px solid #10b981;">
-                        <h4 style="font-weight:800; color:#0f172a; margin-bottom:10px;"><i class="fa-solid fa-location-dot" style="color:#ef4444;"></i> Registra tu Ruta</h4>
-                        <p style="font-size:0.95rem; color:#64748b;">Utiliza el monitor GPS para trazar tu camino en parques urbanos o montañas. Nuestra IA califica el nivel de estrés del trayecto.</p>
+            <!-- Grid Principal: Gamificación (Izq) + Simulador Apple Glass (Der) -->
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:35px; align-items:start;">
+                
+                <!-- Columna Izquierda: Tarjetas de Gamificación Apple Glass con Acción -->
+                <div style="display:flex; flex-direction:column; gap:20px;">
+                    
+                    <!-- Tarjeta 1: Registra tu Ruta -->
+                    <div class="cudi-glass-card" style="border-left: 5px solid #10b981; position:relative; overflow:hidden;">
+                        <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:15px; margin-bottom:12px;">
+                            <div style="display:flex; align-items:center; gap:12px;">
+                                <div style="width:44px; height:44px; border-radius:12px; background:rgba(16,185,129,0.12); display:flex; align-items:center; justify-content:center; color:#10b981; font-size:1.3rem;">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <h4 style="font-weight:800; color:#0f172a; margin:0; font-size:1.15rem;">Registra tu Ruta</h4>
+                                    <span style="font-size:0.8rem; color:#10b981; font-weight:600;"><i class="fa-solid fa-satellite-dish"></i> GPS Alta Precisión RTK</span>
+                                </div>
+                            </div>
+                            <span class="cudi-chip-status" id="chip-estado-gps">Listo para Trazar</span>
+                        </div>
+                        <p style="font-size:0.92rem; color:#64748b; line-height:1.6; margin-bottom:15px;">
+                            Utiliza el monitor GPS para trazar tu camino en parques urbanos o montañas. Nuestra IA clasifica en vivo el estrés cardíaco, las zonas de sombra y fuentes de agua fresca.
+                        </p>
+                        <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between; padding-top:10px; border-top:1px dashed rgba(226,232,240,0.8);">
+                            <button type="button" class="cudi-action-mini-btn" id="btn-toggle-sim" onclick="toggleSimulacionRuta()">
+                                <i class="fa-solid fa-play" id="icon-sim-btn"></i> <span id="text-sim-btn">Simular Trazado en Vivo</span>
+                            </button>
+                            <span style="font-size:0.8rem; color:#94a3b8;"><i class="fa-solid fa-bolt" style="color:#f59e0b;"></i> Datos en tiempo real</span>
+                        </div>
                     </div>
-                    <div style="background:white; padding:30px; border-radius:20px; box-shadow:0 10px 30px rgba(0,0,0,0.05); margin-bottom:20px; border-left: 5px solid #38bdf8;">
-                        <h4 style="font-weight:800; color:#0f172a; margin-bottom:10px;"><i class="fa-brands fa-instagram" style="color:#e1306c;"></i> Comparte la Experiencia</h4>
-                        <p style="font-size:0.95rem; color:#64748b;">Al terminar, publica un reel o imagen con el hashtag <strong>#AventurasSinSustosCUDI</strong> mostrando tu reporte telemetrico.</p>
+
+                    <!-- Tarjeta 2: Comparte la Experiencia UGC -->
+                    <div class="cudi-glass-card" style="border-left: 5px solid #38bdf8; position:relative; overflow:hidden;">
+                        <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:15px; margin-bottom:12px;">
+                            <div style="display:flex; align-items:center; gap:12px;">
+                                <div style="width:44px; height:44px; border-radius:12px; background:rgba(56,189,248,0.12); display:flex; align-items:center; justify-content:center; color:#0284c7; font-size:1.3rem;">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </div>
+                                <div>
+                                    <h4 style="font-weight:800; color:#0f172a; margin:0; font-size:1.15rem;">Comparte la Experiencia</h4>
+                                    <span style="font-size:0.8rem; color:#0284c7; font-weight:600;"><i class="fa-solid fa-hashtag"></i> #AventurasSinSustosCUDI</span>
+                                </div>
+                            </div>
+                            <span class="cudi-counter-tag"><i class="fa-solid fa-heart" style="color:#ef4444;"></i> <span id="ugc-count-val">1,428</span> fotos</span>
+                        </div>
+                        <p style="font-size:0.92rem; color:#64748b; line-height:1.6; margin-bottom:15px;">
+                            Al culminar el paseo, exporta el reporte telemétrico con tu foto favorita. La comunidad valida los puntos de peligro y clasifica las mejores sombras.
+                        </p>
+                        <div style="display:flex; gap:10px; align-items:center; justify-content:space-between; padding-top:10px; border-top:1px dashed rgba(226,232,240,0.8);">
+                            <button type="button" class="cudi-action-mini-btn" onclick="abrirModalCompartirRuta()" style="background:linear-gradient(135deg, #38bdf8, #0284c7); color:white;">
+                                <i class="fa-solid fa-camera"></i> Subir Aventura UGC
+                            </button>
+                            <span style="font-size:0.8rem; color:#64748b;"><i class="fa-solid fa-shield-cat"></i> Verificada por IA</span>
+                        </div>
                     </div>
-                    <div style="background:white; padding:30px; border-radius:20px; box-shadow:0 10px 30px rgba(0,0,0,0.05); border-left: 5px solid #f59e0b;">
-                        <h4 style="font-weight:800; color:#0f172a; margin-bottom:10px;"><i class="fa-solid fa-gift" style="color:#f59e0b;"></i> Desbloquea Recompensas</h4>
-                        <p style="font-size:0.95rem; color:#64748b;">Las 3 mejores rutas del mes serán publicadas globalmente y sus autores ganan <strong>Hardware CUDI Gratis</strong> y saldo de servicios.</p>
+
+                    <!-- Tarjeta 3: Desbloquea Recompensas Gamificadas -->
+                    <div class="cudi-glass-card" style="border-left: 5px solid #f59e0b; position:relative; overflow:hidden;">
+                        <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:15px; margin-bottom:12px;">
+                            <div style="display:flex; align-items:center; gap:12px;">
+                                <div style="width:44px; height:44px; border-radius:12px; background:rgba(245,158,11,0.12); display:flex; align-items:center; justify-content:center; color:#d97706; font-size:1.3rem;">
+                                    <i class="fa-solid fa-gift"></i>
+                                </div>
+                                <div>
+                                    <h4 style="font-weight:800; color:#0f172a; margin:0; font-size:1.15rem;">Desbloquea Recompensas</h4>
+                                    <span style="font-size:0.8rem; color:#d97706; font-weight:600;"><i class="fa-solid fa-trophy"></i> Reto Semanal de Barcelona</span>
+                                </div>
+                            </div>
+                            <span class="cudi-progress-pill" id="badge-progreso-meta">2 / 3 Rutas</span>
+                        </div>
+                        <p style="font-size:0.92rem; color:#64748b; line-height:1.6; margin-bottom:12px;">
+                            Las mejores rutas del mes ganan <strong>Hardware CUDI Gratis</strong> y meses de suscripción bonificados para ti y tu clínica veterinaria asignada.
+                        </p>
+                        <!-- Barra de progreso gamificada -->
+                        <div style="margin-bottom:15px;">
+                            <div style="display:flex; justify-content:space-between; font-size:0.8rem; font-weight:700; color:#475569; margin-bottom:5px;">
+                                <span>Progreso Desafío CUDI Explorer</span>
+                                <span id="progreso-porcentaje-txt" style="color:#d97706;">66%</span>
+                            </div>
+                            <div style="height:8px; background:#e2e8f0; border-radius:10px; overflow:hidden; position:relative;">
+                                <div id="barra-progreso-recompensa" style="height:100%; width:66%; background:linear-gradient(90deg, #f59e0b, #10b981); border-radius:10px; transition:width 0.8s ease;"></div>
+                            </div>
+                        </div>
+                        <div style="display:flex; gap:10px; align-items:center; justify-content:space-between; padding-top:10px; border-top:1px dashed rgba(226,232,240,0.8);">
+                            <button type="button" class="cudi-action-mini-btn" id="btn-reclamar-premio" onclick="reclamarRecompensaRuta()" style="background:linear-gradient(135deg, #f59e0b, #d97706); color:white;">
+                                <i class="fa-solid fa-medal"></i> Reclamar Recompensa
+                            </button>
+                            <span style="font-size:0.8rem; color:#64748b;"><i class="fa-solid fa-calendar-check"></i> Vence en 5 días</span>
+                        </div>
                     </div>
+
+                    <!-- Ticker en Vivo de Actividad Comunitaria (Rotativo cada 4s) -->
+                    <div class="cudi-glass-card" style="padding:14px 20px; background:rgba(255,255,255,0.7); backdrop-filter:blur(16px); border:1px solid rgba(226,232,240,0.8);">
+                        <div style="display:flex; align-items:center; gap:12px;">
+                            <div style="position:relative; width:10px; height:10px; flex-shrink:0;">
+                                <span style="position:absolute; width:100%; height:100%; background:#10b981; border-radius:50%; animation:pingLive 1.5s cubic-bezier(0,0,0.2,1) infinite;"></span>
+                                <span style="position:relative; display:block; width:100%; height:100%; background:#059669; border-radius:50%;"></span>
+                            </div>
+                            <div style="flex:1; overflow:hidden; font-size:0.85rem; color:#475569;" id="cudi-live-feed-ticker">
+                                <strong>Carlos & Max</strong> acaban de completar <em>Ciutadella Loop</em> (+120 pts CUDI) hace 2 min.
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
-                <!-- Collaborative Map Image -->
-                <div style="position:relative; border-radius:20px; overflow:hidden; box-shadow:0 20px 40px rgba(0,0,0,0.15);">
-                    <img src="rutas-pet-friendly-barcelona.png" alt="Mapa Colaborativo CUDI Barcelona" style="width:100%; display:block;" decoding="async">
-                    <div style="position:absolute; bottom:20px; left:20px; background:rgba(255,255,255,0.95); padding:10px 20px; border-radius:30px; font-weight:800; font-size:0.85rem; color:#0f172a; backdrop-filter:blur(10px);">
-                        <i class="fa-solid fa-fire" style="color:#ef4444;"></i> Ruta Top Mes: Parque Güell Subida
+                <!-- Columna Derecha: Mockup Interactivo de Smartphone / Map Display -->
+                <div style="position:relative;">
+                    
+                    <!-- Envoltorio Smartphone Apple Glass -->
+                    <div class="cudi-phone-frame" style="position:relative; border-radius:36px; padding:12px; background:linear-gradient(145deg, #1e293b, #0f172a); box-shadow:0 25px 60px -15px rgba(15,23,42,0.35), 0 0 0 1px rgba(255,255,255,0.1); max-width:440px; margin:0 auto;">
+                        
+                        <!-- Pantalla del Celular -->
+                        <div class="cudi-phone-screen" style="position:relative; border-radius:28px; overflow:hidden; background:#0f172a; aspect-ratio:9/16; max-height:640px; display:flex; flex-direction:column;">
+                            
+                            <!-- Dynamic Island / Notificación Superior -->
+                            <div style="position:absolute; top:12px; left:50%; transform:translateX(-50%); z-index:30; width:120px; height:24px; background:#000; border-radius:20px; display:flex; align-items:center; justify-content:center; gap:6px; box-shadow:0 4px 12px rgba(0,0,0,0.5);">
+                                <span style="width:7px; height:7px; border-radius:50%; background:#10b981; box-shadow:0 0 6px #10b981;"></span>
+                                <span style="color:#f8fafc; font-size:0.7rem; font-weight:700; letter-spacing:0.5px;">CUDI GPS</span>
+                            </div>
+
+                            <!-- Barra Superior con Controles de Mapa Apple Glass -->
+                            <div style="position:absolute; top:42px; left:12px; right:12px; z-index:25; display:flex; align-items:center; justify-content:space-between; gap:8px;">
+                                <!-- Botón de Capas de Mapa -->
+                                <div class="cudi-glass-pill" style="padding:4px 10px; display:flex; gap:6px; font-size:0.75rem;">
+                                    <button type="button" class="cudi-layer-btn active" id="btn-layer-sat" onclick="cambiarCapaMapa('sat')">Satélite</button>
+                                    <button type="button" class="cudi-layer-btn" id="btn-layer-vec" onclick="cambiarCapaMapa('vec')">Vector</button>
+                                    <button type="button" class="cudi-layer-btn" id="btn-layer-heat" onclick="cambiarCapaMapa('heat')">Calor</button>
+                                </div>
+                                
+                                <!-- Botón para Crear / Grabar Ruta -->
+                                <button type="button" onclick="abrirModalCrearRuta()" class="cudi-glass-pill" style="padding:6px 12px; font-size:0.75rem; color:#fff; background:rgba(16,185,129,0.7); border:1px solid rgba(255,255,255,0.3); font-weight:700; cursor:pointer; display:flex; align-items:center; gap:5px;">
+                                    <i class="fa-solid fa-plus"></i> Crear
+                                </button>
+                            </div>
+
+                            <!-- Contenedor del Mapa con Imagen Base y SVG Overlay -->
+                            <div id="cudi-map-viewport" style="position:relative; width:100%; height:100%; overflow:hidden;">
+                                
+                                <!-- Imagen Base de Barcelona -->
+                                <img id="cudi-map-bg-img" src="rutas-pet-friendly-barcelona.png" alt="Mapa CUDI Barcelona" style="width:100%; height:100%; object-fit:cover; display:block; filter: brightness(0.88) contrast(1.05); transition:filter 0.4s ease;" decoding="async">
+                                
+                                <!-- Overlay de Capa de Calor (Heatmap filter opcional) -->
+                                <div id="cudi-heatmap-overlay" style="position:absolute; inset:0; background:radial-gradient(circle at 45% 55%, rgba(239,68,68,0.4) 0%, rgba(245,158,11,0.3) 30%, rgba(16,185,129,0.2) 60%, transparent 80%); mix-blend-mode:color-dodge; opacity:0; pointer-events:none; transition:opacity 0.4s ease;"></div>
+
+                                <!-- Lienzo SVG para Rutas Neón y Marcadores -->
+                                <svg id="cudi-route-svg" viewBox="0 0 1000 1000" preserveAspectRatio="none" style="position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:15;">
+                                    <defs>
+                                        <!-- Filtro de Resplandor Neón -->
+                                        <filter id="neon-glow" x="-20%" y="-20%" width="140%" height="140%">
+                                            <feGaussianBlur stdDeviation="6" result="blur" />
+                                            <feMerge>
+                                                <feMergeNode in="blur" />
+                                                <feMergeNode in="blur" />
+                                                <feMergeNode in="SourceGraphic" />
+                                            </feMerge>
+                                        </filter>
+                                        <!-- Gradientes de Ruta -->
+                                        <linearGradient id="route-gradient-ciutadella" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="#10b981" />
+                                            <stop offset="100%" stop-color="#38bdf8" />
+                                        </linearGradient>
+                                        <linearGradient id="route-gradient-parqueguell" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="#f59e0b" />
+                                            <stop offset="100%" stop-color="#ef4444" />
+                                        </linearGradient>
+                                        <linearGradient id="route-gradient-maritim" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="#38bdf8" />
+                                            <stop offset="100%" stop-color="#0284c7" />
+                                        </linearGradient>
+                                        <linearGradient id="route-gradient-collserola" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="#8b5cf6" />
+                                            <stop offset="100%" stop-color="#ec4899" />
+                                        </linearGradient>
+                                    </defs>
+
+                                    <!-- Trazado de Fondo (Glow Sombra) -->
+                                    <path id="svg-route-path-glow" d="M 220,680 Q 320,620 420,650 T 620,580 T 780,480" fill="none" stroke="#10b981" stroke-width="14" stroke-opacity="0.35" filter="url(#neon-glow)" stroke-linecap="round" />
+                                    
+                                    <!-- Trazado Principal Activo -->
+                                    <path id="svg-route-path" d="M 220,680 Q 320,620 420,650 T 620,580 T 780,480" fill="none" stroke="url(#route-gradient-ciutadella)" stroke-width="6" stroke-linecap="round" stroke-dasharray="10 4" />
+
+                                    <!-- Marcador de Origen / Inicio -->
+                                    <circle id="svg-start-pin" cx="220" cy="680" r="9" fill="#10b981" stroke="#ffffff" stroke-width="3" />
+                                    <!-- Marcador de Destino / Meta -->
+                                    <circle id="svg-end-pin" cx="780" cy="480" r="10" fill="#ef4444" stroke="#ffffff" stroke-width="3" />
+                                </svg>
+
+                                <!-- Marcador de Mascota Animada (Seguimiento en Vivo) -->
+                                <div id="cudi-pet-pin" style="position:absolute; top:68%; left:22%; transform:translate(-50%, -50%); z-index:20; pointer-events:auto; cursor:pointer;" onclick="mostrarInfoMascotaPin()">
+                                    <div style="position:relative; width:44px; height:44px;">
+                                        <!-- Radar pulsante -->
+                                        <div style="position:absolute; inset:-8px; border-radius:50%; background:rgba(16,185,129,0.35); animation:pingLive 1.8s infinite;"></div>
+                                        <!-- Avatar de la Mascota -->
+                                        <div style="position:relative; width:44px; height:44px; border-radius:50%; border:3px solid #ffffff; box-shadow:0 4px 15px rgba(0,0,0,0.4); overflow:hidden; background:#0f172a;">
+                                            <img id="pet-avatar-pin-img" src="assets/luna.png" alt="Mascota en Ruta" style="width:100%; height:100%; object-fit:cover;" onerror="this.src='logo.jpeg'">
+                                        </div>
+                                        <!-- Badge de ritmo cardíaco -->
+                                        <div style="position:absolute; bottom:-6px; right:-6px; background:#ef4444; color:#fff; border-radius:10px; font-size:0.65rem; font-weight:800; padding:2px 5px; border:2px solid #fff; display:flex; align-items:center; gap:3px;">
+                                            <i class="fa-solid fa-heart-pulse" style="animation:pulseRadar 1s infinite;"></i> <span id="pin-bpm-val">98</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Puntos de Interés Interactivos (POIs) con Tooltips Apple Glass -->
+                                <div id="cudi-poi-container" style="position:absolute; inset:0; z-index:18; pointer-events:none;">
+                                    <!-- POI 1: Fuente de Agua -->
+                                    <div class="cudi-poi-marker" style="top:62%; left:42%; pointer-events:auto;" onclick="mostrarPoiTooltip(event, '💧 Fuente Canina Activa', 'Agua potable fresca y desinfectada verificada por la comunidad CUDI.', '#0284c7')">
+                                        <i class="fa-solid fa-faucet-drip"></i>
+                                    </div>
+                                    <!-- POI 2: Parque / Pipicán Seguro -->
+                                    <div class="cudi-poi-marker" style="top:58%; left:62%; pointer-events:auto;" onclick="mostrarPoiTooltip(event, '🐾 Área Pipicán Seguro', 'Espacio cerrado con doble valla, césped y dispensador de bolsas.', '#10b981')">
+                                        <i class="fa-solid fa-shield-dog"></i>
+                                    </div>
+                                    <!-- POI 3: Clínica Veterinaria 24h (Partner) -->
+                                    <div class="cudi-poi-marker" style="top:48%; left:78%; pointer-events:auto;" onclick="mostrarPoiTooltip(event, '🏥 Hospital Vet 24h Partner', 'Atención de urgencia CUDI sin franquicia a 250m de la ruta.', '#ef4444')">
+                                        <i class="fa-solid fa-truck-medical"></i>
+                                    </div>
+                                </div>
+
+                                <!-- Tooltip Flotante Apple Glass para POIs -->
+                                <div id="cudi-poi-tooltip" style="position:absolute; z-index:28; background:rgba(15,23,42,0.85); backdrop-filter:blur(20px); border:1px solid rgba(255,255,255,0.2); border-radius:16px; padding:12px 16px; color:#fff; font-size:0.8rem; max-width:220px; box-shadow:0 12px 30px rgba(0,0,0,0.5); opacity:0; pointer-events:none; transform:translate(-50%, -120%); transition:all 0.25s ease;">
+                                    <div id="poi-tooltip-title" style="font-weight:800; font-size:0.85rem; margin-bottom:4px; display:flex; align-items:center; gap:6px;">💧 Fuente</div>
+                                    <div id="poi-tooltip-desc" style="color:#cbd5e1; font-size:0.75rem; line-height:1.4; margin-bottom:8px;">Agua fresca</div>
+                                    <button type="button" onclick="cerrarPoiTooltip()" style="background:rgba(255,255,255,0.15); border:none; color:#fff; border-radius:8px; padding:4px 8px; font-size:0.7rem; cursor:pointer; width:100%;">Cerrar</button>
+                                </div>
+
+                            </div>
+
+                            <!-- Panel Inferior Telemetría HUD Apple Glass -->
+                            <div class="cudi-telemetry-dock" style="position:absolute; bottom:12px; left:12px; right:12px; z-index:25; background:rgba(15,23,42,0.82); backdrop-filter:blur(24px); border:1px solid rgba(255,255,255,0.15); border-radius:20px; padding:14px 16px; box-shadow:0 10px 25px rgba(0,0,0,0.4); color:#fff;">
+                                
+                                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                                    <div>
+                                        <div style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.5px; color:#94a3b8; font-weight:700;">Ruta Seleccionada</div>
+                                        <div id="hud-route-name" style="font-weight:800; font-size:1rem; color:#fff;">Ciutadella Loop</div>
+                                    </div>
+                                    <div id="hud-status-badge" style="background:rgba(16,185,129,0.2); border:1px solid rgba(16,185,129,0.4); color:#34d399; font-size:0.7rem; font-weight:700; padding:3px 8px; border-radius:12px; display:flex; align-items:center; gap:5px;">
+                                        <span style="width:6px; height:6px; background:#10b981; border-radius:50%;"></span> Óptimo
+                                    </div>
+                                </div>
+
+                                <!-- Métricas en Vivo Grid -->
+                                <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:8px; text-align:center; margin-bottom:12px;">
+                                    <div style="background:rgba(255,255,255,0.06); padding:8px 4px; border-radius:12px; border:1px solid rgba(255,255,255,0.05);">
+                                        <div style="font-size:0.68rem; color:#94a3b8;"><i class="fa-solid fa-route"></i> Distancia</div>
+                                        <div id="hud-metric-dist" style="font-weight:800; font-size:1.05rem; color:#38bdf8;">0.8 <span style="font-size:0.7rem;">km</span></div>
+                                    </div>
+                                    <div style="background:rgba(255,255,255,0.06); padding:8px 4px; border-radius:12px; border:1px solid rgba(255,255,255,0.05);">
+                                        <div style="font-size:0.68rem; color:#94a3b8;"><i class="fa-solid fa-stopwatch"></i> Tiempo</div>
+                                        <div id="hud-metric-time" style="font-weight:800; font-size:1.05rem; color:#10b981;">14 <span style="font-size:0.7rem;">min</span></div>
+                                    </div>
+                                    <div style="background:rgba(255,255,255,0.06); padding:8px 4px; border-radius:12px; border:1px solid rgba(255,255,255,0.05);">
+                                        <div style="font-size:0.68rem; color:#94a3b8;"><i class="fa-solid fa-heart-pulse"></i> Pulso Prom</div>
+                                        <div id="hud-metric-bpm" style="font-weight:800; font-size:1.05rem; color:#f59e0b;">98 <span style="font-size:0.7rem;">bpm</span></div>
+                                    </div>
+                                </div>
+
+                                <!-- Botón Principal de Acción -->
+                                <div style="display:flex; gap:8px;">
+                                    <button type="button" id="btn-iniciar-ruta-real" onclick="iniciarRutaGPS()" style="flex:1; background:linear-gradient(135deg, #10b981, #059669); color:#fff; border:none; padding:10px 14px; border-radius:12px; font-weight:800; font-size:0.85rem; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:8px; box-shadow:0 4px 15px rgba(16,185,129,0.3); transition:all 0.2s ease;">
+                                        <i class="fa-solid fa-play"></i> Iniciar Ruta GPS
+                                    </button>
+                                    <button type="button" onclick="centrarEnMascota()" style="width:42px; background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.2); color:#fff; border-radius:12px; display:flex; align-items:center; justify-content:center; cursor:pointer;" title="Centrar Mapa">
+                                        <i class="fa-solid fa-crosshairs"></i>
+                                    </button>
+                                </div>
+
+                            </div>
+
+                        </div>
                     </div>
+
+                    <!-- Indicador Flotante Inferior de la Ruta Top Mes (Interactivo) -->
+                    <div onclick="seleccionarRutaColab('parqueguell')" style="position:absolute; bottom:-15px; left:50%; transform:translateX(-50%); background:rgba(255,255,255,0.95); padding:10px 22px; border-radius:30px; font-weight:800; font-size:0.85rem; color:#0f172a; backdrop-filter:blur(14px); box-shadow:0 12px 30px rgba(0,0,0,0.12); border:1px solid rgba(226,232,240,0.8); cursor:pointer; display:flex; align-items:center; gap:8px; white-space:nowrap; transition:all 0.2s ease;" onmouseover="this.style.transform='translateX(-50%) translateY(-3px)'" onmouseout="this.style.transform='translateX(-50%)'">
+                        <i class="fa-solid fa-fire" style="color:#ef4444; animation:pulseRadar 1.5s infinite;"></i> 
+                        <span>Ruta Top Mes: <strong>Parque Güell Subida</strong></span>
+                        <span style="background:#fee2e2; color:#ef4444; font-size:0.75rem; padding:2px 8px; border-radius:10px;">+850 paseos</span>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- MODAL 1: Compartir Aventura UGC -->
+        <div id="modal-compartir-ugc" style="display:none; position:fixed; inset:0; z-index:99999; background:rgba(15,23,42,0.7); backdrop-filter:blur(8px); align-items:center; justify-content:center; padding:20px;">
+            <div style="background:rgba(255,255,255,0.95); backdrop-filter:blur(24px); border-radius:24px; padding:30px; max-width:480px; width:100%; border:1px solid rgba(255,255,255,0.5); box-shadow:0 25px 50px rgba(0,0,0,0.25);">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+                    <h3 style="margin:0; font-weight:800; color:#0f172a; font-size:1.4rem;"><i class="fa-brands fa-instagram" style="color:#e1306c;"></i> Compartir Aventura UGC</h3>
+                    <button type="button" onclick="cerrarModalCompartirRuta()" style="background:none; border:none; font-size:1.3rem; color:#64748b; cursor:pointer;"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <p style="color:#64748b; font-size:0.95rem; margin-bottom:20px;">Publica tu reporte telemetrico para acumular puntos canjeables por hardware CUDI y saldo veterinario.</p>
+                <div style="background:#f8fafc; border-radius:16px; padding:15px; margin-bottom:20px; border:1px solid #e2e8f0; text-align:center;">
+                    <div style="font-weight:800; color:#0f172a; margin-bottom:5px;">Ruta a publicar: <span id="modal-ugc-ruta-nombre" style="color:#0284c7;">Ciutadella Loop</span></div>
+                    <div style="font-size:0.85rem; color:#64748b;">Distancia: <strong id="modal-ugc-dist">2.4 km</strong> | Estrés canino: <strong style="color:#10b981;">Bajo (98 bpm)</strong></div>
+                </div>
+                <div style="margin-bottom:20px;">
+                    <label style="display:block; font-size:0.85rem; font-weight:700; color:#475569; margin-bottom:6px;">Hashtag Requerido</label>
+                    <input type="text" readonly value="#AventurasSinSustosCUDI #SmartCollar" style="width:100%; padding:10px 14px; border-radius:12px; border:1px solid #cbd5e1; background:#f1f5f9; font-weight:600; color:#0f172a;">
+                </div>
+                <div style="display:flex; gap:10px;">
+                    <button type="button" onclick="confirmarPublicacionUGC()" style="flex:1; background:linear-gradient(135deg, #38bdf8, #0284c7); color:white; border:none; padding:12px; border-radius:12px; font-weight:800; cursor:pointer;">
+                        <i class="fa-solid fa-paper-plane"></i> Publicar y Sumar Puntos
+                    </button>
+                    <button type="button" onclick="cerrarModalCompartirRuta()" style="background:#e2e8f0; color:#475569; border:none; padding:12px 18px; border-radius:12px; font-weight:700; cursor:pointer;">
+                        Cancelar
+                    </button>
                 </div>
             </div>
         </div>
+
+        <!-- MODAL 2: Crear / Grabar Nueva Ruta -->
+        <div id="modal-crear-ruta" style="display:none; position:fixed; inset:0; z-index:99999; background:rgba(15,23,42,0.7); backdrop-filter:blur(8px); align-items:center; justify-content:center; padding:20px;">
+            <div style="background:rgba(255,255,255,0.95); backdrop-filter:blur(24px); border-radius:24px; padding:30px; max-width:480px; width:100%; border:1px solid rgba(255,255,255,0.5); box-shadow:0 25px 50px rgba(0,0,0,0.25);">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+                    <h3 style="margin:0; font-weight:800; color:#0f172a; font-size:1.4rem;"><i class="fa-solid fa-route" style="color:#10b981;"></i> Crear Nueva Ruta</h3>
+                    <button type="button" onclick="cerrarModalCrearRuta()" style="background:none; border:none; font-size:1.3rem; color:#64748b; cursor:pointer;"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <p style="color:#64748b; font-size:0.95rem; margin-bottom:20px;">Graba el paseo de hoy con tu collar para que otros dueños de mascotas en Barcelona puedan disfrutarlo con seguridad.</p>
+                <div style="margin-bottom:15px;">
+                    <label style="display:block; font-size:0.85rem; font-weight:700; color:#475569; margin-bottom:6px;">Nombre de la Ruta</label>
+                    <input type="text" id="input-nueva-ruta-nombre" placeholder="Ej. Jardins de Mossèn Costa i Llobera" style="width:100%; padding:10px 14px; border-radius:12px; border:1px solid #cbd5e1; font-weight:600; color:#0f172a;">
+                </div>
+                <div style="margin-bottom:20px;">
+                    <label style="display:block; font-size:0.85rem; font-weight:700; color:#475569; margin-bottom:6px;">Tipo de Terreno</label>
+                    <select id="input-nueva-ruta-tipo" style="width:100%; padding:10px 14px; border-radius:12px; border:1px solid #cbd5e1; font-weight:600; color:#0f172a;">
+                        <option value="urbano">Parque Urbano con Áreas Verdes</option>
+                        <option value="montana">Senderismo Montaña / Mixto</option>
+                        <option value="playa">Paseo Marítimo / Playa Pet Friendly</option>
+                    </select>
+                </div>
+                <div style="display:flex; gap:10px;">
+                    <button type="button" onclick="guardarNuevaRuta()" style="flex:1; background:linear-gradient(135deg, #10b981, #059669); color:white; border:none; padding:12px; border-radius:12px; font-weight:800; cursor:pointer;">
+                        <i class="fa-solid fa-satellite"></i> Iniciar Grabación GPS
+                    </button>
+                    <button type="button" onclick="cerrarModalCrearRuta()" style="background:#e2e8f0; color:#475569; border:none; padding:12px 18px; border-radius:12px; font-weight:700; cursor:pointer;">
+                        Cancelar
+                    </button>
+                </div>
+            </div>
+        </div>
+
     </section>
+
+    <!-- ESTILOS Y COMPORTAMIENTO INTERACTIVO DEL MAPA COLABORATIVO -->
+    <style>
+        /* Estilos Apple Glass para Tarjetas y Controles del Mapa */
+        .cudi-glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .cudi-glass-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 18px 35px rgba(0, 0, 0, 0.08);
+            border-color: rgba(203, 213, 225, 1);
+        }
+
+        .cudi-glass-pill {
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 30px;
+        }
+
+        .cudi-route-btn {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #e2e8f0;
+            padding: 9px 18px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #475569;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+        }
+        .cudi-route-btn:hover {
+            border-color: #cbd5e1;
+            transform: translateY(-2px);
+        }
+        .cudi-route-btn.active {
+            background: #0f172a;
+            color: #ffffff;
+            border-color: #0f172a;
+            box-shadow: 0 6px 20px rgba(15, 23, 42, 0.25);
+        }
+        .cudi-route-btn .route-badge {
+            background: rgba(0, 0, 0, 0.06);
+            color: inherit;
+            font-size: 0.75rem;
+            padding: 2px 7px;
+            border-radius: 10px;
+        }
+        .cudi-route-btn.active .route-badge {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .cudi-layer-btn {
+            background: transparent;
+            border: none;
+            color: #94a3b8;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .cudi-layer-btn.active {
+            background: rgba(255, 255, 255, 0.25);
+            color: #ffffff;
+        }
+
+        .cudi-chip-status {
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 12px;
+            background: #ecfdf5;
+            color: #059669;
+            border: 1px solid #a7f3d0;
+        }
+        .cudi-counter-tag {
+            font-size: 0.78rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 12px;
+            background: #f0f9ff;
+            color: #0369a1;
+            border: 1px solid #bae6fd;
+        }
+        .cudi-progress-pill {
+            font-size: 0.78rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 12px;
+            background: #fffbeb;
+            color: #b45309;
+            border: 1px solid #fde68a;
+        }
+
+        .cudi-action-mini-btn {
+            background: #f1f5f9;
+            color: #0f172a;
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
+            padding: 8px 14px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s ease;
+        }
+        .cudi-action-mini-btn:hover {
+            background: #e2e8f0;
+            transform: translateY(-1px);
+        }
+
+        /* POI Markers en el Mapa */
+        .cudi-poi-marker {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.95);
+            color: #0f172a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+            border: 2px solid #ffffff;
+            cursor: pointer;
+            transform: translate(-50%, -50%);
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .cudi-poi-marker:hover {
+            transform: translate(-50%, -50%) scale(1.25);
+            background: #0f172a;
+            color: #ffffff;
+        }
+
+        @keyframes pulseRadar {
+            0% { transform: scale(0.95); opacity: 0.9; }
+            50% { transform: scale(1.15); opacity: 1; }
+            100% { transform: scale(0.95); opacity: 0.9; }
+        }
+        @keyframes pingLive {
+            75%, 100% { transform: scale(2); opacity: 0; }
+        }
+    </style>
+
+    <script>
+        // DATOS DE LAS 4 RUTAS EN BARCELONA CON GEOMETRÍA SVG Y POIS
+        const CUDI_COLAB_ROUTES = {
+            ciutadella: {
+                id: 'ciutadella',
+                name: 'Ciutadella Loop',
+                dist: '2.4 km',
+                distNum: 2.4,
+                time: '28 min',
+                bpm: 96,
+                status: 'Óptimo',
+                statusColor: '#10b981',
+                svgPath: 'M 220,680 Q 320,620 420,650 T 620,580 T 780,480',
+                strokeColor: 'url(#route-gradient-ciutadella)',
+                glowColor: '#10b981',
+                start: { x: 220, y: 680 },
+                end: { x: 780, y: 480 },
+                pois: [
+                    { x: 42, y: 62, icon: 'fa-faucet-drip', title: '💧 Fuente de Agua Canina', desc: 'Bebedero de caudal constante revisado hoy.', color: '#0284c7' },
+                    { x: 62, y: 58, icon: 'fa-shield-dog', title: '🐾 Área Pipicán Seguro', desc: 'Espacio cerrado con doble puerta y sombra.', color: '#10b981' },
+                    { x: 78, y: 48, icon: 'fa-truck-medical', title: '🏥 Clínica Veterinaria 24h', desc: 'Socio de la Red CUDI a 3 min.', color: '#ef4444' }
+                ]
+            },
+            parqueguell: {
+                id: 'parqueguell',
+                name: 'Parc Güell Subida',
+                dist: '3.8 km',
+                distNum: 3.8,
+                time: '45 min',
+                bpm: 112,
+                status: 'Moderado',
+                statusColor: '#f59e0b',
+                svgPath: 'M 180,720 C 260,600 350,550 500,480 S 700,420 820,310',
+                strokeColor: 'url(#route-gradient-parqueguell)',
+                glowColor: '#f59e0b',
+                start: { x: 180, y: 720 },
+                end: { x: 820, y: 310 },
+                pois: [
+                    { x: 35, y: 56, icon: 'fa-tree', title: '🌿 Zona Sombra y Descanso', desc: 'Arboleda fresca para bajar pulsaciones.', color: '#10b981' },
+                    { x: 50, y: 48, icon: 'fa-faucet-drip', title: '💧 Fuente del Mirador', desc: 'Bebedero público con plato canino.', color: '#0284c7' },
+                    { x: 82, y: 31, icon: 'fa-award', title: '🏁 Cima Parc Güell', desc: 'Mirador panorámico y punto de fotos #CUDI.', color: '#f59e0b' }
+                ]
+            },
+            maritim: {
+                id: 'maritim',
+                name: 'Passeig Marítim',
+                dist: '4.1 km',
+                distNum: 4.1,
+                time: '50 min',
+                bpm: 92,
+                status: 'Brisa Marina / Relajado',
+                statusColor: '#38bdf8',
+                svgPath: 'M 150,780 Q 300,740 500,690 T 750,590 T 880,510',
+                strokeColor: 'url(#route-gradient-maritim)',
+                glowColor: '#38bdf8',
+                start: { x: 150, y: 780 },
+                end: { x: 880, y: 510 },
+                pois: [
+                    { x: 30, y: 74, icon: 'fa-umbrella-beach', title: '🏖️ Playa Canina de Llevant', desc: 'Acceso regulado y duchas caninas.', color: '#38bdf8' },
+                    { x: 50, y: 69, icon: 'fa-faucet-drip', title: '💧 Fuente del Espigón', desc: 'Agua fresca para hidratación continua.', color: '#0284c7' },
+                    { x: 75, y: 59, icon: 'fa-shield-dog', title: '🐾 Zona Social Canina', desc: 'Punto de encuentro de la comunidad CUDI.', color: '#10b981' }
+                ]
+            },
+            collserola: {
+                id: 'collserola',
+                name: 'Collserola Trail',
+                dist: '5.6 km',
+                distNum: 5.6,
+                time: '1h 15m',
+                bpm: 120,
+                status: 'Cardio Desafiante',
+                statusColor: '#8b5cf6',
+                svgPath: 'M 160,820 Q 280,680 400,520 T 650,380 T 860,250',
+                strokeColor: 'url(#route-gradient-collserola)',
+                glowColor: '#8b5cf6',
+                start: { x: 160, y: 820 },
+                end: { x: 860, y: 250 },
+                pois: [
+                    { x: 28, y: 68, icon: 'fa-triangle-exclamation', title: '⚠️ Precaución Jabalíes', desc: 'Zona natural; mantén el collar CUDI en modo alerta.', color: '#ef4444' },
+                    { x: 40, y: 52, icon: 'fa-faucet-drip', title: '💧 Font de la Budellera', desc: 'Manantial de montaña natural y sombra densa.', color: '#0284c7' },
+                    { x: 65, y: 38, icon: 'fa-mountain', title: '⛰️ Mirador Carretera de les Aigües', desc: 'Excelente ventilación y vistas a toda Barcelona.', color: '#8b5cf6' }
+                ]
+            }
+        };
+
+        let rutaActualId = 'ciutadella';
+        let simInterval = null;
+        let simProgress = 0;
+        let animFrameId = null;
+
+        // Selección de Ruta interactiva
+        function seleccionarRutaColab(routeId) {
+            const data = CUDI_COLAB_ROUTES[routeId];
+            if (!data) return;
+            rutaActualId = routeId;
+
+            // Actualizar botones de selector
+            document.querySelectorAll('.cudi-route-btn').forEach(btn => {
+                if (btn.getAttribute('data-route') === routeId) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+
+            // Actualizar SVG de la Ruta
+            const svgPath = document.getElementById('svg-route-path');
+            const svgPathGlow = document.getElementById('svg-route-path-glow');
+            const startPin = document.getElementById('svg-start-pin');
+            const endPin = document.getElementById('svg-end-pin');
+
+            if (svgPath) {
+                svgPath.setAttribute('d', data.svgPath);
+                svgPath.setAttribute('stroke', data.strokeColor);
+            }
+            if (svgPathGlow) {
+                svgPathGlow.setAttribute('d', data.svgPath);
+                svgPathGlow.setAttribute('stroke', data.glowColor);
+            }
+            if (startPin) {
+                startPin.setAttribute('cx', data.start.x);
+                startPin.setAttribute('cy', data.start.y);
+            }
+            if (endPin) {
+                endPin.setAttribute('cx', data.end.x);
+                endPin.setAttribute('cy', data.end.y);
+            }
+
+            // Actualizar POIs en pantalla
+            const poiContainer = document.getElementById('cudi-poi-container');
+            if (poiContainer) {
+                let poisHtml = '';
+                data.pois.forEach(p => {
+                    poisHtml += `
+                        <div class="cudi-poi-marker" style="top:${p.y}%; left:${p.x}%; pointer-events:auto;" onclick="mostrarPoiTooltip(event, '${p.title}', '${p.desc}', '${p.color}')">
+                            <i class="fa-solid ${p.icon}" style="color:${p.color};"></i>
+                        </div>
+                    `;
+                });
+                poiContainer.innerHTML = poisHtml;
+            }
+
+            // Actualizar Telemetría HUD
+            const hudRouteName = document.getElementById('hud-route-name');
+            const hudDist = document.getElementById('hud-metric-dist');
+            const hudTime = document.getElementById('hud-metric-time');
+            const hudBpm = document.getElementById('hud-metric-bpm');
+            const hudStatus = document.getElementById('hud-status-badge');
+
+            if (hudRouteName) hudRouteName.textContent = data.name;
+            if (hudDist) hudDist.innerHTML = `${data.dist.split(' ')[0]} <span style="font-size:0.7rem;">km</span>`;
+            if (hudTime) hudTime.innerHTML = `${data.time.split(' ')[0]} <span style="font-size:0.7rem;">min</span>`;
+            if (hudBpm) hudBpm.innerHTML = `${data.bpm} <span style="font-size:0.7rem;">bpm</span>`;
+            if (hudStatus) {
+                hudStatus.innerHTML = `<span style="width:6px; height:6px; background:${data.statusColor}; border-radius:50%;"></span> ${data.status}`;
+                hudStatus.style.borderColor = data.statusColor;
+            }
+
+            // Resetear Pin de la mascota a inicio
+            posicionarPetPinEn(data.start.x / 10, data.start.y / 10);
+            detenerSimulacion();
+
+            // Sincronizar Avatar con mascota activa si existe en localStorage
+            sincronizarAvatarMascotaColab();
+        }
+
+        // Posicionar Pin de Mascota en porcentaje (0-100)
+        function posicionarPetPinEn(pctX, pctY) {
+            const petPin = document.getElementById('cudi-pet-pin');
+            if (petPin) {
+                petPin.style.left = pctX + '%';
+                petPin.style.top = pctY + '%';
+            }
+        }
+
+        // Sincronizar Avatar desde localStorage (Luna, Rocky, Mia, etc.)
+        function sincronizarAvatarMascotaColab() {
+            try {
+                const storedPet = localStorage.getItem('cudi_active_pet') || localStorage.getItem('cudi_demo_pet');
+                const avatarImg = document.getElementById('pet-avatar-pin-img');
+                if (storedPet && avatarImg) {
+                    const parsed = JSON.parse(storedPet);
+                    if (parsed.photo || parsed.foto) {
+                        avatarImg.src = parsed.photo || parsed.foto;
+                    }
+                }
+            } catch(e) {}
+        }
+
+        // Simulación en Vivo a lo largo del SVG Path
+        function toggleSimulacionRuta() {
+            if (simInterval) {
+                detenerSimulacion();
+            } else {
+                iniciarSimulacion();
+            }
+        }
+
+        function iniciarSimulacion() {
+            const svgPath = document.getElementById('svg-route-path');
+            if (!svgPath) return;
+            const totalLen = svgPath.getTotalLength();
+            simProgress = 0;
+
+            const btnText = document.getElementById('text-sim-btn');
+            const btnIcon = document.getElementById('icon-sim-btn');
+            const chipStatus = document.getElementById('chip-estado-gps');
+
+            if (btnText) btnText.textContent = 'Pausar Simulación';
+            if (btnIcon) btnIcon.className = 'fa-solid fa-pause';
+            if (chipStatus) {
+                chipStatus.textContent = 'GPS Transmitiendo';
+                chipStatus.style.background = '#fef3c7';
+                chipStatus.style.color = '#d97706';
+                chipStatus.style.borderColor = '#fcd34d';
+            }
+
+            const data = CUDI_COLAB_ROUTES[rutaActualId];
+            const baseBpm = data.bpm;
+
+            simInterval = setInterval(() => {
+                simProgress += 0.008;
+                if (simProgress > 1) simProgress = 0;
+
+                const pt = svgPath.getPointAtLength(simProgress * totalLen);
+                // Mapear punto SVG (0-1000) a % de pantalla (0-100)
+                posicionarPetPinEn(pt.x / 10, pt.y / 10);
+
+                // Fluctación realista de telemetría HUD
+                const currentDist = (data.distNum * simProgress).toFixed(1);
+                const currentBpm = Math.floor(baseBpm + Math.sin(simProgress * 15) * 6);
+                
+                const pinBpm = document.getElementById('pin-bpm-val');
+                const hudDist = document.getElementById('hud-metric-dist');
+                const hudBpm = document.getElementById('hud-metric-bpm');
+
+                if (pinBpm) pinBpm.textContent = currentBpm;
+                if (hudBpm) hudBpm.innerHTML = `${currentBpm} <span style="font-size:0.7rem;">bpm</span>`;
+                if (hudDist) hudDist.innerHTML = `${currentDist} <span style="font-size:0.7rem;">km</span>`;
+
+            }, 40);
+        }
+
+        function detenerSimulacion() {
+            if (simInterval) {
+                clearInterval(simInterval);
+                simInterval = null;
+            }
+            const btnText = document.getElementById('text-sim-btn');
+            const btnIcon = document.getElementById('icon-sim-btn');
+            const chipStatus = document.getElementById('chip-estado-gps');
+
+            if (btnText) btnText.textContent = 'Simular Trazado en Vivo';
+            if (btnIcon) btnIcon.className = 'fa-solid fa-play';
+            if (chipStatus) {
+                chipStatus.textContent = 'Listo para Trazar';
+                chipStatus.style.background = '#ecfdf5';
+                chipStatus.style.color = '#059669';
+                chipStatus.style.borderColor = '#a7f3d0';
+            }
+        }
+
+        // Cambio de capas de mapa (Satélite, Vectorial, Calor)
+        function cambiarCapaMapa(capa) {
+            document.querySelectorAll('.cudi-layer-btn').forEach(b => b.classList.remove('active'));
+            const btn = document.getElementById(`btn-layer-${capa}`);
+            if (btn) btn.classList.add('active');
+
+            const bgImg = document.getElementById('cudi-map-bg-img');
+            const heatOverlay = document.getElementById('cudi-heatmap-overlay');
+
+            if (capa === 'sat') {
+                if (bgImg) bgImg.style.filter = 'brightness(0.88) contrast(1.05)';
+                if (heatOverlay) heatOverlay.style.opacity = '0';
+            } else if (capa === 'vec') {
+                if (bgImg) bgImg.style.filter = 'brightness(1.15) contrast(0.95) saturate(0.2)';
+                if (heatOverlay) heatOverlay.style.opacity = '0';
+            } else if (capa === 'heat') {
+                if (bgImg) bgImg.style.filter = 'brightness(0.65) contrast(1.2) saturate(0.5)';
+                if (heatOverlay) heatOverlay.style.opacity = '0.9';
+            }
+        }
+
+        // Tooltip Interactivo para POIs
+        function mostrarPoiTooltip(e, title, desc, color) {
+            e.stopPropagation();
+            const tooltip = document.getElementById('cudi-poi-tooltip');
+            const titleEl = document.getElementById('poi-tooltip-title');
+            const descEl = document.getElementById('poi-tooltip-desc');
+            
+            if (!tooltip) return;
+            titleEl.innerHTML = title;
+            titleEl.style.color = color || '#fff';
+            descEl.textContent = desc;
+
+            const rect = e.currentTarget.getBoundingClientRect();
+            const parentRect = document.getElementById('cudi-map-viewport').getBoundingClientRect();
+
+            const x = rect.left - parentRect.left + 15;
+            const y = rect.top - parentRect.top;
+
+            tooltip.style.left = x + 'px';
+            tooltip.style.top = y + 'px';
+            tooltip.style.opacity = '1';
+            tooltip.style.pointerEvents = 'auto';
+        }
+
+        function cerrarPoiTooltip() {
+            const tooltip = document.getElementById('cudi-poi-tooltip');
+            if (tooltip) {
+                tooltip.style.opacity = '0';
+                tooltip.style.pointerEvents = 'none';
+            }
+        }
+
+        function mostrarInfoMascotaPin() {
+            alert('🐾 Telemetría en vivo del Smart Collar activa. Conectado vía LTE-M y Bluetooth 5.4. Estado físico: Saludable.');
+        }
+
+        function centrarEnMascota() {
+            const petPin = document.getElementById('cudi-pet-pin');
+            if (petPin) {
+                petPin.style.transform = 'translate(-50%, -50%) scale(1.4)';
+                setTimeout(() => {
+                    petPin.style.transform = 'translate(-50%, -50%) scale(1)';
+                }, 300);
+            }
+        }
+
+        function iniciarRutaGPS() {
+            const data = CUDI_COLAB_ROUTES[rutaActualId];
+            alert(`🚀 ¡Ruta "${data.name}" iniciada en tu Smart Collar CUDI!\n\nEl seguimiento GPS en tiempo real y el monitoreo de temperatura y ritmo cardíaco están registrándose.`);
+            iniciarSimulacion();
+        }
+
+        // Gamificación Recompensa
+        function reclamarRecompensaRuta() {
+            const barra = document.getElementById('barra-progreso-recompensa');
+            const txt = document.getElementById('progreso-porcentaje-txt');
+            const badge = document.getElementById('badge-progreso-meta');
+            const btn = document.getElementById('btn-reclamar-premio');
+
+            if (barra) barra.style.width = '100%';
+            if (txt) { txt.textContent = '100% ¡Completado!'; txt.style.color = '#10b981'; }
+            if (badge) { badge.textContent = '3 / 3 Rutas'; badge.style.background = '#ecfdf5'; badge.style.color = '#059669'; }
+            if (btn) {
+                btn.innerHTML = '<i class="fa-solid fa-check"></i> ¡Recompensa Reclamada!';
+                btn.style.background = '#10b981';
+                btn.disabled = true;
+            }
+
+            alert('🎉 ¡Felicitaciones! Has completado el Desafío CUDI Explorer de Barcelona.\n\nSe ha acreditado 1 Mes de Suscripción CUDI Care y un vale de 25€ para accesorios o tu clínica veterinaria.');
+        }
+
+        // Modales UGC y Crear Ruta
+        function abrirModalCompartirRuta() {
+            const data = CUDI_COLAB_ROUTES[rutaActualId];
+            document.getElementById('modal-ugc-ruta-nombre').textContent = data.name;
+            document.getElementById('modal-ugc-dist').textContent = data.dist;
+            document.getElementById('modal-compartir-ugc').style.display = 'flex';
+        }
+        function cerrarModalCompartirRuta() {
+            document.getElementById('modal-compartir-ugc').style.display = 'none';
+        }
+        function confirmarPublicacionUGC() {
+            const countEl = document.getElementById('ugc-count-val');
+            if (countEl) {
+                let current = parseInt(countEl.textContent.replace(',', '')) || 1428;
+                countEl.textContent = (current + 1).toLocaleString();
+            }
+            cerrarModalCompartirRuta();
+            alert('📸 ¡Foto compartida con éxito con el hashtag #AventurasSinSustosCUDI!\nHas sumado +150 puntos a tu cuenta CUDI.');
+        }
+
+        function abrirModalCrearRuta() {
+            document.getElementById('modal-crear-ruta').style.display = 'flex';
+        }
+        function cerrarModalCrearRuta() {
+            document.getElementById('modal-crear-ruta').style.display = 'none';
+        }
+        function guardarNuevaRuta() {
+            const name = document.getElementById('input-nueva-ruta-nombre').value.trim() || 'Mi Nueva Ruta CUDI';
+            cerrarModalCrearRuta();
+            alert(`🛰️ ¡Grabación iniciada para "${name}"!\nEl Smart Collar registrará automáticamente elevación, velocidad, zonas de sombra y ritmo cardíaco.`);
+        }
+
+        // Ticker Rotativo de Comunidad
+        const CUDI_TICKER_MESSAGES = [
+            "<strong>Carlos & Max</strong> acaban de completar <em>Ciutadella Loop</em> (+120 pts CUDI) hace 2 min.",
+            "<strong>Laura & Luna</strong> marcaron una nueva <em>Fuente de Agua Fresca</em> en Parc Güell.",
+            "<strong>Marc & Thor</strong> registraron 5.6 km en <em>Collserola Trail</em> sin estrés cardíaco.",
+            "<strong>Clínica Vet Diagonal</strong> validó 3 zonas seguras en el <em>Passeig Marítim</em>.",
+            "<strong>Elena & Mia</strong> desbloquearon la insignia <em>Explorador Costero CUDI</em>."
+        ];
+        let tickerIdx = 0;
+        setInterval(() => {
+            tickerIdx = (tickerIdx + 1) % CUDI_TICKER_MESSAGES.length;
+            const tickerEl = document.getElementById('cudi-live-feed-ticker');
+            if (tickerEl) {
+                tickerEl.style.opacity = '0';
+                setTimeout(() => {
+                    tickerEl.innerHTML = CUDI_TICKER_MESSAGES[tickerIdx];
+                    tickerEl.style.opacity = '1';
+                }, 300);
+            }
+        }, 4500);
+
+        // Inicializar al cargar
+        document.addEventListener('DOMContentLoaded', () => {
+            seleccionarRutaColab('ciutadella');
+        });
+    </script>
 
     <!-- ESTRATEGIAS SOCIAL MEDIA UGC -->
     <section id="como-participar" style="background: #f8fafc; padding: 100px 0; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
