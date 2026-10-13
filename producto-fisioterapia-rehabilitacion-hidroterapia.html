@@ -11,228 +11,162 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        .steam-showcase-grid {
-            display: grid;
-            grid-template-columns: 1.35fr 0.9fr;
-            gap: 36px;
-            margin-bottom: 48px;
-        }
-        @media (max-width: 1024px) {
-            .steam-showcase-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        .steam-main-img-box {
-            height: 480px;
-            border-radius: 24px;
-            overflow: hidden;
-            position: relative;
-            box-shadow: 0 20px 45px -10px rgba(15, 23, 42, 0.12);
-            border: 1px solid rgba(255, 255, 255, 0.9);
-        }
-        .steam-thumbs-strip {
-            display: flex;
-            gap: 14px;
-            margin-top: 16px;
-        }
-        .steam-thumb {
-            width: 90px;
-            height: 70px;
-            border-radius: 14px;
-            overflow: hidden;
-            cursor: pointer;
-            border: 2px solid transparent;
-            transition: all 0.25s ease;
-            box-shadow: 0 4px 10px rgba(15, 23, 42, 0.05);
-        }
-        .steam-thumb.active, .steam-thumb:hover {
-            border-color: #0284c7;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 16px rgba(2, 132, 199, 0.25);
-        }
-        .steam-tag-pill {
-            display: inline-block;
-            background: rgba(2, 132, 199, 0.08);
-            border: 1px solid rgba(2, 132, 199, 0.2);
-            color: #0369a1;
-            font-size: 0.74rem;
-            font-weight: 700;
-            padding: 4px 10px;
-            border-radius: 50px;
-            margin: 0 4px 6px 0;
-        }
-        .steam-nav-tabs {
-            display: flex;
-            gap: 12px;
-            overflow-x: auto;
-            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
-            padding-bottom: 12px;
-            margin-bottom: 32px;
-        }
-        .steam-tab-btn {
-            background: none;
-            border: none;
-            padding: 10px 18px;
-            border-radius: 50px;
-            font-size: 0.88rem;
-            font-weight: 800;
-            color: #64748b;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            text-decoration: none;
-            white-space: nowrap;
-        }
-        .steam-tab-btn:hover, .steam-tab-btn.active {
-            background: rgba(255, 255, 255, 0.9);
-            color: #0284c7;
-            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
-        }
-        .steam-rel-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 20px;
-        }
-    </style>
 </head>
 <body style="background: #f8fafc; color: #0f172a; font-family: 'Plus Jakarta Sans', sans-serif;">
 
-    <!-- TOP HEADER -->
-    <header class="navbar" style="position: sticky; top: 0; z-index: 1000;">
-        <div class="nav-container" style="max-width: 1280px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 14px 24px;">
-            <a href="index.html" class="logo" style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
-                <img src="logo.jpeg" alt="CUDI Logo" style="height: 38px; border-radius: 10px;">
+
+    <!-- Navegación Estilo "Floating Island" Apple Liquid Glass -->
+    <nav class="navbar-island" style="position: sticky; top: 16px; z-index: 1000; padding: 0 16px; margin-bottom: 24px;">
+        <div class="nav-capsule" style="max-width: 1280px; margin: 0 auto; background: rgba(255, 255, 255, 0.88); backdrop-filter: blur(28px) saturate(190%); -webkit-backdrop-filter: blur(28px) saturate(190%); border: 1px solid rgba(255, 255, 255, 0.6); border-radius: 50px; padding: 8px 24px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 12px 36px rgba(15, 23, 42, 0.08), 0 2px 6px rgba(0,0,0,0.04);">
+            <a href="index.html" class="logo" style="display:flex; align-items:center; text-decoration:none;">
+                <img src="logo.jpeg" alt="CUDI" style="height:44px; width:auto; border-radius: 10px;" decoding="async">
             </a>
-            <nav class="nav-menu" style="display: flex; gap: 20px; align-items: center;">
-                <a href="index.html" class="nav-link">Inicio</a>
-                <a href="index.html#store-grid" class="nav-link active">Tienda</a>
-                <a href="planes-suscripcion-bienestar-animal.html" class="nav-link">Planes</a>
-                <a href="red-socios-clinicas-veterinarias.html" class="nav-link">Partners</a>
-                <a href="simulador-gemelo-digital-telemetria.html" class="nav-link">Demo App</a>
-            </nav>
-            <div style="display: flex; align-items: center; gap: 14px;">
-                <button type="button" class="btn-primary" onclick="if(typeof openAuthModal==='function') openAuthModal(); else window.location.href='index.html#login';" style="padding: 8px 18px; border-radius: 50px; font-size: 0.85rem;">
-                    <i class="fa-solid fa-paw"></i> Iniciar Sesión
+            <div class="nav-search-island" style="display: flex; align-items: center; background: rgba(241, 245, 249, 0.85); border: 1px solid rgba(226, 232, 240, 0.9); border-radius: 50px; padding: 6px 16px; width: 340px; margin: 0 20px; transition: all 0.25s ease;">
+                <i class="fa-solid fa-magnifying-glass" style="color:#0284c7; font-size:0.9rem; margin-right: 10px;"></i>
+                <input type="text" placeholder="¿Qué necesita tu compañero hoy?" style="border: none; background: transparent; outline: none; width: 100%; font-size: 0.85rem; font-family: inherit; color: #0f172a;">
+            </div>
+            <div class="nav-right-island" style="display: flex; align-items: center; gap: 20px;">
+                <ul class="nav-links-island" style="display: flex; list-style: none; gap: 20px; margin: 0; padding: 0; font-size: 0.88rem; font-weight: 700;">
+                    <li><a href="index.html" style="color: #475569; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#0284c7'" onmouseout="this.style.color='#475569'">Inicio</a></li>
+                    <li><a href="smart-collar-cudi-gps.html" style="color: #475569; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#0284c7'" onmouseout="this.style.color='#475569'">Smart Collar</a></li>
+                    <li><a href="planes-suscripcion-bienestar-animal.html" style="color: #475569; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#0284c7'" onmouseout="this.style.color='#475569'">Planes</a></li>
+                    <li><a href="index.html#store-grid" style="color: #475569; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#0284c7'" onmouseout="this.style.color='#475569'">Tienda</a></li>
+                    <li><a href="red-socios-clinicas-veterinarias.html" style="color: #475569; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#0284c7'" onmouseout="this.style.color='#475569'">Partners</a></li>
+                    <li><a href="simulador-gemelo-digital-telemetria.html" style="color: #0284c7; text-decoration: none; font-weight: 800;">Demo App</a></li>
+                </ul>
+                <button type="button" class="btn-primary" onclick="if(typeof openAuthModal==='function') openAuthModal(); else window.location.href='index.html#login';" style="padding: 7px 18px; border-radius: 50px; font-size: 0.82rem; font-weight: 700; background: linear-gradient(135deg, #0284c7, #0369a1); color: white; border: none; cursor: pointer; display: flex; align-items: center; gap: 8px;">
+                    <i class="fa-solid fa-paw"></i> <span>Entrar</span>
                 </button>
-                <button type="button" onclick="if(typeof toggleCart==='function') toggleCart();" class="apple-glass-card" style="width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; border: 1px solid rgba(226, 232, 240, 0.9);" title="Mi Cesta">
-                    <i class="fa-solid fa-cart-shopping" style="color: #0284c7;"></i>
-                </button>
+                <div class="cart-trigger-island" onclick="if(typeof toggleCart==='function') toggleCart();" style="position:relative; display:flex; align-items:center; justify-content:center; cursor:pointer; width:40px; height:40px; background: rgba(241, 245, 249, 0.9); border-radius: 50%; border: 1px solid rgba(226, 232, 240, 0.9);" title="Mi Cesta">
+                    <i class="fa-solid fa-cart-shopping" style="font-size:1.05rem; color:#0284c7;"></i>
+                    <span class="cart-badge" id="global-cart-badge" style="position:absolute; top:-4px; right:-4px; background:#0284c7; color:white; font-size:0.65rem; font-weight:800; border-radius:50px; width:18px; height:18px; display:flex; align-items:center; justify-content:center; border: 2px solid white;">0</span>
+                </div>
+                <button class="menu-trigger-mobile" onclick="if(typeof toggleMobileMenu==='function') toggleMobileMenu();" style="display: none; background: transparent; border: none; font-size: 1.2rem; color: #0f172a; cursor: pointer;"><i class="fa-solid fa-bars-staggered"></i></button>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <!-- MAIN PRODUCT WRAPPER -->
-    <div style="max-width: 1280px; margin: 0 auto; padding: 28px 24px 80px;">
-        
-        <!-- BREADCRUMB -->
-        <nav style="font-size: 0.82rem; color: #64748b; margin-bottom: 20px; display: flex; gap: 8px; align-items: center;">
-            <a href="index.html" style="color: #64748b; text-decoration: none;">Inicio</a>
-            <span>/</span>
-            <a href="index.html#store-grid" style="color: #64748b; text-decoration: none;">Catálogo Omnicanal</a>
-            <span>/</span>
-            <span style="color: #0284c7; font-weight: 700;">Veterinaria & Salud 24/7</span>
-            <span>/</span>
-            <span style="color: #0f172a; font-weight: 700;">Sesión de Fisioterapia & Hidroterapia Subacuática Canina</span>
+    <!-- PANEL LATERAL CARRITO (SIDE-CART) -->
+    <div class="cart-overlay" id="cart-overlay" onclick="if(typeof closeAllPanels==='function') closeAllPanels();" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(15,23,42,0.4); backdrop-filter:blur(4px); z-index:1001;"></div>
+    <div class="side-cart" id="side-cart">
+        <div class="cart-header" style="display:flex; justify-content:space-between; align-items:center; padding:20px; border-bottom:1px solid #e2e8f0;">
+            <h3 style="margin:0; font-size:1.15rem; font-weight:800; color:#0f172a;"><i class="fa-solid fa-bag-shopping" style="color:#0284c7;"></i> Tu Cesta CUDI</h3>
+            <button class="close-cart" aria-label="Cerrar Carrito" onclick="if(typeof toggleCart==='function') toggleCart();" style="background:none; border:none; font-size:1.2rem; cursor:pointer; color:#64748b;"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="cart-items" id="cart-items-container" style="padding:20px; flex:1; overflow-y:auto;"></div>
+        <div class="cart-footer" style="padding:20px; border-top:1px solid #e2e8f0; background:#f8fafc;">
+            <div class="cart-total" style="display:flex; justify-content:space-between; font-weight:800; font-size:1.1rem; margin-bottom:14px; color:#0f172a;">
+                <span>Total Estimado:</span>
+                <span id="cart-total-price">0.00 €</span>
+            </div>
+            <a href="contratar-plan-premium-cudi.html" class="btn-primary" style="display:block; text-align:center; padding:14px; border-radius:12px; font-weight:800; text-decoration:none;">Procesar Pago Seguro <i class="fa-solid fa-lock"></i></a>
+        </div>
+    </div>
+
+
+    <!-- BREADCRUMB -->
+    <div class="container" style="max-width: 1280px; margin: 0 auto; padding: 0 24px 16px;">
+        <nav style="font-size: 0.82rem; color: #64748b; font-weight: 600;">
+            <a href="index.html" style="color: #64748b; text-decoration: none;">Inicio</a> / 
+            <a href="index.html#store-grid" style="color: #64748b; text-decoration: none;">Catálogo Omnicanal</a> / 
+            <a href="clinica.html" style="color: #64748b; text-decoration: none;">Veterinaria & Salud 24/7</a> / 
+            <span style="color: #0284c7; font-weight: 800;">Fisioterapia Canina & Hidro</span>
         </nav>
+    </div>
 
-        <!-- TITLE & HEADLINE -->
+    <!-- MAIN PRODUCT SHOWCASE (STEAM + APPLE GLASS) -->
+    <main class="container" style="max-width: 1280px; margin: 0 auto 50px; padding: 0 24px;">
+        
+        <!-- HEADER TITLE & BADGES -->
         <div style="margin-bottom: 24px;">
-            <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 8px;">
-                <span class="cudi-badge-glass" style="background: rgba(2, 132, 199, 0.12); color: #0284c7; font-weight: 800;">
-                    Recuperación Articular
+            <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 12px; flex-wrap: wrap;">
+                <span class="cudi-badge-glass" style="background: rgba(2, 132, 199, 0.1); color: #0284c7; font-weight: 800; font-size: 0.78rem;">
+                    <i class="fa-solid fa-water"></i> Recuperación Articular
                 </span>
-                <span class="cudi-badge-glass" style="background: rgba(16, 185, 129, 0.12); color: #065f46; font-weight: 800;">
+                <span class="cudi-badge-glass" style="background: rgba(16, 185, 129, 0.1); color: #059669; font-weight: 800; font-size: 0.78rem;">
                     🐶 Canino
                 </span>
-                <span class="cudi-badge-glass" style="color: #64748b;">
+                <span class="cudi-badge-glass" style="color: #64748b; font-size: 0.78rem;">
                     <i class="fa-solid fa-shield-halved"></i> Calidad Médica Certificada
                 </span>
             </div>
-            <h1 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 2.2rem; font-weight: 900; color: #0f172a; margin: 0; line-height: 1.2;">
+            <h1 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 2.5rem; font-weight: 800; color: #0f172a; margin: 0; line-height: 1.2;">
                 Sesión de Fisioterapia & Hidroterapia Subacuática Canina
             </h1>
         </div>
 
-        <!-- STEAM-STYLE 2-COLUMN SHOWCASE -->
-        <div class="steam-showcase-grid">
+        <!-- 2-COLUMN STEAM STAGE -->
+        <div class="steam-stage-grid" style="display: grid; grid-template-columns: 1.25fr 0.85fr; gap: 36px; align-items: start;">
             
-            <!-- LEFT: MEDIA SHOWCASE (62%) -->
+            <!-- LEFT: MEDIA GALLERY -->
             <div>
-                <div class="steam-main-img-box apple-glass-card">
-                    <img id="main-product-img" src="https://images.dog.ceo/breeds/pyrenees/n02111500_7080.jpg" alt="Sesión de Fisioterapia & Hidroterapia Subacuática Canina" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
-                    <div style="position: absolute; bottom: 16px; left: 16px; background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(12px); color: white; padding: 6px 14px; border-radius: 50px; font-size: 0.75rem; font-weight: 700;">
-                        <i class="fa-solid fa-camera"></i> Fotografía Clínica Homologada CUDI
+                <div class="steam-main-media apple-glass-card" style="border-radius: 28px; overflow: hidden; height: 460px; position: relative; margin-bottom: 16px; background: #0f172a;">
+                    <img id="steam-active-img" src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=1200&q=85" alt="Sesión de Fisioterapia & Hidroterapia Subacuática Canina" style="width: 100%; height: 100%; object-fit: cover; transition: opacity 0.3s ease;">
+                    <div style="position: absolute; bottom: 16px; left: 16px; background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(12px); color: white; padding: 6px 14px; border-radius: 50px; font-size: 0.75rem; font-weight: 700;">
+                        <i class="fa-solid fa-camera"></i> Fotografía Homologada CUDI
                     </div>
                 </div>
 
-                <!-- THUMBNAILS CAROUSEL -->
-                <div class="steam-thumbs-strip">
-                    <div class="steam-thumb active" onclick="switchMainImage('https://images.dog.ceo/breeds/pyrenees/n02111500_7080.jpg', this)">
-                        <img src="https://images.dog.ceo/breeds/pyrenees/n02111500_7080.jpg" alt="Vista 1" style="width: 100%; height: 100%; object-fit: cover;">
+                <!-- THUMBNAILS -->
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;">
+                    <div class="steam-thumb apple-glass-card active" onclick="switchSteamImage('https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=1200&q=85', this)" style="height: 100px; border-radius: 16px; overflow: hidden; cursor: pointer; border: 2px solid #0284c7;">
+                        <img src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=1200&q=85" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
-                    <div class="steam-thumb" onclick="switchMainImage('https://images.dog.ceo/breeds/beagle/n02088364_8871.jpg', this)">
-                        <img src="https://images.dog.ceo/breeds/beagle/n02088364_8871.jpg" alt="Vista 2" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div class="steam-thumb apple-glass-card" onclick="switchSteamImage('https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1200&q=85', this)" style="height: 100px; border-radius: 16px; overflow: hidden; cursor: pointer; border: 2px solid transparent;">
+                        <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1200&q=85" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
-                    <div class="steam-thumb" onclick="switchMainImage('https://images.dog.ceo/breeds/rottweiler/n02106550_148.jpg', this)">
-                        <img src="https://images.dog.ceo/breeds/rottweiler/n02106550_148.jpg" alt="Vista 3" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div class="steam-thumb apple-glass-card" onclick="switchSteamImage('https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85', this)" style="height: 100px; border-radius: 16px; overflow: hidden; cursor: pointer; border: 2px solid transparent;">
+                        <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                 </div>
             </div>
 
-            <!-- RIGHT: STEAM-STYLE METADATA & BUY BOX (38%) -->
-            <div class="apple-glass-card" style="padding: 28px; border-radius: 24px; display: flex; flex-direction: column; justify-content: space-between;">
-                <div>
-                    <!-- BRAND / DEV -->
-                    <div style="font-size: 0.82rem; font-weight: 800; color: #0284c7; margin-bottom: 6px;">
-                        <i class="fa-solid fa-building-circle-check"></i> Hospital Clínico Dual CUDI • Red Médica 24/7
+            <!-- RIGHT: STEAM BUY PANEL -->
+            <div class="apple-glass-card" style="border-radius: 28px; padding: 32px;">
+                
+                <div style="font-size: 0.85rem; font-weight: 800; color: #0284c7; margin-bottom: 8px;">
+                    <i class="fa-solid fa-building-circle-check"></i> Red Clínicas Partners CUDI
+                </div>
+
+                <div style="background: rgba(240, 253, 244, 0.8); border: 1px solid rgba(187, 247, 208, 0.9); border-radius: 14px; padding: 12px 16px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        <div style="font-size: 0.72rem; font-weight: 800; color: #166534; text-transform: uppercase; letter-spacing: 0.5px;">Reseñas de Dueños</div>
+                        <div style="font-size: 0.92rem; font-weight: 900; color: #15803d;">Extremadamente Positivas</div>
                     </div>
-
-                    <!-- STEAM REVIEWS BANNER -->
-                    <div style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: 14px; padding: 12px 16px; margin-bottom: 16px; display: flex; align-items: center; justify-content: space-between;">
-                        <div>
-                            <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 900; color: #065f46;">
-                                Reseñas de Dueños
-                            </div>
-                            <div style="font-size: 0.95rem; font-weight: 900; color: #047857;">
-                                Extremadamente Positivas
-                            </div>
-                        </div>
-                        <div style="text-align: right;">
-                            <div style="font-size: 1.15rem; font-weight: 900; color: #f59e0b;">★ 5.0</div>
-                            <div style="font-size: 0.72rem; color: #64748b; font-weight: 700;">180 opiniones</div>
-                        </div>
-                    </div>
-
-                    <!-- SYNOPSIS -->
-                    <p style="font-size: 0.9rem; color: #475569; line-height: 1.6; margin: 0 0 18px 0;">
-                        Cinta subacuática con agua termal climatizada, láser terapéutico clase IV y magnetoterapia para recuperar movilidad tras cirugías o artrosis.
-                    </p>
-
-                    <!-- COMMUNITY TAGS -->
-                    <div style="margin-bottom: 22px;">
-                        <div style="font-size: 0.76rem; font-weight: 800; color: #0f172a; margin-bottom: 8px;">Etiquetas del Ecosistema:</div>
-                        <span class="steam-tag-pill">Biometría 24/7</span> <span class="steam-tag-pill">Gemelo Digital</span> <span class="steam-tag-pill">Paz Mental</span> <span class="steam-tag-pill">Homologado</span> <span class="steam-tag-pill">Calidad Médica</span> 
+                    <div style="font-size: 1.1rem; font-weight: 900; color: #f59e0b;">
+                        ★ 5.0 <span style="font-size: 0.75rem; color: #64748b;">(110 opiniones)</span>
                     </div>
                 </div>
 
-                <!-- TRANSACTIONAL BUY BOX -->
-                <div style="background: rgba(255, 255, 255, 0.9); border: 1px solid rgba(226, 232, 240, 0.9); border-radius: 20px; padding: 20px; box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.05);">
-                    <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 14px;">
+                <p style="font-size: 0.94rem; color: #475569; line-height: 1.65; margin: 0 0 20px;">
+                    Cinta subacuática con agua termal climatizada, láser terapéutico clase IV y magnetoterapia para recuperar movilidad tras cirugías o artrosis.
+                </p>
+
+                <div style="margin-bottom: 24px;">
+                    <div style="font-size: 0.78rem; font-weight: 800; color: #0f172a; margin-bottom: 8px;">Etiquetas del Ecosistema:</div>
+                    <div><span class="steam-tag-pill" style="display:inline-block; padding:4px 10px; background:rgba(2,132,199,0.08); color:#0284c7; border:1px solid rgba(2,132,199,0.2); border-radius:50px; font-size:0.75rem; font-weight:700; margin: 0 4px 6px 0;">Biometría 24/7</span><span class="steam-tag-pill" style="display:inline-block; padding:4px 10px; background:rgba(2,132,199,0.08); color:#0284c7; border:1px solid rgba(2,132,199,0.2); border-radius:50px; font-size:0.75rem; font-weight:700; margin: 0 4px 6px 0;">Gemelo Digital</span><span class="steam-tag-pill" style="display:inline-block; padding:4px 10px; background:rgba(2,132,199,0.08); color:#0284c7; border:1px solid rgba(2,132,199,0.2); border-radius:50px; font-size:0.75rem; font-weight:700; margin: 0 4px 6px 0;">Paz Mental</span><span class="steam-tag-pill" style="display:inline-block; padding:4px 10px; background:rgba(2,132,199,0.08); color:#0284c7; border:1px solid rgba(2,132,199,0.2); border-radius:50px; font-size:0.75rem; font-weight:700; margin: 0 4px 6px 0;">Homologado</span><span class="steam-tag-pill" style="display:inline-block; padding:4px 10px; background:rgba(2,132,199,0.08); color:#0284c7; border:1px solid rgba(2,132,199,0.2); border-radius:50px; font-size:0.75rem; font-weight:700; margin: 0 4px 6px 0;">Calidad Médica</span></div>
+                </div>
+
+                <!-- PRICE & ACTIONS -->
+                <div style="background: rgba(248, 250, 252, 0.9); border: 1px solid rgba(226, 232, 240, 0.8); border-radius: 20px; padding: 22px; margin-bottom: 16px;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 18px;">
                         <div>
-                            <span style="font-size: 0.75rem; color: #64748b; font-weight: 700; display: block;">Precio Transaccional:</span>
-                            <span style="font-size: 2.1rem; font-weight: 900; color: #0284c7; line-height: 1;">50.00 €</span>
+                            <span style="font-size: 0.78rem; color: #64748b; font-weight: 700;">Precio Transaccional:</span>
+                            <div style="font-size: 2.2rem; font-weight: 900; color: #0284c7; line-height: 1;">
+                                50.00 €
+                            </div>
                         </div>
-                        <span style="background: #dcfce7; color: #166534; font-size: 0.76rem; font-weight: 800; padding: 4px 12px; border-radius: 50px;">
+                        <span class="cudi-badge-glass" style="background: rgba(16, 185, 129, 0.12); color: #059669; font-weight: 800; font-size: 0.78rem;">
                             <i class="fa-solid fa-truck-fast"></i> Envío 24/48h Gratis
                         </span>
                     </div>
 
-                    <!-- ACTION BUTTONS -->
                     <div style="display: flex; flex-direction: column; gap: 10px;">
-                        <button type="button" class="btn-primary" onclick="addToCart('Sesión de Fisioterapia & Hidroterapia Subacuática Canina', 50.0, 'https://images.dog.ceo/breeds/pyrenees/n02111500_7080.jpg'); toggleCart();" style="width: 100%; padding: 14px; font-size: 0.98rem; font-weight: 800; border-radius: 14px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; box-shadow: 0 10px 20px rgba(2, 132, 199, 0.25);">
+                        <button type="button" class="btn-primary" onclick="addToCart('Sesión de Fisioterapia & Hidroterapia Subacuática Canina', 50.0, 'https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=1200&q=85'); toggleCart();" style="width: 100%; padding: 14px; font-size: 0.98rem; font-weight: 800; border-radius: 14px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; box-shadow: 0 10px 20px rgba(2, 132, 199, 0.25);">
                             <i class="fa-solid fa-cart-shopping"></i> Añadir a mi Cesta (50.00 €)
                         </button>
-                        <button type="button" class="apple-glass-card" onclick="consultWithAI('Sesión de Fisioterapia & Hidroterapia Subacuática Canina')" style="width: 100%; padding: 12px; font-size: 0.86rem; font-weight: 800; border-radius: 14px; cursor: pointer; color: #0284c7; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                        <!-- ROCK SOLID AI COMPANION BUTTON (ZERO ALERTS) -->
+                        <button type="button" class="apple-glass-card" onclick="openCudiAiWithQuery('¿Es compatible Sesión de Fisioterapia & Hidroterapia Subacuática Canina con mi mascota y cuáles son sus beneficios específicos?')" style="width: 100%; padding: 12px; font-size: 0.86rem; font-weight: 800; border-radius: 14px; cursor: pointer; color: #0284c7; display: flex; align-items: center; justify-content: center; gap: 8px;">
                             <i class="fa-solid fa-wand-magic-sparkles"></i> Consultar Compatibilidad con IA
                         </button>
                     </div>
@@ -244,51 +178,44 @@
                 </div>
 
             </div>
+
         </div>
 
-        <!-- STEAM-STYLE SUB-NAV TABS -->
-        <nav class="steam-nav-tabs">
-            <a href="#sec-acerca" class="steam-tab-btn active">Acerca del Producto</a>
-            <a href="#sec-ficha" class="steam-tab-btn">Ficha Técnica & Dosis</a>
-            <a href="#sec-dictamen" class="steam-tab-btn">Dictamen Veterinario</a>
-            <a href="#sec-resenas" class="steam-tab-btn">Reseñas de Usuarios</a>
-            <a href="#sec-relacionados" class="steam-tab-btn">Productos Relacionados</a>
-        </nav>
-
-        <!-- SECTION: ACERCA DEL PRODUCTO -->
-        <section id="sec-acerca" class="apple-glass-card" style="padding: 36px; border-radius: 24px; margin-bottom: 32px;">
-            <h2 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.45rem; font-weight: 800; color: #0f172a; margin-top: 0; margin-bottom: 16px;">
-                <i class="fa-solid fa-circle-info" style="color: #0284c7;"></i> Acerca de este Producto
-            </h2>
-            <p style="font-size: 0.95rem; color: #334155; line-height: 1.8; margin-bottom: 24px;">
-                Cinta subacuática con agua termal climatizada, láser terapéutico clase IV y magnetoterapia para recuperar movilidad tras cirugías o artrosis. Diseñado con rigurosidad biológica para maximizar la esperanza de vida y bienestar preventivo en hogares multiespecie. Totalmente integrado con el Gemelo Digital y collar inteligente CUDI.
-            </p>
-
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
-                <div style="background: rgba(255, 255, 255, 0.75); border: 1px solid rgba(226, 232, 240, 0.85); border-radius: 18px; padding: 20px;">
-                    <div style="color: #0284c7; font-size: 1.3rem; margin-bottom: 8px;"><i class="fa-solid fa-bolt"></i></div>
-                    <div style="font-weight: 800; font-size: 0.92rem; color: #0f172a; margin-bottom: 4px;">Integración Bio-Neural</div>
-                    <p style="font-size: 0.82rem; color: #64748b; margin: 0; line-height: 1.5;">Registra el impacto en constantes vitales y niveles de cortisol en tiempo real mediante la App CUDI.</p>
-                </div>
-                <div style="background: rgba(255, 255, 255, 0.75); border: 1px solid rgba(226, 232, 240, 0.85); border-radius: 18px; padding: 20px;">
-                    <div style="color: #10b981; font-size: 1.3rem; margin-bottom: 8px;"><i class="fa-solid fa-heart-pulse"></i></div>
-                    <div style="font-weight: 800; font-size: 0.92rem; color: #0f172a; margin-bottom: 4px;">Salud Preventiva Proactiva</div>
-                    <p style="font-size: 0.82rem; color: #64748b; margin: 0; line-height: 1.5;">Previene afecciones clínicas comunes antes de requerir tratamientos reactivos invasivos.</p>
-                </div>
-                <div style="background: rgba(255, 255, 255, 0.75); border: 1px solid rgba(226, 232, 240, 0.85); border-radius: 18px; padding: 20px;">
-                    <div style="color: #f59e0b; font-size: 1.3rem; margin-bottom: 8px;"><i class="fa-solid fa-award"></i></div>
-                    <div style="font-weight: 800; font-size: 0.92rem; color: #0f172a; margin-bottom: 4px;">Certificación Oficial CUDI</div>
-                    <p style="font-size: 0.82rem; color: #64748b; margin: 0; line-height: 1.5;">Aprobado por el comité técnico y veterinario colegiado con garantía de satisfacción total.</p>
+        <!-- DETAILS TABS / SECTIONS -->
+        <div style="margin-top: 60px;">
+            
+            <!-- SECTION 1: ABOUT PRODUCT -->
+            <div class="apple-glass-card" style="border-radius: 24px; padding: 36px; margin-bottom: 32px;">
+                <h2 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.45rem; font-weight: 800; color: #0f172a; margin: 0 0 16px;">
+                    <i class="fa-solid fa-circle-info" style="color: #0284c7;"></i> Acerca de este Producto
+                </h2>
+                <p style="font-size: 0.95rem; color: #475569; line-height: 1.8; margin: 0 0 20px;">
+                    La flotabilidad del agua reduce el impacto en articulaciones un 80%, permitiendo a perros con hernias discales o displasias ganar masa muscular sin dolor.
+                </p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;">
+                    <div style="background: rgba(248, 250, 252, 0.8); border: 1px solid rgba(226, 232, 240, 0.8); border-radius: 16px; padding: 16px;">
+                        <i class="fa-solid fa-bolt" style="color: #0284c7; font-size: 1.2rem; margin-bottom: 8px;"></i>
+                        <h4 style="margin: 0 0 4px; font-size: 0.88rem; font-weight: 800; color: #0f172a;">Integración Bio-Neural</h4>
+                        <p style="margin: 0; font-size: 0.78rem; color: #64748b;">Registra el impacto en constantes vitales y niveles de cortisol en tiempo real mediante la App CUDI.</p>
+                    </div>
+                    <div style="background: rgba(248, 250, 252, 0.8); border: 1px solid rgba(226, 232, 240, 0.8); border-radius: 16px; padding: 16px;">
+                        <i class="fa-solid fa-heart-pulse" style="color: #10b981; font-size: 1.2rem; margin-bottom: 8px;"></i>
+                        <h4 style="margin: 0 0 4px; font-size: 0.88rem; font-weight: 800; color: #0f172a;">Salud Preventiva Proactiva</h4>
+                        <p style="margin: 0; font-size: 0.78rem; color: #64748b;">Previene afecciones clínicas comunes antes de requerir tratamientos reactivos invasivos.</p>
+                    </div>
+                    <div style="background: rgba(248, 250, 252, 0.8); border: 1px solid rgba(226, 232, 240, 0.8); border-radius: 16px; padding: 16px;">
+                        <i class="fa-solid fa-award" style="color: #f59e0b; font-size: 1.2rem; margin-bottom: 8px;"></i>
+                        <h4 style="margin: 0 0 4px; font-size: 0.88rem; font-weight: 800; color: #0f172a;">Certificación Oficial CUDI</h4>
+                        <p style="margin: 0; font-size: 0.78rem; color: #64748b;">Aprobado por el comité técnico y veterinario colegiado con garantía de satisfacción total.</p>
+                    </div>
                 </div>
             </div>
-        </section>
 
-        <!-- SECTION: FICHA TECNICA -->
-        <section id="sec-ficha" class="apple-glass-card" style="padding: 36px; border-radius: 24px; margin-bottom: 32px;">
-            <h2 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.45rem; font-weight: 800; color: #0f172a; margin-top: 0; margin-bottom: 16px;">
-                <i class="fa-solid fa-list-check" style="color: #0284c7;"></i> Ficha Técnica & Especificaciones
-            </h2>
-            <div style="border-radius: 18px; overflow: hidden; border: 1px solid rgba(226, 232, 240, 0.8); background: rgba(255, 255, 255, 0.85);">
+            <!-- SECTION 2: SPECS TABLE -->
+            <div class="apple-glass-card" style="border-radius: 24px; padding: 36px; margin-bottom: 32px;">
+                <h2 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.45rem; font-weight: 800; color: #0f172a; margin: 0 0 20px;">
+                    <i class="fa-solid fa-list-check" style="color: #0284c7;"></i> Ficha Técnica & Especificaciones
+                </h2>
                 <table style="width: 100%; border-collapse: collapse; font-size: 0.88rem;">
                     <tbody>
                         
@@ -315,93 +242,70 @@
                     </tbody>
                 </table>
             </div>
-        </section>
 
-        <!-- SECTION: DICTAMEN VETERINARIO -->
-        <section id="sec-dictamen" class="apple-glass-card" style="padding: 36px; border-radius: 24px; margin-bottom: 32px; border-left: 5px solid #0284c7;">
-            <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
-                <div style="width: 52px; height: 52px; border-radius: 50%; background: #e0f2fe; color: #0284c7; display: flex; align-items: center; justify-content: center; font-size: 1.4rem;">
-                    <i class="fa-solid fa-user-doctor"></i>
+            <!-- SECTION 3: VETERINARY VERDICT -->
+            <div class="apple-glass-card" style="border-radius: 24px; padding: 36px; margin-bottom: 32px; background: linear-gradient(135deg, rgba(240,249,255,0.9), rgba(255,255,255,0.9)); border-left: 6px solid #0284c7;">
+                <h2 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.45rem; font-weight: 800; color: #0f172a; margin: 0 0 16px;">
+                    <i class="fa-solid fa-stethoscope" style="color: #0284c7;"></i> Dictamen Facultativo del Comité Veterinario CUDI
+                </h2>
+                <blockquote style="margin: 0 0 16px; font-size: 1.05rem; color: #334155; font-style: italic; line-height: 1.7;">
+                    "Fisioterapeuta Roberto M.: 'Perros que salían operados de ligamento cruzado han vuelto a correr en la mitad de tiempo gracias al agua.'"
+                </blockquote>
+                <div style="display: flex; align-items: center; gap: 12px; font-size: 0.82rem; color: #64748b; font-weight: 700;">
+                    <i class="fa-solid fa-certificate" style="color: #10b981;"></i> Protocolo Clínico Homologado • Validez Multiespecie 2026
+                </div>
+            </div>
+
+            <!-- SECTION 4: REVIEWS & RELATED -->
+            <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 32px;">
+                <div>
+                    <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.3rem; font-weight: 800; color: #0f172a; margin: 0 0 20px;">
+                        Opiniones Verificadas de Tutores
+                    </h3>
+                    
                 </div>
                 <div>
-                    <h3 style="margin: 0; font-size: 1.2rem; font-weight: 800; color: #0f172a;">Dictamen del Comité Veterinario CUDI</h3>
-                    <span style="font-size: 0.8rem; color: #64748b; font-weight: 600;">Dr. Sergio Bañuelos (Col. 4821 BCN) &bull; Especialista en Medicina Preventiva</span>
-                </div>
+                    <h3 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.3rem; font-weight: 800; color: #0f172a; margin: 0 0 20px;">
+                        Soluciones Complementarias
+                    </h3>
+                    <div style="display: flex; flex-direction: column; gap: 14px;">
+                        
+        <a href="producto-consulta-etologia-comportamiento-canino.html" class="apple-glass-card" style="display: flex; gap: 16px; padding: 14px; border-radius: 18px; text-decoration: none; color: inherit; transition: all 0.2s ease;">
+            <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1200&q=85" alt="Consulta Clínica de Etología & Modificación de Conducta" style="width: 72px; height: 72px; border-radius: 12px; object-fit: cover;">
+            <div style="flex: 1;">
+                <div style="font-size: 0.85rem; font-weight: 800; color: #0f172a; margin-bottom: 4px; line-height: 1.3;">Consulta Clínica de Etología & Modificación de Conducta</div>
+                <div style="font-size: 0.75rem; color: #64748b; margin-bottom: 6px;">Veterinaria & Salud 24/7</div>
+                <div style="font-size: 0.95rem; font-weight: 900; color: #0284c7;">70.00 €</div>
             </div>
-            <p style="font-size: 0.94rem; color: #334155; line-height: 1.7; margin: 0; font-style: italic;">
-                "Producto totalmente validado y recomendado para el mantenimiento de la salud celular y longevidad en caninos y felinos."
-            </p>
-        </section>
-
-        <!-- SECTION: RESEÑAS -->
-        <section id="sec-resenas" class="apple-glass-card" style="padding: 36px; border-radius: 24px; margin-bottom: 32px;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
-                <h2 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.45rem; font-weight: 800; color: #0f172a; margin: 0;">
-                    <i class="fa-solid fa-comments" style="color: #0284c7;"></i> Reseñas de la Comunidad (180)
-                </h2>
-                <span class="cudi-badge-glass" style="color: #047857; background: #ecfdf5;">
-                    ★ 5.0 / 5.0 (Valoraciones Reales)
-                </span>
-            </div>
-            
-        </section>
-
-        <!-- SECTION: PRODUCTOS RELACIONADOS -->
-        <section id="sec-relacionados" style="margin-bottom: 32px;">
-            <h2 style="font-family: var(--font-heading, 'Outfit', sans-serif); font-size: 1.45rem; font-weight: 800; color: #0f172a; margin-top: 0; margin-bottom: 20px;">
-                <i class="fa-solid fa-layer-group" style="color: #0284c7;"></i> Productos Afines & Complementarios (Steam Cross-Sell)
-            </h2>
-            <div class="steam-rel-grid">
-                
-        <div class="apple-glass-card steam-rel-card" style="padding: 16px; border-radius: 20px; text-decoration: none; color: inherit; display: flex; flex-direction: column;">
-            <a href="producto-consulta-etologia-comportamiento-canino.html" style="text-decoration: none; color: inherit; display: block; margin-bottom: 12px;">
-                <div style="height: 150px; border-radius: 14px; overflow: hidden; margin-bottom: 10px;">
-                    <img src="https://cdn2.thecatapi.com/images/cme.gif" alt="Consulta Clínica de Etología & Modificación de Conducta" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                </div>
-                <div style="font-size: 0.75rem; font-weight: 800; color: #0284c7; margin-bottom: 4px;">Veterinaria & Salud 24/7</div>
-                <h4 style="font-size: 0.92rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">Consulta Clínica de Etología & Modificación de Conducta</h4>
-            </a>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 10px; border-top: 1px solid rgba(226, 232, 240, 0.7);">
-                <span style="font-size: 1.15rem; font-weight: 900; color: #0284c7;">70.00 €</span>
-                <a href="producto-consulta-etologia-comportamiento-canino.html" class="btn-primary" style="padding: 6px 14px; font-size: 0.76rem; border-radius: 50px; text-decoration: none;">Ver Ficha</a>
-            </div>
-        </div>
+        </a>
         
-        <div class="apple-glass-card steam-rel-card" style="padding: 16px; border-radius: 20px; text-decoration: none; color: inherit; display: flex; flex-direction: column;">
-            <a href="producto-analisis-sangre-completo-bioquimica.html" style="text-decoration: none; color: inherit; display: block; margin-bottom: 12px;">
-                <div style="height: 150px; border-radius: 14px; overflow: hidden; margin-bottom: 10px;">
-                    <img src="https://images.dog.ceo/breeds/schnauzer-miniature/n02097047_1917.jpg" alt="Perfil Bioquímico & Hematológico Integral de Laboratorio" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                </div>
-                <div style="font-size: 0.75rem; font-weight: 800; color: #0284c7; margin-bottom: 4px;">Veterinaria & Salud 24/7</div>
-                <h4 style="font-size: 0.92rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">Perfil Bioquímico & Hematológico Integral de Laboratorio</h4>
-            </a>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 10px; border-top: 1px solid rgba(226, 232, 240, 0.7);">
-                <span style="font-size: 1.15rem; font-weight: 900; color: #0284c7;">48.00 €</span>
-                <a href="producto-analisis-sangre-completo-bioquimica.html" class="btn-primary" style="padding: 6px 14px; font-size: 0.76rem; border-radius: 50px; text-decoration: none;">Ver Ficha</a>
+        <a href="producto-analisis-sangre-completo-bioquimica.html" class="apple-glass-card" style="display: flex; gap: 16px; padding: 14px; border-radius: 18px; text-decoration: none; color: inherit; transition: all 0.2s ease;">
+            <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85" alt="Perfil Bioquímico & Hematológico Integral de Laboratorio" style="width: 72px; height: 72px; border-radius: 12px; object-fit: cover;">
+            <div style="flex: 1;">
+                <div style="font-size: 0.85rem; font-weight: 800; color: #0f172a; margin-bottom: 4px; line-height: 1.3;">Perfil Bioquímico & Hematológico Integral de Laboratorio</div>
+                <div style="font-size: 0.75rem; color: #64748b; margin-bottom: 6px;">Veterinaria & Salud 24/7</div>
+                <div style="font-size: 0.95rem; font-weight: 900; color: #0284c7;">48.00 €</div>
             </div>
-        </div>
+        </a>
         
-        <div class="apple-glass-card steam-rel-card" style="padding: 16px; border-radius: 20px; text-decoration: none; color: inherit; display: flex; flex-direction: column;">
-            <a href="producto-ecocardiograma-doppler-cardiaco.html" style="text-decoration: none; color: inherit; display: block; margin-bottom: 12px;">
-                <div style="height: 150px; border-radius: 14px; overflow: hidden; margin-bottom: 10px;">
-                    <img src="https://cdn2.thecatapi.com/images/139.jpg" alt="Ecocardiograma Color & Electrocardiograma Digital" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                </div>
-                <div style="font-size: 0.75rem; font-weight: 800; color: #0284c7; margin-bottom: 4px;">Veterinaria & Salud 24/7</div>
-                <h4 style="font-size: 0.92rem; font-weight: 800; color: #0f172a; margin: 0 0 8px; line-height: 1.3;">Ecocardiograma Color & Electrocardiograma Digital</h4>
-            </a>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 10px; border-top: 1px solid rgba(226, 232, 240, 0.7);">
-                <span style="font-size: 1.15rem; font-weight: 900; color: #0284c7;">85.00 €</span>
-                <a href="producto-ecocardiograma-doppler-cardiaco.html" class="btn-primary" style="padding: 6px 14px; font-size: 0.76rem; border-radius: 50px; text-decoration: none;">Ver Ficha</a>
+        <a href="producto-ecocardiograma-doppler-cardiaco.html" class="apple-glass-card" style="display: flex; gap: 16px; padding: 14px; border-radius: 18px; text-decoration: none; color: inherit; transition: all 0.2s ease;">
+            <img src="https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=1200&q=85" alt="Ecocardiograma Color & Electrocardiograma Digital" style="width: 72px; height: 72px; border-radius: 12px; object-fit: cover;">
+            <div style="flex: 1;">
+                <div style="font-size: 0.85rem; font-weight: 800; color: #0f172a; margin-bottom: 4px; line-height: 1.3;">Ecocardiograma Color & Electrocardiograma Digital</div>
+                <div style="font-size: 0.75rem; color: #64748b; margin-bottom: 6px;">Veterinaria & Salud 24/7</div>
+                <div style="font-size: 0.95rem; font-weight: 900; color: #0284c7;">85.00 €</div>
             </div>
-        </div>
+        </a>
         
+                    </div>
+                </div>
             </div>
-        </section>
 
-    </div>
+        </div>
 
-    <!-- FOOTER -->
-    
+    </main>
+
+
     <!-- =====================================================================
          MODULO OFICIAL DE PIE DE PAGINA INSTITUCIONAL & MARCO LEGAL CUDI
          ===================================================================== -->
@@ -525,12 +429,44 @@
     </footer>
 
 
-    <!-- SCRIPTS -->
+    <!-- MODAL DE REGISTRO & MOBILE DRAWER -->
+    <div id="cudi-auth-modal" class="cudi-modal-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(15,23,42,0.6); backdrop-filter:blur(10px); z-index:2000; align-items:center; justify-content:center;">
+        <div class="cudi-modal-content apple-glass-card" style="background:white; border-radius:24px; padding:32px; max-width:440px; width:90%; position:relative; box-shadow:0 25px 50px rgba(0,0,0,0.15);">
+            <button onclick="if(typeof closeAuthModal==='function') closeAuthModal(); else document.getElementById('cudi-auth-modal').style.display='none';" style="position:absolute; top:18px; right:18px; background:transparent; border:none; color:#64748b; font-size:1.3rem; cursor:pointer;"><i class="fa-solid fa-xmark"></i></button>
+            <div style="text-align:center; margin-bottom:20px;">
+                <img src="logo.jpeg" alt="CUDI" style="height:50px; border-radius:10px; margin-bottom:10px;">
+                <h3 style="margin:0; font-size:1.3rem; font-weight:800; color:#0f172a;">Entrar a CUDI Companion</h3>
+                <p style="margin:6px 0 0; font-size:0.85rem; color:#64748b;">Acceso al Gemelo Digital y telemetría en tiempo real</p>
+            </div>
+            <form onsubmit="event.preventDefault(); window.location.href='simulador-gemelo-digital-telemetria.html';">
+                <div style="margin-bottom:14px;">
+                    <label style="display:block; font-size:0.8rem; font-weight:700; color:#334155; margin-bottom:6px;">Nombre de tu compañero</label>
+                    <input type="text" value="Max" style="width:100%; padding:10px 14px; border:1px solid #cbd5e1; border-radius:10px; font-family:inherit; box-sizing:border-box;">
+                </div>
+                <div style="margin-bottom:20px;">
+                    <label style="display:block; font-size:0.8rem; font-weight:700; color:#334155; margin-bottom:6px;">Especie</label>
+                    <select style="width:100%; padding:10px 14px; border:1px solid #cbd5e1; border-radius:10px; font-family:inherit; box-sizing:border-box;">
+                        <option value="perro">🐶 Canino (Perro)</option>
+                        <option value="gato">🐱 Felino (Gato)</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-primary" style="width:100%; padding:12px; border-radius:12px; font-weight:800; cursor:pointer;">Conectar con Gemelo Digital <i class="fa-solid fa-bolt"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <!-- SCRIPTS TRANSVERSALES DEL ECOSISTEMA CUDI -->
     <script src="script.js?v=7.4"></script>
     <script src="cudi-ai.js?v=7.4"></script>
+    <script src="modulos/estado-compartido.js?v=7.4"></script>
+    <script src="modulos/catalogo-unico.js?v=7.4"></script>
+    <script src="modulos/internacionalizacion.js?v=7.4"></script>
+    <script src="modulos/nucleo-transversal.js?v=7.4"></script>
+
+
     <script>
-        function switchMainImage(url, thumbEl) {
-            const mainImg = document.getElementById('main-product-img');
+        function switchSteamImage(url, thumbEl) {
+            const mainImg = document.getElementById('steam-active-img');
             if (mainImg) {
                 mainImg.style.opacity = '0.4';
                 setTimeout(() => {
@@ -538,21 +474,8 @@
                     mainImg.style.opacity = '1';
                 }, 150);
             }
-            document.querySelectorAll('.steam-thumb').forEach(t => t.classList.remove('active'));
-            if (thumbEl) thumbEl.classList.add('active');
-        }
-
-        function consultWithAI(prodName) {
-            if (window.CudiAI) {
-                if (typeof window.CudiAI.open === 'function') window.CudiAI.open();
-                setTimeout(() => {
-                    if (typeof window.CudiAI.handleSuggestion === 'function') {
-                        window.CudiAI.handleSuggestion('¿Es compatible ' + prodName + ' con mi mascota?');
-                    }
-                }, 300);
-            } else {
-                alert('Abriendo Asistente IA para ' + prodName);
-            }
+            document.querySelectorAll('.steam-thumb').forEach(t => t.style.borderColor = 'transparent');
+            if (thumbEl) thumbEl.style.borderColor = '#0284c7';
         }
     </script>
 </body>
