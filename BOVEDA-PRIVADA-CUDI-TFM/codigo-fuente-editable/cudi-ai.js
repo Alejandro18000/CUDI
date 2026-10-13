@@ -1132,105 +1132,2145 @@ REGLAS: Responde siempre en español de forma empática, precisa y breve (máxim
         }
 
         // ---------------------------------------------------------------------
-        // A1. POLÍTICA DE DEVOLUCIONES, CAMBIOS, REEMBOLSOS Y CANCELACIONES
+                // ---------------------------------------------------------------------
+        // SECCIÓN MAESTRA: CATÁLOGO COMPLETO (6 CATEGORÍAS x 15 PRODUCTOS = 90 ITEMS)
         // ---------------------------------------------------------------------
-        if (has('devolucion', 'devoluciones', 'devolver', 'reembolso', 'reembolsos', 'cancelacion', 'cancelaciones', 'cancelar', 'cambio', 'cambios', 'garantia', 'desistimiento', 'dar de baja', 'baja de suscripcion', 'politica de devolucion', 'politicas de devolucion')) {
-            return `
-                <div class="ai-source-badge"><i class="fa-solid fa-rotate-left"></i> Garantía Oficial &amp; Devoluciones CUDI</div><br>
-                <strong>Política Oficial de Devoluciones, Cambios y Cancelaciones (<code>politica-devoluciones-smart-collar.html</code>):</strong>
-                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin:8px 0; font-size:0.8rem; line-height:1.62;">
-                    📦 <strong>1. Dispositivo Físico (Smart Collar — 30 Días de Garantía):</strong> Dispones de <strong>30 días naturales</strong> desde la entrega para probar el Smart Collar CUDI. Si no estás 100% satisfecho, te reembolsamos el <strong>100% del hardware (89.50 €) y la suscripción inicial</strong> (devolviendo el dispositivo en su empaque original sin daños por mal uso).<br><br>
-                    🔄 <strong>2. Suscripciones Recurrentes (Plan CUDI Prime / Shield):</strong> <strong>Sin permanencia</strong>. Puedes cancelar en cualquier momento desde tu panel de usuario con un clic y mantendrás el servicio activo hasta finalizar el periodo ya facturado sin cargos extra.<br><br>
-                    🐕 <strong>3. Servicios del Marketplace (Paseadores, Cuidadores, Spa y Clínica):</strong><br>
-                    &bull; Cancelación con <strong>más de 72h</strong> de antelación: <strong>Reembolso del 100%</strong>.<br>
-                    &bull; Cancelación con <strong>menos de 72h</strong>: <strong>Reembolso del 50%</strong> (reserva de agenda del profesional).<br>
-                    &bull; Servicios ya iniciados o en curso: <strong>No reembolsables (0%)</strong>.
-                </div>
-                <div class="ai-actions-wrap">
-                    <button class="ai-btn-action primary" onclick="window.location.href='politica-devoluciones-smart-collar.html'">
-                        <i class="fa-solid fa-file-shield"></i> Abrir Política de Devoluciones
-                    </button>
-                    <button class="ai-btn-action secondary" onclick="window.location.href='contratar-plan-premium-cudi.html'">
-                        <i class="fa-solid fa-credit-card"></i> Gestionar Suscripción / Pago
-                    </button>
-                </div>
-            `;
-        }
+// =====================================================================
+        // HANDLERS SEMÁNTICOS PARA TODAS LAS 6 CATEGORÍAS (15 PRODUCTOS CADA UNA)
+        // =====================================================================
+
+        if (has('collares', 'que collares', 'hardware', 'dispositivos', 'dispositivo', 'sensores', 'antena', 'balizas', 'baliza', 'comedero', 'fuente', 'chapa', 'cama biometrica', 'arnes', 'correa inteligente', 'catalogo de hardware', 'que collares') || (has('gps') && has('collar', 'collares', 'tienen', 'venden', 'catalogo', 'comprar', 'modelos')) || (has('collar') && !has('devolver', 'devolucion', 'garantia', 'baja', 'roto'))) {
 
         // ---------------------------------------------------------------------
-        // A2. POLÍTICA DE PRIVACIDAD Y PROTECCIÓN DE DATOS (RGPD / GDPR)
+        // CATÁLOGO COMPLETO DE HARDWARE & TELEMETRÍA IOT (15 PRODUCTOS)
         // ---------------------------------------------------------------------
-        if (has('privacidad', 'politica de privacidad', 'politicas de privacidad', 'proteccion de datos', 'rgpd', 'gdpr', 'datos personales', 'derechos arco', 'confidencialidad', 'mis datos', 'tratamiento de datos')) {
+        return `
+            <div class="ai-source-badge"><i class="fa-solid fa-satellite-dish"></i> Catálogo Oficial CUDI &bull; Hardware & Telemetría IoT</div><br>
+            En <strong>CUDI</strong> disponemos de <strong>15 dispositivos biométricos, collares inteligentes y hardware IoT de grado médico</strong> sincronizados con el gemelo digital de tu mascota:
+            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:14px; padding:12px; margin:10px 0; max-height:360px; overflow-y:auto;">
+                
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-collar-cudi-gps-ultra.html" style="flex-shrink:0;">
+                            <img src="cudi-collar-hardware-hero.jpg" alt="Smart Collar CUDI GPS Ultra" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-collar-cudi-gps-ultra.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">Smart Collar CUDI GPS Ultra</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Collar biométrico de titanio y polímero médico con GPS multibanda L1+L5 a 10 Hz, sensor PPG dual, electrocardi...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">149.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-collar-cudi-gps-ultra.html', 'Smart Collar CUDI GPS Ultra', 149, 'cudi-collar-hardware-hero.jpg')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-collar-cudi-gps-ultra.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-collar-cudi-feline-nano.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=1200&q=85" alt="Smart Collar CUDI Feline Nano" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-collar-cudi-feline-nano.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">Smart Collar CUDI Feline Nano</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">El localizador y monitor de salud más ligero del mundo para gatos (22g) con cierre de liberación de seguridad ...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">129.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-collar-cudi-feline-nano.html', 'Smart Collar CUDI Feline Nano', 129, 'https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-collar-cudi-feline-nano.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-cudi-base-dock-pro.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=1200&q=85" alt="Base de Carga Rápida & Nodo Baliza CUDI" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-cudi-base-dock-pro.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">Base de Carga Rápida & Nodo Baliza CUDI</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Estación de acoplamiento magnético con baliza BLE 5.4 integrada que establece la zona segura del hogar sin con...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">39.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-cudi-base-dock-pro.html', 'Base de Carga Rápida & Nodo Baliza CUDI', 39, 'https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-cudi-base-dock-pro.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-arnes-tactico-cudi-explorer.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1541599540903-216a46ca1dc0?auto=format&fit=crop&w=1200&q=85" alt="Arnés Ergonómico CUDI Explorer con Integración Bio" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-arnes-tactico-cudi-explorer.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">Arnés Ergonómico CUDI Explorer con Integración Bio</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Arnés antitirones con bolsillo blindado para módulo Smart Collar, costuras reflectantes 3M y tejido ripstop tr...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">64.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-arnes-tactico-cudi-explorer.html', 'Arnés Ergonómico CUDI Explorer con Integración Bio', 64, 'https://images.unsplash.com/photo-1541599540903-216a46ca1dc0?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-arnes-tactico-cudi-explorer.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-cudi-beacons-multizone.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=1200&q=85" alt="Pack de Balizas Perimetrales CUDI Smart Beacons (3 uds)" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-cudi-beacons-multizone.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">Pack de Balizas Perimetrales CUDI Smart Beacons (3 uds)</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Microbalizas adhesivas para delimitar zonas prohibidas en casa (cocina, piscina, plantas tóxicas) con alertas ...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">49.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-cudi-beacons-multizone.html', 'Pack de Balizas Perimetrales CUDI Smart Beacons (3 uds)', 49, 'https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-cudi-beacons-multizone.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-cudi-termometro-biometrico-pata.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=85" alt="Sensor Pod BioTemp para Almohadillas & Piel CUDI" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-cudi-termometro-biometrico-pata.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">Sensor Pod BioTemp para Almohadillas & Piel CUDI</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Dispositivo infrarrojo de contacto suave para medir la inflamación podal y temperatura articular antes y despu...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">34.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-cudi-termometro-biometrico-pata.html', 'Sensor Pod BioTemp para Almohadillas & Piel CUDI', 34, 'https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-cudi-termometro-biometrico-pata.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-dispensador-inteligente-cudi-feeder.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1544568100-847a948585b9?auto=format&fit=crop&w=1200&q=85" alt="Dispensador Inteligente CUDI BioFeeder con IA" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-dispensador-inteligente-cudi-feeder.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">Dispensador Inteligente CUDI BioFeeder con IA</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Tolva automatizada con báscula de precisión que ajusta los gramos de pienso exactos en función de los pasos y ...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">119.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-dispensador-inteligente-cudi-feeder.html', 'Dispensador Inteligente CUDI BioFeeder con IA', 119, 'https://images.unsplash.com/photo-1544568100-847a948585b9?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-dispensador-inteligente-cudi-feeder.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-fuente-agua-cudi-purewater.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=85" alt="Fuente Hidratante CUDI PureWater con Sensor de Ingesta" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-fuente-agua-cudi-purewater.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">Fuente Hidratante CUDI PureWater con Sensor de Ingesta</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Fuente de acero quirúrgico 304 con filtrado cuádruple UVC y conteo de mililitros bebidos registrado directamen...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">59.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-fuente-agua-cudi-purewater.html', 'Fuente Hidratante CUDI PureWater con Sensor de Ingesta', 59, 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-fuente-agua-cudi-purewater.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-correa-inteligente-cudi-lead.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=1200&q=85" alt="Correa Amortiguadora CUDI SmartLead con Medidor de Tracción" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-correa-inteligente-cudi-lead.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">Correa Amortiguadora CUDI SmartLead con Medidor de Tracción</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Correa de adiestramiento no tirón con dinamómetro Bluetooth que registra los picos de reactividad y fuerza eje...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">38.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-correa-inteligente-cudi-lead.html', 'Correa Amortiguadora CUDI SmartLead con Medidor de Tracción', 38, 'https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-correa-inteligente-cudi-lead.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-cudi-cama-ortopedica-biometrica.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85" alt="Colchón Ortopédico CUDI SleepSense con Malla de Presión" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-cudi-cama-ortopedica-biometrica.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">Colchón Ortopédico CUDI SleepSense con Malla de Presión</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Cama viscoelástica de grado médico con matriz de sensores piezoeléctricos para monitorizar sueño REM, dolor ar...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">139.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-cudi-cama-ortopedica-biometrica.html', 'Colchón Ortopédico CUDI SleepSense con Malla de Presión', 139, 'https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-cudi-cama-ortopedica-biometrica.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-cudi-luz-led-nocturna-smart.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=1200&q=85" alt="Clip LED Inteligente CUDI NightSafety RGB" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-cudi-luz-led-nocturna-smart.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">Clip LED Inteligente CUDI NightSafety RGB</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Faro de seguridad programable desde la app que se activa automáticamente al anochecer o cuando activas la búsq...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">19.50 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-cudi-luz-led-nocturna-smart.html', 'Clip LED Inteligente CUDI NightSafety RGB', 19.5, 'https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-cudi-luz-led-nocturna-smart.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-cudi-cinturon-seguridad-coche.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85" alt="Fijación ISOFIX con Sensor de Tensión CUDI CarSafe" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-cudi-cinturon-seguridad-coche.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">Fijación ISOFIX con Sensor de Tensión CUDI CarSafe</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Conector directo al sistema ISOFIX del vehículo certificado para crash-test con sensor que avisa si el perro s...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">29.90 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-cudi-cinturon-seguridad-coche.html', 'Fijación ISOFIX con Sensor de Tensión CUDI CarSafe', 29.9, 'https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-cudi-cinturon-seguridad-coche.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-cudi-kit-cuidado-almohadillas.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=1200&q=85" alt="Bálsamo Regenerador & Botín Transpirable CUDI PawCare" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-cudi-kit-cuidado-almohadillas.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">Bálsamo Regenerador & Botín Transpirable CUDI PawCare</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Cera biológica reparadora de almohadillas con cera de abeja, caléndula y botines de trekking ergonómicos con s...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">24.50 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-cudi-kit-cuidado-almohadillas.html', 'Bálsamo Regenerador & Botín Transpirable CUDI PawCare', 24.5, 'https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-cudi-kit-cuidado-almohadillas.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-cudi-chapa-id-nfc-qr.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85" alt="Chapa Digital de Identificación CUDI BioID NFC + QR" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-cudi-chapa-id-nfc-qr.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">Chapa Digital de Identificación CUDI BioID NFC + QR</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Chapa de resina epoxi indestructible con chip NFC y código QR dinámico que muestra historial médico de emergen...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">14.90 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-cudi-chapa-id-nfc-qr.html', 'Chapa Digital de Identificación CUDI BioID NFC + QR', 14.9, 'https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-cudi-chapa-id-nfc-qr.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-cudi-antena-repeater-rural.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=85" alt="Repetidor Satelital CUDI WildRange para Rutas Sin Cobertura" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-cudi-antena-repeater-rural.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">Repetidor Satelital CUDI WildRange para Rutas Sin Cobertura</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Transmisor LoRa de bolsillo que conecta directamente tu smartphone con el collar de tu perro a hasta 15 km de ...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">89.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-cudi-antena-repeater-rural.html', 'Repetidor Satelital CUDI WildRange para Rutas Sin Cobertura', 89, 'https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-cudi-antena-repeater-rural.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="ai-actions-wrap">
+                <button class="ai-btn-action primary" onclick="window.location.href='index.html#store-grid'">
+                    <i class="fa-solid fa-store"></i> Ver en Catálogo Web
+                </button>
+                <button class="ai-btn-action secondary" onclick="CudiAI.activateDemoTab('store')">
+                    <i class="fa-solid fa-mobile-screen"></i> Ver en Demo App
+                </button>
+            </div>
+        `;
+        }
+
+
+        if (has('comida', 'comidas', 'alimento', 'alimentos', 'alimentacion', 'pienso', 'piensos', 'barf', 'dieta', 'dietas', 'nutricion', 'suplemento', 'suplementos', 'que alimentos venden', 'que comida venden', 'que productos de comida', 'catalogo de comida')) {
+
+        // ---------------------------------------------------------------------
+        // CATÁLOGO COMPLETO DE NUTRICIÓN & DIETA BIOLÓGICA (15 PRODUCTOS)
+        // ---------------------------------------------------------------------
+        return `
+            <div class="ai-source-badge"><i class="fa-solid fa-bowl-food"></i> Catálogo Oficial CUDI &bull; Nutrición & Dieta Biológica</div><br>
+            En <strong>CUDI</strong> disponemos de <strong>15 productos de nutrición biológica, dietas BARF, piensos hipoalergénicos clínicos y suplementos funcionales</strong> diseñados según la biometría y telemetría de tu mascota:
+            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:14px; padding:12px; margin:10px 0; max-height:360px; overflow-y:auto;">
+                
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-ecopet-organic-barf-integral.html" style="flex-shrink:0;">
+                            <img src="cudi-nutricion-organica-hero.jpg" alt="EcoPet Organic - Dieta BARF Biológica" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-ecopet-organic-barf-integral.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">EcoPet Organic - Dieta BARF Biológica</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Menús crudos biológicamente apropiados formulados con carne de pasto, vísceras nobles, verdura ecológica y ace...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">45.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-ecopet-organic-barf-integral.html', 'EcoPet Organic - Dieta BARF Biológica', 45, 'cudi-nutricion-organica-hero.jpg')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-ecopet-organic-barf-integral.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-purebites-clinic-pienso-hipoalergenico.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=1200&q=85" alt="PureBites Clinic - Pienso Hipoalergénico Monoproteico" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-purebites-clinic-pienso-hipoalergenico.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">PureBites Clinic - Pienso Hipoalergénico Monoproteico</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Receta clínica de caballo y boniato cocinada a baja temperatura para animales con intolerancias alimentarias y...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">38.50 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-purebites-clinic-pienso-hipoalergenico.html', 'PureBites Clinic - Pienso Hipoalergénico Monoproteico', 38.5, 'https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-purebites-clinic-pienso-hipoalergenico.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-vitality-mix-suplemento-inmune.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1568640347023-a616a30bc3bd?auto=format&fit=crop&w=1200&q=85" alt="Vitality Mix - Complejo Articular & Inmunológico Dual" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-vitality-mix-suplemento-inmune.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">Vitality Mix - Complejo Articular & Inmunológico Dual</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Polvo nutracéutico con Glucosamina pura, Condroitina marina, MSM, cúrcuma biodisponible y colágeno hidrolizado...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">24.99 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-vitality-mix-suplemento-inmune.html', 'Vitality Mix - Complejo Articular & Inmunológico Dual', 24.99, 'https://images.unsplash.com/photo-1568640347023-a616a30bc3bd?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-vitality-mix-suplemento-inmune.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-ocean-pure-omega3-salmon-salvaje.html" style="flex-shrink:0;">
+                            <img src="cudi-nutricion-organica-hero.jpg" alt="OceanPure - Aceite de Salmón Salvaje & Krill Antártico" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-ocean-pure-omega3-salmon-salvaje.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">OceanPure - Aceite de Salmón Salvaje & Krill Antártico</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Aceite puro de prensado en frío con concentrado de fosfolípidos EPA y DHA para salud cardiovascular, cerebral ...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">21.50 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-ocean-pure-omega3-salmon-salvaje.html', 'OceanPure - Aceite de Salmón Salvaje & Krill Antártico', 21.5, 'cudi-nutricion-organica-hero.jpg')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-ocean-pure-omega3-salmon-salvaje.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-cudi-probioticos-digest-shield.html" style="flex-shrink:0;">
+                            <img src="cudi-nutricion-organica-hero.jpg" alt="DigestShield - Probióticos Multicepa con Prebióticos FOS" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-cudi-probioticos-digest-shield.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">DigestShield - Probióticos Multicepa con Prebióticos FOS</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Sobres monodosis con 10.000 millones de UFC viables de Enterococcus faecium y Lactobacillus rhamnosus para fre...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">26.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-cudi-probioticos-digest-shield.html', 'DigestShield - Probióticos Multicepa con Prebióticos FOS', 26, 'cudi-nutricion-organica-hero.jpg')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-cudi-probioticos-digest-shield.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-cudi-dental-sticks-espirena.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=1200&q=85" alt="Dentapaws Sticks - Cuidado Dental con Espirulina & Ascophyllum" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-cudi-dental-sticks-espirena.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">Dentapaws Sticks - Cuidado Dental con Espirulina & Ascophyllum</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Snacks dentales masticables en forma de cruz que limpian mecánicamente la placa bacteriana y combaten el mal a...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">16.50 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-cudi-dental-sticks-espirena.html', 'Dentapaws Sticks - Cuidado Dental con Espirulina & Ascophyllum', 16.5, 'https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-cudi-dental-sticks-espirena.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-calming-chews-valeriana-l-teanina.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1583512603805-3cc6b41f3edb?auto=format&fit=crop&w=1200&q=85" alt="CalmPaws Chews - Bocaditos Antiestrés con L-Teanina & Ashwagandha" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-calming-chews-valeriana-l-teanina.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">CalmPaws Chews - Bocaditos Antiestrés con L-Teanina & Ashwagandha</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Bocaditos masticables semihúmedos diseñados para tormentas, fuegos artificiales, visitas al veterinario y ansi...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">22.90 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-calming-chews-valeriana-l-teanina.html', 'CalmPaws Chews - Bocaditos Antiestrés con L-Teanina & Ashwagandha', 22.9, 'https://images.unsplash.com/photo-1583512603805-3cc6b41f3edb?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-calming-chews-valeriana-l-teanina.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-caldo-huesos-organico-cudi-bonebroth.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1200&q=85" alt="BioBroth - Caldo de Huesos Orgánico de Cocción Lenta (24h)" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-caldo-huesos-organico-cudi-bonebroth.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">BioBroth - Caldo de Huesos Orgánico de Cocción Lenta (24h)</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Elixir reconstituyente hervido a fuego lento durante 24 horas repleto de colágeno nativo, glucosamina y aminoá...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">14.50 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-caldo-huesos-organico-cudi-bonebroth.html', 'BioBroth - Caldo de Huesos Orgánico de Cocción Lenta (24h)', 14.5, 'https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-caldo-huesos-organico-cudi-bonebroth.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-suplemento-renal-cudi-nephroprotect.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=1200&q=85" alt="NephroProtect - Quelante de Fósforo & Soporte Renal Avanzado" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-suplemento-renal-cudi-nephroprotect.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">NephroProtect - Quelante de Fósforo & Soporte Renal Avanzado</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Polvo insípido quelante intestinal de fósforo enriquecido con quitosano y astrágalo para ralentizar la progres...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">29.50 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-suplemento-renal-cudi-nephroprotect.html', 'NephroProtect - Quelante de Fósforo & Soporte Renal Avanzado', 29.5, 'https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-suplemento-renal-cudi-nephroprotect.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-premios-entrenamiento-monoproteicos-cudi.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&w=1200&q=85" alt="TrainBites - Premios Liofilizados 100% Corazón de Ternera" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-premios-entrenamiento-monoproteicos-cudi.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">TrainBites - Premios Liofilizados 100% Corazón de Ternera</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Snacks liofilizados al vacío en frío que conservan todo el aroma y sabor natural para sesiones de educación y ...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">12.90 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-premios-entrenamiento-monoproteicos-cudi.html', 'TrainBites - Premios Liofilizados 100% Corazón de Ternera', 12.9, 'https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-premios-entrenamiento-monoproteicos-cudi.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-leche-maternizada-lactocudi-cchorros.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=85" alt="LactoCudi - Leche de Inicio con Calostro & DHA para Cachorros" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-leche-maternizada-lactocudi-cchorros.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">LactoCudi - Leche de Inicio con Calostro & DHA para Cachorros</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Sustituto lácteo en polvo homogeneizado con calostro bovino rico en inmunoglobulinas IgG y perfil de ácidos gr...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">28.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-leche-maternizada-lactocudi-cchorros.html', 'LactoCudi - Leche de Inicio con Calostro & DHA para Cachorros', 28, 'https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-leche-maternizada-lactocudi-cchorros.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-purificador-hepatico-cudi-hepatho-care.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1535930891776-0c2dfb7fda1a?auto=format&fit=crop&w=1200&q=85" alt="HepatoCare - Cardo Mariano (Silimarina 80%) & SAMe" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-purificador-hepatico-cudi-hepatho-care.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">HepatoCare - Cardo Mariano (Silimarina 80%) & SAMe</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Cápsulas gastroprotegidas con S-Adenosilmetionina (SAMe) y extracto fitosomal de Silimarina para recuperar tra...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">31.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-purificador-hepatico-cudi-hepatho-care.html', 'HepatoCare - Cardo Mariano (Silimarina 80%) & SAMe', 31, 'https://images.unsplash.com/photo-1535930891776-0c2dfb7fda1a?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-purificador-hepatico-cudi-hepatho-care.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-aceite-coco-organico-cudi-cocopet.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=1200&q=85" alt="CocoPet - Aceite de Coco Virgen Extra Ecológico Prensado Frío" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-aceite-coco-organico-cudi-cocopet.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">CocoPet - Aceite de Coco Virgen Extra Ecológico Prensado Frío</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Aceite de coco 100% puro rico en ácido láurico y MCT. Puede ingerirse para soporte metabólico o aplicarse tópi...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">13.90 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-aceite-coco-organico-cudi-cocopet.html', 'CocoPet - Aceite de Coco Virgen Extra Ecológico Prensado Frío', 13.9, 'https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-aceite-coco-organico-cudi-cocopet.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-fibra-psyllium-cudi-fiber-glow.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13?auto=format&fit=crop&w=1200&q=85" alt="FiberGlow - Cáscara de Psyllium Ecológica & Prebióticos" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-fibra-psyllium-cudi-fiber-glow.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">FiberGlow - Cáscara de Psyllium Ecológica & Prebióticos</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Fibra soluble formadora de mucílago que regula tanto el estreñimiento como las heces blandas, favoreciendo el ...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">15.50 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-fibra-psyllium-cudi-fiber-glow.html', 'FiberGlow - Cáscara de Psyllium Ecológica & Prebióticos', 15.5, 'https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-fibra-psyllium-cudi-fiber-glow.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-snack-antioxidante-arandanos-cudi-superberry.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?auto=format&fit=crop&w=1200&q=85" alt="SuperBerry Bites - Snack Antioxidante de Arándanos Rojos & Pavo" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-snack-antioxidante-arandanos-cudi-superberry.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">SuperBerry Bites - Snack Antioxidante de Arándanos Rojos & Pavo</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Galletitas semihúmedas con alto contenido de proantocianidinas (PACs) de arándano rojo que evitan la adherenci...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">11.50 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-snack-antioxidante-arandanos-cudi-superberry.html', 'SuperBerry Bites - Snack Antioxidante de Arándanos Rojos & Pavo', 11.5, 'https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-snack-antioxidante-arandanos-cudi-superberry.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="ai-actions-wrap">
+                <button class="ai-btn-action primary" onclick="window.location.href='index.html#store-grid'">
+                    <i class="fa-solid fa-store"></i> Ver en Catálogo Web
+                </button>
+                <button class="ai-btn-action secondary" onclick="CudiAI.activateDemoTab('store')">
+                    <i class="fa-solid fa-mobile-screen"></i> Ver en Demo App
+                </button>
+            </div>
+        `;
+        }
+
+
+        if (has('veterinario', 'veterinarios', 'urgencias', 'vethome', 'medipet', 'consulta veterinaria', 'clinica veterinaria', 'hospital veterinario', 'ecografia', 'vacuna', 'vacunas', 'adn canino', 'adn felino', 'cirugia', 'castracion', 'etologia', 'oncologia', 'catalogo veterinaria', 'servicios veterinarios')) {
+
+        // ---------------------------------------------------------------------
+        // CATÁLOGO COMPLETO DE VETERINARIA & SALUD 24/7 (15 PRODUCTOS)
+        // ---------------------------------------------------------------------
+        return `
+            <div class="ai-source-badge"><i class="fa-solid fa-stethoscope"></i> Catálogo Oficial CUDI &bull; Veterinaria & Salud 24/7</div><br>
+            En <strong>CUDI</strong> disponemos de <strong>15 servicios clínicos certificados, urgencias a domicilio, telemedicina 24/7 y pruebas diagnósticas de alta resolución</strong>:
+            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:14px; padding:12px; margin:10px 0; max-height:360px; overflow-y:auto;">
+                
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-vethome-urgencias-domicilio.html" style="flex-shrink:0;">
+                            <img src="cudi-veterinaria-clinica-hero.jpg" alt="VetHome CUDI - Urgencias Veterinarias a Domicilio 24/7" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-vethome-urgencias-domicilio.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">VetHome CUDI - Urgencias Veterinarias a Domicilio 24/7</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Unidad móvil veterinaria con ecografía portátil y analítica sanguínea instantánea enviada a tu hogar en menos ...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">75.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-vethome-urgencias-domicilio.html', 'VetHome CUDI - Urgencias Veterinarias a Domicilio 24/7', 75, 'cudi-veterinaria-clinica-hero.jpg')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-vethome-urgencias-domicilio.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-medipet-express-teleconsulta-ia.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=1200&q=85" alt="MediPet Express - Teleconsulta Veterinaria Inmediata con Triaje IA" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-medipet-express-teleconsulta-ia.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">MediPet Express - Teleconsulta Veterinaria Inmediata con Triaje IA</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Videoconsulta de alta definición con veterinario colegiado en menos de 3 minutos con receta electrónica oficia...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">35.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-medipet-express-teleconsulta-ia.html', 'MediPet Express - Teleconsulta Veterinaria Inmediata con Triaje IA', 35, 'https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-medipet-express-teleconsulta-ia.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-hospital-clinico-dual-chequeo-anual.html" style="flex-shrink:0;">
+                            <img src="cudi-veterinaria-clinica-hero.jpg" alt="Hospital Clínico Dual - Chequeo Preventivo Integral Anual" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-hospital-clinico-dual-chequeo-anual.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">Hospital Clínico Dual - Chequeo Preventivo Integral Anual</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Revisión física exhaustiva que incluye analítica de sangre completa, bioquímica de 16 parámetros, ecografía ab...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">60.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-hospital-clinico-dual-chequeo-anual.html', 'Hospital Clínico Dual - Chequeo Preventivo Integral Anual', 60, 'cudi-veterinaria-clinica-hero.jpg')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-hospital-clinico-dual-chequeo-anual.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-cudi-vacunacion-pasaporte-rabia.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1599443015574-be5fe8a05783?auto=format&fit=crop&w=1200&q=85" alt="Pack Vacunación Oficial & Pasaporte Europeo de Mascota" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-cudi-vacunacion-pasaporte-rabia.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">Pack Vacunación Oficial & Pasaporte Europeo de Mascota</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Emisión del Pasaporte Oficial de la Unión Europea para animales de compañía con vacuna antirrábica y desparasi...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">42.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-cudi-vacunacion-pasaporte-rabia.html', 'Pack Vacunación Oficial & Pasaporte Europeo de Mascota', 42, 'https://images.unsplash.com/photo-1599443015574-be5fe8a05783?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-cudi-vacunacion-pasaporte-rabia.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-limpieza-dental-ultrasonidos-cudi.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=1200&q=85" alt="Profilaxis Dental por Ultrasonidos & Pulido con Flúor" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-limpieza-dental-ultrasonidos-cudi.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">Profilaxis Dental por Ultrasonidos & Pulido con Flúor</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Limpieza profunda subgingival con escarificador ultrasónico y pulido de esmalte para prevenir periodontitis y ...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">95.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-limpieza-dental-ultrasonidos-cudi.html', 'Profilaxis Dental por Ultrasonidos & Pulido con Flúor', 95, 'https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-limpieza-dental-ultrasonidos-cudi.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-castracion-laparoscopica-avanzada.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&q=85" alt="Esterilización / Castración por Laparoscopia Mínimamente Invasiva" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-castracion-laparoscopica-avanzada.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">Esterilización / Castración por Laparoscopia Mínimamente Invasiva</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Intervención quirúrgica con óptica de alta resolución a través de dos microincisiones de 5mm con recuperación ...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">180.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-castracion-laparoscopica-avanzada.html', 'Esterilización / Castración por Laparoscopia Mínimamente Invasiva', 180, 'https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-castracion-laparoscopica-avanzada.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-test-genetico-adn-longevidad-cudi.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=85" alt="Test Genético CUDI BioDNA - Salud, Razas & Longevidad" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-test-genetico-adn-longevidad-cudi.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">Test Genético CUDI BioDNA - Salud, Razas & Longevidad</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Hisopo bucal no invasivo que analiza más de 250 variantes de enfermedades hereditarias, sensibilidad a fármaco...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">89.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-test-genetico-adn-longevidad-cudi.html', 'Test Genético CUDI BioDNA - Salud, Razas & Longevidad', 89, 'https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-test-genetico-adn-longevidad-cudi.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-ecografia-abdominal-alta-resolucion.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=85" alt="Ecografía Abdominal Completa con Especialista de Imagen" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-ecografia-abdominal-alta-resolucion.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">Ecografía Abdominal Completa con Especialista de Imagen</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Estudio ecográfico abdominal de 8 órganos con sondas de microconvex y lineal de alta frecuencia para diagnósti...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">68.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-ecografia-abdominal-alta-resolucion.html', 'Ecografía Abdominal Completa con Especialista de Imagen', 68, 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-ecografia-abdominal-alta-resolucion.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-fisioterapia-rehabilitacion-hidroterapia.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=1200&q=85" alt="Sesión de Fisioterapia & Hidroterapia Subacuática Canina" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-fisioterapia-rehabilitacion-hidroterapia.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">Sesión de Fisioterapia & Hidroterapia Subacuática Canina</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Cinta subacuática con agua termal climatizada, láser terapéutico clase IV y magnetoterapia para recuperar movi...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">50.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-fisioterapia-rehabilitacion-hidroterapia.html', 'Sesión de Fisioterapia & Hidroterapia Subacuática Canina', 50, 'https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-fisioterapia-rehabilitacion-hidroterapia.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-consulta-etologia-comportamiento-canino.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1200&q=85" alt="Consulta Clínica de Etología & Modificación de Conducta" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-consulta-etologia-comportamiento-canino.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">Consulta Clínica de Etología & Modificación de Conducta</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Evaluación por veterinario especialista en etología clínica para tratar agresividad, miedos fóbicos, ansiedad ...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">70.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-consulta-etologia-comportamiento-canino.html', 'Consulta Clínica de Etología & Modificación de Conducta', 70, 'https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-consulta-etologia-comportamiento-canino.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-analisis-sangre-completo-bioquimica.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85" alt="Perfil Bioquímico & Hematológico Integral de Laboratorio" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-analisis-sangre-completo-bioquimica.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">Perfil Bioquímico & Hematológico Integral de Laboratorio</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Analítica en laboratorio acreditado con hemograma completo de 5 poblaciones, bioquímica general de 18 parámetr...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">48.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-analisis-sangre-completo-bioquimica.html', 'Perfil Bioquímico & Hematológico Integral de Laboratorio', 48, 'https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-analisis-sangre-completo-bioquimica.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-ecocardiograma-doppler-cardiaco.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=1200&q=85" alt="Ecocardiograma Color & Electrocardiograma Digital" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-ecocardiograma-doppler-cardiaco.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">Ecocardiograma Color & Electrocardiograma Digital</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Estudio morfológico y hemodinámico de las cavidades cardíacas para diagnosticar soplos, valvulopatía mitral o ...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">85.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-ecocardiograma-doppler-cardiaco.html', 'Ecocardiograma Color & Electrocardiograma Digital', 85, 'https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-ecocardiograma-doppler-cardiaco.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-test-leishmania-cribado-vectoriales.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85" alt="Cribado Rápido Serológico de Leishmania, Filaria & Borrelia (4DX)" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-test-leishmania-cribado-vectoriales.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">Cribado Rápido Serológico de Leishmania, Filaria & Borrelia (4DX)</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Test de sangre en 8 minutos para descartar enfermedades transmitidas por mosquitos (filaria, leishmaniosis) y ...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">32.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-test-leishmania-cribado-vectoriales.html', 'Cribado Rápido Serológico de Leishmania, Filaria & Borrelia (4DX)', 32, 'https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-test-leishmania-cribado-vectoriales.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-radiografia-digital-traumatologia.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85" alt="Estudio Radiográfico Digital Directo de Alta Definición (2 Proyecciones)" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-radiografia-digital-traumatologia.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">Estudio Radiográfico Digital Directo de Alta Definición (2 Proyecciones)</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Placas radiológicas digitales con revelado instantáneo para diagnóstico de fracturas, displasias, artrosis o c...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">55.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-radiografia-digital-traumatologia.html', 'Estudio Radiográfico Digital Directo de Alta Definición (2 Proyecciones)', 55, 'https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-radiografia-digital-traumatologia.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-plan-oncologico-cribado-biopsia.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=85" alt="Consulta Oncológica & Biopsia / Citología de Bultos con Informe" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-plan-oncologico-cribado-biopsia.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">Consulta Oncológica & Biopsia / Citología de Bultos con Informe</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Punción-aspiración con aguja fina (PAAF) de nódulos cutáneos y masas subcutáneas analizada por patólogo veteri...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">65.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-plan-oncologico-cribado-biopsia.html', 'Consulta Oncológica & Biopsia / Citología de Bultos con Informe', 65, 'https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-plan-oncologico-cribado-biopsia.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="ai-actions-wrap">
+                <button class="ai-btn-action primary" onclick="window.location.href='index.html#store-grid'">
+                    <i class="fa-solid fa-store"></i> Ver en Catálogo Web
+                </button>
+                <button class="ai-btn-action secondary" onclick="CudiAI.activateDemoTab('store')">
+                    <i class="fa-solid fa-mobile-screen"></i> Ver en Demo App
+                </button>
+            </div>
+        `;
+        }
+
+
+        if (has('paseo', 'paseos', 'paseador', 'paseadores', 'cuidador', 'cuidadores', 'guarderia', 'activepaws', 'nannypets', 'hotel canino', 'hospedaje', 'senderismo canino', 'canicross', 'catalogo paseos', 'servicios de paseo')) {
+
+        // ---------------------------------------------------------------------
+        // CATÁLOGO COMPLETO DE PASEOS & CUIDADORES CERTIFICADOS (15 PRODUCTOS)
+        // ---------------------------------------------------------------------
+        return `
+            <div class="ai-source-badge"><i class="fa-solid fa-person-walking-dog"></i> Catálogo Oficial CUDI &bull; Paseos & Cuidadores Certificados</div><br>
+            En <strong>CUDI</strong> disponemos de <strong>15 servicios de paseadores certificados, cuidadores a domicilio y hospedaje familiar sin jaulas</strong> con telemetría en vivo:
+            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:14px; padding:12px; margin:10px 0; max-height:360px; overflow-y:auto;">
+                
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-activepaws-paseo-guiado-telemetria.html" style="flex-shrink:0;">
+                            <img src="cudi-paseos-aventura-hero.jpg" alt="ActivePaws - Paseo Guiado con Telemetría GPS en Vivo" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-activepaws-paseo-guiado-telemetria.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">ActivePaws - Paseo Guiado con Telemetría GPS en Vivo</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Paseo individualizado de 60 minutos con monitorización de ruta GPS en vivo, reporte de hidratación y pulso sin...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">14.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-activepaws-paseo-guiado-telemetria.html', 'ActivePaws - Paseo Guiado con Telemetría GPS en Vivo', 14, 'cudi-paseos-aventura-hero.jpg')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-activepaws-paseo-guiado-telemetria.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-urban-pet-walkers-estimulacion-cognitiva.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&q=85" alt="Urban Pet Walkers - Paseo de Estimulación Olfativa & Cognitiva" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-urban-pet-walkers-estimulacion-cognitiva.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">Urban Pet Walkers - Paseo de Estimulación Olfativa & Cognitiva</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Paseo diseñado por educadores enfocado en juegos de rastro, calma y discriminación de olores para reducir estr...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">18.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-urban-pet-walkers-estimulacion-cognitiva.html', 'Urban Pet Walkers - Paseo de Estimulación Olfativa & Cognitiva', 18, 'https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-urban-pet-walkers-estimulacion-cognitiva.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-nannypets-cuidador-domicilio-24-7.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85" alt="NannyPets 24/7 - Cuidador Certificado a Domicilio (Día & Noche)" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-nannypets-cuidador-domicilio-24-7.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">NannyPets 24/7 - Cuidador Certificado a Domicilio (Día & Noche)</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Cuidado respetuoso en tu propia casa sin el trauma de hoteles caninos o jaulas para estancias de fin de semana...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">32.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-nannypets-cuidador-domicilio-24-7.html', 'NannyPets 24/7 - Cuidador Certificado a Domicilio (Día & Noche)', 32, 'https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-nannypets-cuidador-domicilio-24-7.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-cudi-guarderia-campestre-daycare.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85" alt="CampPaws - Guardería de Día en Finca Rústica Vallada con Transporte" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-cudi-guarderia-campestre-daycare.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">CampPaws - Guardería de Día en Finca Rústica Vallada con Transporte</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Día completo de juegos en praderas valladas con piscina para perros, zonas de sombra y furgoneta climatizada q...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">28.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-cudi-guarderia-campestre-daycare.html', 'CampPaws - Guardería de Día en Finca Rústica Vallada con Transporte', 28, 'https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-cudi-guarderia-campestre-daycare.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-cat-sitting-visita-especialista-felino.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=1200&q=85" alt="FeliCare - Cuidadora a Domicilio Exclusiva para Gatos (ISFM)" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-cat-sitting-visita-especialista-felino.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">FeliCare - Cuidadora a Domicilio Exclusiva para Gatos (ISFM)</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Visitas a domicilio respetuosas con los ritmos felinos: limpieza de areneros, cambio de agua fresca, cepillado...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">19.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-cat-sitting-visita-especialista-felino.html', 'FeliCare - Cuidadora a Domicilio Exclusiva para Gatos (ISFM)', 19, 'https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-cat-sitting-visita-especialista-felino.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-paseo-matinal-express-higienico.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1200&q=85" alt="Paseo Matinal Express Higiénico (30 min)" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-paseo-matinal-express-higienico.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">Paseo Matinal Express Higiénico (30 min)</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Paseo funcional a primera hora de la mañana para necesidades fisiológicas y estiramiento antes de que salgas a...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">9.50 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-paseo-matinal-express-higienico.html', 'Paseo Matinal Express Higiénico (30 min)', 9.5, 'https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-paseo-matinal-express-higienico.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-adiestramiento-canino-base-positivo.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=85" alt="Sesión de Adiestramiento Canino en Positivo a Domicilio" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-adiestramiento-canino-base-positivo.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">Sesión de Adiestramiento Canino en Positivo a Domicilio</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Clase particular de 60 minutos con educador canino profesional para pasear sin tirones, llamada perfecta y aut...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">45.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-adiestramiento-canino-base-positivo.html', 'Sesión de Adiestramiento Canino en Positivo a Domicilio', 45, 'https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-adiestramiento-canino-base-positivo.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-taxi-mascotas-transporte-veterinario.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=85" alt="PetTaxi CUDI - Vehículo Adaptado con Jaulas Crash-Tested" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-taxi-mascotas-transporte-veterinario.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">PetTaxi CUDI - Vehículo Adaptado con Jaulas Crash-Tested</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Traslado puerta a puerta de animales al veterinario, peluquería o aeropuerto en furgonetas climatizadas con co...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">22.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-taxi-mascotas-transporte-veterinario.html', 'PetTaxi CUDI - Vehículo Adaptado con Jaulas Crash-Tested', 22, 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-taxi-mascotas-transporte-veterinario.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-paseo-senderismo-montana-aventura.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1200&q=85" alt="Pack Senderismo Canino CUDI Trail (4 Horas en Naturaleza)" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-paseo-senderismo-montana-aventura.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">Pack Senderismo Canino CUDI Trail (4 Horas en Naturaleza)</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Excursión de medio día por senderos de montaña seguros con paradas en ríos, agua fresca y monitorización del S...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">38.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-paseo-senderismo-montana-aventura.html', 'Pack Senderismo Canino CUDI Trail (4 Horas en Naturaleza)', 38, 'https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-paseo-senderismo-montana-aventura.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-hospedaje-familiar-sin-jaulas-cudi.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85" alt="HomeStay CUDI - Alojamiento en Casa de Familia Certificada (24h)" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-hospedaje-familiar-sin-jaulas-cudi.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">HomeStay CUDI - Alojamiento en Casa de Familia Certificada (24h)</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Tu mascota duerme en el hogar cálido de una familia amante de los animales inspeccionada por CUDI con máximo u...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">30.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-hospedaje-familiar-sin-jaulas-cudi.html', 'HomeStay CUDI - Alojamiento en Casa de Familia Certificada (24h)', 30, 'https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-hospedaje-familiar-sin-jaulas-cudi.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-paseo-perros-senior-movilidad-reducida.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&w=1200&q=85" alt="GentlePaws - Paseo Terapéutico para Perros Abuelos & Senior" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-paseo-perros-senior-movilidad-reducida.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">GentlePaws - Paseo Terapéutico para Perros Abuelos & Senior</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Paseo a paso muy pausado sobre césped suave con arnés de asistencia trasera para perros con artrosis, ceguera ...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">13.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-paseo-perros-senior-movilidad-reducida.html', 'GentlePaws - Paseo Terapéutico para Perros Abuelos & Senior', 13, 'https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-paseo-perros-senior-movilidad-reducida.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-socializacion-cachorros-puppy-class.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=85" alt="PuppyWalk - Sesión Grupal de Socialización Temprana para Cachorros" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-socializacion-cachorros-puppy-class.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">PuppyWalk - Sesión Grupal de Socialización Temprana para Cachorros</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Encuentros en recinto higienizado para cachorros con pauta vacunal al día con estímulos sonoros, texturas y pe...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">20.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-socializacion-cachorros-puppy-class.html', 'PuppyWalk - Sesión Grupal de Socialización Temprana para Cachorros', 20, 'https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-socializacion-cachorros-puppy-class.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-paseo-doble-pack-dos-perros.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=85" alt="DuoWalk - Paseo Conjunto para Familias con 2 Perros" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-paseo-doble-pack-dos-perros.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">DuoWalk - Paseo Conjunto para Familias con 2 Perros</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Paseo de 60 minutos para dos perros del mismo hogar con precio especial unificado y control simultáneo con cor...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">21.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-paseo-doble-pack-dos-perros.html', 'DuoWalk - Paseo Conjunto para Familias con 2 Perros', 21, 'https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-paseo-doble-pack-dos-perros.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-cudi-running-canino-canicross.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1535930891776-0c2dfb7fda1a?auto=format&fit=crop&w=1200&q=85" alt="Canicross Runner - Entrenamiento Deportivo & Carrera Guiada" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-cudi-running-canino-canicross.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">Canicross Runner - Entrenamiento Deportivo & Carrera Guiada</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Salida de running continuo de 5 a 8 km con paseador corredor federado para perros con exceso de energía (pasto...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">22.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-cudi-running-canino-canicross.html', 'Canicross Runner - Entrenamiento Deportivo & Carrera Guiada', 22, 'https://images.unsplash.com/photo-1535930891776-0c2dfb7fda1a?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-cudi-running-canino-canicross.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-visita-urgente-paseo-inmediato.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=1200&q=85" alt="FlashWalk - Paseo Urgente en Menos de 45 Minutos por Imprevisto" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-visita-urgente-paseo-inmediato.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">FlashWalk - Paseo Urgente en Menos de 45 Minutos por Imprevisto</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Te ha surgido un viaje imprevisto, una reunión que se alarga o una urgencia médica: un paseador acude a tu dom...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">19.50 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-visita-urgente-paseo-inmediato.html', 'FlashWalk - Paseo Urgente en Menos de 45 Minutos por Imprevisto', 19.5, 'https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-visita-urgente-paseo-inmediato.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="ai-actions-wrap">
+                <button class="ai-btn-action primary" onclick="window.location.href='index.html#store-grid'">
+                    <i class="fa-solid fa-store"></i> Ver en Catálogo Web
+                </button>
+                <button class="ai-btn-action secondary" onclick="CudiAI.activateDemoTab('store')">
+                    <i class="fa-solid fa-mobile-screen"></i> Ver en Demo App
+                </button>
+            </div>
+        `;
+        }
+
+
+        if (has('seguro', 'seguros', 'poliza', 'polizas', 'shield', 'cobertura', 'reembolso veterinario', 'responsabilidad civil', 'decesos', 'global pet', 'safehome', 'catalogo seguros', 'que seguros ofrecen')) {
+
+        // ---------------------------------------------------------------------
+        // CATÁLOGO COMPLETO DE SEGUROS & PROTECCIÓN FAMILIAR (15 PRODUCTOS)
+        // ---------------------------------------------------------------------
+        return `
+            <div class="ai-source-badge"><i class="fa-solid fa-shield-heart"></i> Catálogo Oficial CUDI &bull; Seguros & Protección Familiar</div><br>
+            En <strong>CUDI</strong> disponemos de <strong>15 pólizas de seguros y coberturas veterinarias integrales con reembolso directo y liquidación instantánea</strong>:
+            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:14px; padding:12px; margin:10px 0; max-height:360px; overflow-y:auto;">
+                
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-cudi-shield-basic-accidentes.html" style="flex-shrink:0;">
+                            <img src="cudi-seguros-salud-hero.jpg" alt="CUDI Shield Basic - Cobertura Esencial de Accidentes & Urgencias" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-cudi-shield-basic-accidentes.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">CUDI Shield Basic - Cobertura Esencial de Accidentes & Urgencias</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Cobertura veterinaria de urgencias y accidentes de hasta 1.500€/año con libre elección de clínica y reembolso ...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">18.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-cudi-shield-basic-accidentes.html', 'CUDI Shield Basic - Cobertura Esencial de Accidentes & Urgencias', 18, 'cudi-seguros-salud-hero.jpg')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-cudi-shield-basic-accidentes.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-global-pet-protect-enfermedad-accidente.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1200&q=85" alt="Global Pet Protect - Cobertura Total de Enfermedad & Cirugía" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-global-pet-protect-enfermedad-accidente.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">Global Pet Protect - Cobertura Total de Enfermedad & Cirugía</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">El seguro más completo de España: hasta 3.500€/año tanto por accidentes como por enfermedades imprevistas (cán...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">34.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-global-pet-protect-enfermedad-accidente.html', 'Global Pet Protect - Cobertura Total de Enfermedad & Cirugía', 34, 'https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-global-pet-protect-enfermedad-accidente.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-safehome-multipet-familiar.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=85" alt="SafeHome MultiPet - Póliza Familiar para Hogares Multiespecie" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-safehome-multipet-familiar.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">SafeHome MultiPet - Póliza Familiar para Hogares Multiespecie</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Póliza combinada que asegura a perros y gatos del mismo hogar bajo una única cuota reducida con bolsa comparti...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">28.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-safehome-multipet-familiar.html', 'SafeHome MultiPet - Póliza Familiar para Hogares Multiespecie', 28, 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-safehome-multipet-familiar.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-seguro-responsabilidad-civil-ley-bienestar.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85" alt="CUDI LegalGuard - Seguro de Responsabilidad Civil Oficial (Ley Bienestar)" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-seguro-responsabilidad-civil-ley-bienestar.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">CUDI LegalGuard - Seguro de Responsabilidad Civil Oficial (Ley Bienestar)</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Póliza obligatoria de RC de hasta 350.000€ adaptada a la Ley de Bienestar Animal con certificado digital insta...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">2.90 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-seguro-responsabilidad-civil-ley-bienestar.html', 'CUDI LegalGuard - Seguro de Responsabilidad Civil Oficial (Ley Bienestar)', 2.9, 'https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-seguro-responsabilidad-civil-ley-bienestar.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-cudi-travel-seguro-viajes-mascota.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1200&q=85" alt="CUDI TravelSafe - Seguro Médico Internacional para Viajes & Vacaciones" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-cudi-travel-seguro-viajes-mascota.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">CUDI TravelSafe - Seguro Médico Internacional para Viajes & Vacaciones</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Cobertura veterinaria temporal en cualquier país de la UE y Reino Unido con repatriación del animal y gastos d...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">15.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-cudi-travel-seguro-viajes-mascota.html', 'CUDI TravelSafe - Seguro Médico Internacional para Viajes & Vacaciones', 15, 'https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-cudi-travel-seguro-viajes-mascota.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-seguro-perros-senior-mayores-9-anos.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=1200&q=85" alt="SeniorPaws Protect - Póliza Especial para Mascotas de +9 Años" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-seguro-perros-senior-mayores-9-anos.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">SeniorPaws Protect - Póliza Especial para Mascotas de +9 Años</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">El único seguro que no excluye a tu mascota por edad avanzada. Cobertura de enfermedades crónicas, artrosis y ...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">39.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-seguro-perros-senior-mayores-9-anos.html', 'SeniorPaws Protect - Póliza Especial para Mascotas de +9 Años', 39, 'https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-seguro-perros-senior-mayores-9-anos.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-seguro-odontologia-animal-dentalcare.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85" alt="DentalCare Plus - Cobertura Específica de Limpiezas & Cirugías Orales" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-seguro-odontologia-animal-dentalcare.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">DentalCare Plus - Cobertura Específica de Limpiezas & Cirugías Orales</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Módulo complementario que cubre limpiezas dentales anuales, extracciones complejas de muelas rotas y fístulas ...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">8.50 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-seguro-odontologia-animal-dentalcare.html', 'DentalCare Plus - Cobertura Específica de Limpiezas & Cirugías Orales', 8.5, 'https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-seguro-odontologia-animal-dentalcare.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-cudi-seguro-rescate-extravio-wild.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&w=1200&q=85" alt="WildRescue - Cobertura de Búsqueda, Rescate & Recompensa por Pérdida" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-cudi-seguro-rescate-extravio-wild.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">WildRescue - Cobertura de Búsqueda, Rescate & Recompensa por Pérdida</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Cubre los costes de unidades de rescate canino, drones térmicos, publicidad y recompensa legal de hasta 800€ s...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">4.50 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-cudi-seguro-rescate-extravio-wild.html', 'WildRescue - Cobertura de Búsqueda, Rescate & Recompensa por Pérdida', 4.5, 'https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-cudi-seguro-rescate-extravio-wild.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-seguro-felino-total-catshield.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=1200&q=85" alt="CatShield Total - Póliza de Salud Diseñada para las Patologías del Gato" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-seguro-felino-total-catshield.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">CatShield Total - Póliza de Salud Diseñada para las Patologías del Gato</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Cubre las enfermedades típicas felinas: obstrucciones urinarias (FLUTD), fallo renal crónico, caídas desde bal...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">21.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-seguro-felino-total-catshield.html', 'CatShield Total - Póliza de Salud Diseñada para las Patologías del Gato', 21, 'https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-seguro-felino-total-catshield.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-seguro-decesos-duelo-respetuoso.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85" alt="FarewellCare - Cobertura de Eutanasia Digna, Incineración & Apoyo al Duelo" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-seguro-decesos-duelo-respetuoso.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">FarewellCare - Cobertura de Eutanasia Digna, Incineración & Apoyo al Duelo</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Garantiza una despedida serena en tu hogar con eutanasia compasiva sin dolor, incineración individual ecológic...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">3.50 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-seguro-decesos-duelo-respetuoso.html', 'FarewellCare - Cobertura de Eutanasia Digna, Incineración & Apoyo al Duelo', 3.5, 'https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-seguro-decesos-duelo-respetuoso.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-seguro-ppp-razas-potencialmente-peligrosas.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=85" alt="ProBreed Safe - Seguro Especializado para Razas de Manejo Especial" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-seguro-ppp-razas-potencialmente-peligrosas.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">ProBreed Safe - Seguro Especializado para Razas de Manejo Especial</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Póliza con cobertura ampliada de 500.000€ exigida para gatos catalogados de manejo especial (Rottweiler, Pitbu...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">6.90 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-seguro-ppp-razas-potencialmente-peligrosas.html', 'ProBreed Safe - Seguro Especializado para Razas de Manejo Especial', 6.9, 'https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-seguro-ppp-razas-potencialmente-peligrosas.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-seguro-perros-caza-trabajo-campo.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=85" alt="FieldGuard - Seguro para Perros de Caza, Pastoreo & Trabajo de Campo" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-seguro-perros-caza-trabajo-campo.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">FieldGuard - Seguro para Perros de Caza, Pastoreo & Trabajo de Campo</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Cobertura especializada contra ataques de jabalíes, mordeduras de víboras, espigas clavadas, cortes de zarzas ...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">16.50 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-seguro-perros-caza-trabajo-campo.html', 'FieldGuard - Seguro para Perros de Caza, Pastoreo & Trabajo de Campo', 16.5, 'https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-seguro-perros-caza-trabajo-campo.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-seguro-reembolso-medicacion-cronica.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=1200&q=85" alt="PharmaPaws - Póliza de Cobertura Continua de Medicamentos Crónicos" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-seguro-reembolso-medicacion-cronica.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">PharmaPaws - Póliza de Cobertura Continua de Medicamentos Crónicos</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Reembolso del 80% en facturas de medicamentos de prescripción para tratamientos crónicos (insulina, leishmania...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">12.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-seguro-reembolso-medicacion-cronica.html', 'PharmaPaws - Póliza de Cobertura Continua de Medicamentos Crónicos', 12, 'https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-seguro-reembolso-medicacion-cronica.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-cudi-seguro-segunda-opinion-medica.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=1200&q=85" alt="SecondOpinion Global - Acceso a Especialistas Universitarios Internacionales" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-cudi-seguro-segunda-opinion-medica.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">SecondOpinion Global - Acceso a Especialistas Universitarios Internacionales</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Revisión del caso médico de tu mascota por catedráticos diplomados europeos (ECVIM, ECVS, ECVN) ante diagnósti...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">7.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-cudi-seguro-segunda-opinion-medica.html', 'SecondOpinion Global - Acceso a Especialistas Universitarios Internacionales', 7, 'https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-cudi-seguro-segunda-opinion-medica.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-seguro-reembolso-fisioterapia-acupuntura.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=85" alt="HolisticVet Care - Seguro de Terapias Complementarias, Fisio & Acupuntura" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-seguro-reembolso-fisioterapia-acupuntura.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">HolisticVet Care - Seguro de Terapias Complementarias, Fisio & Acupuntura</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Cubre sesiones de acupuntura veterinaria, quiropráctica animal, hidroterapia y rehabilitación articular prescr...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">11.50 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-seguro-reembolso-fisioterapia-acupuntura.html', 'HolisticVet Care - Seguro de Terapias Complementarias, Fisio & Acupuntura', 11.5, 'https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-seguro-reembolso-fisioterapia-acupuntura.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="ai-actions-wrap">
+                <button class="ai-btn-action primary" onclick="window.location.href='index.html#store-grid'">
+                    <i class="fa-solid fa-store"></i> Ver en Catálogo Web
+                </button>
+                <button class="ai-btn-action secondary" onclick="CudiAI.activateDemoTab('store')">
+                    <i class="fa-solid fa-mobile-screen"></i> Ver en Demo App
+                </button>
+            </div>
+        `;
+        }
+
+
+        if (has('spa', 'peluqueria', 'peluqueria canina', 'peluqueria felina', 'bano', 'grooming', 'ozonoterapia', 'deslanado', 'corte de pelo', 'uñas', 'stripping', 'keratina', 'zenpet', 'bubbles', 'catalogo spa', 'servicios de spa')) {
+
+        // ---------------------------------------------------------------------
+        // CATÁLOGO COMPLETO DE ESTÉTICA, BAÑO & SPA TERAPÉUTICO (15 PRODUCTOS)
+        // ---------------------------------------------------------------------
+        return `
+            <div class="ai-source-badge"><i class="fa-solid fa-spa"></i> Catálogo Oficial CUDI &bull; Estética, Baño & Spa Terapéutico</div><br>
+            En <strong>CUDI</strong> disponemos de <strong>15 tratamientos de estética, peluquería de bajo estrés, ozonoterapia y spa dermatológico</strong>:
+            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:14px; padding:12px; margin:10px 0; max-height:360px; overflow-y:auto;">
+                
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-grooming-master-bano-ozonoterapia.html" style="flex-shrink:0;">
+                            <img src="cudi-estetica-spa-hero.jpg" alt="Grooming Master - Baño Terapéutico con Ozonoterapia & Masaje" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-grooming-master-bano-ozonoterapia.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">Grooming Master - Baño Terapéutico con Ozonoterapia & Masaje</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Hidromasaje con microburbujas de ozono purificante que oxigena la piel, elimina olores en profundidad y calma ...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">42.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-grooming-master-bano-ozonoterapia.html', 'Grooming Master - Baño Terapéutico con Ozonoterapia & Masaje', 42, 'cudi-estetica-spa-hero.jpg')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-grooming-master-bano-ozonoterapia.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-zenpet-spa-deslanado-completo.html" style="flex-shrink:0;">
+                            <img src="cudi-estetica-spa-hero.jpg" alt="ZenPet Spa - Deslanado Técnico en Profundidad & Baño Antiprurito" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-zenpet-spa-deslanado-completo.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">ZenPet Spa - Deslanado Técnico en Profundidad & Baño Antiprurito</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Elimina hasta el 90% del pelo muerto de muda en mantos dobles (Golden, Husky, Pastor Alemán, gatos de pelo lar...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">38.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-zenpet-spa-deslanado-completo.html', 'ZenPet Spa - Deslanado Técnico en Profundidad & Baño Antiprurito', 38, 'cudi-estetica-spa-hero.jpg')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-zenpet-spa-deslanado-completo.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-bubbles-paws-peluqueria-felina-sin-sedacion.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1200&q=85" alt="Bubbles & Paws - Peluquería Felina Especializada (Cero Sedación)" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-bubbles-paws-peluqueria-felina-sin-sedacion.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">Bubbles & Paws - Peluquería Felina Especializada (Cero Sedación)</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Tratamiento de nudos, corte a tijera y baño en seco o con toallas tibias en sala libre de gatos con técnicas L...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">46.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-bubbles-paws-peluqueria-felina-sin-sedacion.html', 'Bubbles & Paws - Peluquería Felina Especializada (Cero Sedación)', 46, 'https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-bubbles-paws-peluqueria-felina-sin-sedacion.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-corte-raza-stripping-terriers.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=85" alt="Stripping Tradicional a Mano para Perros de Pelo Duro" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-corte-raza-stripping-terriers.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">Stripping Tradicional a Mano para Perros de Pelo Duro</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Técnica artesanal de renovación de manto muerto a mano con dedales de goma para Teckels, Schnauzers, Fox Terri...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">55.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-corte-raza-stripping-terriers.html', 'Stripping Tradicional a Mano para Perros de Pelo Duro', 55, 'https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-corte-raza-stripping-terriers.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-pedicura-spa-almohadillas-cudi-pawcure.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=85" alt="PawCure Spa - Limado Suave de Uñas con Torno & Masaje de Almohadillas" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-pedicura-spa-almohadillas-cudi-pawcure.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">PawCure Spa - Limado Suave de Uñas con Torno & Masaje de Almohadillas</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Olvídate del doloroso alicate: limado con dremel diamantado ultrasilencioso sin cortar la vena viva, recorte i...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">16.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-pedicura-spa-almohadillas-cudi-pawcure.html', 'PawCure Spa - Limado Suave de Uñas con Torno & Masaje de Almohadillas', 16, 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-pedicura-spa-almohadillas-cudi-pawcure.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-corte-tijera-alta-costura-canina.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85" alt="Haute Coiffure - Corte Integral a Tijera Personalizado por Raza" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-corte-tijera-alta-costura-canina.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">Haute Coiffure - Corte Integral a Tijera Personalizado por Raza</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Esculpido a mano con tijeras curvas japonesas adaptado a la morfología de Caniches, Bichones Malteses, Shih Tz...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">50.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-corte-tijera-alta-costura-canina.html', 'Haute Coiffure - Corte Integral a Tijera Personalizado por Raza', 50, 'https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-corte-tijera-alta-costura-canina.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-mascarilla-hidronutritiva-keratina-argan.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1200&q=85" alt="SilkPaws - Tratamiento de Keratina & Aceite de Argán Puro de Marruecos" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-mascarilla-hidronutritiva-keratina-argan.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">SilkPaws - Tratamiento de Keratina & Aceite de Argán Puro de Marruecos</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Batería de aminoácidos y lípidos para mantos quebradizos, secos o castigados que regenera la cutícula y previe...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">25.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-mascarilla-hidronutritiva-keratina-argan.html', 'SilkPaws - Tratamiento de Keratina & Aceite de Argán Puro de Marruecos', 25, 'https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-mascarilla-hidronutritiva-keratina-argan.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-limpieza-auricular-otica-spa.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=1200&q=85" alt="OtiClean Spa - Higiene Auricular Profunda & Eliminación de Vello Ótico" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-limpieza-auricular-otica-spa.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">OtiClean Spa - Higiene Auricular Profunda & Eliminación de Vello Ótico</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Limpieza del canal auditivo externo con limpiador enzimático vegetal y depilado suave de pelos en razas de ore...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">14.50 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-limpieza-auricular-otica-spa.html', 'OtiClean Spa - Higiene Auricular Profunda & Eliminación de Vello Ótico', 14.5, 'https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-limpieza-auricular-otica-spa.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-hidromasaje-terapeutico-aromatoterapia.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85" alt="HydroZen - Baño de Hidromasaje con Sal Marina & Aromaterapia Canina" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-hidromasaje-terapeutico-aromatoterapia.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">HydroZen - Baño de Hidromasaje con Sal Marina & Aromaterapia Canina</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Inmersión en agua templada con sales ricas en magnesio del Mar Muerto y vapores de lavanda y manzanilla para a...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">48.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-hidromasaje-terapeutico-aromatoterapia.html', 'HydroZen - Baño de Hidromasaje con Sal Marina & Aromaterapia Canina', 48, 'https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-hidromasaje-terapeutico-aromatoterapia.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-bano-desparasitante-natural-repelente.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&w=1200&q=85" alt="ShieldBath - Baño Antiparasitario Natural con Neem & Citronela" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-bano-desparasitante-natural-repelente.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">ShieldBath - Baño Antiparasitario Natural con Neem & Citronela</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Eliminación activa de pulgas, garrapatas y ácaros con extracto de Margosa (Neem) ecológico que crea una barrer...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">32.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-bano-desparasitante-natural-repelente.html', 'ShieldBath - Baño Antiparasitario Natural con Neem & Citronela', 32, 'https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-bano-desparasitante-natural-repelente.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-masaje-miofascial-relajante-perros.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85" alt="PawsMassage - Masaje Terapéutico Miofascial & Puntos Gatillo (45 min)" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-masaje-miofascial-relajante-perros.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">PawsMassage - Masaje Terapéutico Miofascial & Puntos Gatillo (45 min)</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Terapia manual sobre fascias y grupos musculares de cuello, escápulas y lumbares para perros con tensión postu...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">35.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-masaje-miofascial-relajante-perros.html', 'PawsMassage - Masaje Terapéutico Miofascial & Puntos Gatillo (45 min)', 35, 'https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-masaje-miofascial-relajante-perros.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-corte-unas-gatos-limado-seguro.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=85" alt="CatClaws Care - Recorte & Limado Amable de Uñas Felinas" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-corte-unas-gatos-limado-seguro.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">CatClaws Care - Recorte & Limado Amable de Uñas Felinas</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Recorte indoloro de la punta afilada transparente de las 18 uñas del gato sin tocar la matriz vascular viva y ...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">12.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-corte-unas-gatos-limado-seguro.html', 'CatClaws Care - Recorte & Limado Amable de Uñas Felinas', 12, 'https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-corte-unas-gatos-limado-seguro.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-blanqueamiento-manto-blanco-optico.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=1200&q=85" alt="WhiteGlow - Tratamiento Óptico Antiamarilleo para Mantos Blancos" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-blanqueamiento-manto-blanco-optico.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">WhiteGlow - Tratamiento Óptico Antiamarilleo para Mantos Blancos</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Champú azul óptico con pigmentos violetas botánicos que neutralizan el tono óxido y amarillo de patas, babas y...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">36.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-blanqueamiento-manto-blanco-optico.html', 'WhiteGlow - Tratamiento Óptico Antiamarilleo para Mantos Blancos', 36, 'https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-blanqueamiento-manto-blanco-optico.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-peinado-desenredado-manto-largo-afgano.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=1200&q=85" alt="LuxeComb - Sesión de Cepillado Profundo & Apertura de Nudos sin Cortar" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-peinado-desenredado-manto-largo-afgano.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">LuxeComb - Sesión de Cepillado Profundo & Apertura de Nudos sin Cortar</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Desenredado paciente mechón a mechón con spray bifásico de siliconas vegetales solubles para no tener que rapa...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">29.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-peinado-desenredado-manto-largo-afgano.html', 'LuxeComb - Sesión de Cepillado Profundo & Apertura de Nudos sin Cortar', 29, 'https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-peinado-desenredado-manto-largo-afgano.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
+                        <a href="producto-spa-express-cachorros-bautismo.html" style="flex-shrink:0;">
+                            <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=85" alt="PuppySpa - Bautismo de Agua & Primera Experiencia Positiva de Baño" style="width:54px; height:54px; border-radius:8px; object-fit:cover; border:1px solid #e2e8f0;" onerror="this.src='cudi-collar-hardware-hero.jpg'">
+                        </a>
+                        <div style="flex:1; min-width:0;">
+                            <a href="producto-spa-express-cachorros-bautismo.html" style="text-decoration:none; display:block; font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px; line-height:1.3;">PuppySpa - Bautismo de Agua & Primera Experiencia Positiva de Baño</a>
+                            <div style="font-size:0.74rem; color:#64748b; line-height:1.35; margin-bottom:4px;">Sesión lúdica para cachorros (3 a 7 meses) donde conocen el agua tibia, el ruido del secador y los peines con ...</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">24.00 €</span>
+                                <div style="display:flex; gap:6px;">
+                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-spa-express-cachorros-bautismo.html', 'PuppySpa - Bautismo de Agua & Primera Experiencia Positiva de Baño', 24, 'https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=85')">
+                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
+                                    </button>
+                                    
+                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-spa-express-cachorros-bautismo.html'">
+                                        <i class="fa-solid fa-flask"></i> Estudio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="ai-actions-wrap">
+                <button class="ai-btn-action primary" onclick="window.location.href='index.html#store-grid'">
+                    <i class="fa-solid fa-store"></i> Ver en Catálogo Web
+                </button>
+                <button class="ai-btn-action secondary" onclick="CudiAI.activateDemoTab('store')">
+                    <i class="fa-solid fa-mobile-screen"></i> Ver en Demo App
+                </button>
+            </div>
+        `;
+        }
+
+
+        // ---------------------------------------------------------------------
+
+        // ---------------------------------------------------------------------
+        // SECCIÓN MAESTRA: DOCUMENTOS LEGALES, POLÍTICAS Y CONFORMIDAD RGPD
+        // ---------------------------------------------------------------------
+// DOCUMENTOS LEGALES, POLÍTICAS Y CONFORMIDAD RGPD
+        // ---------------------------------------------------------------------
+        if (has('privacidad', 'rgpd', 'proteccion de datos', 'gdpr', 'datos biometricos', 'arco', 'derecho de supresion', 'quien guarda mis datos', 'politica de privacidad', 'politica de privacidad y datos')) {
             return `
-                <div class="ai-source-badge"><i class="fa-solid fa-user-shield"></i> Privacidad &amp; RGPD Europeo CUDI</div><br>
-                <strong>Política de Privacidad y Protección de Datos de Mascotas (<code>politica-privacidad-datos-mascotas.html</code>):</strong>
-                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin:8px 0; font-size:0.8rem; line-height:1.62;">
-                    🔐 <strong>1. Información que recopilamos:</strong> Datos de registro del tutor y perfil de <strong>${t.name}</strong> (especie, raza, peso, edad) junto con la telemetría bio-neural encriptada del Smart Collar (frecuencia cardíaca ECG, VFC, temperatura dérmica, sueño y coordenadas GPS).<br><br>
-                    🧠 <strong>2. Finalidad Clínica y Preventiva:</strong> Prestar triaje predictivo 24/7, alertar de anomalías antes de que sean graves, entrenar modelos de bienestar animal (100% anonimizados) y compartir constantes en tiempo real con el veterinario VetHome en caso de urgencia.<br><br>
-                    ⚖️ <strong>3. Tus Derechos (ARCO / RGPD):</strong> Tienes derecho de acceso, rectificación, supresión (derecho al olvido), portabilidad y oposición en cualquier momento escribiendo a <strong><code>privacidad@cudi.ai</code></strong>.
+                <div class="ai-source-badge"><i class="fa-solid fa-user-shield"></i> Privacidad &bull; RGPD / GDPR Oficial CUDI</div><br>
+                <strong>Política de Privacidad y Protección de Datos Biométricos (<code>politica-privacidad-datos-mascotas.html</code>):</strong>
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:14px; padding:14px; margin:10px 0; font-size:0.82rem; line-height:1.65; color:#1e293b;">
+                    🔒 <strong>Propiedad Exclusiva del Tutor:</strong> Todos los datos de telemetría (frecuencia cardíaca, temperatura dérmica, posicionamiento GPS y registros médicos) pertenecen al tutor. CUDI <strong>nunca comercializa ni cede datos a terceros</strong>.<br><br>
+                    🛡️ <strong>Cifrado Militar de Extremo a Extremo:</strong> Las transmisiones entre el Smart Collar, la antena LTE-M y el servidor cloud están cifradas con protocolo AES-256.<br><br>
+                    ⚖️ <strong>Derechos ARCO & Supresión Inmediata:</strong> Puedes ejercer tus derechos de acceso, rectificación, portabilidad y borrado total en cualquier momento enviando un correo al Delegado de Protección de Datos (DPO) en <code>cudi.ai2026@gmail.com</code>.<br><br>
+                    🇪🇺 <strong>Servidores en la Unión Europea:</strong> Base de datos alojada íntegramente en centros de datos regulados de la UE.
                 </div>
                 <div class="ai-actions-wrap">
                     <button class="ai-btn-action primary" onclick="window.location.href='politica-privacidad-datos-mascotas.html'">
-                        <i class="fa-solid fa-lock"></i> Abrir Política de Privacidad
+                        <i class="fa-solid fa-file-shield"></i> Leer Política de Privacidad Completa
                     </button>
                     <button class="ai-btn-action secondary" onclick="window.location.href='legal.html'">
-                        <i class="fa-solid fa-scale-balanced"></i> Ver Aviso Legal
+                        <i class="fa-solid fa-scale-balanced"></i> Aviso Legal
                     </button>
                 </div>
             `;
         }
 
-        // ---------------------------------------------------------------------
-        // A3. POLÍTICA DE COOKIES DE LA PLATAFORMA
-        // ---------------------------------------------------------------------
-        if (has('cookie', 'cookies', 'politica de cookies', 'politicas de cookies', 'rastreo web')) {
+        if (has('terminos', 'condiciones', 'contrato', 'terminos y condiciones', 'cancelar suscripcion', 'dar de baja', 'permanencia')) {
             return `
-                <div class="ai-source-badge"><i class="fa-solid fa-cookie-bite"></i> Transparencia Digital &amp; Cookies CUDI</div><br>
-                <strong>Política de Cookies de la Plataforma (<code>politica-cookies-plataforma.html</code>):</strong>
-                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin:8px 0; font-size:0.8rem; line-height:1.62;">
-                    ⚙️ <strong>1. Cookies Técnicas y Funcionales (Esenciales):</strong> Permiten mantener tu sesión iniciada, recordar la ficha sincronizada del Gemelo Digital de <strong>${t.name}</strong> y conservar los productos en <strong>Tu Cesta CUDI</strong>.<br><br>
-                    📊 <strong>2. Cookies Analíticas y de Experiencia (GA4 &amp; Clarity):</strong> Utilizamos <strong>Google Analytics 4 (<code>G-ZWK5NC6Z51</code>)</strong> y <strong>Microsoft Clarity (<code>ywsuqovlxx</code>)</strong> de forma agregada para analizar el rendimiento del simulador y mejorar la usabilidad clínica, sin vender jamás datos a terceros.<br><br>
-                    🛡️ <strong>3. Gestión de Consentimiento:</strong> Puedes aceptar, configurar o revocar las cookies desde el banner inferior de privacidad o los ajustes de tu navegador.
-                </div>
-                <div class="ai-actions-wrap">
-                    <button class="ai-btn-action primary" onclick="window.location.href='politica-cookies-plataforma.html'">
-                        <i class="fa-solid fa-cookie"></i> Abrir Política de Cookies
-                    </button>
-                    <button class="ai-btn-action secondary" onclick="window.location.href='politica-privacidad-datos-mascotas.html'">
-                        <i class="fa-solid fa-user-shield"></i> Política de Privacidad
-                    </button>
-                </div>
-            `;
-        }
-
-        // ---------------------------------------------------------------------
-        // A4. TÉRMINOS Y CONDICIONES DE USO E INFORMACIÓN LEGAL
-        // ---------------------------------------------------------------------
-        if (has('termino', 'terminos', 'condiciones', 'terminos y condiciones', 'aviso legal', 'informacion legal', 'legal', 'nif', 'cif', 'razon social', 'registro mercantil', 'propiedad intelectual', 'castellana', 'normativa')) {
-            return `
-                <div class="ai-source-badge"><i class="fa-solid fa-scale-balanced"></i> Marco Legal &amp; Términos de Uso CUDI</div><br>
-                <strong>Información Legal y Términos y Condiciones Oficiales (<code>legal.html</code> y <code>terminos-condiciones-app.html</code>):</strong>
-                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin:8px 0; font-size:0.8rem; line-height:1.62;">
-                    🏢 <strong>1. Titularidad Societaria (<code>legal.html</code>):</strong><br>
-                    &bull; <strong>Razón Social:</strong> CUDI AI Ecosystem S.L. &bull; <strong>NIF:</strong> B-12345678<br>
-                    &bull; <strong>Domicilio Social:</strong> Paseo de la Castellana 200, 28046 Madrid (Sede clínica y operativa en Barcelona).<br>
-                    &bull; <strong>Registro Mercantil:</strong> Madrid, Tomo 1234, Folio 56, Hoja M-7890 &bull; <strong>Contacto:</strong> <code>legal@cudi.ai</code><br><br>
-                    🩺 <strong>2. Responsabilidad Médica y Uso de la App (<code>terminos-condiciones-app.html</code>):</strong><br>
-                    &bull; El Gemelo Digital y CUDI AI ofrecen <strong>triaje preventivo y alertas tempranas</strong> de apoyo, pero no reemplazan el diagnóstico presencial de un veterinario colegiado ante emergencias.<br>
-                    &bull; <strong>Propiedad Intelectual:</strong> Todo el software, algoritmos bio-neurales, diseños de hardware y marca registrada están protegidos por CUDI AI Ecosystem S.L.
+                <div class="ai-source-badge"><i class="fa-solid fa-file-contract"></i> Términos &amp; Condiciones &bull; Contrato de Servicio</div><br>
+                <strong>Términos y Condiciones del Ecosistema CUDI (<code>terminos-condiciones-app.html</code>):</strong>
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:14px; padding:14px; margin:10px 0; font-size:0.82rem; line-height:1.65; color:#1e293b;">
+                    📋 <strong>Sin Permanencia Obligatoria:</strong> Los planes mensuales se pueden cancelar en cualquier momento con 1 solo clic desde tu perfil sin costes ni penalizaciones ocultas.<br><br>
+                    👑 <strong>Modalidad Anual (-20% de Descuento):</strong> Incluye el Smart Collar CUDI GPS Ultra gratis y garantía de sustitución exprés en 24h ante rotura o daño accidental.<br><br>
+                    ⏱️ <strong>SLA de Telemedicina:</strong> Tiempo de respuesta inferior a 2 minutos en triaje de urgencias IA y videoconsultas veterinarias garantizadas 24 horas al día, los 365 días del año.
                 </div>
                 <div class="ai-actions-wrap">
                     <button class="ai-btn-action primary" onclick="window.location.href='terminos-condiciones-app.html'">
-                        <i class="fa-solid fa-file-contract"></i> Términos y Condiciones
+                        <i class="fa-solid fa-file-contract"></i> Ver Términos y Condiciones
                     </button>
-                    <button class="ai-btn-action secondary" onclick="window.location.href='legal.html'">
-                        <i class="fa-solid fa-building-shield"></i> Información Legal
+                    <button class="ai-btn-action secondary" onclick="window.location.href='planes-suscripcion-bienestar-animal.html'">
+                        <i class="fa-solid fa-shield-cat"></i> Ver Planes y Suscripciones
                     </button>
                 </div>
             `;
         }
 
-        // ---------------------------------------------------------------------
+        if (has('cookies', 'politica de cookies', 'que cookies usan', 'rastreadores', 'tracking')) {
+            return `
+                <div class="ai-source-badge"><i class="fa-solid fa-cookie-bite"></i> Política de Cookies &bull; Privacidad Web</div><br>
+                <strong>Política Oficial de Cookies de la Plataforma CUDI (<code>politica-cookies-plataforma.html</code>):</strong>
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:14px; padding:14px; margin:10px 0; font-size:0.82rem; line-height:1.65; color:#1e293b;">
+                    🍪 <strong>Cookies Técnicas Estrictamente Necesarias:</strong> Mantienen la sesión de usuario activa y la persistencia de la cesta de compras sin almacenar información publicitaria.<br><br>
+                    📊 <strong>Analítica Agregada y Anónima:</strong> Métricas de rendimiento con Google Tag Manager y Microsoft Clarity anonimizando IPs sin cruce con perfiles biométricos.<br><br>
+                    ⚙️ <strong>Control Total del Usuario:</strong> Puedes revocar o configurar el consentimiento de cookies analíticas en cualquier momento mediante el panel de preferencias.
+                </div>
+                <div class="ai-actions-wrap">
+                    <button class="ai-btn-action primary" onclick="window.location.href='politica-cookies-plataforma.html'">
+                        <i class="fa-solid fa-cookie-bite"></i> Leer Política de Cookies
+                    </button>
+                </div>
+            `;
+        }
+
+        if (has('devolucion', 'devoluciones', 'garantia', 'desistimiento', 'devolver collar', 'reembolso', 'reembolsos', 'cancelacion', 'cancelar', 'cambio', 'cambios', 'como devolver el collar garantia', 'devolver el collar garantia', 'politica de devoluciones')) {
+            return `
+                <div class="ai-source-badge"><i class="fa-solid fa-rotate-left"></i> Garantía &amp; Devoluciones &bull; Compromiso CUDI</div><br>
+                <strong>Garantía Oficial y Política de Devoluciones (<code>politica-devoluciones-smart-collar.html</code>):</strong>
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:14px; padding:14px; margin:10px 0; font-size:0.82rem; line-height:1.65; color:#1e293b;">
+                    📦 <strong>30 Días de Prueba Sin Compromiso:</strong> Si el Smart Collar no se adapta a tu mascota o no cumple al 100% tus expectativas, te reembolsamos el importe total sin preguntas.<br><br>
+                    🛡️ <strong>3 Años de Garantía Europea Oficial:</strong> Cobertura frente a cualquier fallo de hardware, defecto de fábrica de la batería o estanqueidad del sello IP68.<br><br>
+                    🚚 <strong>Envío y Retorno Gratuitos:</strong> La devolución no tiene ningún coste para el tutor en toda la Península Ibérica y Baleares.
+                </div>
+                <div class="ai-actions-wrap">
+                    <button class="ai-btn-action primary" onclick="window.location.href='politica-devoluciones-smart-collar.html'">
+                        <i class="fa-solid fa-rotate-left"></i> Consultar Política de Devoluciones
+                    </button>
+                    <button class="ai-btn-action secondary" onclick="CudiAI.buyCollar()">
+                        <i class="fa-solid fa-shield-dog"></i> Probar Smart Collar (30 Días)
+                    </button>
+                </div>
+            `;
+        }
+
+        if (has('aviso legal', 'legal', 'contacto legal', 'quien es la empresa', 'cif', 'sede')) {
+            return `
+                <div class="ai-source-badge"><i class="fa-solid fa-scale-balanced"></i> Información Corporativa &bull; Aviso Legal</div><br>
+                <strong>Aviso Legal y Datos Identificativos (<code>legal.html</code>):</strong>
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:14px; padding:14px; margin:10px 0; font-size:0.82rem; line-height:1.65; color:#1e293b;">
+                    🏛️ <strong>Titularidad:</strong> CUDI Animal Ecosystem S.L. &bull; Proyecto TFM Internacional 2026.<br>
+                    👨‍💻 <strong>Fundador &amp; Arquitecto:</strong> Sergio Alejandro Ospina Rocha.<br>
+                    📍 <strong>Sede y Operaciones:</strong> Distrito 22@, Poblenou, Barcelona, España.<br>
+                    📧 <strong>Contacto Institucional:</strong> <code>cudi.ai2026@gmail.com</code>.<br>
+                    ⚖️ <strong>Cumplimiento Normativo:</strong> Ley de Servicios de la Sociedad de la Información (LSSI-CE), RGPD UE 2016/679 y Ley 7/2023 de Bienestar Animal.
+                </div>
+                <div class="ai-actions-wrap">
+                    <button class="ai-btn-action primary" onclick="window.location.href='legal.html'">
+                        <i class="fa-solid fa-file-lines"></i> Abrir Aviso Legal Completo
+                    </button>
+                </div>
+            `;
+        }
+
         // A5. ESTRATEGIA SEO, MARKETING DIGITAL, GA4 Y MICROSOFT CLARITY
         // ---------------------------------------------------------------------
         if (has('seo', 'estrategia seo', 'posicionamiento', 'google analytics', 'ga4', 'clarity', 'microsoft clarity', 'palabras clave', 'keywords', 'visibilidad digital', 'marketing digital', 'embudo', 'funnel', 'analitica web')) {
@@ -1471,297 +3511,6 @@ REGLAS: Responde siempre en español de forma empática, precisa y breve (máxim
         // ---------------------------------------------------------------------
         
         // ---------------------------------------------------------------------
-        // SECCIÓN ESPECÍFICA: CATÁLOGO COMPLETO DE ALIMENTACIÓN, COMIDA Y NUTRICIÓN CUDI (15 PRODUCTOS)
-        // ---------------------------------------------------------------------
-        if (has('comida', 'comidas', 'alimento', 'alimentos', 'alimentacion', 'pienso', 'piensos', 'barf', 'dieta', 'dietas', 'nutricion', 'suplemento', 'suplementos', 'que alimentos venden', 'que comida venden', 'que productos de comida', 'catalogo de comida')) {
-            return `
-                <div class="ai-source-badge"><i class="fa-solid fa-bowl-food"></i> Catálogo Oficial CUDI &bull; Nutrición &amp; Alimentación Animal</div><br>
-                En <strong>CUDI</strong> disponemos de una línea completa de <strong>15 productos de nutrición biológica, dietas BARF, piensos hipoalergénicos clínicos y suplementos funcionales</strong> diseñados según la biometría y telemetría de tu mascota (${p.name}):
-                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:14px; padding:12px; margin:10px 0; max-height:360px; overflow-y:auto;">
-
-                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
-                        <img src="cudi-nutricion-organica-hero.jpg" alt="EcoPet Organic - Dieta BARF Biológica" style="width:52px; height:52px; border-radius:8px; object-fit:cover; flex-shrink:0; border:1px solid #e2e8f0;">
-                        <div style="flex:1; min-width:0;">
-                            <div style="font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px;">EcoPet Organic - Dieta BARF Biológica</div>
-                            <div style="font-size:0.75rem; color:#64748b; line-height:1.4; margin-bottom:4px;">Menús crudos biológicamente apropiados formulados con carne de pasto, vísceras nobles, verdura ecológica y ace...</div>
-                            <div style="display:flex; justify-content:space-between; align-items:center;">
-                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">45.00 €</span>
-                                <div style="display:flex; gap:6px;">
-                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-ecopet-organic-barf-integral.html', 'EcoPet Organic - Dieta BARF Biológica', 45.0, 'cudi-nutricion-organica-hero.jpg')">
-                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
-                                    </button>
-                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-ecopet-organic-barf-integral.html'">
-                                        <i class="fa-solid fa-flask"></i> Estudio
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
-                        <img src="https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=1200&q=85" alt="PureBites Clinic - Pienso Hipoalergénico Monoproteico" style="width:52px; height:52px; border-radius:8px; object-fit:cover; flex-shrink:0; border:1px solid #e2e8f0;">
-                        <div style="flex:1; min-width:0;">
-                            <div style="font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px;">PureBites Clinic - Pienso Hipoalergénico Monoproteico</div>
-                            <div style="font-size:0.75rem; color:#64748b; line-height:1.4; margin-bottom:4px;">Receta clínica de caballo y boniato cocinada a baja temperatura para animales con intolerancias alimentarias y...</div>
-                            <div style="display:flex; justify-content:space-between; align-items:center;">
-                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">38.50 €</span>
-                                <div style="display:flex; gap:6px;">
-                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-purebites-clinic-pienso-hipoalergenico.html', 'PureBites Clinic - Pienso Hipoalergénico Monoproteico', 38.5, 'https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=1200&q=85')">
-                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
-                                    </button>
-                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-purebites-clinic-pienso-hipoalergenico.html'">
-                                        <i class="fa-solid fa-flask"></i> Estudio
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
-                        <img src="https://images.unsplash.com/photo-1568640347023-a616a30bc3bd?auto=format&fit=crop&w=1200&q=85" alt="Vitality Mix - Complejo Articular & Inmunológico Dual" style="width:52px; height:52px; border-radius:8px; object-fit:cover; flex-shrink:0; border:1px solid #e2e8f0;">
-                        <div style="flex:1; min-width:0;">
-                            <div style="font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px;">Vitality Mix - Complejo Articular & Inmunológico Dual</div>
-                            <div style="font-size:0.75rem; color:#64748b; line-height:1.4; margin-bottom:4px;">Polvo nutracéutico con Glucosamina pura, Condroitina marina, MSM, cúrcuma biodisponible y colágeno hidrolizado...</div>
-                            <div style="display:flex; justify-content:space-between; align-items:center;">
-                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">24.99 €</span>
-                                <div style="display:flex; gap:6px;">
-                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-vitality-mix-suplemento-inmune.html', 'Vitality Mix - Complejo Articular & Inmunológico Dual', 24.99, 'https://images.unsplash.com/photo-1568640347023-a616a30bc3bd?auto=format&fit=crop&w=1200&q=85')">
-                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
-                                    </button>
-                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-vitality-mix-suplemento-inmune.html'">
-                                        <i class="fa-solid fa-flask"></i> Estudio
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
-                        <img src="https://images.unsplash.com/photo-1585846416120-3a7354ed7d39?auto=format&fit=crop&w=1200&q=85" alt="OceanPure - Aceite de Salmón Salvaje & Krill Antártico" style="width:52px; height:52px; border-radius:8px; object-fit:cover; flex-shrink:0; border:1px solid #e2e8f0;">
-                        <div style="flex:1; min-width:0;">
-                            <div style="font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px;">OceanPure - Aceite de Salmón Salvaje & Krill Antártico</div>
-                            <div style="font-size:0.75rem; color:#64748b; line-height:1.4; margin-bottom:4px;">Aceite puro de prensado en frío con concentrado de fosfolípidos EPA y DHA para salud cardiovascular, cerebral ...</div>
-                            <div style="display:flex; justify-content:space-between; align-items:center;">
-                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">21.50 €</span>
-                                <div style="display:flex; gap:6px;">
-                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-ocean-pure-omega3-salmon-salvaje.html', 'OceanPure - Aceite de Salmón Salvaje & Krill Antártico', 21.5, 'https://images.unsplash.com/photo-1585846416120-3a7354ed7d39?auto=format&fit=crop&w=1200&q=85')">
-                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
-                                    </button>
-                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-ocean-pure-omega3-salmon-salvaje.html'">
-                                        <i class="fa-solid fa-flask"></i> Estudio
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
-                        <img src="https://images.unsplash.com/photo-1563460716037-460b3dd14ba9?auto=format&fit=crop&w=1200&q=85" alt="DigestShield - Probióticos Multicepa con Prebióticos FOS" style="width:52px; height:52px; border-radius:8px; object-fit:cover; flex-shrink:0; border:1px solid #e2e8f0;">
-                        <div style="flex:1; min-width:0;">
-                            <div style="font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px;">DigestShield - Probióticos Multicepa con Prebióticos FOS</div>
-                            <div style="font-size:0.75rem; color:#64748b; line-height:1.4; margin-bottom:4px;">Sobres monodosis con 10.000 millones de UFC viables de Enterococcus faecium y Lactobacillus rhamnosus para fre...</div>
-                            <div style="display:flex; justify-content:space-between; align-items:center;">
-                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">26.00 €</span>
-                                <div style="display:flex; gap:6px;">
-                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-cudi-probioticos-digest-shield.html', 'DigestShield - Probióticos Multicepa con Prebióticos FOS', 26.0, 'https://images.unsplash.com/photo-1563460716037-460b3dd14ba9?auto=format&fit=crop&w=1200&q=85')">
-                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
-                                    </button>
-                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-cudi-probioticos-digest-shield.html'">
-                                        <i class="fa-solid fa-flask"></i> Estudio
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
-                        <img src="https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=1200&q=85" alt="Dentapaws Sticks - Cuidado Dental con Espirulina & Ascophyllum" style="width:52px; height:52px; border-radius:8px; object-fit:cover; flex-shrink:0; border:1px solid #e2e8f0;">
-                        <div style="flex:1; min-width:0;">
-                            <div style="font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px;">Dentapaws Sticks - Cuidado Dental con Espirulina & Ascophyllum</div>
-                            <div style="font-size:0.75rem; color:#64748b; line-height:1.4; margin-bottom:4px;">Snacks dentales masticables en forma de cruz que limpian mecánicamente la placa bacteriana y combaten el mal a...</div>
-                            <div style="display:flex; justify-content:space-between; align-items:center;">
-                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">16.50 €</span>
-                                <div style="display:flex; gap:6px;">
-                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-cudi-dental-sticks-espirena.html', 'Dentapaws Sticks - Cuidado Dental con Espirulina & Ascophyllum', 16.5, 'https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=1200&q=85')">
-                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
-                                    </button>
-                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-cudi-dental-sticks-espirena.html'">
-                                        <i class="fa-solid fa-flask"></i> Estudio
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
-                        <img src="https://images.unsplash.com/photo-1583512603805-3cc6b41f3edb?auto=format&fit=crop&w=1200&q=85" alt="CalmPaws Chews - Bocaditos Antiestrés con L-Teanina & Ashwagandha" style="width:52px; height:52px; border-radius:8px; object-fit:cover; flex-shrink:0; border:1px solid #e2e8f0;">
-                        <div style="flex:1; min-width:0;">
-                            <div style="font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px;">CalmPaws Chews - Bocaditos Antiestrés con L-Teanina & Ashwagandha</div>
-                            <div style="font-size:0.75rem; color:#64748b; line-height:1.4; margin-bottom:4px;">Bocaditos masticables semihúmedos diseñados para tormentas, fuegos artificiales, visitas al veterinario y ansi...</div>
-                            <div style="display:flex; justify-content:space-between; align-items:center;">
-                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">22.90 €</span>
-                                <div style="display:flex; gap:6px;">
-                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-calming-chews-valeriana-l-teanina.html', 'CalmPaws Chews - Bocaditos Antiestrés con L-Teanina & Ashwagandha', 22.9, 'https://images.unsplash.com/photo-1583512603805-3cc6b41f3edb?auto=format&fit=crop&w=1200&q=85')">
-                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
-                                    </button>
-                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-calming-chews-valeriana-l-teanina.html'">
-                                        <i class="fa-solid fa-flask"></i> Estudio
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
-                        <img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1200&q=85" alt="BioBroth - Caldo de Huesos Orgánico de Cocción Lenta (24h)" style="width:52px; height:52px; border-radius:8px; object-fit:cover; flex-shrink:0; border:1px solid #e2e8f0;">
-                        <div style="flex:1; min-width:0;">
-                            <div style="font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px;">BioBroth - Caldo de Huesos Orgánico de Cocción Lenta (24h)</div>
-                            <div style="font-size:0.75rem; color:#64748b; line-height:1.4; margin-bottom:4px;">Elixir reconstituyente hervido a fuego lento durante 24 horas repleto de colágeno nativo, glucosamina y aminoá...</div>
-                            <div style="display:flex; justify-content:space-between; align-items:center;">
-                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">14.50 €</span>
-                                <div style="display:flex; gap:6px;">
-                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-caldo-huesos-organico-cudi-bonebroth.html', 'BioBroth - Caldo de Huesos Orgánico de Cocción Lenta (24h)', 14.5, 'https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1200&q=85')">
-                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
-                                    </button>
-                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-caldo-huesos-organico-cudi-bonebroth.html'">
-                                        <i class="fa-solid fa-flask"></i> Estudio
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
-                        <img src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=1200&q=85" alt="NephroProtect - Quelante de Fósforo & Soporte Renal Avanzado" style="width:52px; height:52px; border-radius:8px; object-fit:cover; flex-shrink:0; border:1px solid #e2e8f0;">
-                        <div style="flex:1; min-width:0;">
-                            <div style="font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px;">NephroProtect - Quelante de Fósforo & Soporte Renal Avanzado</div>
-                            <div style="font-size:0.75rem; color:#64748b; line-height:1.4; margin-bottom:4px;">Polvo insípido quelante intestinal de fósforo enriquecido con quitosano y astrágalo para ralentizar la progres...</div>
-                            <div style="display:flex; justify-content:space-between; align-items:center;">
-                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">29.50 €</span>
-                                <div style="display:flex; gap:6px;">
-                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-suplemento-renal-cudi-nephroprotect.html', 'NephroProtect - Quelante de Fósforo & Soporte Renal Avanzado', 29.5, 'https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=1200&q=85')">
-                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
-                                    </button>
-                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-suplemento-renal-cudi-nephroprotect.html'">
-                                        <i class="fa-solid fa-flask"></i> Estudio
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
-                        <img src="https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&w=1200&q=85" alt="TrainBites - Premios Liofilizados 100% Corazón de Ternera" style="width:52px; height:52px; border-radius:8px; object-fit:cover; flex-shrink:0; border:1px solid #e2e8f0;">
-                        <div style="flex:1; min-width:0;">
-                            <div style="font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px;">TrainBites - Premios Liofilizados 100% Corazón de Ternera</div>
-                            <div style="font-size:0.75rem; color:#64748b; line-height:1.4; margin-bottom:4px;">Snacks liofilizados al vacío en frío que conservan todo el aroma y sabor natural para sesiones de educación y ...</div>
-                            <div style="display:flex; justify-content:space-between; align-items:center;">
-                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">12.90 €</span>
-                                <div style="display:flex; gap:6px;">
-                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-premios-entrenamiento-monoproteicos-cudi.html', 'TrainBites - Premios Liofilizados 100% Corazón de Ternera', 12.9, 'https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&w=1200&q=85')">
-                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
-                                    </button>
-                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-premios-entrenamiento-monoproteicos-cudi.html'">
-                                        <i class="fa-solid fa-flask"></i> Estudio
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
-                        <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=85" alt="LactoCudi - Leche de Inicio con Calostro & DHA para Cachorros" style="width:52px; height:52px; border-radius:8px; object-fit:cover; flex-shrink:0; border:1px solid #e2e8f0;">
-                        <div style="flex:1; min-width:0;">
-                            <div style="font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px;">LactoCudi - Leche de Inicio con Calostro & DHA para Cachorros</div>
-                            <div style="font-size:0.75rem; color:#64748b; line-height:1.4; margin-bottom:4px;">Sustituto lácteo en polvo homogeneizado con calostro bovino rico en inmunoglobulinas IgG y perfil de ácidos gr...</div>
-                            <div style="display:flex; justify-content:space-between; align-items:center;">
-                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">28.00 €</span>
-                                <div style="display:flex; gap:6px;">
-                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-leche-maternizada-lactocudi-cchorros.html', 'LactoCudi - Leche de Inicio con Calostro & DHA para Cachorros', 28.0, 'https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=85')">
-                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
-                                    </button>
-                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-leche-maternizada-lactocudi-cchorros.html'">
-                                        <i class="fa-solid fa-flask"></i> Estudio
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
-                        <img src="https://images.unsplash.com/photo-1535930891776-0c2dfb7fda1a?auto=format&fit=crop&w=1200&q=85" alt="HepatoCare - Cardo Mariano (Silimarina 80%) & SAMe" style="width:52px; height:52px; border-radius:8px; object-fit:cover; flex-shrink:0; border:1px solid #e2e8f0;">
-                        <div style="flex:1; min-width:0;">
-                            <div style="font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px;">HepatoCare - Cardo Mariano (Silimarina 80%) & SAMe</div>
-                            <div style="font-size:0.75rem; color:#64748b; line-height:1.4; margin-bottom:4px;">Cápsulas gastroprotegidas con S-Adenosilmetionina (SAMe) y extracto fitosomal de Silimarina para recuperar tra...</div>
-                            <div style="display:flex; justify-content:space-between; align-items:center;">
-                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">31.00 €</span>
-                                <div style="display:flex; gap:6px;">
-                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-purificador-hepatico-cudi-hepatho-care.html', 'HepatoCare - Cardo Mariano (Silimarina 80%) & SAMe', 31.0, 'https://images.unsplash.com/photo-1535930891776-0c2dfb7fda1a?auto=format&fit=crop&w=1200&q=85')">
-                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
-                                    </button>
-                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-purificador-hepatico-cudi-hepatho-care.html'">
-                                        <i class="fa-solid fa-flask"></i> Estudio
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
-                        <img src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=1200&q=85" alt="CocoPet - Aceite de Coco Virgen Extra Ecológico Prensado Frío" style="width:52px; height:52px; border-radius:8px; object-fit:cover; flex-shrink:0; border:1px solid #e2e8f0;">
-                        <div style="flex:1; min-width:0;">
-                            <div style="font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px;">CocoPet - Aceite de Coco Virgen Extra Ecológico Prensado Frío</div>
-                            <div style="font-size:0.75rem; color:#64748b; line-height:1.4; margin-bottom:4px;">Aceite de coco 100% puro rico en ácido láurico y MCT. Puede ingerirse para soporte metabólico o aplicarse tópi...</div>
-                            <div style="display:flex; justify-content:space-between; align-items:center;">
-                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">13.90 €</span>
-                                <div style="display:flex; gap:6px;">
-                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-aceite-coco-organico-cudi-cocopet.html', 'CocoPet - Aceite de Coco Virgen Extra Ecológico Prensado Frío', 13.9, 'https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=1200&q=85')">
-                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
-                                    </button>
-                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-aceite-coco-organico-cudi-cocopet.html'">
-                                        <i class="fa-solid fa-flask"></i> Estudio
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
-                        <img src="https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13?auto=format&fit=crop&w=1200&q=85" alt="FiberGlow - Cáscara de Psyllium Ecológica & Prebióticos" style="width:52px; height:52px; border-radius:8px; object-fit:cover; flex-shrink:0; border:1px solid #e2e8f0;">
-                        <div style="flex:1; min-width:0;">
-                            <div style="font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px;">FiberGlow - Cáscara de Psyllium Ecológica & Prebióticos</div>
-                            <div style="font-size:0.75rem; color:#64748b; line-height:1.4; margin-bottom:4px;">Fibra soluble formadora de mucílago que regula tanto el estreñimiento como las heces blandas, favoreciendo el ...</div>
-                            <div style="display:flex; justify-content:space-between; align-items:center;">
-                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">15.50 €</span>
-                                <div style="display:flex; gap:6px;">
-                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-fibra-psyllium-cudi-fiber-glow.html', 'FiberGlow - Cáscara de Psyllium Ecológica & Prebióticos', 15.5, 'https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13?auto=format&fit=crop&w=1200&q=85')">
-                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
-                                    </button>
-                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-fibra-psyllium-cudi-fiber-glow.html'">
-                                        <i class="fa-solid fa-flask"></i> Estudio
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin-bottom:10px; display:flex; gap:12px; align-items:center;">
-                        <img src="https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?auto=format&fit=crop&w=1200&q=85" alt="SuperBerry Bites - Snack Antioxidante de Arándanos Rojos & Pavo" style="width:52px; height:52px; border-radius:8px; object-fit:cover; flex-shrink:0; border:1px solid #e2e8f0;">
-                        <div style="flex:1; min-width:0;">
-                            <div style="font-weight:700; font-size:0.85rem; color:#0f172a; margin-bottom:2px;">SuperBerry Bites - Snack Antioxidante de Arándanos Rojos & Pavo</div>
-                            <div style="font-size:0.75rem; color:#64748b; line-height:1.4; margin-bottom:4px;">Galletitas semihúmedas con alto contenido de proantocianidinas (PACs) de arándano rojo que evitan la adherenci...</div>
-                            <div style="display:flex; justify-content:space-between; align-items:center;">
-                                <span style="font-weight:800; color:#0284c7; font-size:0.85rem;">11.50 €</span>
-                                <div style="display:flex; gap:6px;">
-                                    <button class="ai-btn-action primary" style="padding:4px 10px; font-size:0.72rem;" onclick="CudiAI.goToProduct('producto-snack-antioxidante-arandanos-cudi-superberry.html', 'SuperBerry Bites - Snack Antioxidante de Arándanos Rojos & Pavo', 11.5, 'https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?auto=format&fit=crop&w=1200&q=85')">
-                                        <i class="fa-solid fa-cart-plus"></i> Ficha & Comprar
-                                    </button>
-                                    <button class="ai-btn-action secondary" style="padding:4px 10px; font-size:0.72rem;" onclick="window.location.href='estudio-snack-antioxidante-arandanos-cudi-superberry.html'">
-                                        <i class="fa-solid fa-flask"></i> Estudio
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="ai-actions-wrap">
-                    <button class="ai-btn-action primary" onclick="window.location.href='nutricion-personalizada-perros-gatos.html'">
-                        <i class="fa-solid fa-store"></i> Ver Tienda de Nutrición Completa
-                    </button>
-                    <button class="ai-btn-action secondary" onclick="window.location.href='index.html#ciencia'">
-                        <i class="fa-solid fa-microscope"></i> Ver Ensayos Clínicos de Dieta
-                    </button>
-                </div>
-            `;
-        }
-
-        // A10. PRODUCTOS Y SERVICIOS ESPECÍFICOS DEL MARKETPLACE (15 FICHAS + CATÁLOGO)
         // ---------------------------------------------------------------------
         if (has('safehome', 'multipet', 'safehome multipet')) {
             return `
@@ -2215,6 +3964,7 @@ REGLAS: Responde siempre en español de forma empática, precisa y breve (máxim
         }
 
         // ---------------------------------------------------------------------
+        
         // 14. VETERINARIO A DOMICILIO & CITAS (VETHOME, MEDIPET & HOSPITAL DUAL)
         // ---------------------------------------------------------------------
         if (has('veterinario', 'vethome', 'cita', 'domicilio', 'doctor', 'consulta', 'medipet', 'videollamada', 'hospital', 'telemedicina')) {
@@ -2336,6 +4086,12 @@ REGLAS: Responde siempre en español de forma empática, precisa y breve (máxim
         // ---------------------------------------------------------------------
         // 19. BUSCADOR SEMÁNTICO UNIVERSAL EN LAS 45 PÁGINAS DE CUDI
         // ---------------------------------------------------------------------
+        // Chequeo prioritario de preguntas abiertas / comportamiento / conocimiento general
+        const directOpenAnswer = this.getGeneralOpenDomainAnswer(rawQuery, true);
+        if (directOpenAnswer) {
+            return directOpenAnswer;
+        }
+
         const matchedPage = this.searchAllPagesKnowledge(rawQuery);
         if (matchedPage) {
             const isProduct = (matchedPage.url || '').startsWith('producto-');
@@ -2370,37 +4126,126 @@ REGLAS: Responde siempre en español de forma empática, precisa y breve (máxim
 
         // ---------------------------------------------------------------------
         // 20. RESPUESTA CLÍNICA Y NAVEGACIONAL COMPLETA PARA CONSULTAS ABIERTAS
-        // ---------------------------------------------------------------------
-        const ragContext = this.retrieveRAGContext(rawQuery);
+        return this.getGeneralOpenDomainAnswer(rawQuery);
+    },
+// -------------------------------------------------------------------------
+    // ENRUTADOR CONTEXTUAL INTELIGENTE (WEB <-> DEMO APP)
+    // -------------------------------------------------------------------------
+    
+    getGeneralOpenDomainAnswer(rawQuery, strictOnly = false) {
+        const q = (rawQuery || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        const p = this.petProfile || { name: 'tu mascota' };
+
+        // 1. Preguntas generales de etología / comportamiento canino y felino
+        if (/tormenta|petardo|fuegos artificiales|trueno|miedo a los ruidos/.test(q)) {
+            return `
+                <strong>Cómo calmar a ${p.name} ante tormentas o pirotecnia:</strong>
+                <ul style="margin:6px 0 10px 18px; padding:0; font-size:0.8rem; line-height:1.5;">
+                    <li><strong>Crea un refugio seguro:</strong> Prepara una habitación interior sin ventanas o con persianas bajadas, con su cama, mantas y una prenda con tu olor.</li>
+                    <li><strong>Aislamiento acústico:</strong> Pon música relajante clásica o ruido blanco suave para enmascarar las detonaciones externas.</li>
+                    <li><strong>Transmite serenidad:</strong> No lo sobreprotejas con voz ansiosa ni lo castigues por temblar; acompáñalo con caricias firmes y calmadas.</li>
+                    <li><strong>Monitoreo biométrico:</strong> Si tiene el Smart Collar CUDI, podrás vigilar si su pulso cardíaco desciende progresivamente hacia la calma.</li>
+                </ul>`;
+        }
+
+        if (/por que los gatos ronronean|por que ronronea/.test(q)) {
+            return `
+                <strong>¿Por qué ronronean los gatos? (Base neurobiológica):</strong>
+                <p style="font-size:0.8rem; line-height:1.55; color:#334155; margin:0 0 8px;">
+                    El ronroneo felino se produce mediante vibraciones en los músculos de la laringe a una frecuencia constante de <strong>20 a 140 Hz</strong>. Aunque tradicionalmente se asocia al bienestar, placer y afecto con su tutor, los estudios etológicos demuestran que también ronronean como mecanismo de autorreparación ósea y alivio del estrés o dolor (liberación de endorfinas).
+                </p>`;
+        }
+
+        if (/frutas? (pueden? comer|aptas?|seguras?)|que frutas|manzana|platano|fresa|sandia/.test(q)) {
+            return `
+                <strong>Guía Nutricional de Frutas Seguras vs Tóxicas:</strong>
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:12px; font-size:0.8rem; line-height:1.55;">
+                    ✅ <strong>Frutas recomendadas (en moderación y sin semillas):</strong> Manzana (sin corazón/pepitas), plátano, arándanos (gran antioxidante), sandía (sin corteza ni pepitas), pera y fresas.<br><br>
+                    ❌ <strong>FRUTAS TÓXICAS PROHIBIDAS:</strong> <strong>Uvas y pasas</strong> (causan insuficiencia renal aguda fulminante), aguacate (contiene persina) y cerezas (el hueso contiene cianuro).
+                </div>`;
+        }
+
+        if (/por que come hierba|por que come pasto/.test(q)) {
+            return `
+                <strong>¿Por qué los perros y gatos comen hierba o pasto?</strong>
+                <p style="font-size:0.8rem; line-height:1.55; color:#334155; margin:0 0 8px;">
+                    Es un comportamiento heredado de sus ancestros cánidos y félidos salvajes. Ocurre por tres razones principales:
+                </p>
+                <ol style="margin:4px 0 10px 18px; padding:0; font-size:0.79rem; line-height:1.5; color:#475569;">
+                    <li><strong>Aporte de fibra vegetal:</strong> Ayuda a estimular la motilidad gastrointestinal y eliminar pelos acumulados.</li>
+                    <li><strong>Alivio gástrico leve:</strong> En ocasiones buscan inducir el vómito si sienten pesadez estomacal.</li>
+                    <li><strong>Instinto y exploración olfativa:</strong> Muchos animales simplemente disfrutan del frescor y la textura.</li>
+                </ol>
+                <div style="font-size:0.75rem; color:#dc2626; font-weight:700;">⚠️ Asegúrate de que el césped no haya sido tratado con pesticidas ni fertilizantes químicos.</div>`;
+        }
+
+        if (/cuantas horas duerme|cuanto debe dormir|sueno/.test(q)) {
+            return `
+                <strong>Ciclos Circadianos y Horas de Sueño en Mascotas:</strong>
+                <ul style="margin:6px 0 10px 18px; padding:0; font-size:0.8rem; line-height:1.5;">
+                    <li><strong>Perros adultos:</strong> Duermen entre <strong>12 y 14 horas</strong> al día (combinando descanso nocturno y siestas ligeras).</li>
+                    <li><strong>Cachorros y perros sénior:</strong> Pueden dormir entre <strong>18 y 20 horas</strong> diarias debido a su desarrollo neurológico o desgaste celular.</li>
+                    <li><strong>Gatos:</strong> Dedican de <strong>12 a 16 horas</strong> diarias a dormitar en ciclos polifásicos de caza y descanso.</li>
+                </ul>`;
+        }
+
+        if (/chiste|broma|hazme reir/.test(q)) {
+            return `
+                😄 <strong>¡Aquí va un chiste perruno!</strong><br><br>
+                <em>— ¿Por qué los perros no juegan a las cartas en la selva?<br>
+                — ¡Porque hay demasiados guepardos!</em> 🐆🃏<br><br>
+                🐕 Y recuerda: el mejor amigo del hombre no juzga tus chistes, ¡solo espera que le lances la pelota! 🎾
+            `;
+        }
+
+        if (/capital de|cuanto es|fotosintesis|que es la ia|como funciona|universo|tierra|gravedad|filosofia/.test(q)) {
+            return `
+                <strong>Respuesta de Conocimiento General:</strong><br><br>
+                <p style="font-size:0.82rem; line-height:1.6; color:#334155; margin:0 0 8px;">
+                    Sobre tu consulta: <em>"${rawQuery}"</em>.<br>
+                    Como asistente inteligente, estoy preparado no solo para cuidar de ${p.name} y monitorizar sus constantes vitales, sino también para ayudarte con cualquier duda de cultura, ciencia, biología y aprendizaje general.
+                </p>
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:12px; font-size:0.8rem; line-height:1.6; color:#1e293b;">
+                    💡 Si necesitas asesoramiento etológico, nutricional o médico veterinario sobre ${p.name}, o deseas explorar cualquiera de nuestras 90 soluciones clínicas certificadas, estoy siempre a tu lado 24/7.
+                </div>
+            `;
+        }
+
+        if (/hola|buenos dias|buenas tardes|que tal|como estas|hey|saludos/.test(q)) {
+            return `
+                ¡Hola! 👋 Qué alegría saludarte. Soy la <strong>IA de Bienestar y Telemetría CUDI</strong>.<br><br>
+                Actualmente estoy monitorizando a <strong>${p.name}</strong> en segundo plano. ¿En qué te gustaría que te ayude hoy?
+                <ul style="margin:6px 0 10px 18px; padding:0; font-size:0.8rem; line-height:1.5;">
+                    <li>Consultar constantes vitales, pulso o ubicación GPS.</li>
+                    <li>Revisar síntomas, nutrición clínica o vacunas.</li>
+                    <li>Explorar nuestro catálogo de 90 productos y ensayos científicos.</li>
+                    <li>Resolver cualquier duda general sobre el cuidado de tu compañero.</li>
+                </ul>
+            `;
+        }
+
+        // Respuesta abierta elocuente y amigable
         return `
-            <div class="ai-source-badge"><i class="fa-solid fa-brain"></i> Diagnóstico &amp; Asistente Integral CUDI &bull; ${t.name}</div><br>
-            Respecto a tu consulta sobre <strong>"${rawQuery}"</strong> para <strong>${t.name}</strong> (${t.breed}, ${t.weight} kg):
-            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:11px 13px; margin:8px 0; font-size:0.79rem; line-height:1.6;">
-                ${this.formatMarkdownToHTML(ragContext)}
-            </div>
-            <strong>Resumen en vivo del Gemelo Digital de ${t.name}:</strong>
-            <div style="background:#f0f9ff; border:1px solid #bae6fd; border-radius:10px; padding:10px 12px; margin:6px 0; font-size:0.77rem; line-height:1.55; color:#0c4a6e;">
-                ❤️ <strong>Métricas:</strong> ${t.bpm} bpm &bull; ${t.temp} &bull; ${t.respRate} &bull; Salud ${t.healthScore}<br>
-                📍 <strong>Ubicación:</strong> ${t.locationZone} (${t.distance})<br>
-                💉 <strong>Vacunación:</strong> ${t.vaxMainName} (<strong style="color:#dc2626;">¡Vence Hoy!</strong>) &bull; Rabia: 15 Mayo 2026
+            <div class="ai-source-badge"><i class="fa-solid fa-brain"></i> Asistente de Inteligencia CUDI &bull; ${p.name}</div><br>
+            Entiendo perfectamente tu inquietud sobre: <strong>"${rawQuery}"</strong>.<br><br>
+            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin:8px 0; font-size:0.81rem; line-height:1.6; color:#334155;">
+                Como IA integral de salud animal y conocimiento abierto, evalúo continuamente tanto las necesidades comportamentales como fisiológicas de ${p.name} (${p.type === 'gato' ? 'felino' : 'canino'}). 
+                Si tu consulta guarda relación con su bienestar diario, alimentación, comportamiento o salud preventiva, recuerda que disponemos de un equipo veterinario colegiado 24/7 y 90 ensayos clínicos publicados para orientarte.
             </div>
             <div class="ai-actions-wrap">
                 <button class="ai-btn-action primary" onclick="CudiAI.goToMetrics()">
-                    <i class="fa-solid fa-chart-line"></i> ${inDemo ? 'Ver Métricas en App' : 'Ver Métricas en Web'}
+                    <i class="fa-solid fa-heart-pulse"></i> Ver Gemelo de ${p.name}
                 </button>
-                <button class="ai-btn-action secondary" onclick="CudiAI.goToGpsTab()">
-                    <i class="fa-solid fa-location-dot"></i> ${inDemo ? 'Ver GPS en App' : 'Ver Ubicación en Web'}
+                <button class="ai-btn-action secondary" onclick="window.location.href='index.html#store-grid'">
+                    <i class="fa-solid fa-store"></i> Explorar Catálogo
                 </button>
-                <button class="ai-btn-action secondary" onclick="window.location.href='politica-devoluciones-smart-collar.html'">
-                    <i class="fa-solid fa-file-shield"></i> Políticas y Garantías
+                <button class="ai-btn-action secondary" onclick="window.location.href='index.html#ciencia'">
+                    <i class="fa-solid fa-microscope"></i> Ver 90 Ensayos Clínicos
                 </button>
             </div>
         `;
     },
 
-    // -------------------------------------------------------------------------
-    // ENRUTADOR CONTEXTUAL INTELIGENTE (WEB <-> DEMO APP)
-    // -------------------------------------------------------------------------
     ensureDemoDashboardUnlocked() {
         const onb = document.getElementById('onboarding-screen');
         if (onb && onb.style.display !== 'none' && !onb.classList.contains('hidden')) {

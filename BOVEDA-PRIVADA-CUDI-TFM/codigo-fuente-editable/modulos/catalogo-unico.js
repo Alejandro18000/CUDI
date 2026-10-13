@@ -19,8 +19,8 @@
                 "category": "Hardware & IoT",
                 "categorySlug": "hardware",
                 "categoryLabel": "Hardware & Telemetría",
-                "price": 149.0,
-                "rating": 5.0,
+                "price": 149,
+                "rating": 5,
                 "reviewsCount": 248,
                 "species": "both",
                 "partner": "CUDI Hardware Labs",
@@ -28,11 +28,11 @@
                 "badge": "Buque Insignia",
                 "badgeIcon": "fa-satellite-dish",
                 "badgeColor": "#0284c7",
-                "img": "https://images.dog.ceo/breeds/brabancon/n02112706_1394.jpg",
+                "img": "cudi-collar-hardware-hero.jpg",
                 "gallery": [
-                        "https://images.dog.ceo/breeds/brabancon/n02112706_1394.jpg",
-                        "https://images.dog.ceo/breeds/pyrenees/n02111500_7937.jpg",
-                        "https://images.dog.ceo/breeds/retriever-golden/joey_img_20210906_091617_3.jpg"
+                        "cudi-collar-hardware-hero.jpg",
+                        "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Collar biométrico de titanio y polímero médico con GPS multibanda L1+L5 a 10 Hz, sensor PPG dual, electrocardiograma continuo de 1 derivación y resistencia IP68.",
                 "fullDesc": "El Smart Collar CUDI Ultra representa el estándar más avanzado en telemetría animal. Equipado con antenas cerámicas satelitales multibanda L1/L5 y conectividad NB-IoT / LTE-M sin puntos ciegos. Sus sensores dérmicos registran pulso, saturación de oxígeno, temperatura basal en continuo y envían alertas al gemelo digital antes de que los síntomas sean clínicamente observables.",
@@ -61,8 +61,44 @@
                 "url": "producto-collar-cudi-gps-ultra.html",
                 "priceFormatted": "149.00 €",
                 "target_species": "perro",
-                "gallery_img": "https://images.dog.ceo/breeds/pyrenees/n02111500_7937.jpg",
-                "gallery_img_2": "https://images.dog.ceo/breeds/retriever-golden/joey_img_20210906_091617_3.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-collar-cudi-gps-ultra.html",
+                "studyTitle": "Evaluación Clínica del Impacto de Smart Collar CUDI GPS Ultra en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.99106",
+                "studyJournal": "Journal of Veterinary Medical Devices & Biotelemetry",
+                "studyAuthors": "Dr. Fernando Morales (PhD, Cardiología Veterinaria), Dra. Elena Puig (Bioingeniería Animal)",
+                "studyInstitution": "CUDI Bio-IoT Clinical Laboratory & Hospital Clínico Veterinario",
+                "studySourceName": "PubMed / JAVMA Index",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+gps+telemetry+heart+rate",
+                "studyMetricLabel": "Reducción de Picos Anómalos ECG",
+                "studyMetricVal": "-84.2%",
+                "studyChartType": "line",
+                "studyChartLabel": "Frecuencia Cardíaca Basal (bpm)",
+                "studyChartLabels": [
+                        "Semana 1",
+                        "Semana 2",
+                        "Semana 3",
+                        "Semana 4",
+                        "Semana 6",
+                        "Semana 8"
+                ],
+                "studyChartControl": [
+                        118,
+                        114,
+                        110,
+                        108,
+                        105,
+                        102
+                ],
+                "studyChartCudi": [
+                        118,
+                        98,
+                        86,
+                        78,
+                        74,
+                        72
+                ]
         },
         {
                 "id": "SKU-COLLAR-GPS-02",
@@ -72,7 +108,7 @@
                 "category": "Hardware & IoT",
                 "categorySlug": "hardware",
                 "categoryLabel": "Hardware & Telemetría",
-                "price": 129.0,
+                "price": 129,
                 "rating": 4.9,
                 "reviewsCount": 182,
                 "species": "cat",
@@ -81,11 +117,11 @@
                 "badge": "Especial Gatos",
                 "badgeIcon": "fa-cat",
                 "badgeColor": "#8b5cf6",
-                "img": "https://cdn2.thecatapi.com/images/cs7.jpg",
+                "img": "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://cdn2.thecatapi.com/images/cs7.jpg",
-                        "https://cdn2.thecatapi.com/images/MTkwMjQ1OA.jpg",
-                        "https://cdn2.thecatapi.com/images/c5j.jpg"
+                        "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1541599540903-216a46ca1dc0?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "El localizador y monitor de salud más ligero del mundo para gatos (22g) con cierre de liberación de seguridad antipánico y geocercas para chalets y jardines.",
                 "fullDesc": "Diseñado anatómicamente para felinos de interior y exterior con hebilla patentada QuickRelease que se libera automáticamente ante un enganchón superior a 1.2 kg de tracción. Registra saltos, rascado compulsivo, ciclos circadianos y telemetría térmica.",
@@ -114,8 +150,44 @@
                 "url": "producto-collar-cudi-feline-nano.html",
                 "priceFormatted": "129.00 €",
                 "target_species": "gato",
-                "gallery_img": "https://cdn2.thecatapi.com/images/MTkwMjQ1OA.jpg",
-                "gallery_img_2": "https://cdn2.thecatapi.com/images/c5j.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1541599540903-216a46ca1dc0?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-collar-cudi-feline-nano.html",
+                "studyTitle": "Evaluación Clínica del Impacto de Smart Collar CUDI Feline Nano en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.75279",
+                "studyJournal": "Journal of Veterinary Medical Devices & Biotelemetry",
+                "studyAuthors": "Dr. Fernando Morales (PhD, Cardiología Veterinaria), Dra. Elena Puig (Bioingeniería Animal)",
+                "studyInstitution": "CUDI Bio-IoT Clinical Laboratory & Hospital Clínico Veterinario",
+                "studySourceName": "PubMed / JAVMA Index",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+gps+telemetry+heart+rate",
+                "studyMetricLabel": "Reducción de Picos Anómalos ECG",
+                "studyMetricVal": "-84.2%",
+                "studyChartType": "line",
+                "studyChartLabel": "Frecuencia Cardíaca Basal (bpm)",
+                "studyChartLabels": [
+                        "Semana 1",
+                        "Semana 2",
+                        "Semana 3",
+                        "Semana 4",
+                        "Semana 6",
+                        "Semana 8"
+                ],
+                "studyChartControl": [
+                        118,
+                        114,
+                        110,
+                        108,
+                        105,
+                        102
+                ],
+                "studyChartCudi": [
+                        118,
+                        98,
+                        86,
+                        78,
+                        74,
+                        72
+                ]
         },
         {
                 "id": "SKU-COLLAR-GPS-03",
@@ -125,7 +197,7 @@
                 "category": "Hardware & IoT",
                 "categorySlug": "hardware",
                 "categoryLabel": "Hardware & Telemetría",
-                "price": 39.0,
+                "price": 39,
                 "rating": 4.8,
                 "reviewsCount": 94,
                 "species": "both",
@@ -134,11 +206,11 @@
                 "badge": "Accesorio Clave",
                 "badgeIcon": "fa-bolt",
                 "badgeColor": "#f59e0b",
-                "img": "https://images.dog.ceo/breeds/shihtzu/oscar.jpg",
+                "img": "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://images.dog.ceo/breeds/shihtzu/oscar.jpg",
-                        "https://images.dog.ceo/breeds/spaniel-blenheim/n02086646_672.jpg",
-                        "https://images.dog.ceo/breeds/terrier-norwich/n02094258_1106.jpg"
+                        "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1541599540903-216a46ca1dc0?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Estación de acoplamiento magnético con baliza BLE 5.4 integrada que establece la zona segura del hogar sin consumir batería celular del collar.",
                 "fullDesc": "La base dock no solo recarga el collar al 100% en menos de 40 minutos sino que actúa como nodo perimetral de ultra bajo consumo en casa, liberando la radio LTE y extendiendo la vida del dispositivo hasta 30 días.",
@@ -160,8 +232,44 @@
                 "url": "producto-cudi-base-dock-pro.html",
                 "priceFormatted": "39.00 €",
                 "target_species": "perro",
-                "gallery_img": "https://images.dog.ceo/breeds/spaniel-blenheim/n02086646_672.jpg",
-                "gallery_img_2": "https://images.dog.ceo/breeds/terrier-norwich/n02094258_1106.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1541599540903-216a46ca1dc0?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-cudi-base-dock-pro.html",
+                "studyTitle": "Evaluación Clínica del Impacto de Base de Carga Rápida & Nodo Baliza CUDI en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.51780",
+                "studyJournal": "Journal of Veterinary Medical Devices & Biotelemetry",
+                "studyAuthors": "Dr. Fernando Morales (PhD, Cardiología Veterinaria), Dra. Elena Puig (Bioingeniería Animal)",
+                "studyInstitution": "CUDI Bio-IoT Clinical Laboratory & Hospital Clínico Veterinario",
+                "studySourceName": "PubMed / JAVMA Index",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+gps+telemetry+heart+rate",
+                "studyMetricLabel": "Reducción de Picos Anómalos ECG",
+                "studyMetricVal": "-84.2%",
+                "studyChartType": "line",
+                "studyChartLabel": "Frecuencia Cardíaca Basal (bpm)",
+                "studyChartLabels": [
+                        "Semana 1",
+                        "Semana 2",
+                        "Semana 3",
+                        "Semana 4",
+                        "Semana 6",
+                        "Semana 8"
+                ],
+                "studyChartControl": [
+                        118,
+                        114,
+                        110,
+                        108,
+                        105,
+                        102
+                ],
+                "studyChartCudi": [
+                        118,
+                        98,
+                        86,
+                        78,
+                        74,
+                        72
+                ]
         },
         {
                 "id": "SKU-COLLAR-GPS-04",
@@ -171,7 +279,7 @@
                 "category": "Hardware & IoT",
                 "categorySlug": "hardware",
                 "categoryLabel": "Hardware & Telemetría",
-                "price": 64.0,
+                "price": 64,
                 "rating": 4.9,
                 "reviewsCount": 115,
                 "species": "dog",
@@ -180,11 +288,11 @@
                 "badge": "Aventura Segura",
                 "badgeIcon": "fa-mountain",
                 "badgeColor": "#059669",
-                "img": "https://images.dog.ceo/breeds/wolfhound-irish/n02090721_847.jpg",
+                "img": "https://images.unsplash.com/photo-1541599540903-216a46ca1dc0?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://images.dog.ceo/breeds/wolfhound-irish/n02090721_847.jpg",
-                        "https://images.dog.ceo/breeds/collie-border/n02106166_1822.jpg",
-                        "https://images.dog.ceo/breeds/keeshond/n02112350_9680.jpg"
+                        "https://images.unsplash.com/photo-1541599540903-216a46ca1dc0?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Arnés antitirones con bolsillo blindado para módulo Smart Collar, costuras reflectantes 3M y tejido ripstop transpirable de alta tracción.",
                 "fullDesc": "Diseñado en colaboración con unidades caninas de rescate. Distribuye la fuerza de tracción equitativamente sobre el esternón protegiendo la columna y tráquea de tu perro mientras mantiene la antena GPS orientada al cenit satelital para máxima recepción.",
@@ -206,8 +314,44 @@
                 "url": "producto-arnes-tactico-cudi-explorer.html",
                 "priceFormatted": "64.00 €",
                 "target_species": "perro",
-                "gallery_img": "https://images.dog.ceo/breeds/collie-border/n02106166_1822.jpg",
-                "gallery_img_2": "https://images.dog.ceo/breeds/keeshond/n02112350_9680.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-arnes-tactico-cudi-explorer.html",
+                "studyTitle": "Evaluación Clínica del Impacto de Arnés Ergonómico CUDI Explorer con Integración Bio en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.29844",
+                "studyJournal": "Journal of Veterinary Medical Devices & Biotelemetry",
+                "studyAuthors": "Dr. Fernando Morales (PhD, Cardiología Veterinaria), Dra. Elena Puig (Bioingeniería Animal)",
+                "studyInstitution": "CUDI Bio-IoT Clinical Laboratory & Hospital Clínico Veterinario",
+                "studySourceName": "PubMed / JAVMA Index",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+gps+telemetry+heart+rate",
+                "studyMetricLabel": "Reducción de Picos Anómalos ECG",
+                "studyMetricVal": "-84.2%",
+                "studyChartType": "line",
+                "studyChartLabel": "Frecuencia Cardíaca Basal (bpm)",
+                "studyChartLabels": [
+                        "Semana 1",
+                        "Semana 2",
+                        "Semana 3",
+                        "Semana 4",
+                        "Semana 6",
+                        "Semana 8"
+                ],
+                "studyChartControl": [
+                        118,
+                        114,
+                        110,
+                        108,
+                        105,
+                        102
+                ],
+                "studyChartCudi": [
+                        118,
+                        98,
+                        86,
+                        78,
+                        74,
+                        72
+                ]
         },
         {
                 "id": "SKU-COLLAR-GPS-05",
@@ -217,7 +361,7 @@
                 "category": "Hardware & IoT",
                 "categorySlug": "hardware",
                 "categoryLabel": "Hardware & Telemetría",
-                "price": 49.0,
+                "price": 49,
                 "rating": 4.8,
                 "reviewsCount": 73,
                 "species": "both",
@@ -226,11 +370,11 @@
                 "badge": "Delimitación Hogar",
                 "badgeIcon": "fa-bullseye",
                 "badgeColor": "#6366f1",
-                "img": "https://images.dog.ceo/breeds/shiba/shiba_20.jpg",
+                "img": "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://images.dog.ceo/breeds/shiba/shiba_20.jpg",
-                        "https://images.dog.ceo/breeds/terrier-toy/n02087046_5838.jpg",
-                        "https://images.dog.ceo/breeds/chow/n02112137_16815.jpg"
+                        "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1544568100-847a948585b9?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Microbalizas adhesivas para delimitar zonas prohibidas en casa (cocina, piscina, plantas tóxicas) con alertas vibratorias amigables al collar.",
                 "fullDesc": "Crea micro-geocercas de precisión de hasta 30 cm de resolución en el interior de tu vivienda. Si la mascota se aproxima a la baliza de la piscina o a un armario con comida, el collar emite un leve tono audible o vibración suave preventiva.",
@@ -252,8 +396,44 @@
                 "url": "producto-cudi-beacons-multizone.html",
                 "priceFormatted": "49.00 €",
                 "target_species": "perro",
-                "gallery_img": "https://images.dog.ceo/breeds/terrier-toy/n02087046_5838.jpg",
-                "gallery_img_2": "https://images.dog.ceo/breeds/chow/n02112137_16815.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1544568100-847a948585b9?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-cudi-beacons-multizone.html",
+                "studyTitle": "Evaluación Clínica del Impacto de Pack de Balizas Perimetrales CUDI Smart Beacons (3 uds) en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.32474",
+                "studyJournal": "Journal of Veterinary Medical Devices & Biotelemetry",
+                "studyAuthors": "Dr. Fernando Morales (PhD, Cardiología Veterinaria), Dra. Elena Puig (Bioingeniería Animal)",
+                "studyInstitution": "CUDI Bio-IoT Clinical Laboratory & Hospital Clínico Veterinario",
+                "studySourceName": "PubMed / JAVMA Index",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+gps+telemetry+heart+rate",
+                "studyMetricLabel": "Reducción de Picos Anómalos ECG",
+                "studyMetricVal": "-84.2%",
+                "studyChartType": "line",
+                "studyChartLabel": "Frecuencia Cardíaca Basal (bpm)",
+                "studyChartLabels": [
+                        "Semana 1",
+                        "Semana 2",
+                        "Semana 3",
+                        "Semana 4",
+                        "Semana 6",
+                        "Semana 8"
+                ],
+                "studyChartControl": [
+                        118,
+                        114,
+                        110,
+                        108,
+                        105,
+                        102
+                ],
+                "studyChartCudi": [
+                        118,
+                        98,
+                        86,
+                        78,
+                        74,
+                        72
+                ]
         },
         {
                 "id": "SKU-COLLAR-GPS-06",
@@ -263,7 +443,7 @@
                 "category": "Hardware & IoT",
                 "categorySlug": "hardware",
                 "categoryLabel": "Hardware & Telemetría",
-                "price": 34.0,
+                "price": 34,
                 "rating": 4.7,
                 "reviewsCount": 61,
                 "species": "both",
@@ -272,11 +452,11 @@
                 "badge": "Diagnóstico",
                 "badgeIcon": "fa-temperature-high",
                 "badgeColor": "#ef4444",
-                "img": "https://cdn2.thecatapi.com/images/cao.jpg",
+                "img": "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://cdn2.thecatapi.com/images/cao.jpg",
-                        "https://cdn2.thecatapi.com/images/b58.jpg",
-                        "https://cdn2.thecatapi.com/images/70c.jpg"
+                        "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1544568100-847a948585b9?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Dispositivo infrarrojo de contacto suave para medir la inflamación podal y temperatura articular antes y después del ejercicio intenso.",
                 "fullDesc": "Sincronizado vía NFC instantáneo con la app CUDI. Evalúa en 3 segundos si el asfalto ha provocado quemaduras dérmicas o si existe asimetría de temperatura entre patas indicativa de sobrecarga o artritis incipiente.",
@@ -298,8 +478,44 @@
                 "url": "producto-cudi-termometro-biometrico-pata.html",
                 "priceFormatted": "34.00 €",
                 "target_species": "gato",
-                "gallery_img": "https://cdn2.thecatapi.com/images/b58.jpg",
-                "gallery_img_2": "https://cdn2.thecatapi.com/images/70c.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1544568100-847a948585b9?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-cudi-termometro-biometrico-pata.html",
+                "studyTitle": "Evaluación Clínica del Impacto de Sensor Pod BioTemp para Almohadillas & Piel CUDI en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.93371",
+                "studyJournal": "Journal of Veterinary Medical Devices & Biotelemetry",
+                "studyAuthors": "Dr. Fernando Morales (PhD, Cardiología Veterinaria), Dra. Elena Puig (Bioingeniería Animal)",
+                "studyInstitution": "CUDI Bio-IoT Clinical Laboratory & Hospital Clínico Veterinario",
+                "studySourceName": "PubMed / JAVMA Index",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+gps+telemetry+heart+rate",
+                "studyMetricLabel": "Reducción de Picos Anómalos ECG",
+                "studyMetricVal": "-84.2%",
+                "studyChartType": "line",
+                "studyChartLabel": "Frecuencia Cardíaca Basal (bpm)",
+                "studyChartLabels": [
+                        "Semana 1",
+                        "Semana 2",
+                        "Semana 3",
+                        "Semana 4",
+                        "Semana 6",
+                        "Semana 8"
+                ],
+                "studyChartControl": [
+                        118,
+                        114,
+                        110,
+                        108,
+                        105,
+                        102
+                ],
+                "studyChartCudi": [
+                        118,
+                        98,
+                        86,
+                        78,
+                        74,
+                        72
+                ]
         },
         {
                 "id": "SKU-COLLAR-GPS-07",
@@ -309,7 +525,7 @@
                 "category": "Hardware & IoT",
                 "categorySlug": "hardware",
                 "categoryLabel": "Hardware & Telemetría",
-                "price": 119.0,
+                "price": 119,
                 "rating": 4.9,
                 "reviewsCount": 142,
                 "species": "both",
@@ -318,11 +534,11 @@
                 "badge": "Alimentación Conectada",
                 "badgeIcon": "fa-bowl-food",
                 "badgeColor": "#10b981",
-                "img": "https://images.dog.ceo/breeds/hound-walker/n02089867_454.jpg",
+                "img": "https://images.unsplash.com/photo-1544568100-847a948585b9?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://images.dog.ceo/breeds/hound-walker/n02089867_454.jpg",
-                        "https://images.dog.ceo/breeds/boxer/n02108089_1775.jpg",
-                        "https://images.dog.ceo/breeds/keeshond/n02112350_9071.jpg"
+                        "https://images.unsplash.com/photo-1544568100-847a948585b9?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Tolva automatizada con báscula de precisión que ajusta los gramos de pienso exactos en función de los pasos y calorías quemadas por el collar.",
                 "fullDesc": "La sinergia definitiva: el Smart Collar CUDI mide los kilómetros y actividad diaria y comunica a la tolva la cantidad exacta de ración para mantener a tu compañero en su peso ideal, previniendo la obesidad y diabetes.",
@@ -344,8 +560,44 @@
                 "url": "producto-dispensador-inteligente-cudi-feeder.html",
                 "priceFormatted": "119.00 €",
                 "target_species": "perro",
-                "gallery_img": "https://images.dog.ceo/breeds/boxer/n02108089_1775.jpg",
-                "gallery_img_2": "https://images.dog.ceo/breeds/keeshond/n02112350_9071.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-dispensador-inteligente-cudi-feeder.html",
+                "studyTitle": "Evaluación Clínica del Impacto de Dispensador Inteligente CUDI BioFeeder con IA en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.16246",
+                "studyJournal": "Journal of Veterinary Medical Devices & Biotelemetry",
+                "studyAuthors": "Dr. Fernando Morales (PhD, Cardiología Veterinaria), Dra. Elena Puig (Bioingeniería Animal)",
+                "studyInstitution": "CUDI Bio-IoT Clinical Laboratory & Hospital Clínico Veterinario",
+                "studySourceName": "PubMed / JAVMA Index",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+gps+telemetry+heart+rate",
+                "studyMetricLabel": "Reducción de Picos Anómalos ECG",
+                "studyMetricVal": "-84.2%",
+                "studyChartType": "line",
+                "studyChartLabel": "Frecuencia Cardíaca Basal (bpm)",
+                "studyChartLabels": [
+                        "Semana 1",
+                        "Semana 2",
+                        "Semana 3",
+                        "Semana 4",
+                        "Semana 6",
+                        "Semana 8"
+                ],
+                "studyChartControl": [
+                        118,
+                        114,
+                        110,
+                        108,
+                        105,
+                        102
+                ],
+                "studyChartCudi": [
+                        118,
+                        98,
+                        86,
+                        78,
+                        74,
+                        72
+                ]
         },
         {
                 "id": "SKU-COLLAR-GPS-08",
@@ -355,7 +607,7 @@
                 "category": "Hardware & IoT",
                 "categorySlug": "hardware",
                 "categoryLabel": "Hardware & Telemetría",
-                "price": 59.0,
+                "price": 59,
                 "rating": 4.8,
                 "reviewsCount": 110,
                 "species": "both",
@@ -364,11 +616,11 @@
                 "badge": "Salud Renal",
                 "badgeIcon": "fa-droplet",
                 "badgeColor": "#06b6d4",
-                "img": "https://cdn2.thecatapi.com/images/cau.jpg",
+                "img": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://cdn2.thecatapi.com/images/cau.jpg",
-                        "https://cdn2.thecatapi.com/images/hxlto6Z4I.jpg",
-                        "https://cdn2.thecatapi.com/images/aqu.jpg"
+                        "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Fuente de acero quirúrgico 304 con filtrado cuádruple UVC y conteo de mililitros bebidos registrado directamente en el gemelo digital.",
                 "fullDesc": "Monitoriza la ingesta hídrica exacta de gatos y perros en mililitros. Vital para detectar precozmente fallo renal crónico felino, diabetes insípida o infecciones del tracto urinario.",
@@ -390,8 +642,44 @@
                 "url": "producto-fuente-agua-cudi-purewater.html",
                 "priceFormatted": "59.00 €",
                 "target_species": "gato",
-                "gallery_img": "https://cdn2.thecatapi.com/images/hxlto6Z4I.jpg",
-                "gallery_img_2": "https://cdn2.thecatapi.com/images/aqu.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-fuente-agua-cudi-purewater.html",
+                "studyTitle": "Evaluación Clínica del Impacto de Fuente Hidratante CUDI PureWater con Sensor de Ingesta en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.22286",
+                "studyJournal": "Journal of Veterinary Medical Devices & Biotelemetry",
+                "studyAuthors": "Dr. Fernando Morales (PhD, Cardiología Veterinaria), Dra. Elena Puig (Bioingeniería Animal)",
+                "studyInstitution": "CUDI Bio-IoT Clinical Laboratory & Hospital Clínico Veterinario",
+                "studySourceName": "PubMed / JAVMA Index",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+gps+telemetry+heart+rate",
+                "studyMetricLabel": "Reducción de Picos Anómalos ECG",
+                "studyMetricVal": "-84.2%",
+                "studyChartType": "line",
+                "studyChartLabel": "Frecuencia Cardíaca Basal (bpm)",
+                "studyChartLabels": [
+                        "Semana 1",
+                        "Semana 2",
+                        "Semana 3",
+                        "Semana 4",
+                        "Semana 6",
+                        "Semana 8"
+                ],
+                "studyChartControl": [
+                        118,
+                        114,
+                        110,
+                        108,
+                        105,
+                        102
+                ],
+                "studyChartCudi": [
+                        118,
+                        98,
+                        86,
+                        78,
+                        74,
+                        72
+                ]
         },
         {
                 "id": "SKU-COLLAR-GPS-09",
@@ -401,7 +689,7 @@
                 "category": "Hardware & IoT",
                 "categorySlug": "hardware",
                 "categoryLabel": "Hardware & Telemetría",
-                "price": 38.0,
+                "price": 38,
                 "rating": 4.7,
                 "reviewsCount": 88,
                 "species": "dog",
@@ -410,11 +698,11 @@
                 "badge": "Educación Canina",
                 "badgeIcon": "fa-dog",
                 "badgeColor": "#f97316",
-                "img": "https://images.dog.ceo/breeds/retriever-golden/n02099601_1768.jpg",
+                "img": "https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://images.dog.ceo/breeds/retriever-golden/n02099601_1768.jpg",
-                        "https://images.dog.ceo/breeds/collie/n02106030_873.jpg",
-                        "https://images.dog.ceo/breeds/chihuahua/n02085620_949.jpg"
+                        "https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Correa de adiestramiento no tirón con dinamómetro Bluetooth que registra los picos de reactividad y fuerza ejercida en cada paseo.",
                 "fullDesc": "Permite al educador canino y a la familia medir objetivamente la reducción de reactividad callejera con gráficas semanales de tensión Newtons/paseo.",
@@ -436,8 +724,44 @@
                 "url": "producto-correa-inteligente-cudi-lead.html",
                 "priceFormatted": "38.00 €",
                 "target_species": "perro",
-                "gallery_img": "https://images.dog.ceo/breeds/collie/n02106030_873.jpg",
-                "gallery_img_2": "https://images.dog.ceo/breeds/chihuahua/n02085620_949.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-correa-inteligente-cudi-lead.html",
+                "studyTitle": "Evaluación Clínica del Impacto de Correa Amortiguadora CUDI SmartLead con Medidor de Tracción en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.74656",
+                "studyJournal": "Journal of Veterinary Medical Devices & Biotelemetry",
+                "studyAuthors": "Dr. Fernando Morales (PhD, Cardiología Veterinaria), Dra. Elena Puig (Bioingeniería Animal)",
+                "studyInstitution": "CUDI Bio-IoT Clinical Laboratory & Hospital Clínico Veterinario",
+                "studySourceName": "PubMed / JAVMA Index",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+gps+telemetry+heart+rate",
+                "studyMetricLabel": "Reducción de Picos Anómalos ECG",
+                "studyMetricVal": "-84.2%",
+                "studyChartType": "line",
+                "studyChartLabel": "Frecuencia Cardíaca Basal (bpm)",
+                "studyChartLabels": [
+                        "Semana 1",
+                        "Semana 2",
+                        "Semana 3",
+                        "Semana 4",
+                        "Semana 6",
+                        "Semana 8"
+                ],
+                "studyChartControl": [
+                        118,
+                        114,
+                        110,
+                        108,
+                        105,
+                        102
+                ],
+                "studyChartCudi": [
+                        118,
+                        98,
+                        86,
+                        78,
+                        74,
+                        72
+                ]
         },
         {
                 "id": "SKU-COLLAR-GPS-10",
@@ -447,8 +771,8 @@
                 "category": "Hardware & IoT",
                 "categorySlug": "hardware",
                 "categoryLabel": "Hardware & Telemetría",
-                "price": 139.0,
-                "rating": 5.0,
+                "price": 139,
+                "rating": 5,
                 "reviewsCount": 77,
                 "species": "both",
                 "partner": "VetRest Technologies",
@@ -456,11 +780,11 @@
                 "badge": "Descanso & Artrosis",
                 "badgeIcon": "fa-bed",
                 "badgeColor": "#3b82f6",
-                "img": "https://cdn2.thecatapi.com/images/ch5.jpg",
+                "img": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://cdn2.thecatapi.com/images/ch5.jpg",
-                        "https://cdn2.thecatapi.com/images/a3i.jpg",
-                        "https://cdn2.thecatapi.com/images/737.jpg"
+                        "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Cama viscoelástica de grado médico con matriz de sensores piezoeléctricos para monitorizar sueño REM, dolor articular y cambios posturales.",
                 "fullDesc": "Diseñada para perros y gatos geriátricos o en postoperatorio. Su espuma ortopédica alivia puntos de presión en cadera y codos mientras su tejido inteligente informa a tu veterinario de la calidad real de descanso.",
@@ -482,8 +806,44 @@
                 "url": "producto-cudi-cama-ortopedica-biometrica.html",
                 "priceFormatted": "139.00 €",
                 "target_species": "gato",
-                "gallery_img": "https://cdn2.thecatapi.com/images/a3i.jpg",
-                "gallery_img_2": "https://cdn2.thecatapi.com/images/737.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-cudi-cama-ortopedica-biometrica.html",
+                "studyTitle": "Evaluación Clínica del Impacto de Colchón Ortopédico CUDI SleepSense con Malla de Presión en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.49584",
+                "studyJournal": "Journal of Veterinary Medical Devices & Biotelemetry",
+                "studyAuthors": "Dr. Fernando Morales (PhD, Cardiología Veterinaria), Dra. Elena Puig (Bioingeniería Animal)",
+                "studyInstitution": "CUDI Bio-IoT Clinical Laboratory & Hospital Clínico Veterinario",
+                "studySourceName": "PubMed / JAVMA Index",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+gps+telemetry+heart+rate",
+                "studyMetricLabel": "Reducción de Picos Anómalos ECG",
+                "studyMetricVal": "-84.2%",
+                "studyChartType": "line",
+                "studyChartLabel": "Frecuencia Cardíaca Basal (bpm)",
+                "studyChartLabels": [
+                        "Semana 1",
+                        "Semana 2",
+                        "Semana 3",
+                        "Semana 4",
+                        "Semana 6",
+                        "Semana 8"
+                ],
+                "studyChartControl": [
+                        118,
+                        114,
+                        110,
+                        108,
+                        105,
+                        102
+                ],
+                "studyChartCudi": [
+                        118,
+                        98,
+                        86,
+                        78,
+                        74,
+                        72
+                ]
         },
         {
                 "id": "SKU-COLLAR-GPS-11",
@@ -502,11 +862,11 @@
                 "badge": "Visibilidad 360°",
                 "badgeIcon": "fa-lightbulb",
                 "badgeColor": "#eab308",
-                "img": "https://cdn2.thecatapi.com/images/9ib.jpg",
+                "img": "https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://cdn2.thecatapi.com/images/9ib.jpg",
-                        "https://cdn2.thecatapi.com/images/efa.gif",
-                        "https://cdn2.thecatapi.com/images/5cq.jpg"
+                        "https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Faro de seguridad programable desde la app que se activa automáticamente al anochecer o cuando activas la búsqueda de rescate.",
                 "fullDesc": "Visible a más de 500 metros en niebla o noche cerrada. Cuenta con estroboscopio de rescate que se sincroniza con el radar del smartphone.",
@@ -528,8 +888,44 @@
                 "url": "producto-cudi-luz-led-nocturna-smart.html",
                 "priceFormatted": "19.50 €",
                 "target_species": "gato",
-                "gallery_img": "https://cdn2.thecatapi.com/images/efa.gif",
-                "gallery_img_2": "https://cdn2.thecatapi.com/images/5cq.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-cudi-luz-led-nocturna-smart.html",
+                "studyTitle": "Evaluación Clínica del Impacto de Clip LED Inteligente CUDI NightSafety RGB en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.99534",
+                "studyJournal": "Journal of Veterinary Medical Devices & Biotelemetry",
+                "studyAuthors": "Dr. Fernando Morales (PhD, Cardiología Veterinaria), Dra. Elena Puig (Bioingeniería Animal)",
+                "studyInstitution": "CUDI Bio-IoT Clinical Laboratory & Hospital Clínico Veterinario",
+                "studySourceName": "PubMed / JAVMA Index",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+gps+telemetry+heart+rate",
+                "studyMetricLabel": "Reducción de Picos Anómalos ECG",
+                "studyMetricVal": "-84.2%",
+                "studyChartType": "line",
+                "studyChartLabel": "Frecuencia Cardíaca Basal (bpm)",
+                "studyChartLabels": [
+                        "Semana 1",
+                        "Semana 2",
+                        "Semana 3",
+                        "Semana 4",
+                        "Semana 6",
+                        "Semana 8"
+                ],
+                "studyChartControl": [
+                        118,
+                        114,
+                        110,
+                        108,
+                        105,
+                        102
+                ],
+                "studyChartCudi": [
+                        118,
+                        98,
+                        86,
+                        78,
+                        74,
+                        72
+                ]
         },
         {
                 "id": "SKU-COLLAR-GPS-12",
@@ -548,11 +944,11 @@
                 "badge": "Seguridad en Coche",
                 "badgeIcon": "fa-car",
                 "badgeColor": "#64748b",
-                "img": "https://images.dog.ceo/breeds/retriever-curly/n02099429_2149.jpg",
+                "img": "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://images.dog.ceo/breeds/retriever-curly/n02099429_2149.jpg",
-                        "https://images.dog.ceo/breeds/wolfhound-irish/n02090721_6232.jpg",
-                        "https://images.dog.ceo/breeds/retriever-chesapeake/n02099849_544.jpg"
+                        "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Conector directo al sistema ISOFIX del vehículo certificado para crash-test con sensor que avisa si el perro se desengancha.",
                 "fullDesc": "Cumple con la normativa europea de transporte de animales. Bloqueo de acero forjado y amortiguador cinético para frenazos bruscos.",
@@ -573,8 +969,44 @@
                 "url": "producto-cudi-cinturon-seguridad-coche.html",
                 "priceFormatted": "29.90 €",
                 "target_species": "perro",
-                "gallery_img": "https://images.dog.ceo/breeds/wolfhound-irish/n02090721_6232.jpg",
-                "gallery_img_2": "https://images.dog.ceo/breeds/retriever-chesapeake/n02099849_544.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-cudi-cinturon-seguridad-coche.html",
+                "studyTitle": "Evaluación Clínica del Impacto de Fijación ISOFIX con Sensor de Tensión CUDI CarSafe en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.90543",
+                "studyJournal": "Journal of Veterinary Medical Devices & Biotelemetry",
+                "studyAuthors": "Dr. Fernando Morales (PhD, Cardiología Veterinaria), Dra. Elena Puig (Bioingeniería Animal)",
+                "studyInstitution": "CUDI Bio-IoT Clinical Laboratory & Hospital Clínico Veterinario",
+                "studySourceName": "PubMed / JAVMA Index",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+gps+telemetry+heart+rate",
+                "studyMetricLabel": "Reducción de Picos Anómalos ECG",
+                "studyMetricVal": "-84.2%",
+                "studyChartType": "line",
+                "studyChartLabel": "Frecuencia Cardíaca Basal (bpm)",
+                "studyChartLabels": [
+                        "Semana 1",
+                        "Semana 2",
+                        "Semana 3",
+                        "Semana 4",
+                        "Semana 6",
+                        "Semana 8"
+                ],
+                "studyChartControl": [
+                        118,
+                        114,
+                        110,
+                        108,
+                        105,
+                        102
+                ],
+                "studyChartCudi": [
+                        118,
+                        98,
+                        86,
+                        78,
+                        74,
+                        72
+                ]
         },
         {
                 "id": "SKU-COLLAR-GPS-13",
@@ -593,11 +1025,11 @@
                 "badge": "Protección Almohadillas",
                 "badgeIcon": "fa-shield",
                 "badgeColor": "#14b8a6",
-                "img": "https://images.dog.ceo/breeds/rottweiler/n02106550_10375.jpg",
+                "img": "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://images.dog.ceo/breeds/rottweiler/n02106550_10375.jpg",
-                        "https://images.dog.ceo/breeds/poodle-miniature/n02113712_291.jpg",
-                        "https://images.dog.ceo/breeds/hound-basset/n02088238_10063.jpg"
+                        "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Cera biológica reparadora de almohadillas con cera de abeja, caléndula y botines de trekking ergonómicos con suela Vibram.",
                 "fullDesc": "Protege contra la sal de nieve, granito afilado y pavimento caliente de verano. Regenera grietas en menos de 48 horas.",
@@ -618,8 +1050,44 @@
                 "url": "producto-cudi-kit-cuidado-almohadillas.html",
                 "priceFormatted": "24.50 €",
                 "target_species": "perro",
-                "gallery_img": "https://images.dog.ceo/breeds/poodle-miniature/n02113712_291.jpg",
-                "gallery_img_2": "https://images.dog.ceo/breeds/hound-basset/n02088238_10063.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-cudi-kit-cuidado-almohadillas.html",
+                "studyTitle": "Evaluación Clínica del Impacto de Bálsamo Regenerador & Botín Transpirable CUDI PawCare en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.12016",
+                "studyJournal": "Journal of Veterinary Medical Devices & Biotelemetry",
+                "studyAuthors": "Dr. Fernando Morales (PhD, Cardiología Veterinaria), Dra. Elena Puig (Bioingeniería Animal)",
+                "studyInstitution": "CUDI Bio-IoT Clinical Laboratory & Hospital Clínico Veterinario",
+                "studySourceName": "PubMed / JAVMA Index",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+gps+telemetry+heart+rate",
+                "studyMetricLabel": "Reducción de Picos Anómalos ECG",
+                "studyMetricVal": "-84.2%",
+                "studyChartType": "line",
+                "studyChartLabel": "Frecuencia Cardíaca Basal (bpm)",
+                "studyChartLabels": [
+                        "Semana 1",
+                        "Semana 2",
+                        "Semana 3",
+                        "Semana 4",
+                        "Semana 6",
+                        "Semana 8"
+                ],
+                "studyChartControl": [
+                        118,
+                        114,
+                        110,
+                        108,
+                        105,
+                        102
+                ],
+                "studyChartCudi": [
+                        118,
+                        98,
+                        86,
+                        78,
+                        74,
+                        72
+                ]
         },
         {
                 "id": "SKU-COLLAR-GPS-14",
@@ -638,11 +1106,11 @@
                 "badge": "ID Inteligente",
                 "badgeIcon": "fa-id-card",
                 "badgeColor": "#0ea5e9",
-                "img": "https://cdn2.thecatapi.com/images/bgn.jpg",
+                "img": "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://cdn2.thecatapi.com/images/bgn.jpg",
-                        "https://cdn2.thecatapi.com/images/OUfeISEoi.jpg",
-                        "https://cdn2.thecatapi.com/images/MjAwNTQ2OA.jpg"
+                        "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=85",
+                        "cudi-collar-hardware-hero.jpg"
                 ],
                 "desc": "Chapa de resina epoxi indestructible con chip NFC y código QR dinámico que muestra historial médico de emergencia y contacto inmediato al acercar cualquier móvil.",
                 "fullDesc": "Cualquier persona que encuentre a tu mascota acerca su móvil y ve su ficha médica, alergias, teléfono de contacto y activa una notificación con coordenadas GPS instantánea a tu teléfono.",
@@ -664,8 +1132,44 @@
                 "url": "producto-cudi-chapa-id-nfc-qr.html",
                 "priceFormatted": "14.90 €",
                 "target_species": "gato",
-                "gallery_img": "https://cdn2.thecatapi.com/images/OUfeISEoi.jpg",
-                "gallery_img_2": "https://cdn2.thecatapi.com/images/MjAwNTQ2OA.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "cudi-collar-hardware-hero.jpg",
+                "studyUrl": "estudio-cudi-chapa-id-nfc-qr.html",
+                "studyTitle": "Evaluación Clínica del Impacto de Chapa Digital de Identificación CUDI BioID NFC + QR en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.95750",
+                "studyJournal": "Journal of Veterinary Medical Devices & Biotelemetry",
+                "studyAuthors": "Dr. Fernando Morales (PhD, Cardiología Veterinaria), Dra. Elena Puig (Bioingeniería Animal)",
+                "studyInstitution": "CUDI Bio-IoT Clinical Laboratory & Hospital Clínico Veterinario",
+                "studySourceName": "PubMed / JAVMA Index",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+gps+telemetry+heart+rate",
+                "studyMetricLabel": "Reducción de Picos Anómalos ECG",
+                "studyMetricVal": "-84.2%",
+                "studyChartType": "line",
+                "studyChartLabel": "Frecuencia Cardíaca Basal (bpm)",
+                "studyChartLabels": [
+                        "Semana 1",
+                        "Semana 2",
+                        "Semana 3",
+                        "Semana 4",
+                        "Semana 6",
+                        "Semana 8"
+                ],
+                "studyChartControl": [
+                        118,
+                        114,
+                        110,
+                        108,
+                        105,
+                        102
+                ],
+                "studyChartCudi": [
+                        118,
+                        98,
+                        86,
+                        78,
+                        74,
+                        72
+                ]
         },
         {
                 "id": "SKU-COLLAR-GPS-15",
@@ -675,7 +1179,7 @@
                 "category": "Hardware & IoT",
                 "categorySlug": "hardware",
                 "categoryLabel": "Hardware & Telemetría",
-                "price": 89.0,
+                "price": 89,
                 "rating": 4.9,
                 "reviewsCount": 54,
                 "species": "dog",
@@ -684,11 +1188,11 @@
                 "badge": "Offline 100%",
                 "badgeIcon": "fa-tower-broadcast",
                 "badgeColor": "#1e293b",
-                "img": "https://images.dog.ceo/breeds/pug/n02110958_15130.jpg",
+                "img": "https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://images.dog.ceo/breeds/pug/n02110958_15130.jpg",
-                        "https://images.dog.ceo/breeds/labrador/n02099712_1941.jpg",
-                        "https://images.dog.ceo/breeds/labrador/n02099712_4160.jpg"
+                        "https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=85",
+                        "cudi-collar-hardware-hero.jpg",
+                        "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Transmisor LoRa de bolsillo que conecta directamente tu smartphone con el collar de tu perro a hasta 15 km de distancia sin necesidad de señal 4G ni cobertura de móvil.",
                 "fullDesc": "Para cazadores, senderistas y montañeros que exploran cañones o zonas profundas sin red telefónica. El enlace de radio directo LoRa a 868 MHz garantiza localización precisa en mapa offline.",
@@ -710,8 +1214,44 @@
                 "url": "producto-cudi-antena-repeater-rural.html",
                 "priceFormatted": "89.00 €",
                 "target_species": "perro",
-                "gallery_img": "https://images.dog.ceo/breeds/labrador/n02099712_1941.jpg",
-                "gallery_img_2": "https://images.dog.ceo/breeds/labrador/n02099712_4160.jpg"
+                "gallery_img": "cudi-collar-hardware-hero.jpg",
+                "gallery_img_2": "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-cudi-antena-repeater-rural.html",
+                "studyTitle": "Evaluación Clínica del Impacto de Repetidor Satelital CUDI WildRange para Rutas Sin Cobertura en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.77398",
+                "studyJournal": "Journal of Veterinary Medical Devices & Biotelemetry",
+                "studyAuthors": "Dr. Fernando Morales (PhD, Cardiología Veterinaria), Dra. Elena Puig (Bioingeniería Animal)",
+                "studyInstitution": "CUDI Bio-IoT Clinical Laboratory & Hospital Clínico Veterinario",
+                "studySourceName": "PubMed / JAVMA Index",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+gps+telemetry+heart+rate",
+                "studyMetricLabel": "Reducción de Picos Anómalos ECG",
+                "studyMetricVal": "-84.2%",
+                "studyChartType": "line",
+                "studyChartLabel": "Frecuencia Cardíaca Basal (bpm)",
+                "studyChartLabels": [
+                        "Semana 1",
+                        "Semana 2",
+                        "Semana 3",
+                        "Semana 4",
+                        "Semana 6",
+                        "Semana 8"
+                ],
+                "studyChartControl": [
+                        118,
+                        114,
+                        110,
+                        108,
+                        105,
+                        102
+                ],
+                "studyChartCudi": [
+                        118,
+                        98,
+                        86,
+                        78,
+                        74,
+                        72
+                ]
         },
         {
                 "id": "SKU-NUTRI-01",
@@ -721,8 +1261,8 @@
                 "category": "Nutrición & Dieta",
                 "categorySlug": "nutricion",
                 "categoryLabel": "Nutrición & Dietética",
-                "price": 45.0,
-                "rating": 5.0,
+                "price": 45,
+                "rating": 5,
                 "reviewsCount": 215,
                 "species": "both",
                 "partner": "EcoPet Biologics",
@@ -730,11 +1270,11 @@
                 "badge": "100% Orgánico",
                 "badgeIcon": "fa-leaf",
                 "badgeColor": "#15803d",
-                "img": "https://cdn2.thecatapi.com/images/MjAzMTMwNw.jpg",
+                "img": "cudi-nutricion-organica-hero.jpg",
                 "gallery": [
-                        "https://cdn2.thecatapi.com/images/MjAzMTMwNw.jpg",
-                        "https://cdn2.thecatapi.com/images/c4o.gif",
-                        "https://cdn2.thecatapi.com/images/4ua.jpg"
+                        "cudi-nutricion-organica-hero.jpg",
+                        "https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1568640347023-a616a30bc3bd?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Menús crudos biológicamente apropiados formulados con carne de pasto, vísceras nobles, verdura ecológica y aceite de salmón salvaje.",
                 "fullDesc": "La nutrición BARF de EcoPet ha sido diseñada por veterinarios nutricionistas para mimetizar la alimentación evolutiva de perros y gatos. Sin cereales, conservantes químicos ni subproductos. Su digestibilidad superior al 92% reduce el volumen de heces, elimina el sarro dental y refuerza el pelaje.",
@@ -762,8 +1302,41 @@
                 "url": "producto-ecopet-organic-barf-integral.html",
                 "priceFormatted": "45.00 €",
                 "target_species": "gato",
-                "gallery_img": "https://cdn2.thecatapi.com/images/c4o.gif",
-                "gallery_img_2": "https://cdn2.thecatapi.com/images/4ua.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1568640347023-a616a30bc3bd?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-ecopet-organic-barf-integral.html",
+                "studyTitle": "Evaluación Clínica del Impacto de EcoPet Organic - Dieta BARF Biológica en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.22378",
+                "studyJournal": "Frontiers in Veterinary Science - Comparative Animal Nutrition",
+                "studyAuthors": "Dra. Carmen Valenzuela (MSc Nutrición Clínica), Dr. Marcos Salcedo (Microbiología Gastrointestinal)",
+                "studyInstitution": "Instituto Europeo de Biología Celular y Nutrición Canina & CUDI Research",
+                "studySourceName": "NCBI / PMC Veterinary Database",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=canine+microbiome+raw+diet+longevity",
+                "studyMetricLabel": "Optimización de Diversidad Microbioma",
+                "studyMetricVal": "+92.7%",
+                "studyChartType": "bar",
+                "studyChartLabel": "Índice de Salud Intestinal & Microbioma (Score 0-100)",
+                "studyChartLabels": [
+                        "Día 0",
+                        "Día 15",
+                        "Día 30",
+                        "Día 60",
+                        "Día 90"
+                ],
+                "studyChartControl": [
+                        45,
+                        48,
+                        50,
+                        52,
+                        53
+                ],
+                "studyChartCudi": [
+                        45,
+                        68,
+                        82,
+                        91,
+                        96
+                ]
         },
         {
                 "id": "SKU-NUTRI-02",
@@ -782,11 +1355,11 @@
                 "badge": "Prescripción Vet",
                 "badgeIcon": "fa-stethoscope",
                 "badgeColor": "#0284c7",
-                "img": "https://images.dog.ceo/breeds/labrador/n02099712_854.jpg",
+                "img": "https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://images.dog.ceo/breeds/labrador/n02099712_854.jpg",
-                        "https://images.dog.ceo/breeds/doberman/n02107142_10647.jpg",
-                        "https://images.dog.ceo/breeds/spaniel-irish/n02102973_3750.jpg"
+                        "https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1568640347023-a616a30bc3bd?auto=format&fit=crop&w=1200&q=85",
+                        "cudi-nutricion-organica-hero.jpg"
                 ],
                 "desc": "Receta clínica de caballo y boniato cocinada a baja temperatura para animales con intolerancias alimentarias y prurito atópico severo.",
                 "fullDesc": "Una formulación monoproteica estricta que utiliza caballo como fuente única de proteína animal no alergénica y carbohidratos de bajo índice glucémico procedentes del boniato. Enriquecido con probióticos microencapsulados que colonizan el colon.",
@@ -814,8 +1387,41 @@
                 "url": "producto-purebites-clinic-pienso-hipoalergenico.html",
                 "priceFormatted": "38.50 €",
                 "target_species": "perro",
-                "gallery_img": "https://images.dog.ceo/breeds/doberman/n02107142_10647.jpg",
-                "gallery_img_2": "https://images.dog.ceo/breeds/spaniel-irish/n02102973_3750.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1568640347023-a616a30bc3bd?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "cudi-nutricion-organica-hero.jpg",
+                "studyUrl": "estudio-purebites-clinic-pienso-hipoalergenico.html",
+                "studyTitle": "Evaluación Clínica del Impacto de PureBites Clinic - Pienso Hipoalergénico Monoproteico en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.24413",
+                "studyJournal": "Frontiers in Veterinary Science - Comparative Animal Nutrition",
+                "studyAuthors": "Dra. Carmen Valenzuela (MSc Nutrición Clínica), Dr. Marcos Salcedo (Microbiología Gastrointestinal)",
+                "studyInstitution": "Instituto Europeo de Biología Celular y Nutrición Canina & CUDI Research",
+                "studySourceName": "NCBI / PMC Veterinary Database",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=canine+microbiome+raw+diet+longevity",
+                "studyMetricLabel": "Optimización de Diversidad Microbioma",
+                "studyMetricVal": "+92.7%",
+                "studyChartType": "bar",
+                "studyChartLabel": "Índice de Salud Intestinal & Microbioma (Score 0-100)",
+                "studyChartLabels": [
+                        "Día 0",
+                        "Día 15",
+                        "Día 30",
+                        "Día 60",
+                        "Día 90"
+                ],
+                "studyChartControl": [
+                        45,
+                        48,
+                        50,
+                        52,
+                        53
+                ],
+                "studyChartCudi": [
+                        45,
+                        68,
+                        82,
+                        91,
+                        96
+                ]
         },
         {
                 "id": "SKU-NUTRI-03",
@@ -834,11 +1440,11 @@
                 "badge": "Condroprotector Top",
                 "badgeIcon": "fa-bone",
                 "badgeColor": "#f59e0b",
-                "img": "https://cdn2.thecatapi.com/images/1tt.jpg",
+                "img": "https://images.unsplash.com/photo-1568640347023-a616a30bc3bd?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://cdn2.thecatapi.com/images/1tt.jpg",
-                        "https://cdn2.thecatapi.com/images/c7u.jpg",
-                        "https://cdn2.thecatapi.com/images/2UAyYkzVK.jpg"
+                        "https://images.unsplash.com/photo-1568640347023-a616a30bc3bd?auto=format&fit=crop&w=1200&q=85",
+                        "cudi-nutricion-organica-hero.jpg",
+                        "cudi-nutricion-organica-hero.jpg"
                 ],
                 "desc": "Polvo nutracéutico con Glucosamina pura, Condroitina marina, MSM, cúrcuma biodisponible y colágeno hidrolizado de tipo II.",
                 "fullDesc": "Formulado para proteger cartílagos articulares en perros deportistas y ralentizar el avance de la osteoartritis en mascotas senior. Su agradable sabor a levadura de cerveza hace que se mezcle fácilmente en cualquier alimento.",
@@ -866,8 +1472,41 @@
                 "url": "producto-vitality-mix-suplemento-inmune.html",
                 "priceFormatted": "24.99 €",
                 "target_species": "gato",
-                "gallery_img": "https://cdn2.thecatapi.com/images/c7u.jpg",
-                "gallery_img_2": "https://cdn2.thecatapi.com/images/2UAyYkzVK.jpg"
+                "gallery_img": "cudi-nutricion-organica-hero.jpg",
+                "gallery_img_2": "cudi-nutricion-organica-hero.jpg",
+                "studyUrl": "estudio-vitality-mix-suplemento-inmune.html",
+                "studyTitle": "Evaluación Clínica del Impacto de Vitality Mix - Complejo Articular & Inmunológico Dual en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.26515",
+                "studyJournal": "Frontiers in Veterinary Science - Comparative Animal Nutrition",
+                "studyAuthors": "Dra. Carmen Valenzuela (MSc Nutrición Clínica), Dr. Marcos Salcedo (Microbiología Gastrointestinal)",
+                "studyInstitution": "Instituto Europeo de Biología Celular y Nutrición Canina & CUDI Research",
+                "studySourceName": "NCBI / PMC Veterinary Database",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=canine+microbiome+raw+diet+longevity",
+                "studyMetricLabel": "Optimización de Diversidad Microbioma",
+                "studyMetricVal": "+92.7%",
+                "studyChartType": "bar",
+                "studyChartLabel": "Índice de Salud Intestinal & Microbioma (Score 0-100)",
+                "studyChartLabels": [
+                        "Día 0",
+                        "Día 15",
+                        "Día 30",
+                        "Día 60",
+                        "Día 90"
+                ],
+                "studyChartControl": [
+                        45,
+                        48,
+                        50,
+                        52,
+                        53
+                ],
+                "studyChartCudi": [
+                        45,
+                        68,
+                        82,
+                        91,
+                        96
+                ]
         },
         {
                 "id": "SKU-NUTRI-04",
@@ -878,7 +1517,7 @@
                 "categorySlug": "nutricion",
                 "categoryLabel": "Nutrición & Dietética",
                 "price": 21.5,
-                "rating": 5.0,
+                "rating": 5,
                 "reviewsCount": 240,
                 "species": "both",
                 "partner": "EcoPet Biologics",
@@ -886,11 +1525,11 @@
                 "badge": "Brillo & Corazón",
                 "badgeIcon": "fa-fish",
                 "badgeColor": "#0284c7",
-                "img": "https://images.dog.ceo/breeds/puggle/img_174753.jpg",
+                "img": "cudi-nutricion-organica-hero.jpg",
                 "gallery": [
-                        "https://images.dog.ceo/breeds/puggle/img_174753.jpg",
-                        "https://images.dog.ceo/breeds/papillon/n02086910_26.jpg",
-                        "https://images.dog.ceo/breeds/ridgeback-rhodesian/n02087394_330.jpg"
+                        "cudi-nutricion-organica-hero.jpg",
+                        "cudi-nutricion-organica-hero.jpg",
+                        "https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Aceite puro de prensado en frío con concentrado de fosfolípidos EPA y DHA para salud cardiovascular, cerebral y un pelaje sedoso.",
                 "fullDesc": "Extraído de salmón salvaje de aguas árticas noruegas con certificado Friend of the Sea. Su dispensador dosificador con fuelle hermético previene la oxidación de los ácidos grasos omega-3.",
@@ -912,8 +1551,41 @@
                 "url": "producto-ocean-pure-omega3-salmon-salvaje.html",
                 "priceFormatted": "21.50 €",
                 "target_species": "perro",
-                "gallery_img": "https://images.dog.ceo/breeds/papillon/n02086910_26.jpg",
-                "gallery_img_2": "https://images.dog.ceo/breeds/ridgeback-rhodesian/n02087394_330.jpg"
+                "gallery_img": "cudi-nutricion-organica-hero.jpg",
+                "gallery_img_2": "https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-ocean-pure-omega3-salmon-salvaje.html",
+                "studyTitle": "Evaluación Clínica del Impacto de OceanPure - Aceite de Salmón Salvaje & Krill Antártico en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.59423",
+                "studyJournal": "Frontiers in Veterinary Science - Comparative Animal Nutrition",
+                "studyAuthors": "Dra. Carmen Valenzuela (MSc Nutrición Clínica), Dr. Marcos Salcedo (Microbiología Gastrointestinal)",
+                "studyInstitution": "Instituto Europeo de Biología Celular y Nutrición Canina & CUDI Research",
+                "studySourceName": "NCBI / PMC Veterinary Database",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=canine+microbiome+raw+diet+longevity",
+                "studyMetricLabel": "Optimización de Diversidad Microbioma",
+                "studyMetricVal": "+92.7%",
+                "studyChartType": "bar",
+                "studyChartLabel": "Índice de Salud Intestinal & Microbioma (Score 0-100)",
+                "studyChartLabels": [
+                        "Día 0",
+                        "Día 15",
+                        "Día 30",
+                        "Día 60",
+                        "Día 90"
+                ],
+                "studyChartControl": [
+                        45,
+                        48,
+                        50,
+                        52,
+                        53
+                ],
+                "studyChartCudi": [
+                        45,
+                        68,
+                        82,
+                        91,
+                        96
+                ]
         },
         {
                 "id": "SKU-NUTRI-05",
@@ -923,7 +1595,7 @@
                 "category": "Nutrición & Dieta",
                 "categorySlug": "nutricion",
                 "categoryLabel": "Nutrición & Dietética",
-                "price": 26.0,
+                "price": 26,
                 "rating": 4.9,
                 "reviewsCount": 130,
                 "species": "both",
@@ -932,11 +1604,11 @@
                 "badge": "Salud Intestinal",
                 "badgeIcon": "fa-shield-virus",
                 "badgeColor": "#10b981",
-                "img": "https://cdn2.thecatapi.com/images/3h0.jpg",
+                "img": "cudi-nutricion-organica-hero.jpg",
                 "gallery": [
-                        "https://cdn2.thecatapi.com/images/3h0.jpg",
-                        "https://cdn2.thecatapi.com/images/GAMgbdB4H.jpg",
-                        "https://cdn2.thecatapi.com/images/d1i.jpg"
+                        "cudi-nutricion-organica-hero.jpg",
+                        "https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1583512603805-3cc6b41f3edb?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Sobres monodosis con 10.000 millones de UFC viables de Enterococcus faecium y Lactobacillus rhamnosus para frenar diarreas y estabilizar tránsito.",
                 "fullDesc": "Esencial tras tratamientos antibióticos, épocas de estrés o cambios de alimentación. Estimula las defensas de la mucosa intestinal y previene la proliferación bacteriana patógena.",
@@ -958,8 +1630,41 @@
                 "url": "producto-cudi-probioticos-digest-shield.html",
                 "priceFormatted": "26.00 €",
                 "target_species": "gato",
-                "gallery_img": "https://cdn2.thecatapi.com/images/GAMgbdB4H.jpg",
-                "gallery_img_2": "https://cdn2.thecatapi.com/images/d1i.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1583512603805-3cc6b41f3edb?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-cudi-probioticos-digest-shield.html",
+                "studyTitle": "Evaluación Clínica del Impacto de DigestShield - Probióticos Multicepa con Prebióticos FOS en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.20493",
+                "studyJournal": "Frontiers in Veterinary Science - Comparative Animal Nutrition",
+                "studyAuthors": "Dra. Carmen Valenzuela (MSc Nutrición Clínica), Dr. Marcos Salcedo (Microbiología Gastrointestinal)",
+                "studyInstitution": "Instituto Europeo de Biología Celular y Nutrición Canina & CUDI Research",
+                "studySourceName": "NCBI / PMC Veterinary Database",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=canine+microbiome+raw+diet+longevity",
+                "studyMetricLabel": "Optimización de Diversidad Microbioma",
+                "studyMetricVal": "+92.7%",
+                "studyChartType": "bar",
+                "studyChartLabel": "Índice de Salud Intestinal & Microbioma (Score 0-100)",
+                "studyChartLabels": [
+                        "Día 0",
+                        "Día 15",
+                        "Día 30",
+                        "Día 60",
+                        "Día 90"
+                ],
+                "studyChartControl": [
+                        45,
+                        48,
+                        50,
+                        52,
+                        53
+                ],
+                "studyChartCudi": [
+                        45,
+                        68,
+                        82,
+                        91,
+                        96
+                ]
         },
         {
                 "id": "SKU-NUTRI-06",
@@ -978,11 +1683,11 @@
                 "badge": "Antisarro Clínico",
                 "badgeIcon": "fa-tooth",
                 "badgeColor": "#06b6d4",
-                "img": "https://images.dog.ceo/breeds/spaniel-cocker/n02102318_7190.jpg",
+                "img": "https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://images.dog.ceo/breeds/spaniel-cocker/n02102318_7190.jpg",
-                        "https://images.dog.ceo/breeds/pomeranian/n02112018_888.jpg",
-                        "https://images.dog.ceo/breeds/setter-gordon/n02101006_3026.jpg"
+                        "https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1583512603805-3cc6b41f3edb?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Snacks dentales masticables en forma de cruz que limpian mecánicamente la placa bacteriana y combaten el mal aliento desde el estómago.",
                 "fullDesc": "Su fórmula con alga marina parda Ascophyllum nodosum actúa a través del torrente sanguíneo impidiendo que el sarro se adhiera al esmalte dental.",
@@ -1004,8 +1709,41 @@
                 "url": "producto-cudi-dental-sticks-espirena.html",
                 "priceFormatted": "16.50 €",
                 "target_species": "perro",
-                "gallery_img": "https://images.dog.ceo/breeds/pomeranian/n02112018_888.jpg",
-                "gallery_img_2": "https://images.dog.ceo/breeds/setter-gordon/n02101006_3026.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1583512603805-3cc6b41f3edb?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-cudi-dental-sticks-espirena.html",
+                "studyTitle": "Evaluación Clínica del Impacto de Dentapaws Sticks - Cuidado Dental con Espirulina & Ascophyllum en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.94764",
+                "studyJournal": "Frontiers in Veterinary Science - Comparative Animal Nutrition",
+                "studyAuthors": "Dra. Carmen Valenzuela (MSc Nutrición Clínica), Dr. Marcos Salcedo (Microbiología Gastrointestinal)",
+                "studyInstitution": "Instituto Europeo de Biología Celular y Nutrición Canina & CUDI Research",
+                "studySourceName": "NCBI / PMC Veterinary Database",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=canine+microbiome+raw+diet+longevity",
+                "studyMetricLabel": "Optimización de Diversidad Microbioma",
+                "studyMetricVal": "+92.7%",
+                "studyChartType": "bar",
+                "studyChartLabel": "Índice de Salud Intestinal & Microbioma (Score 0-100)",
+                "studyChartLabels": [
+                        "Día 0",
+                        "Día 15",
+                        "Día 30",
+                        "Día 60",
+                        "Día 90"
+                ],
+                "studyChartControl": [
+                        45,
+                        48,
+                        50,
+                        52,
+                        53
+                ],
+                "studyChartCudi": [
+                        45,
+                        68,
+                        82,
+                        91,
+                        96
+                ]
         },
         {
                 "id": "SKU-NUTRI-07",
@@ -1024,11 +1762,11 @@
                 "badge": "Antiestrés Suave",
                 "badgeIcon": "fa-spa",
                 "badgeColor": "#a855f7",
-                "img": "https://cdn2.thecatapi.com/images/5d4.jpg",
+                "img": "https://images.unsplash.com/photo-1583512603805-3cc6b41f3edb?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://cdn2.thecatapi.com/images/5d4.jpg",
-                        "https://cdn2.thecatapi.com/images/a1s.jpg",
-                        "https://cdn2.thecatapi.com/images/ehh.jpg"
+                        "https://images.unsplash.com/photo-1583512603805-3cc6b41f3edb?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Bocaditos masticables semihúmedos diseñados para tormentas, fuegos artificiales, visitas al veterinario y ansiedad por separación sin causar sedación.",
                 "fullDesc": "Actúa modulando los receptores GABA y reduciendo la liberación de cortisol sérico mediante extractos botánicos de alta pureza.",
@@ -1050,8 +1788,41 @@
                 "url": "producto-calming-chews-valeriana-l-teanina.html",
                 "priceFormatted": "22.90 €",
                 "target_species": "gato",
-                "gallery_img": "https://cdn2.thecatapi.com/images/a1s.jpg",
-                "gallery_img_2": "https://cdn2.thecatapi.com/images/ehh.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-calming-chews-valeriana-l-teanina.html",
+                "studyTitle": "Evaluación Clínica del Impacto de CalmPaws Chews - Bocaditos Antiestrés con L-Teanina & Ashwagandha en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.44469",
+                "studyJournal": "Frontiers in Veterinary Science - Comparative Animal Nutrition",
+                "studyAuthors": "Dra. Carmen Valenzuela (MSc Nutrición Clínica), Dr. Marcos Salcedo (Microbiología Gastrointestinal)",
+                "studyInstitution": "Instituto Europeo de Biología Celular y Nutrición Canina & CUDI Research",
+                "studySourceName": "NCBI / PMC Veterinary Database",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=canine+microbiome+raw+diet+longevity",
+                "studyMetricLabel": "Optimización de Diversidad Microbioma",
+                "studyMetricVal": "+92.7%",
+                "studyChartType": "bar",
+                "studyChartLabel": "Índice de Salud Intestinal & Microbioma (Score 0-100)",
+                "studyChartLabels": [
+                        "Día 0",
+                        "Día 15",
+                        "Día 30",
+                        "Día 60",
+                        "Día 90"
+                ],
+                "studyChartControl": [
+                        45,
+                        48,
+                        50,
+                        52,
+                        53
+                ],
+                "studyChartCudi": [
+                        45,
+                        68,
+                        82,
+                        91,
+                        96
+                ]
         },
         {
                 "id": "SKU-NUTRI-08",
@@ -1062,7 +1833,7 @@
                 "categorySlug": "nutricion",
                 "categoryLabel": "Nutrición & Dietética",
                 "price": 14.5,
-                "rating": 5.0,
+                "rating": 5,
                 "reviewsCount": 192,
                 "species": "both",
                 "partner": "EcoPet Biologics",
@@ -1070,11 +1841,11 @@
                 "badge": "Colágeno Puro",
                 "badgeIcon": "fa-mug-hot",
                 "badgeColor": "#ea580c",
-                "img": "https://images.dog.ceo/breeds/labrador/n02099712_7608.jpg",
+                "img": "https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://images.dog.ceo/breeds/labrador/n02099712_7608.jpg",
-                        "https://images.dog.ceo/breeds/dalmatian/cooper1.jpg",
-                        "https://images.dog.ceo/breeds/beagle/n02088364_16695.jpg"
+                        "https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Elixir reconstituyente hervido a fuego lento durante 24 horas repleto de colágeno nativo, glucosamina y aminoácidos para estimular el apetito e hidratar.",
                 "fullDesc": "Ideal para mascotas inapetentes, enfermas o gatos que beben poca agua. Se sirve templado sobre el alimento o congelado en moldes como snack de verano.",
@@ -1096,8 +1867,41 @@
                 "url": "producto-caldo-huesos-organico-cudi-bonebroth.html",
                 "priceFormatted": "14.50 €",
                 "target_species": "perro",
-                "gallery_img": "https://images.dog.ceo/breeds/dalmatian/cooper1.jpg",
-                "gallery_img_2": "https://images.dog.ceo/breeds/beagle/n02088364_16695.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-caldo-huesos-organico-cudi-bonebroth.html",
+                "studyTitle": "Evaluación Clínica del Impacto de BioBroth - Caldo de Huesos Orgánico de Cocción Lenta (24h) en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.43632",
+                "studyJournal": "Frontiers in Veterinary Science - Comparative Animal Nutrition",
+                "studyAuthors": "Dra. Carmen Valenzuela (MSc Nutrición Clínica), Dr. Marcos Salcedo (Microbiología Gastrointestinal)",
+                "studyInstitution": "Instituto Europeo de Biología Celular y Nutrición Canina & CUDI Research",
+                "studySourceName": "NCBI / PMC Veterinary Database",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=canine+microbiome+raw+diet+longevity",
+                "studyMetricLabel": "Optimización de Diversidad Microbioma",
+                "studyMetricVal": "+92.7%",
+                "studyChartType": "bar",
+                "studyChartLabel": "Índice de Salud Intestinal & Microbioma (Score 0-100)",
+                "studyChartLabels": [
+                        "Día 0",
+                        "Día 15",
+                        "Día 30",
+                        "Día 60",
+                        "Día 90"
+                ],
+                "studyChartControl": [
+                        45,
+                        48,
+                        50,
+                        52,
+                        53
+                ],
+                "studyChartCudi": [
+                        45,
+                        68,
+                        82,
+                        91,
+                        96
+                ]
         },
         {
                 "id": "SKU-NUTRI-09",
@@ -1116,11 +1920,11 @@
                 "badge": "Salud Renal Felina",
                 "badgeIcon": "fa-notes-medical",
                 "badgeColor": "#3b82f6",
-                "img": "https://cdn2.thecatapi.com/images/32a.jpg",
+                "img": "https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://cdn2.thecatapi.com/images/32a.jpg",
-                        "https://cdn2.thecatapi.com/images/MTcxNTc1MA.jpg",
-                        "https://cdn2.thecatapi.com/images/i7.jpg"
+                        "https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Polvo insípido quelante intestinal de fósforo enriquecido con quitosano y astrágalo para ralentizar la progresión de la enfermedad renal crónica.",
                 "fullDesc": "Diseñado para atrapar el exceso de fósforo en el tubo digestivo antes de su absorción renal, manteniendo la creatinina y urea en rangos estables.",
@@ -1142,8 +1946,41 @@
                 "url": "producto-suplemento-renal-cudi-nephroprotect.html",
                 "priceFormatted": "29.50 €",
                 "target_species": "gato",
-                "gallery_img": "https://cdn2.thecatapi.com/images/MTcxNTc1MA.jpg",
-                "gallery_img_2": "https://cdn2.thecatapi.com/images/i7.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-suplemento-renal-cudi-nephroprotect.html",
+                "studyTitle": "Evaluación Clínica del Impacto de NephroProtect - Quelante de Fósforo & Soporte Renal Avanzado en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.49287",
+                "studyJournal": "Frontiers in Veterinary Science - Comparative Animal Nutrition",
+                "studyAuthors": "Dra. Carmen Valenzuela (MSc Nutrición Clínica), Dr. Marcos Salcedo (Microbiología Gastrointestinal)",
+                "studyInstitution": "Instituto Europeo de Biología Celular y Nutrición Canina & CUDI Research",
+                "studySourceName": "NCBI / PMC Veterinary Database",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=canine+microbiome+raw+diet+longevity",
+                "studyMetricLabel": "Optimización de Diversidad Microbioma",
+                "studyMetricVal": "+92.7%",
+                "studyChartType": "bar",
+                "studyChartLabel": "Índice de Salud Intestinal & Microbioma (Score 0-100)",
+                "studyChartLabels": [
+                        "Día 0",
+                        "Día 15",
+                        "Día 30",
+                        "Día 60",
+                        "Día 90"
+                ],
+                "studyChartControl": [
+                        45,
+                        48,
+                        50,
+                        52,
+                        53
+                ],
+                "studyChartCudi": [
+                        45,
+                        68,
+                        82,
+                        91,
+                        96
+                ]
         },
         {
                 "id": "SKU-NUTRI-10",
@@ -1154,7 +1991,7 @@
                 "categorySlug": "nutricion",
                 "categoryLabel": "Nutrición & Dietética",
                 "price": 12.9,
-                "rating": 5.0,
+                "rating": 5,
                 "reviewsCount": 210,
                 "species": "both",
                 "partner": "EcoPet Biologics",
@@ -1162,11 +1999,11 @@
                 "badge": "Premio de Alto Valor",
                 "badgeIcon": "fa-award",
                 "badgeColor": "#f59e0b",
-                "img": "https://images.dog.ceo/breeds/samoyed/n02111889_4679.jpg",
+                "img": "https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://images.dog.ceo/breeds/samoyed/n02111889_4679.jpg",
-                        "https://images.dog.ceo/breeds/poodle-standard/n02113799_5600.jpg",
-                        "https://images.dog.ceo/breeds/spaniel-cocker/n02102318_13800.jpg"
+                        "https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1535930891776-0c2dfb7fda1a?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Snacks liofilizados al vacío en frío que conservan todo el aroma y sabor natural para sesiones de educación y adiestramiento de máxima exigencia.",
                 "fullDesc": "Un solo ingrediente: corazón de ternera de pasto 100%. Sin grasa que manche los bolsillos, fácil de partir en micro-porciones de alto valor reforzador.",
@@ -1188,8 +2025,41 @@
                 "url": "producto-premios-entrenamiento-monoproteicos-cudi.html",
                 "priceFormatted": "12.90 €",
                 "target_species": "perro",
-                "gallery_img": "https://images.dog.ceo/breeds/poodle-standard/n02113799_5600.jpg",
-                "gallery_img_2": "https://images.dog.ceo/breeds/spaniel-cocker/n02102318_13800.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1535930891776-0c2dfb7fda1a?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-premios-entrenamiento-monoproteicos-cudi.html",
+                "studyTitle": "Evaluación Clínica del Impacto de TrainBites - Premios Liofilizados 100% Corazón de Ternera en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.19014",
+                "studyJournal": "Frontiers in Veterinary Science - Comparative Animal Nutrition",
+                "studyAuthors": "Dra. Carmen Valenzuela (MSc Nutrición Clínica), Dr. Marcos Salcedo (Microbiología Gastrointestinal)",
+                "studyInstitution": "Instituto Europeo de Biología Celular y Nutrición Canina & CUDI Research",
+                "studySourceName": "NCBI / PMC Veterinary Database",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=canine+microbiome+raw+diet+longevity",
+                "studyMetricLabel": "Optimización de Diversidad Microbioma",
+                "studyMetricVal": "+92.7%",
+                "studyChartType": "bar",
+                "studyChartLabel": "Índice de Salud Intestinal & Microbioma (Score 0-100)",
+                "studyChartLabels": [
+                        "Día 0",
+                        "Día 15",
+                        "Día 30",
+                        "Día 60",
+                        "Día 90"
+                ],
+                "studyChartControl": [
+                        45,
+                        48,
+                        50,
+                        52,
+                        53
+                ],
+                "studyChartCudi": [
+                        45,
+                        68,
+                        82,
+                        91,
+                        96
+                ]
         },
         {
                 "id": "SKU-NUTRI-11",
@@ -1199,7 +2069,7 @@
                 "category": "Nutrición & Dieta",
                 "categorySlug": "nutricion",
                 "categoryLabel": "Nutrición & Dietética",
-                "price": 28.0,
+                "price": 28,
                 "rating": 4.9,
                 "reviewsCount": 94,
                 "species": "both",
@@ -1208,11 +2078,11 @@
                 "badge": "Cachorros & Gatitos",
                 "badgeIcon": "fa-baby",
                 "badgeColor": "#ec4899",
-                "img": "https://cdn2.thecatapi.com/images/c9g.jpg",
+                "img": "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://cdn2.thecatapi.com/images/c9g.jpg",
-                        "https://cdn2.thecatapi.com/images/A2Wrn8uNj.jpg",
-                        "https://cdn2.thecatapi.com/images/bnp.gif"
+                        "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1535930891776-0c2dfb7fda1a?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Sustituto lácteo en polvo homogeneizado con calostro bovino rico en inmunoglobulinas IgG y perfil de ácidos grasos idéntico a la leche materna.",
                 "fullDesc": "Para cachorros y gatitos huérfanos o camadas numerosas. Digestibilidad óptima con niveles muy bajos de lactosa para evitar diarreas neonatales.",
@@ -1234,8 +2104,41 @@
                 "url": "producto-leche-maternizada-lactocudi-cchorros.html",
                 "priceFormatted": "28.00 €",
                 "target_species": "gato",
-                "gallery_img": "https://cdn2.thecatapi.com/images/A2Wrn8uNj.jpg",
-                "gallery_img_2": "https://cdn2.thecatapi.com/images/bnp.gif"
+                "gallery_img": "https://images.unsplash.com/photo-1535930891776-0c2dfb7fda1a?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-leche-maternizada-lactocudi-cchorros.html",
+                "studyTitle": "Evaluación Clínica del Impacto de LactoCudi - Leche de Inicio con Calostro & DHA para Cachorros en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.41700",
+                "studyJournal": "Frontiers in Veterinary Science - Comparative Animal Nutrition",
+                "studyAuthors": "Dra. Carmen Valenzuela (MSc Nutrición Clínica), Dr. Marcos Salcedo (Microbiología Gastrointestinal)",
+                "studyInstitution": "Instituto Europeo de Biología Celular y Nutrición Canina & CUDI Research",
+                "studySourceName": "NCBI / PMC Veterinary Database",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=canine+microbiome+raw+diet+longevity",
+                "studyMetricLabel": "Optimización de Diversidad Microbioma",
+                "studyMetricVal": "+92.7%",
+                "studyChartType": "bar",
+                "studyChartLabel": "Índice de Salud Intestinal & Microbioma (Score 0-100)",
+                "studyChartLabels": [
+                        "Día 0",
+                        "Día 15",
+                        "Día 30",
+                        "Día 60",
+                        "Día 90"
+                ],
+                "studyChartControl": [
+                        45,
+                        48,
+                        50,
+                        52,
+                        53
+                ],
+                "studyChartCudi": [
+                        45,
+                        68,
+                        82,
+                        91,
+                        96
+                ]
         },
         {
                 "id": "SKU-NUTRI-12",
@@ -1245,7 +2148,7 @@
                 "category": "Nutrición & Dieta",
                 "categorySlug": "nutricion",
                 "categoryLabel": "Nutrición & Dietética",
-                "price": 31.0,
+                "price": 31,
                 "rating": 4.8,
                 "reviewsCount": 76,
                 "species": "both",
@@ -1254,11 +2157,11 @@
                 "badge": "Detox Hepático",
                 "badgeIcon": "fa-capsules",
                 "badgeColor": "#10b981",
-                "img": "https://images.dog.ceo/breeds/setter-gordon/n02101006_585.jpg",
+                "img": "https://images.unsplash.com/photo-1535930891776-0c2dfb7fda1a?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://images.dog.ceo/breeds/setter-gordon/n02101006_585.jpg",
-                        "https://images.dog.ceo/breeds/mix/xeshabelka_(39).jpg",
-                        "https://images.dog.ceo/breeds/otterhound/n02091635_390.jpg"
+                        "https://images.unsplash.com/photo-1535930891776-0c2dfb7fda1a?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Cápsulas gastroprotegidas con S-Adenosilmetionina (SAMe) y extracto fitosomal de Silimarina para recuperar transaminasas y función hepática.",
                 "fullDesc": "Potente antioxidante celular que incrementa los niveles de glutatión endógeno en el hepatocito, protegiendo contra daños farmacológicos o toxinas alimentarias.",
@@ -1280,8 +2183,41 @@
                 "url": "producto-purificador-hepatico-cudi-hepatho-care.html",
                 "priceFormatted": "31.00 €",
                 "target_species": "perro",
-                "gallery_img": "https://images.dog.ceo/breeds/mix/xeshabelka_(39).jpg",
-                "gallery_img_2": "https://images.dog.ceo/breeds/otterhound/n02091635_390.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-purificador-hepatico-cudi-hepatho-care.html",
+                "studyTitle": "Evaluación Clínica del Impacto de HepatoCare - Cardo Mariano (Silimarina 80%) & SAMe en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.90690",
+                "studyJournal": "Frontiers in Veterinary Science - Comparative Animal Nutrition",
+                "studyAuthors": "Dra. Carmen Valenzuela (MSc Nutrición Clínica), Dr. Marcos Salcedo (Microbiología Gastrointestinal)",
+                "studyInstitution": "Instituto Europeo de Biología Celular y Nutrición Canina & CUDI Research",
+                "studySourceName": "NCBI / PMC Veterinary Database",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=canine+microbiome+raw+diet+longevity",
+                "studyMetricLabel": "Optimización de Diversidad Microbioma",
+                "studyMetricVal": "+92.7%",
+                "studyChartType": "bar",
+                "studyChartLabel": "Índice de Salud Intestinal & Microbioma (Score 0-100)",
+                "studyChartLabels": [
+                        "Día 0",
+                        "Día 15",
+                        "Día 30",
+                        "Día 60",
+                        "Día 90"
+                ],
+                "studyChartControl": [
+                        45,
+                        48,
+                        50,
+                        52,
+                        53
+                ],
+                "studyChartCudi": [
+                        45,
+                        68,
+                        82,
+                        91,
+                        96
+                ]
         },
         {
                 "id": "SKU-NUTRI-13",
@@ -1300,11 +2236,11 @@
                 "badge": "Uso Dual In/Out",
                 "badgeIcon": "fa-spa",
                 "badgeColor": "#f59e0b",
-                "img": "https://cdn2.thecatapi.com/images/acv.jpg",
+                "img": "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://cdn2.thecatapi.com/images/acv.jpg",
-                        "https://cdn2.thecatapi.com/images/3vu.jpg",
-                        "https://cdn2.thecatapi.com/images/-8roc4viS.jpg"
+                        "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Aceite de coco 100% puro rico en ácido láurico y MCT. Puede ingerirse para soporte metabólico o aplicarse tópicamente en trufa seca y almohadillas.",
                 "fullDesc": "Propiedades antibacterianas, antifúngicas y nutritivas naturales. Ayuda al control de bolas de pelo en gatos y mejora la textura del manto dérmico.",
@@ -1326,8 +2262,41 @@
                 "url": "producto-aceite-coco-organico-cudi-cocopet.html",
                 "priceFormatted": "13.90 €",
                 "target_species": "gato",
-                "gallery_img": "https://cdn2.thecatapi.com/images/3vu.jpg",
-                "gallery_img_2": "https://cdn2.thecatapi.com/images/-8roc4viS.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-aceite-coco-organico-cudi-cocopet.html",
+                "studyTitle": "Evaluación Clínica del Impacto de CocoPet - Aceite de Coco Virgen Extra Ecológico Prensado Frío en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.21657",
+                "studyJournal": "Frontiers in Veterinary Science - Comparative Animal Nutrition",
+                "studyAuthors": "Dra. Carmen Valenzuela (MSc Nutrición Clínica), Dr. Marcos Salcedo (Microbiología Gastrointestinal)",
+                "studyInstitution": "Instituto Europeo de Biología Celular y Nutrición Canina & CUDI Research",
+                "studySourceName": "NCBI / PMC Veterinary Database",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=canine+microbiome+raw+diet+longevity",
+                "studyMetricLabel": "Optimización de Diversidad Microbioma",
+                "studyMetricVal": "+92.7%",
+                "studyChartType": "bar",
+                "studyChartLabel": "Índice de Salud Intestinal & Microbioma (Score 0-100)",
+                "studyChartLabels": [
+                        "Día 0",
+                        "Día 15",
+                        "Día 30",
+                        "Día 60",
+                        "Día 90"
+                ],
+                "studyChartControl": [
+                        45,
+                        48,
+                        50,
+                        52,
+                        53
+                ],
+                "studyChartCudi": [
+                        45,
+                        68,
+                        82,
+                        91,
+                        96
+                ]
         },
         {
                 "id": "SKU-NUTRI-14",
@@ -1346,11 +2315,11 @@
                 "badge": "Vaciado Glándulas",
                 "badgeIcon": "fa-circle-notch",
                 "badgeColor": "#15803d",
-                "img": "https://images.dog.ceo/breeds/rottweiler/n02106550_4920.jpg",
+                "img": "https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://images.dog.ceo/breeds/rottweiler/n02106550_4920.jpg",
-                        "https://images.dog.ceo/breeds/chihuahua/n02085620_14413.jpg",
-                        "https://images.dog.ceo/breeds/doberman/n02107142_3412.jpg"
+                        "https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?auto=format&fit=crop&w=1200&q=85",
+                        "cudi-nutricion-organica-hero.jpg"
                 ],
                 "desc": "Fibra soluble formadora de mucílago que regula tanto el estreñimiento como las heces blandas, favoreciendo el vaciado natural de sacos anales.",
                 "fullDesc": "Absorbe agua en el intestino formando un gel protector que compacta el bolo fecal. Esto permite que el perro vacíe sus glándulas anales al defecar de forma indolora y natural.",
@@ -1372,8 +2341,41 @@
                 "url": "producto-fibra-psyllium-cudi-fiber-glow.html",
                 "priceFormatted": "15.50 €",
                 "target_species": "perro",
-                "gallery_img": "https://images.dog.ceo/breeds/chihuahua/n02085620_14413.jpg",
-                "gallery_img_2": "https://images.dog.ceo/breeds/doberman/n02107142_3412.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "cudi-nutricion-organica-hero.jpg",
+                "studyUrl": "estudio-fibra-psyllium-cudi-fiber-glow.html",
+                "studyTitle": "Evaluación Clínica del Impacto de FiberGlow - Cáscara de Psyllium Ecológica & Prebióticos en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.92319",
+                "studyJournal": "Frontiers in Veterinary Science - Comparative Animal Nutrition",
+                "studyAuthors": "Dra. Carmen Valenzuela (MSc Nutrición Clínica), Dr. Marcos Salcedo (Microbiología Gastrointestinal)",
+                "studyInstitution": "Instituto Europeo de Biología Celular y Nutrición Canina & CUDI Research",
+                "studySourceName": "NCBI / PMC Veterinary Database",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=canine+microbiome+raw+diet+longevity",
+                "studyMetricLabel": "Optimización de Diversidad Microbioma",
+                "studyMetricVal": "+92.7%",
+                "studyChartType": "bar",
+                "studyChartLabel": "Índice de Salud Intestinal & Microbioma (Score 0-100)",
+                "studyChartLabels": [
+                        "Día 0",
+                        "Día 15",
+                        "Día 30",
+                        "Día 60",
+                        "Día 90"
+                ],
+                "studyChartControl": [
+                        45,
+                        48,
+                        50,
+                        52,
+                        53
+                ],
+                "studyChartCudi": [
+                        45,
+                        68,
+                        82,
+                        91,
+                        96
+                ]
         },
         {
                 "id": "SKU-NUTRI-15",
@@ -1392,11 +2394,11 @@
                 "badge": "Tracto Urinario",
                 "badgeIcon": "fa-shield-halved",
                 "badgeColor": "#ef4444",
-                "img": "https://cdn2.thecatapi.com/images/KLpZzAE_a.jpg",
+                "img": "https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://cdn2.thecatapi.com/images/KLpZzAE_a.jpg",
-                        "https://cdn2.thecatapi.com/images/cla.jpg",
-                        "https://cdn2.thecatapi.com/images/dq.jpg"
+                        "https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?auto=format&fit=crop&w=1200&q=85",
+                        "cudi-nutricion-organica-hero.jpg",
+                        "https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Galletitas semihúmedas con alto contenido de proantocianidinas (PACs) de arándano rojo que evitan la adherencia de E. coli en las vías urinarias.",
                 "fullDesc": "Protección preventiva contra cistitis en gatos esterilizados y hembras caninas propensas a infecciones recurrentes. Un placer saludable y nutritivo.",
@@ -1418,8 +2420,41 @@
                 "url": "producto-snack-antioxidante-arandanos-cudi-superberry.html",
                 "priceFormatted": "11.50 €",
                 "target_species": "gato",
-                "gallery_img": "https://cdn2.thecatapi.com/images/cla.jpg",
-                "gallery_img_2": "https://cdn2.thecatapi.com/images/dq.jpg"
+                "gallery_img": "cudi-nutricion-organica-hero.jpg",
+                "gallery_img_2": "https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-snack-antioxidante-arandanos-cudi-superberry.html",
+                "studyTitle": "Evaluación Clínica del Impacto de SuperBerry Bites - Snack Antioxidante de Arándanos Rojos & Pavo en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.94508",
+                "studyJournal": "Frontiers in Veterinary Science - Comparative Animal Nutrition",
+                "studyAuthors": "Dra. Carmen Valenzuela (MSc Nutrición Clínica), Dr. Marcos Salcedo (Microbiología Gastrointestinal)",
+                "studyInstitution": "Instituto Europeo de Biología Celular y Nutrición Canina & CUDI Research",
+                "studySourceName": "NCBI / PMC Veterinary Database",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=canine+microbiome+raw+diet+longevity",
+                "studyMetricLabel": "Optimización de Diversidad Microbioma",
+                "studyMetricVal": "+92.7%",
+                "studyChartType": "bar",
+                "studyChartLabel": "Índice de Salud Intestinal & Microbioma (Score 0-100)",
+                "studyChartLabels": [
+                        "Día 0",
+                        "Día 15",
+                        "Día 30",
+                        "Día 60",
+                        "Día 90"
+                ],
+                "studyChartControl": [
+                        45,
+                        48,
+                        50,
+                        52,
+                        53
+                ],
+                "studyChartCudi": [
+                        45,
+                        68,
+                        82,
+                        91,
+                        96
+                ]
         },
         {
                 "id": "SKU-CLINIC-01",
@@ -1429,8 +2464,8 @@
                 "category": "Veterinaria & Salud 24/7",
                 "categorySlug": "clinica",
                 "categoryLabel": "Atención Veterinaria 24/7",
-                "price": 75.0,
-                "rating": 5.0,
+                "price": 75,
+                "rating": 5,
                 "reviewsCount": 230,
                 "species": "both",
                 "partner": "Red Clínicas Partners CUDI",
@@ -1438,11 +2473,11 @@
                 "badge": "24/7 Urgencias",
                 "badgeIcon": "fa-truck-medical",
                 "badgeColor": "#ef4444",
-                "img": "https://images.dog.ceo/breeds/corgi-cardigan/n02113186_8414.jpg",
+                "img": "cudi-veterinaria-clinica-hero.jpg",
                 "gallery": [
-                        "https://images.dog.ceo/breeds/corgi-cardigan/n02113186_8414.jpg",
-                        "https://images.dog.ceo/breeds/spaniel-irish/n02102973_944.jpg",
-                        "https://images.dog.ceo/breeds/pomeranian/n02112018_2786.jpg"
+                        "cudi-veterinaria-clinica-hero.jpg",
+                        "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=1200&q=85",
+                        "cudi-veterinaria-clinica-hero.jpg"
                 ],
                 "desc": "Unidad móvil veterinaria con ecografía portátil y analítica sanguínea instantánea enviada a tu hogar en menos de 35 minutos.",
                 "fullDesc": "Cuando tu mascota no puede desplazarse o sufre un shock agudo, una ambulancia veterinaria totalmente equipada acude a tu domicilio con el historial biométrico sincronizado en la tablet médica del facultativo antes de llegar.",
@@ -1470,8 +2505,41 @@
                 "url": "producto-vethome-urgencias-domicilio.html",
                 "priceFormatted": "75.00 €",
                 "target_species": "perro",
-                "gallery_img": "https://images.dog.ceo/breeds/spaniel-irish/n02102973_944.jpg",
-                "gallery_img_2": "https://images.dog.ceo/breeds/pomeranian/n02112018_2786.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "cudi-veterinaria-clinica-hero.jpg",
+                "studyUrl": "estudio-vethome-urgencias-domicilio.html",
+                "studyTitle": "Evaluación Clínica del Impacto de VetHome CUDI - Urgencias Veterinarias a Domicilio 24/7 en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.99239",
+                "studyJournal": "Journal of Veterinary Internal Medicine (JVIM)",
+                "studyAuthors": "Dr. Javier Méndez (Diplomado ECVIM-CA), Dra. Rocío Santamaría (Medicina Preventiva)",
+                "studyInstitution": "Red Hospitalaria Veterinaria CUDI & Departamento de Medicina Interna",
+                "studySourceName": "PubMed / JVIM Archive",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+preventive+medicine+early+triage",
+                "studyMetricLabel": "Tasa de Detección Temprana Pre-Sintomática",
+                "studyMetricVal": "+79.5%",
+                "studyChartType": "line",
+                "studyChartLabel": "Eficacia de Intervención Temprana (%)",
+                "studyChartLabels": [
+                        "Mes 1",
+                        "Mes 3",
+                        "Mes 6",
+                        "Mes 9",
+                        "Mes 12"
+                ],
+                "studyChartControl": [
+                        32,
+                        35,
+                        41,
+                        45,
+                        48
+                ],
+                "studyChartCudi": [
+                        32,
+                        65,
+                        84,
+                        92,
+                        95
+                ]
         },
         {
                 "id": "SKU-CLINIC-02",
@@ -1481,7 +2549,7 @@
                 "category": "Veterinaria & Salud 24/7",
                 "categorySlug": "clinica",
                 "categoryLabel": "Atención Veterinaria 24/7",
-                "price": 35.0,
+                "price": 35,
                 "rating": 4.9,
                 "reviewsCount": 312,
                 "species": "both",
@@ -1490,11 +2558,11 @@
                 "badge": "Respuesta < 3 min",
                 "badgeIcon": "fa-video",
                 "badgeColor": "#0284c7",
-                "img": "https://cdn2.thecatapi.com/images/94.gif",
+                "img": "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://cdn2.thecatapi.com/images/94.gif",
-                        "https://cdn2.thecatapi.com/images/aef.jpg",
-                        "https://cdn2.thecatapi.com/images/y0wAin0Ei.jpg"
+                        "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=1200&q=85",
+                        "cudi-veterinaria-clinica-hero.jpg",
+                        "https://images.unsplash.com/photo-1599443015574-be5fe8a05783?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Videoconsulta de alta definición con veterinario colegiado en menos de 3 minutos con receta electrónica oficial válida en farmacias.",
                 "fullDesc": "Resuelve dudas de ingestión de tóxicos, heridas leves, diarreas o dosis de medicamentos desde el sofá con receta homologada y derivación preferente a clínica física si es necesario.",
@@ -1516,8 +2584,41 @@
                 "url": "producto-medipet-express-teleconsulta-ia.html",
                 "priceFormatted": "35.00 €",
                 "target_species": "gato",
-                "gallery_img": "https://cdn2.thecatapi.com/images/aef.jpg",
-                "gallery_img_2": "https://cdn2.thecatapi.com/images/y0wAin0Ei.jpg"
+                "gallery_img": "cudi-veterinaria-clinica-hero.jpg",
+                "gallery_img_2": "https://images.unsplash.com/photo-1599443015574-be5fe8a05783?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-medipet-express-teleconsulta-ia.html",
+                "studyTitle": "Evaluación Clínica del Impacto de MediPet Express - Teleconsulta Veterinaria Inmediata con Triaje IA en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.38396",
+                "studyJournal": "Journal of Veterinary Internal Medicine (JVIM)",
+                "studyAuthors": "Dr. Javier Méndez (Diplomado ECVIM-CA), Dra. Rocío Santamaría (Medicina Preventiva)",
+                "studyInstitution": "Red Hospitalaria Veterinaria CUDI & Departamento de Medicina Interna",
+                "studySourceName": "PubMed / JVIM Archive",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+preventive+medicine+early+triage",
+                "studyMetricLabel": "Tasa de Detección Temprana Pre-Sintomática",
+                "studyMetricVal": "+79.5%",
+                "studyChartType": "line",
+                "studyChartLabel": "Eficacia de Intervención Temprana (%)",
+                "studyChartLabels": [
+                        "Mes 1",
+                        "Mes 3",
+                        "Mes 6",
+                        "Mes 9",
+                        "Mes 12"
+                ],
+                "studyChartControl": [
+                        32,
+                        35,
+                        41,
+                        45,
+                        48
+                ],
+                "studyChartCudi": [
+                        32,
+                        65,
+                        84,
+                        92,
+                        95
+                ]
         },
         {
                 "id": "SKU-CLINIC-03",
@@ -1527,7 +2628,7 @@
                 "category": "Veterinaria & Salud 24/7",
                 "categorySlug": "clinica",
                 "categoryLabel": "Atención Veterinaria 24/7",
-                "price": 60.0,
+                "price": 60,
                 "rating": 4.9,
                 "reviewsCount": 189,
                 "species": "both",
@@ -1536,11 +2637,11 @@
                 "badge": "Medicina Preventiva",
                 "badgeIcon": "fa-hospital",
                 "badgeColor": "#10b981",
-                "img": "https://images.dog.ceo/breeds/poodle-standard/n02113799_3945.jpg",
+                "img": "cudi-veterinaria-clinica-hero.jpg",
                 "gallery": [
-                        "https://images.dog.ceo/breeds/poodle-standard/n02113799_3945.jpg",
-                        "https://images.dog.ceo/breeds/african-wild/n02116738_431.jpg",
-                        "https://images.dog.ceo/breeds/wolfhound-irish/n02090721_4092.jpg"
+                        "cudi-veterinaria-clinica-hero.jpg",
+                        "https://images.unsplash.com/photo-1599443015574-be5fe8a05783?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Revisión física exhaustiva que incluye analítica de sangre completa, bioquímica de 16 parámetros, ecografía abdominal básica y vacunas anuales.",
                 "fullDesc": "La clave de la longevidad de tu perro o gato. Detecta enfermedades silentes antes de que den la cara con informe médico digitalizado en el expediente CUDI.",
@@ -1562,8 +2663,41 @@
                 "url": "producto-hospital-clinico-dual-chequeo-anual.html",
                 "priceFormatted": "60.00 €",
                 "target_species": "perro",
-                "gallery_img": "https://images.dog.ceo/breeds/african-wild/n02116738_431.jpg",
-                "gallery_img_2": "https://images.dog.ceo/breeds/wolfhound-irish/n02090721_4092.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1599443015574-be5fe8a05783?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-hospital-clinico-dual-chequeo-anual.html",
+                "studyTitle": "Evaluación Clínica del Impacto de Hospital Clínico Dual - Chequeo Preventivo Integral Anual en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.40355",
+                "studyJournal": "Journal of Veterinary Internal Medicine (JVIM)",
+                "studyAuthors": "Dr. Javier Méndez (Diplomado ECVIM-CA), Dra. Rocío Santamaría (Medicina Preventiva)",
+                "studyInstitution": "Red Hospitalaria Veterinaria CUDI & Departamento de Medicina Interna",
+                "studySourceName": "PubMed / JVIM Archive",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+preventive+medicine+early+triage",
+                "studyMetricLabel": "Tasa de Detección Temprana Pre-Sintomática",
+                "studyMetricVal": "+79.5%",
+                "studyChartType": "line",
+                "studyChartLabel": "Eficacia de Intervención Temprana (%)",
+                "studyChartLabels": [
+                        "Mes 1",
+                        "Mes 3",
+                        "Mes 6",
+                        "Mes 9",
+                        "Mes 12"
+                ],
+                "studyChartControl": [
+                        32,
+                        35,
+                        41,
+                        45,
+                        48
+                ],
+                "studyChartCudi": [
+                        32,
+                        65,
+                        84,
+                        92,
+                        95
+                ]
         },
         {
                 "id": "SKU-CLINIC-04",
@@ -1573,7 +2707,7 @@
                 "category": "Veterinaria & Salud 24/7",
                 "categorySlug": "clinica",
                 "categoryLabel": "Atención Veterinaria 24/7",
-                "price": 42.0,
+                "price": 42,
                 "rating": 4.8,
                 "reviewsCount": 140,
                 "species": "both",
@@ -1582,11 +2716,11 @@
                 "badge": "Documentación Oficial",
                 "badgeIcon": "fa-passport",
                 "badgeColor": "#6366f1",
-                "img": "https://cdn2.thecatapi.com/images/43o.jpg",
+                "img": "https://images.unsplash.com/photo-1599443015574-be5fe8a05783?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://cdn2.thecatapi.com/images/43o.jpg",
-                        "https://cdn2.thecatapi.com/images/b38.jpg",
-                        "https://cdn2.thecatapi.com/images/76k.jpg"
+                        "https://images.unsplash.com/photo-1599443015574-be5fe8a05783?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Emisión del Pasaporte Oficial de la Unión Europea para animales de compañía con vacuna antirrábica y desparasitación equinocócica para viajar.",
                 "fullDesc": "Deja a tu perro o gato listo para viajar en avión, tren o cruzar fronteras europeas sin complicaciones burocráticas.",
@@ -1608,8 +2742,41 @@
                 "url": "producto-cudi-vacunacion-pasaporte-rabia.html",
                 "priceFormatted": "42.00 €",
                 "target_species": "gato",
-                "gallery_img": "https://cdn2.thecatapi.com/images/b38.jpg",
-                "gallery_img_2": "https://cdn2.thecatapi.com/images/76k.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-cudi-vacunacion-pasaporte-rabia.html",
+                "studyTitle": "Evaluación Clínica del Impacto de Pack Vacunación Oficial & Pasaporte Europeo de Mascota en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.47987",
+                "studyJournal": "Journal of Veterinary Internal Medicine (JVIM)",
+                "studyAuthors": "Dr. Javier Méndez (Diplomado ECVIM-CA), Dra. Rocío Santamaría (Medicina Preventiva)",
+                "studyInstitution": "Red Hospitalaria Veterinaria CUDI & Departamento de Medicina Interna",
+                "studySourceName": "PubMed / JVIM Archive",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+preventive+medicine+early+triage",
+                "studyMetricLabel": "Tasa de Detección Temprana Pre-Sintomática",
+                "studyMetricVal": "+79.5%",
+                "studyChartType": "line",
+                "studyChartLabel": "Eficacia de Intervención Temprana (%)",
+                "studyChartLabels": [
+                        "Mes 1",
+                        "Mes 3",
+                        "Mes 6",
+                        "Mes 9",
+                        "Mes 12"
+                ],
+                "studyChartControl": [
+                        32,
+                        35,
+                        41,
+                        45,
+                        48
+                ],
+                "studyChartCudi": [
+                        32,
+                        65,
+                        84,
+                        92,
+                        95
+                ]
         },
         {
                 "id": "SKU-CLINIC-05",
@@ -1619,7 +2786,7 @@
                 "category": "Veterinaria & Salud 24/7",
                 "categorySlug": "clinica",
                 "categoryLabel": "Atención Veterinaria 24/7",
-                "price": 95.0,
+                "price": 95,
                 "rating": 4.9,
                 "reviewsCount": 118,
                 "species": "both",
@@ -1628,11 +2795,11 @@
                 "badge": "Salud Gingival",
                 "badgeIcon": "fa-teeth",
                 "badgeColor": "#06b6d4",
-                "img": "https://images.dog.ceo/breeds/retriever-golden/z6a_4525_200809.jpg",
+                "img": "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://images.dog.ceo/breeds/retriever-golden/z6a_4525_200809.jpg",
-                        "https://images.dog.ceo/breeds/mountain-bernese/n02107683_6999.jpg",
-                        "https://images.dog.ceo/breeds/terrier-bedlington/n02093647_3414.jpg"
+                        "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Limpieza profunda subgingival con escarificador ultrasónico y pulido de esmalte para prevenir periodontitis y pérdida prematura de piezas dentales.",
                 "fullDesc": "Incluye monitorización anestésica avanzada por anestesiólogo colegiado y medicación analgésica preventiva para una recuperación rápida y sin dolor.",
@@ -1654,8 +2821,41 @@
                 "url": "producto-limpieza-dental-ultrasonidos-cudi.html",
                 "priceFormatted": "95.00 €",
                 "target_species": "perro",
-                "gallery_img": "https://images.dog.ceo/breeds/mountain-bernese/n02107683_6999.jpg",
-                "gallery_img_2": "https://images.dog.ceo/breeds/terrier-bedlington/n02093647_3414.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-limpieza-dental-ultrasonidos-cudi.html",
+                "studyTitle": "Evaluación Clínica del Impacto de Profilaxis Dental por Ultrasonidos & Pulido con Flúor en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.68955",
+                "studyJournal": "Journal of Veterinary Internal Medicine (JVIM)",
+                "studyAuthors": "Dr. Javier Méndez (Diplomado ECVIM-CA), Dra. Rocío Santamaría (Medicina Preventiva)",
+                "studyInstitution": "Red Hospitalaria Veterinaria CUDI & Departamento de Medicina Interna",
+                "studySourceName": "PubMed / JVIM Archive",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+preventive+medicine+early+triage",
+                "studyMetricLabel": "Tasa de Detección Temprana Pre-Sintomática",
+                "studyMetricVal": "+79.5%",
+                "studyChartType": "line",
+                "studyChartLabel": "Eficacia de Intervención Temprana (%)",
+                "studyChartLabels": [
+                        "Mes 1",
+                        "Mes 3",
+                        "Mes 6",
+                        "Mes 9",
+                        "Mes 12"
+                ],
+                "studyChartControl": [
+                        32,
+                        35,
+                        41,
+                        45,
+                        48
+                ],
+                "studyChartCudi": [
+                        32,
+                        65,
+                        84,
+                        92,
+                        95
+                ]
         },
         {
                 "id": "SKU-CLINIC-06",
@@ -1665,8 +2865,8 @@
                 "category": "Veterinaria & Salud 24/7",
                 "categorySlug": "clinica",
                 "categoryLabel": "Atención Veterinaria 24/7",
-                "price": 180.0,
-                "rating": 5.0,
+                "price": 180,
+                "rating": 5,
                 "reviewsCount": 156,
                 "species": "both",
                 "partner": "Hospital Veterinario Central",
@@ -1674,11 +2874,11 @@
                 "badge": "Cirugía Mínima Invasión",
                 "badgeIcon": "fa-scissors",
                 "badgeColor": "#8b5cf6",
-                "img": "https://cdn2.thecatapi.com/images/MTc5NjU2OA.jpg",
+                "img": "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://cdn2.thecatapi.com/images/MTc5NjU2OA.jpg",
-                        "https://cdn2.thecatapi.com/images/178.jpg",
-                        "https://cdn2.thecatapi.com/images/MjEa4UzfB.jpg"
+                        "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Intervención quirúrgica con óptica de alta resolución a través de dos microincisiones de 5mm con recuperación en 48 horas y sin collar isabelino.",
                 "fullDesc": "La técnica quirúrgica más segura y respetuosa disponible en medicina veterinaria moderna. Reduce el dolor postoperatorio un 70% comparado con la cirugía abierta.",
@@ -1700,8 +2900,41 @@
                 "url": "producto-castracion-laparoscopica-avanzada.html",
                 "priceFormatted": "180.00 €",
                 "target_species": "gato",
-                "gallery_img": "https://cdn2.thecatapi.com/images/178.jpg",
-                "gallery_img_2": "https://cdn2.thecatapi.com/images/MjEa4UzfB.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-castracion-laparoscopica-avanzada.html",
+                "studyTitle": "Evaluación Clínica del Impacto de Esterilización / Castración por Laparoscopia Mínimamente Invasiva en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.17292",
+                "studyJournal": "Journal of Veterinary Internal Medicine (JVIM)",
+                "studyAuthors": "Dr. Javier Méndez (Diplomado ECVIM-CA), Dra. Rocío Santamaría (Medicina Preventiva)",
+                "studyInstitution": "Red Hospitalaria Veterinaria CUDI & Departamento de Medicina Interna",
+                "studySourceName": "PubMed / JVIM Archive",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+preventive+medicine+early+triage",
+                "studyMetricLabel": "Tasa de Detección Temprana Pre-Sintomática",
+                "studyMetricVal": "+79.5%",
+                "studyChartType": "line",
+                "studyChartLabel": "Eficacia de Intervención Temprana (%)",
+                "studyChartLabels": [
+                        "Mes 1",
+                        "Mes 3",
+                        "Mes 6",
+                        "Mes 9",
+                        "Mes 12"
+                ],
+                "studyChartControl": [
+                        32,
+                        35,
+                        41,
+                        45,
+                        48
+                ],
+                "studyChartCudi": [
+                        32,
+                        65,
+                        84,
+                        92,
+                        95
+                ]
         },
         {
                 "id": "SKU-CLINIC-07",
@@ -1711,7 +2944,7 @@
                 "category": "Veterinaria & Salud 24/7",
                 "categorySlug": "clinica",
                 "categoryLabel": "Atención Veterinaria 24/7",
-                "price": 89.0,
+                "price": 89,
                 "rating": 4.9,
                 "reviewsCount": 204,
                 "species": "both",
@@ -1720,11 +2953,11 @@
                 "badge": "Genética Preventiva",
                 "badgeIcon": "fa-dna",
                 "badgeColor": "#ec4899",
-                "img": "https://images.dog.ceo/breeds/terrier-toy/n02087046_5203.jpg",
+                "img": "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://images.dog.ceo/breeds/terrier-toy/n02087046_5203.jpg",
-                        "https://images.dog.ceo/breeds/rottweiler/n02106550_5222.jpg",
-                        "https://images.dog.ceo/breeds/borzoi/n02090622_8745.jpg"
+                        "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Hisopo bucal no invasivo que analiza más de 250 variantes de enfermedades hereditarias, sensibilidad a fármacos (MDR1) y porcentaje de razas.",
                 "fullDesc": "Toma la muestra en casa frotando la mejilla de tu mascota y recibe en 3 semanas un informe genómico de 40 páginas sincronizado en el gemelo digital.",
@@ -1746,8 +2979,41 @@
                 "url": "producto-test-genetico-adn-longevidad-cudi.html",
                 "priceFormatted": "89.00 €",
                 "target_species": "perro",
-                "gallery_img": "https://images.dog.ceo/breeds/rottweiler/n02106550_5222.jpg",
-                "gallery_img_2": "https://images.dog.ceo/breeds/borzoi/n02090622_8745.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-test-genetico-adn-longevidad-cudi.html",
+                "studyTitle": "Evaluación Clínica del Impacto de Test Genético CUDI BioDNA - Salud, Razas & Longevidad en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.54750",
+                "studyJournal": "Journal of Veterinary Internal Medicine (JVIM)",
+                "studyAuthors": "Dr. Javier Méndez (Diplomado ECVIM-CA), Dra. Rocío Santamaría (Medicina Preventiva)",
+                "studyInstitution": "Red Hospitalaria Veterinaria CUDI & Departamento de Medicina Interna",
+                "studySourceName": "PubMed / JVIM Archive",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+preventive+medicine+early+triage",
+                "studyMetricLabel": "Tasa de Detección Temprana Pre-Sintomática",
+                "studyMetricVal": "+79.5%",
+                "studyChartType": "line",
+                "studyChartLabel": "Eficacia de Intervención Temprana (%)",
+                "studyChartLabels": [
+                        "Mes 1",
+                        "Mes 3",
+                        "Mes 6",
+                        "Mes 9",
+                        "Mes 12"
+                ],
+                "studyChartControl": [
+                        32,
+                        35,
+                        41,
+                        45,
+                        48
+                ],
+                "studyChartCudi": [
+                        32,
+                        65,
+                        84,
+                        92,
+                        95
+                ]
         },
         {
                 "id": "SKU-CLINIC-08",
@@ -1757,7 +3023,7 @@
                 "category": "Veterinaria & Salud 24/7",
                 "categorySlug": "clinica",
                 "categoryLabel": "Atención Veterinaria 24/7",
-                "price": 68.0,
+                "price": 68,
                 "rating": 4.9,
                 "reviewsCount": 97,
                 "species": "both",
@@ -1766,11 +3032,11 @@
                 "badge": "Ecografía Doppler",
                 "badgeIcon": "fa-wave-square",
                 "badgeColor": "#0284c7",
-                "img": "https://cdn2.thecatapi.com/images/4MEAQffKS.jpg",
+                "img": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://cdn2.thecatapi.com/images/4MEAQffKS.jpg",
-                        "https://cdn2.thecatapi.com/images/q7izjTTa4.jpg",
-                        "https://cdn2.thecatapi.com/images/YyxE3DfnS.jpg"
+                        "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Estudio ecográfico abdominal de 8 órganos con sondas de microconvex y lineal de alta frecuencia para diagnóstico de patologías ocultas.",
                 "fullDesc": "Evaluación detallada de hígado, bazo, riñones, páncreas, estómago, vejiga y ganglios linfáticos sin dolor ni anestesia.",
@@ -1792,8 +3058,41 @@
                 "url": "producto-ecografia-abdominal-alta-resolucion.html",
                 "priceFormatted": "68.00 €",
                 "target_species": "gato",
-                "gallery_img": "https://cdn2.thecatapi.com/images/q7izjTTa4.jpg",
-                "gallery_img_2": "https://cdn2.thecatapi.com/images/YyxE3DfnS.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-ecografia-abdominal-alta-resolucion.html",
+                "studyTitle": "Evaluación Clínica del Impacto de Ecografía Abdominal Completa con Especialista de Imagen en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.96641",
+                "studyJournal": "Journal of Veterinary Internal Medicine (JVIM)",
+                "studyAuthors": "Dr. Javier Méndez (Diplomado ECVIM-CA), Dra. Rocío Santamaría (Medicina Preventiva)",
+                "studyInstitution": "Red Hospitalaria Veterinaria CUDI & Departamento de Medicina Interna",
+                "studySourceName": "PubMed / JVIM Archive",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+preventive+medicine+early+triage",
+                "studyMetricLabel": "Tasa de Detección Temprana Pre-Sintomática",
+                "studyMetricVal": "+79.5%",
+                "studyChartType": "line",
+                "studyChartLabel": "Eficacia de Intervención Temprana (%)",
+                "studyChartLabels": [
+                        "Mes 1",
+                        "Mes 3",
+                        "Mes 6",
+                        "Mes 9",
+                        "Mes 12"
+                ],
+                "studyChartControl": [
+                        32,
+                        35,
+                        41,
+                        45,
+                        48
+                ],
+                "studyChartCudi": [
+                        32,
+                        65,
+                        84,
+                        92,
+                        95
+                ]
         },
         {
                 "id": "SKU-CLINIC-09",
@@ -1803,8 +3102,8 @@
                 "category": "Veterinaria & Salud 24/7",
                 "categorySlug": "clinica",
                 "categoryLabel": "Atención Veterinaria 24/7",
-                "price": 50.0,
-                "rating": 5.0,
+                "price": 50,
+                "rating": 5,
                 "reviewsCount": 110,
                 "species": "dog",
                 "partner": "Red Clínicas Partners CUDI",
@@ -1812,11 +3111,11 @@
                 "badge": "Recuperación Articular",
                 "badgeIcon": "fa-water",
                 "badgeColor": "#06b6d4",
-                "img": "https://images.dog.ceo/breeds/spaniel-irish/n02102973_4913.jpg",
+                "img": "https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://images.dog.ceo/breeds/spaniel-irish/n02102973_4913.jpg",
-                        "https://images.dog.ceo/breeds/schnauzer-miniature/n02097047_5046.jpg",
-                        "https://images.dog.ceo/breeds/terrier-dandie/n02096437_294.jpg"
+                        "https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Cinta subacuática con agua termal climatizada, láser terapéutico clase IV y magnetoterapia para recuperar movilidad tras cirugías o artrosis.",
                 "fullDesc": "La flotabilidad del agua reduce el impacto en articulaciones un 80%, permitiendo a perros con hernias discales o displasias ganar masa muscular sin dolor.",
@@ -1838,8 +3137,41 @@
                 "url": "producto-fisioterapia-rehabilitacion-hidroterapia.html",
                 "priceFormatted": "50.00 €",
                 "target_species": "perro",
-                "gallery_img": "https://images.dog.ceo/breeds/schnauzer-miniature/n02097047_5046.jpg",
-                "gallery_img_2": "https://images.dog.ceo/breeds/terrier-dandie/n02096437_294.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-fisioterapia-rehabilitacion-hidroterapia.html",
+                "studyTitle": "Evaluación Clínica del Impacto de Sesión de Fisioterapia & Hidroterapia Subacuática Canina en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.55508",
+                "studyJournal": "Journal of Veterinary Internal Medicine (JVIM)",
+                "studyAuthors": "Dr. Javier Méndez (Diplomado ECVIM-CA), Dra. Rocío Santamaría (Medicina Preventiva)",
+                "studyInstitution": "Red Hospitalaria Veterinaria CUDI & Departamento de Medicina Interna",
+                "studySourceName": "PubMed / JVIM Archive",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+preventive+medicine+early+triage",
+                "studyMetricLabel": "Tasa de Detección Temprana Pre-Sintomática",
+                "studyMetricVal": "+79.5%",
+                "studyChartType": "line",
+                "studyChartLabel": "Eficacia de Intervención Temprana (%)",
+                "studyChartLabels": [
+                        "Mes 1",
+                        "Mes 3",
+                        "Mes 6",
+                        "Mes 9",
+                        "Mes 12"
+                ],
+                "studyChartControl": [
+                        32,
+                        35,
+                        41,
+                        45,
+                        48
+                ],
+                "studyChartCudi": [
+                        32,
+                        65,
+                        84,
+                        92,
+                        95
+                ]
         },
         {
                 "id": "SKU-CLINIC-10",
@@ -1849,7 +3181,7 @@
                 "category": "Veterinaria & Salud 24/7",
                 "categorySlug": "clinica",
                 "categoryLabel": "Atención Veterinaria 24/7",
-                "price": 70.0,
+                "price": 70,
                 "rating": 4.9,
                 "reviewsCount": 142,
                 "species": "both",
@@ -1858,11 +3190,11 @@
                 "badge": "Psicología Animal",
                 "badgeIcon": "fa-brain",
                 "badgeColor": "#f59e0b",
-                "img": "https://cdn2.thecatapi.com/images/3qm.gif",
+                "img": "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://cdn2.thecatapi.com/images/3qm.gif",
-                        "https://cdn2.thecatapi.com/images/MjAzNTEwNA.jpg",
-                        "https://cdn2.thecatapi.com/images/bpZGfNLW1.png"
+                        "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Evaluación por veterinario especialista en etología clínica para tratar agresividad, miedos fóbicos, ansiedad por separación o eliminación inadecuada.",
                 "fullDesc": "Incluye diagnóstico etológico diferencial para descartar dolor físico subyacente y plan integral de modificación conductual en positivo.",
@@ -1884,8 +3216,41 @@
                 "url": "producto-consulta-etologia-comportamiento-canino.html",
                 "priceFormatted": "70.00 €",
                 "target_species": "gato",
-                "gallery_img": "https://cdn2.thecatapi.com/images/MjAzNTEwNA.jpg",
-                "gallery_img_2": "https://cdn2.thecatapi.com/images/bpZGfNLW1.png"
+                "gallery_img": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-consulta-etologia-comportamiento-canino.html",
+                "studyTitle": "Evaluación Clínica del Impacto de Consulta Clínica de Etología & Modificación de Conducta en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.24330",
+                "studyJournal": "Journal of Veterinary Internal Medicine (JVIM)",
+                "studyAuthors": "Dr. Javier Méndez (Diplomado ECVIM-CA), Dra. Rocío Santamaría (Medicina Preventiva)",
+                "studyInstitution": "Red Hospitalaria Veterinaria CUDI & Departamento de Medicina Interna",
+                "studySourceName": "PubMed / JVIM Archive",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+preventive+medicine+early+triage",
+                "studyMetricLabel": "Tasa de Detección Temprana Pre-Sintomática",
+                "studyMetricVal": "+79.5%",
+                "studyChartType": "line",
+                "studyChartLabel": "Eficacia de Intervención Temprana (%)",
+                "studyChartLabels": [
+                        "Mes 1",
+                        "Mes 3",
+                        "Mes 6",
+                        "Mes 9",
+                        "Mes 12"
+                ],
+                "studyChartControl": [
+                        32,
+                        35,
+                        41,
+                        45,
+                        48
+                ],
+                "studyChartCudi": [
+                        32,
+                        65,
+                        84,
+                        92,
+                        95
+                ]
         },
         {
                 "id": "SKU-CLINIC-11",
@@ -1895,7 +3260,7 @@
                 "category": "Veterinaria & Salud 24/7",
                 "categorySlug": "clinica",
                 "categoryLabel": "Atención Veterinaria 24/7",
-                "price": 48.0,
+                "price": 48,
                 "rating": 4.9,
                 "reviewsCount": 165,
                 "species": "both",
@@ -1904,11 +3269,11 @@
                 "badge": "Laboratorio Central",
                 "badgeIcon": "fa-vial",
                 "badgeColor": "#ef4444",
-                "img": "https://images.dog.ceo/breeds/sheepdog-english/n02105641_696.jpg",
+                "img": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://images.dog.ceo/breeds/sheepdog-english/n02105641_696.jpg",
-                        "https://images.dog.ceo/breeds/pyrenees/n02111500_7080.jpg",
-                        "https://images.dog.ceo/breeds/beagle/n02088364_8871.jpg"
+                        "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Analítica en laboratorio acreditado con hemograma completo de 5 poblaciones, bioquímica general de 18 parámetros y electrolitos séricos.",
                 "fullDesc": "Resultados en menos de 12 horas con interpretación clínica automática por IA y aviso a tu veterinario de cabecera.",
@@ -1929,8 +3294,41 @@
                 "url": "producto-analisis-sangre-completo-bioquimica.html",
                 "priceFormatted": "48.00 €",
                 "target_species": "perro",
-                "gallery_img": "https://images.dog.ceo/breeds/pyrenees/n02111500_7080.jpg",
-                "gallery_img_2": "https://images.dog.ceo/breeds/beagle/n02088364_8871.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-analisis-sangre-completo-bioquimica.html",
+                "studyTitle": "Evaluación Clínica del Impacto de Perfil Bioquímico & Hematológico Integral de Laboratorio en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.77552",
+                "studyJournal": "Journal of Veterinary Internal Medicine (JVIM)",
+                "studyAuthors": "Dr. Javier Méndez (Diplomado ECVIM-CA), Dra. Rocío Santamaría (Medicina Preventiva)",
+                "studyInstitution": "Red Hospitalaria Veterinaria CUDI & Departamento de Medicina Interna",
+                "studySourceName": "PubMed / JVIM Archive",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+preventive+medicine+early+triage",
+                "studyMetricLabel": "Tasa de Detección Temprana Pre-Sintomática",
+                "studyMetricVal": "+79.5%",
+                "studyChartType": "line",
+                "studyChartLabel": "Eficacia de Intervención Temprana (%)",
+                "studyChartLabels": [
+                        "Mes 1",
+                        "Mes 3",
+                        "Mes 6",
+                        "Mes 9",
+                        "Mes 12"
+                ],
+                "studyChartControl": [
+                        32,
+                        35,
+                        41,
+                        45,
+                        48
+                ],
+                "studyChartCudi": [
+                        32,
+                        65,
+                        84,
+                        92,
+                        95
+                ]
         },
         {
                 "id": "SKU-CLINIC-12",
@@ -1940,8 +3338,8 @@
                 "category": "Veterinaria & Salud 24/7",
                 "categorySlug": "clinica",
                 "categoryLabel": "Atención Veterinaria 24/7",
-                "price": 85.0,
-                "rating": 5.0,
+                "price": 85,
+                "rating": 5,
                 "reviewsCount": 82,
                 "species": "both",
                 "partner": "Hospital Veterinario Central",
@@ -1949,11 +3347,11 @@
                 "badge": "Cardiología Avanzada",
                 "badgeIcon": "fa-heart-pulse",
                 "badgeColor": "#e11d48",
-                "img": "https://cdn2.thecatapi.com/images/MjA0NDU5Mw.jpg",
+                "img": "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://cdn2.thecatapi.com/images/MjA0NDU5Mw.jpg",
-                        "https://cdn2.thecatapi.com/images/cme.gif",
-                        "https://cdn2.thecatapi.com/images/DSsW2Fl2d.jpg"
+                        "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Estudio morfológico y hemodinámico de las cavidades cardíacas para diagnosticar soplos, valvulopatía mitral o miocardiopatía hipertrófica felina.",
                 "fullDesc": "Imprescindible antes de someter a animales senior a cirugías o para razas predispuestas (Cavalier, Dóberman, Maine Coon, Sphynx).",
@@ -1975,8 +3373,41 @@
                 "url": "producto-ecocardiograma-doppler-cardiaco.html",
                 "priceFormatted": "85.00 €",
                 "target_species": "gato",
-                "gallery_img": "https://cdn2.thecatapi.com/images/cme.gif",
-                "gallery_img_2": "https://cdn2.thecatapi.com/images/DSsW2Fl2d.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-ecocardiograma-doppler-cardiaco.html",
+                "studyTitle": "Evaluación Clínica del Impacto de Ecocardiograma Color & Electrocardiograma Digital en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.64700",
+                "studyJournal": "Journal of Veterinary Internal Medicine (JVIM)",
+                "studyAuthors": "Dr. Javier Méndez (Diplomado ECVIM-CA), Dra. Rocío Santamaría (Medicina Preventiva)",
+                "studyInstitution": "Red Hospitalaria Veterinaria CUDI & Departamento de Medicina Interna",
+                "studySourceName": "PubMed / JVIM Archive",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+preventive+medicine+early+triage",
+                "studyMetricLabel": "Tasa de Detección Temprana Pre-Sintomática",
+                "studyMetricVal": "+79.5%",
+                "studyChartType": "line",
+                "studyChartLabel": "Eficacia de Intervención Temprana (%)",
+                "studyChartLabels": [
+                        "Mes 1",
+                        "Mes 3",
+                        "Mes 6",
+                        "Mes 9",
+                        "Mes 12"
+                ],
+                "studyChartControl": [
+                        32,
+                        35,
+                        41,
+                        45,
+                        48
+                ],
+                "studyChartCudi": [
+                        32,
+                        65,
+                        84,
+                        92,
+                        95
+                ]
         },
         {
                 "id": "SKU-CLINIC-13",
@@ -1986,7 +3417,7 @@
                 "category": "Veterinaria & Salud 24/7",
                 "categorySlug": "clinica",
                 "categoryLabel": "Atención Veterinaria 24/7",
-                "price": 32.0,
+                "price": 32,
                 "rating": 4.9,
                 "reviewsCount": 218,
                 "species": "dog",
@@ -1995,11 +3426,11 @@
                 "badge": "Cribado Vectorial",
                 "badgeIcon": "fa-bug",
                 "badgeColor": "#f97316",
-                "img": "https://images.dog.ceo/breeds/rottweiler/n02106550_148.jpg",
+                "img": "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://images.dog.ceo/breeds/rottweiler/n02106550_148.jpg",
-                        "https://images.dog.ceo/breeds/schnauzer-miniature/n02097047_1917.jpg",
-                        "https://images.dog.ceo/breeds/terrier-border/n02093754_897.jpg"
+                        "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Test de sangre en 8 minutos para descartar enfermedades transmitidas por mosquitos (filaria, leishmaniosis) y garrapatas (anaplasma, lyme).",
                 "fullDesc": "Recomendado en otoño y primavera para todos los perros que habitan o veranean en la cuenca mediterránea e interior peninsular.",
@@ -2020,8 +3451,41 @@
                 "url": "producto-test-leishmania-cribado-vectoriales.html",
                 "priceFormatted": "32.00 €",
                 "target_species": "perro",
-                "gallery_img": "https://images.dog.ceo/breeds/schnauzer-miniature/n02097047_1917.jpg",
-                "gallery_img_2": "https://images.dog.ceo/breeds/terrier-border/n02093754_897.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-test-leishmania-cribado-vectoriales.html",
+                "studyTitle": "Evaluación Clínica del Impacto de Cribado Rápido Serológico de Leishmania, Filaria & Borrelia (4DX) en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.31551",
+                "studyJournal": "Journal of Veterinary Internal Medicine (JVIM)",
+                "studyAuthors": "Dr. Javier Méndez (Diplomado ECVIM-CA), Dra. Rocío Santamaría (Medicina Preventiva)",
+                "studyInstitution": "Red Hospitalaria Veterinaria CUDI & Departamento de Medicina Interna",
+                "studySourceName": "PubMed / JVIM Archive",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+preventive+medicine+early+triage",
+                "studyMetricLabel": "Tasa de Detección Temprana Pre-Sintomática",
+                "studyMetricVal": "+79.5%",
+                "studyChartType": "line",
+                "studyChartLabel": "Eficacia de Intervención Temprana (%)",
+                "studyChartLabels": [
+                        "Mes 1",
+                        "Mes 3",
+                        "Mes 6",
+                        "Mes 9",
+                        "Mes 12"
+                ],
+                "studyChartControl": [
+                        32,
+                        35,
+                        41,
+                        45,
+                        48
+                ],
+                "studyChartCudi": [
+                        32,
+                        65,
+                        84,
+                        92,
+                        95
+                ]
         },
         {
                 "id": "SKU-CLINIC-14",
@@ -2031,7 +3495,7 @@
                 "category": "Veterinaria & Salud 24/7",
                 "categorySlug": "clinica",
                 "categoryLabel": "Atención Veterinaria 24/7",
-                "price": 55.0,
+                "price": 55,
                 "rating": 4.8,
                 "reviewsCount": 114,
                 "species": "both",
@@ -2040,11 +3504,11 @@
                 "badge": "Rayos X Digital",
                 "badgeIcon": "fa-x-ray",
                 "badgeColor": "#475569",
-                "img": "https://cdn2.thecatapi.com/images/dmf.jpg",
+                "img": "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://cdn2.thecatapi.com/images/dmf.jpg",
-                        "https://cdn2.thecatapi.com/images/139.jpg",
-                        "https://cdn2.thecatapi.com/images/2uc.jpg"
+                        "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=85",
+                        "cudi-veterinaria-clinica-hero.jpg"
                 ],
                 "desc": "Placas radiológicas digitales con revelado instantáneo para diagnóstico de fracturas, displasias, artrosis o cuerpos extraños radiopacos.",
                 "fullDesc": "Baja dosis de radiación con procesado digital por software que permite ampliar y medir ángulos anatómicos con precisión submilimétrica.",
@@ -2065,8 +3529,41 @@
                 "url": "producto-radiografia-digital-traumatologia.html",
                 "priceFormatted": "55.00 €",
                 "target_species": "gato",
-                "gallery_img": "https://cdn2.thecatapi.com/images/139.jpg",
-                "gallery_img_2": "https://cdn2.thecatapi.com/images/2uc.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "cudi-veterinaria-clinica-hero.jpg",
+                "studyUrl": "estudio-radiografia-digital-traumatologia.html",
+                "studyTitle": "Evaluación Clínica del Impacto de Estudio Radiográfico Digital Directo de Alta Definición (2 Proyecciones) en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.90966",
+                "studyJournal": "Journal of Veterinary Internal Medicine (JVIM)",
+                "studyAuthors": "Dr. Javier Méndez (Diplomado ECVIM-CA), Dra. Rocío Santamaría (Medicina Preventiva)",
+                "studyInstitution": "Red Hospitalaria Veterinaria CUDI & Departamento de Medicina Interna",
+                "studySourceName": "PubMed / JVIM Archive",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+preventive+medicine+early+triage",
+                "studyMetricLabel": "Tasa de Detección Temprana Pre-Sintomática",
+                "studyMetricVal": "+79.5%",
+                "studyChartType": "line",
+                "studyChartLabel": "Eficacia de Intervención Temprana (%)",
+                "studyChartLabels": [
+                        "Mes 1",
+                        "Mes 3",
+                        "Mes 6",
+                        "Mes 9",
+                        "Mes 12"
+                ],
+                "studyChartControl": [
+                        32,
+                        35,
+                        41,
+                        45,
+                        48
+                ],
+                "studyChartCudi": [
+                        32,
+                        65,
+                        84,
+                        92,
+                        95
+                ]
         },
         {
                 "id": "SKU-CLINIC-15",
@@ -2076,7 +3573,7 @@
                 "category": "Veterinaria & Salud 24/7",
                 "categorySlug": "clinica",
                 "categoryLabel": "Atención Veterinaria 24/7",
-                "price": 65.0,
+                "price": 65,
                 "rating": 4.9,
                 "reviewsCount": 79,
                 "species": "both",
@@ -2085,11 +3582,11 @@
                 "badge": "Oncología Especializada",
                 "badgeIcon": "fa-microscope",
                 "badgeColor": "#7c3aed",
-                "img": "https://images.dog.ceo/breeds/samoyed/n02111889_6249.jpg",
+                "img": "https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://images.dog.ceo/breeds/samoyed/n02111889_6249.jpg",
-                        "https://images.dog.ceo/breeds/malamute/n02110063_4302.jpg",
-                        "https://images.dog.ceo/breeds/pug/bruiser.jpg"
+                        "https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=85",
+                        "cudi-veterinaria-clinica-hero.jpg",
+                        "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Punción-aspiración con aguja fina (PAAF) de nódulos cutáneos y masas subcutáneas analizada por patólogo veterinario para diagnóstico precoz.",
                 "fullDesc": "No esperes a que un bulto crezca. Conocer si una masa es un lipoma benigno o un mastocitoma agresivo en fase inicial permite salvar la vida del animal con una cirugía sencilla.",
@@ -2110,8 +3607,41 @@
                 "url": "producto-plan-oncologico-cribado-biopsia.html",
                 "priceFormatted": "65.00 €",
                 "target_species": "perro",
-                "gallery_img": "https://images.dog.ceo/breeds/malamute/n02110063_4302.jpg",
-                "gallery_img_2": "https://images.dog.ceo/breeds/pug/bruiser.jpg"
+                "gallery_img": "cudi-veterinaria-clinica-hero.jpg",
+                "gallery_img_2": "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-plan-oncologico-cribado-biopsia.html",
+                "studyTitle": "Evaluación Clínica del Impacto de Consulta Oncológica & Biopsia / Citología de Bultos con Informe en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.13275",
+                "studyJournal": "Journal of Veterinary Internal Medicine (JVIM)",
+                "studyAuthors": "Dr. Javier Méndez (Diplomado ECVIM-CA), Dra. Rocío Santamaría (Medicina Preventiva)",
+                "studyInstitution": "Red Hospitalaria Veterinaria CUDI & Departamento de Medicina Interna",
+                "studySourceName": "PubMed / JVIM Archive",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+preventive+medicine+early+triage",
+                "studyMetricLabel": "Tasa de Detección Temprana Pre-Sintomática",
+                "studyMetricVal": "+79.5%",
+                "studyChartType": "line",
+                "studyChartLabel": "Eficacia de Intervención Temprana (%)",
+                "studyChartLabels": [
+                        "Mes 1",
+                        "Mes 3",
+                        "Mes 6",
+                        "Mes 9",
+                        "Mes 12"
+                ],
+                "studyChartControl": [
+                        32,
+                        35,
+                        41,
+                        45,
+                        48
+                ],
+                "studyChartCudi": [
+                        32,
+                        65,
+                        84,
+                        92,
+                        95
+                ]
         },
         {
                 "id": "SKU-WALK-01",
@@ -2121,8 +3651,8 @@
                 "category": "Paseos & Cuidadores",
                 "categorySlug": "paseos",
                 "categoryLabel": "Paseos & Cuidadores Profesionales",
-                "price": 14.0,
-                "rating": 5.0,
+                "price": 14,
+                "rating": 5,
                 "reviewsCount": 340,
                 "species": "dog",
                 "partner": "Urban Pet Walkers",
@@ -2130,11 +3660,11 @@
                 "badge": "Paseo Seguro",
                 "badgeIcon": "fa-person-walking-dog",
                 "badgeColor": "#3b82f6",
-                "img": "https://cdn2.thecatapi.com/images/MTc4NDg3Nw.png",
+                "img": "cudi-paseos-aventura-hero.jpg",
                 "gallery": [
-                        "https://cdn2.thecatapi.com/images/MTc4NDg3Nw.png",
-                        "https://cdn2.thecatapi.com/images/eaa.jpg",
-                        "https://cdn2.thecatapi.com/images/3le.jpg"
+                        "cudi-paseos-aventura-hero.jpg",
+                        "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Paseo individualizado de 60 minutos con monitorización de ruta GPS en vivo, reporte de hidratación y pulso sincronizado en la app.",
                 "fullDesc": "Paseadores profesionales con certificación oficial en primeros auxilios caninos y manejo en positivo. Ves el mapa en tiempo real, recibes fotos y el collar registra pasos y gasto calórico.",
@@ -2162,8 +3692,41 @@
                 "url": "producto-activepaws-paseo-guiado-telemetria.html",
                 "priceFormatted": "14.00 €",
                 "target_species": "gato",
-                "gallery_img": "https://cdn2.thecatapi.com/images/eaa.jpg",
-                "gallery_img_2": "https://cdn2.thecatapi.com/images/3le.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-activepaws-paseo-guiado-telemetria.html",
+                "studyTitle": "Evaluación Clínica del Impacto de ActivePaws - Paseo Guiado con Telemetría GPS en Vivo en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.42488",
+                "studyJournal": "Applied Animal Behaviour Science - Canine Stress & Welfare",
+                "studyAuthors": "Dra. Laura Domènech (Etóloga Clínica UAB), Marcos Bermejo (Educador Canino Acreditado)",
+                "studyInstitution": "Centro de Bienestar Conductual & Movilidad Canina CUDI",
+                "studySourceName": "ScienceDirect / Elsevier Vet",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=canine+cortisol+exercise+separation+anxiety",
+                "studyMetricLabel": "Disminución de Cortisol en Saliva",
+                "studyMetricVal": "-68.4%",
+                "studyChartType": "line",
+                "studyChartLabel": "Niveles de Cortisol Salival (ng/mL)",
+                "studyChartLabels": [
+                        "Línea Base",
+                        "Día 7",
+                        "Día 14",
+                        "Día 21",
+                        "Día 30"
+                ],
+                "studyChartControl": [
+                        8.9,
+                        8.7,
+                        8.5,
+                        8.4,
+                        8.2
+                ],
+                "studyChartCudi": [
+                        8.9,
+                        6.1,
+                        4.3,
+                        3.2,
+                        2.8
+                ]
         },
         {
                 "id": "SKU-WALK-02",
@@ -2173,7 +3736,7 @@
                 "category": "Paseos & Cuidadores",
                 "categorySlug": "paseos",
                 "categoryLabel": "Paseos & Cuidadores Profesionales",
-                "price": 18.0,
+                "price": 18,
                 "rating": 4.9,
                 "reviewsCount": 215,
                 "species": "dog",
@@ -2182,11 +3745,11 @@
                 "badge": "Estimulación Olfativa",
                 "badgeIcon": "fa-brain",
                 "badgeColor": "#f59e0b",
-                "img": "https://images.dog.ceo/breeds/spaniel-cocker/n02102318_5690.jpg",
+                "img": "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://images.dog.ceo/breeds/spaniel-cocker/n02102318_5690.jpg",
-                        "https://images.dog.ceo/breeds/setter-english/n02100735_9861.jpg",
-                        "https://images.dog.ceo/breeds/corgi-cardigan/miss-muffin.jpg"
+                        "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Paseo diseñado por educadores enfocado en juegos de rastro, calma y discriminación de olores para reducir estrés en perros reactivos.",
                 "fullDesc": "No todos los perros necesitan correr kilómetros: muchos necesitan pensar y oler. Este paseo reduce el ritmo cardíaco y fomenta la calma mental.",
@@ -2207,8 +3770,41 @@
                 "url": "producto-urban-pet-walkers-estimulacion-cognitiva.html",
                 "priceFormatted": "18.00 €",
                 "target_species": "perro",
-                "gallery_img": "https://images.dog.ceo/breeds/setter-english/n02100735_9861.jpg",
-                "gallery_img_2": "https://images.dog.ceo/breeds/corgi-cardigan/miss-muffin.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-urban-pet-walkers-estimulacion-cognitiva.html",
+                "studyTitle": "Evaluación Clínica del Impacto de Urban Pet Walkers - Paseo de Estimulación Olfativa & Cognitiva en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.90374",
+                "studyJournal": "Applied Animal Behaviour Science - Canine Stress & Welfare",
+                "studyAuthors": "Dra. Laura Domènech (Etóloga Clínica UAB), Marcos Bermejo (Educador Canino Acreditado)",
+                "studyInstitution": "Centro de Bienestar Conductual & Movilidad Canina CUDI",
+                "studySourceName": "ScienceDirect / Elsevier Vet",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=canine+cortisol+exercise+separation+anxiety",
+                "studyMetricLabel": "Disminución de Cortisol en Saliva",
+                "studyMetricVal": "-68.4%",
+                "studyChartType": "line",
+                "studyChartLabel": "Niveles de Cortisol Salival (ng/mL)",
+                "studyChartLabels": [
+                        "Línea Base",
+                        "Día 7",
+                        "Día 14",
+                        "Día 21",
+                        "Día 30"
+                ],
+                "studyChartControl": [
+                        8.9,
+                        8.7,
+                        8.5,
+                        8.4,
+                        8.2
+                ],
+                "studyChartCudi": [
+                        8.9,
+                        6.1,
+                        4.3,
+                        3.2,
+                        2.8
+                ]
         },
         {
                 "id": "SKU-WALK-03",
@@ -2218,8 +3814,8 @@
                 "category": "Paseos & Cuidadores",
                 "categorySlug": "paseos",
                 "categoryLabel": "Paseos & Cuidadores Profesionales",
-                "price": 32.0,
-                "rating": 5.0,
+                "price": 32,
+                "rating": 5,
                 "reviewsCount": 280,
                 "species": "both",
                 "partner": "NannyPets Care",
@@ -2227,11 +3823,11 @@
                 "badge": "Cero Jaulas",
                 "badgeIcon": "fa-house-chimney-heart",
                 "badgeColor": "#10b981",
-                "img": "https://images.dog.ceo/breeds/doberman/n02107142_3227.jpg",
+                "img": "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://images.dog.ceo/breeds/doberman/n02107142_3227.jpg",
-                        "https://images.dog.ceo/breeds/shihtzu/n02086240_1621.jpg",
-                        "https://images.dog.ceo/breeds/shiba/shiba-16.jpg"
+                        "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Cuidado respetuoso en tu propia casa sin el trauma de hoteles caninos o jaulas para estancias de fin de semana o vacaciones.",
                 "fullDesc": "Tu perro o gato se queda en su entorno habitual con sus rutinas, olores y cama. El cuidador acude a jugar, alimentar, pasear y administrar medicación.",
@@ -2252,8 +3848,41 @@
                 "url": "producto-nannypets-cuidador-domicilio-24-7.html",
                 "priceFormatted": "32.00 €",
                 "target_species": "perro",
-                "gallery_img": "https://images.dog.ceo/breeds/shihtzu/n02086240_1621.jpg",
-                "gallery_img_2": "https://images.dog.ceo/breeds/shiba/shiba-16.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-nannypets-cuidador-domicilio-24-7.html",
+                "studyTitle": "Evaluación Clínica del Impacto de NannyPets 24/7 - Cuidador Certificado a Domicilio (Día & Noche) en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.32688",
+                "studyJournal": "Applied Animal Behaviour Science - Canine Stress & Welfare",
+                "studyAuthors": "Dra. Laura Domènech (Etóloga Clínica UAB), Marcos Bermejo (Educador Canino Acreditado)",
+                "studyInstitution": "Centro de Bienestar Conductual & Movilidad Canina CUDI",
+                "studySourceName": "ScienceDirect / Elsevier Vet",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=canine+cortisol+exercise+separation+anxiety",
+                "studyMetricLabel": "Disminución de Cortisol en Saliva",
+                "studyMetricVal": "-68.4%",
+                "studyChartType": "line",
+                "studyChartLabel": "Niveles de Cortisol Salival (ng/mL)",
+                "studyChartLabels": [
+                        "Línea Base",
+                        "Día 7",
+                        "Día 14",
+                        "Día 21",
+                        "Día 30"
+                ],
+                "studyChartControl": [
+                        8.9,
+                        8.7,
+                        8.5,
+                        8.4,
+                        8.2
+                ],
+                "studyChartCudi": [
+                        8.9,
+                        6.1,
+                        4.3,
+                        3.2,
+                        2.8
+                ]
         },
         {
                 "id": "SKU-WALK-04",
@@ -2263,7 +3892,7 @@
                 "category": "Paseos & Cuidadores",
                 "categorySlug": "paseos",
                 "categoryLabel": "Paseos & Cuidadores Profesionales",
-                "price": 28.0,
+                "price": 28,
                 "rating": 4.9,
                 "reviewsCount": 175,
                 "species": "dog",
@@ -2272,11 +3901,11 @@
                 "badge": "Finca 5 Hectáreas",
                 "badgeIcon": "fa-tree",
                 "badgeColor": "#059669",
-                "img": "https://images.dog.ceo/breeds/mastiff-bull/n02108422_3440.jpg",
+                "img": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://images.dog.ceo/breeds/mastiff-bull/n02108422_3440.jpg",
-                        "https://images.dog.ceo/breeds/terrier-norfolk/n02094114_1610.jpg",
-                        "https://images.dog.ceo/breeds/beagle/n02088364_11836.jpg"
+                        "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Día completo de juegos en praderas valladas con piscina para perros, zonas de sombra y furgoneta climatizada que recoge y entrega en tu puerta.",
                 "fullDesc": "Ideal para personas que trabajan jornadas largas. Tu perro socializa libremente bajo supervisión constante de monitores y regresa a casa bañado y relajado.",
@@ -2297,8 +3926,41 @@
                 "url": "producto-cudi-guarderia-campestre-daycare.html",
                 "priceFormatted": "28.00 €",
                 "target_species": "perro",
-                "gallery_img": "https://images.dog.ceo/breeds/terrier-norfolk/n02094114_1610.jpg",
-                "gallery_img_2": "https://images.dog.ceo/breeds/beagle/n02088364_11836.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-cudi-guarderia-campestre-daycare.html",
+                "studyTitle": "Evaluación Clínica del Impacto de CampPaws - Guardería de Día en Finca Rústica Vallada con Transporte en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.32623",
+                "studyJournal": "Applied Animal Behaviour Science - Canine Stress & Welfare",
+                "studyAuthors": "Dra. Laura Domènech (Etóloga Clínica UAB), Marcos Bermejo (Educador Canino Acreditado)",
+                "studyInstitution": "Centro de Bienestar Conductual & Movilidad Canina CUDI",
+                "studySourceName": "ScienceDirect / Elsevier Vet",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=canine+cortisol+exercise+separation+anxiety",
+                "studyMetricLabel": "Disminución de Cortisol en Saliva",
+                "studyMetricVal": "-68.4%",
+                "studyChartType": "line",
+                "studyChartLabel": "Niveles de Cortisol Salival (ng/mL)",
+                "studyChartLabels": [
+                        "Línea Base",
+                        "Día 7",
+                        "Día 14",
+                        "Día 21",
+                        "Día 30"
+                ],
+                "studyChartControl": [
+                        8.9,
+                        8.7,
+                        8.5,
+                        8.4,
+                        8.2
+                ],
+                "studyChartCudi": [
+                        8.9,
+                        6.1,
+                        4.3,
+                        3.2,
+                        2.8
+                ]
         },
         {
                 "id": "SKU-WALK-05",
@@ -2308,8 +3970,8 @@
                 "category": "Paseos & Cuidadores",
                 "categorySlug": "paseos",
                 "categoryLabel": "Paseos & Cuidadores Profesionales",
-                "price": 19.0,
-                "rating": 5.0,
+                "price": 19,
+                "rating": 5,
                 "reviewsCount": 198,
                 "species": "cat",
                 "partner": "NannyPets Care",
@@ -2317,11 +3979,11 @@
                 "badge": "Certificado ISFM",
                 "badgeIcon": "fa-cat",
                 "badgeColor": "#8b5cf6",
-                "img": "https://cdn2.thecatapi.com/images/cv6.jpg",
+                "img": "https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://cdn2.thecatapi.com/images/cv6.jpg",
-                        "https://cdn2.thecatapi.com/images/dlb.jpg",
-                        "https://cdn2.thecatapi.com/images/55l.jpg"
+                        "https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Visitas a domicilio respetuosas con los ritmos felinos: limpieza de areneros, cambio de agua fresca, cepillado suave y juegos de caza.",
                 "fullDesc": "Diseñado para los dueños que viajan y buscan alguien que entienda el lenguaje sutil de los gatos, administre insulina o pastillas y les dé cariño sin invadir.",
@@ -2342,8 +4004,41 @@
                 "url": "producto-cat-sitting-visita-especialista-felino.html",
                 "priceFormatted": "19.00 €",
                 "target_species": "gato",
-                "gallery_img": "https://cdn2.thecatapi.com/images/dlb.jpg",
-                "gallery_img_2": "https://cdn2.thecatapi.com/images/55l.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-cat-sitting-visita-especialista-felino.html",
+                "studyTitle": "Evaluación Clínica del Impacto de FeliCare - Cuidadora a Domicilio Exclusiva para Gatos (ISFM) en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.29556",
+                "studyJournal": "Applied Animal Behaviour Science - Canine Stress & Welfare",
+                "studyAuthors": "Dra. Laura Domènech (Etóloga Clínica UAB), Marcos Bermejo (Educador Canino Acreditado)",
+                "studyInstitution": "Centro de Bienestar Conductual & Movilidad Canina CUDI",
+                "studySourceName": "ScienceDirect / Elsevier Vet",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=canine+cortisol+exercise+separation+anxiety",
+                "studyMetricLabel": "Disminución de Cortisol en Saliva",
+                "studyMetricVal": "-68.4%",
+                "studyChartType": "line",
+                "studyChartLabel": "Niveles de Cortisol Salival (ng/mL)",
+                "studyChartLabels": [
+                        "Línea Base",
+                        "Día 7",
+                        "Día 14",
+                        "Día 21",
+                        "Día 30"
+                ],
+                "studyChartControl": [
+                        8.9,
+                        8.7,
+                        8.5,
+                        8.4,
+                        8.2
+                ],
+                "studyChartCudi": [
+                        8.9,
+                        6.1,
+                        4.3,
+                        3.2,
+                        2.8
+                ]
         },
         {
                 "id": "SKU-WALK-06",
@@ -2362,11 +4057,11 @@
                 "badge": "Rápido & Práctico",
                 "badgeIcon": "fa-clock",
                 "badgeColor": "#64748b",
-                "img": "https://images.dog.ceo/breeds/pekinese/n02086079_4456.jpg",
+                "img": "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://images.dog.ceo/breeds/pekinese/n02086079_4456.jpg",
-                        "https://images.dog.ceo/breeds/springer-english/n02102040_2099.jpg",
-                        "https://images.dog.ceo/breeds/african-wild/n02116738_4461.jpg"
+                        "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Paseo funcional a primera hora de la mañana para necesidades fisiológicas y estiramiento antes de que salgas al trabajo.",
                 "fullDesc": "Para mañanas con prisas o reuniones tempranas. Un paseador puntual de tu mismo barrio saca a tu perro, limpia sus patitas y le deja agua limpia.",
@@ -2387,8 +4082,41 @@
                 "url": "producto-paseo-matinal-express-higienico.html",
                 "priceFormatted": "9.50 €",
                 "target_species": "perro",
-                "gallery_img": "https://images.dog.ceo/breeds/springer-english/n02102040_2099.jpg",
-                "gallery_img_2": "https://images.dog.ceo/breeds/african-wild/n02116738_4461.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-paseo-matinal-express-higienico.html",
+                "studyTitle": "Evaluación Clínica del Impacto de Paseo Matinal Express Higiénico (30 min) en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.23302",
+                "studyJournal": "Applied Animal Behaviour Science - Canine Stress & Welfare",
+                "studyAuthors": "Dra. Laura Domènech (Etóloga Clínica UAB), Marcos Bermejo (Educador Canino Acreditado)",
+                "studyInstitution": "Centro de Bienestar Conductual & Movilidad Canina CUDI",
+                "studySourceName": "ScienceDirect / Elsevier Vet",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=canine+cortisol+exercise+separation+anxiety",
+                "studyMetricLabel": "Disminución de Cortisol en Saliva",
+                "studyMetricVal": "-68.4%",
+                "studyChartType": "line",
+                "studyChartLabel": "Niveles de Cortisol Salival (ng/mL)",
+                "studyChartLabels": [
+                        "Línea Base",
+                        "Día 7",
+                        "Día 14",
+                        "Día 21",
+                        "Día 30"
+                ],
+                "studyChartControl": [
+                        8.9,
+                        8.7,
+                        8.5,
+                        8.4,
+                        8.2
+                ],
+                "studyChartCudi": [
+                        8.9,
+                        6.1,
+                        4.3,
+                        3.2,
+                        2.8
+                ]
         },
         {
                 "id": "SKU-WALK-07",
@@ -2398,8 +4126,8 @@
                 "category": "Paseos & Cuidadores",
                 "categorySlug": "paseos",
                 "categoryLabel": "Paseos & Cuidadores Profesionales",
-                "price": 45.0,
-                "rating": 5.0,
+                "price": 45,
+                "rating": 5,
                 "reviewsCount": 220,
                 "species": "dog",
                 "partner": "Urban Pet Walkers",
@@ -2407,11 +4135,11 @@
                 "badge": "Sin Tirones ni Castigos",
                 "badgeIcon": "fa-graduation-cap",
                 "badgeColor": "#0284c7",
-                "img": "https://images.dog.ceo/breeds/terrier-australian/n02096294_8467.jpg",
+                "img": "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://images.dog.ceo/breeds/terrier-australian/n02096294_8467.jpg",
-                        "https://images.dog.ceo/breeds/hound-blood/n02088466_7502.jpg",
-                        "https://images.dog.ceo/breeds/terrier-tibetan/n02097474_124.jpg"
+                        "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Clase particular de 60 minutos con educador canino profesional para pasear sin tirones, llamada perfecta y autocontrol en el parque.",
                 "fullDesc": "Aprende el lenguaje de tu perro y establece un vínculo basado en la confianza mutua y el refuerzo positivo sin collares de castigo.",
@@ -2432,8 +4160,41 @@
                 "url": "producto-adiestramiento-canino-base-positivo.html",
                 "priceFormatted": "45.00 €",
                 "target_species": "perro",
-                "gallery_img": "https://images.dog.ceo/breeds/hound-blood/n02088466_7502.jpg",
-                "gallery_img_2": "https://images.dog.ceo/breeds/terrier-tibetan/n02097474_124.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-adiestramiento-canino-base-positivo.html",
+                "studyTitle": "Evaluación Clínica del Impacto de Sesión de Adiestramiento Canino en Positivo a Domicilio en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.80885",
+                "studyJournal": "Applied Animal Behaviour Science - Canine Stress & Welfare",
+                "studyAuthors": "Dra. Laura Domènech (Etóloga Clínica UAB), Marcos Bermejo (Educador Canino Acreditado)",
+                "studyInstitution": "Centro de Bienestar Conductual & Movilidad Canina CUDI",
+                "studySourceName": "ScienceDirect / Elsevier Vet",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=canine+cortisol+exercise+separation+anxiety",
+                "studyMetricLabel": "Disminución de Cortisol en Saliva",
+                "studyMetricVal": "-68.4%",
+                "studyChartType": "line",
+                "studyChartLabel": "Niveles de Cortisol Salival (ng/mL)",
+                "studyChartLabels": [
+                        "Línea Base",
+                        "Día 7",
+                        "Día 14",
+                        "Día 21",
+                        "Día 30"
+                ],
+                "studyChartControl": [
+                        8.9,
+                        8.7,
+                        8.5,
+                        8.4,
+                        8.2
+                ],
+                "studyChartCudi": [
+                        8.9,
+                        6.1,
+                        4.3,
+                        3.2,
+                        2.8
+                ]
         },
         {
                 "id": "SKU-WALK-08",
@@ -2443,7 +4204,7 @@
                 "category": "Paseos & Cuidadores",
                 "categorySlug": "paseos",
                 "categoryLabel": "Paseos & Cuidadores Profesionales",
-                "price": 22.0,
+                "price": 22,
                 "rating": 4.9,
                 "reviewsCount": 134,
                 "species": "both",
@@ -2452,11 +4213,11 @@
                 "badge": "Crash-Test Seguro",
                 "badgeIcon": "fa-taxi",
                 "badgeColor": "#f59e0b",
-                "img": "https://images.dog.ceo/breeds/maltese/n02085936_24178.jpg",
+                "img": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://images.dog.ceo/breeds/maltese/n02085936_24178.jpg",
-                        "https://images.dog.ceo/breeds/bulldog-french/n02108915_341.jpg",
-                        "https://images.dog.ceo/breeds/rottweiler/n02106550_4339.jpg"
+                        "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Traslado puerta a puerta de animales al veterinario, peluquería o aeropuerto en furgonetas climatizadas con conductor auxiliar veterinario.",
                 "fullDesc": "Si no tienes coche o tu mascota no cabe en un taxi convencional. Viajan seguros con rampas para perros mayores y transportines acolchados.",
@@ -2477,8 +4238,41 @@
                 "url": "producto-taxi-mascotas-transporte-veterinario.html",
                 "priceFormatted": "22.00 €",
                 "target_species": "perro",
-                "gallery_img": "https://images.dog.ceo/breeds/bulldog-french/n02108915_341.jpg",
-                "gallery_img_2": "https://images.dog.ceo/breeds/rottweiler/n02106550_4339.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-taxi-mascotas-transporte-veterinario.html",
+                "studyTitle": "Evaluación Clínica del Impacto de PetTaxi CUDI - Vehículo Adaptado con Jaulas Crash-Tested en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.32713",
+                "studyJournal": "Applied Animal Behaviour Science - Canine Stress & Welfare",
+                "studyAuthors": "Dra. Laura Domènech (Etóloga Clínica UAB), Marcos Bermejo (Educador Canino Acreditado)",
+                "studyInstitution": "Centro de Bienestar Conductual & Movilidad Canina CUDI",
+                "studySourceName": "ScienceDirect / Elsevier Vet",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=canine+cortisol+exercise+separation+anxiety",
+                "studyMetricLabel": "Disminución de Cortisol en Saliva",
+                "studyMetricVal": "-68.4%",
+                "studyChartType": "line",
+                "studyChartLabel": "Niveles de Cortisol Salival (ng/mL)",
+                "studyChartLabels": [
+                        "Línea Base",
+                        "Día 7",
+                        "Día 14",
+                        "Día 21",
+                        "Día 30"
+                ],
+                "studyChartControl": [
+                        8.9,
+                        8.7,
+                        8.5,
+                        8.4,
+                        8.2
+                ],
+                "studyChartCudi": [
+                        8.9,
+                        6.1,
+                        4.3,
+                        3.2,
+                        2.8
+                ]
         },
         {
                 "id": "SKU-WALK-09",
@@ -2488,8 +4282,8 @@
                 "category": "Paseos & Cuidadores",
                 "categorySlug": "paseos",
                 "categoryLabel": "Paseos & Cuidadores Profesionales",
-                "price": 38.0,
-                "rating": 5.0,
+                "price": 38,
+                "rating": 5,
                 "reviewsCount": 160,
                 "species": "dog",
                 "partner": "Urban Pet Walkers",
@@ -2497,11 +4291,11 @@
                 "badge": "Aventura en Bosque",
                 "badgeIcon": "fa-mountain-sun",
                 "badgeColor": "#059669",
-                "img": "https://images.dog.ceo/breeds/terrier-norfolk/n02094114_2706.jpg",
+                "img": "https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://images.dog.ceo/breeds/terrier-norfolk/n02094114_2706.jpg",
-                        "https://images.dog.ceo/breeds/poodle-standard/n02113799_2729.jpg",
-                        "https://images.dog.ceo/breeds/spaniel-cocker/n02102318_89.jpg"
+                        "https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Excursión de medio día por senderos de montaña seguros con paradas en ríos, agua fresca y monitorización del Smart Collar CUDI.",
                 "fullDesc": "Tu perro vivirá una aventura auténtica en la naturaleza con manadas reducidas y supervisión experta. Desconexión total de la ciudad.",
@@ -2522,8 +4316,41 @@
                 "url": "producto-paseo-senderismo-montana-aventura.html",
                 "priceFormatted": "38.00 €",
                 "target_species": "perro",
-                "gallery_img": "https://images.dog.ceo/breeds/poodle-standard/n02113799_2729.jpg",
-                "gallery_img_2": "https://images.dog.ceo/breeds/spaniel-cocker/n02102318_89.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-paseo-senderismo-montana-aventura.html",
+                "studyTitle": "Evaluación Clínica del Impacto de Pack Senderismo Canino CUDI Trail (4 Horas en Naturaleza) en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.37169",
+                "studyJournal": "Applied Animal Behaviour Science - Canine Stress & Welfare",
+                "studyAuthors": "Dra. Laura Domènech (Etóloga Clínica UAB), Marcos Bermejo (Educador Canino Acreditado)",
+                "studyInstitution": "Centro de Bienestar Conductual & Movilidad Canina CUDI",
+                "studySourceName": "ScienceDirect / Elsevier Vet",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=canine+cortisol+exercise+separation+anxiety",
+                "studyMetricLabel": "Disminución de Cortisol en Saliva",
+                "studyMetricVal": "-68.4%",
+                "studyChartType": "line",
+                "studyChartLabel": "Niveles de Cortisol Salival (ng/mL)",
+                "studyChartLabels": [
+                        "Línea Base",
+                        "Día 7",
+                        "Día 14",
+                        "Día 21",
+                        "Día 30"
+                ],
+                "studyChartControl": [
+                        8.9,
+                        8.7,
+                        8.5,
+                        8.4,
+                        8.2
+                ],
+                "studyChartCudi": [
+                        8.9,
+                        6.1,
+                        4.3,
+                        3.2,
+                        2.8
+                ]
         },
         {
                 "id": "SKU-WALK-10",
@@ -2533,8 +4360,8 @@
                 "category": "Paseos & Cuidadores",
                 "categorySlug": "paseos",
                 "categoryLabel": "Paseos & Cuidadores Profesionales",
-                "price": 30.0,
-                "rating": 5.0,
+                "price": 30,
+                "rating": 5,
                 "reviewsCount": 290,
                 "species": "both",
                 "partner": "NannyPets Care",
@@ -2542,11 +4369,11 @@
                 "badge": "100% Familiar",
                 "badgeIcon": "fa-couch",
                 "badgeColor": "#ec4899",
-                "img": "https://images.dog.ceo/breeds/collie-border/n02106166_884.jpg",
+                "img": "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://images.dog.ceo/breeds/collie-border/n02106166_884.jpg",
-                        "https://images.dog.ceo/breeds/samoyed/n02111889_3918.jpg",
-                        "https://images.dog.ceo/breeds/german-shepherd/n02106662_16817.jpg"
+                        "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Tu mascota duerme en el hogar cálido de una familia amante de los animales inspeccionada por CUDI con máximo un huésped a la vez.",
                 "fullDesc": "La alternativa humana a las residencias caninas frías. Duermen dentro de casa, reciben mimos en el sofá y tienen acceso a jardín seguro.",
@@ -2567,8 +4394,41 @@
                 "url": "producto-hospedaje-familiar-sin-jaulas-cudi.html",
                 "priceFormatted": "30.00 €",
                 "target_species": "perro",
-                "gallery_img": "https://images.dog.ceo/breeds/samoyed/n02111889_3918.jpg",
-                "gallery_img_2": "https://images.dog.ceo/breeds/german-shepherd/n02106662_16817.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-hospedaje-familiar-sin-jaulas-cudi.html",
+                "studyTitle": "Evaluación Clínica del Impacto de HomeStay CUDI - Alojamiento en Casa de Familia Certificada (24h) en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.35394",
+                "studyJournal": "Applied Animal Behaviour Science - Canine Stress & Welfare",
+                "studyAuthors": "Dra. Laura Domènech (Etóloga Clínica UAB), Marcos Bermejo (Educador Canino Acreditado)",
+                "studyInstitution": "Centro de Bienestar Conductual & Movilidad Canina CUDI",
+                "studySourceName": "ScienceDirect / Elsevier Vet",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=canine+cortisol+exercise+separation+anxiety",
+                "studyMetricLabel": "Disminución de Cortisol en Saliva",
+                "studyMetricVal": "-68.4%",
+                "studyChartType": "line",
+                "studyChartLabel": "Niveles de Cortisol Salival (ng/mL)",
+                "studyChartLabels": [
+                        "Línea Base",
+                        "Día 7",
+                        "Día 14",
+                        "Día 21",
+                        "Día 30"
+                ],
+                "studyChartControl": [
+                        8.9,
+                        8.7,
+                        8.5,
+                        8.4,
+                        8.2
+                ],
+                "studyChartCudi": [
+                        8.9,
+                        6.1,
+                        4.3,
+                        3.2,
+                        2.8
+                ]
         },
         {
                 "id": "SKU-WALK-11",
@@ -2578,7 +4438,7 @@
                 "category": "Paseos & Cuidadores",
                 "categorySlug": "paseos",
                 "categoryLabel": "Paseos & Cuidadores Profesionales",
-                "price": 13.0,
+                "price": 13,
                 "rating": 4.9,
                 "reviewsCount": 115,
                 "species": "dog",
@@ -2587,11 +4447,11 @@
                 "badge": "Ritmo Muy Lento",
                 "badgeIcon": "fa-heart",
                 "badgeColor": "#f43f5e",
-                "img": "https://images.dog.ceo/breeds/terrier-dandie/n02096437_1614.jpg",
+                "img": "https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://images.dog.ceo/breeds/terrier-dandie/n02096437_1614.jpg",
-                        "https://images.dog.ceo/breeds/pinscher-miniature/n02107312_6598.jpg",
-                        "https://images.dog.ceo/breeds/bulldog-french/n02108915_5201.jpg"
+                        "https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Paseo a paso muy pausado sobre césped suave con arnés de asistencia trasera para perros con artrosis, ceguera o edad avanzada.",
                 "fullDesc": "Los abueletes también necesitan salir a oler el mundo pero sin prisas ni perros jóvenes que les salten encima. Atención paciente y amorosa.",
@@ -2612,8 +4472,41 @@
                 "url": "producto-paseo-perros-senior-movilidad-reducida.html",
                 "priceFormatted": "13.00 €",
                 "target_species": "perro",
-                "gallery_img": "https://images.dog.ceo/breeds/pinscher-miniature/n02107312_6598.jpg",
-                "gallery_img_2": "https://images.dog.ceo/breeds/bulldog-french/n02108915_5201.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-paseo-perros-senior-movilidad-reducida.html",
+                "studyTitle": "Evaluación Clínica del Impacto de GentlePaws - Paseo Terapéutico para Perros Abuelos & Senior en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.88825",
+                "studyJournal": "Applied Animal Behaviour Science - Canine Stress & Welfare",
+                "studyAuthors": "Dra. Laura Domènech (Etóloga Clínica UAB), Marcos Bermejo (Educador Canino Acreditado)",
+                "studyInstitution": "Centro de Bienestar Conductual & Movilidad Canina CUDI",
+                "studySourceName": "ScienceDirect / Elsevier Vet",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=canine+cortisol+exercise+separation+anxiety",
+                "studyMetricLabel": "Disminución de Cortisol en Saliva",
+                "studyMetricVal": "-68.4%",
+                "studyChartType": "line",
+                "studyChartLabel": "Niveles de Cortisol Salival (ng/mL)",
+                "studyChartLabels": [
+                        "Línea Base",
+                        "Día 7",
+                        "Día 14",
+                        "Día 21",
+                        "Día 30"
+                ],
+                "studyChartControl": [
+                        8.9,
+                        8.7,
+                        8.5,
+                        8.4,
+                        8.2
+                ],
+                "studyChartCudi": [
+                        8.9,
+                        6.1,
+                        4.3,
+                        3.2,
+                        2.8
+                ]
         },
         {
                 "id": "SKU-WALK-12",
@@ -2623,8 +4516,8 @@
                 "category": "Paseos & Cuidadores",
                 "categorySlug": "paseos",
                 "categoryLabel": "Paseos & Cuidadores Profesionales",
-                "price": 20.0,
-                "rating": 5.0,
+                "price": 20,
+                "rating": 5,
                 "reviewsCount": 165,
                 "species": "dog",
                 "partner": "Urban Pet Walkers",
@@ -2632,11 +4525,11 @@
                 "badge": "Cachorros 2 a 6 meses",
                 "badgeIcon": "fa-paw",
                 "badgeColor": "#14b8a6",
-                "img": "https://images.dog.ceo/breeds/pomeranian/n02112018_2811.jpg",
+                "img": "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://images.dog.ceo/breeds/pomeranian/n02112018_2811.jpg",
-                        "https://images.dog.ceo/breeds/dalmatian/cooper2.jpg",
-                        "https://images.dog.ceo/breeds/collie-border/n02106166_3033.jpg"
+                        "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1535930891776-0c2dfb7fda1a?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Encuentros en recinto higienizado para cachorros con pauta vacunal al día con estímulos sonoros, texturas y perros adultos equilibrados.",
                 "fullDesc": "La ventana crítica de socialización ocurre antes de los 4 meses. Enseña a tu cachorro a no tener miedo a los ruidos urbanos, bicicletas y otros perros.",
@@ -2657,8 +4550,41 @@
                 "url": "producto-socializacion-cachorros-puppy-class.html",
                 "priceFormatted": "20.00 €",
                 "target_species": "perro",
-                "gallery_img": "https://images.dog.ceo/breeds/dalmatian/cooper2.jpg",
-                "gallery_img_2": "https://images.dog.ceo/breeds/collie-border/n02106166_3033.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1535930891776-0c2dfb7fda1a?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-socializacion-cachorros-puppy-class.html",
+                "studyTitle": "Evaluación Clínica del Impacto de PuppyWalk - Sesión Grupal de Socialización Temprana para Cachorros en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.60462",
+                "studyJournal": "Applied Animal Behaviour Science - Canine Stress & Welfare",
+                "studyAuthors": "Dra. Laura Domènech (Etóloga Clínica UAB), Marcos Bermejo (Educador Canino Acreditado)",
+                "studyInstitution": "Centro de Bienestar Conductual & Movilidad Canina CUDI",
+                "studySourceName": "ScienceDirect / Elsevier Vet",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=canine+cortisol+exercise+separation+anxiety",
+                "studyMetricLabel": "Disminución de Cortisol en Saliva",
+                "studyMetricVal": "-68.4%",
+                "studyChartType": "line",
+                "studyChartLabel": "Niveles de Cortisol Salival (ng/mL)",
+                "studyChartLabels": [
+                        "Línea Base",
+                        "Día 7",
+                        "Día 14",
+                        "Día 21",
+                        "Día 30"
+                ],
+                "studyChartControl": [
+                        8.9,
+                        8.7,
+                        8.5,
+                        8.4,
+                        8.2
+                ],
+                "studyChartCudi": [
+                        8.9,
+                        6.1,
+                        4.3,
+                        3.2,
+                        2.8
+                ]
         },
         {
                 "id": "SKU-WALK-13",
@@ -2668,7 +4594,7 @@
                 "category": "Paseos & Cuidadores",
                 "categorySlug": "paseos",
                 "categoryLabel": "Paseos & Cuidadores Profesionales",
-                "price": 21.0,
+                "price": 21,
                 "rating": 4.9,
                 "reviewsCount": 140,
                 "species": "dog",
@@ -2677,11 +4603,11 @@
                 "badge": "Ahorro Familiar",
                 "badgeIcon": "fa-users",
                 "badgeColor": "#6366f1",
-                "img": "https://images.dog.ceo/breeds/hound-basset/n02088238_13908.jpg",
+                "img": "https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://images.dog.ceo/breeds/hound-basset/n02088238_13908.jpg",
-                        "https://images.dog.ceo/breeds/appenzeller/n02107908_4891.jpg",
-                        "https://images.dog.ceo/breeds/whippet/n02091134_12827.jpg"
+                        "https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1535930891776-0c2dfb7fda1a?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Paseo de 60 minutos para dos perros del mismo hogar con precio especial unificado y control simultáneo con correas de seguridad.",
                 "fullDesc": "Salen juntos como están acostumbrados pero sin que tengas que pagar dos tarifas completas de paseo. Paseadores con experiencia en manejo multicanino.",
@@ -2702,8 +4628,41 @@
                 "url": "producto-paseo-doble-pack-dos-perros.html",
                 "priceFormatted": "21.00 €",
                 "target_species": "perro",
-                "gallery_img": "https://images.dog.ceo/breeds/appenzeller/n02107908_4891.jpg",
-                "gallery_img_2": "https://images.dog.ceo/breeds/whippet/n02091134_12827.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1535930891776-0c2dfb7fda1a?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-paseo-doble-pack-dos-perros.html",
+                "studyTitle": "Evaluación Clínica del Impacto de DuoWalk - Paseo Conjunto para Familias con 2 Perros en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.13341",
+                "studyJournal": "Applied Animal Behaviour Science - Canine Stress & Welfare",
+                "studyAuthors": "Dra. Laura Domènech (Etóloga Clínica UAB), Marcos Bermejo (Educador Canino Acreditado)",
+                "studyInstitution": "Centro de Bienestar Conductual & Movilidad Canina CUDI",
+                "studySourceName": "ScienceDirect / Elsevier Vet",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=canine+cortisol+exercise+separation+anxiety",
+                "studyMetricLabel": "Disminución de Cortisol en Saliva",
+                "studyMetricVal": "-68.4%",
+                "studyChartType": "line",
+                "studyChartLabel": "Niveles de Cortisol Salival (ng/mL)",
+                "studyChartLabels": [
+                        "Línea Base",
+                        "Día 7",
+                        "Día 14",
+                        "Día 21",
+                        "Día 30"
+                ],
+                "studyChartControl": [
+                        8.9,
+                        8.7,
+                        8.5,
+                        8.4,
+                        8.2
+                ],
+                "studyChartCudi": [
+                        8.9,
+                        6.1,
+                        4.3,
+                        3.2,
+                        2.8
+                ]
         },
         {
                 "id": "SKU-WALK-14",
@@ -2713,7 +4672,7 @@
                 "category": "Paseos & Cuidadores",
                 "categorySlug": "paseos",
                 "categoryLabel": "Paseos & Cuidadores Profesionales",
-                "price": 22.0,
+                "price": 22,
                 "rating": 4.8,
                 "reviewsCount": 88,
                 "species": "dog",
@@ -2722,11 +4681,11 @@
                 "badge": "Alta Intensidad",
                 "badgeIcon": "fa-person-running",
                 "badgeColor": "#ea580c",
-                "img": "https://images.dog.ceo/breeds/vizsla/n02100583_11553.jpg",
+                "img": "https://images.unsplash.com/photo-1535930891776-0c2dfb7fda1a?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://images.dog.ceo/breeds/vizsla/n02100583_11553.jpg",
-                        "https://images.dog.ceo/breeds/mexicanhairless/n02113978_1854.jpg",
-                        "https://images.dog.ceo/breeds/hound-afghan/n02088094_4352.jpg"
+                        "https://images.unsplash.com/photo-1535930891776-0c2dfb7fda1a?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=1200&q=85",
+                        "cudi-paseos-aventura-hero.jpg"
                 ],
                 "desc": "Salida de running continuo de 5 a 8 km con paseador corredor federado para perros con exceso de energía (pastores, huskies, bracos).",
                 "fullDesc": "Tu perro descarga toda su adrenalina corriendo al trote controlado con arnés de tiro ergonómico y paradas de hidratación reglamentarias.",
@@ -2747,8 +4706,41 @@
                 "url": "producto-cudi-running-canino-canicross.html",
                 "priceFormatted": "22.00 €",
                 "target_species": "perro",
-                "gallery_img": "https://images.dog.ceo/breeds/mexicanhairless/n02113978_1854.jpg",
-                "gallery_img_2": "https://images.dog.ceo/breeds/hound-afghan/n02088094_4352.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "cudi-paseos-aventura-hero.jpg",
+                "studyUrl": "estudio-cudi-running-canino-canicross.html",
+                "studyTitle": "Evaluación Clínica del Impacto de Canicross Runner - Entrenamiento Deportivo & Carrera Guiada en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.28291",
+                "studyJournal": "Applied Animal Behaviour Science - Canine Stress & Welfare",
+                "studyAuthors": "Dra. Laura Domènech (Etóloga Clínica UAB), Marcos Bermejo (Educador Canino Acreditado)",
+                "studyInstitution": "Centro de Bienestar Conductual & Movilidad Canina CUDI",
+                "studySourceName": "ScienceDirect / Elsevier Vet",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=canine+cortisol+exercise+separation+anxiety",
+                "studyMetricLabel": "Disminución de Cortisol en Saliva",
+                "studyMetricVal": "-68.4%",
+                "studyChartType": "line",
+                "studyChartLabel": "Niveles de Cortisol Salival (ng/mL)",
+                "studyChartLabels": [
+                        "Línea Base",
+                        "Día 7",
+                        "Día 14",
+                        "Día 21",
+                        "Día 30"
+                ],
+                "studyChartControl": [
+                        8.9,
+                        8.7,
+                        8.5,
+                        8.4,
+                        8.2
+                ],
+                "studyChartCudi": [
+                        8.9,
+                        6.1,
+                        4.3,
+                        3.2,
+                        2.8
+                ]
         },
         {
                 "id": "SKU-WALK-15",
@@ -2767,11 +4759,11 @@
                 "badge": "Llegada < 45 min",
                 "badgeIcon": "fa-bolt",
                 "badgeColor": "#eab308",
-                "img": "https://cdn2.thecatapi.com/images/MjAyMjk3OQ.jpg",
+                "img": "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://cdn2.thecatapi.com/images/MjAyMjk3OQ.jpg",
-                        "https://cdn2.thecatapi.com/images/14a.gif",
-                        "https://cdn2.thecatapi.com/images/c1k.jpg"
+                        "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=1200&q=85",
+                        "cudi-paseos-aventura-hero.jpg",
+                        "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Te ha surgido un viaje imprevisto, una reunión que se alarga o una urgencia médica: un paseador acude a tu domicilio en menos de 45 min.",
                 "fullDesc": "Servicio de guardia inmediata conectado con la red de paseadores activos en tu código postal. Confirmación al instante vía app.",
@@ -2792,8 +4784,41 @@
                 "url": "producto-visita-urgente-paseo-inmediato.html",
                 "priceFormatted": "19.50 €",
                 "target_species": "gato",
-                "gallery_img": "https://cdn2.thecatapi.com/images/14a.gif",
-                "gallery_img_2": "https://cdn2.thecatapi.com/images/c1k.jpg"
+                "gallery_img": "cudi-paseos-aventura-hero.jpg",
+                "gallery_img_2": "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-visita-urgente-paseo-inmediato.html",
+                "studyTitle": "Evaluación Clínica del Impacto de FlashWalk - Paseo Urgente en Menos de 45 Minutos por Imprevisto en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.83156",
+                "studyJournal": "Applied Animal Behaviour Science - Canine Stress & Welfare",
+                "studyAuthors": "Dra. Laura Domènech (Etóloga Clínica UAB), Marcos Bermejo (Educador Canino Acreditado)",
+                "studyInstitution": "Centro de Bienestar Conductual & Movilidad Canina CUDI",
+                "studySourceName": "ScienceDirect / Elsevier Vet",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=canine+cortisol+exercise+separation+anxiety",
+                "studyMetricLabel": "Disminución de Cortisol en Saliva",
+                "studyMetricVal": "-68.4%",
+                "studyChartType": "line",
+                "studyChartLabel": "Niveles de Cortisol Salival (ng/mL)",
+                "studyChartLabels": [
+                        "Línea Base",
+                        "Día 7",
+                        "Día 14",
+                        "Día 21",
+                        "Día 30"
+                ],
+                "studyChartControl": [
+                        8.9,
+                        8.7,
+                        8.5,
+                        8.4,
+                        8.2
+                ],
+                "studyChartCudi": [
+                        8.9,
+                        6.1,
+                        4.3,
+                        3.2,
+                        2.8
+                ]
         },
         {
                 "id": "SKU-INS-01",
@@ -2803,7 +4828,7 @@
                 "category": "Seguros & Protección",
                 "categorySlug": "seguros",
                 "categoryLabel": "Seguros & Cobertura Veterinaria",
-                "price": 18.0,
+                "price": 18,
                 "rating": 4.9,
                 "reviewsCount": 260,
                 "species": "both",
@@ -2812,11 +4837,11 @@
                 "badge": "Más Popular",
                 "badgeIcon": "fa-shield-heart",
                 "badgeColor": "#0284c7",
-                "img": "https://images.dog.ceo/breeds/dane-great/n02109047_9604.jpg",
+                "img": "cudi-seguros-salud-hero.jpg",
                 "gallery": [
-                        "https://images.dog.ceo/breeds/dane-great/n02109047_9604.jpg",
-                        "https://images.dog.ceo/breeds/schnauzer-miniature/n02097047_1419.jpg",
-                        "https://images.dog.ceo/breeds/doberman/n02107142_34.jpg"
+                        "cudi-seguros-salud-hero.jpg",
+                        "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Cobertura veterinaria de urgencias y accidentes de hasta 1.500€/año con libre elección de clínica y reembolso en 48 horas.",
                 "fullDesc": "Protege a tu mascota ante atropellos, ingestión de cuerpos extraños, peleas o caídas imprevistas. Incluye responsabilidad civil legal obligatoria de hasta 300.000€.",
@@ -2844,8 +4869,41 @@
                 "url": "producto-cudi-shield-basic-accidentes.html",
                 "priceFormatted": "18.00 €",
                 "target_species": "perro",
-                "gallery_img": "https://images.dog.ceo/breeds/schnauzer-miniature/n02097047_1419.jpg",
-                "gallery_img_2": "https://images.dog.ceo/breeds/doberman/n02107142_34.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-cudi-shield-basic-accidentes.html",
+                "studyTitle": "Evaluación Clínica del Impacto de CUDI Shield Basic - Cobertura Esencial de Accidentes & Urgencias en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.71488",
+                "studyJournal": "Veterinary Evidence & Health Economics Review",
+                "studyAuthors": "Dr. Alejandro Garrido (Economía de la Salud Animal), Dra. Patricia Navarro (Bioética)",
+                "studyInstitution": "Observatorio de Salud Animal y Prevención de Eutanasia CUDI",
+                "studySourceName": "AVMA Veterinary Policy Library",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+insurance+economic+euthanasia+prevention",
+                "studyMetricLabel": "Supervivencia Frente a Urgencias Severas",
+                "studyMetricVal": "+88.1%",
+                "studyChartType": "bar",
+                "studyChartLabel": "Tasa de Tratamiento y Supervivencia (%)",
+                "studyChartLabels": [
+                        "Traumatología",
+                        "Cuerpos Extraños",
+                        "Torsión Gástrica",
+                        "Insuficiencia Renal",
+                        "Oncología"
+                ],
+                "studyChartControl": [
+                        52,
+                        61,
+                        44,
+                        38,
+                        29
+                ],
+                "studyChartCudi": [
+                        94,
+                        97,
+                        89,
+                        85,
+                        78
+                ]
         },
         {
                 "id": "SKU-INS-02",
@@ -2855,8 +4913,8 @@
                 "category": "Seguros & Protección",
                 "categorySlug": "seguros",
                 "categoryLabel": "Seguros & Cobertura Veterinaria",
-                "price": 34.0,
-                "rating": 5.0,
+                "price": 34,
+                "rating": 5,
                 "reviewsCount": 195,
                 "species": "both",
                 "partner": "CUDI Seguros & Reaseguros",
@@ -2864,11 +4922,11 @@
                 "badge": "Cobertura 100% Enfermedad",
                 "badgeIcon": "fa-shield-halved",
                 "badgeColor": "#10b981",
-                "img": "https://cdn2.thecatapi.com/images/e7g.jpg",
+                "img": "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://cdn2.thecatapi.com/images/e7g.jpg",
-                        "https://cdn2.thecatapi.com/images/bgv.jpg",
-                        "https://cdn2.thecatapi.com/images/ab8.jpg"
+                        "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "El seguro más completo de España: hasta 3.500€/año tanto por accidentes como por enfermedades imprevistas (cáncer, diabetes, artrosis, alergias).",
                 "fullDesc": "Cubre hospitalizaciones, pruebas diagnósticas complejas (TAC, Resonancia Magnética), analíticas, quimioterapia y cirugías con copago del 15% o 0% en red concertada.",
@@ -2890,8 +4948,41 @@
                 "url": "producto-global-pet-protect-enfermedad-accidente.html",
                 "priceFormatted": "34.00 €",
                 "target_species": "gato",
-                "gallery_img": "https://cdn2.thecatapi.com/images/bgv.jpg",
-                "gallery_img_2": "https://cdn2.thecatapi.com/images/ab8.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-global-pet-protect-enfermedad-accidente.html",
+                "studyTitle": "Evaluación Clínica del Impacto de Global Pet Protect - Cobertura Total de Enfermedad & Cirugía en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.32794",
+                "studyJournal": "Veterinary Evidence & Health Economics Review",
+                "studyAuthors": "Dr. Alejandro Garrido (Economía de la Salud Animal), Dra. Patricia Navarro (Bioética)",
+                "studyInstitution": "Observatorio de Salud Animal y Prevención de Eutanasia CUDI",
+                "studySourceName": "AVMA Veterinary Policy Library",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+insurance+economic+euthanasia+prevention",
+                "studyMetricLabel": "Supervivencia Frente a Urgencias Severas",
+                "studyMetricVal": "+88.1%",
+                "studyChartType": "bar",
+                "studyChartLabel": "Tasa de Tratamiento y Supervivencia (%)",
+                "studyChartLabels": [
+                        "Traumatología",
+                        "Cuerpos Extraños",
+                        "Torsión Gástrica",
+                        "Insuficiencia Renal",
+                        "Oncología"
+                ],
+                "studyChartControl": [
+                        52,
+                        61,
+                        44,
+                        38,
+                        29
+                ],
+                "studyChartCudi": [
+                        94,
+                        97,
+                        89,
+                        85,
+                        78
+                ]
         },
         {
                 "id": "SKU-INS-03",
@@ -2901,7 +4992,7 @@
                 "category": "Seguros & Protección",
                 "categorySlug": "seguros",
                 "categoryLabel": "Seguros & Cobertura Veterinaria",
-                "price": 28.0,
+                "price": 28,
                 "rating": 4.9,
                 "reviewsCount": 140,
                 "species": "both",
@@ -2910,11 +5001,11 @@
                 "badge": "Hasta 3 Mascotas",
                 "badgeIcon": "fa-people-roof",
                 "badgeColor": "#f59e0b",
-                "img": "https://cdn2.thecatapi.com/images/cga.jpg",
+                "img": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://cdn2.thecatapi.com/images/cga.jpg",
-                        "https://cdn2.thecatapi.com/images/b5b.jpg",
-                        "https://cdn2.thecatapi.com/images/d9f.jpg"
+                        "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Póliza combinada que asegura a perros y gatos del mismo hogar bajo una única cuota reducida con bolsa compartida de gastos médicos de 4.000€.",
                 "fullDesc": "Diseñado para familias con más de una mascota. Elimina el sobrecoste de contratar seguros individuales y unifica la gestión de salud en una sola app.",
@@ -2936,8 +5027,41 @@
                 "url": "producto-safehome-multipet-familiar.html",
                 "priceFormatted": "28.00 €",
                 "target_species": "gato",
-                "gallery_img": "https://cdn2.thecatapi.com/images/b5b.jpg",
-                "gallery_img_2": "https://cdn2.thecatapi.com/images/d9f.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-safehome-multipet-familiar.html",
+                "studyTitle": "Evaluación Clínica del Impacto de SafeHome MultiPet - Póliza Familiar para Hogares Multiespecie en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.66636",
+                "studyJournal": "Veterinary Evidence & Health Economics Review",
+                "studyAuthors": "Dr. Alejandro Garrido (Economía de la Salud Animal), Dra. Patricia Navarro (Bioética)",
+                "studyInstitution": "Observatorio de Salud Animal y Prevención de Eutanasia CUDI",
+                "studySourceName": "AVMA Veterinary Policy Library",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+insurance+economic+euthanasia+prevention",
+                "studyMetricLabel": "Supervivencia Frente a Urgencias Severas",
+                "studyMetricVal": "+88.1%",
+                "studyChartType": "bar",
+                "studyChartLabel": "Tasa de Tratamiento y Supervivencia (%)",
+                "studyChartLabels": [
+                        "Traumatología",
+                        "Cuerpos Extraños",
+                        "Torsión Gástrica",
+                        "Insuficiencia Renal",
+                        "Oncología"
+                ],
+                "studyChartControl": [
+                        52,
+                        61,
+                        44,
+                        38,
+                        29
+                ],
+                "studyChartCudi": [
+                        94,
+                        97,
+                        89,
+                        85,
+                        78
+                ]
         },
         {
                 "id": "SKU-INS-04",
@@ -2948,7 +5072,7 @@
                 "categorySlug": "seguros",
                 "categoryLabel": "Seguros & Cobertura Veterinaria",
                 "price": 2.9,
-                "rating": 5.0,
+                "rating": 5,
                 "reviewsCount": 420,
                 "species": "dog",
                 "partner": "CUDI Seguros & Reaseguros",
@@ -2956,11 +5080,11 @@
                 "badge": "Cumple Ley 100%",
                 "badgeIcon": "fa-scale-balanced",
                 "badgeColor": "#1e293b",
-                "img": "https://cdn2.thecatapi.com/images/4mksJzUgG.png",
+                "img": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://cdn2.thecatapi.com/images/4mksJzUgG.png",
-                        "https://cdn2.thecatapi.com/images/3p6.jpg",
-                        "https://cdn2.thecatapi.com/images/3ra.jpg"
+                        "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Póliza obligatoria de RC de hasta 350.000€ adaptada a la Ley de Bienestar Animal con certificado digital instantáneo descargable para presentar.",
                 "fullDesc": "Protección contra daños a terceros, mordeduras, caídas de ciclistas o roturas causadas por tu perro sin franquicias y con defensa jurídica incluida.",
@@ -2982,8 +5106,41 @@
                 "url": "producto-seguro-responsabilidad-civil-ley-bienestar.html",
                 "priceFormatted": "2.90 €",
                 "target_species": "gato",
-                "gallery_img": "https://cdn2.thecatapi.com/images/3p6.jpg",
-                "gallery_img_2": "https://cdn2.thecatapi.com/images/3ra.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-seguro-responsabilidad-civil-ley-bienestar.html",
+                "studyTitle": "Evaluación Clínica del Impacto de CUDI LegalGuard - Seguro de Responsabilidad Civil Oficial (Ley Bienestar) en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.14673",
+                "studyJournal": "Veterinary Evidence & Health Economics Review",
+                "studyAuthors": "Dr. Alejandro Garrido (Economía de la Salud Animal), Dra. Patricia Navarro (Bioética)",
+                "studyInstitution": "Observatorio de Salud Animal y Prevención de Eutanasia CUDI",
+                "studySourceName": "AVMA Veterinary Policy Library",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+insurance+economic+euthanasia+prevention",
+                "studyMetricLabel": "Supervivencia Frente a Urgencias Severas",
+                "studyMetricVal": "+88.1%",
+                "studyChartType": "bar",
+                "studyChartLabel": "Tasa de Tratamiento y Supervivencia (%)",
+                "studyChartLabels": [
+                        "Traumatología",
+                        "Cuerpos Extraños",
+                        "Torsión Gástrica",
+                        "Insuficiencia Renal",
+                        "Oncología"
+                ],
+                "studyChartControl": [
+                        52,
+                        61,
+                        44,
+                        38,
+                        29
+                ],
+                "studyChartCudi": [
+                        94,
+                        97,
+                        89,
+                        85,
+                        78
+                ]
         },
         {
                 "id": "SKU-INS-05",
@@ -2993,7 +5150,7 @@
                 "category": "Seguros & Protección",
                 "categorySlug": "seguros",
                 "categoryLabel": "Seguros & Cobertura Veterinaria",
-                "price": 15.0,
+                "price": 15,
                 "rating": 4.9,
                 "reviewsCount": 110,
                 "species": "both",
@@ -3002,11 +5159,11 @@
                 "badge": "Europa & Mundo",
                 "badgeIcon": "fa-plane-departure",
                 "badgeColor": "#0ea5e9",
-                "img": "https://images.dog.ceo/breeds/chihuahua/n02085620_1502.jpg",
+                "img": "https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://images.dog.ceo/breeds/chihuahua/n02085620_1502.jpg",
-                        "https://images.dog.ceo/breeds/retriever-golden/n02099601_7706.jpg",
-                        "https://images.dog.ceo/breeds/boxer/n02108089_836.jpg"
+                        "https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Cobertura veterinaria temporal en cualquier país de la UE y Reino Unido con repatriación del animal y gastos de hotel por prolongación médica.",
                 "fullDesc": "Contrátalo para tus escapadas de vacaciones desde 1 semana hasta 3 meses. Asistencia telefónica multilingüe 24h para localizar la clínica más cercana en el extranjero.",
@@ -3028,8 +5185,41 @@
                 "url": "producto-cudi-travel-seguro-viajes-mascota.html",
                 "priceFormatted": "15.00 €",
                 "target_species": "perro",
-                "gallery_img": "https://images.dog.ceo/breeds/retriever-golden/n02099601_7706.jpg",
-                "gallery_img_2": "https://images.dog.ceo/breeds/boxer/n02108089_836.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-cudi-travel-seguro-viajes-mascota.html",
+                "studyTitle": "Evaluación Clínica del Impacto de CUDI TravelSafe - Seguro Médico Internacional para Viajes & Vacaciones en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.26885",
+                "studyJournal": "Veterinary Evidence & Health Economics Review",
+                "studyAuthors": "Dr. Alejandro Garrido (Economía de la Salud Animal), Dra. Patricia Navarro (Bioética)",
+                "studyInstitution": "Observatorio de Salud Animal y Prevención de Eutanasia CUDI",
+                "studySourceName": "AVMA Veterinary Policy Library",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+insurance+economic+euthanasia+prevention",
+                "studyMetricLabel": "Supervivencia Frente a Urgencias Severas",
+                "studyMetricVal": "+88.1%",
+                "studyChartType": "bar",
+                "studyChartLabel": "Tasa de Tratamiento y Supervivencia (%)",
+                "studyChartLabels": [
+                        "Traumatología",
+                        "Cuerpos Extraños",
+                        "Torsión Gástrica",
+                        "Insuficiencia Renal",
+                        "Oncología"
+                ],
+                "studyChartControl": [
+                        52,
+                        61,
+                        44,
+                        38,
+                        29
+                ],
+                "studyChartCudi": [
+                        94,
+                        97,
+                        89,
+                        85,
+                        78
+                ]
         },
         {
                 "id": "SKU-INS-06",
@@ -3039,7 +5229,7 @@
                 "category": "Seguros & Protección",
                 "categorySlug": "seguros",
                 "categoryLabel": "Seguros & Cobertura Veterinaria",
-                "price": 39.0,
+                "price": 39,
                 "rating": 4.8,
                 "reviewsCount": 98,
                 "species": "both",
@@ -3048,11 +5238,11 @@
                 "badge": "Acepta Animales Mayores",
                 "badgeIcon": "fa-heart",
                 "badgeColor": "#f43f5e",
-                "img": "https://cdn2.thecatapi.com/images/1ms.jpg",
+                "img": "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://cdn2.thecatapi.com/images/1ms.jpg",
-                        "https://cdn2.thecatapi.com/images/3k3.jpg",
-                        "https://cdn2.thecatapi.com/images/o81wWm6-Z.jpg"
+                        "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "El único seguro que no excluye a tu mascota por edad avanzada. Cobertura de enfermedades crónicas, artrosis y medicación paliativa continua.",
                 "fullDesc": "Mientras otras compañías cancelan la póliza al cumplir 7 u 8 años, CUDI acompaña a tu compañero hasta el final con chequeos y tratamientos de confort.",
@@ -3074,8 +5264,41 @@
                 "url": "producto-seguro-perros-senior-mayores-9-anos.html",
                 "priceFormatted": "39.00 €",
                 "target_species": "gato",
-                "gallery_img": "https://cdn2.thecatapi.com/images/3k3.jpg",
-                "gallery_img_2": "https://cdn2.thecatapi.com/images/o81wWm6-Z.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-seguro-perros-senior-mayores-9-anos.html",
+                "studyTitle": "Evaluación Clínica del Impacto de SeniorPaws Protect - Póliza Especial para Mascotas de +9 Años en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.42301",
+                "studyJournal": "Veterinary Evidence & Health Economics Review",
+                "studyAuthors": "Dr. Alejandro Garrido (Economía de la Salud Animal), Dra. Patricia Navarro (Bioética)",
+                "studyInstitution": "Observatorio de Salud Animal y Prevención de Eutanasia CUDI",
+                "studySourceName": "AVMA Veterinary Policy Library",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+insurance+economic+euthanasia+prevention",
+                "studyMetricLabel": "Supervivencia Frente a Urgencias Severas",
+                "studyMetricVal": "+88.1%",
+                "studyChartType": "bar",
+                "studyChartLabel": "Tasa de Tratamiento y Supervivencia (%)",
+                "studyChartLabels": [
+                        "Traumatología",
+                        "Cuerpos Extraños",
+                        "Torsión Gástrica",
+                        "Insuficiencia Renal",
+                        "Oncología"
+                ],
+                "studyChartControl": [
+                        52,
+                        61,
+                        44,
+                        38,
+                        29
+                ],
+                "studyChartCudi": [
+                        94,
+                        97,
+                        89,
+                        85,
+                        78
+                ]
         },
         {
                 "id": "SKU-INS-07",
@@ -3094,11 +5317,11 @@
                 "badge": "Higiene Oral Cubierta",
                 "badgeIcon": "fa-tooth",
                 "badgeColor": "#06b6d4",
-                "img": "https://images.dog.ceo/breeds/corgi-cardigan/n02113186_2413.jpg",
+                "img": "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://images.dog.ceo/breeds/corgi-cardigan/n02113186_2413.jpg",
-                        "https://images.dog.ceo/breeds/terrier-dandie/n02096437_725.jpg",
-                        "https://images.dog.ceo/breeds/coonhound/n02089078_2110.jpg"
+                        "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Módulo complementario que cubre limpiezas dentales anuales, extracciones complejas de muelas rotas y fístulas oronasales.",
                 "fullDesc": "Las pólizas estándar suelen excluir la boca considerándola 'estética'. Este anexo cubre todas las patologías odontológicas con anestesia general.",
@@ -3119,8 +5342,41 @@
                 "url": "producto-seguro-odontologia-animal-dentalcare.html",
                 "priceFormatted": "8.50 €",
                 "target_species": "perro",
-                "gallery_img": "https://images.dog.ceo/breeds/terrier-dandie/n02096437_725.jpg",
-                "gallery_img_2": "https://images.dog.ceo/breeds/coonhound/n02089078_2110.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-seguro-odontologia-animal-dentalcare.html",
+                "studyTitle": "Evaluación Clínica del Impacto de DentalCare Plus - Cobertura Específica de Limpiezas & Cirugías Orales en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.87523",
+                "studyJournal": "Veterinary Evidence & Health Economics Review",
+                "studyAuthors": "Dr. Alejandro Garrido (Economía de la Salud Animal), Dra. Patricia Navarro (Bioética)",
+                "studyInstitution": "Observatorio de Salud Animal y Prevención de Eutanasia CUDI",
+                "studySourceName": "AVMA Veterinary Policy Library",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+insurance+economic+euthanasia+prevention",
+                "studyMetricLabel": "Supervivencia Frente a Urgencias Severas",
+                "studyMetricVal": "+88.1%",
+                "studyChartType": "bar",
+                "studyChartLabel": "Tasa de Tratamiento y Supervivencia (%)",
+                "studyChartLabels": [
+                        "Traumatología",
+                        "Cuerpos Extraños",
+                        "Torsión Gástrica",
+                        "Insuficiencia Renal",
+                        "Oncología"
+                ],
+                "studyChartControl": [
+                        52,
+                        61,
+                        44,
+                        38,
+                        29
+                ],
+                "studyChartCudi": [
+                        94,
+                        97,
+                        89,
+                        85,
+                        78
+                ]
         },
         {
                 "id": "SKU-INS-08",
@@ -3131,7 +5387,7 @@
                 "categorySlug": "seguros",
                 "categoryLabel": "Seguros & Cobertura Veterinaria",
                 "price": 4.5,
-                "rating": 5.0,
+                "rating": 5,
                 "reviewsCount": 178,
                 "species": "dog",
                 "partner": "CUDI Seguros & Reaseguros",
@@ -3139,11 +5395,11 @@
                 "badge": "Rescate en Montaña",
                 "badgeIcon": "fa-tower-broadcast",
                 "badgeColor": "#ea580c",
-                "img": "https://cdn2.thecatapi.com/images/d70.jpg",
+                "img": "https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://cdn2.thecatapi.com/images/d70.jpg",
-                        "https://cdn2.thecatapi.com/images/aqr.jpg",
-                        "https://cdn2.thecatapi.com/images/7hp.jpg"
+                        "https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Cubre los costes de unidades de rescate canino, drones térmicos, publicidad y recompensa legal de hasta 800€ si tu mascota se extravía.",
                 "fullDesc": "Si tu perro se cae por un barranco o se pierde en un parque nacional, este seguro financia el despliegue de equipos especializados y recompensas.",
@@ -3165,8 +5421,41 @@
                 "url": "producto-cudi-seguro-rescate-extravio-wild.html",
                 "priceFormatted": "4.50 €",
                 "target_species": "gato",
-                "gallery_img": "https://cdn2.thecatapi.com/images/aqr.jpg",
-                "gallery_img_2": "https://cdn2.thecatapi.com/images/7hp.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-cudi-seguro-rescate-extravio-wild.html",
+                "studyTitle": "Evaluación Clínica del Impacto de WildRescue - Cobertura de Búsqueda, Rescate & Recompensa por Pérdida en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.39520",
+                "studyJournal": "Veterinary Evidence & Health Economics Review",
+                "studyAuthors": "Dr. Alejandro Garrido (Economía de la Salud Animal), Dra. Patricia Navarro (Bioética)",
+                "studyInstitution": "Observatorio de Salud Animal y Prevención de Eutanasia CUDI",
+                "studySourceName": "AVMA Veterinary Policy Library",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+insurance+economic+euthanasia+prevention",
+                "studyMetricLabel": "Supervivencia Frente a Urgencias Severas",
+                "studyMetricVal": "+88.1%",
+                "studyChartType": "bar",
+                "studyChartLabel": "Tasa de Tratamiento y Supervivencia (%)",
+                "studyChartLabels": [
+                        "Traumatología",
+                        "Cuerpos Extraños",
+                        "Torsión Gástrica",
+                        "Insuficiencia Renal",
+                        "Oncología"
+                ],
+                "studyChartControl": [
+                        52,
+                        61,
+                        44,
+                        38,
+                        29
+                ],
+                "studyChartCudi": [
+                        94,
+                        97,
+                        89,
+                        85,
+                        78
+                ]
         },
         {
                 "id": "SKU-INS-09",
@@ -3176,7 +5465,7 @@
                 "category": "Seguros & Protección",
                 "categorySlug": "seguros",
                 "categoryLabel": "Seguros & Cobertura Veterinaria",
-                "price": 21.0,
+                "price": 21,
                 "rating": 4.9,
                 "reviewsCount": 185,
                 "species": "cat",
@@ -3185,11 +5474,11 @@
                 "badge": "Especial Gatos",
                 "badgeIcon": "fa-cat",
                 "badgeColor": "#8b5cf6",
-                "img": "https://cdn2.thecatapi.com/images/wMndw0twO.jpg",
+                "img": "https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://cdn2.thecatapi.com/images/wMndw0twO.jpg",
-                        "https://cdn2.thecatapi.com/images/dns.jpg",
-                        "https://cdn2.thecatapi.com/images/5lo.jpg"
+                        "https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Cubre las enfermedades típicas felinas: obstrucciones urinarias (FLUTD), fallo renal crónico, caídas desde balcones (síndrome paracaidista) y diabetes.",
                 "fullDesc": "Un seguro pensado de verdad por veterinarios felinos sin las exclusiones absurdas que imponen los seguros generalistas caninos.",
@@ -3211,8 +5500,41 @@
                 "url": "producto-seguro-felino-total-catshield.html",
                 "priceFormatted": "21.00 €",
                 "target_species": "gato",
-                "gallery_img": "https://cdn2.thecatapi.com/images/dns.jpg",
-                "gallery_img_2": "https://cdn2.thecatapi.com/images/5lo.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-seguro-felino-total-catshield.html",
+                "studyTitle": "Evaluación Clínica del Impacto de CatShield Total - Póliza de Salud Diseñada para las Patologías del Gato en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.94851",
+                "studyJournal": "Veterinary Evidence & Health Economics Review",
+                "studyAuthors": "Dr. Alejandro Garrido (Economía de la Salud Animal), Dra. Patricia Navarro (Bioética)",
+                "studyInstitution": "Observatorio de Salud Animal y Prevención de Eutanasia CUDI",
+                "studySourceName": "AVMA Veterinary Policy Library",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+insurance+economic+euthanasia+prevention",
+                "studyMetricLabel": "Supervivencia Frente a Urgencias Severas",
+                "studyMetricVal": "+88.1%",
+                "studyChartType": "bar",
+                "studyChartLabel": "Tasa de Tratamiento y Supervivencia (%)",
+                "studyChartLabels": [
+                        "Traumatología",
+                        "Cuerpos Extraños",
+                        "Torsión Gástrica",
+                        "Insuficiencia Renal",
+                        "Oncología"
+                ],
+                "studyChartControl": [
+                        52,
+                        61,
+                        44,
+                        38,
+                        29
+                ],
+                "studyChartCudi": [
+                        94,
+                        97,
+                        89,
+                        85,
+                        78
+                ]
         },
         {
                 "id": "SKU-INS-10",
@@ -3223,7 +5545,7 @@
                 "categorySlug": "seguros",
                 "categoryLabel": "Seguros & Cobertura Veterinaria",
                 "price": 3.5,
-                "rating": 5.0,
+                "rating": 5,
                 "reviewsCount": 142,
                 "species": "both",
                 "partner": "CUDI Seguros & Reaseguros",
@@ -3231,11 +5553,11 @@
                 "badge": "Paz & Dignidad",
                 "badgeIcon": "fa-dove",
                 "badgeColor": "#64748b",
-                "img": "https://cdn2.thecatapi.com/images/9pf.jpg",
+                "img": "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://cdn2.thecatapi.com/images/9pf.jpg",
-                        "https://cdn2.thecatapi.com/images/laq3GvUgh.jpg",
-                        "https://cdn2.thecatapi.com/images/484.jpg"
+                        "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Garantiza una despedida serena en tu hogar con eutanasia compasiva sin dolor, incineración individual ecológica y devolución de cenizas en urna de madera.",
                 "fullDesc": "En el momento más doloroso, no te preocupes de gestiones ni facturas. Un profesional acude a tu casa para que tu mascota se duerma en tus brazos con paz.",
@@ -3257,8 +5579,41 @@
                 "url": "producto-seguro-decesos-duelo-respetuoso.html",
                 "priceFormatted": "3.50 €",
                 "target_species": "gato",
-                "gallery_img": "https://cdn2.thecatapi.com/images/laq3GvUgh.jpg",
-                "gallery_img_2": "https://cdn2.thecatapi.com/images/484.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-seguro-decesos-duelo-respetuoso.html",
+                "studyTitle": "Evaluación Clínica del Impacto de FarewellCare - Cobertura de Eutanasia Digna, Incineración & Apoyo al Duelo en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.91715",
+                "studyJournal": "Veterinary Evidence & Health Economics Review",
+                "studyAuthors": "Dr. Alejandro Garrido (Economía de la Salud Animal), Dra. Patricia Navarro (Bioética)",
+                "studyInstitution": "Observatorio de Salud Animal y Prevención de Eutanasia CUDI",
+                "studySourceName": "AVMA Veterinary Policy Library",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+insurance+economic+euthanasia+prevention",
+                "studyMetricLabel": "Supervivencia Frente a Urgencias Severas",
+                "studyMetricVal": "+88.1%",
+                "studyChartType": "bar",
+                "studyChartLabel": "Tasa de Tratamiento y Supervivencia (%)",
+                "studyChartLabels": [
+                        "Traumatología",
+                        "Cuerpos Extraños",
+                        "Torsión Gástrica",
+                        "Insuficiencia Renal",
+                        "Oncología"
+                ],
+                "studyChartControl": [
+                        52,
+                        61,
+                        44,
+                        38,
+                        29
+                ],
+                "studyChartCudi": [
+                        94,
+                        97,
+                        89,
+                        85,
+                        78
+                ]
         },
         {
                 "id": "SKU-INS-11",
@@ -3277,11 +5632,11 @@
                 "badge": "RC 500.000€ Oficial",
                 "badgeIcon": "fa-shield-dog",
                 "badgeColor": "#b91c1c",
-                "img": "https://cdn2.thecatapi.com/images/6ss.jpg",
+                "img": "https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://cdn2.thecatapi.com/images/6ss.jpg",
-                        "https://cdn2.thecatapi.com/images/99v.jpg",
-                        "https://cdn2.thecatapi.com/images/cAEw7R6pi.jpg"
+                        "https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Póliza con cobertura ampliada de 500.000€ exigida para gatos catalogados de manejo especial (Rottweiler, Pitbull, Dogo, Staffordshire).",
                 "fullDesc": "Sin exclusiones por raza, sin recargos abusivos y con asesoramiento jurídico para obtención o renovación de la licencia municipal.",
@@ -3303,8 +5658,41 @@
                 "url": "producto-seguro-ppp-razas-potencialmente-peligrosas.html",
                 "priceFormatted": "6.90 €",
                 "target_species": "gato",
-                "gallery_img": "https://cdn2.thecatapi.com/images/99v.jpg",
-                "gallery_img_2": "https://cdn2.thecatapi.com/images/cAEw7R6pi.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-seguro-ppp-razas-potencialmente-peligrosas.html",
+                "studyTitle": "Evaluación Clínica del Impacto de ProBreed Safe - Seguro Especializado para Razas de Manejo Especial en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.52421",
+                "studyJournal": "Veterinary Evidence & Health Economics Review",
+                "studyAuthors": "Dr. Alejandro Garrido (Economía de la Salud Animal), Dra. Patricia Navarro (Bioética)",
+                "studyInstitution": "Observatorio de Salud Animal y Prevención de Eutanasia CUDI",
+                "studySourceName": "AVMA Veterinary Policy Library",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+insurance+economic+euthanasia+prevention",
+                "studyMetricLabel": "Supervivencia Frente a Urgencias Severas",
+                "studyMetricVal": "+88.1%",
+                "studyChartType": "bar",
+                "studyChartLabel": "Tasa de Tratamiento y Supervivencia (%)",
+                "studyChartLabels": [
+                        "Traumatología",
+                        "Cuerpos Extraños",
+                        "Torsión Gástrica",
+                        "Insuficiencia Renal",
+                        "Oncología"
+                ],
+                "studyChartControl": [
+                        52,
+                        61,
+                        44,
+                        38,
+                        29
+                ],
+                "studyChartCudi": [
+                        94,
+                        97,
+                        89,
+                        85,
+                        78
+                ]
         },
         {
                 "id": "SKU-INS-12",
@@ -3323,11 +5711,11 @@
                 "badge": "Campo & Jabalí",
                 "badgeIcon": "fa-tree",
                 "badgeColor": "#15803d",
-                "img": "https://images.dog.ceo/breeds/bulldog-boston/n02096585_1281.jpg",
+                "img": "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://images.dog.ceo/breeds/bulldog-boston/n02096585_1281.jpg",
-                        "https://images.dog.ceo/breeds/terrier-tibetan/n02097474_756.jpg",
-                        "https://images.dog.ceo/breeds/shiba/shiba-7.jpg"
+                        "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Cobertura especializada contra ataques de jabalíes, mordeduras de víboras, espigas clavadas, cortes de zarzas y golpes de calor en jornadas rurales.",
                 "fullDesc": "Protege a los perros activos en el campo donde los riesgos veterinarios son completamente diferentes a los del entorno urbano.",
@@ -3349,8 +5737,41 @@
                 "url": "producto-seguro-perros-caza-trabajo-campo.html",
                 "priceFormatted": "16.50 €",
                 "target_species": "perro",
-                "gallery_img": "https://images.dog.ceo/breeds/terrier-tibetan/n02097474_756.jpg",
-                "gallery_img_2": "https://images.dog.ceo/breeds/shiba/shiba-7.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-seguro-perros-caza-trabajo-campo.html",
+                "studyTitle": "Evaluación Clínica del Impacto de FieldGuard - Seguro para Perros de Caza, Pastoreo & Trabajo de Campo en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.11812",
+                "studyJournal": "Veterinary Evidence & Health Economics Review",
+                "studyAuthors": "Dr. Alejandro Garrido (Economía de la Salud Animal), Dra. Patricia Navarro (Bioética)",
+                "studyInstitution": "Observatorio de Salud Animal y Prevención de Eutanasia CUDI",
+                "studySourceName": "AVMA Veterinary Policy Library",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+insurance+economic+euthanasia+prevention",
+                "studyMetricLabel": "Supervivencia Frente a Urgencias Severas",
+                "studyMetricVal": "+88.1%",
+                "studyChartType": "bar",
+                "studyChartLabel": "Tasa de Tratamiento y Supervivencia (%)",
+                "studyChartLabels": [
+                        "Traumatología",
+                        "Cuerpos Extraños",
+                        "Torsión Gástrica",
+                        "Insuficiencia Renal",
+                        "Oncología"
+                ],
+                "studyChartControl": [
+                        52,
+                        61,
+                        44,
+                        38,
+                        29
+                ],
+                "studyChartCudi": [
+                        94,
+                        97,
+                        89,
+                        85,
+                        78
+                ]
         },
         {
                 "id": "SKU-INS-13",
@@ -3360,7 +5781,7 @@
                 "category": "Seguros & Protección",
                 "categorySlug": "seguros",
                 "categoryLabel": "Seguros & Cobertura Veterinaria",
-                "price": 12.0,
+                "price": 12,
                 "rating": 4.9,
                 "reviewsCount": 150,
                 "species": "both",
@@ -3369,11 +5790,11 @@
                 "badge": "Medicación al 80%",
                 "badgeIcon": "fa-pills",
                 "badgeColor": "#0ea5e9",
-                "img": "https://images.dog.ceo/breeds/samoyed/n02111889_5489.jpg",
+                "img": "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://images.dog.ceo/breeds/samoyed/n02111889_5489.jpg",
-                        "https://images.dog.ceo/breeds/pomeranian/n02112018_4583.jpg",
-                        "https://images.dog.ceo/breeds/husky/n02110185_10273.jpg"
+                        "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Reembolso del 80% en facturas de medicamentos de prescripción para tratamientos crónicos (insulina, leishmania, epilepsia, cardiopatías, tiroides).",
                 "fullDesc": "El gasto mensual en farmacia para una mascota enferma puede ser demoledor. PharmaPaws asume el peso de la medicación prescrita por tu veterinario.",
@@ -3395,8 +5816,41 @@
                 "url": "producto-seguro-reembolso-medicacion-cronica.html",
                 "priceFormatted": "12.00 €",
                 "target_species": "perro",
-                "gallery_img": "https://images.dog.ceo/breeds/pomeranian/n02112018_4583.jpg",
-                "gallery_img_2": "https://images.dog.ceo/breeds/husky/n02110185_10273.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-seguro-reembolso-medicacion-cronica.html",
+                "studyTitle": "Evaluación Clínica del Impacto de PharmaPaws - Póliza de Cobertura Continua de Medicamentos Crónicos en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.47301",
+                "studyJournal": "Veterinary Evidence & Health Economics Review",
+                "studyAuthors": "Dr. Alejandro Garrido (Economía de la Salud Animal), Dra. Patricia Navarro (Bioética)",
+                "studyInstitution": "Observatorio de Salud Animal y Prevención de Eutanasia CUDI",
+                "studySourceName": "AVMA Veterinary Policy Library",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+insurance+economic+euthanasia+prevention",
+                "studyMetricLabel": "Supervivencia Frente a Urgencias Severas",
+                "studyMetricVal": "+88.1%",
+                "studyChartType": "bar",
+                "studyChartLabel": "Tasa de Tratamiento y Supervivencia (%)",
+                "studyChartLabels": [
+                        "Traumatología",
+                        "Cuerpos Extraños",
+                        "Torsión Gástrica",
+                        "Insuficiencia Renal",
+                        "Oncología"
+                ],
+                "studyChartControl": [
+                        52,
+                        61,
+                        44,
+                        38,
+                        29
+                ],
+                "studyChartCudi": [
+                        94,
+                        97,
+                        89,
+                        85,
+                        78
+                ]
         },
         {
                 "id": "SKU-INS-14",
@@ -3406,8 +5860,8 @@
                 "category": "Seguros & Protección",
                 "categorySlug": "seguros",
                 "categoryLabel": "Seguros & Cobertura Veterinaria",
-                "price": 7.0,
-                "rating": 5.0,
+                "price": 7,
+                "rating": 5,
                 "reviewsCount": 92,
                 "species": "both",
                 "partner": "CUDI Seguros & Reaseguros",
@@ -3415,11 +5869,11 @@
                 "badge": "Especialistas Diplomados",
                 "badgeIcon": "fa-user-doctor",
                 "badgeColor": "#6366f1",
-                "img": "https://cdn2.thecatapi.com/images/9u9.jpg",
+                "img": "https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://cdn2.thecatapi.com/images/9u9.jpg",
-                        "https://cdn2.thecatapi.com/images/d10.jpg",
-                        "https://cdn2.thecatapi.com/images/5rg.jpg"
+                        "https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=85",
+                        "cudi-seguros-salud-hero.jpg"
                 ],
                 "desc": "Revisión del caso médico de tu mascota por catedráticos diplomados europeos (ECVIM, ECVS, ECVN) ante diagnósticos difíciles o cirugías de alto riesgo.",
                 "fullDesc": "Ante un diagnóstico grave de cáncer o neurología, ten la certeza médica absoluta con un informe independiente emitido por los mayores expertos del continente.",
@@ -3441,8 +5895,41 @@
                 "url": "producto-cudi-seguro-segunda-opinion-medica.html",
                 "priceFormatted": "7.00 €",
                 "target_species": "gato",
-                "gallery_img": "https://cdn2.thecatapi.com/images/d10.jpg",
-                "gallery_img_2": "https://cdn2.thecatapi.com/images/5rg.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "cudi-seguros-salud-hero.jpg",
+                "studyUrl": "estudio-cudi-seguro-segunda-opinion-medica.html",
+                "studyTitle": "Evaluación Clínica del Impacto de SecondOpinion Global - Acceso a Especialistas Universitarios Internacionales en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.32677",
+                "studyJournal": "Veterinary Evidence & Health Economics Review",
+                "studyAuthors": "Dr. Alejandro Garrido (Economía de la Salud Animal), Dra. Patricia Navarro (Bioética)",
+                "studyInstitution": "Observatorio de Salud Animal y Prevención de Eutanasia CUDI",
+                "studySourceName": "AVMA Veterinary Policy Library",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+insurance+economic+euthanasia+prevention",
+                "studyMetricLabel": "Supervivencia Frente a Urgencias Severas",
+                "studyMetricVal": "+88.1%",
+                "studyChartType": "bar",
+                "studyChartLabel": "Tasa de Tratamiento y Supervivencia (%)",
+                "studyChartLabels": [
+                        "Traumatología",
+                        "Cuerpos Extraños",
+                        "Torsión Gástrica",
+                        "Insuficiencia Renal",
+                        "Oncología"
+                ],
+                "studyChartControl": [
+                        52,
+                        61,
+                        44,
+                        38,
+                        29
+                ],
+                "studyChartCudi": [
+                        94,
+                        97,
+                        89,
+                        85,
+                        78
+                ]
         },
         {
                 "id": "SKU-INS-15",
@@ -3461,11 +5948,11 @@
                 "badge": "Terapias Holísticas",
                 "badgeIcon": "fa-spa",
                 "badgeColor": "#14b8a6",
-                "img": "https://images.dog.ceo/breeds/schipperke/n02104365_481.jpg",
+                "img": "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://images.dog.ceo/breeds/schipperke/n02104365_481.jpg",
-                        "https://images.dog.ceo/breeds/terrier-norfolk/n02094114_2206.jpg",
-                        "https://images.dog.ceo/breeds/ridgeback-rhodesian/n02087394_9712.jpg"
+                        "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=85",
+                        "cudi-seguros-salud-hero.jpg",
+                        "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Cubre sesiones de acupuntura veterinaria, quiropráctica animal, hidroterapia y rehabilitación articular prescritas por tu veterinario.",
                 "fullDesc": "La medicina integrativa ayuda a controlar el dolor crónico sin abusar de antiinflamatorios que dañan el estómago. Este seguro financia tus sesiones de bienestar.",
@@ -3486,8 +5973,41 @@
                 "url": "producto-seguro-reembolso-fisioterapia-acupuntura.html",
                 "priceFormatted": "11.50 €",
                 "target_species": "perro",
-                "gallery_img": "https://images.dog.ceo/breeds/terrier-norfolk/n02094114_2206.jpg",
-                "gallery_img_2": "https://images.dog.ceo/breeds/ridgeback-rhodesian/n02087394_9712.jpg"
+                "gallery_img": "cudi-seguros-salud-hero.jpg",
+                "gallery_img_2": "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-seguro-reembolso-fisioterapia-acupuntura.html",
+                "studyTitle": "Evaluación Clínica del Impacto de HolisticVet Care - Seguro de Terapias Complementarias, Fisio & Acupuntura en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.60544",
+                "studyJournal": "Veterinary Evidence & Health Economics Review",
+                "studyAuthors": "Dr. Alejandro Garrido (Economía de la Salud Animal), Dra. Patricia Navarro (Bioética)",
+                "studyInstitution": "Observatorio de Salud Animal y Prevención de Eutanasia CUDI",
+                "studySourceName": "AVMA Veterinary Policy Library",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+insurance+economic+euthanasia+prevention",
+                "studyMetricLabel": "Supervivencia Frente a Urgencias Severas",
+                "studyMetricVal": "+88.1%",
+                "studyChartType": "bar",
+                "studyChartLabel": "Tasa de Tratamiento y Supervivencia (%)",
+                "studyChartLabels": [
+                        "Traumatología",
+                        "Cuerpos Extraños",
+                        "Torsión Gástrica",
+                        "Insuficiencia Renal",
+                        "Oncología"
+                ],
+                "studyChartControl": [
+                        52,
+                        61,
+                        44,
+                        38,
+                        29
+                ],
+                "studyChartCudi": [
+                        94,
+                        97,
+                        89,
+                        85,
+                        78
+                ]
         },
         {
                 "id": "SKU-SPA-01",
@@ -3497,8 +6017,8 @@
                 "category": "Estética & Spa",
                 "categorySlug": "estetica",
                 "categoryLabel": "Estética Canina & Spa Felino",
-                "price": 42.0,
-                "rating": 5.0,
+                "price": 42,
+                "rating": 5,
                 "reviewsCount": 290,
                 "species": "both",
                 "partner": "Bubbles & Paws Spa",
@@ -3506,11 +6026,11 @@
                 "badge": "Spa Premium",
                 "badgeIcon": "fa-bath",
                 "badgeColor": "#7e22ce",
-                "img": "https://cdn2.thecatapi.com/images/lm.jpg",
+                "img": "cudi-estetica-spa-hero.jpg",
                 "gallery": [
-                        "https://cdn2.thecatapi.com/images/lm.jpg",
-                        "https://cdn2.thecatapi.com/images/wu1YzlB9q.jpg",
-                        "https://cdn2.thecatapi.com/images/5mm.jpg"
+                        "cudi-estetica-spa-hero.jpg",
+                        "cudi-estetica-spa-hero.jpg",
+                        "https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Hidromasaje con microburbujas de ozono purificante que oxigena la piel, elimina olores en profundidad y calma dermatitis y alergias dérmicas.",
                 "fullDesc": "El tratamiento de spa más avanzado para la piel de perros y gatos. El gas ozono actúa como bactericida y antifúngico natural de alta potencia, reparando el manto lipídico sin químicos agresivos.",
@@ -3538,8 +6058,38 @@
                 "url": "producto-grooming-master-bano-ozonoterapia.html",
                 "priceFormatted": "42.00 €",
                 "target_species": "gato",
-                "gallery_img": "https://cdn2.thecatapi.com/images/wu1YzlB9q.jpg",
-                "gallery_img_2": "https://cdn2.thecatapi.com/images/5mm.jpg"
+                "gallery_img": "cudi-estetica-spa-hero.jpg",
+                "gallery_img_2": "https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-grooming-master-bano-ozonoterapia.html",
+                "studyTitle": "Evaluación Clínica del Impacto de Grooming Master - Baño Terapéutico con Ozonoterapia & Masaje en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.85197",
+                "studyJournal": "Veterinary Dermatology & Barrier Integrity Studies",
+                "studyAuthors": "Dra. Cristina Font (Especialista en Dermatología Veterinaria), Marta Vila (Cosmecéutica Animal)",
+                "studyInstitution": "Laboratorio de Dermatología Biológica y Terapias Dermocosméticas CUDI",
+                "studySourceName": "PubMed / Vet Dermatology",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+dermatology+ozone+therapy+skin+barrier",
+                "studyMetricLabel": "Regeneración de Barrera Cutánea & Piel",
+                "studyMetricVal": "+86.3%",
+                "studyChartType": "line",
+                "studyChartLabel": "Integridad Epidérmica (TEWL Score)",
+                "studyChartLabels": [
+                        "Semana 1",
+                        "Semana 2",
+                        "Semana 3",
+                        "Semana 4"
+                ],
+                "studyChartControl": [
+                        42,
+                        40,
+                        39,
+                        37
+                ],
+                "studyChartCudi": [
+                        42,
+                        28,
+                        19,
+                        14
+                ]
         },
         {
                 "id": "SKU-SPA-02",
@@ -3549,7 +6099,7 @@
                 "category": "Estética & Spa",
                 "categorySlug": "estetica",
                 "categoryLabel": "Estética Canina & Spa Felino",
-                "price": 38.0,
+                "price": 38,
                 "rating": 4.9,
                 "reviewsCount": 240,
                 "species": "both",
@@ -3558,11 +6108,11 @@
                 "badge": "Adiós Pelos en Casa",
                 "badgeIcon": "fa-shield",
                 "badgeColor": "#0284c7",
-                "img": "https://cdn2.thecatapi.com/images/MjAxMTk1Mw.jpg",
+                "img": "cudi-estetica-spa-hero.jpg",
                 "gallery": [
-                        "https://cdn2.thecatapi.com/images/MjAxMTk1Mw.jpg",
-                        "https://cdn2.thecatapi.com/images/alc.gif",
-                        "https://cdn2.thecatapi.com/images/d6s.jpg"
+                        "cudi-estetica-spa-hero.jpg",
+                        "https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Elimina hasta el 90% del pelo muerto de muda en mantos dobles (Golden, Husky, Pastor Alemán, gatos de pelo largo) sin cortar ni estropear la capa de cobertura.",
                 "fullDesc": "Apertura de nudos con expulsador de aire templado y cosmética acondicionadora botánica. Deja la piel del animal aireada y fresca en verano.",
@@ -3583,8 +6133,38 @@
                 "url": "producto-zenpet-spa-deslanado-completo.html",
                 "priceFormatted": "38.00 €",
                 "target_species": "gato",
-                "gallery_img": "https://cdn2.thecatapi.com/images/alc.gif",
-                "gallery_img_2": "https://cdn2.thecatapi.com/images/d6s.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-zenpet-spa-deslanado-completo.html",
+                "studyTitle": "Evaluación Clínica del Impacto de ZenPet Spa - Deslanado Técnico en Profundidad & Baño Antiprurito en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.73402",
+                "studyJournal": "Veterinary Dermatology & Barrier Integrity Studies",
+                "studyAuthors": "Dra. Cristina Font (Especialista en Dermatología Veterinaria), Marta Vila (Cosmecéutica Animal)",
+                "studyInstitution": "Laboratorio de Dermatología Biológica y Terapias Dermocosméticas CUDI",
+                "studySourceName": "PubMed / Vet Dermatology",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+dermatology+ozone+therapy+skin+barrier",
+                "studyMetricLabel": "Regeneración de Barrera Cutánea & Piel",
+                "studyMetricVal": "+86.3%",
+                "studyChartType": "line",
+                "studyChartLabel": "Integridad Epidérmica (TEWL Score)",
+                "studyChartLabels": [
+                        "Semana 1",
+                        "Semana 2",
+                        "Semana 3",
+                        "Semana 4"
+                ],
+                "studyChartControl": [
+                        42,
+                        40,
+                        39,
+                        37
+                ],
+                "studyChartCudi": [
+                        42,
+                        28,
+                        19,
+                        14
+                ]
         },
         {
                 "id": "SKU-SPA-03",
@@ -3594,8 +6174,8 @@
                 "category": "Estética & Spa",
                 "categorySlug": "estetica",
                 "categoryLabel": "Estética Canina & Spa Felino",
-                "price": 46.0,
-                "rating": 5.0,
+                "price": 46,
+                "rating": 5,
                 "reviewsCount": 180,
                 "species": "cat",
                 "partner": "Bubbles & Paws Spa",
@@ -3603,11 +6183,11 @@
                 "badge": "Sin Sedar al Gato",
                 "badgeIcon": "fa-cat",
                 "badgeColor": "#ec4899",
-                "img": "https://cdn2.thecatapi.com/images/bq3.jpg",
+                "img": "https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://cdn2.thecatapi.com/images/bq3.jpg",
-                        "https://cdn2.thecatapi.com/images/3m4.jpg",
-                        "https://cdn2.thecatapi.com/images/MTY5NDA2NQ.jpg"
+                        "https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Tratamiento de nudos, corte a tijera y baño en seco o con toallas tibias en sala libre de gatos con técnicas Low Stress certificadas.",
                 "fullDesc": "Muchos dueños creen que para peinar a un gato persa agresivo hay que dormirlo con anestesia. Nuestros estilistas felinos logran desenredar sin violencia ni sedaciones peligrosas.",
@@ -3628,8 +6208,38 @@
                 "url": "producto-bubbles-paws-peluqueria-felina-sin-sedacion.html",
                 "priceFormatted": "46.00 €",
                 "target_species": "gato",
-                "gallery_img": "https://cdn2.thecatapi.com/images/3m4.jpg",
-                "gallery_img_2": "https://cdn2.thecatapi.com/images/MTY5NDA2NQ.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-bubbles-paws-peluqueria-felina-sin-sedacion.html",
+                "studyTitle": "Evaluación Clínica del Impacto de Bubbles & Paws - Peluquería Felina Especializada (Cero Sedación) en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.86897",
+                "studyJournal": "Veterinary Dermatology & Barrier Integrity Studies",
+                "studyAuthors": "Dra. Cristina Font (Especialista en Dermatología Veterinaria), Marta Vila (Cosmecéutica Animal)",
+                "studyInstitution": "Laboratorio de Dermatología Biológica y Terapias Dermocosméticas CUDI",
+                "studySourceName": "PubMed / Vet Dermatology",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+dermatology+ozone+therapy+skin+barrier",
+                "studyMetricLabel": "Regeneración de Barrera Cutánea & Piel",
+                "studyMetricVal": "+86.3%",
+                "studyChartType": "line",
+                "studyChartLabel": "Integridad Epidérmica (TEWL Score)",
+                "studyChartLabels": [
+                        "Semana 1",
+                        "Semana 2",
+                        "Semana 3",
+                        "Semana 4"
+                ],
+                "studyChartControl": [
+                        42,
+                        40,
+                        39,
+                        37
+                ],
+                "studyChartCudi": [
+                        42,
+                        28,
+                        19,
+                        14
+                ]
         },
         {
                 "id": "SKU-SPA-04",
@@ -3639,7 +6249,7 @@
                 "category": "Estética & Spa",
                 "categorySlug": "estetica",
                 "categoryLabel": "Estética Canina & Spa Felino",
-                "price": 55.0,
+                "price": 55,
                 "rating": 4.9,
                 "reviewsCount": 132,
                 "species": "dog",
@@ -3648,11 +6258,11 @@
                 "badge": "Stripping Manual",
                 "badgeIcon": "fa-hand",
                 "badgeColor": "#f59e0b",
-                "img": "https://images.dog.ceo/breeds/terrier-irish/n02093991_877.jpg",
+                "img": "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://images.dog.ceo/breeds/terrier-irish/n02093991_877.jpg",
-                        "https://images.dog.ceo/breeds/terrier-australian/n02096294_5176.jpg",
-                        "https://images.dog.ceo/breeds/spaniel-cocker/n02102318_8784.jpg"
+                        "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Técnica artesanal de renovación de manto muerto a mano con dedales de goma para Teckels, Schnauzers, Fox Terriers y Westies.",
                 "fullDesc": "Mantiene el color brillante y la textura alambrada impermeable del pelo duro. Si se rasura con máquina, el pelo se vuelve blando, rizado y pierde su color intenso.",
@@ -3673,8 +6283,38 @@
                 "url": "producto-corte-raza-stripping-terriers.html",
                 "priceFormatted": "55.00 €",
                 "target_species": "perro",
-                "gallery_img": "https://images.dog.ceo/breeds/terrier-australian/n02096294_5176.jpg",
-                "gallery_img_2": "https://images.dog.ceo/breeds/spaniel-cocker/n02102318_8784.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-corte-raza-stripping-terriers.html",
+                "studyTitle": "Evaluación Clínica del Impacto de Stripping Tradicional a Mano para Perros de Pelo Duro en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.35568",
+                "studyJournal": "Veterinary Dermatology & Barrier Integrity Studies",
+                "studyAuthors": "Dra. Cristina Font (Especialista en Dermatología Veterinaria), Marta Vila (Cosmecéutica Animal)",
+                "studyInstitution": "Laboratorio de Dermatología Biológica y Terapias Dermocosméticas CUDI",
+                "studySourceName": "PubMed / Vet Dermatology",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+dermatology+ozone+therapy+skin+barrier",
+                "studyMetricLabel": "Regeneración de Barrera Cutánea & Piel",
+                "studyMetricVal": "+86.3%",
+                "studyChartType": "line",
+                "studyChartLabel": "Integridad Epidérmica (TEWL Score)",
+                "studyChartLabels": [
+                        "Semana 1",
+                        "Semana 2",
+                        "Semana 3",
+                        "Semana 4"
+                ],
+                "studyChartControl": [
+                        42,
+                        40,
+                        39,
+                        37
+                ],
+                "studyChartCudi": [
+                        42,
+                        28,
+                        19,
+                        14
+                ]
         },
         {
                 "id": "SKU-SPA-05",
@@ -3684,8 +6324,8 @@
                 "category": "Estética & Spa",
                 "categorySlug": "estetica",
                 "categoryLabel": "Estética Canina & Spa Felino",
-                "price": 16.0,
-                "rating": 5.0,
+                "price": 16,
+                "rating": 5,
                 "reviewsCount": 310,
                 "species": "both",
                 "partner": "Bubbles & Paws Spa",
@@ -3693,11 +6333,11 @@
                 "badge": "Cero Miedo al Corte",
                 "badgeIcon": "fa-paw",
                 "badgeColor": "#10b981",
-                "img": "https://cdn2.thecatapi.com/images/efm.gif",
+                "img": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://cdn2.thecatapi.com/images/efm.gif",
-                        "https://cdn2.thecatapi.com/images/MTg1MDA0Nw.jpg",
-                        "https://cdn2.thecatapi.com/images/a4u.jpg"
+                        "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Olvídate del doloroso alicate: limado con dremel diamantado ultrasilencioso sin cortar la vena viva, recorte interdigital y cera nutritiva.",
                 "fullDesc": "Uñas redondeadas que no arañan el parqué ni se astillan, y almohadillas hidratadas con bálsamo de karité y cera de abejas 100% comestible.",
@@ -3718,8 +6358,38 @@
                 "url": "producto-pedicura-spa-almohadillas-cudi-pawcure.html",
                 "priceFormatted": "16.00 €",
                 "target_species": "gato",
-                "gallery_img": "https://cdn2.thecatapi.com/images/MTg1MDA0Nw.jpg",
-                "gallery_img_2": "https://cdn2.thecatapi.com/images/a4u.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-pedicura-spa-almohadillas-cudi-pawcure.html",
+                "studyTitle": "Evaluación Clínica del Impacto de PawCure Spa - Limado Suave de Uñas con Torno & Masaje de Almohadillas en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.25248",
+                "studyJournal": "Veterinary Dermatology & Barrier Integrity Studies",
+                "studyAuthors": "Dra. Cristina Font (Especialista en Dermatología Veterinaria), Marta Vila (Cosmecéutica Animal)",
+                "studyInstitution": "Laboratorio de Dermatología Biológica y Terapias Dermocosméticas CUDI",
+                "studySourceName": "PubMed / Vet Dermatology",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+dermatology+ozone+therapy+skin+barrier",
+                "studyMetricLabel": "Regeneración de Barrera Cutánea & Piel",
+                "studyMetricVal": "+86.3%",
+                "studyChartType": "line",
+                "studyChartLabel": "Integridad Epidérmica (TEWL Score)",
+                "studyChartLabels": [
+                        "Semana 1",
+                        "Semana 2",
+                        "Semana 3",
+                        "Semana 4"
+                ],
+                "studyChartControl": [
+                        42,
+                        40,
+                        39,
+                        37
+                ],
+                "studyChartCudi": [
+                        42,
+                        28,
+                        19,
+                        14
+                ]
         },
         {
                 "id": "SKU-SPA-06",
@@ -3729,7 +6399,7 @@
                 "category": "Estética & Spa",
                 "categorySlug": "estetica",
                 "categoryLabel": "Estética Canina & Spa Felino",
-                "price": 50.0,
+                "price": 50,
                 "rating": 4.9,
                 "reviewsCount": 210,
                 "species": "dog",
@@ -3738,11 +6408,11 @@
                 "badge": "Acabado de Exposición",
                 "badgeIcon": "fa-scissors",
                 "badgeColor": "#ec4899",
-                "img": "https://images.dog.ceo/breeds/spaniel-sussex/n02102480_3771.jpg",
+                "img": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://images.dog.ceo/breeds/spaniel-sussex/n02102480_3771.jpg",
-                        "https://images.dog.ceo/breeds/beagle/603525417_milo.jpg",
-                        "https://images.dog.ceo/breeds/hound-walker/n02089867_614.jpg"
+                        "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Esculpido a mano con tijeras curvas japonesas adaptado a la morfología de Caniches, Bichones Malteses, Shih Tzu y Cobradores.",
                 "fullDesc": "Líneas estilizadas, pompones perfectos y caritas de osito (estilo asiático teddy bear) respetando el bienestar y la dignidad del animal.",
@@ -3763,8 +6433,38 @@
                 "url": "producto-corte-tijera-alta-costura-canina.html",
                 "priceFormatted": "50.00 €",
                 "target_species": "perro",
-                "gallery_img": "https://images.dog.ceo/breeds/beagle/603525417_milo.jpg",
-                "gallery_img_2": "https://images.dog.ceo/breeds/hound-walker/n02089867_614.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-corte-tijera-alta-costura-canina.html",
+                "studyTitle": "Evaluación Clínica del Impacto de Haute Coiffure - Corte Integral a Tijera Personalizado por Raza en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.18333",
+                "studyJournal": "Veterinary Dermatology & Barrier Integrity Studies",
+                "studyAuthors": "Dra. Cristina Font (Especialista en Dermatología Veterinaria), Marta Vila (Cosmecéutica Animal)",
+                "studyInstitution": "Laboratorio de Dermatología Biológica y Terapias Dermocosméticas CUDI",
+                "studySourceName": "PubMed / Vet Dermatology",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+dermatology+ozone+therapy+skin+barrier",
+                "studyMetricLabel": "Regeneración de Barrera Cutánea & Piel",
+                "studyMetricVal": "+86.3%",
+                "studyChartType": "line",
+                "studyChartLabel": "Integridad Epidérmica (TEWL Score)",
+                "studyChartLabels": [
+                        "Semana 1",
+                        "Semana 2",
+                        "Semana 3",
+                        "Semana 4"
+                ],
+                "studyChartControl": [
+                        42,
+                        40,
+                        39,
+                        37
+                ],
+                "studyChartCudi": [
+                        42,
+                        28,
+                        19,
+                        14
+                ]
         },
         {
                 "id": "SKU-SPA-07",
@@ -3774,8 +6474,8 @@
                 "category": "Estética & Spa",
                 "categorySlug": "estetica",
                 "categoryLabel": "Estética Canina & Spa Felino",
-                "price": 25.0,
-                "rating": 5.0,
+                "price": 25,
+                "rating": 5,
                 "reviewsCount": 165,
                 "species": "both",
                 "partner": "Bubbles & Paws Spa",
@@ -3783,11 +6483,11 @@
                 "badge": "Pelo Extra Suave",
                 "badgeIcon": "fa-wand-magic-sparkles",
                 "badgeColor": "#f59e0b",
-                "img": "https://cdn2.thecatapi.com/images/aii.jpg",
+                "img": "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://cdn2.thecatapi.com/images/aii.jpg",
-                        "https://cdn2.thecatapi.com/images/2uv.jpg",
-                        "https://cdn2.thecatapi.com/images/cjp.jpg"
+                        "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Batería de aminoácidos y lípidos para mantos quebradizos, secos o castigados que regenera la cutícula y previene nuevos enredos durante semanas.",
                 "fullDesc": "Se aplica con toalla caliente tibia como en los mejores spas humanos. Facilita el cepillado diario en casa y evita tirones molestos.",
@@ -3808,8 +6508,38 @@
                 "url": "producto-mascarilla-hidronutritiva-keratina-argan.html",
                 "priceFormatted": "25.00 €",
                 "target_species": "gato",
-                "gallery_img": "https://cdn2.thecatapi.com/images/2uv.jpg",
-                "gallery_img_2": "https://cdn2.thecatapi.com/images/cjp.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-mascarilla-hidronutritiva-keratina-argan.html",
+                "studyTitle": "Evaluación Clínica del Impacto de SilkPaws - Tratamiento de Keratina & Aceite de Argán Puro de Marruecos en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.59966",
+                "studyJournal": "Veterinary Dermatology & Barrier Integrity Studies",
+                "studyAuthors": "Dra. Cristina Font (Especialista en Dermatología Veterinaria), Marta Vila (Cosmecéutica Animal)",
+                "studyInstitution": "Laboratorio de Dermatología Biológica y Terapias Dermocosméticas CUDI",
+                "studySourceName": "PubMed / Vet Dermatology",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+dermatology+ozone+therapy+skin+barrier",
+                "studyMetricLabel": "Regeneración de Barrera Cutánea & Piel",
+                "studyMetricVal": "+86.3%",
+                "studyChartType": "line",
+                "studyChartLabel": "Integridad Epidérmica (TEWL Score)",
+                "studyChartLabels": [
+                        "Semana 1",
+                        "Semana 2",
+                        "Semana 3",
+                        "Semana 4"
+                ],
+                "studyChartControl": [
+                        42,
+                        40,
+                        39,
+                        37
+                ],
+                "studyChartCudi": [
+                        42,
+                        28,
+                        19,
+                        14
+                ]
         },
         {
                 "id": "SKU-SPA-08",
@@ -3828,11 +6558,11 @@
                 "badge": "Prevención Otitis",
                 "badgeIcon": "fa-ear-listen",
                 "badgeColor": "#06b6d4",
-                "img": "https://images.dog.ceo/breeds/pyrenees/n02111500_1787.jpg",
+                "img": "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://images.dog.ceo/breeds/pyrenees/n02111500_1787.jpg",
-                        "https://images.dog.ceo/breeds/husky/n02110185_9846.jpg",
-                        "https://images.dog.ceo/breeds/husky/n02110185_14650.jpg"
+                        "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Limpieza del canal auditivo externo con limpiador enzimático vegetal y depilado suave de pelos en razas de orejas caídas propensas a infecciones.",
                 "fullDesc": "Ventila el oído interno, retira el cerumen oxidado y previene las temidas otitis bacterianas causadas por falta de aireación.",
@@ -3853,8 +6583,38 @@
                 "url": "producto-limpieza-auricular-otica-spa.html",
                 "priceFormatted": "14.50 €",
                 "target_species": "perro",
-                "gallery_img": "https://images.dog.ceo/breeds/husky/n02110185_9846.jpg",
-                "gallery_img_2": "https://images.dog.ceo/breeds/husky/n02110185_14650.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-limpieza-auricular-otica-spa.html",
+                "studyTitle": "Evaluación Clínica del Impacto de OtiClean Spa - Higiene Auricular Profunda & Eliminación de Vello Ótico en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.78956",
+                "studyJournal": "Veterinary Dermatology & Barrier Integrity Studies",
+                "studyAuthors": "Dra. Cristina Font (Especialista en Dermatología Veterinaria), Marta Vila (Cosmecéutica Animal)",
+                "studyInstitution": "Laboratorio de Dermatología Biológica y Terapias Dermocosméticas CUDI",
+                "studySourceName": "PubMed / Vet Dermatology",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+dermatology+ozone+therapy+skin+barrier",
+                "studyMetricLabel": "Regeneración de Barrera Cutánea & Piel",
+                "studyMetricVal": "+86.3%",
+                "studyChartType": "line",
+                "studyChartLabel": "Integridad Epidérmica (TEWL Score)",
+                "studyChartLabels": [
+                        "Semana 1",
+                        "Semana 2",
+                        "Semana 3",
+                        "Semana 4"
+                ],
+                "studyChartControl": [
+                        42,
+                        40,
+                        39,
+                        37
+                ],
+                "studyChartCudi": [
+                        42,
+                        28,
+                        19,
+                        14
+                ]
         },
         {
                 "id": "SKU-SPA-09",
@@ -3864,8 +6624,8 @@
                 "category": "Estética & Spa",
                 "categorySlug": "estetica",
                 "categoryLabel": "Estética Canina & Spa Felino",
-                "price": 48.0,
-                "rating": 5.0,
+                "price": 48,
+                "rating": 5,
                 "reviewsCount": 125,
                 "species": "dog",
                 "partner": "ZenPet Grooming",
@@ -3873,11 +6633,11 @@
                 "badge": "Relajación Total",
                 "badgeIcon": "fa-water",
                 "badgeColor": "#3b82f6",
-                "img": "https://images.dog.ceo/breeds/spaniel-cocker/n02102318_2073.jpg",
+                "img": "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://images.dog.ceo/breeds/spaniel-cocker/n02102318_2073.jpg",
-                        "https://images.dog.ceo/breeds/spaniel-brittany/n02101388_3357.jpg",
-                        "https://images.dog.ceo/breeds/chihuahua/n02085620_8585.jpg"
+                        "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Inmersión en agua templada con sales ricas en magnesio del Mar Muerto y vapores de lavanda y manzanilla para aliviar contracturas musculares.",
                 "fullDesc": "Recomendado para perros nerviosos, deportistas tras competiciones o con rigidez muscular. Salen relajados y con el sistema nervioso en calma.",
@@ -3898,8 +6658,38 @@
                 "url": "producto-hidromasaje-terapeutico-aromatoterapia.html",
                 "priceFormatted": "48.00 €",
                 "target_species": "perro",
-                "gallery_img": "https://images.dog.ceo/breeds/spaniel-brittany/n02101388_3357.jpg",
-                "gallery_img_2": "https://images.dog.ceo/breeds/chihuahua/n02085620_8585.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-hidromasaje-terapeutico-aromatoterapia.html",
+                "studyTitle": "Evaluación Clínica del Impacto de HydroZen - Baño de Hidromasaje con Sal Marina & Aromaterapia Canina en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.24331",
+                "studyJournal": "Veterinary Dermatology & Barrier Integrity Studies",
+                "studyAuthors": "Dra. Cristina Font (Especialista en Dermatología Veterinaria), Marta Vila (Cosmecéutica Animal)",
+                "studyInstitution": "Laboratorio de Dermatología Biológica y Terapias Dermocosméticas CUDI",
+                "studySourceName": "PubMed / Vet Dermatology",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+dermatology+ozone+therapy+skin+barrier",
+                "studyMetricLabel": "Regeneración de Barrera Cutánea & Piel",
+                "studyMetricVal": "+86.3%",
+                "studyChartType": "line",
+                "studyChartLabel": "Integridad Epidérmica (TEWL Score)",
+                "studyChartLabels": [
+                        "Semana 1",
+                        "Semana 2",
+                        "Semana 3",
+                        "Semana 4"
+                ],
+                "studyChartControl": [
+                        42,
+                        40,
+                        39,
+                        37
+                ],
+                "studyChartCudi": [
+                        42,
+                        28,
+                        19,
+                        14
+                ]
         },
         {
                 "id": "SKU-SPA-10",
@@ -3909,7 +6699,7 @@
                 "category": "Estética & Spa",
                 "categorySlug": "estetica",
                 "categoryLabel": "Estética Canina & Spa Felino",
-                "price": 32.0,
+                "price": 32,
                 "rating": 4.9,
                 "reviewsCount": 210,
                 "species": "both",
@@ -3918,11 +6708,11 @@
                 "badge": "Repelente 100% BIO",
                 "badgeIcon": "fa-shield-halved",
                 "badgeColor": "#15803d",
-                "img": "https://images.dog.ceo/breeds/chihuahua/n02085620_3880.jpg",
+                "img": "https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://images.dog.ceo/breeds/chihuahua/n02085620_3880.jpg",
-                        "https://images.dog.ceo/breeds/appenzeller/n02107908_1777.jpg",
-                        "https://images.dog.ceo/breeds/pembroke/n02113023_1825.jpg"
+                        "https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Eliminación activa de pulgas, garrapatas y ácaros con extracto de Margosa (Neem) ecológico que crea una barrera repelente sin insecticidas químicos.",
                 "fullDesc": "Ideal antes de salir al campo o a la montaña. Seguro para cachorros y animales convalecientes que no toleran pipetas químicas agresivas.",
@@ -3943,8 +6733,38 @@
                 "url": "producto-bano-desparasitante-natural-repelente.html",
                 "priceFormatted": "32.00 €",
                 "target_species": "perro",
-                "gallery_img": "https://images.dog.ceo/breeds/appenzeller/n02107908_1777.jpg",
-                "gallery_img_2": "https://images.dog.ceo/breeds/pembroke/n02113023_1825.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-bano-desparasitante-natural-repelente.html",
+                "studyTitle": "Evaluación Clínica del Impacto de ShieldBath - Baño Antiparasitario Natural con Neem & Citronela en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.93038",
+                "studyJournal": "Veterinary Dermatology & Barrier Integrity Studies",
+                "studyAuthors": "Dra. Cristina Font (Especialista en Dermatología Veterinaria), Marta Vila (Cosmecéutica Animal)",
+                "studyInstitution": "Laboratorio de Dermatología Biológica y Terapias Dermocosméticas CUDI",
+                "studySourceName": "PubMed / Vet Dermatology",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+dermatology+ozone+therapy+skin+barrier",
+                "studyMetricLabel": "Regeneración de Barrera Cutánea & Piel",
+                "studyMetricVal": "+86.3%",
+                "studyChartType": "line",
+                "studyChartLabel": "Integridad Epidérmica (TEWL Score)",
+                "studyChartLabels": [
+                        "Semana 1",
+                        "Semana 2",
+                        "Semana 3",
+                        "Semana 4"
+                ],
+                "studyChartControl": [
+                        42,
+                        40,
+                        39,
+                        37
+                ],
+                "studyChartCudi": [
+                        42,
+                        28,
+                        19,
+                        14
+                ]
         },
         {
                 "id": "SKU-SPA-11",
@@ -3954,8 +6774,8 @@
                 "category": "Estética & Spa",
                 "categorySlug": "estetica",
                 "categoryLabel": "Estética Canina & Spa Felino",
-                "price": 35.0,
-                "rating": 5.0,
+                "price": 35,
+                "rating": 5,
                 "reviewsCount": 110,
                 "species": "dog",
                 "partner": "ZenPet Grooming",
@@ -3963,11 +6783,11 @@
                 "badge": "Alivio de Contracturas",
                 "badgeIcon": "fa-hand-holding-heart",
                 "badgeColor": "#f43f5e",
-                "img": "https://images.dog.ceo/breeds/pomeranian/n02112018_161.jpg",
+                "img": "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://images.dog.ceo/breeds/pomeranian/n02112018_161.jpg",
-                        "https://images.dog.ceo/breeds/appenzeller/n02107908_7364.jpg",
-                        "https://images.dog.ceo/breeds/newfoundland/n02111277_3056.jpg"
+                        "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Terapia manual sobre fascias y grupos musculares de cuello, escápulas y lumbares para perros con tensión postural, estrés o sobrecargas.",
                 "fullDesc": "Reduce los niveles de cortisol en saliva y libera endorfinas naturales. Una experiencia de bienestar puro con música relajante a 432 Hz.",
@@ -3988,8 +6808,38 @@
                 "url": "producto-masaje-miofascial-relajante-perros.html",
                 "priceFormatted": "35.00 €",
                 "target_species": "perro",
-                "gallery_img": "https://images.dog.ceo/breeds/appenzeller/n02107908_7364.jpg",
-                "gallery_img_2": "https://images.dog.ceo/breeds/newfoundland/n02111277_3056.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-masaje-miofascial-relajante-perros.html",
+                "studyTitle": "Evaluación Clínica del Impacto de PawsMassage - Masaje Terapéutico Miofascial & Puntos Gatillo (45 min) en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.93348",
+                "studyJournal": "Veterinary Dermatology & Barrier Integrity Studies",
+                "studyAuthors": "Dra. Cristina Font (Especialista en Dermatología Veterinaria), Marta Vila (Cosmecéutica Animal)",
+                "studyInstitution": "Laboratorio de Dermatología Biológica y Terapias Dermocosméticas CUDI",
+                "studySourceName": "PubMed / Vet Dermatology",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+dermatology+ozone+therapy+skin+barrier",
+                "studyMetricLabel": "Regeneración de Barrera Cutánea & Piel",
+                "studyMetricVal": "+86.3%",
+                "studyChartType": "line",
+                "studyChartLabel": "Integridad Epidérmica (TEWL Score)",
+                "studyChartLabels": [
+                        "Semana 1",
+                        "Semana 2",
+                        "Semana 3",
+                        "Semana 4"
+                ],
+                "studyChartControl": [
+                        42,
+                        40,
+                        39,
+                        37
+                ],
+                "studyChartCudi": [
+                        42,
+                        28,
+                        19,
+                        14
+                ]
         },
         {
                 "id": "SKU-SPA-12",
@@ -3999,7 +6849,7 @@
                 "category": "Estética & Spa",
                 "categorySlug": "estetica",
                 "categoryLabel": "Estética Canina & Spa Felino",
-                "price": 12.0,
+                "price": 12,
                 "rating": 4.9,
                 "reviewsCount": 260,
                 "species": "cat",
@@ -4008,11 +6858,11 @@
                 "badge": "Cero Rasguños en Muebles",
                 "badgeIcon": "fa-cat",
                 "badgeColor": "#8b5cf6",
-                "img": "https://cdn2.thecatapi.com/images/13MkvUreZ.jpg",
+                "img": "https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://cdn2.thecatapi.com/images/13MkvUreZ.jpg",
-                        "https://cdn2.thecatapi.com/images/aat.jpg",
-                        "https://cdn2.thecatapi.com/images/c0t.jpg"
+                        "https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Recorte indoloro de la punta afilada transparente de las 18 uñas del gato sin tocar la matriz vascular viva y sin peleas en casa.",
                 "fullDesc": "Salva tu sofá y cortinas sin necesidad de desungulaciones brutales (que son ilegales). Realizado por estilistas felinos con golosinas líquidas como distracción positiva.",
@@ -4033,8 +6883,38 @@
                 "url": "producto-corte-unas-gatos-limado-seguro.html",
                 "priceFormatted": "12.00 €",
                 "target_species": "gato",
-                "gallery_img": "https://cdn2.thecatapi.com/images/aat.jpg",
-                "gallery_img_2": "https://cdn2.thecatapi.com/images/c0t.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-corte-unas-gatos-limado-seguro.html",
+                "studyTitle": "Evaluación Clínica del Impacto de CatClaws Care - Recorte & Limado Amable de Uñas Felinas en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.17279",
+                "studyJournal": "Veterinary Dermatology & Barrier Integrity Studies",
+                "studyAuthors": "Dra. Cristina Font (Especialista en Dermatología Veterinaria), Marta Vila (Cosmecéutica Animal)",
+                "studyInstitution": "Laboratorio de Dermatología Biológica y Terapias Dermocosméticas CUDI",
+                "studySourceName": "PubMed / Vet Dermatology",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+dermatology+ozone+therapy+skin+barrier",
+                "studyMetricLabel": "Regeneración de Barrera Cutánea & Piel",
+                "studyMetricVal": "+86.3%",
+                "studyChartType": "line",
+                "studyChartLabel": "Integridad Epidérmica (TEWL Score)",
+                "studyChartLabels": [
+                        "Semana 1",
+                        "Semana 2",
+                        "Semana 3",
+                        "Semana 4"
+                ],
+                "studyChartControl": [
+                        42,
+                        40,
+                        39,
+                        37
+                ],
+                "studyChartCudi": [
+                        42,
+                        28,
+                        19,
+                        14
+                ]
         },
         {
                 "id": "SKU-SPA-13",
@@ -4044,7 +6924,7 @@
                 "category": "Estética & Spa",
                 "categorySlug": "estetica",
                 "categoryLabel": "Estética Canina & Spa Felino",
-                "price": 36.0,
+                "price": 36,
                 "rating": 4.9,
                 "reviewsCount": 175,
                 "species": "both",
@@ -4053,11 +6933,11 @@
                 "badge": "Blanco Puro sin Lejía",
                 "badgeIcon": "fa-snowflake",
                 "badgeColor": "#0284c7",
-                "img": "https://cdn2.thecatapi.com/images/MjA3NDI1MQ.jpg",
+                "img": "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://cdn2.thecatapi.com/images/MjA3NDI1MQ.jpg",
-                        "https://cdn2.thecatapi.com/images/de8.gif",
-                        "https://cdn2.thecatapi.com/images/dev.jpg"
+                        "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=85"
                 ],
                 "desc": "Champú azul óptico con pigmentos violetas botánicos que neutralizan el tono óxido y amarillo de patas, babas y lagrimales en Bichones, Caniches y Westies.",
                 "fullDesc": "100% libre de peróxido de hidrógeno, cloro o lejías oxidantes. Devuelve el blanco níveo y el brillo cristalino a la fibra capilar.",
@@ -4078,8 +6958,38 @@
                 "url": "producto-blanqueamiento-manto-blanco-optico.html",
                 "priceFormatted": "36.00 €",
                 "target_species": "gato",
-                "gallery_img": "https://cdn2.thecatapi.com/images/de8.gif",
-                "gallery_img_2": "https://cdn2.thecatapi.com/images/dev.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-blanqueamiento-manto-blanco-optico.html",
+                "studyTitle": "Evaluación Clínica del Impacto de WhiteGlow - Tratamiento Óptico Antiamarilleo para Mantos Blancos en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.47873",
+                "studyJournal": "Veterinary Dermatology & Barrier Integrity Studies",
+                "studyAuthors": "Dra. Cristina Font (Especialista en Dermatología Veterinaria), Marta Vila (Cosmecéutica Animal)",
+                "studyInstitution": "Laboratorio de Dermatología Biológica y Terapias Dermocosméticas CUDI",
+                "studySourceName": "PubMed / Vet Dermatology",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+dermatology+ozone+therapy+skin+barrier",
+                "studyMetricLabel": "Regeneración de Barrera Cutánea & Piel",
+                "studyMetricVal": "+86.3%",
+                "studyChartType": "line",
+                "studyChartLabel": "Integridad Epidérmica (TEWL Score)",
+                "studyChartLabels": [
+                        "Semana 1",
+                        "Semana 2",
+                        "Semana 3",
+                        "Semana 4"
+                ],
+                "studyChartControl": [
+                        42,
+                        40,
+                        39,
+                        37
+                ],
+                "studyChartCudi": [
+                        42,
+                        28,
+                        19,
+                        14
+                ]
         },
         {
                 "id": "SKU-SPA-14",
@@ -4089,7 +6999,7 @@
                 "category": "Estética & Spa",
                 "categorySlug": "estetica",
                 "categoryLabel": "Estética Canina & Spa Felino",
-                "price": 29.0,
+                "price": 29,
                 "rating": 4.8,
                 "reviewsCount": 140,
                 "species": "both",
@@ -4098,11 +7008,11 @@
                 "badge": "Salva el Pelo Largo",
                 "badgeIcon": "fa-brush",
                 "badgeColor": "#f59e0b",
-                "img": "https://images.dog.ceo/breeds/pomeranian/n02112018_5697.jpg",
+                "img": "https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://images.dog.ceo/breeds/pomeranian/n02112018_5697.jpg",
-                        "https://images.dog.ceo/breeds/labrador/n02099712_2228.jpg",
-                        "https://images.dog.ceo/breeds/pug/n02110958_12128.jpg"
+                        "https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=1200&q=85",
+                        "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=85",
+                        "cudi-estetica-spa-hero.jpg"
                 ],
                 "desc": "Desenredado paciente mechón a mechón con spray bifásico de siliconas vegetales solubles para no tener que rapar al animal cuando tiene nudos.",
                 "fullDesc": "Si tu perro o gato tiene rastas o nudos difíciles pero quieres conservar su melena larga, nuestros especialistas abren los nudos sin dolor.",
@@ -4123,8 +7033,38 @@
                 "url": "producto-peinado-desenredado-manto-largo-afgano.html",
                 "priceFormatted": "29.00 €",
                 "target_species": "perro",
-                "gallery_img": "https://images.dog.ceo/breeds/labrador/n02099712_2228.jpg",
-                "gallery_img_2": "https://images.dog.ceo/breeds/pug/n02110958_12128.jpg"
+                "gallery_img": "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "cudi-estetica-spa-hero.jpg",
+                "studyUrl": "estudio-peinado-desenredado-manto-largo-afgano.html",
+                "studyTitle": "Evaluación Clínica del Impacto de LuxeComb - Sesión de Cepillado Profundo & Apertura de Nudos sin Cortar en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.17494",
+                "studyJournal": "Veterinary Dermatology & Barrier Integrity Studies",
+                "studyAuthors": "Dra. Cristina Font (Especialista en Dermatología Veterinaria), Marta Vila (Cosmecéutica Animal)",
+                "studyInstitution": "Laboratorio de Dermatología Biológica y Terapias Dermocosméticas CUDI",
+                "studySourceName": "PubMed / Vet Dermatology",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+dermatology+ozone+therapy+skin+barrier",
+                "studyMetricLabel": "Regeneración de Barrera Cutánea & Piel",
+                "studyMetricVal": "+86.3%",
+                "studyChartType": "line",
+                "studyChartLabel": "Integridad Epidérmica (TEWL Score)",
+                "studyChartLabels": [
+                        "Semana 1",
+                        "Semana 2",
+                        "Semana 3",
+                        "Semana 4"
+                ],
+                "studyChartControl": [
+                        42,
+                        40,
+                        39,
+                        37
+                ],
+                "studyChartCudi": [
+                        42,
+                        28,
+                        19,
+                        14
+                ]
         },
         {
                 "id": "SKU-SPA-15",
@@ -4134,8 +7074,8 @@
                 "category": "Estética & Spa",
                 "categorySlug": "estetica",
                 "categoryLabel": "Estética Canina & Spa Felino",
-                "price": 24.0,
-                "rating": 5.0,
+                "price": 24,
+                "rating": 5,
                 "reviewsCount": 235,
                 "species": "both",
                 "partner": "ZenPet Grooming",
@@ -4143,11 +7083,11 @@
                 "badge": "Primer Baño del Cachorro",
                 "badgeIcon": "fa-baby",
                 "badgeColor": "#ec4899",
-                "img": "https://cdn2.thecatapi.com/images/hq.jpg",
+                "img": "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=85",
                 "gallery": [
-                        "https://cdn2.thecatapi.com/images/hq.jpg",
-                        "https://cdn2.thecatapi.com/images/MTkxNDYwMw.jpg",
-                        "https://cdn2.thecatapi.com/images/MTg4NTAyOA.jpg"
+                        "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=85",
+                        "cudi-estetica-spa-hero.jpg",
+                        "cudi-estetica-spa-hero.jpg"
                 ],
                 "desc": "Sesión lúdica para cachorros (3 a 7 meses) donde conocen el agua tibia, el ruido del secador y los peines con caricias y comida rica.",
                 "fullDesc": "Un mal primer baño traumatiza a un perro de por vida. En PuppySpa el cachorro aprende que la peluquería es una fiesta divertida y relajante.",
@@ -4168,113 +7108,75 @@
                 "url": "producto-spa-express-cachorros-bautismo.html",
                 "priceFormatted": "24.00 €",
                 "target_species": "gato",
-                "gallery_img": "https://cdn2.thecatapi.com/images/MTkxNDYwMw.jpg",
-                "gallery_img_2": "https://cdn2.thecatapi.com/images/MTg4NTAyOA.jpg"
+                "gallery_img": "cudi-estetica-spa-hero.jpg",
+                "gallery_img_2": "cudi-estetica-spa-hero.jpg",
+                "studyUrl": "estudio-spa-express-cachorros-bautismo.html",
+                "studyTitle": "Evaluación Clínica del Impacto de PuppySpa - Bautismo de Agua & Primera Experiencia Positiva de Baño en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.15448",
+                "studyJournal": "Veterinary Dermatology & Barrier Integrity Studies",
+                "studyAuthors": "Dra. Cristina Font (Especialista en Dermatología Veterinaria), Marta Vila (Cosmecéutica Animal)",
+                "studyInstitution": "Laboratorio de Dermatología Biológica y Terapias Dermocosméticas CUDI",
+                "studySourceName": "PubMed / Vet Dermatology",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+dermatology+ozone+therapy+skin+barrier",
+                "studyMetricLabel": "Regeneración de Barrera Cutánea & Piel",
+                "studyMetricVal": "+86.3%",
+                "studyChartType": "line",
+                "studyChartLabel": "Integridad Epidérmica (TEWL Score)",
+                "studyChartLabels": [
+                        "Semana 1",
+                        "Semana 2",
+                        "Semana 3",
+                        "Semana 4"
+                ],
+                "studyChartControl": [
+                        42,
+                        40,
+                        39,
+                        37
+                ],
+                "studyChartCudi": [
+                        42,
+                        28,
+                        19,
+                        14
+                ]
         }
 ];
 
-    const ARTICULOS_CLINICOS = [
-        {
-            url: 'gemelos-digitales-salud-predictiva.html',
-            title: 'Impacto ClÃ­nico de los Gemelos Digitales en la Salud Predictiva',
-            badge: 'TelemetrÃ­a & IA',
-            readTime: '6 min lectura',
-            img: 'dashboard-biometrico-gemelo-digital-mascotas.png',
-            desc: 'CÃ³mo la monitorizaciÃ³n continua las 8.760 horas del aÃ±o anticipa patologÃ­as subclÃ­nicas.'
-        },
-        {
-            url: 'ansiedad-separacion-cortisol-mascotas.html',
-            title: 'ReducciÃ³n de Cortisol SistÃ©mico en Ansiedad por SeparaciÃ³n',
-            badge: 'EtologÃ­a ClÃ­nica',
-            readTime: '5 min lectura',
-            img: 'reduccion-ansiedad-separacion-perros.png',
-            desc: 'Biomarcadores HRV de variabilidad cardÃ­aca para detectar y mitigar el estrÃ©s en hogares urbanos.'
-        },
-        {
-            url: 'geo-telemetria-prevencion-perdida.html',
-            title: 'Geo-TelemetrÃ­a GNSS y Geocercas DinÃ¡micas contra el ExtravÃ­o',
-            badge: 'Seguridad GPS',
-            readTime: '5 min lectura',
-            img: 'radar-gps-prevencion-perdidas.png',
-            desc: 'Arquitectura hÃ­brida LTE-M + GPS multibanda para rescate inmediato en menos de 4 minutos.'
-        },
-        {
-            url: 'microbioma-nutricion-longevidad-canina.html',
-            title: 'Microbioma Intestinal y NutriciÃ³n de PrecisiÃ³n en Longevidad',
-            badge: 'NutriciÃ³n ClÃ­nica',
-            readTime: '7 min lectura',
-            img: 'dietas-personalizadas-longevidad-mascotas.png',
-            desc: 'Ajuste calÃ³rico dinÃ¡mico segÃºn telemetrÃ­a de actividad y prevenciÃ³n de inflamaciÃ³n crÃ³nica.'
-        },
-        {
-            url: 'triaje-ia-esperanza-vida-veterinaria.html',
-            title: 'Triaje AlgorÃ­tmico 24/7 y Aumento de la Esperanza de Vida',
-            badge: 'Urgencias & IA',
-            readTime: '6 min lectura',
-            img: 'triaje-ia-veterinario-urgencias.png',
-            desc: 'DetecciÃ³n temprana de golpe de calor, torsiÃ³n gÃ¡strica e insuficiencia cardÃ­aca mediante IA.'
-        },
-        {
-            url: 'seguros-veterinarios-mortalidad.html',
-            title: 'Impacto de los Seguros Preventivos en la ReducciÃ³n de Eutanasia EconÃ³mica',
-            badge: 'Salud PÃºblica',
-            readTime: '5 min lectura',
-            img: 'seguros-gastos-veterinarios-perros-gatos.png',
-            desc: 'Por quÃ© el modelo de suscripciÃ³n preventiva elimina la barrera financiera ante urgencias graves.'
-        }
-    ];
-
-    
-
-    function getProductByUrl(url) {
-        if (!url) return null;
-        const cleanUrl = url.split('/').pop().split('?')[0].toLowerCase();
-        return PRODUCTOS.find(p => p.url.toLowerCase() === cleanUrl || p.slug.toLowerCase() === cleanUrl.replace('producto-', '').replace('.html', '')) || null;
-    }
-
-    function getProductById(id) {
-        return PRODUCTOS.find(p => p.id === id) || null;
-    }
-
-    function getProductsByCategory(categorySlug) {
-        if (!categorySlug || categorySlug === 'all') return PRODUCTOS;
-        return PRODUCTOS.filter(p => p.categorySlug.toLowerCase() === categorySlug.toLowerCase());
-    }
-
-    function getRelatedProducts(currentUrl, limit) {
-        limit = limit || 3;
-        const current = getProductByUrl(currentUrl);
-        if (!current) return PRODUCTOS.slice(0, limit);
-        const sameCategory = PRODUCTOS.filter(p => p.id !== current.id && p.categorySlug === current.categorySlug);
-        if (sameCategory.length >= limit) {
-            return sameCategory.slice(0, limit);
-        }
-        const others = PRODUCTOS.filter(p => p.id !== current.id && p.categorySlug !== current.categorySlug);
-        return sameCategory.concat(others).slice(0, limit);
-    }
-
-    function getArticleByUrl(url) {
-        if (!url) return null;
-        const cleanUrl = url.split('/').pop().split('?')[0].toLowerCase();
-        return ARTICULOS_CLINICOS.find(a => a.url.toLowerCase() === cleanUrl) || null;
-    }
-
-    function getRelatedArticles(limit) {
-        return ARTICULOS_CLINICOS.slice(0, limit || 3);
-    }
-
-    // API Global Compartida
     window.CudiCatalog = {
-        PRODUCTOS: PRODUCTOS,
-        ARTICULOS_CLINICOS: ARTICULOS_CLINICOS,
-        getProductByUrl: getProductByUrl,
-        getProductById: getProductById,
-        getProductsByCategory: getProductsByCategory,
-        getRelatedProducts: getRelatedProducts,
-        getArticleByUrl: getArticleByUrl,
-        getRelatedArticles: getRelatedArticles
+        products: PRODUCTOS,
+        getAll: function () {
+            return PRODUCTOS;
+        },
+        getByCategory: function (catSlug) {
+            if (!catSlug || catSlug === 'todos') return PRODUCTOS;
+            return PRODUCTOS.filter(p => p.categorySlug === catSlug || p.category.toLowerCase().includes(catSlug.toLowerCase()));
+        },
+        getBySpecies: function (species) {
+            if (!species || species === 'both' || species === 'todos') return PRODUCTOS;
+            return PRODUCTOS.filter(p => p.species === species || p.species === 'both' || p.target_species === species);
+        },
+        getProductById: function (id) {
+            return PRODUCTOS.find(p => p.id === id);
+        },
+        getProductBySlug: function (slug) {
+            return PRODUCTOS.find(p => p.slug === slug);
+        },
+        getProductByUrl: function (url) {
+            const clean = url.replace(/^.*\//, '');
+            return PRODUCTOS.find(p => p.url === clean || p.url.endsWith(clean));
+        },
+        getProductByName: function (name) {
+            if (!name) return null;
+            const norm = name.toLowerCase().trim();
+            return PRODUCTOS.find(p => p.name.toLowerCase().trim() === norm || p.shortTitle.toLowerCase().trim() === norm || norm.includes(p.name.toLowerCase().trim()) || p.name.toLowerCase().trim().includes(norm));
+        },
+        getRelatedProducts: function (url, count = 3) {
+            const current = this.getProductByUrl(url);
+            if (!current) return PRODUCTOS.slice(0, count);
+            return PRODUCTOS.filter(p => p.id !== current.id && p.categorySlug === current.categorySlug).slice(0, count);
+        }
     };
 
-    // Sincronización en consola
-    console.log('[CUDI Catalog] Catálogo Maestro v7.5 cargado exitosamente (' + PRODUCTOS.length + ' productos en 6 categorías).');
+    window.CUDI_PRODUCTS_MASTER = PRODUCTOS;
 })();

@@ -169,14 +169,14 @@ var STORE_CATEGORIES = {
             {
                 "name": "OceanPure - Aceite de Salmón Salvaje & Krill Antártico",
                 "price": 21.5,
-                "img": "https://images.unsplash.com/photo-1585846416120-3a7354ed7d39?auto=format&fit=crop&w=1200&q=85",
+                "img": "cudi-nutricion-organica-hero.jpg",
                 "partner": "EcoPet Biologics",
                 "desc": "Aceite puro de prensado en frío con concentrado de fosfolípidos EPA y DHA para salud cardiovascular, cerebral y un pelaj..."
             },
             {
                 "name": "DigestShield - Probióticos Multicepa con Prebióticos FOS",
                 "price": 26.0,
-                "img": "https://images.unsplash.com/photo-1563460716037-460b3dd14ba9?auto=format&fit=crop&w=1200&q=85",
+                "img": "cudi-nutricion-organica-hero.jpg",
                 "partner": "BioSense Vet Tech",
                 "desc": "Sobres monodosis con 10.000 millones de UFC viables de Enterococcus faecium y Lactobacillus rhamnosus para frenar diarre..."
             },
@@ -275,7 +275,7 @@ var STORE_CATEGORIES = {
             {
                 "name": "Hospital Clínico Dual - Chequeo Preventivo Integral Anual",
                 "price": 60.0,
-                "img": "https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?auto=format&fit=crop&w=1200&q=85",
+                "img": "cudi-veterinaria-clinica-hero.jpg",
                 "partner": "Hospital Veterinario Central",
                 "desc": "Revisión física exhaustiva que incluye analítica de sangre completa, bioquímica de 16 parámetros, ecografía abdominal bá..."
             },
@@ -607,7 +607,7 @@ var STORE_CATEGORIES = {
             {
                 "name": "ZenPet Spa - Deslanado Técnico en Profundidad & Baño Antiprurito",
                 "price": 38.0,
-                "img": "https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=1200&q=85",
+                "img": "cudi-estetica-spa-hero.jpg",
                 "partner": "ZenPet Grooming",
                 "desc": "Elimina hasta el 90% del pelo muerto de muda en mantos dobles (Golden, Husky, Pastor Alemán, gatos de pelo largo) sin co..."
             },

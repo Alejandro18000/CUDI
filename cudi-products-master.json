@@ -1347,7 +1347,7 @@
         "gallery": [
             "https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=1200&q=85",
             "https://images.unsplash.com/photo-1568640347023-a616a30bc3bd?auto=format&fit=crop&w=1200&q=85",
-            "https://images.unsplash.com/photo-1585846416120-3a7354ed7d39?auto=format&fit=crop&w=1200&q=85"
+            "cudi-nutricion-organica-hero.jpg"
         ],
         "desc": "Receta clínica de caballo y boniato cocinada a baja temperatura para animales con intolerancias alimentarias y prurito atópico severo.",
         "fullDesc": "Una formulación monoproteica estricta que utiliza caballo como fuente única de proteína animal no alergénica y carbohidratos de bajo índice glucémico procedentes del boniato. Enriquecido con probióticos microencapsulados que colonizan el colon.",
@@ -1376,7 +1376,7 @@
         "priceFormatted": "38.50 €",
         "target_species": "perro",
         "gallery_img": "https://images.unsplash.com/photo-1568640347023-a616a30bc3bd?auto=format&fit=crop&w=1200&q=85",
-        "gallery_img_2": "https://images.unsplash.com/photo-1585846416120-3a7354ed7d39?auto=format&fit=crop&w=1200&q=85",
+        "gallery_img_2": "cudi-nutricion-organica-hero.jpg",
         "studyUrl": "estudio-purebites-clinic-pienso-hipoalergenico.html",
         "studyTitle": "Evaluación Clínica del Impacto de PureBites Clinic - Pienso Hipoalergénico Monoproteico en Biomarcadores de Salud y Bienestar Animal",
         "studyDoi": "10.1016/j.cudi.vetmed.2026.24413",
@@ -1431,8 +1431,8 @@
         "img": "https://images.unsplash.com/photo-1568640347023-a616a30bc3bd?auto=format&fit=crop&w=1200&q=85",
         "gallery": [
             "https://images.unsplash.com/photo-1568640347023-a616a30bc3bd?auto=format&fit=crop&w=1200&q=85",
-            "https://images.unsplash.com/photo-1585846416120-3a7354ed7d39?auto=format&fit=crop&w=1200&q=85",
-            "https://images.unsplash.com/photo-1563460716037-460b3dd14ba9?auto=format&fit=crop&w=1200&q=85"
+            "cudi-nutricion-organica-hero.jpg",
+            "cudi-nutricion-organica-hero.jpg"
         ],
         "desc": "Polvo nutracéutico con Glucosamina pura, Condroitina marina, MSM, cúrcuma biodisponible y colágeno hidrolizado de tipo II.",
         "fullDesc": "Formulado para proteger cartílagos articulares en perros deportistas y ralentizar el avance de la osteoartritis en mascotas senior. Su agradable sabor a levadura de cerveza hace que se mezcle fácilmente en cualquier alimento.",
@@ -1460,8 +1460,8 @@
         "url": "producto-vitality-mix-suplemento-inmune.html",
         "priceFormatted": "24.99 €",
         "target_species": "gato",
-        "gallery_img": "https://images.unsplash.com/photo-1585846416120-3a7354ed7d39?auto=format&fit=crop&w=1200&q=85",
-        "gallery_img_2": "https://images.unsplash.com/photo-1563460716037-460b3dd14ba9?auto=format&fit=crop&w=1200&q=85",
+        "gallery_img": "cudi-nutricion-organica-hero.jpg",
+        "gallery_img_2": "cudi-nutricion-organica-hero.jpg",
         "studyUrl": "estudio-vitality-mix-suplemento-inmune.html",
         "studyTitle": "Evaluación Clínica del Impacto de Vitality Mix - Complejo Articular & Inmunológico Dual en Biomarcadores de Salud y Bienestar Animal",
         "studyDoi": "10.1016/j.cudi.vetmed.2026.26515",
@@ -1513,10 +1513,10 @@
         "badge": "Brillo & Corazón",
         "badgeIcon": "fa-fish",
         "badgeColor": "#0284c7",
-        "img": "https://images.unsplash.com/photo-1585846416120-3a7354ed7d39?auto=format&fit=crop&w=1200&q=85",
+        "img": "cudi-nutricion-organica-hero.jpg",
         "gallery": [
-            "https://images.unsplash.com/photo-1585846416120-3a7354ed7d39?auto=format&fit=crop&w=1200&q=85",
-            "https://images.unsplash.com/photo-1563460716037-460b3dd14ba9?auto=format&fit=crop&w=1200&q=85",
+            "cudi-nutricion-organica-hero.jpg",
+            "cudi-nutricion-organica-hero.jpg",
             "https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=1200&q=85"
         ],
         "desc": "Aceite puro de prensado en frío con concentrado de fosfolípidos EPA y DHA para salud cardiovascular, cerebral y un pelaje sedoso.",
@@ -1539,7 +1539,7 @@
         "url": "producto-ocean-pure-omega3-salmon-salvaje.html",
         "priceFormatted": "21.50 €",
         "target_species": "perro",
-        "gallery_img": "https://images.unsplash.com/photo-1563460716037-460b3dd14ba9?auto=format&fit=crop&w=1200&q=85",
+        "gallery_img": "cudi-nutricion-organica-hero.jpg",
         "gallery_img_2": "https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=1200&q=85",
         "studyUrl": "estudio-ocean-pure-omega3-salmon-salvaje.html",
         "studyTitle": "Evaluación Clínica del Impacto de OceanPure - Aceite de Salmón Salvaje & Krill Antártico en Biomarcadores de Salud y Bienestar Animal",
@@ -1592,9 +1592,9 @@
         "badge": "Salud Intestinal",
         "badgeIcon": "fa-shield-virus",
         "badgeColor": "#10b981",
-        "img": "https://images.unsplash.com/photo-1563460716037-460b3dd14ba9?auto=format&fit=crop&w=1200&q=85",
+        "img": "cudi-nutricion-organica-hero.jpg",
         "gallery": [
-            "https://images.unsplash.com/photo-1563460716037-460b3dd14ba9?auto=format&fit=crop&w=1200&q=85",
+            "cudi-nutricion-organica-hero.jpg",
             "https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=1200&q=85",
             "https://images.unsplash.com/photo-1583512603805-3cc6b41f3edb?auto=format&fit=crop&w=1200&q=85"
         ],
@@ -2465,7 +2465,7 @@
         "gallery": [
             "cudi-veterinaria-clinica-hero.jpg",
             "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=1200&q=85",
-            "https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?auto=format&fit=crop&w=1200&q=85"
+            "cudi-veterinaria-clinica-hero.jpg"
         ],
         "desc": "Unidad móvil veterinaria con ecografía portátil y analítica sanguínea instantánea enviada a tu hogar en menos de 35 minutos.",
         "fullDesc": "Cuando tu mascota no puede desplazarse o sufre un shock agudo, una ambulancia veterinaria totalmente equipada acude a tu domicilio con el historial biométrico sincronizado en la tablet médica del facultativo antes de llegar.",
@@ -2494,7 +2494,7 @@
         "priceFormatted": "75.00 €",
         "target_species": "perro",
         "gallery_img": "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=1200&q=85",
-        "gallery_img_2": "https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?auto=format&fit=crop&w=1200&q=85",
+        "gallery_img_2": "cudi-veterinaria-clinica-hero.jpg",
         "studyUrl": "estudio-vethome-urgencias-domicilio.html",
         "studyTitle": "Evaluación Clínica del Impacto de VetHome CUDI - Urgencias Veterinarias a Domicilio 24/7 en Biomarcadores de Salud y Bienestar Animal",
         "studyDoi": "10.1016/j.cudi.vetmed.2026.99239",
@@ -2549,7 +2549,7 @@
         "img": "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=1200&q=85",
         "gallery": [
             "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=1200&q=85",
-            "https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?auto=format&fit=crop&w=1200&q=85",
+            "cudi-veterinaria-clinica-hero.jpg",
             "https://images.unsplash.com/photo-1599443015574-be5fe8a05783?auto=format&fit=crop&w=1200&q=85"
         ],
         "desc": "Videoconsulta de alta definición con veterinario colegiado en menos de 3 minutos con receta electrónica oficial válida en farmacias.",
@@ -2572,7 +2572,7 @@
         "url": "producto-medipet-express-teleconsulta-ia.html",
         "priceFormatted": "35.00 €",
         "target_species": "gato",
-        "gallery_img": "https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?auto=format&fit=crop&w=1200&q=85",
+        "gallery_img": "cudi-veterinaria-clinica-hero.jpg",
         "gallery_img_2": "https://images.unsplash.com/photo-1599443015574-be5fe8a05783?auto=format&fit=crop&w=1200&q=85",
         "studyUrl": "estudio-medipet-express-teleconsulta-ia.html",
         "studyTitle": "Evaluación Clínica del Impacto de MediPet Express - Teleconsulta Veterinaria Inmediata con Triaje IA en Biomarcadores de Salud y Bienestar Animal",
@@ -2625,9 +2625,9 @@
         "badge": "Medicina Preventiva",
         "badgeIcon": "fa-hospital",
         "badgeColor": "#10b981",
-        "img": "https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?auto=format&fit=crop&w=1200&q=85",
+        "img": "cudi-veterinaria-clinica-hero.jpg",
         "gallery": [
-            "https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?auto=format&fit=crop&w=1200&q=85",
+            "cudi-veterinaria-clinica-hero.jpg",
             "https://images.unsplash.com/photo-1599443015574-be5fe8a05783?auto=format&fit=crop&w=1200&q=85",
             "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=1200&q=85"
         ],
@@ -6017,7 +6017,7 @@
         "img": "cudi-estetica-spa-hero.jpg",
         "gallery": [
             "cudi-estetica-spa-hero.jpg",
-            "https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=1200&q=85",
+            "cudi-estetica-spa-hero.jpg",
             "https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1200&q=85"
         ],
         "desc": "Hidromasaje con microburbujas de ozono purificante que oxigena la piel, elimina olores en profundidad y calma dermatitis y alergias dérmicas.",
@@ -6046,7 +6046,7 @@
         "url": "producto-grooming-master-bano-ozonoterapia.html",
         "priceFormatted": "42.00 €",
         "target_species": "gato",
-        "gallery_img": "https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=1200&q=85",
+        "gallery_img": "cudi-estetica-spa-hero.jpg",
         "gallery_img_2": "https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1200&q=85",
         "studyUrl": "estudio-grooming-master-bano-ozonoterapia.html",
         "studyTitle": "Evaluación Clínica del Impacto de Grooming Master - Baño Terapéutico con Ozonoterapia & Masaje en Biomarcadores de Salud y Bienestar Animal",
@@ -6096,9 +6096,9 @@
         "badge": "Adiós Pelos en Casa",
         "badgeIcon": "fa-shield",
         "badgeColor": "#0284c7",
-        "img": "https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=1200&q=85",
+        "img": "cudi-estetica-spa-hero.jpg",
         "gallery": [
-            "https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=1200&q=85",
+            "cudi-estetica-spa-hero.jpg",
             "https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1200&q=85",
             "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=85"
         ],
@@ -7075,7 +7075,7 @@
         "gallery": [
             "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=85",
             "cudi-estetica-spa-hero.jpg",
-            "https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=1200&q=85"
+            "cudi-estetica-spa-hero.jpg"
         ],
         "desc": "Sesión lúdica para cachorros (3 a 7 meses) donde conocen el agua tibia, el ruido del secador y los peines con caricias y comida rica.",
         "fullDesc": "Un mal primer baño traumatiza a un perro de por vida. En PuppySpa el cachorro aprende que la peluquería es una fiesta divertida y relajante.",
@@ -7097,7 +7097,7 @@
         "priceFormatted": "24.00 €",
         "target_species": "gato",
         "gallery_img": "cudi-estetica-spa-hero.jpg",
-        "gallery_img_2": "https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=1200&q=85",
+        "gallery_img_2": "cudi-estetica-spa-hero.jpg",
         "studyUrl": "estudio-spa-express-cachorros-bautismo.html",
         "studyTitle": "Evaluación Clínica del Impacto de PuppySpa - Bautismo de Agua & Primera Experiencia Positiva de Baño en Biomarcadores de Salud y Bienestar Animal",
         "studyDoi": "10.1016/j.cudi.vetmed.2026.15448",
