@@ -124,87 +124,342 @@
         </div>
     </div>
 
-    <!-- HERO SUBSCRIPCIÓN -->
-    <header style="padding: 120px 0 80px 0; background: radial-gradient(circle at top right, #f0f9ff 0%, #ffffff 70%);">
-        <div class="container" style="text-align:center; max-width:900px;">
-            <span style="background:var(--clr-primary); color:white; padding:8px 20px; border-radius:50px; font-weight:700; font-size:0.8rem; text-transform:uppercase; letter-spacing:1px; margin-bottom:25px; display:inline-block;">Ecosistema de Cuidado Inteligente</span>
-            <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); font-weight:800; line-height:1.1; margin-bottom:20px; color:var(--clr-text); letter-spacing:-2px;">Elige el nivel de protección que tu mejor amigo merece</h1>
-            <p style="font-size:1.25rem; color:var(--clr-text-muted); line-height:1.6; margin-bottom:40px;">Diseñamos nuestros planes pensando en tu tranquilidad y en su bienestar. Empieza a gestionar su mundo hoy mismo o desbloquea el cuidado preventivo total con nuestro ecosistema inteligente.</p>
+    <!-- HERO SUBSCRIPCIÓN APPLE GLASS -->
+    <header class="planes-hero-glass" style="padding: 100px 0 60px 0; background: radial-gradient(circle at 50% 10%, rgba(2,132,199,0.08) 0%, #ffffff 60%, rgba(16,185,129,0.04) 100%); position:relative; overflow:hidden;">
+        <!-- Luces difusas Apple Glass de fondo -->
+        <div style="position:absolute; top:-80px; left:15%; width:450px; height:450px; background:radial-gradient(circle, rgba(2,132,199,0.12) 0%, transparent 70%); border-radius:50%; filter:blur(50px); pointer-events:none;"></div>
+        <div style="position:absolute; bottom:-100px; right:15%; width:450px; height:450px; background:radial-gradient(circle, rgba(16,185,129,0.1) 0%, transparent 70%); border-radius:50%; filter:blur(50px); pointer-events:none;"></div>
+
+        <div class="container" style="text-align:center; max-width:920px; position:relative; z-index:2;">
+            <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(2,132,199,0.08); border:1px solid rgba(2,132,199,0.25); color:#0284c7; padding:7px 20px; border-radius:999px; font-weight:800; font-size:0.82rem; text-transform:uppercase; letter-spacing:1px; margin-bottom:20px; backdrop-filter:blur(10px);">
+                <span style="width:8px; height:8px; background:#10b981; border-radius:50%; box-shadow:0 0 8px #10b981;"></span>
+                Planes de Protección y Cuidado Inteligente
+            </div>
+            
+            <h1 style="font-size: clamp(2.4rem, 4.5vw, 3.8rem); font-weight:800; line-height:1.15; margin-bottom:20px; color:#0f172a; letter-spacing:-0.03em;">
+                Elige el nivel de protección que tu <span style="background:linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">mejor amigo</span> merece
+            </h1>
+            
+            <p style="font-size:1.2rem; color:#64748b; line-height:1.7; margin-bottom:35px; max-width:780px; margin-left:auto; margin-right:auto;">
+                Diseñamos nuestros planes pensando en tu tranquilidad y en su bienestar de perros y gatos. Empieza hoy mismo sin permanencia y cambia cuando quieras.
+            </p>
+
+            <!-- Conmutador Mensual / Anual Apple Glass -->
+            <div class="billing-toggle-glass" style="display:inline-flex; align-items:center; gap:8px; background:rgba(226,232,240,0.65); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); padding:5px 6px; border-radius:999px; border:1px solid rgba(255,255,255,0.9); box-shadow:0 8px 25px rgba(15,23,42,0.05); margin-bottom:10px;">
+                <button type="button" class="billing-btn active" id="btn-billing-monthly" onclick="cambiarPeriodoFacturacion('monthly')">
+                    Facturación Mensual
+                </button>
+                <button type="button" class="billing-btn" id="btn-billing-annual" onclick="cambiarPeriodoFacturacion('annual')">
+                    Facturación Anual <span class="badge-discount-save">Ahorra 20%</span>
+                </button>
+            </div>
         </div>
     </header>
 
-    <!-- SECCIÓN 1: BENEFICIOS -->
-    <section style="padding: 40px 0 100px 0;">
+    <!-- SECCIÓN DE PLANES CON DISEÑO COHERENTE APPLE GLASS -->
+    <section id="suscripciones" style="padding: 40px 0 90px 0; background: linear-gradient(180deg, #ffffff 0%, #f8fafc 50%, #ffffff 100%);">
         <div class="container">
-            <div style="text-align:center; margin-bottom:60px;">
-                <h2 style="font-size:2.2rem; font-weight:800;">¿Por qué elegir CUDI?</h2>
+            
+            <!-- Grid de Planes Apple Glass -->
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 480px)); gap:35px; justify-content:center; align-items:stretch; max-width:1050px; margin:0 auto 70px auto;">
+                
+                <!-- Plan Esencial (Apple Glass White) -->
+                <div class="p-card-glass-essential" style="background:rgba(255,255,255,0.9); backdrop-filter:blur(24px); -webkit-backdrop-filter:blur(24px); border-radius:36px; padding:45px 40px; border:1px solid rgba(226,232,240,0.9); display:flex; flex-direction:column; justify-content:space-between; box-shadow:0 15px 40px rgba(15,23,42,0.04); transition:all 0.35s cubic-bezier(0.16, 1, 0.3, 1); position:relative;">
+                    <div>
+                        <div style="display:inline-flex; align-items:center; gap:8px; background:#f1f5f9; color:#475569; padding:5px 14px; border-radius:999px; font-size:0.75rem; font-weight:700; margin-bottom:16px;">
+                            <i class="fa-solid fa-seedling" style="color:#10b981;"></i> Nivel de Entrada
+                        </div>
+                        <h3 style="font-size:2.2rem; font-weight:800; color:#0f172a; margin-bottom:12px; letter-spacing:-0.02em;">CUDI Esencial</h3>
+                        <p style="color:#64748b; font-size:1.05rem; line-height:1.6; margin-bottom:28px;">
+                            Perfecto para organizar la vida de tu mascota y descubrir nuestra red de confianza sin coste alguno.
+                        </p>
+
+                        <!-- Imagen Ilustrativa Refinada -->
+                        <div style="position:relative; height:150px; border-radius:20px; overflow:hidden; margin-bottom:28px; box-shadow:0 8px 20px rgba(0,0,0,0.06); border:1px solid #e2e8f0;">
+                            <img src="rutas-paseos-seguros-barcelona.png" alt="CUDI Esencial" style="width:100%; height:100%; object-fit:cover; display:block;" decoding="async">
+                            <div style="position:absolute; inset:0; background:linear-gradient(180deg, transparent 40%, rgba(15,23,42,0.6) 100%);"></div>
+                            <span style="position:absolute; bottom:12px; left:16px; color:white; font-size:0.8rem; font-weight:700;">Expediente &bull; Recordatorios &bull; Red Social</span>
+                        </div>
+
+                        <!-- Precio Dinámico -->
+                        <div style="display:flex; align-items:baseline; gap:6px; margin-bottom:30px;">
+                            <span id="price-val-esencial" style="font-size:3.8rem; font-weight:800; color:#0f172a; line-height:1; letter-spacing:-0.03em;">0€</span>
+                            <span id="price-period-esencial" style="font-size:1.15rem; color:#64748b; font-weight:600;">/mes</span>
+                            <span style="background:#ecfdf5; color:#059669; font-size:0.75rem; font-weight:800; padding:3px 10px; border-radius:999px; margin-left:8px;">Gratis para siempre</span>
+                        </div>
+
+                        <!-- Lista de Beneficios -->
+                        <ul style="list-style:none; padding:0; margin:0 0 35px 0;">
+                            <li style="display:flex; align-items:center; gap:12px; margin-bottom:16px; color:#334155; font-size:1rem; font-weight:600;">
+                                <i class="fa-solid fa-circle-check" style="color:#10b981; font-size:1.15rem; flex-shrink:0;"></i> Expediente médico digital completo
+                            </li>
+                            <li style="display:flex; align-items:center; gap:12px; margin-bottom:16px; color:#334155; font-size:1rem; font-weight:600;">
+                                <i class="fa-solid fa-circle-check" style="color:#10b981; font-size:1.15rem; flex-shrink:0;"></i> Alertas automáticas de vacunación y desparasitación
+                            </li>
+                            <li style="display:flex; align-items:center; gap:12px; margin-bottom:16px; color:#334155; font-size:1rem; font-weight:600;">
+                                <i class="fa-solid fa-circle-check" style="color:#10b981; font-size:1.15rem; flex-shrink:0;"></i> Acceso al marketplace y red de partners
+                            </li>
+                            <li style="display:flex; align-items:center; gap:12px; margin-bottom:16px; color:#94a3b8; font-size:0.95rem; font-weight:500;">
+                                <i class="fa-solid fa-circle-info" style="color:#cbd5e1; font-size:1.1rem; flex-shrink:0;"></i> Navegación básica con anuncios de partners
+                            </li>
+                        </ul>
+                    </div>
+
+                    <button type="button" class="btn-primary" onclick="crearCuentaGratuitaPlan()" style="width:100%; padding:18px; border-radius:18px; font-size:1.05rem; font-weight:800; background:#f1f5f9; color:#0f172a; border:1px solid #cbd5e1; cursor:pointer; transition:all 0.25s ease; box-shadow:0 4px 12px rgba(0,0,0,0.03);">
+                        <i class="fa-solid fa-user-plus"></i> Crear cuenta gratuita
+                    </button>
+                </div>
+
+                <!-- Plan Premium Care (Apple Liquid Glass High-End Highlight) -->
+                <div class="p-card-glass-premium" style="background:linear-gradient(155deg, rgba(15,23,42,0.96) 0%, rgba(30,41,59,0.92) 100%); backdrop-filter:blur(32px) saturate(180%); -webkit-backdrop-filter:blur(32px) saturate(180%); color:white; border-radius:36px; padding:45px 40px; border:2px solid rgba(2,132,199,0.85); display:flex; flex-direction:column; justify-content:space-between; box-shadow:0 25px 60px -10px rgba(2,132,199,0.35), 0 0 0 1px rgba(255,255,255,0.1); position:relative; overflow:visible; transform:scale(1.02); transition:all 0.35s cubic-bezier(0.16, 1, 0.3, 1);">
+                    
+                    <!-- Badge Flotante Apple Glass Superior -->
+                    <div style="position:absolute; top:-16px; left:50%; transform:translateX(-50%); background:linear-gradient(135deg, #0284c7, #0ea5e9); color:white; padding:7px 24px; border-radius:999px; font-weight:800; font-size:0.8rem; letter-spacing:1px; box-shadow:0 6px 20px rgba(2,132,199,0.5); border:1.5px solid rgba(255,255,255,0.4); text-transform:uppercase; white-space:nowrap; display:flex; align-items:center; gap:6px;">
+                        <i class="fa-solid fa-crown" style="color:#fde047;"></i> MÁS RECOMENDADO
+                    </div>
+
+                    <div>
+                        <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(2,132,199,0.25); color:#38bdf8; border:1px solid rgba(56,189,248,0.4); padding:5px 14px; border-radius:999px; font-size:0.75rem; font-weight:800; margin-bottom:16px;">
+                            <i class="fa-solid fa-shield-cat"></i> Cuidado Preventivo Total
+                        </div>
+                        <h3 style="font-size:2.2rem; font-weight:800; color:white; margin-bottom:12px; letter-spacing:-0.02em;">CUDI Premium Care</h3>
+                        <p style="color:#cbd5e1; font-size:1.05rem; line-height:1.6; margin-bottom:28px;">
+                            La experiencia definitiva de paz mental. Asistente inteligente y telemetría continua para tu compañero.
+                        </p>
+
+                        <!-- Imagen Ilustrativa Refinada -->
+                        <div style="position:relative; height:150px; border-radius:20px; overflow:hidden; margin-bottom:28px; box-shadow:0 8px 24px rgba(0,0,0,0.4); border:1px solid rgba(255,255,255,0.15);">
+                            <img src="dashboard-biometrico-gemelo-digital-mascotas.png" alt="CUDI Premium Care" style="width:100%; height:100%; object-fit:cover; display:block;" decoding="async">
+                            <div style="position:absolute; inset:0; background:linear-gradient(180deg, transparent 30%, rgba(15,23,42,0.7) 100%);"></div>
+                            <span style="position:absolute; bottom:12px; left:16px; color:#38bdf8; font-size:0.8rem; font-weight:800;"><i class="fa-solid fa-microchip"></i> Gemelo Digital Biométrico Activo</span>
+                        </div>
+
+                        <!-- Precio Dinámico con Toggle Anual/Mensual -->
+                        <div style="display:flex; align-items:baseline; gap:6px; margin-bottom:30px;">
+                            <span id="price-val-premium" style="font-size:3.8rem; font-weight:800; color:#38bdf8; line-height:1; letter-spacing:-0.03em;">30€</span>
+                            <span id="price-period-premium" style="font-size:1.15rem; color:#94a3b8; font-weight:600;">/mes</span>
+                            <span id="price-savings-badge" style="display:none; background:rgba(16,185,129,0.2); color:#34d399; font-size:0.75rem; font-weight:800; padding:3px 10px; border-radius:999px; border:1px solid rgba(16,185,129,0.4); margin-left:8px;">
+                                Facturado 288€/año
+                            </span>
+                        </div>
+
+                        <!-- Lista de Beneficios Premium -->
+                        <ul style="list-style:none; padding:0; margin:0 0 35px 0;">
+                            <li style="display:flex; align-items:center; gap:12px; margin-bottom:16px; color:#f1f5f9; font-size:1rem; font-weight:600;">
+                                <i class="fa-solid fa-bolt" style="color:#38bdf8; font-size:1.15rem; flex-shrink:0;"></i> Seguimiento GPS y telemetría biométrica en vivo
+                            </li>
+                            <li style="display:flex; align-items:center; gap:12px; margin-bottom:16px; color:#f1f5f9; font-size:1rem; font-weight:600;">
+                                <i class="fa-solid fa-heart-pulse" style="color:#ef4444; font-size:1.15rem; flex-shrink:0;"></i> Triaje veterinario 24/7 y chat directo con expertos
+                            </li>
+                            <li style="display:flex; align-items:center; gap:12px; margin-bottom:16px; color:#f1f5f9; font-size:1rem; font-weight:600;">
+                                <i class="fa-solid fa-person-walking-with-dog" style="color:#10b981; font-size:1.15rem; flex-shrink:0;"></i> 1 Paseo certificado al mes incluido gratis
+                            </li>
+                            <li style="display:flex; align-items:center; gap:12px; margin-bottom:16px; color:#f1f5f9; font-size:1rem; font-weight:600;">
+                                <i class="fa-solid fa-shield-halved" style="color:#f59e0b; font-size:1.15rem; flex-shrink:0;"></i> Descuentos exclusivos del 20% en red veterinaria
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Botón Principal Premium Sincronizado con Carrito -->
+                    <button type="button" id="btn-contratar-premium" class="btn-primary" onclick="contratarPlanPremiumDirecto()" style="width:100%; padding:18px; border-radius:18px; font-size:1.05rem; font-weight:800; background:linear-gradient(135deg, #0284c7, #0ea5e9); color:white; border:none; cursor:pointer; transition:all 0.25s ease; box-shadow:0 8px 25px rgba(2,132,199,0.4); display:flex; align-items:center; justify-content:center; gap:10px;">
+                        <i class="fa-solid fa-lock"></i> Activar protección Premium
+                    </button>
+                </div>
+
             </div>
-            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:30px;">
-                <div style="background:white; padding:40px; border-radius:30px; border:1px solid #f0f0f0; transition: transform 0.3s;" onmouseover="this.style.transform='translateY(-10px)'" onmouseout="this.style.transform='translateY(0)'">
-                    <div style="width:60px; height:60px; background:#EBF5FB; color:var(--clr-primary); border-radius:15px; display:flex; align-items:center; justify-content:center; font-size:1.5rem; margin-bottom:25px;"><i class="fa-solid fa-laptop-medical"></i></div>
-                    <h3 style="margin-bottom:15px; font-weight:800;">Prevención antes que reacción</h3>
-                    <p style="color:var(--clr-text-muted); line-height:1.7;">No esperamos a que tu mascota se sienta mal. Nuestro sistema detecta anomalías en su rutina para que puedas actuar a tiempo.</p>
+
+            <!-- TABLA COMPARATIVA INTERACTIVA APPLE GLASS (COHERENCIA TOTAL) -->
+            <div style="background:rgba(255,255,255,0.85); backdrop-filter:blur(24px); -webkit-backdrop-filter:blur(24px); border:1px solid rgba(226,232,240,0.8); border-radius:32px; padding:45px 35px; box-shadow:0 20px 50px rgba(15,23,42,0.04); max-width:1050px; margin:0 auto 70px auto;">
+                <div style="text-align:center; margin-bottom:35px;">
+                    <span style="font-size:0.8rem; font-weight:800; color:#0284c7; text-transform:uppercase; letter-spacing:1.5px;">Comparativa Detallada</span>
+                    <h3 style="font-size:2rem; font-weight:800; color:#0f172a; margin-top:8px;">¿Qué incluye cada plan exactamente?</h3>
                 </div>
-                <div style="background:white; padding:40px; border-radius:30px; border:1px solid #f0f0f0; transition: transform 0.3s;" onmouseover="this.style.transform='translateY(-10px)'" onmouseout="this.style.transform='translateY(0)'">
-                    <div style="width:60px; height:60px; background:#EBF5FB; color:var(--clr-primary); border-radius:15px; display:flex; align-items:center; justify-content:center; font-size:1.5rem; margin-bottom:25px;"><i class="fa-solid fa-piggy-bank"></i></div>
-                    <h3 style="margin-bottom:15px; font-weight:800;">Ahorro inteligente</h3>
-                    <p style="color:var(--clr-text-muted); line-height:1.7;">Centralizar sus cuidados, alimentación y salud en una sola plataforma te permite acceder a descuentos exclusivos y evitar gastos médicos de urgencia.</p>
-                </div>
-                <div style="background:white; padding:40px; border-radius:30px; border:1px solid #f0f0f0; transition: transform 0.3s;" onmouseover="this.style.transform='translateY(-10px)'" onmouseout="this.style.transform='translateY(0)'">
-                    <div style="width:60px; height:60px; background:#EBF5FB; color:var(--clr-primary); border-radius:15px; display:flex; align-items:center; justify-content:center; font-size:1.5rem; margin-bottom:25px;"><i class="fa-solid fa-mobile-screen-button"></i></div>
-                    <h3 style="margin-bottom:15px; font-weight:800;">Comodidad absoluta</h3>
-                    <p style="color:var(--clr-text-muted); line-height:1.7;">Desde agendar un baño hasta consultar a un veterinario de madrugada, todo se resuelve con un solo clic en tu teléfono.</p>
+
+                <div style="overflow-x:auto;">
+                    <table style="width:100%; border-collapse:collapse; text-align:left; font-size:0.95rem;">
+                        <thead>
+                            <tr style="border-bottom:2px solid #e2e8f0;">
+                                <th style="padding:16px 12px; color:#475569; font-weight:800; width:45%;">Característica</th>
+                                <th style="padding:16px 12px; color:#0f172a; font-weight:800; text-align:center; width:27%;">CUDI Esencial</th>
+                                <th style="padding:16px 12px; color:#0284c7; font-weight:800; text-align:center; width:28%; background:rgba(2,132,199,0.06); border-radius:12px 12px 0 0;">CUDI Premium Care</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom:1px solid #f1f5f9;">
+                                <td style="padding:16px 12px; font-weight:600; color:#1e293b;"><i class="fa-solid fa-file-waveform" style="color:#0284c7; margin-right:8px;"></i> Expediente médico y vacunas</td>
+                                <td style="padding:16px 12px; text-align:center; color:#10b981; font-weight:700;"><i class="fa-solid fa-check"></i> Incluido</td>
+                                <td style="padding:16px 12px; text-align:center; color:#10b981; font-weight:700; background:rgba(2,132,199,0.03);"><i class="fa-solid fa-check-double"></i> Ilimitado + IA</td>
+                            </tr>
+                            <tr style="border-bottom:1px solid #f1f5f9;">
+                                <td style="padding:16px 12px; font-weight:600; color:#1e293b;"><i class="fa-solid fa-location-crosshairs" style="color:#0284c7; margin-right:8px;"></i> Monitor GPS Satelital y Geo-vallas</td>
+                                <td style="padding:16px 12px; text-align:center; color:#94a3b8;"><i class="fa-solid fa-minus"></i> No disponible</td>
+                                <td style="padding:16px 12px; text-align:center; color:#10b981; font-weight:700; background:rgba(2,132,199,0.03);"><i class="fa-solid fa-check"></i> Tiempo Real (LTE)</td>
+                            </tr>
+                            <tr style="border-bottom:1px solid #f1f5f9;">
+                                <td style="padding:16px 12px; font-weight:600; color:#1e293b;"><i class="fa-solid fa-user-doctor" style="color:#0284c7; margin-right:8px;"></i> Triaje veterinario y consultas urgentes</td>
+                                <td style="padding:16px 12px; text-align:center; color:#94a3b8;"><i class="fa-solid fa-minus"></i> Sólo directorio</td>
+                                <td style="padding:16px 12px; text-align:center; color:#10b981; font-weight:700; background:rgba(2,132,199,0.03);"><i class="fa-solid fa-check"></i> 24/7 Sin límites</td>
+                            </tr>
+                            <tr style="border-bottom:1px solid #f1f5f9;">
+                                <td style="padding:16px 12px; font-weight:600; color:#1e293b;"><i class="fa-solid fa-person-hiking" style="color:#0284c7; margin-right:8px;"></i> Paseo mensual con cuidador verificado</td>
+                                <td style="padding:16px 12px; text-align:center; color:#94a3b8;"><i class="fa-solid fa-minus"></i> De pago</td>
+                                <td style="padding:16px 12px; text-align:center; color:#10b981; font-weight:700; background:rgba(2,132,199,0.03);"><i class="fa-solid fa-check"></i> 1 Paseo Gratis / mes</td>
+                            </tr>
+                            <tr>
+                                <td style="padding:16px 12px; font-weight:600; color:#1e293b;"><i class="fa-solid fa-tags" style="color:#0284c7; margin-right:8px;"></i> Descuentos en red clínica y tienda</td>
+                                <td style="padding:16px 12px; text-align:center; color:#64748b;">Hasta 5%</td>
+                                <td style="padding:16px 12px; text-align:center; color:#0284c7; font-weight:800; background:rgba(2,132,199,0.06); border-radius:0 0 12px 12px;">Hasta 25% Exclusivo</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
+
+            <!-- SECCIÓN DE BENEFICIOS CLAVE APPLE GLASS -->
+            <div style="text-align:center; max-width:800px; margin:0 auto 40px auto;">
+                <span style="font-size:0.8rem; font-weight:800; color:#0284c7; text-transform:uppercase; letter-spacing:1.5px;">Ventajas CUDI</span>
+                <h3 style="font-size:2.2rem; font-weight:800; color:#0f172a; margin-top:8px;">¿Por qué elegir el ecosistema CUDI?</h3>
+            </div>
+
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:25px; max-width:1050px; margin:0 auto;">
+                <div class="cudi-benefit-card-glass">
+                    <div class="benefit-icon-wrap" style="color:#0284c7; background:rgba(2,132,199,0.1);"><i class="fa-solid fa-laptop-medical"></i></div>
+                    <h4 style="font-size:1.2rem; font-weight:800; color:#0f172a; margin-bottom:10px;">Prevención antes que reacción</h4>
+                    <p style="color:#64748b; font-size:0.95rem; line-height:1.6; margin:0;">No esperamos a que tu mascota enferme. Nuestro algoritmo detecta anomalías biológicas para actuar con tiempo.</p>
+                </div>
+                <div class="cudi-benefit-card-glass">
+                    <div class="benefit-icon-wrap" style="color:#10b981; background:rgba(16,185,129,0.1);"><i class="fa-solid fa-piggy-bank"></i></div>
+                    <h4 style="font-size:1.2rem; font-weight:800; color:#0f172a; margin-bottom:10px;">Ahorro inteligente anual</h4>
+                    <p style="color:#64748b; font-size:0.95rem; line-height:1.6; margin:0;">Centralizar su cuidado y nutrición ahorra hasta 320€ al año en visitas de urgencia y compras habituales.</p>
+                </div>
+                <div class="cudi-benefit-card-glass">
+                    <div class="benefit-icon-wrap" style="color:#f59e0b; background:rgba(245,158,11,0.1);"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                    <h4 style="font-size:1.2rem; font-weight:800; color:#0f172a; margin-bottom:10px;">Comodidad y paz mental</h4>
+                    <p style="color:#64748b; font-size:0.95rem; line-height:1.6; margin:0;">Desde agendar un baño hasta consultar a un veterinario de madrugada, todo se resuelve con un clic en tu teléfono.</p>
+                </div>
+            </div>
+
         </div>
     </section>
 
-    <!-- SECCIÓN 2: MAPA DE PLANES -->
-    <section style="padding: 100px 0; background:#f8fafc;">
-        <div class="container">
-            <div style="text-align:center; margin-bottom:80px;">
-                <h2 style="font-size:2.8rem; font-weight:800; letter-spacing:-1px;">Nuestros Planes de Cuidado</h2>
-                <p style="font-size:1.1rem; color:var(--clr-text-muted);">Sin compromisos de permanencia. Cambia de plan cuando quieras.</p>
-            </div>
+    <!-- ESTILOS APPLE GLASS PARA PLANES -->
+    <style>
+        .billing-btn {
+            background: transparent;
+            border: none;
+            padding: 9px 20px;
+            border-radius: 999px;
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: #475569;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.25s ease;
+        }
+        .billing-btn.active {
+            background: #0f172a;
+            color: #ffffff;
+            box-shadow: 0 4px 14px rgba(15,23,42,0.2);
+        }
+        .badge-discount-save {
+            background: #10b981;
+            color: white;
+            font-size: 0.72rem;
+            font-weight: 800;
+            padding: 2px 8px;
+            border-radius: 999px;
+        }
 
-            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 450px)); gap:40px; justify-content:center;">
-                <!-- Plan Esencial -->
-                <div style="background:white; padding:50px; border-radius:40px; border:1px solid #eee; display:flex; flex-direction:column; justify-content:space-between; box-shadow:0 20px 50px rgba(0,0,0,0.03);">
-                    <div>
-                        <h3 style="font-size:1.8rem; font-weight:800; margin-bottom:10px;">CUDI Esencial</h3>
-                        <p style="color:var(--clr-text-muted); margin-bottom:30px; font-size:1.1rem;">Perfecto para organizar la vida de tu mascota y descubrir nuestra red de confianza.</p>
-<div style="background-image:url('rutas-paseos-seguros-barcelona.png'); background-size:cover; height:150px; border-radius:15px; margin-bottom:20px;"></div>
-                        <div style="font-size:3.5rem; font-weight:800; color:var(--clr-text); margin-bottom:40px;">0€ <span style="font-size:1.1rem; color:var(--clr-text-muted); font-weight:400;">/mes</span></div>
-                        <ul style="list-style:none; padding:0; margin-bottom:50px;">
-                            <li style="margin-bottom:18px; display:flex; align-items:center; gap:12px;"><i class="fa-solid fa-circle-check" style="color:#20C997;"></i> Expediente digital completo</li>
-                            <li style="margin-bottom:18px; display:flex; align-items:center; gap:12px;"><i class="fa-solid fa-circle-check" style="color:#20C997;"></i> Alertas de vacunación</li>
-                            <li style="margin-bottom:18px; display:flex; align-items:center; gap:12px;"><i class="fa-solid fa-circle-check" style="color:#20C997;"></i> Acceso al catálogo completo</li>
-                            <li style="margin-bottom:18px; display:flex; align-items:center; gap:12px; opacity:0.5;"><i class="fa-solid fa-circle" style="font-size:0.5rem;"></i> Navegación con anuncios</li>
-                        </ul>
-                    </div>
-                    <button class="btn-primary" aria-label="Acción principal" style="width:100%; padding:20px; border-radius:15px; font-size:1.1rem; border:none; background:#f0f0f0; color:var(--clr-text); cursor:pointer;">Crear cuenta gratuita</button>
-                </div>
+        .p-card-glass-essential:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 60px rgba(15,23,42,0.08);
+            border-color: #cbd5e1;
+        }
+        .p-card-glass-premium:hover {
+            transform: scale(1.02) translateY(-8px);
+            box-shadow: 0 35px 80px -10px rgba(2,132,199,0.45);
+            border-color: #38bdf8;
+        }
 
-                <!-- Plan Premium -->
-                <div style="background:var(--clr-text); color:white; padding:50px; border-radius:40px; position:relative; display:flex; flex-direction:column; justify-content:space-between; box-shadow:0 30px 60px rgba(0, 119, 182, 0.2);">
-                    <div style="position:absolute; top:-20px; left:50%; transform:translateX(-50%); background:var(--clr-primary); padding:10px 30px; border-radius:50px; font-weight:800; font-size:0.8rem; letter-spacing:1px;">MÁS RECOMENDADO</div>
-                    <div>
-                        <h3 style="font-size:1.8rem; font-weight:800; margin-bottom:10px;">CUDI Premium Care</h3>
-                        <p style="color:rgba(255,255,255,0.7); margin-bottom:30px; font-size:1.1rem;">La experiencia definitiva de paz mental. Un asistente inteligente para tu compañero.</p>
-<div style="background-image:url('dashboard-biometrico-gemelo-digital-mascotas.png'); background-size:cover; height:150px; border-radius:15px; margin-bottom:20px;"></div>
-                        <div style="font-size:3.5rem; font-weight:800; color:white; margin-bottom:40px;">30€ <span style="font-size:1.1rem; color:rgba(255,255,255,0.5); font-weight:400;">/mes</span></div>
-                        <ul style="list-style:none; padding:0; margin-bottom:50px;">
-                            <li style="margin-bottom:18px; display:flex; align-items:center; gap:12px;"><i class="fa-solid fa-bolt" style="color:var(--clr-primary);"></i> Seguimiento GPS y telemetría</li>
-                            <li style="margin-bottom:18px; display:flex; align-items:center; gap:12px;"><i class="fa-solid fa-heart-pulse" style="color:var(--clr-primary);"></i> Chat veterinario 24/7</li>
-                            <li style="margin-bottom:18px; display:flex; align-items:center; gap:12px;"><i class="fa-solid fa-star" style="color:var(--clr-primary);"></i> Paseo gratuito al mes</li>
-                            <li style="margin-bottom:18px; display:flex; align-items:center; gap:12px;"><i class="fa-solid fa-shield-halved" style="color:var(--clr-primary);"></i> Descuentos exclusivos</li>
-                        </ul>
-                    </div>
-                    <button class="btn-primary" aria-label="Acción principal" style="width:100%; padding:20px; border-radius:15px; font-size:1.1rem; border:none; background:var(--clr-primary); color:white; font-weight:800; cursor:pointer;" onclick="addToCart('CUDI Premium Care', 30.00, 'dashboard-biometrico-gemelo-digital-mascotas.png'); toggleCart();">Activar protección Premium</button>
-                </div>
-            </div>
-        </div>
-    </section>
+        .cudi-benefit-card-glass {
+            background: rgba(255,255,255,0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            padding: 32px 28px;
+            border-radius: 24px;
+            border: 1px solid rgba(226,232,240,0.8);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+            transition: all 0.3s ease;
+        }
+        .cudi-benefit-card-glass:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 18px 40px rgba(0,0,0,0.06);
+            border-color: #cbd5e1;
+        }
+        .benefit-icon-wrap {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.35rem;
+            margin-bottom: 20px;
+        }
+    </style>
+
+    <script>
+        // ESTADO DE FACTURACIÓN (MENSUAL / ANUAL)
+        let billingPeriodActual = 'monthly';
+
+        function cambiarPeriodoFacturacion(periodo) {
+            billingPeriodActual = periodo;
+            const btnM = document.getElementById('btn-billing-monthly');
+            const btnA = document.getElementById('btn-billing-annual');
+            const pricePrem = document.getElementById('price-val-premium');
+            const periodPrem = document.getElementById('price-period-premium');
+            const savingsBadge = document.getElementById('price-savings-badge');
+
+            if (periodo === 'annual') {
+                btnA.classList.add('active');
+                btnM.classList.remove('active');
+                if (pricePrem) pricePrem.textContent = '24€';
+                if (periodPrem) periodPrem.textContent = '/mes';
+                if (savingsBadge) savingsBadge.style.display = 'inline-block';
+            } else {
+                btnM.classList.add('active');
+                btnA.classList.remove('active');
+                if (pricePrem) pricePrem.textContent = '30€';
+                if (periodPrem) periodPrem.textContent = '/mes';
+                if (savingsBadge) savingsBadge.style.display = 'none';
+            }
+        }
+
+        function crearCuentaGratuitaPlan() {
+            if (typeof openAuthModal === 'function') {
+                openAuthModal();
+            } else {
+                window.location.href = 'index.html#suscripciones';
+            }
+        }
+
+        function contratarPlanPremiumDirecto() {
+            const precio = billingPeriodActual === 'annual' ? 288.00 : 30.00;
+            const nombre = billingPeriodActual === 'annual' ? 'CUDI Premium Care (Anual -20%)' : 'CUDI Premium Care (Mensual)';
+            const img = 'dashboard-biometrico-gemelo-digital-mascotas.png';
+
+            if (typeof addToCart === 'function') {
+                addToCart(nombre, precio, img);
+                if (typeof toggleCart === 'function') {
+                    toggleCart();
+                }
+            } else {
+                window.location.href = 'contratar-plan-premium-cudi.html';
+            }
+        }
+    </script>
 
     
 

@@ -472,51 +472,139 @@
             }
         </style>
         
-        <div class=container>
-            <div class=section-heading style=text-align:center;margin-bottom:100px;max-width:900px;margin-left:auto;margin-right:auto;>
-                <span style=color:#0077B6;font-weight:800;text-transform:uppercase;letter-spacing:2px;display:block;margin-bottom:15px;>Planes de Suscripción</span>
-                <h2 style=font-size:4rem;font-weight:800;line-height:1.1;margin-bottom:30px;letter-spacing:-3px;>Elige el nivel de protección que tu mejor amigo merece</h2>
-                <p style=font-size:1.4rem;color:#64748b;line-height:1.7;>Diseñamos nuestros planes pensando en tu tranquilidad y en su bienestar de perros y gatos. Empieza hoy mismo.</p>
+        <div class="container">
+            <div class="section-heading" style="text-align:center;margin-bottom:50px;max-width:900px;margin-left:auto;margin-right:auto;">
+                <span style="color:#0077B6;font-weight:800;text-transform:uppercase;letter-spacing:2px;display:block;margin-bottom:15px;">Planes de Suscripción</span>
+                <h2 style="font-size:clamp(2.4rem, 4.5vw, 3.8rem);font-weight:800;line-height:1.15;margin-bottom:20px;letter-spacing:-0.03em;">Elige el nivel de protección que tu mejor amigo merece</h2>
+                <p style="font-size:1.25rem;color:#64748b;line-height:1.7;margin-bottom:30px;">Diseñamos nuestros planes pensando en tu tranquilidad y en su bienestar de perros y gatos. Empieza hoy mismo.</p>
+
+                <!-- Conmutador Mensual / Anual Apple Glass en Index -->
+                <div class="billing-toggle-glass-home" style="display:inline-flex; align-items:center; gap:8px; background:rgba(226,232,240,0.7); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); padding:5px 6px; border-radius:999px; border:1px solid rgba(255,255,255,0.9); box-shadow:0 8px 25px rgba(15,23,42,0.04);">
+                    <button type="button" class="billing-btn-home active" id="btn-home-billing-monthly" onclick="cambiarPeriodoHome('monthly')">
+                        Facturación Mensual
+                    </button>
+                    <button type="button" class="billing-btn-home" id="btn-home-billing-annual" onclick="cambiarPeriodoHome('annual')">
+                        Facturación Anual <span style="background:#10b981; color:white; font-size:0.72rem; font-weight:800; padding:2px 8px; border-radius:999px;">-20% Ahorro</span>
+                    </button>
+                </div>
             </div>
             
-            <div class=p-grid>
+            <div class="p-grid" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:35px; max-width:1050px; margin:0 auto;">
                 <!-- CUDI Esencial -->
-                <div class=p-card-base>
-                    <h3>CUDI Esencial</h3>
-                    <p class=p-desc>Perfecto para organizar la vida de tu mascota y descubrir nuestra red de confianza.</p>
-                    <div class=p-price>0<span>€/mes</span></div>
-                    <ul class=b-list>
-                        <li class="b-item"><i class="fa-solid fa-check b-icon"></i> Expediente completo</li>
-                        <li class="b-item"><i class="fa-solid fa-check b-icon"></i> Alertas vacunas</li>
-                        <li class="b-item"><i class="fa-solid fa-check b-icon"></i> Acceso catálogo</li>
-                        <li class="b-item"><i class="fa-solid fa-check b-icon"></i> Con anuncios</li>
-                    </ul>
-                    <button class=p-btn-b onclick=addToCart(plan_basic_name,0,plan_img);toggleCart()>Crear cuenta gratuita</button>
+                <div class="p-card-base" style="background:rgba(255,255,255,0.92); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border-radius:36px; padding:45px 40px; border:1px solid #e2e8f0; display:flex; flex-direction:column; justify-content:space-between; box-shadow:0 15px 40px rgba(15,23,42,0.03); transition:all 0.35s ease;">
+                    <div>
+                        <div style="display:inline-flex; align-items:center; gap:6px; background:#f1f5f9; color:#475569; padding:4px 12px; border-radius:999px; font-size:0.75rem; font-weight:700; margin-bottom:14px;">
+                            <i class="fa-solid fa-seedling" style="color:#10b981;"></i> Nivel de Entrada
+                        </div>
+                        <h3 style="font-size:2.2rem; font-weight:800; margin-bottom:12px; color:#0f172a; letter-spacing:-0.02em;">CUDI Esencial</h3>
+                        <p class="p-desc" style="color:#64748b; font-size:1.05rem; line-height:1.6; margin-bottom:25px;">Perfecto para organizar la vida de tu mascota y descubrir nuestra red de confianza.</p>
+                        
+                        <div class="p-price" style="font-size:3.8rem; font-weight:800; margin-bottom:25px; color:#0f172a; display:flex; align-items:baseline; gap:5px; letter-spacing:-0.03em;">
+                            0<span style="font-size:1.15rem; color:#64748b; font-weight:600;">€/mes</span>
+                        </div>
+                        
+                        <ul class="b-list" style="list-style:none; padding:0; margin-bottom:35px;">
+                            <li class="b-item" style="display:flex; align-items:center; gap:12px; margin-bottom:15px; color:#334155; font-size:1rem; font-weight:600;"><i class="fa-solid fa-circle-check" style="color:#10b981; font-size:1.1rem;"></i> Expediente completo</li>
+                            <li class="b-item" style="display:flex; align-items:center; gap:12px; margin-bottom:15px; color:#334155; font-size:1rem; font-weight:600;"><i class="fa-solid fa-circle-check" style="color:#10b981; font-size:1.1rem;"></i> Alertas de vacunas</li>
+                            <li class="b-item" style="display:flex; align-items:center; gap:12px; margin-bottom:15px; color:#334155; font-size:1rem; font-weight:600;"><i class="fa-solid fa-circle-check" style="color:#10b981; font-size:1.1rem;"></i> Acceso al catálogo</li>
+                            <li class="b-item" style="display:flex; align-items:center; gap:12px; margin-bottom:15px; color:#94a3b8; font-size:0.95rem; font-weight:500;"><i class="fa-solid fa-circle-info" style="color:#cbd5e1; font-size:1.05rem;"></i> Con anuncios</li>
+                        </ul>
+                    </div>
+                    
+                    <button type="button" class="p-btn-b" onclick="addToCart(plan_basic_name,0,plan_img);toggleCart()" style="width:100%; padding:18px; border-radius:18px; border:1px solid #cbd5e1; font-weight:800; font-size:1.05rem; cursor:pointer; background:#f1f5f9; color:#0f172a; transition:all 0.25s ease;">
+                        <i class="fa-solid fa-user-plus"></i> Crear cuenta gratuita
+                    </button>
                 </div>
                 
-                <!-- CUDI Premium Care -->
-                <div class=p-card-p>
-                    <div class=p-badge>MÁS RECOMENDADO</div>
-                    <h3>CUDI Premium Care</h3>
-                    <p class=p-desc>La experiencia definitiva de paz mental. Un asistente inteligente para tu compañero.</p>
-                    <div class=p-price>30<span>€/mes</span></div>
-                    <ul class=b-list>
-                        <li class="b-item"><i class="fa-solid fa-check b-icon"></i> GPS y Telemetría</li>
-                        <li class="b-item"><i class="fa-solid fa-check b-icon"></i> Chat veterinario 24/7</li>
-                        <li class="b-item"><i class="fa-solid fa-check b-icon"></i> Paseo gratuito</li>
-                        <li class="b-item"><i class="fa-solid fa-check b-icon"></i> Descuentos socios</li>
-                    </ul>
-                    <button class=p-btn-p onclick=addToCart(plan_premium_name,30,plan_img);toggleCart()>Activar protección Premium</button>
+                <!-- CUDI Premium Care (Apple Liquid Glass) -->
+                <div class="p-card-p" style="background:linear-gradient(155deg, rgba(15,23,42,0.96) 0%, rgba(30,41,59,0.92) 100%); backdrop-filter:blur(32px) saturate(180%); -webkit-backdrop-filter:blur(32px) saturate(180%); color:white; border-radius:36px; padding:45px 40px; border:2px solid rgba(2,132,199,0.85); display:flex; flex-direction:column; justify-content:space-between; box-shadow:0 25px 60px -10px rgba(2,132,199,0.35); position:relative; overflow:visible; transform:scale(1.02); transition:all 0.35s ease;">
+                    <div class="p-badge" style="background:linear-gradient(135deg, #0284c7, #0ea5e9); color:white; padding:7px 22px; border-radius:999px; font-size:0.8rem; font-weight:800; text-transform:uppercase; position:absolute; top:-16px; right:auto; left:50%; transform:translateX(-50%); box-shadow:0 6px 20px rgba(2,132,199,0.5); border:1.5px solid rgba(255,255,255,0.4); white-space:nowrap;">
+                        <i class="fa-solid fa-crown" style="color:#fde047;"></i> MÁS RECOMENDADO
+                    </div>
+                    
+                    <div>
+                        <div style="display:inline-flex; align-items:center; gap:6px; background:rgba(2,132,199,0.25); color:#38bdf8; border:1px solid rgba(56,189,248,0.4); padding:4px 12px; border-radius:999px; font-size:0.75rem; font-weight:800; margin-bottom:14px;">
+                            <i class="fa-solid fa-shield-cat"></i> Cuidado Preventivo Total
+                        </div>
+                        <h3 style="font-size:2.2rem; font-weight:800; margin-bottom:12px; color:white; letter-spacing:-0.02em;">CUDI Premium Care</h3>
+                        <p class="p-desc" style="color:#cbd5e1; font-size:1.05rem; line-height:1.6; margin-bottom:25px;">La experiencia definitiva de paz mental. Un asistente inteligente para tu compañero.</p>
+                        
+                        <div class="p-price" style="font-size:3.8rem; font-weight:800; margin-bottom:25px; color:#38bdf8; display:flex; align-items:baseline; gap:5px; letter-spacing:-0.03em;">
+                            <span id="home-price-val-prem">30</span><span id="home-price-period-prem" style="font-size:1.15rem; color:#94a3b8; font-weight:600;">€/mes</span>
+                            <span id="home-savings-badge" style="display:none; background:rgba(16,185,129,0.2); color:#34d399; font-size:0.72rem; font-weight:800; padding:3px 9px; border-radius:999px; border:1px solid rgba(16,185,129,0.4); margin-left:8px;">288€/año</span>
+                        </div>
+                        
+                        <ul class="b-list" style="list-style:none; padding:0; margin-bottom:35px;">
+                            <li class="b-item" style="display:flex; align-items:center; gap:12px; margin-bottom:15px; color:#f1f5f9; font-size:1rem; font-weight:600;"><i class="fa-solid fa-bolt" style="color:#38bdf8; font-size:1.1rem;"></i> GPS y Telemetría en vivo</li>
+                            <li class="b-item" style="display:flex; align-items:center; gap:12px; margin-bottom:15px; color:#f1f5f9; font-size:1rem; font-weight:600;"><i class="fa-solid fa-heart-pulse" style="color:#ef4444; font-size:1.1rem;"></i> Chat veterinario 24/7</li>
+                            <li class="b-item" style="display:flex; align-items:center; gap:12px; margin-bottom:15px; color:#f1f5f9; font-size:1rem; font-weight:600;"><i class="fa-solid fa-person-walking-with-dog" style="color:#10b981; font-size:1.1rem;"></i> Paseo mensual gratuito</li>
+                            <li class="b-item" style="display:flex; align-items:center; gap:12px; margin-bottom:15px; color:#f1f5f9; font-size:1rem; font-weight:600;"><i class="fa-solid fa-shield-halved" style="color:#f59e0b; font-size:1.1rem;"></i> Descuentos exclusivos socios</li>
+                        </ul>
+                    </div>
+                    
+                    <button type="button" class="p-btn-p" onclick="contratarPremiumHome()" style="width:100%; padding:18px; border-radius:18px; font-weight:800; font-size:1.05rem; cursor:pointer; background:linear-gradient(135deg, #0284c7, #0ea5e9); color:white; border:none; box-shadow:0 8px 25px rgba(2,132,199,0.4); display:flex; align-items:center; justify-content:center; gap:10px; transition:all 0.25s ease;">
+                        <i class="fa-solid fa-lock"></i> Activar protección Premium
+                    </button>
                 </div>
             </div>
         </div>
     </section>
 
+    <style>
+        .billing-btn-home {
+            background: transparent;
+            border: none;
+            padding: 8px 18px;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #475569;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s ease;
+        }
+        .billing-btn-home.active {
+            background: #0f172a;
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(15,23,42,0.2);
+        }
+    </style>
 
     <script>
-        const plan_basic_name = /CUDI Esencial/.source;
-        const plan_premium_name = /CUDI Premium Care/.source;
-        const plan_img = /dashboard-biometrico-gemelo-digital-mascotas.png/.source;
+        const plan_basic_name = "CUDI Esencial";
+        const plan_premium_name = "CUDI Premium Care";
+        const plan_img = "dashboard-biometrico-gemelo-digital-mascotas.png";
+
+        let homeBillingPeriod = 'monthly';
+
+        function cambiarPeriodoHome(periodo) {
+            homeBillingPeriod = periodo;
+            const btnM = document.getElementById('btn-home-billing-monthly');
+            const btnA = document.getElementById('btn-home-billing-annual');
+            const valEl = document.getElementById('home-price-val-prem');
+            const badgeEl = document.getElementById('home-savings-badge');
+
+            if (periodo === 'annual') {
+                btnA?.classList.add('active');
+                btnM?.classList.remove('active');
+                if (valEl) valEl.textContent = '24';
+                if (badgeEl) badgeEl.style.display = 'inline-block';
+            } else {
+                btnM?.classList.add('active');
+                btnA?.classList.remove('active');
+                if (valEl) valEl.textContent = '30';
+                if (badgeEl) badgeEl.style.display = 'none';
+            }
+        }
+
+        function contratarPremiumHome() {
+            const precio = homeBillingPeriod === 'annual' ? 288.00 : 30.00;
+            const nombre = homeBillingPeriod === 'annual' ? 'CUDI Premium Care (Anual -20%)' : 'CUDI Premium Care (Mensual)';
+            addToCart(nombre, precio, plan_img);
+            toggleCart();
+        }
     </script>
 
 
