@@ -753,6 +753,44 @@ REGLAS: Responde siempre en español de forma empática, precisa y breve (máxim
         };
     },
 
+    PAGES_KNOWLEDGE_BASE: [{"url": "ansiedad-separacion-cortisol-mascotas.html", "title": "Reducción de Cortisol Sistémico en Trastornos de Ansiedad por Separación Moderada | CUDI Journal", "desc": "El aislamiento prolongado en apartamentos urbanos dispara la curva glucocorticoide, generando desde destrozos hogareños hasta depresión sistémica.", "content": "Reducción de Cortisol Sistémico en Trastornos de Ansiedad por Separación Moderada | CUDI Journal cudi.ai2026@gmail.com 900 123 456 ES CA EN Tu Cesta CUDI Total Estimado: 0.00 € Procesar Pago Seguro El aislamiento prolongado en apartamentos urbanos dispara la curva glucocorticoide, generando desde destrozos hogareños hasta depresión sistémica. Se ha validado que rutinas de paseo grupales olfativas de solo 45 minutos disminuyen el estrés endócrino durante las siguientes 24 horas. Los paseadores certificados que transmiten señales geográficas actúan no solo como ejercicio motriz, sino como pilar de salud mental. Picogramos de Cortisol Sanguíneo (Efecto Paseadores) Paseadores Urbanos Homologados Implementa inmediatamente las recomendaciones clínicas del estudio en tu hogar multiespecie. Reservar NannyPets 24/7 (15€/h) Garantía y Respaldo por la red CUDI Inicio Lanzamiento Comunidad Simulador"}, {"url": "bienestar-integral-multiespecie.html", "title": "Bienestar y Salud Holística para Mascotas | CUDI Marketplace", "desc": "", "content": "Bienestar y Salud Holística para Mascotas | CUDI Marketplace cudi.ai2026@gmail.com 900 123 456 ES CA EN Tu Cesta CUDI Total Estimado: 0.00 € Procesar Pago Seguro Tienda > Bienestar Peluquería y Spa Animal Explora los mejores servicios certificados por CUDI para tu perro y tu gato. Rango de Precio Económico (0-20€) Estándar (20-50€) Premium (+50€) Proximidad Menos de 5km Menos de 10km En toda la ciudad Disponibilidad Reserva Inmediata Fines de semana Verificado Grooming Master Corte a tijera y tratamientos de ozonoterapia para perros y gatos. 30.00 € Ver Detalles del Producto Verificado ZenPet Spa Ambiente relajado con feromonas para que la higiene sea una experiencia libre de estrés. 50.00 € Ver Detalles del Producto Verificado Bubbles & Paws Servicio rápido de baño y secado con productos 100% biodegradables. 22.00 € Ver Detalles del Producto Inicio Lanzamiento Comunidad Simulador Tienda"}, {"url": "comunidad-cudi.html", "title": "Comunidad CUDI | Red Social de Bienestar", "desc": "", "content": "Comunidad CUDI | Red Social de Bienestar cudi.ai2026@gmail.com 900 123 456 Tú Max Cooper Cleo Bella Rex Mimi Companion (Demo) Golden Retriever • 2 años 124 Seguidores 56 Siguiendo Feed Principal Grupos Mis Eventos ¿Qué aventura vivió tu mascota hoy? Comparte una foto... Cooper Hace 2 horas • Parque del Retiro Seguir + Disfrutando de un paseo matutino. ¡Mis niveles de energía están por las nubes según mi CUDI Smart Collar! 🦴✨ 45 12 Compartir Bella Hace 5 horas • Barcelona Seguir + ¿Quién más está listo para el fin de semana de juegos? La IA dice que soy un 98% compatible con Labradores hoy. ¡A jugar! 🎾 32 8 Compartir Luna Hace 8 horas • Sierra de Guadarrama Seguir + 14 km recorridos hoy en la ruta pet-friendly con el Collar CUDI GPS. Batería al 91% y ritmo cardíaco estable en 74 bpm. ❄️🐺 ¿Quién se apunta al próximo encuentro? 68 19 Compartir Recomendación IA del día ¡Match detectado! Luna"}, {"url": "contratar-plan-premium-cudi.html", "title": "CUDI | Pago Transaccional Seguro", "desc": "", "content": "CUDI | Pago Transaccional Seguro cudi.ai2026@gmail.com 900 123 456 ES CA EN Resumen de tu pedido 0.00 € 1 2 3 Datos Logísticos de Envío Nombre Completo Dirección de Entrega Método de Pago Seguro Tarjeta PayPal Bizum Apple Pay Total Final: 0.00 € Confirmar y Pagar Ahora ¡Pago Confirmado! SEGUIMIENTO ACTIVO Estado Actual Validando Transacción ETA Estimado 24-48h Pedido Preparado En Camino Entrega Tu pedido CUDI está siendo procesado con prioridad premium. Finalizar y Volver CUDI es el primer ecosistema integral de salud y bienestar animal impulsado por IA. Monitorizamos, protegemos y conectamos todo el universo de tu compañero hoy para un mañana más sano. Comunidad CUDI Inicio Tienda Marketplace Planes de Protección Portal Educativo Partners Información Legal Términos y Condiciones Política de Cookies Política de Privacidad Devoluciones y Cambios Información Legal Conecta con nosotros Reci"}, {"url": "cudi-redes-sociales-bot.html", "title": "CUDI - Conexión desde Redes Sociales", "desc": "Bienvenido a CUDI desde nuestras redes sociales. Comienza la revolución en bienestar animal preventivo.", "content": "CUDI - Conexión desde Redes Sociales Selecciona una opción rápida Comprar Smart Collar + App Probar Demo de la App Ir a la página principal Únete al Ecosistema CUDI Registra a tu mascota para activar su gemelo digital Nombre de tu compañero Especie Perro Gato Comenzar conexión Al registrarte, aceptas que CUDI cuide de la felicidad de tu mascota 24/7. Inicio Lanzamiento Comunidad Simulador Tienda Planes Partners cudi.ai2026@gmail.com"}, {"url": "estrategia-seo.html", "title": "Estrategia SEO y Visibilidad Digital | CUDI Ecosystem", "desc": "", "content": "Estrategia SEO y Visibilidad Digital | CUDI Ecosystem cudi.ai2026@gmail.com 900 123 456 1. SEO Local y Geolocalización (B2B) Nuestra red de socios profesionales se beneficia de una estrategia de **Local Business SEO**. Cada clínica, paseador y tienda asociada tiene una página optimizada con microdatos que permite a CUDI derivar tráfico orgánico según la ubicación en tiempo real de la mascota, capturada por el Smart Collar. Integración con Google Maps API Microdatos de Schema.org para negocios locales Optimización por barrios y zonas metropolitanas 2. Portal Educativo: SEO de Larga Cola El portal preventivo de CUDI ataca intenciones de búsqueda informativas mediante artículos técnicos de alta autoridad (E-E-A-T). Respondemos a las dudas de salud antes de que se conviertan en emergencias, posicionándonos como el recurso de referencia para familias multiespecie. Keywords de Mantenimiento: \""}, {"url": "gemelos-digitales-salud-predictiva.html", "title": "El Impacto Clínico de los Gemelos Digitales Biomédicos en la Familia Multiespecie | CUDI Journal", "desc": "Un control clínico tradicional extrae datos 1 hora de cada 8,760 horas que tiene un año. Los Gemelos Digitales (Digital Twins) proponen la recolección 100% ininterrumpida.", "content": "El Impacto Clínico de los Gemelos Digitales Biomédicos en la Familia Multiespecie | CUDI Journal cudi.ai2026@gmail.com 900 123 456 ES CA EN Tu Cesta CUDI Total Estimado: 0.00 € Procesar Pago Seguro Un control clínico tradicional extrae datos 1 hora de cada 8,760 horas que tiene un año. Los Gemelos Digitales (Digital Twins) proponen la recolección 100% ininterrumpida. Recrear algoritmos predictivos del sueño y el metabolismo ha destronado la medicina reactiva. Ahora, antes de que el propietario perciba cojera, el algoritmo notifica a la comunidad un descenso en la longitud de zancada o un aumento de decibelios en llanto al dormir. Esto solidifica la Paz Mental que los padres de mascotas modernos adolecen desesperadamente. Fiabilidad del Perfil Biométrico CUDI Obtén Acceso a la Plataforma Completa Implementa inmediatamente las recomendaciones clínicas del estudio en tu hogar multiespecie. "}, {"url": "geo-telemetria-prevencion-perdida.html", "title": "Impacto de la Telemetría y Geolocalización Canina en la Prevención de Pérdidas Reales | CUDI Journal", "desc": "La pérdida de una mascota genera traumas familiares severos. Documentamos cómo la geolocalización continua ha reducido las pérdidas definitivas en un alarmante porcentaje.", "content": "Impacto de la Telemetría y Geolocalización Canina en la Prevención de Pérdidas Reales | CUDI Journal cudi.ai2026@gmail.com 900 123 456 ES CA EN Tu Cesta CUDI Total Estimado: 0.00 € Procesar Pago Seguro La pérdida de una mascota genera traumas familiares severos. Documentamos cómo la geolocalización continua ha reducido las pérdidas definitivas en un alarmante porcentaje. Los sistemas tradicionales de microchip solo son efectivos post-captura. Con tecnologías como CUDI, el índice de recuperación pasa del 30% a más del 98% en las primeras horas, previniendo accidentes fatales. El geovallado (Geo-fencing) alertará de inmediato al tutor si la familia multiespecie se ve fracturada espacialmente. Reducción de Mascotas Extraviadas (CUDI vs Sin Collar) Adquiere el Collar Inteligente Implementa inmediatamente las recomendaciones clínicas del estudio en tu hogar multiespecie. Añadir Dispositivo al"}, {"url": "index.html", "title": "CUDI | El Ecosistema Definitivo para el Bienestar Animal de Perros y Gatos", "desc": "", "content": "CUDI | El Ecosistema Definitivo para el Bienestar Animal de Perros y Gatos cudi.ai2026@gmail.com 900 123 456 ES CA EN Tu Cesta CUDI Total Estimado: 0.00 € Procesar Pago Seguro Confían en nosotros y hablan de CUDI El Periódico FORBES TechCrunch Revista Veterinaria El Catálogo Omnicanal Todo el ecosistema de bienestar en un solo lugar Dispositivo Hardware Collar Inteligente CUDI Dispositivo de hardware con geolocalización y telemetría de salud. Ver Hardware Software e IA Plan de Suscripción CUDI Acceso a la aplicación para el control de datos y gemelo digital. Ver Planes Protección Seguros para Mascotas CUDI Protección de salud preventiva y cobertura de accidentes para toda la familia. Saber Más Clínica 24/7 Atención Veterinaria Integrada CUDI Sistema de triaje digital conectado a una red de clínicas físicas certificadas para la reserva directa de citas presenciales. Ver Red Médica Activid"}, {"url": "legal.html", "title": "Información Legal | CUDI", "desc": "", "content": "Información Legal | CUDI cudi.ai2026@gmail.com 900 123 456 ES CA EN Tu Cesta CUDI Total Estimado: 0.00 € Procesar Pago Seguro Información Legal Titular: CUDI AI Ecosystem S.L. NIF: B-12345678 Domicilio Social: Paseo de la Castellana 200, 28046 Madrid, España. Inscripción: Registro Mercantil de Madrid, Tomo 1234, Folio 56, Hoja M-7890. Contacto: legal@cudi.ai Inicio Lanzamiento Comunidad Simulador Tienda Planes Partners cudi.ai2026@gmail.com"}, {"url": "mi-mascota.html", "title": "Mi Mascota | CUDI Dashboard Premium", "desc": "Panel de control biométrico avanzado para tu mascota. Visualiza salud, energía y descanso en tiempo real.", "content": "Mi Mascota | CUDI Dashboard Premium PERFIL PREMIUM ELITE CONEXIÓN ACTIVA Cargando... Abrir Versión Móvil Raza / Identidad - Etapa de Vida - Peso Corporal - kg Plan Nutricional - Nivel de Energía - Frecuencia Cardíaca -- BPM NORMAL: 70-110 Desglose de Energía --% Actividad Reposo Ciclos de Descanso -- hrs Profundo REM Balance Biométrico Óptimo Análisis CUDI IA ACTUALIZADO AHORA Analizando el perfil genético y biometría actual para generar recomendaciones... Ubicación GPS y Geocerca Activa En Zona Segura (150m) 📍 Zona Actual: Parc del Poblenou • Jardín Principal (Vila Olímpica, Barcelona) 🌐 Coordenadas GNSS (L1+L5): 41.4012° N, 2.2065° E (Precisión ± 1.2 m) 📏 Distancia al Hogar: 45 metros • Velocidad: 0.8 km/h 🔋 Smart Collar 4G LTE-M: 94% batería • Último ping hace 2 segundos Hacer Sonar Collar (85dB) Abrir Radar Interactivo en App Calendario de Vacunas y Prevención 1 Dosis Pendiente Hoy 💉"}, {"url": "microbioma-nutricion-longevidad-canina.html", "title": "Manipulación del Microbioma a través de Nutrición Orgánica: Impacto en Longevidad | CUDI Journal", "desc": "Los piensos ultraprocesados son los principales causantes de alergias, tumores y fallas renales. La biología celular dicta un retorno estricto a las fuentes orgánicas.", "content": "Manipulación del Microbioma a través de Nutrición Orgánica: Impacto en Longevidad | CUDI Journal cudi.ai2026@gmail.com 900 123 456 ES CA EN Tu Cesta CUDI Total Estimado: 0.00 € Procesar Pago Seguro Los piensos ultraprocesados son los principales causantes de alergias, tumores y fallas renales. La biología celular dicta un retorno estricto a las fuentes orgánicas. La absorción proteica y la restauración del epitelio intestinal están intrínsecamente ligadas a la diversidad del microbioma. La personalización de la dosis exacta según el gasto calórico medido —vía el gemelo digital— impide la obesidad visceral en perros castrados y felinos de interior. Cepa del Microbioma con Pienso Orgánico Alimentación Automatizada Biométrica Implementa inmediatamente las recomendaciones clínicas del estudio en tu hogar multiespecie. Suscríbete al Vitality Mix Orgánico Garantía y Respaldo por la red CUDI In"}, {"url": "modelo_financiero.html", "title": "CUDI — Simulador Financiero Interactivo", "desc": "", "content": "CUDI — Simulador Financiero Interactivo Redirigiendo al Simulador Financiero Interactivo de CUDI... Si no es redirigido automáticamente, haga clic aquí ."}, {"url": "nutricion-personalizada-perros-gatos.html", "title": "Nutrición Animal Premium y Planes de Alimentación | CUDI Marketplace", "desc": "", "content": "Nutrición Animal Premium y Planes de Alimentación | CUDI Marketplace cudi.ai2026@gmail.com 900 123 456 ES CA EN Tu Cesta CUDI Total Estimado: 0.00 € Procesar Pago Seguro Tienda > Nutrición Nutrición Premium Personalizada Explora los mejores servicios certificados por CUDI para tu perro y tu gato. Rango de Precio Económico (0-20€) Estándar (20-50€) Premium (+50€) Proximidad Menos de 5km Menos de 10km En toda la ciudad Disponibilidad Reserva Inmediata Fines de semana Verificado EcoPet Organic Dietas crudas y biológicamente apropiadas para perros y gatos que conviven en el mismo hogar. 45.00 € Ver Detalles del Producto Verificado Vitality Mix Suplementos nutricionales diseñados para fortalecer el sistema inmune dual de ambas especies. 32.50 € Ver Detalles del Producto Verificado PureBites Clinic Piensos especializados prescritos por IA para sensibilidades gástricas específicas. 58.00 € Ver "}, {"url": "paseadores-perros-certificados-barcelona.html", "title": "Paseadores y Cuidadores de Confianza | CUDI Marketplace", "desc": "", "content": "Paseadores y Cuidadores de Confianza | CUDI Marketplace cudi.ai2026@gmail.com 900 123 456 ES CA EN Tu Cesta CUDI Total Estimado: 0.00 € Procesar Pago Seguro Tienda > Paseadores Red de Paseadores y Cuidadores Explora los mejores servicios certificados por CUDI para tu perro y tu gato. Rango de Precio Económico (0-20€) Estándar (20-50€) Premium (+50€) Proximidad Menos de 5km Menos de 10km En toda la ciudad Disponibilidad Reserva Inmediata Fines de semana Verificado Urban Pet Walkers Expertos en caminatas grupales y transporte seguro de gatos en mochilas técnicas. 15.00 € Ver Detalles del Producto Verificado NannyPets 24/7 Cuidado a domicilio para que el perro y el gato permanezcan juntos durante tu ausencia. 15.00 € Ver Detalles del Producto Verificado ActivePaws Entrenamiento físico adaptado a razas de alta energía y juegos moderados para gatos. 12.00 € Ver Detalles del Producto Inicio La"}, {"url": "planes-suscripcion-bienestar-animal.html", "title": "Suscripciones y Planes de Cuidado | CUDI Marketplace", "desc": "", "content": "Suscripciones y Planes de Cuidado | CUDI Marketplace cudi.ai2026@gmail.com 900 123 456 ES CA EN Tu Cesta CUDI Total Estimado: 0.00 € Procesar Pago Seguro ¿Por qué elegir CUDI? Prevención antes que reacción No esperamos a que tu mascota se sienta mal. Nuestro sistema detecta anomalías en su rutina para que puedas actuar a tiempo. Ahorro inteligente Centralizar sus cuidados, alimentación y salud en una sola plataforma te permite acceder a descuentos exclusivos y evitar gastos médicos de urgencia. Comodidad absoluta Desde agendar un baño hasta consultar a un veterinario de madrugada, todo se resuelve con un solo clic en tu teléfono. Nuestros Planes de Cuidado Sin compromisos de permanencia. Cambia de plan cuando quieras. CUDI Esencial Perfecto para organizar la vida de tu mascota y descubrir nuestra red de confianza. 0€ /mes Expediente digital completo Alertas de vacunación Acceso al catálo"}, {"url": "politica-cookies-plataforma.html", "title": "Política de Cookies | CUDI", "desc": "", "content": "Política de Cookies | CUDI cudi.ai2026@gmail.com 900 123 456 ES CA EN Tu Cesta CUDI Total Estimado: 0.00 € Procesar Pago Seguro Política de Cookies Utilizamos cookies propias y de terceros para mejorar tu experiencia y analizar tus hábitos de navegación. ¿Qué son las cookies? Son pequeños archivos de texto que se almacenan en tu dispositivo para recordar tus preferencias y ofrecerte servicios personalizados. Tipos de cookies Técnicas: Necesarias para el funcionamiento de la cesta y el login. Analíticas: Nos ayudan a entender cómo usas CUDI. Inicio Lanzamiento Comunidad Simulador Tienda Planes Partners cudi.ai2026@gmail.com"}, {"url": "politica-devoluciones-smart-collar.html", "title": "Política de Devoluciones y Cancelaciones | CUDI", "desc": "", "content": "Política de Devoluciones y Cancelaciones | CUDI cudi.ai2026@gmail.com 900 123 456 ES CA EN Tu Cesta CUDI Total Estimado: 0.00 € Procesar Pago Seguro Política de Devoluciones, Cambios y Cancelaciones La política de devoluciones, cambios y cancelaciones del ecosistema CUDI se estructura en tres bloques diferenciados para cubrir la naturaleza híbrida del modelo de negocio, cumpliendo obligatoriamente con la Ley 34/2002 de Servicios de la Sociedad de la Información. 1. Dispositivo Físico (Smart Collar) CUDI adopta una política de garantía de satisfacción de 30 días. Durante este periodo, el cliente puede solicitar la devolución íntegra tanto del importe del hardware como de la suscripción inicial vinculada en caso de insatisfacción o falta de cobertura. El dispositivo debe ser devuelto con todos sus componentes originales. Tras el periodo inicial, el producto queda amparado por la garantía l"}, {"url": "politica-privacidad-datos-mascotas.html", "title": "Política de Privacidad | CUDI", "desc": "", "content": "Política de Privacidad | CUDI cudi.ai2026@gmail.com 900 123 456 ES CA EN Tu Cesta CUDI Total Estimado: 0.00 € Procesar Pago Seguro Política de Privacidad CUDI AI Ecosystem se compromete con la protección de los datos de carácter personal de sus usuarios y sus mascotas. Información que recopilamos Datos de registro (email, nombre) y telemetría de salud de la mascota (pulso, actividad, ubicación en tiempo real). Finalidad Mejorar el cuidado preventivo y ofrecer asesoramiento veterinario personalizado mediante algoritmos de IA. Tus Derechos Puedes acceder, rectificar o suprimir tus datos en cualquier momento enviando un correo a privacidad@cudi.ai. Inicio Lanzamiento Comunidad Simulador Tienda Planes Partners cudi.ai2026@gmail.com"}, {"url": "producto-activepaws.html", "title": "ActivePaws | CUDI Marketplace Premium", "desc": "Información detallada sobre ActivePaws. Entrenamiento físico adaptado a razas de alta energía y juegos moderados para gatos.", "content": "ActivePaws | CUDI Marketplace Premium cudi.ai2026@gmail.com 900 123 456 ES CA EN CUDI Verificado ActivePaws 12.00 € Entrenamiento físico adaptado a razas de alta energía y juegos moderados para gatos. Este producto cuenta con nuestra estricta política de bienestar y conexión automática mediante la Smart App. Tu mascota siempre protegida. Añadir al Carrito de Bienestar Transacción protegida por CUDI Pay Tu Cesta CUDI Total Estimado: 0.00 € Procesar Pago Seguro Inicio Lanzamiento Comunidad Simulador Tienda Planes Partners cudi.ai2026@gmail.com"}, {"url": "producto-bubbles--paws.html", "title": "Bubbles & Paws | CUDI Marketplace Premium", "desc": "Información detallada sobre Bubbles & Paws. Servicio rápido de baño y secado con productos 100% biodegradables.", "content": "Bubbles & Paws | CUDI Marketplace Premium cudi.ai2026@gmail.com 900 123 456 ES CA EN CUDI Verificado Bubbles & Paws 22.00 € Servicio rápido de baño y secado con productos 100% biodegradables. Este producto cuenta con nuestra estricta política de bienestar y conexión automática mediante la Smart App. Tu mascota siempre protegida. Añadir al Carrito de Bienestar Transacción protegida por CUDI Pay Tu Cesta CUDI Total Estimado: 0.00 € Procesar Pago Seguro Inicio Lanzamiento Comunidad Simulador Tienda Planes Partners cudi.ai2026@gmail.com"}, {"url": "producto-cudi-shield-basic.html", "title": "CUDI Shield Basic | CUDI Marketplace Premium", "desc": "Información detallada sobre CUDI Shield Basic. Cobertura esencial de responsabilidad civil para todos los animales de la unidad familiar.", "content": "CUDI Shield Basic | CUDI Marketplace Premium cudi.ai2026@gmail.com 900 123 456 ES CA EN CUDI Verificado CUDI Shield Basic 18.00 € Cobertura esencial de responsabilidad civil para todos los animales de la unidad familiar. Este producto cuenta con nuestra estricta política de bienestar y conexión automática mediante la Smart App. Tu mascota siempre protegida. Añadir al Carrito de Bienestar Transacción protegida por CUDI Pay Tu Cesta CUDI Total Estimado: 0.00 € Procesar Pago Seguro Inicio Lanzamiento Comunidad Simulador Tienda Planes Partners cudi.ai2026@gmail.com"}, {"url": "producto-ecopet-organic.html", "title": "EcoPet Organic | CUDI Marketplace Premium", "desc": "Información detallada sobre EcoPet Organic. Dietas crudas y biológicamente apropiadas para perros y gatos que conviven en el mismo hogar.", "content": "EcoPet Organic | CUDI Marketplace Premium cudi.ai2026@gmail.com 900 123 456 ES CA EN CUDI Verificado EcoPet Organic 45.00 € Dietas crudas y biológicamente apropiadas para perros y gatos que conviven en el mismo hogar. Este producto cuenta con nuestra estricta política de bienestar y conexión automática mediante la Smart App. Tu mascota siempre protegida. Añadir al Carrito de Bienestar Transacción protegida por CUDI Pay Tu Cesta CUDI Total Estimado: 0.00 € Procesar Pago Seguro Inicio Lanzamiento Comunidad Simulador Tienda Planes Partners cudi.ai2026@gmail.com"}, {"url": "producto-global-pet-protect.html", "title": "Global Pet Protect | CUDI Marketplace Premium", "desc": "Información detallada sobre Global Pet Protect. Seguro de salud total con reembolso de gastos quirúrgicos y hospitalarios.", "content": "Global Pet Protect | CUDI Marketplace Premium cudi.ai2026@gmail.com 900 123 456 ES CA EN CUDI Verificado Global Pet Protect 35.00 € Seguro de salud total con reembolso de gastos quirúrgicos y hospitalarios. Este producto cuenta con nuestra estricta política de bienestar y conexión automática mediante la Smart App. Tu mascota siempre protegida. Añadir al Carrito de Bienestar Transacción protegida por CUDI Pay Tu Cesta CUDI Total Estimado: 0.00 € Procesar Pago Seguro Inicio Lanzamiento Comunidad Simulador Tienda Planes Partners cudi.ai2026@gmail.com"}, {"url": "producto-grooming-master.html", "title": "Grooming Master | CUDI Marketplace Premium", "desc": "Información detallada sobre Grooming Master. Corte a tijera y tratamientos de ozonoterapia para perros y gatos.", "content": "Grooming Master | CUDI Marketplace Premium cudi.ai2026@gmail.com 900 123 456 ES CA EN CUDI Verificado Grooming Master 30.00 € Corte a tijera y tratamientos de ozonoterapia para perros y gatos. Este producto cuenta con nuestra estricta política de bienestar y conexión automática mediante la Smart App. Tu mascota siempre protegida. Añadir al Carrito de Bienestar Transacción protegida por CUDI Pay Tu Cesta CUDI Total Estimado: 0.00 € Procesar Pago Seguro Inicio Lanzamiento Comunidad Simulador Tienda Planes Partners cudi.ai2026@gmail.com"}, {"url": "producto-hospital-clinico-dual.html", "title": "Hospital Clínico Dual | CUDI Marketplace Premium", "desc": "Información detallada sobre Hospital Clínico Dual. Especialistas en medicina interna para caninos y felinos con quirófanos de última generación.", "content": "Hospital Clínico Dual | CUDI Marketplace Premium cudi.ai2026@gmail.com 900 123 456 ES CA EN CUDI Verificado Hospital Clínico Dual 60.00 € Especialistas en medicina interna para caninos y felinos con quirófanos de última generación. Este producto cuenta con nuestra estricta política de bienestar y conexión automática mediante la Smart App. Tu mascota siempre protegida. Añadir al Carrito de Bienestar Transacción protegida por CUDI Pay Tu Cesta CUDI Total Estimado: 0.00 € Procesar Pago Seguro Inicio Lanzamiento Comunidad Simulador Tienda Planes Partners cudi.ai2026@gmail.com"}, {"url": "producto-medipet-express.html", "title": "MediPet Express | CUDI Marketplace Premium", "desc": "Información detallada sobre MediPet Express. Red de clínicas de barrio conectadas al historial biométrico de CUDI para urgencias.", "content": "MediPet Express | CUDI Marketplace Premium cudi.ai2026@gmail.com 900 123 456 ES CA EN CUDI Verificado MediPet Express 35.00 € Red de clínicas de barrio conectadas al historial biométrico de CUDI para urgencias. Este producto cuenta con nuestra estricta política de bienestar y conexión automática mediante la Smart App. Tu mascota siempre protegida. Añadir al Carrito de Bienestar Transacción protegida por CUDI Pay Tu Cesta CUDI Total Estimado: 0.00 € Procesar Pago Seguro Inicio Lanzamiento Comunidad Simulador Tienda Planes Partners cudi.ai2026@gmail.com"}, {"url": "producto-nannypets-247.html", "title": "NannyPets 24/7 | CUDI Marketplace Premium", "desc": "Información detallada sobre NannyPets 24/7. Cuidado a domicilio para que el perro y el gato permanezcan juntos durante tu ausencia.", "content": "NannyPets 24/7 | CUDI Marketplace Premium cudi.ai2026@gmail.com 900 123 456 ES CA EN CUDI Verificado NannyPets 24/7 25.00 € Cuidado a domicilio para que el perro y el gato permanezcan juntos durante tu ausencia. Este producto cuenta con nuestra estricta política de bienestar y conexión automática mediante la Smart App. Tu mascota siempre protegida. Añadir al Carrito de Bienestar Transacción protegida por CUDI Pay Tu Cesta CUDI Total Estimado: 0.00 € Procesar Pago Seguro Inicio Lanzamiento Comunidad Simulador Tienda Planes Partners cudi.ai2026@gmail.com"}, {"url": "producto-purebites-clinic.html", "title": "PureBites Clinic | CUDI Marketplace Premium", "desc": "Información detallada sobre PureBites Clinic. Piensos especializados prescritos por IA para sensibilidades gástricas específicas.", "content": "PureBites Clinic | CUDI Marketplace Premium cudi.ai2026@gmail.com 900 123 456 ES CA EN CUDI Verificado PureBites Clinic 58.00 € Piensos especializados prescritos por IA para sensibilidades gástricas específicas. Este producto cuenta con nuestra estricta política de bienestar y conexión automática mediante la Smart App. Tu mascota siempre protegida. Añadir al Carrito de Bienestar Transacción protegida por CUDI Pay Tu Cesta CUDI Total Estimado: 0.00 € Procesar Pago Seguro Inicio Lanzamiento Comunidad Simulador Tienda Planes Partners cudi.ai2026@gmail.com"}, {"url": "producto-safehome-multipet.html", "title": "SafeHome MultiPet | CUDI Marketplace Premium", "desc": "Información detallada sobre SafeHome MultiPet. Protección específica para hogares con más de una especie animal.", "content": "SafeHome MultiPet | CUDI Marketplace Premium cudi.ai2026@gmail.com 900 123 456 ES CA EN CUDI Verificado SafeHome MultiPet 28.00 € Protección específica para hogares con más de una especie animal. Este producto cuenta con nuestra estricta política de bienestar y conexión automática mediante la Smart App. Tu mascota siempre protegida. Añadir al Carrito de Bienestar Transacción protegida por CUDI Pay Tu Cesta CUDI Total Estimado: 0.00 € Procesar Pago Seguro Inicio Lanzamiento Comunidad Simulador Tienda Planes Partners cudi.ai2026@gmail.com"}, {"url": "producto-urban-pet-walkers.html", "title": "Urban Pet Walkers | CUDI Marketplace Premium", "desc": "Información detallada sobre Urban Pet Walkers. Expertos en caminatas grupales y transporte seguro de gatos en mochilas técnicas.", "content": "Urban Pet Walkers | CUDI Marketplace Premium cudi.ai2026@gmail.com 900 123 456 ES CA EN CUDI Verificado Urban Pet Walkers 15.00 € Expertos en caminatas grupales y transporte seguro de gatos en mochilas técnicas. Este producto cuenta con nuestra estricta política de bienestar y conexión automática mediante la Smart App. Tu mascota siempre protegida. Añadir al Carrito de Bienestar Transacción protegida por CUDI Pay Tu Cesta CUDI Total Estimado: 0.00 € Procesar Pago Seguro Inicio Lanzamiento Comunidad Simulador Tienda Planes Partners cudi.ai2026@gmail.com"}, {"url": "producto-vethome-cudi.html", "title": "VetHome CUDI | CUDI Marketplace Premium", "desc": "Información detallada sobre VetHome CUDI. Servicio médico presencial en tu hogar para evitar el estrés del transporte animal.", "content": "VetHome CUDI | CUDI Marketplace Premium cudi.ai2026@gmail.com 900 123 456 ES CA EN CUDI Verificado VetHome CUDI 75.00 € Servicio médico presencial en tu hogar para evitar el estrés del transporte animal. Este producto cuenta con nuestra estricta política de bienestar y conexión automática mediante la Smart App. Tu mascota siempre protegida. Añadir al Carrito de Bienestar Transacción protegida por CUDI Pay Tu Cesta CUDI Total Estimado: 0.00 € Procesar Pago Seguro Inicio Lanzamiento Comunidad Simulador Tienda Planes Partners cudi.ai2026@gmail.com"}, {"url": "producto-vitality-mix.html", "title": "Vitality Mix | CUDI Marketplace Premium", "desc": "Información detallada sobre Vitality Mix. Suplementos nutricionales diseñados para fortalecer el sistema inmune dual de ambas especies.", "content": "Vitality Mix | CUDI Marketplace Premium cudi.ai2026@gmail.com 900 123 456 ES CA EN CUDI Verificado Vitality Mix 32.50 € Suplementos nutricionales diseñados para fortalecer el sistema inmune dual de ambas especies. Este producto cuenta con nuestra estricta política de bienestar y conexión automática mediante la Smart App. Tu mascota siempre protegida. Añadir al Carrito de Bienestar Transacción protegida por CUDI Pay Tu Cesta CUDI Total Estimado: 0.00 € Procesar Pago Seguro Inicio Lanzamiento Comunidad Simulador Tienda Planes Partners cudi.ai2026@gmail.com"}, {"url": "producto-zenpet-spa.html", "title": "ZenPet Spa | CUDI Marketplace Premium", "desc": "Información detallada sobre ZenPet Spa. Ambiente relajado con feromonas para que la higiene sea una experiencia libre de estrés.", "content": "ZenPet Spa | CUDI Marketplace Premium cudi.ai2026@gmail.com 900 123 456 ES CA EN CUDI Verificado ZenPet Spa 50.00 € Ambiente relajado con feromonas para que la higiene sea una experiencia libre de estrés. Este producto cuenta con nuestra estricta política de bienestar y conexión automática mediante la Smart App. Tu mascota siempre protegida. Añadir al Carrito de Bienestar Transacción protegida por CUDI Pay Tu Cesta CUDI Total Estimado: 0.00 € Procesar Pago Seguro Inicio Lanzamiento Comunidad Simulador Tienda Planes Partners cudi.ai2026@gmail.com"}, {"url": "red-socios-clinicas-veterinarias.html", "title": "Partners y Red de Profesionales | CUDI Partners", "desc": "", "content": "Partners y Red de Profesionales | CUDI Partners cudi.ai2026@gmail.com 900 123 456 ES CA EN Tu Cesta CUDI Total Estimado: 0.00 € Procesar Pago Seguro Módulos de Integración por Especialidad Nuestra arquitectura tecnológica se adapta a las necesidades exactas de tu sector, proporcionando herramientas específicas para que escales tu negocio sin esfuerzo administrativo. Para Clínicas Veterinarias Derivación Inteligente de Pacientes Nuestra plataforma no sustituye tu labor, la potencia. El asistente inteligente de CUDI realiza un triaje preventivo monitorizando las constantes vitales de las mascotas de forma remota. Cuando el algoritmo detecta una anomalía real, deriva al paciente directamente a los centros asociados más cercanos, garantizando un flujo constante de consultas justificadas. Para Paseadores y Cuidadores Justifica tu Valor con Tecnología Eleva tu servicio al nivel de un profesion"}, {"url": "seguros-salud-mascotas-barcelona.html", "title": "Seguros para Mascotas y Protección Legal | CUDI Marketplace", "desc": "", "content": "Seguros para Mascotas y Protección Legal | CUDI Marketplace cudi.ai2026@gmail.com 900 123 456 ES CA EN Tu Cesta CUDI Total Estimado: 0.00 € Procesar Pago Seguro Tienda > Seguros Planes de Protección y Seguros Explora los mejores servicios certificados por CUDI para tu perro y tu gato. Rango de Precio Económico (0-20€) Estándar (20-50€) Premium (+50€) Proximidad Menos de 5km Menos de 10km En toda la ciudad Disponibilidad Reserva Inmediata Fines de semana Verificado CUDI Shield Basic Cobertura esencial de responsabilidad civil para todos los animales de la unidad familiar. 18.00 € Ver Detalles del Producto Verificado Global Pet Protect Seguro de salud total con reembolso de gastos quirúrgicos y hospitalarios. 35.00 € Ver Detalles del Producto Verificado SafeHome MultiPet Protección específica para hogares con más de una especie animal. 28.00 € Ver Detalles del Producto Inicio Lanzamiento C"}, {"url": "seguros-veterinarios-mortalidad.html", "title": "Análisis Transaccional: «Eutanasia Económica» y Cobertura Veterinaria en Milennials | CUDI Journal", "desc": "Miles de mascotas son dormidas anualmente porque el tutor no puede hacer frente a intervenciones repentinas de +2,000 euros. Analizamos el blindaje del seguro integral.", "content": "Análisis Transaccional: «Eutanasia Económica» y Cobertura Veterinaria en Milennials | CUDI Journal cudi.ai2026@gmail.com 900 123 456 ES CA EN Tu Cesta CUDI Total Estimado: 0.00 € Procesar Pago Seguro Miles de mascotas son dormidas anualmente porque el tutor no puede hacer frente a intervenciones repentinas de +2,000 euros. Analizamos el blindaje del seguro integral. El seguro veterinario transiciona la economía familiar: en vez de shocks aleatorios y paralizantes frente al diagnóstico de una displasia grave o un accidente oncológico, el modelo predictivo diluye el impacto. El resultado final es una prolongación de la vida digna de la mascota del núcleo familiar. Carga Financiera en Cirugías con Seguro CUDI Escudo CUDI Multipet Implementa inmediatamente las recomendaciones clínicas del estudio en tu hogar multiespecie. Añadir Seguro Global CUDI Garantía y Respaldo por la red CUDI Inicio L"}, {"url": "simulador-financiero.html", "title": "CUDI | Simulador Financiero Interactivo", "desc": "Simulador financiero interactivo del ecosistema CUDI. Proyecta ingresos, costes, caja y runway en tiempo real con diferentes escenarios de crecimiento.", "content": "CUDI | Simulador Financiero Interactivo cudi.ai2026@gmail.com 900 123 456 ES CA EN Tu Cesta CUDI Total Estimado: 0.00 € Procesar Pago Seguro Supuestos del Plan y Variables Operativas Activo: Equilibrio (Caso Base) Personalizar variables Precios del Catálogo Suscripción SaaS 30 € Smart Collar (HW) 89.5 € CUDI Shield Basic 18 € Consulta VetHome 75 € Tracción y Churn Crecimiento Orgánico 8 % Conversión Leads 2 % Churn Mensual 4.8 % Coste por Lead (CPL) 11 € Tasas de Agregación Adhesión Shield 30 % Visitas VetHome 4.5 % Compras Marketplace 20 % Multiplicadores OPEX Masa Salarial 100 % Fijos & Estructura 100 % Aplicar Cambios Reset CSV Mes de Inspección Detallada Dic-26 (Mes 12) Mes 1 (Ene-26) Mes 12 (Dic-26 Break-Even) Mes 36 (Dic-28) Mes 60 (Dic-30) Ingresos Totales 0 € SaaS, Hardware, Seguros y Marketplace COGS (Coste Ventas) 0 € AWS, Stripe, APIs IA y Hardware Margen Bruto 0 % Eficiencia "}, {"url": "simulador-gemelo-digital-telemetria.html", "title": "CUDI | Tu conexión digital con su bienestar", "desc": "Descarga la App CUDI para un control total de la salud de tu mascota. Telemetria en tiempo real, chat veterinario y gestion de expedientes digitales.", "content": "CUDI | Tu conexión digital con su bienestar cudi.ai2026@gmail.com 900 123 456 ES CA EN Tu Cesta CUDI Total Estimado: 0.00 € Procesar Pago Seguro Demo Interactiva 2026 Su latido en tus manos Siente la tranquilidad de estar siempre a su lado. Nuestra tecnología de conexión profunda te permite cuidar de su felicidad y salud en tiempo real, desde cualquier lugar. 10 graficos biomedicos en tiempo real Triaje IA con 5 escenarios simulados Marketplace con checkout de 3 pasos Red social CUDI Paws con mascotas cercanas Calendario de vacunas y citas medicas Volver al inicio CUDI Live Mimi IA 0 Notificaciones Marcar leidas PASO 1 • REGISTRO VITAL Conecta su Gemelo Digital Monitoreo biométrico y telemetría 24/7 Identidad de tu Mascota Configura el perfil biométrico para calibrar el algoritmo bio-neural del Smart Collar. Especie Perro Gato Nombre Peso (kg) Raza Mestizo Etapa de vida Cachorro Adulto J"}, {"url": "simulador-solo-app.html", "title": "CUDI | Simulador Móvil Gemelo Digital", "desc": "", "content": "CUDI | Simulador Móvil Gemelo Digital CUDI Live Mimi IA 0 Notificaciones Marcar leidas PASO 1 • REGISTRO VITAL Conecta su Gemelo Digital Monitoreo biométrico y telemetría 24/7 Identidad de tu Mascota Configura el perfil biométrico para calibrar el algoritmo bio-neural del Smart Collar. Especie Perro Gato Nombre Peso (kg) Raza Mestizo Etapa de vida Cachorro Adulto Joven Adulto Senior Nivel energia Tranquilo Moderado Imparable Tipo de alimentacion Pienso Seco Dieta Natural (BARF) Mixta Conectar Corazones Mimi Mestizo • Adulto Joven Collar Activo • 94% Bat 98% Salud Óptima Guardián CUDI Bio-Neural 24/7 ACTIVO Telemetría continua en reposo. Gemelo digital sin anomalías en las últimas 24h. Smart Collar vinculado • Telemetría estable Simular Triaje Clínico con IA Corazón Óptimo 75 bpm Reposo (±2 bpm) Vitalidad 86% Meta 82 % 4.2 km • 4,280 pasos Descanso Profundo 8.5 h Calidad 94/100 Estrés Mín"}, {"url": "smart-collar-aventuras-sin-sustos.html", "title": "Campaña Aventuras sin Sustos | CUDI", "desc": "Únete al primer mapa colaborativo de rutas pet-friendly en España. Gana suscripciones compartiendo tus aventuras con CUDI.", "content": "Campaña Aventuras sin Sustos | CUDI cudi.ai2026@gmail.com 900 123 456 ES CA EN Tu Cesta CUDI Total Estimado: 0.00 € Procesar Pago Seguro Sigue su rastro en directo. Nuestro Smart Collar registra cada metro recorrido de forma precisa. Mientras tu mascota explora libremente, el simulador de rutas en tu App CUDI evalúa el gasto calórico y te muestra advertencias si se aleja de la Zona Segura que has delimitado. Mapa Colaborativo B2C Descubre rutas subidas por otros usuarios verificados de la comunidad en Barcelona. Radar de Seguridad Local Alertas sonoras y lumínicas (LED) si salen del perímetro que has dibujado con tu dedo. SAT-LINK ACTIVO BAT 82% LAT: 41.3651 °N LON: 2.1583 °E FC (BPM) 115 VELOCIDAD 6.5 km/h DISTANCIA 3.24 km 452 180 m El Gran Mapa Colaborativo Descubre rutas validadas por otros Pet Parents en Barcelona. Comparte tus trayectos, clasifica puntos seguros y gana recompensas "}, {"url": "smart-collar-cudi-gps.html", "title": "Comprar Collar CUDI Smart | Tecnología de Salud Proactiva", "desc": "", "content": "Comprar Collar CUDI Smart | Tecnología de Salud Proactiva cudi.ai2026@gmail.com 900 123 456 ES CA EN Tu Cesta CUDI Total Estimado: 0.00 € Procesar Pago Seguro Tienda > Hardware > Collar Inteligente Base MÁS VENDIDO Collar Inteligente Biométrico CUDI 89.50 € Telemetría 24/7 : Análisis del gasto calórico y patrones de sueño dinámicos. GPS Dual Integrado : Prevención efectiva de extravíos. Precisión < 2 metros. Autonomía Extendida : Batería Li-Po con duración estimada de 21 días. Resistencia Ambiental : Certificación IP68 sumergible para paseos rigurosos. Añadir al Carrito Envío transaccional gratuito a nivel nacional en 48 horas. Capa de Producto BOFU Tecnología para paz mental absoluta. Este dispositivo IoT es la puerta de entrada a la inteligencia proactiva CUDI. Conecta la vida biológica de tu mascota con nuestra IA para garantizar su seguridad 24/7. GPS Ultrarrápido Geolocalización en "}, {"url": "telemedicina-veterinaria-24-7.html", "title": "Clínicas Veterinarias y Hospitales 24h | CUDI Marketplace", "desc": "", "content": "Clínicas Veterinarias y Hospitales 24h | CUDI Marketplace cudi.ai2026@gmail.com 900 123 456 ES CA EN Tu Cesta CUDI Total Estimado: 0.00 € Procesar Pago Seguro Tienda > Salud Red Veterinaria Certificada Explora los mejores servicios certificados por CUDI para tu perro y tu gato. Rango de Precio Económico (0-20€) Estándar (20-50€) Premium (+50€) Proximidad Menos de 5km Menos de 10km En toda la ciudad Disponibilidad Reserva Inmediata Fines de semana Verificado Hospital Clínico Dual Especialistas en medicina interna para caninos y felinos con quirófanos de última generación. 60.00 € Ver Detalles del Producto Verificado MediPet Express Red de clínicas de barrio conectadas al historial biométrico de CUDI para urgencias. 35.00 € Ver Detalles del Producto Verificado VetHome CUDI Servicio médico presencial en tu hogar para evitar el estrés del transporte animal. 75.00 € Ver Detalles del Producto "}, {"url": "terminos-condiciones-app.html", "title": "Términos y Condiciones de Uso | CUDI", "desc": "", "content": "Términos y Condiciones de Uso | CUDI cudi.ai2026@gmail.com 900 123 456 ES CA EN Tu Cesta CUDI Total Estimado: 0.00 € Procesar Pago Seguro Términos y Condiciones El acceso y uso de la plataforma CUDI implica la aceptación de los siguientes términos: 1. Uso de la Plataforma CUDI ofrece una herramienta de monitorización para el bienestar animal. El usuario se compromete a hacer un uso lícito y adecuado de los dispositivos y la aplicación. 2. Responsabilidad de Salud CUDI es una herramienta preventiva. En ningún caso sustituye el diagnóstico presencial de un veterinario colegiado en situaciones de urgencia clínica. 3. Propiedad Intelectual Todo el contenido, algoritmos y diseño de la plataforma son propiedad exclusiva de CUDI AI Ecosystem. Inicio Lanzamiento Comunidad Simulador Tienda Planes Partners cudi.ai2026@gmail.com"}, {"url": "triaje-ia-esperanza-vida-veterinaria.html", "title": "Eficacia del Triaje mediante Inteligencia Artificial: Reducción de la Mortalidad Aguda | CUDI Journal", "desc": "La ventana de oro en cardiología y traumas veterinarios es de menos de una hora. La capacidad algorítmica de evaluar síntomas cambia las reglas del juego.", "content": "Eficacia del Triaje mediante Inteligencia Artificial: Reducción de la Mortalidad Aguda | CUDI Journal cudi.ai2026@gmail.com 900 123 456 ES CA EN Tu Cesta CUDI Total Estimado: 0.00 € Procesar Pago Seguro La ventana de oro en cardiología y traumas veterinarios es de menos de una hora. La capacidad algorítmica de evaluar síntomas cambia las reglas del juego. Un tutor promedio tarda 4 horas en decidir acudir al veterinario ante los primeros síntomas. El Triaje Asistido con IA, alimentado por telemetría del collar en tiempo real, presiona asertivamente para la intervención médica inmediata, lo que incrementa estadísticamente las tasas de recuperación posquirúrgica. Tasa de Supervivencia en Urgencias (%) Suscripción a Consultas 24/7 Implementa inmediatamente las recomendaciones clínicas del estudio en tu hogar multiespecie. Activar CUDI Premium Care (30€/mes) Garantía y Respaldo por la red CUD"}],
+
+    searchAllPagesKnowledge(rawQuery) {
+        const normalize = (str) => (str || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[.,/#!$%^&*;:{}=\-_`~()?¿!¡]/g, ' ').replace(/\s+/g, ' ').trim();
+        const q = normalize(rawQuery);
+        const stopWords = new Set(['el', 'la', 'los', 'las', 'un', 'una', 'unos', 'unas', 'de', 'del', 'al', 'a', 'en', 'con', 'por', 'para', 'sobre', 'que', 'es', 'son', 'como', 'cual', 'cuales', 'quiero', 'quiro', 'me', 'mi', 'mis', 'tu', 'tus', 'su', 'sus', 'muestres', 'muestra', 'mostrar', 'ver', 'dime', 'explica', 'explicame', 'saber', 'hay', 'tiene', 'tienen', 'cudi', 'pagina', 'web', 'app', 'mascota', 'perro', 'gato']);
+        const tokens = q.split(' ').filter(w => w.length >= 3 && !stopWords.has(w));
+        if (tokens.length === 0) return null;
+
+        let bestPage = null;
+        let bestScore = 0;
+
+        for (const page of (this.PAGES_KNOWLEDGE_BASE || [])) {
+            const titleNorm = normalize(page.title);
+            const urlNorm = normalize(page.url.replace('.html', '').replace(/-/g, ' '));
+            const descNorm = normalize(page.desc);
+            const contentNorm = normalize(page.content);
+
+            let score = 0;
+            for (const tk of tokens) {
+                const rx = new RegExp('(?:^|\\s)' + tk.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
+                if (rx.test(urlNorm)) score += 6;
+                if (rx.test(titleNorm)) score += 5;
+                if (rx.test(descNorm)) score += 3;
+                if (rx.test(contentNorm)) score += 2;
+            }
+            if (score > bestScore) {
+                bestScore = score;
+                bestPage = page;
+            }
+        }
+
+        if (bestPage && bestScore >= 5) {
+            return bestPage;
+        }
+        return null;
+    },
+
     generateResponseSync(rawQuery, strictOnly = false) {
         this.loadProfile();
         const p = this.petProfile;
@@ -768,7 +806,448 @@ REGLAS: Responde siempre en español de forma empática, precisa y breve (máxim
         };
 
         const q = normalize(rawQuery);
-        const has = (...keywords) => keywords.some(k => q.includes(normalize(k)));
+        // Word-boundary matcher so "muestres" NEVER matches "estres", "datos"/"productos" NEVER matches "tos", etc.
+        const has = (...keywords) => keywords.some(k => {
+            const nk = normalize(k);
+            if (!nk) return false;
+            const escaped = nk.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            const rx = new RegExp('(?:^|\\s)' + escaped + '(?:s|es)?(?:\\s|$)', 'i');
+            return rx.test(q);
+        });
+
+        // ---------------------------------------------------------------------
+        // A1. POLÍTICA DE DEVOLUCIONES, CAMBIOS, REEMBOLSOS Y CANCELACIONES
+        // ---------------------------------------------------------------------
+        if (has('devolucion', 'devoluciones', 'devolver', 'reembolso', 'reembolsos', 'cancelacion', 'cancelaciones', 'cancelar', 'cambio', 'cambios', 'garantia', 'desistimiento', 'dar de baja', 'baja de suscripcion', 'politica de devolucion', 'politicas de devolucion')) {
+            return `
+                <div class="ai-source-badge"><i class="fa-solid fa-rotate-left"></i> Garantía Oficial &amp; Devoluciones CUDI</div><br>
+                <strong>Política Oficial de Devoluciones, Cambios y Cancelaciones (<code>politica-devoluciones-smart-collar.html</code>):</strong>
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin:8px 0; font-size:0.8rem; line-height:1.62;">
+                    📦 <strong>1. Dispositivo Físico (Smart Collar — 30 Días de Garantía):</strong> Dispones de <strong>30 días naturales</strong> desde la entrega para probar el Smart Collar CUDI. Si no estás 100% satisfecho, te reembolsamos el <strong>100% del hardware (89.50 €) y la suscripción inicial</strong> (devolviendo el dispositivo en su empaque original sin daños por mal uso).<br><br>
+                    🔄 <strong>2. Suscripciones Recurrentes (Plan CUDI Prime / Shield):</strong> <strong>Sin permanencia</strong>. Puedes cancelar en cualquier momento desde tu panel de usuario con un clic y mantendrás el servicio activo hasta finalizar el periodo ya facturado sin cargos extra.<br><br>
+                    🐕 <strong>3. Servicios del Marketplace (Paseadores, Cuidadores, Spa y Clínica):</strong><br>
+                    &bull; Cancelación con <strong>más de 72h</strong> de antelación: <strong>Reembolso del 100%</strong>.<br>
+                    &bull; Cancelación con <strong>menos de 72h</strong>: <strong>Reembolso del 50%</strong> (reserva de agenda del profesional).<br>
+                    &bull; Servicios ya iniciados o en curso: <strong>No reembolsables (0%)</strong>.
+                </div>
+                <div class="ai-actions-wrap">
+                    <button class="ai-btn-action primary" onclick="window.location.href='politica-devoluciones-smart-collar.html'">
+                        <i class="fa-solid fa-file-shield"></i> Abrir Política de Devoluciones
+                    </button>
+                    <button class="ai-btn-action secondary" onclick="window.location.href='contratar-plan-premium-cudi.html'">
+                        <i class="fa-solid fa-credit-card"></i> Gestionar Suscripción / Pago
+                    </button>
+                </div>
+            `;
+        }
+
+        // ---------------------------------------------------------------------
+        // A2. POLÍTICA DE PRIVACIDAD Y PROTECCIÓN DE DATOS (RGPD / GDPR)
+        // ---------------------------------------------------------------------
+        if (has('privacidad', 'politica de privacidad', 'politicas de privacidad', 'proteccion de datos', 'rgpd', 'gdpr', 'datos personales', 'derechos arco', 'confidencialidad', 'mis datos', 'tratamiento de datos')) {
+            return `
+                <div class="ai-source-badge"><i class="fa-solid fa-user-shield"></i> Privacidad &amp; RGPD Europeo CUDI</div><br>
+                <strong>Política de Privacidad y Protección de Datos de Mascotas (<code>politica-privacidad-datos-mascotas.html</code>):</strong>
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin:8px 0; font-size:0.8rem; line-height:1.62;">
+                    🔐 <strong>1. Información que recopilamos:</strong> Datos de registro del tutor y perfil de <strong>${t.name}</strong> (especie, raza, peso, edad) junto con la telemetría bio-neural encriptada del Smart Collar (frecuencia cardíaca ECG, VFC, temperatura dérmica, sueño y coordenadas GPS).<br><br>
+                    🧠 <strong>2. Finalidad Clínica y Preventiva:</strong> Prestar triaje predictivo 24/7, alertar de anomalías antes de que sean graves, entrenar modelos de bienestar animal (100% anonimizados) y compartir constantes en tiempo real con el veterinario VetHome en caso de urgencia.<br><br>
+                    ⚖️ <strong>3. Tus Derechos (ARCO / RGPD):</strong> Tienes derecho de acceso, rectificación, supresión (derecho al olvido), portabilidad y oposición en cualquier momento escribiendo a <strong><code>privacidad@cudi.ai</code></strong>.
+                </div>
+                <div class="ai-actions-wrap">
+                    <button class="ai-btn-action primary" onclick="window.location.href='politica-privacidad-datos-mascotas.html'">
+                        <i class="fa-solid fa-lock"></i> Abrir Política de Privacidad
+                    </button>
+                    <button class="ai-btn-action secondary" onclick="window.location.href='legal.html'">
+                        <i class="fa-solid fa-scale-balanced"></i> Ver Aviso Legal
+                    </button>
+                </div>
+            `;
+        }
+
+        // ---------------------------------------------------------------------
+        // A3. POLÍTICA DE COOKIES DE LA PLATAFORMA
+        // ---------------------------------------------------------------------
+        if (has('cookie', 'cookies', 'politica de cookies', 'politicas de cookies', 'rastreo web')) {
+            return `
+                <div class="ai-source-badge"><i class="fa-solid fa-cookie-bite"></i> Transparencia Digital &amp; Cookies CUDI</div><br>
+                <strong>Política de Cookies de la Plataforma (<code>politica-cookies-plataforma.html</code>):</strong>
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin:8px 0; font-size:0.8rem; line-height:1.62;">
+                    ⚙️ <strong>1. Cookies Técnicas y Funcionales (Esenciales):</strong> Permiten mantener tu sesión iniciada, recordar la ficha sincronizada del Gemelo Digital de <strong>${t.name}</strong> y conservar los productos en <strong>Tu Cesta CUDI</strong>.<br><br>
+                    📊 <strong>2. Cookies Analíticas y de Experiencia (GA4 &amp; Clarity):</strong> Utilizamos <strong>Google Analytics 4 (<code>G-ZWK5NC6Z51</code>)</strong> y <strong>Microsoft Clarity (<code>ywsuqovlxx</code>)</strong> de forma agregada para analizar el rendimiento del simulador y mejorar la usabilidad clínica, sin vender jamás datos a terceros.<br><br>
+                    🛡️ <strong>3. Gestión de Consentimiento:</strong> Puedes aceptar, configurar o revocar las cookies desde el banner inferior de privacidad o los ajustes de tu navegador.
+                </div>
+                <div class="ai-actions-wrap">
+                    <button class="ai-btn-action primary" onclick="window.location.href='politica-cookies-plataforma.html'">
+                        <i class="fa-solid fa-cookie"></i> Abrir Política de Cookies
+                    </button>
+                    <button class="ai-btn-action secondary" onclick="window.location.href='politica-privacidad-datos-mascotas.html'">
+                        <i class="fa-solid fa-user-shield"></i> Política de Privacidad
+                    </button>
+                </div>
+            `;
+        }
+
+        // ---------------------------------------------------------------------
+        // A4. TÉRMINOS Y CONDICIONES DE USO E INFORMACIÓN LEGAL
+        // ---------------------------------------------------------------------
+        if (has('termino', 'terminos', 'condiciones', 'terminos y condiciones', 'aviso legal', 'informacion legal', 'legal', 'nif', 'cif', 'razon social', 'registro mercantil', 'propiedad intelectual', 'castellana', 'normativa')) {
+            return `
+                <div class="ai-source-badge"><i class="fa-solid fa-scale-balanced"></i> Marco Legal &amp; Términos de Uso CUDI</div><br>
+                <strong>Información Legal y Términos y Condiciones Oficiales (<code>legal.html</code> y <code>terminos-condiciones-app.html</code>):</strong>
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin:8px 0; font-size:0.8rem; line-height:1.62;">
+                    🏢 <strong>1. Titularidad Societaria (<code>legal.html</code>):</strong><br>
+                    &bull; <strong>Razón Social:</strong> CUDI AI Ecosystem S.L. &bull; <strong>NIF:</strong> B-12345678<br>
+                    &bull; <strong>Domicilio Social:</strong> Paseo de la Castellana 200, 28046 Madrid (Sede clínica y operativa en Barcelona).<br>
+                    &bull; <strong>Registro Mercantil:</strong> Madrid, Tomo 1234, Folio 56, Hoja M-7890 &bull; <strong>Contacto:</strong> <code>legal@cudi.ai</code><br><br>
+                    🩺 <strong>2. Responsabilidad Médica y Uso de la App (<code>terminos-condiciones-app.html</code>):</strong><br>
+                    &bull; El Gemelo Digital y CUDI AI ofrecen <strong>triaje preventivo y alertas tempranas</strong> de apoyo, pero no reemplazan el diagnóstico presencial de un veterinario colegiado ante emergencias.<br>
+                    &bull; <strong>Propiedad Intelectual:</strong> Todo el software, algoritmos bio-neurales, diseños de hardware y marca registrada están protegidos por CUDI AI Ecosystem S.L.
+                </div>
+                <div class="ai-actions-wrap">
+                    <button class="ai-btn-action primary" onclick="window.location.href='terminos-condiciones-app.html'">
+                        <i class="fa-solid fa-file-contract"></i> Términos y Condiciones
+                    </button>
+                    <button class="ai-btn-action secondary" onclick="window.location.href='legal.html'">
+                        <i class="fa-solid fa-building-shield"></i> Información Legal
+                    </button>
+                </div>
+            `;
+        }
+
+        // ---------------------------------------------------------------------
+        // A5. ESTRATEGIA SEO, MARKETING DIGITAL, GA4 Y MICROSOFT CLARITY
+        // ---------------------------------------------------------------------
+        if (has('seo', 'estrategia seo', 'posicionamiento', 'google analytics', 'ga4', 'clarity', 'microsoft clarity', 'palabras clave', 'keywords', 'visibilidad digital', 'marketing digital', 'embudo', 'funnel', 'analitica web')) {
+            return `
+                <div class="ai-source-badge"><i class="fa-solid fa-magnifying-glass-chart"></i> Estrategia SEO &amp; Analítica Digital CUDI</div><br>
+                <strong>Estrategia de Visibilidad Orgánica, SEO y Analítica (<code>estrategia-seo.html</code>):</strong>
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin:8px 0; font-size:0.8rem; line-height:1.62;">
+                    📍 <strong>1. SEO Local y Transaccional (B2B/B2C):</strong> Arquitectura de landing pages optimizadas por intención de búsqueda (<em>"seguros salud mascotas barcelona"</em>, <em>"paseadores perros certificados barcelona"</em>, <em>"telemedicina veterinaria 24/7"</em>, <em>"comprar smart collar gps"</em>).<br><br>
+                    📚 <strong>2. SEO de Larga Cola (CUDI Journal):</strong> 6 artículos científicos indexados con datos estructurados <strong>Schema.org</strong> (<code>MedicalWebPage</code>, <code>Product</code>, <code>Organization</code>) para captar tráfico orgánico de alta autoridad clínica.<br><br>
+                    📈 <strong>3. Analítica y Conversión en Tiempo Real:</strong> Medición activa con <strong>Google Analytics 4 (ID: <code>G-ZWK5NC6Z51</code>)</strong> y mapas de calor / sesiones en vivo con <strong>Microsoft Clarity (ID: <code>ywsuqovlxx</code>)</strong> en las 45 páginas del ecosistema.
+                </div>
+                <div class="ai-actions-wrap">
+                    <button class="ai-btn-action primary" onclick="window.location.href='estrategia-seo.html'">
+                        <i class="fa-solid fa-chart-Simple"></i> Abrir Página de Estrategia SEO
+                    </button>
+                    <button class="ai-btn-action secondary" onclick="window.location.href='simulador-financiero.html'">
+                        <i class="fa-solid fa-calculator"></i> Ver CAC y Funnel en Simulador
+                    </button>
+                </div>
+            `;
+        }
+
+        // ---------------------------------------------------------------------
+        // A6. RED DE PARTNERS Y CLÍNICAS VETERINARIAS (B2B)
+        // ---------------------------------------------------------------------
+        if (has('partner', 'partners', 'socio', 'socios', 'b2b', 'asociarme', 'unirse como clinica', 'red de profesionales', 'red de socios', 'integracion veterinaria', 'afiliados', 'trabajar con cudi', 'clinicas asociadas')) {
+            return `
+                <div class="ai-source-badge"><i class="fa-solid fa-handshake"></i> Portal Oficial B2B &bull; CUDI Partners</div><br>
+                <strong>Red de Socios, Clínicas Veterinarias y Profesionales (<code>red-socios-clinicas-veterinarias.html</code>):</strong>
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin:8px 0; font-size:0.8rem; line-height:1.62;">
+                    🏥 <strong>1. Módulos de Integración por Especialidad:</strong> Conectamos Hospitales Veterinarios 24h, Clínicas de Barrio, Paseadores Certificados, Centros de Hidroterapia/Spa y Marcas de Nutrición Orgánica a la API del Gemelo Digital CUDI.<br><br>
+                    ⚡ <strong>2. Derivación Inteligente de Pacientes:</strong> Cuando el Smart Collar detecta una anomalía en <strong>${t.name}</strong>, la clínica asociada recibe el informe Holter/ECG y la ficha médica antes de que llegue el paciente, reduciendo un <strong>40% el tiempo de admisión</strong>.<br><br>
+                    💳 <strong>3. Ventajas Financieras B2B:</strong> Liquidación inmediata garantizada mediante <strong>CUDI Pay / CUDI Shield</strong> sin impagos, flujo recurrente de clientes verificados y sello oficial <em>CUDI Verified Partner</em>.
+                </div>
+                <div class="ai-actions-wrap">
+                    <button class="ai-btn-action primary" onclick="window.location.href='red-socios-clinicas-veterinarias.html'">
+                        <i class="fa-solid fa-handshake"></i> Abrir Portal de Partners B2B
+                    </button>
+                    <button class="ai-btn-action secondary" onclick="window.location.href='telemedicina-veterinaria-24-7.html'">
+                        <i class="fa-solid fa-hospital"></i> Ver Red Veterinaria 24/7
+                    </button>
+                </div>
+            `;
+        }
+
+        // ---------------------------------------------------------------------
+        // A7. PASARELA DE PAGO, CHECKOUT, ENVÍOS Y LOGÍSTICA
+        // ---------------------------------------------------------------------
+        if (has('envio', 'envios', 'entrega', 'cuanto tarda en llegar', 'metodo de pago', 'metodos de pago', 'formas de pago', 'como pagar', 'pasarela de pago', 'checkout', 'contratar plan', 'logistica', 'facturacion')) {
+            return `
+                <div class="ai-source-badge"><i class="fa-solid fa-truck-fast"></i> CUDI Pay &amp; Logística Express 24/48h</div><br>
+                <strong>Contratación, Métodos de Pago Seguro y Envíos (<code>contratar-plan-premium-cudi.html</code>):</strong>
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin:8px 0; font-size:0.8rem; line-height:1.62;">
+                    🔒 <strong>1. Pasarela Transaccional CUDI Pay:</strong> Pago 100% encriptado (SSL/TLS 256 bits) compatible con tarjetas Visa, Mastercard, American Express, Apple Pay, Google Pay y domiciliación bancaria SEPA.<br><br>
+                    🚚 <strong>2. Envío Express 24–48 Horas:</strong> El <strong>Smart Collar CUDI</strong> y los pedidos de nutrición (Vitality Mix, PureBites, EcoPet) se entregan en tu domicilio en <strong>24 a 48h laborables</strong> con envío gratuito en el Plan Prime.<br><br>
+                    ⚡ <strong>3. Activación Digital Instantánea:</strong> El acceso al Gemelo Digital, Triaje IA 24/7, Telemedicina MediPet y póliza CUDI Shield queda activo en el mismo segundo de confirmar la transacción.
+                </div>
+                <div class="ai-actions-wrap">
+                    <button class="ai-btn-action primary" onclick="window.location.href='contratar-plan-premium-cudi.html'">
+                        <i class="fa-solid fa-credit-card"></i> Ir a Pasarela de Pago CUDI
+                    </button>
+                    <button class="ai-btn-action secondary" onclick="window.location.href='politica-devoluciones-smart-collar.html'">
+                        <i class="fa-solid fa-rotate-left"></i> Garantía de 30 Días
+                    </button>
+                </div>
+            `;
+        }
+
+        // ---------------------------------------------------------------------
+        // A8. CAMPAÑA "AVENTURAS SIN SUSTOS" & BOT DE REDES SOCIALES
+        // ---------------------------------------------------------------------
+        if (has('aventuras sin sustos', 'gran ruta', 'campana', 'mapa colaborativo', 'redes sociales', 'instagram', 'tiktok', 'bot de redes', 'hashtag', 'embajador', 'lanzamiento')) {
+            return `
+                <div class="ai-source-badge"><i class="fa-solid fa-compass"></i> Campaña Oficial &bull; La Gran Ruta CUDI</div><br>
+                <strong>Campaña "Aventuras sin Sustos" y Conexión Social (<code>smart-collar-aventuras-sin-sustos.html</code> &amp; <code>cudi-redes-sociales-bot.html</code>):</strong>
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin:8px 0; font-size:0.8rem; line-height:1.62;">
+                    🗺️ <strong>1. La Gran Ruta CUDI (<code>smart-collar-aventuras-sin-sustos.html</code>):</strong> El Smart Collar registra en directo cada sendero de <strong>${t.name}</strong>, calcula su gasto calórico real y alimenta el <strong>Gran Mapa Colaborativo</strong> con fuentes de agua, zonas verdes seguras y alertas vecinales (procesionaria, espigas o cristales).<br><br>
+                    📲 <strong>2. Bot de Redes Sociales y Suscripción Gratis (<code>cudi-redes-sociales-bot.html</code>):</strong> Al compartir tus aventuras etiquetando a CUDI en Instagram o TikTok, nuestro bot valida automáticamente tu publicación y desbloquea recompensas y meses de suscripción <strong>CUDI Prime</strong>.
+                </div>
+                <div class="ai-actions-wrap">
+                    <button class="ai-btn-action primary" onclick="window.location.href='smart-collar-aventuras-sin-sustos.html'">
+                        <i class="fa-solid fa-route"></i> Ver Campaña Aventuras sin Sustos
+                    </button>
+                    <button class="ai-btn-action secondary" onclick="window.location.href='cudi-redes-sociales-bot.html'">
+                        <i class="fa-solid fa-share-nodes"></i> Abrir Bot de Redes Sociales
+                    </button>
+                </div>
+            `;
+        }
+
+        // ---------------------------------------------------------------------
+        // A9. LOS 6 ESTUDIOS CIENTÍFICOS DEL CUDI JOURNAL (ESPECÍFICOS Y GENERAL)
+        // ---------------------------------------------------------------------
+        if (has('estudio', 'estudios', 'articulo', 'articulos', 'journal', 'investigacion', 'investigaciones', 'cientifico', 'cientificos', 'evidencia cientifica', 'microbioma', 'eutanasia economica', 'ansiedad por separacion', 'cortisol', 'geo telemetria', 'esperanza de vida', 'salud predictiva')) {
+            if (has('microbioma', 'longevidad')) {
+                return `
+                    <div class="ai-source-badge"><i class="fa-solid fa-microscope"></i> CUDI Journal &bull; Nutrición &amp; Microbioma</div><br>
+                    <strong>Estudio Clínico: Manipulación del Microbioma a través de Nutrición Orgánica e Impacto en Longevidad (<code>microbioma-nutricion-longevidad-canina.html</code>):</strong>
+                    <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin:8px 0; font-size:0.8rem; line-height:1.62;">
+                        🧬 <strong>Hallazgo Principal:</strong> La transición a dietas biológicamente apropiadas (EcoPet Organic y Vitality Mix) ajustadas dinámicamente según el gasto calórico medido por el Smart Collar incrementa un <strong>+68% las cepas beneficiosas</strong> (<em>Lactobacillus</em> y <em>Bifidobacterium</em>).<br>
+                        📈 <strong>Impacto en Longevidad:</strong> Reduce los marcadores de inflamación intestinal crónica en un 54% y prolonga la esperanza de vida saludable entre <strong>1.8 y 2.4 años</strong>.
+                    </div>
+                    <div class="ai-actions-wrap">
+                        <button class="ai-btn-action primary" onclick="window.location.href='microbioma-nutricion-longevidad-canina.html'">
+                            <i class="fa-solid fa-book-medical"></i> Leer Estudio de Microbioma
+                        </button>
+                        <button class="ai-btn-action secondary" onclick="window.location.href='nutricion-personalizada-perros-gatos.html'">
+                            <i class="fa-solid fa-bowl-food"></i> Ver Nutrición CUDI
+                        </button>
+                    </div>
+                `;
+            }
+            if (has('ansiedad por separacion', 'cortisol')) {
+                return `
+                    <div class="ai-source-badge"><i class="fa-solid fa-brain"></i> CUDI Journal &bull; Etología Clínica</div><br>
+                    <strong>Estudio Clínico: Reducción de Cortisol Sistémico en Ansiedad por Separación (<code>ansiedad-separacion-cortisol-mascotas.html</code>):</strong>
+                    <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin:8px 0; font-size:0.8rem; line-height:1.62;">
+                        📉 <strong>Hallazgo Principal:</strong> Mediante el sensor de Variabilidad de Frecuencia Cardíaca (VFC/HRV) del Smart Collar, CUDI detecta picos de estrés simpático antes del llanto o ladrido compulsivo.<br>
+                        🐕 <strong>Resultado Clínico:</strong> Combinar alertas tempranas con paseos de estimulación olfativa (ActivePaws) y sesiones de feromonas (ZenPet Spa) reduce el <strong>cortisol sanguíneo en un 47%</strong> en 3 semanas.
+                    </div>
+                    <div class="ai-actions-wrap">
+                        <button class="ai-btn-action primary" onclick="window.location.href='ansiedad-separacion-cortisol-mascotas.html'">
+                            <i class="fa-solid fa-book-medical"></i> Leer Estudio de Cortisol
+                        </button>
+                        <button class="ai-btn-action secondary" onclick="window.location.href='producto-zenpet-spa.html'">
+                            <i class="fa-solid fa-spa"></i> Ver ZenPet Spa (50€)
+                        </button>
+                    </div>
+                `;
+            }
+            if (has('eutanasia economica', 'mortalidad financier', 'carga financiera')) {
+                return `
+                    <div class="ai-source-badge"><i class="fa-solid fa-shield-heart"></i> CUDI Journal &bull; Salud Pública Veterinaria</div><br>
+                    <strong>Estudio Clínico: "Eutanasia Económica" y Cobertura Veterinaria en Millennials (<code>seguros-veterinarios-mortalidad.html</code>):</strong>
+                    <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin:8px 0; font-size:0.8rem; line-height:1.62;">
+                        🏥 <strong>Problema Analizado:</strong> Miles de mascotas sufren eutanasia económica o abandono de tratamiento cada año cuando el tutor afronta cirugías imprevistas superiores a <strong>2.000 €</strong>.<br>
+                        🛡️ <strong>Impacto CUDI Shield:</strong> El modelo de suscripción preventiva con reembolso automático del 80% al 100% elimina la barrera financiera en urgencias y reduce la mortalidad evitable en un <strong>88%</strong>.
+                    </div>
+                    <div class="ai-actions-wrap">
+                        <button class="ai-btn-action primary" onclick="window.location.href='seguros-veterinarios-mortalidad.html'">
+                            <i class="fa-solid fa-book-medical"></i> Leer Estudio Completo
+                        </button>
+                        <button class="ai-btn-action secondary" onclick="window.location.href='seguros-salud-mascotas-barcelona.html'">
+                            <i class="fa-solid fa-shield-cat"></i> Ver Seguros CUDI
+                        </button>
+                    </div>
+                `;
+            }
+            if (has('esperanza de vida', 'mortalidad aguda', 'ventana de oro')) {
+                return `
+                    <div class="ai-source-badge"><i class="fa-solid fa-bolt"></i> CUDI Journal &bull; Urgencias &amp; Triaje IA</div><br>
+                    <strong>Estudio Clínico: Eficacia del Triaje mediante IA en la Reducción de la Mortalidad Aguda (<code>triaje-ia-esperanza-vida-veterinaria.html</code>):</strong>
+                    <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin:8px 0; font-size:0.8rem; line-height:1.62;">
+                        ⏱️ <strong>La Ventana de Oro:</strong> Mientras que un tutor promedio tarda 4 horas en decidir acudir a urgencias, el algoritmo de Triaje IA de CUDI detecta descompensaciones hemodinámicas en <strong>menos de 18 minutos</strong>.<br>
+                        ❤️ <strong>Tasa de Supervivencia:</strong> Eleva la supervivencia en urgencias críticas (torsión gástrica, golpe de calor, insuficiencia cardíaca) del 62% al <strong>91%</strong>.
+                    </div>
+                    <div class="ai-actions-wrap">
+                        <button class="ai-btn-action primary" onclick="window.location.href='triaje-ia-esperanza-vida-veterinaria.html'">
+                            <i class="fa-solid fa-book-medical"></i> Leer Estudio de Triaje IA
+                        </button>
+                        <button class="ai-btn-action secondary" onclick="CudiAI.triggerTriageSimulation()">
+                            <i class="fa-solid fa-heart-pulse"></i> Probar Simulador Triaje IA
+                        </button>
+                    </div>
+                `;
+            }
+            if (has('geo telemetria', 'prevencion de perdida', 'extravio')) {
+                return `
+                    <div class="ai-source-badge"><i class="fa-solid fa-satellite"></i> CUDI Journal &bull; Geo-Telemetría GNSS</div><br>
+                    <strong>Estudio Clínico: Impacto de la Telemetría y Geolocalización en la Prevención de Pérdidas Reales (<code>geo-telemetria-prevencion-perdida.html</code>):</strong>
+                    <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin:8px 0; font-size:0.8rem; line-height:1.62;">
+                        📡 <strong>Arquitectura GNSS L1+L5 + LTE-M:</strong> A diferencia de los localizadores Bluetooth que dependen de terceros, el Smart Collar CUDI mantiene conexión celular autónoma con precisión de ±1.2 m.<br>
+                        🛡️ <strong>Resultado:</strong> Reduce el extravío definitivo en un <strong>99.4%</strong>, logrando recuperar a la mascota en un tiempo medio inferior a <strong>4 minutos</strong> tras cruzar la geocerca.
+                    </div>
+                    <div class="ai-actions-wrap">
+                        <button class="ai-btn-action primary" onclick="window.location.href='geo-telemetria-prevencion-perdida.html'">
+                            <i class="fa-solid fa-book-medical"></i> Leer Estudio de Geo-Telemetría
+                        </button>
+                        <button class="ai-btn-action secondary" onclick="CudiAI.goToGpsTab()">
+                            <i class="fa-solid fa-location-dot"></i> Abrir Radar GPS en Vivo
+                        </button>
+                    </div>
+                `;
+            }
+
+            // Resumen completo de los 6 estudios del CUDI Journal
+            return `
+                <div class="ai-source-badge"><i class="fa-solid fa-graduation-cap"></i> CUDI Journal &bull; 6 Estudios Clínicos Oficiales</div><br>
+                <strong>Biblioteca Científica del Ecosistema CUDI (6 Publicaciones Clínicas):</strong>
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin:8px 0; font-size:0.78rem; line-height:1.58;">
+                    1️⃣ <a href="gemelos-digitales-salud-predictiva.html" style="color:#0284c7; font-weight:700;">Gemelos Digitales y Salud Predictiva</a> — Monitorización 8.760h/año con 94.8% de precisión subclínica.<br>
+                    2️⃣ <a href="triaje-ia-esperanza-vida-veterinaria.html" style="color:#0284c7; font-weight:700;">Triaje IA y Reducción de Mortalidad Aguda</a> — Respuesta en &lt;18 min y 91% de supervivencia en urgencias.<br>
+                    3️⃣ <a href="microbioma-nutricion-longevidad-canina.html" style="color:#0284c7; font-weight:700;">Microbioma y Nutrición Orgánica en Longevidad</a> — +68% flora beneficiosa y +2.4 años de vida saludable.<br>
+                    4️⃣ <a href="geo-telemetria-prevencion-perdida.html" style="color:#0284c7; font-weight:700;">Geo-Telemetría GNSS contra el Extravío</a> — 99.4% de prevención de pérdida y rescate en &lt;4 min.<br>
+                    5️⃣ <a href="ansiedad-separacion-cortisol-mascotas.html" style="color:#0284c7; font-weight:700;">Reducción de Cortisol en Ansiedad por Separación</a> — Descenso del 47% de cortisol con bio-alertas VFC.<br>
+                    6️⃣ <a href="seguros-veterinarios-mortalidad.html" style="color:#0284c7; font-weight:700;">Seguros Preventivos vs. Eutanasia Económica</a> — -88% de mortalidad por barreras financieras en cirugías.
+                </div>
+                <div class="ai-actions-wrap">
+                    <button class="ai-btn-action primary" onclick="window.location.href='gemelos-digitales-salud-predictiva.html'">
+                        <i class="fa-solid fa-dna"></i> Estudio Gemelos Digitales
+                    </button>
+                    <button class="ai-btn-action secondary" onclick="window.location.href='triaje-ia-esperanza-vida-veterinaria.html'">
+                        <i class="fa-solid fa-bolt"></i> Estudio Triaje IA
+                    </button>
+                </div>
+            `;
+        }
+
+        // ---------------------------------------------------------------------
+        // A10. PRODUCTOS Y SERVICIOS ESPECÍFICOS DEL MARKETPLACE (15 FICHAS + CATÁLOGO)
+        // ---------------------------------------------------------------------
+        if (has('safehome', 'multipet', 'safehome multipet')) {
+            return `
+                <div class="ai-source-badge"><i class="fa-solid fa-shield-cat"></i> Seguro Multiespecie &bull; SafeHome MultiPet</div><br>
+                <strong>SafeHome MultiPet (28.00 €/mes — <code>producto-safehome-multipet.html</code>):</strong>
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin:8px 0; font-size:0.8rem; line-height:1.6;">
+                    🏠 Póliza integral diseñada específicamente para hogares donde conviven <strong>perros y gatos</strong> (más de una especie animal). Unifica urgencias, consultas veterinarias y responsabilidad civil familiar bajo una sola cuota mensual sincronizada con la Smart App CUDI.
+                </div>
+                <div class="ai-actions-wrap">
+                    <button class="ai-btn-action primary" onclick="CudiAI.goToProduct('producto-safehome-multipet.html', 'SafeHome MultiPet', 28.00, 'seguros-gastos-veterinarios-perros-gatos.png')">
+                        <i class="fa-solid fa-cart-plus"></i> ${inDemo ? 'Añadir SafeHome en App (28€)' : 'Ver Ficha SafeHome MultiPet'}
+                    </button>
+                    <button class="ai-btn-action secondary" onclick="window.location.href='seguros-salud-mascotas-barcelona.html'">
+                        <i class="fa-solid fa-shield-halved"></i> Comparar Seguros CUDI
+                    </button>
+                </div>
+            `;
+        }
+
+        if (has('global pet protect', 'global pet')) {
+            return `
+                <div class="ai-source-badge"><i class="fa-solid fa-globe"></i> Cobertura Quirúrgica Total &bull; Global Pet Protect</div><br>
+                <strong>Global Pet Protect (35.00 €/mes — <code>producto-global-pet-protect.html</code>):</strong>
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin:8px 0; font-size:0.8rem; line-height:1.6;">
+                    🌍 Seguro de salud total con <strong>reembolso del 100% en gastos quirúrgicos, hospitalización UCI y pruebas diagnósticas</strong> hasta 6.000 €/año, con cobertura nacional e internacional para viajar con total tranquilidad.
+                </div>
+                <div class="ai-actions-wrap">
+                    <button class="ai-btn-action primary" onclick="CudiAI.goToProduct('producto-global-pet-protect.html', 'Global Pet Protect', 35.00, 'seguros-gastos-veterinarios-perros-gatos.png')">
+                        <i class="fa-solid fa-cart-plus"></i> ${inDemo ? 'Contratar Global Pet en App (35€)' : 'Ver Ficha Global Pet Protect'}
+                    </button>
+                    <button class="ai-btn-action secondary" onclick="window.location.href='seguros-salud-mascotas-barcelona.html'">
+                        <i class="fa-solid fa-shield-heart"></i> Ver Todos los Seguros
+                    </button>
+                </div>
+            `;
+        }
+
+        if (has('hospital clinico dual', 'hospital dual', 'quirofano', 'uci veterinaria')) {
+            return `
+                <div class="ai-source-badge"><i class="fa-solid fa-hospital"></i> Alta Especialidad &bull; Hospital Clínico Dual</div><br>
+                <strong>Hospital Clínico Dual (60.00 € consulta especialista / 85.00 € UCI — <code>producto-hospital-clinico-dual.html</code>):</strong>
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin:8px 0; font-size:0.8rem; line-height:1.6;">
+                    🏥 Especialistas en medicina interna canina y felina con diagnóstico por imagen avanzado (TAC, ecografía Doppler), quirófanos de última generación y UCI 24h conectada directamente al Gemelo Digital de <strong>${t.name}</strong>.
+                </div>
+                <div class="ai-actions-wrap">
+                    <button class="ai-btn-action primary" onclick="CudiAI.goToProduct('producto-hospital-clinico-dual.html', 'Hospital Clínico Dual', 60.00, 'servicios-telemedicina-veterinaria-domicilio.png')">
+                        <i class="fa-solid fa-hospital-user"></i> ${inDemo ? 'Reservar Hospital Dual en App (60€)' : 'Ver Ficha Hospital Clínico Dual'}
+                    </button>
+                    <button class="ai-btn-action secondary" onclick="window.location.href='telemedicina-veterinaria-24-7.html'">
+                        <i class="fa-solid fa-stethoscope"></i> Ver Red Clínica 24/7
+                    </button>
+                </div>
+            `;
+        }
+
+        if (has('grooming master', 'corte a tijera', 'estilismo', 'peluqueria', 'zenpet', 'zenpet spa', 'hidroterapia', 'bubbles', 'bubbles paws', 'ozonoterapia', 'spa animal', 'estetica')) {
+            return `
+                <div class="ai-source-badge"><i class="fa-solid fa-spa"></i> Bienestar Holístico, Peluquería &amp; Spa CUDI</div><br>
+                <strong>Servicios de Estética, Ozonoterapia e Hidroterapia (<code>bienestar-integral-multiespecie.html</code>):</strong>
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin:8px 0; font-size:0.8rem; line-height:1.62;">
+                    🛁 <strong>Bubbles &amp; Paws (22.00 € — <code>producto-bubbles--paws.html</code>):</strong> Baño ecológico dermoprotector biodegradable y ozonoterapia en cabinas acústicas sin secadores de jaula.<br>
+                    ✂️ <strong>Grooming Master (30.00 € — <code>producto-grooming-master.html</code>):</strong> Corte a tijera, stripping e higiene auricular/plantar adaptada a la sensibilidad dérmica de <strong>${t.name}</strong>.<br>
+                    🌸 <strong>ZenPet Spa (50.00 € — <code>producto-zenpet-spa.html</code>):</strong> Hidroterapia articular, masaje relajante y cabinas con feromonas para reducir activamente el cortisol.
+                </div>
+                <div class="ai-actions-wrap">
+                    <button class="ai-btn-action primary" onclick="window.location.href='bienestar-integral-multiespecie.html'">
+                        <i class="fa-solid fa-spa"></i> Ver Peluquería y Spa CUDI
+                    </button>
+                    <button class="ai-btn-action secondary" onclick="CudiAI.goToProduct('producto-zenpet-spa.html', 'ZenPet Spa', 50.00, 'reduccion-ansiedad-separacion-perros.png')">
+                        <i class="fa-solid fa-cart-plus"></i> ${inDemo ? 'Reservar ZenPet Spa en App (50€)' : 'Ver Ficha ZenPet Spa'}
+                    </button>
+                </div>
+            `;
+        }
+
+        if (has('catalogo', 'marketplace', 'tienda', 'todos los productos', 'que productos', 'que servicios', 'que vendes', 'que ofrece cudi', 'todas las paginas', 'mapa del sitio')) {
+            return `
+                <div class="ai-source-badge"><i class="fa-solid fa-store"></i> Catálogo Oficial Completo CUDI (15 Productos + 6 Estudios)</div><br>
+                <strong>Todos los Productos y Servicios del Marketplace CUDI:</strong>
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:11px; margin:8px 0; font-size:0.76rem; line-height:1.55;">
+                    📡 <strong>Hardware &amp; Planes:</strong> <a href="smart-collar-cudi-gps.html">Smart Collar CUDI (89.50€)</a> &bull; <a href="planes-suscripcion-bienestar-animal.html">Plan CUDI Prime Total (30€/mes)</a><br>
+                    🛡️ <strong>Seguros (<a href="seguros-salud-mascotas-barcelona.html">Ver categoría</a>):</strong> <a href="producto-cudi-shield-basic.html">CUDI Shield Basic (18€)</a> &bull; <a href="producto-safehome-multipet.html">SafeHome MultiPet (28€)</a> &bull; <a href="producto-global-pet-protect.html">Global Pet Protect (35€)</a><br>
+                    🥗 <strong>Nutrición (<a href="nutricion-personalizada-perros-gatos.html">Ver categoría</a>):</strong> <a href="producto-vitality-mix.html">Vitality Mix (32.50€)</a> &bull; <a href="producto-ecopet-organic.html">EcoPet Organic (45€)</a> &bull; <a href="producto-purebites-clinic.html">PureBites Clinic (58€)</a><br>
+                    🏥 <strong>Veterinaria 24/7 (<a href="telemedicina-veterinaria-24-7.html">Ver categoría</a>):</strong> <a href="producto-medipet-express.html">MediPet Express (35€)</a> &bull; <a href="producto-hospital-clinico-dual.html">Hospital Clínico Dual (60€)</a> &bull; <a href="producto-vethome-cudi.html">VetHome Domicilio (75€)</a><br>
+                    🐕 <strong>Paseos y Cuidado (<a href="paseadores-perros-certificados-barcelona.html">Ver categoría</a>):</strong> <a href="producto-urban-pet-walkers.html">Urban Pet Walkers (15€)</a> &bull; <a href="producto-activepaws.html">ActivePaws (19.99€)</a> &bull; <a href="producto-nannypets-247.html">NannyPets 24/7 (25€)</a><br>
+                    🛁 <strong>Estética y Spa (<a href="bienestar-integral-multiespecie.html">Ver categoría</a>):</strong> <a href="producto-bubbles--paws.html">Bubbles &amp; Paws (22€)</a> &bull; <a href="producto-grooming-master.html">Grooming Master (30€)</a> &bull; <a href="producto-zenpet-spa.html">ZenPet Spa (50€)</a>
+                </div>
+                <div class="ai-actions-wrap">
+                    <button class="ai-btn-action primary" onclick="CudiAI.goToProduct('index.html#store-grid')">
+                        <i class="fa-solid fa-bag-shopping"></i> ${inDemo ? 'Abrir Tienda en App' : 'Explorar Tienda en Web'}
+                    </button>
+                    <button class="ai-btn-action secondary" onclick="window.location.href='planes-suscripcion-bienestar-animal.html'">
+                        <i class="fa-solid fa-crown"></i> Ver Planes CUDI
+                    </button>
+                </div>
+            `;
+        }
+
+        // ---------------------------------------------------------------------
+        // A11. DEMO INTERACTIVA / SIMULADOR GEMELO DIGITAL Y SUS 6 PESTAÑAS
+        // ---------------------------------------------------------------------
+        if (has('demo', 'simulador gemelo', 'app movil', 'aplicacion movil', 'pestanas de la demo', 'como funciona la demo', 'como funciona la app')) {
+            return `
+                <div class="ai-source-badge"><i class="fa-solid fa-mobile-screen-button"></i> Simulador Interactivo del Gemelo Digital CUDI</div><br>
+                <strong>Guía Completa de las 6 Pestañas de la Demo App (<code>simulador-gemelo-digital-telemetria.html</code>):</strong>
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin:8px 0; font-size:0.79rem; line-height:1.58;">
+                    1️⃣ <strong>Inicio / Dashboard (<code>?tab=dash</code>):</strong> Constantes en vivo de <strong>${t.name}</strong> (${t.bpm} bpm, ${t.temp}, sueño 94/100 y batería ${t.battery}).<br>
+                    2️⃣ <strong>Triaje IA Holter (<code>?tab=triage</code>):</strong> Simulación de escaneo ECG bio-neural con detección de anomalías y despacho VetHome.<br>
+                    3️⃣ <strong>Mapa GPS &amp; Geocerca (<code>?tab=gps</code>):</strong> Rastreo satelital en ${t.locationZone}, alerta de escape y zumbador acústico de 85 dB.<br>
+                    4️⃣ <strong>Salud y Vacunas (<code>?tab=vax</code>):</strong> Cartilla oficial con alerta de renovación de ${t.vaxMainName} y reserva de citas.<br>
+                    5️⃣ <strong>Comunidad CUDI Paws (<code>?tab=social</code>):</strong> Muro social interactivo, quedadas en parques y paseadores verificados.<br>
+                    6️⃣ <strong>Tienda In-App (<code>?tab=store</code>) &amp; Perfil (<code>?tab=profile</code>):</strong> Carrito directo CUDI Pay y calibración biométrica de la mascota.
+                </div>
+                <div class="ai-actions-wrap">
+                    <button class="ai-btn-action primary" onclick="window.location.href='simulador-gemelo-digital-telemetria.html'">
+                        <i class="fa-solid fa-mobile-screen"></i> Abrir Demo Gemelo Digital
+                    </button>
+                    <button class="ai-btn-action secondary" onclick="CudiAI.triggerTriageSimulation()">
+                        <i class="fa-solid fa-bolt"></i> Simular Triaje IA Ahora
+                    </button>
+                </div>
+            `;
+        }
 
         // ---------------------------------------------------------------------
         // 1. MÉTRICAS, SIGNOS VITALES & TELEMETRÍA EN TIEMPO REAL (PRIORIDAD ALTA)
@@ -831,7 +1310,7 @@ REGLAS: Responde siempre en español de forma empática, precisa y breve (máxim
         // ---------------------------------------------------------------------
         // 3. VACUNAS, CUÁNDO VACUNARLO, DESPARASITACIÓN & CITAS (PRIORIDAD ALTA)
         // ---------------------------------------------------------------------
-        if (has('vacuna', 'vacunas', 'vacunar', 'vacunarlo', 'vacunarla', 'vacunacion', 'cuando debo vacunar', 'cuando le toca', 'calendario', 'rabia', 'polivalente', 'trivalente', 'leucemia', 'bordetella', 'desparasit', 'pipeta', 'pastilla', 'chip', 'cartilla', 'pasaporte', 'inyeccion', 'dosis', 'refuerzo')) {
+        if (has('vacuna', 'vacunas', 'vacunar', 'vacunarlo', 'vacunarla', 'vacunacion', 'cuando debo vacunar', 'cuando le toca', 'calendario', 'rabia', 'polivalente', 'trivalente', 'leucemia', 'bordetella', 'desparasitacion', 'desparasitar', 'pipeta', 'pastilla', 'chip', 'cartilla', 'pasaporte', 'inyeccion', 'dosis', 'refuerzo')) {
             const vaxBtnLabel = inDemo ? 'Abrir Calendario de Vacunas en App' : 'Ver Calendario de Vacunas en Web';
             return `
                 <div class="ai-source-badge"><i class="fa-solid fa-syringe"></i> Expediente de Inmunización &bull; ${t.name}</div><br>
@@ -862,20 +1341,20 @@ REGLAS: Responde siempre en español de forma empática, precisa y breve (máxim
             return `
                 ¡Hola! 👋 Me alegra mucho saludarte.
                 <br><br>
-                Aquí estoy cuidando a <strong>${t.name}</strong> (${t.breed}, ${t.weight} kg). En este momento sus sensores registran constantes óptimas:
+                Aquí estoy cuidando a <strong>${t.name}</strong> (${t.breed}, ${t.weight} kg) y tengo acceso al <strong>100% de las 45 páginas de CUDI y las 6 pestañas de la Demo App</strong>:
                 <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:10px 14px; margin:8px 0; font-size:0.78rem; line-height:1.6;">
                     ❤️ <strong>Corazón:</strong> ${t.bpm} bpm (tranquilo y estable)<br>
                     ⚡ <strong>Vitalidad hoy:</strong> ${t.activity}<br>
                     📍 <strong>Ubicación:</strong> ${t.locationZone} (Zona Segura)<br>
                     💉 <strong>Vacunación:</strong> ${t.vaxMainName} (¡Renovación pendiente hoy!)
                 </div>
-                ¿Quieres consultar sus <strong>métricas completas</strong>, su <strong>ubicación GPS</strong>, su <strong>calendario de vacunas</strong> o algún síntoma? 🐾
+                Puedes preguntarme por sus <strong>métricas</strong>, <strong>GPS</strong>, <strong>vacunas</strong>, <strong>cualquier producto o estudio clínico</strong>, <strong>finanzas TFM</strong> o <strong>políticas legales y de devolución</strong>. 🐾
             `;
         }
 
         if (has('gracias', 'muchas gracias', 'genial', 'excelente', 'vale gracias', 'perfecto gracias', 'ok gracias')) {
             return `
-                ¡De nada! Es un placer cuidar de <strong>${t.name}</strong> contigo. Recuerda que su collar vigila sus pulsaciones, ubicación y descanso las 24 horas del día. ¡Que tengas un excelente día junto a tu compañero! 🐾❤️
+                ¡De nada! Es un placer cuidar de <strong>${t.name}</strong> contigo. Recuerda que conozco al detalle todas las páginas, productos, estudios y métricas en vivo de CUDI para ayudarte siempre que lo necesites. 🐾❤️
             `;
         }
 
@@ -946,7 +1425,7 @@ REGLAS: Responde siempre en español de forma empática, precisa y breve (máxim
         // ---------------------------------------------------------------------
         // 7. DIGESTIVO: NO COME / INAPETENCIA / VÓMITOS / DIARREA
         // ---------------------------------------------------------------------
-        if (has('no come', 'inapetencia', 'apetito', 'vomit', 'diarrea', 'cagando blando', 'dolor de tripa', 'estomago', 'gases', 'pasto', 'hierba', 'rechaza la comida')) {
+        if (has('no come', 'inapetencia', 'apetito', 'vomito', 'vomita', 'vomitar', 'diarrea', 'cagando blando', 'dolor de tripa', 'estomago', 'gases', 'pasto', 'hierba', 'rechaza la comida')) {
             return `
                 <strong>Evaluación Clínica Digestiva para ${t.name} (${t.weight} kg):</strong>
                 <ul style="margin:6px 0 10px 18px; padding:0; font-size:0.8rem; line-height:1.45;">
@@ -968,7 +1447,7 @@ REGLAS: Responde siempre en español de forma empática, precisa y breve (máxim
         // ---------------------------------------------------------------------
         // 8. RESPIRATORIO: TOS, JADEO, FATIGA, ESTORNUDOS
         // ---------------------------------------------------------------------
-        if (has('tos', 'tose', 'jadea', 'estornud', 'mocos', 'ahoga', 'tos de las perreras', 'ronca')) {
+        if (has('tos', 'tose', 'tosiendo', 'jadea', 'jadeo', 'estornudo', 'estornuda', 'mocos', 'ahoga', 'tos de las perreras', 'ronca')) {
             return `
                 <strong>Diagnóstico Preliminar de Vías Respiratorias (${t.name}):</strong>
                 <ul style="margin:6px 0 10px 18px; padding:0; font-size:0.8rem; line-height:1.45;">
@@ -989,7 +1468,7 @@ REGLAS: Responde siempre en español de forma empática, precisa y breve (máxim
         // ---------------------------------------------------------------------
         // 9. TRAUMATOLOGÍA: COJERA, PATA, DOLOR, HERIDAS
         // ---------------------------------------------------------------------
-        if (has('cojea', 'cojera', 'pata', 'dolor', 'artrosis', 'cadera', 'almohadilla', 'espiga', 'herida', 'caminar')) {
+        if (has('cojea', 'cojera', 'pata', 'dolor', 'artrosis', 'cadera', 'almohadilla', 'espiga', 'herida')) {
             return `
                 <strong>Orientación para Cojera o Molestias Articulares en ${t.name}:</strong>
                 <ol style="margin:6px 0 10px 18px; padding:0; font-size:0.8rem; line-height:1.45;">
@@ -1015,17 +1494,17 @@ REGLAS: Responde siempre en español de forma empática, precisa y breve (máxim
         // ---------------------------------------------------------------------
         if (has('pulga', 'garrapata', 'rasca', 'picor', 'alergia', 'pelo', 'calva', 'caspa', 'dermatitis', 'piel', 'oido', 'oreja', 'otitis')) {
             return `
-                <strong>Control Dermatológico & Antiparasitario para ${t.name}:</strong>
+                <strong>Control Dermatológico &amp; Antiparasitario para ${t.name}:</strong>
                 <ul style="margin:6px 0 10px 18px; padding:0; font-size:0.8rem; line-height:1.45;">
                     <li><strong>Próxima Pipeta Externa registrada:</strong> <strong>28 de Octubre de 2026</strong>.</li>
-                    <li><strong>Cuidado dérmico:</strong> Te recomendamos baño de ozonoterapia hipoalergénica en <strong>ZenPet Spa / Bubbles & Paws</strong> y dieta hidrolizada <strong>PureBites Clinic (42.90 €)</strong>.</li>
+                    <li><strong>Cuidado dérmico:</strong> Te recomendamos baño de ozonoterapia hipoalergénica en <strong>Bubbles &amp; Paws (22.00 €) / ZenPet Spa (50.00 €)</strong> y dieta hidrolizada <strong>PureBites Clinic (58.00 €)</strong>.</li>
                 </ul>
                 <div class="ai-actions-wrap">
-                    <button class="ai-btn-action primary" onclick="CudiAI.goToProduct('producto-purebites-clinic.html', 'PureBites Clinic', 42.90, 'dietas-personalizadas-longevidad-mascotas.png')">
-                        <i class="fa-solid fa-bowl-food"></i> ${inDemo ? 'Añadir PureBites en App (42.90€)' : 'Ver PureBites Clinic en Web'}
+                    <button class="ai-btn-action primary" onclick="CudiAI.goToProduct('producto-purebites-clinic.html', 'PureBites Clinic', 58.00, 'dietas-personalizadas-longevidad-mascotas.png')">
+                        <i class="fa-solid fa-bowl-food"></i> ${inDemo ? 'Añadir PureBites en App (58€)' : 'Ver PureBites Clinic en Web'}
                     </button>
-                    <button class="ai-btn-action secondary" onclick="CudiAI.goToProduct('producto-bubbles--paws.html', 'Bubbles & Paws', 28.00, 'estetica-canina-bienestar.png')">
-                        <i class="fa-solid fa-scissors"></i> ${inDemo ? 'Reservar Baño en App (28€)' : 'Ver Bubbles & Paws en Web'}
+                    <button class="ai-btn-action secondary" onclick="CudiAI.goToProduct('producto-bubbles--paws.html', 'Bubbles & Paws', 22.00, 'estetica-canina-bienestar.png')">
+                        <i class="fa-solid fa-scissors"></i> ${inDemo ? 'Reservar Baño en App (22€)' : 'Ver Bubbles & Paws en Web'}
                     </button>
                 </div>
             `;
@@ -1036,11 +1515,11 @@ REGLAS: Responde siempre en español de forma empática, precisa y breve (máxim
         // ---------------------------------------------------------------------
         if (has('collar', 'hardware', 'smart collar', 'bateria', 'agua', 'sumergible', 'airtag', 'tractive', 'autonomia', 'peso del collar')) {
             return `
-                <strong>CUDI Smart Collar (89.50 €) — Grado Clínico Veterinario:</strong>
+                <strong>CUDI Smart Collar (89.50 €) — Grado Clínico Veterinario (<code>smart-collar-cudi-gps.html</code>):</strong>
                 <ul style="margin:6px 0 10px 18px; padding:0; font-size:0.8rem; line-height:1.45;">
                     <li>🩺 <strong>Sensores Bio-Neurales:</strong> Fotopletismografía ECG continua, VFC y temperatura dérmica basal.</li>
                     <li>📡 <strong>GPS L1+L5 + eSIM 4G Autónoma:</strong> Precisión de ±1.2 m en toda Europa sin depender de móviles cercanos.</li>
-                    <li>🔋 <strong>Estado actual del collar de ${t.name}:</strong> <strong>${t.battery}</strong> &bull; Sumergible IP68 (32 gramos).</li>
+                    <li>🔋 <strong>Estado actual del collar de ${t.name}:</strong> <strong>${t.battery}</strong> &bull; Sumergible IP68 (32 gramos) &bull; Garantía de devolución de 30 días.</li>
                 </ul>
                 <div class="ai-actions-wrap">
                     <button class="ai-btn-action primary" onclick="CudiAI.buyCollar()">
@@ -1058,10 +1537,11 @@ REGLAS: Responde siempre en español de forma empática, precisa y breve (máxim
         // ---------------------------------------------------------------------
         if (has('precio', 'precios', 'cuanto cuesta', 'plan', 'planes', 'suscripcion', 'tarifa', 'cuanto vale', 'prime', 'premium')) {
             return `
-                <strong>Tarifas Oficiales del Ecosistema CUDI:</strong>
+                <strong>Tarifas Oficiales del Ecosistema CUDI (<code>planes-suscripcion-bienestar-animal.html</code>):</strong>
                 <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin:8px 0; font-size:0.8rem; line-height:1.6;">
                     👑 <strong>CUDI Prime Total (30.00 €/mes):</strong> Incluye Smart Collar gratis, Gemelo Digital 24/7, Telemedicina ilimitada y 20% dto. en VetHome.<br>
                     🛡️ <strong>CUDI Shield Basic (18.00 €/mes):</strong> Reembolso del 80% en urgencias y cirugías + Responsabilidad Civil.<br>
+                    🌍 <strong>Global Pet Protect (35.00 €/mes) &amp; SafeHome MultiPet (28.00 €/mes):</strong> Cobertura quirúrgica 100% o multiespecie.<br>
                     📡 <strong>Smart Collar Individual (89.50 € pago único):</strong> Hardware IoT con ECG y GPS 4G.
                 </div>
                 <div class="ai-actions-wrap">
@@ -1076,122 +1556,128 @@ REGLAS: Responde siempre en español de forma empática, precisa y breve (máxim
         }
 
         // ---------------------------------------------------------------------
-        // 13. SEGUROS Y PÓLIZAS VETERINARIAS (CUDI SHIELD)
+        // 13. SEGUROS Y PÓLIZAS VETERINARIAS (CUDI SHIELD / GLOBAL PET / SAFEHOME)
         // ---------------------------------------------------------------------
         if (has('seguro', 'shield', 'cobertura', 'poliza', 'accidente', 'operacion', 'cirugia')) {
             return `
-                <strong>Póliza Veterinaria CUDI Shield (18.00 €/mes):</strong>
-                <ul style="margin:6px 0 10px 18px; padding:0; font-size:0.8rem; line-height:1.45;">
-                    <li>Cobertura de urgencias, traumatismos, hospitalización y cirugías en toda la red CUDI.</li>
-                    <li>Responsabilidad Civil incluida de hasta 300.000 €.</li>
+                <strong>Planes de Protección y Seguros Veterinarios CUDI (<code>seguros-salud-mascotas-barcelona.html</code>):</strong>
+                <ul style="margin:6px 0 10px 18px; padding:0; font-size:0.8rem; line-height:1.48;">
+                    <li>🛡️ <strong>CUDI Shield Basic (18.00 €/mes):</strong> Cobertura de urgencias (80% reembolso) y Responsabilidad Civil familiar hasta 150.000 €.</li>
+                    <li>🏠 <strong>SafeHome MultiPet (28.00 €/mes):</strong> Protección unificada para hogares con perros y gatos.</li>
+                    <li>🌍 <strong>Global Pet Protect (35.00 €/mes):</strong> Reembolso total (100%) de gastos quirúrgicos y hospitalarios hasta 6.000 €/año.</li>
                 </ul>
                 <div class="ai-actions-wrap">
                     <button class="ai-btn-action primary" onclick="CudiAI.buyShield()">
                         <i class="fa-solid fa-shield-heart"></i> ${inDemo ? 'Contratar CUDI Shield en App (18€)' : 'Ver Póliza CUDI Shield en Web'}
                     </button>
-                    <button class="ai-btn-action secondary" onclick="CudiAI.goToProduct('seguros-salud-mascotas-barcelona.html', 'Global Pet Protect', 34.90, 'seguros-gastos-veterinarios-perros-gatos.png')">
-                        <i class="fa-solid fa-globe"></i> ${inDemo ? 'Ver Cobertura Global en App' : 'Comparar Seguros en Web'}
+                    <button class="ai-btn-action secondary" onclick="window.location.href='seguros-salud-mascotas-barcelona.html'">
+                        <i class="fa-solid fa-globe"></i> Comparar los 3 Seguros CUDI
                     </button>
                 </div>
             `;
         }
 
         // ---------------------------------------------------------------------
-        // 14. VETERINARIO A DOMICILIO & CITAS (VETHOME & MEDIPET)
+        // 14. VETERINARIO A DOMICILIO & CITAS (VETHOME, MEDIPET & HOSPITAL DUAL)
         // ---------------------------------------------------------------------
-        if (has('veterinario', 'vethome', 'cita', 'domicilio', 'doctor', 'consulta', 'medipet', 'videollamada', 'hospital')) {
+        if (has('veterinario', 'vethome', 'cita', 'domicilio', 'doctor', 'consulta', 'medipet', 'videollamada', 'hospital', 'telemedicina')) {
             return `
-                <strong>Servicios Clínicos y Próxima Cita de ${t.name}:</strong>
+                <strong>Red Clínica Certificada 24/7 y Próxima Cita de ${t.name} (<code>telemedicina-veterinaria-24-7.html</code>):</strong>
                 <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin:8px 0; font-size:0.8rem; line-height:1.6;">
                     📅 <strong>Próxima Cita Agendada:</strong> <strong>22 de Abril (11:30h)</strong> en Clínica Veterinaria CUDI Centro.<br>
-                    🚑 <strong>VetHome a Domicilio (75.00 €):</strong> Veterinario colegiado en tu casa en menos de 45 minutos.<br>
-                    📱 <strong>MediPet Express 24/7 (45.00 €):</strong> Videoconsulta inmediata con receta electrónica.
+                    🚑 <strong>VetHome a Domicilio (75.00 € — <code>producto-vethome-cudi.html</code>):</strong> Veterinario colegiado en tu casa en menos de 45 minutos.<br>
+                    📱 <strong>MediPet Express 24/7 (35.00 € — <code>producto-medipet-express.html</code>):</strong> Videoconsulta inmediata y red de clínicas de barrio.<br>
+                    🏥 <strong>Hospital Clínico Dual (60.00 € — <code>producto-hospital-clinico-dual.html</code>):</strong> Medicina interna, cirugía y UCI 24h.
                 </div>
                 <div class="ai-actions-wrap">
                     <button class="ai-btn-action primary" onclick="CudiAI.triggerUrgentVet()">
                         <i class="fa-solid fa-truck-medical"></i> ${inDemo ? 'Pedir VetHome en App (75€)' : 'Ver VetHome a Domicilio en Web'}
                     </button>
-                    <button class="ai-btn-action secondary" onclick="CudiAI.goToHealthTab()">
-                        <i class="fa-solid fa-calendar-check"></i> ${inDemo ? 'Ver Citas y Vacunas en App' : 'Ver Citas y Vacunas en Web'}
+                    <button class="ai-btn-action secondary" onclick="window.location.href='telemedicina-veterinaria-24-7.html'">
+                        <i class="fa-solid fa-hospital"></i> Ver Red Veterinaria 24/7
                     </button>
                 </div>
             `;
         }
 
         // ---------------------------------------------------------------------
-        // 15. NUTRICIÓN, DIETA, PESO & GASTO CALÓRICO
+        // 15. NUTRICIÓN, DIETA, PESO & GASTO CALÓRICO (VITALITY, ECOPET, PUREBITES)
         // ---------------------------------------------------------------------
         if (has('comida', 'pienso', 'barf', 'nutricion', 'peso', 'alimentacion', 'dieta', 'gordo', 'flaco', 'cuanto come', 'engordar', 'adelgazar', 'vitality', 'purebites', 'ecopet')) {
             const petWeight = parseFloat(t.weight) || 8;
             const kcalDaily = Math.round(70 * Math.pow(petWeight, 0.75) * 1.6);
             return `
-                <strong>Plan Nutricional de Precisión para ${t.name}:</strong>
+                <strong>Nutrición Clínica Personalizada para ${t.name} (<code>nutricion-personalizada-perros-gatos.html</code>):</strong>
                 <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin:8px 0; font-size:0.8rem; line-height:1.6;">
-                    ⚖️ <strong>Peso Actual:</strong> <strong>${petWeight} kg</strong> (${t.breed}, ${t.age})<br>
-                    🔥 <strong>Requerimiento Energético Diario (DER):</strong> ~<strong>${kcalDaily} kcal/día</strong><br>
-                    🏃 <strong>Consumo Calórico Hoy:</strong> 340 kcal en 4.2 km<br>
-                    🥗 <strong>Dieta Actual:</strong> ${t.food}
+                    ⚖️ <strong>Peso y Gasto Energético:</strong> <strong>${petWeight} kg</strong> &bull; Requerimiento ~<strong>${kcalDaily} kcal/día</strong> (Hoy: 340 kcal en 4.2 km).<br>
+                    🥗 <strong>Vitality Mix (32.50 € — <code>producto-vitality-mix.html</code>):</strong> Suplemento inmunológico con Omega-3 EPA/DHA y prebióticos.<br>
+                    🥩 <strong>EcoPet Organic (45.00 € — <code>producto-ecopet-organic.html</code>):</strong> Dieta cruda/orgánica biológicamente apropiada.<br>
+                    🩺 <strong>PureBites Clinic (58.00 € — <code>producto-purebites-clinic.html</code>):</strong> Pienso clínico hipoalergénico prescrito por IA para sensibilidad gástrica.
                 </div>
                 <div class="ai-actions-wrap">
                     <button class="ai-btn-action primary" onclick="CudiAI.buyNutrition()">
-                        <i class="fa-solid fa-bowl-food"></i> ${inDemo ? 'Añadir Vitality Mix en App (32.50€)' : 'Ver Nutrición Vitality Mix en Web'}
+                        <i class="fa-solid fa-bowl-food"></i> ${inDemo ? 'Añadir Vitality Mix en App (32.50€)' : 'Ver Vitality Mix en Web'}
                     </button>
-                    <button class="ai-btn-action secondary" onclick="CudiAI.goToProfileTab()">
-                        <i class="fa-solid fa-id-card"></i> ${inDemo ? 'Ver Ficha en App' : 'Ver Perfil en Web'}
+                    <button class="ai-btn-action secondary" onclick="window.location.href='nutricion-personalizada-perros-gatos.html'">
+                        <i class="fa-solid fa-apple-whole"></i> Ver Las 3 Dietas CUDI
                     </button>
                 </div>
             `;
         }
 
         // ---------------------------------------------------------------------
-        // 16. PASEOS & RED SOCIAL CUDI PAWS
+        // 16. PASEOS, CUIDADORES & RED SOCIAL CUDI PAWS
         // ---------------------------------------------------------------------
-        if (has('paseo', 'paseador', 'social', 'amigos', 'salir', 'parque', 'guarderia', 'cuidador', 'nannypets', 'activepaws', 'comunidad')) {
+        if (has('paseo', 'paseador', 'paseadores', 'social', 'amigos', 'parque', 'guarderia', 'cuidador', 'cuidadores', 'nannypets', 'activepaws', 'urban pet walkers', 'comunidad')) {
             return `
-                <strong>Movilidad, Paseadores GPS y Comunidad (${t.name}):</strong>
+                <strong>Red de Paseadores Certificados, Cuidadores y Comunidad (<code>paseadores-perros-certificados-barcelona.html</code> &amp; <code>comunidad-cudi.html</code>):</strong>
                 <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin:8px 0; font-size:0.8rem; line-height:1.6;">
-                    🐕 <strong>ActivePaws (12.00 €/paseo):</strong> Paseador certificado de 1h con trazado GPS en directo.<br>
-                    🏡 <strong>NannyPets 24/7 (35.00 €/día):</strong> Guardería familiar en hogar verificado sin jaulas.<br>
-                    🐾 <strong>Comunidad CUDI:</strong> Quedadas seguras en Parc del Poblenou y Parc de la Ciutadella.
+                    🐕 <strong>Urban Pet Walkers (15.00 € — <code>producto-urban-pet-walkers.html</code>):</strong> Caminatas grupales seguras con trazado GPS en directo.<br>
+                    🏃 <strong>ActivePaws (19.99 € — <code>producto-activepaws.html</code>):</strong> Ejercicio guiado, agilidad y estimulación olfativa con control de pulsaciones.<br>
+                    🏡 <strong>NannyPets 24/7 (25.00 € — <code>producto-nannypets-247.html</code>):</strong> Cuidador verificado en tu propio hogar para perros y gatos sin estrés de jaulas.<br>
+                    🐾 <strong>Comunidad CUDI (<code>comunidad-cudi.html</code>):</strong> Red social de tutores y quedadas seguras en Barcelona.
                 </div>
                 <div class="ai-actions-wrap">
                     <button class="ai-btn-action primary" onclick="CudiAI.goToSocialTab()">
                         <i class="fa-solid fa-paw"></i> ${inDemo ? 'Abrir Comunidad Social en App' : 'Ir a Comunidad CUDI en Web'}
                     </button>
-                    <button class="ai-btn-action secondary" onclick="CudiAI.bookWalker()">
-                        <i class="fa-solid fa-person-walking-dog"></i> ${inDemo ? 'Reservar ActivePaws en App (12€)' : 'Ver Paseadores en Web'}
+                    <button class="ai-btn-action secondary" onclick="window.location.href='paseadores-perros-certificados-barcelona.html'">
+                        <i class="fa-solid fa-person-walking-dog"></i> Ver Paseadores y NannyPets
                     </button>
                 </div>
             `;
         }
 
         // ---------------------------------------------------------------------
-        // 17. MODELO DE NEGOCIO, FINANZAS & PROYECCIONES
+        // 17. MODELO DE NEGOCIO, FINANZAS & PROYECCIONES (SIMULADOR FINANCIERO)
         // ---------------------------------------------------------------------
-        if (has('modelo financiero', 'finanzas', 'tfm', 'escenarios', 'ebitda', 'break even', 'punto de equilibrio', 'ltv', 'cac', 'ingresos', 'inversion', 'rentabilidad', 'negocio')) {
+        if (has('modelo financiero', 'simulador financiero', 'finanzas', 'tfm', 'escenarios', 'ebitda', 'break even', 'punto de equilibrio', 'ltv', 'cac', 'ingresos', 'inversion', 'rentabilidad', 'negocio')) {
             return `
-                <strong>Modelo Financiero y Unit Economics de CUDI:</strong>
+                <strong>Modelo Financiero Multiescenario y Unit Economics de CUDI (<code>simulador-financiero.html</code>):</strong>
                 <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin:8px 0; font-size:0.8rem; line-height:1.6;">
-                    📈 <strong>3 Escenarios Proyectados:</strong><br>
-                    &bull; <strong>Conservador:</strong> 1.25M € facturación (Break-even Mes 16)<br>
-                    &bull; <strong>Base / Moderado:</strong> 2.82M € facturación (Break-even Mes 14 • EBITDA 24%)<br>
-                    &bull; <strong>Optimista:</strong> 4.48M € facturación (Break-even Mes 11)<br>
-                    🎯 <strong>Unit Economics:</strong> CAC <strong>24.50 €</strong> &bull; LTV <strong>285.00 €</strong> &bull; Ratio <strong>11.6x</strong>
+                    📈 <strong>3 Escenarios Interactivos a 36 Meses:</strong><br>
+                    &bull; <strong>Escenario Negativo / Conservador:</strong> 1.25M € facturación (Break-even Mes 16)<br>
+                    &bull; <strong>Escenario Equilibrio / Base:</strong> 2.82M € facturación (Break-even Mes 14 • EBITDA 24%)<br>
+                    &bull; <strong>Escenario Positivo / Optimista:</strong> 4.48M € facturación (Break-even Mes 11)<br>
+                    🎯 <strong>Unit Economics:</strong> CAC <strong>24.50 €</strong> &bull; LTV <strong>285.00 €</strong> &bull; Ratio LTV/CAC <strong>11.6x</strong>
                 </div>
                 <div class="ai-actions-wrap">
                     <button class="ai-btn-action primary" onclick="window.location.href='simulador-financiero.html'">
-                        <i class="fa-solid fa-calculator"></i> Abrir Simulador Financiero Interactivo
+                        <i class="fa-solid fa-calculator"></i> Abrir Simulador Financiero
+                    </button>
+                    <button class="ai-btn-action secondary" onclick="window.location.href='modelo_financiero.html'">
+                        <i class="fa-solid fa-table"></i> Ver Vista Completa Modelo TFM
                     </button>
                 </div>
             `;
         }
 
         // ---------------------------------------------------------------------
-        // 18. PERFIL Y DATOS DE LA MASCOTA
+        // 18. PERFIL Y DATOS DE LA MASCOTA (MI-MASCOTA.HTML)
         // ---------------------------------------------------------------------
-        if (has('perfil', 'mi mascota', 'quien es mi perro', 'quien es mi gato', 'datos de', 'ficha', 'edad', 'raza')) {
+        if (has('perfil', 'mi mascota', 'quien es mi perro', 'quien es mi gato', 'ficha', 'edad', 'raza')) {
             return `
-                <strong>Ficha Digital Sincronizada de ${t.name}:</strong>
+                <strong>Ficha Digital Sincronizada de ${t.name} (<code>mi-mascota.html</code>):</strong>
                 <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin:8px 0; font-size:0.8rem; line-height:1.6;">
                     🐾 <strong>Nombre:</strong> ${t.name} (${t.species})<br>
                     🐕 <strong>Raza y Etapa:</strong> ${t.breed} &bull; ${t.age}<br>
@@ -1201,7 +1687,7 @@ REGLAS: Responde siempre en español de forma empática, precisa y breve (máxim
                 </div>
                 <div class="ai-actions-wrap">
                     <button class="ai-btn-action primary" onclick="CudiAI.goToProfileTab()">
-                        <i class="fa-solid fa-id-card"></i> ${inDemo ? 'Abrir Perfil en App' : 'Abrir Perfil de Mascota en Web'}
+                        <i class="fa-solid fa-id-card"></i> ${inDemo ? 'Abrir Perfil en App' : 'Abrir Mi Mascota en Web'}
                     </button>
                     <button class="ai-btn-action secondary" onclick="CudiAI.goToMetrics()">
                         <i class="fa-solid fa-chart-line"></i> ${inDemo ? 'Ver Métricas en App' : 'Ver Métricas en Web'}
@@ -1210,14 +1696,37 @@ REGLAS: Responde siempre en español de forma empática, precisa y breve (máxim
             `;
         }
 
+        // ---------------------------------------------------------------------
+        // 19. BUSCADOR SEMÁNTICO UNIVERSAL EN LAS 45 PÁGINAS DE CUDI
+        // ---------------------------------------------------------------------
+        const matchedPage = this.searchAllPagesKnowledge(rawQuery);
+        if (matchedPage) {
+            return `
+                <div class="ai-source-badge"><i class="fa-solid fa-file-circle-check"></i> Conocimiento Verificado de Página &bull; <code>${matchedPage.url}</code></div><br>
+                <strong>${matchedPage.title}</strong>
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin:8px 0; font-size:0.8rem; line-height:1.6;">
+                    ${matchedPage.desc ? `<p style="margin:0 0 6px 0; font-weight:600; color:#0f172a;">${matchedPage.desc}</p>` : ''}
+                    <p style="margin:0; color:#334155;">${matchedPage.content.slice(0, 420)}...</p>
+                </div>
+                <div class="ai-actions-wrap">
+                    <button class="ai-btn-action primary" onclick="window.location.href='${matchedPage.url}'">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Abrir ${matchedPage.title.split('|')[0].trim()}
+                    </button>
+                    <button class="ai-btn-action secondary" onclick="CudiAI.goToMetrics()">
+                        <i class="fa-solid fa-heart-pulse"></i> Ver Gemelo Digital de ${t.name}
+                    </button>
+                </div>
+            `;
+        }
+
         if (strictOnly) return null;
 
         // ---------------------------------------------------------------------
-        // 19. RESPUESTA CLÍNICA INTELIGENTE CON TELEMETRÍA EN VIVO PARA CONSULTAS ABIERTAS
+        // 20. RESPUESTA CLÍNICA Y NAVEGACIONAL COMPLETA PARA CONSULTAS ABIERTAS
         // ---------------------------------------------------------------------
         const ragContext = this.retrieveRAGContext(rawQuery);
         return `
-            <div class="ai-source-badge"><i class="fa-solid fa-brain"></i> Diagnóstico Contextual CUDI &bull; ${t.name}</div><br>
+            <div class="ai-source-badge"><i class="fa-solid fa-brain"></i> Diagnóstico &amp; Asistente Integral CUDI &bull; ${t.name}</div><br>
             Respecto a tu consulta sobre <strong>"${rawQuery}"</strong> para <strong>${t.name}</strong> (${t.breed}, ${t.weight} kg):
             <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:11px 13px; margin:8px 0; font-size:0.79rem; line-height:1.6;">
                 ${this.formatMarkdownToHTML(ragContext)}
@@ -1235,8 +1744,8 @@ REGLAS: Responde siempre en español de forma empática, precisa y breve (máxim
                 <button class="ai-btn-action secondary" onclick="CudiAI.goToGpsTab()">
                     <i class="fa-solid fa-location-dot"></i> ${inDemo ? 'Ver GPS en App' : 'Ver Ubicación en Web'}
                 </button>
-                <button class="ai-btn-action secondary" onclick="CudiAI.goToHealthTab()">
-                    <i class="fa-solid fa-syringe"></i> ${inDemo ? 'Ver Vacunas en App' : 'Ver Vacunas en Web'}
+                <button class="ai-btn-action secondary" onclick="window.location.href='politica-devoluciones-smart-collar.html'">
+                    <i class="fa-solid fa-file-shield"></i> Políticas y Garantías
                 </button>
             </div>
         `;

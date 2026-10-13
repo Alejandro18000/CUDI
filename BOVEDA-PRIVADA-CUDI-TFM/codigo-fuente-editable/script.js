@@ -1,25 +1,35 @@
 // Desarrollo 100% realizado por Sergio Alejandro Ospina Rocha
-const CUDI_SEARCH_INDEX = [
-    // --- PRODUCTOS DE TIENDA ---
+var CUDI_SEARCH_INDEX = [
+    // --- PRODUCTOS DE TIENDA (15 PRODUCTOS + SMART COLLAR) ---
+    {
+        url: "smart-collar-cudi-gps.html",
+        title: "Smart Collar CUDI GPS - Collar Biométrico IoT",
+        category: "Hardware IoT",
+        badgeClass: "badge-hardware",
+        icon: "fa-satellite-dish",
+        price: "89.50 €",
+        desc: "Collar clínico con ECG óptico, VFC, temperatura dérmica, GPS L1+L5 + eSIM 4G autónoma, IP68 y garantía de 30 días.",
+        tags: ["collar", "smart collar", "gps", "rastreo", "localizador", "geolocalizacion", "ubicar", "donde esta", "perdida", "mapa", "hardware", "dispositivo", "producto", "productos", "tienda", "catalogo", "bateria", "sensor"]
+    },
     {
         url: "producto-ecopet-organic.html",
         title: "EcoPet Organic - Dieta BARF Biológica",
         category: "Nutrición",
         badgeClass: "badge-nutrition",
         icon: "fa-bowl-food",
-        price: "42.00 €",
+        price: "45.00 €",
         desc: "Alimento crudo biológicamente apropiado (BARF) con carne de pasto y vegetales orgánicos. Cero cereales, balance microbioma.",
-        tags: ["comida", "alimento", "pienso", "barf", "dieta", "carne", "croquetas", "nutricion", "organico", "ecopet", "comer", "hambre"]
+        tags: ["comida", "alimento", "pienso", "barf", "dieta", "carne", "croquetas", "nutricion", "organico", "ecopet", "comer", "hambre", "producto", "productos", "tienda", "catalogo"]
     },
     {
         url: "producto-purebites-clinic.html",
-        title: "PureBites Clinic - Pienso Hipoalergénico",
+        title: "PureBites Clinic - Pienso Hipoalergénico IA",
         category: "Nutrición",
         badgeClass: "badge-nutrition",
         icon: "fa-prescription-bottle",
-        price: "38.50 €",
-        desc: "Piensos clínicos especializados prescritos por IA para sensibilidades gástricas, alergias cutáneas e intolerancias digestivas.",
-        tags: ["comida", "alimento", "pienso", "croquetas", "dieta", "hipoalergenico", "gastrico", "alergia", "digestion", "estomago", "nutricion", "purebites"]
+        price: "58.00 €",
+        desc: "Piensos clínicos especializados prescritos por IA para sensibilidades gástricas, alergias cutáneas, vómitos e intolerancias digestivas.",
+        tags: ["comida", "alimento", "pienso", "croquetas", "dieta", "hipoalergenico", "gastrico", "alergia", "digestion", "estomago", "nutricion", "purebites", "vomito", "diarrea", "rasca", "dermatitis", "producto", "productos", "tienda"]
     },
     {
         url: "producto-vitality-mix.html",
@@ -27,39 +37,29 @@ const CUDI_SEARCH_INDEX = [
         category: "Nutrición",
         badgeClass: "badge-nutrition",
         icon: "fa-capsules",
-        price: "24.99 €",
-        desc: "Suplementos nutricionales con Omega-3, cúrcuma y zinc para reforzar las defensas de perros y gatos en cualquier etapa.",
-        tags: ["suplemento", "vitaminas", "omega3", "inmune", "nutricion", "vitality", "defensas", "comida", "complemento", "articulaciones"]
-    },
-    {
-        url: "smart-collar-cudi-gps.html",
-        title: "Smart Collar CUDI GPS - Collar Inteligente",
-        category: "Hardware",
-        badgeClass: "badge-hardware",
-        icon: "fa-satellite-dish",
-        price: "149.00 €",
-        desc: "Collar biométrico con GPS multibanda, telemetría cardíaca y respiratoria continua, batería de 14 días y geocercas activas.",
-        tags: ["collar", "smart collar", "gps", "rastreo", "localizador", "geolocalizacion", "ubicar", "donde esta", "perdida", "mapa", "hardware", "dispositivo"]
+        price: "32.50 €",
+        desc: "Suplementos nutricionales con Omega-3 EPA/DHA, prebióticos FOS, cúrcuma y zinc para reforzar el sistema inmune de perros y gatos.",
+        tags: ["suplemento", "vitaminas", "omega3", "inmune", "nutricion", "vitality", "defensas", "comida", "complemento", "articulaciones", "producto", "productos", "tienda", "catalogo"]
     },
     {
         url: "producto-cudi-shield-basic.html",
-        title: "CUDI Shield Basic - Seguro Responsabilidad Civil",
+        title: "CUDI Shield Basic - Seguro Urgencias y RC",
         category: "Seguros",
         badgeClass: "badge-insurance",
         icon: "fa-shield-halved",
-        price: "6.99 €/mes",
-        desc: "Cobertura obligatoria por Ley de Bienestar Animal con hasta 300.000€ en responsabilidad civil y asistencia jurídica completa.",
-        tags: ["seguro", "responsabilidad civil", "rc", "ley bienestar animal", "cobertura", "poliza", "shield", "proteger", "legal"]
+        price: "18.00 €/mes",
+        desc: "Reembolso del 80% en urgencias y accidentes más cobertura obligatoria de Responsabilidad Civil familiar hasta 150.000 €.",
+        tags: ["seguro", "seguros", "responsabilidad civil", "rc", "ley bienestar animal", "cobertura", "poliza", "shield", "proteger", "accidente", "producto", "productos", "tienda"]
     },
     {
         url: "producto-global-pet-protect.html",
-        title: "Global Pet Protect - Seguro de Salud Total",
+        title: "Global Pet Protect - Seguro Quirúrgico Total 100%",
         category: "Seguros",
         badgeClass: "badge-insurance",
         icon: "fa-shield-heart",
-        price: "29.99 €/mes",
-        desc: "Seguro veterinario integral con reembolso del 80% en cirugías, urgencias 24h, hospitalización y pruebas diagnósticas.",
-        tags: ["seguro", "salud", "veterinario", "cirugia", "hospital", "reembolso", "urgencias", "cobertura medica", "global pet protect"]
+        price: "35.00 €/mes",
+        desc: "Seguro veterinario integral con reembolso del 100% en cirugías, urgencias 24h, hospitalización UCI y cobertura internacional.",
+        tags: ["seguro", "seguros", "salud", "veterinario", "cirugia", "hospital", "reembolso", "urgencias", "cobertura medica", "global pet protect", "operacion", "producto", "productos"]
     },
     {
         url: "producto-safehome-multipet.html",
@@ -67,526 +67,578 @@ const CUDI_SEARCH_INDEX = [
         category: "Seguros",
         badgeClass: "badge-insurance",
         icon: "fa-house-chimney-medical",
-        price: "15.50 €/mes",
-        desc: "Protección combinada ante accidentes domésticos e intoxicaciones para familias que conviven con perros y gatos.",
-        tags: ["seguro", "multiespecie", "hogar", "gatos", "perros", "cobertura", "accidentes", "safehome", "poliza"]
-    },
-    {
-        url: "producto-medipet-express.html",
-        title: "MediPet Express - Clínicas Veterinarias 24h",
-        category: "Salud 24/7",
-        badgeClass: "badge-health",
-        icon: "fa-truck-medical",
-        price: "45.00 €",
-        desc: "Red de clínicas de cercanía conectadas al historial biométrico CUDI para urgencias y consultas prioritarias sin esperas.",
-        tags: ["veterinario", "clinica", "urgencias", "24h", "medico", "doctor", "enfermo", "consulta", "medipet", "salud"]
-    },
-    {
-        url: "producto-hospital-clinico-dual.html",
-        title: "Hospital Clínico Dual - Medicina Interna y UCI",
-        category: "Salud 24/7",
-        badgeClass: "badge-health",
-        icon: "fa-hospital",
-        price: "85.00 €",
-        desc: "Hospital de referencia con quirófanos de vanguardia, diagnóstico por imagen y UCI avanzada para caninos y felinos.",
-        tags: ["hospital", "veterinario", "cirugia", "uci", "medicina interna", "especialista", "graves", "dual", "clinico"]
+        price: "28.00 €/mes",
+        desc: "Protección unificada para familias donde conviven perros y gatos bajo una sola póliza de urgencias y accidentes domésticos.",
+        tags: ["seguro", "seguros", "multiespecie", "hogar", "gatos", "perros", "cobertura", "accidentes", "safehome", "multipet", "poliza", "producto", "productos"]
     },
     {
         url: "producto-vethome-cudi.html",
-        title: "VetHome CUDI - Veterinario a Domicilio",
+        title: "VetHome CUDI - Veterinario Colegiado a Domicilio",
         category: "Salud 24/7",
         badgeClass: "badge-health",
         icon: "fa-user-doctor",
-        price: "55.00 €",
-        desc: "Atención médica presencial en tu hogar, vacunación y revisiones sin el estrés del transportín ni desplazamientos.",
-        tags: ["veterinario", "domicilio", "casa", "vethome", "vacunas", "revision", "estres", "medico", "visita"]
+        price: "75.00 €",
+        desc: "Atención médica presencial en tu hogar en menos de 45 min, urgencias, vacunación y revisiones sin estrés de transporte.",
+        tags: ["veterinario", "domicilio", "casa", "vethome", "vacunas", "vacunar", "revision", "urgencia", "urgencias", "medico", "visita", "vomito", "diarrea", "fiebre", "cojea", "chocolate", "toxico", "producto", "servicios"]
+    },
+    {
+        url: "producto-medipet-express.html",
+        title: "MediPet Express - Telemedicina y Clínicas 24h",
+        category: "Salud 24/7",
+        badgeClass: "badge-health",
+        icon: "fa-truck-medical",
+        price: "35.00 €",
+        desc: "Videoconsulta veterinaria inmediata 24/7 con receta electrónica y red de clínicas de barrio conectadas al Gemelo Digital.",
+        tags: ["veterinario", "clinica", "urgencias", "24h", "medico", "doctor", "enfermo", "consulta", "medipet", "salud", "telemedicina", "videollamada", "tos", "producto", "servicios"]
+    },
+    {
+        url: "producto-hospital-clinico-dual.html",
+        title: "Hospital Clínico Dual - Medicina Interna y UCI 24h",
+        category: "Salud 24/7",
+        badgeClass: "badge-health",
+        icon: "fa-hospital",
+        price: "60.00 €",
+        desc: "Hospital de referencia con quirófanos de última generación, TAC, ecografía Doppler y UCI avanzada para caninos y felinos.",
+        tags: ["hospital", "veterinario", "cirugia", "uci", "medicina interna", "especialista", "graves", "dual", "clinico", "quirofano", "producto", "servicios"]
     },
     {
         url: "producto-activepaws.html",
-        title: "ActivePaws - Ejercicio y Agilidad Canina",
+        title: "ActivePaws - Ejercicio Guiado y Agilidad Canina",
         category: "Paseos & Deporte",
         badgeClass: "badge-walks",
         icon: "fa-person-running",
         price: "19.99 €",
-        desc: "Entrenamiento físico adaptado a razas de alta energía, juegos de olfato y control de hiperactividad con monitores titulados.",
-        tags: ["paseo", "paseador", "ejercicio", "entrenamiento", "correr", "energia", "activo", "activepaws", "deporte"]
+        desc: "Sesiones de ejercicio guiado, estimulación olfativa y control de pulsaciones y ruta GPS en directo con monitores titulados.",
+        tags: ["paseo", "paseos", "paseador", "paseadores", "ejercicio", "entrenamiento", "correr", "energia", "activo", "activepaws", "deporte", "producto", "servicios"]
     },
     {
         url: "producto-urban-pet-walkers.html",
-        title: "Urban Pet Walkers - Paseos Urbanos Certificados",
+        title: "Urban Pet Walkers - Paseos Urbanos Certificados GPS",
         category: "Paseos & Deporte",
         badgeClass: "badge-walks",
         icon: "fa-dog",
-        price: "14.50 €",
-        desc: "Caminatas seguras en grupos reducidos con seguimiento GPS en directo por tu barrio y fotos de cada ruta.",
-        tags: ["paseador", "paseo", "caminar", "walkers", "perros", "barrio", "gps paseo", "cuidado"]
+        price: "15.00 €",
+        desc: "Caminatas seguras en grupos reducidos y transporte técnico felino con seguimiento GPS en tiempo real desde la App.",
+        tags: ["paseador", "paseadores", "paseo", "paseos", "caminar", "walkers", "urban pet walkers", "perros", "barrio", "gps paseo", "cuidado", "producto", "servicios"]
     },
     {
         url: "producto-nannypets-247.html",
-        title: "NannyPets 24/7 - Cuidadores a Domicilio",
+        title: "NannyPets 24/7 - Cuidadores Verificados a Domicilio",
         category: "Paseos & Deporte",
         badgeClass: "badge-walks",
         icon: "fa-couch",
-        price: "49.00 €/día",
-        desc: "Cuidado profesional en tu propia casa mientras estás de viaje o trabajando, manteniendo las rutinas de tu mascota.",
-        tags: ["cuidador", "cuidadores", "guarderia", "hotel", "viaje", "domicilio", "nanny", "nannypets", "quedarse"]
+        price: "25.00 €/día",
+        desc: "Cuidado profesional en tu propio hogar sin jaulas para que perros y gatos permanezcan juntos durante tu ausencia con reportes biométricos.",
+        tags: ["cuidador", "cuidadores", "guarderia", "hotel", "viaje", "domicilio", "nanny", "nannypets", "quedarse", "canguro", "producto", "servicios"]
     },
     {
         url: "producto-bubbles--paws.html",
-        title: "Bubbles & Paws - Baño Ecológico y Secado",
+        title: "Bubbles & Paws - Baño Ecológico y Ozonoterapia",
         category: "Higiene & Spa",
         badgeClass: "badge-spa",
         icon: "fa-soap",
         price: "22.00 €",
-        desc: "Servicio exprés de baño y secado con cosmética 100% biodegradable y cabinas acústicas que eliminan el pánico al ruido.",
-        tags: ["bano", "banar", "lavar", "higiene", "champu", "limpieza", "burbujas", "bubbles", "peluqueria"]
+        desc: "Baño dermoprotector 100% biodegradable y ozonoterapia en cabinas acústicas libres de estrés y ruido.",
+        tags: ["bano", "banar", "lavar", "higiene", "champu", "limpieza", "burbujas", "bubbles", "peluqueria", "ozonoterapia", "piel", "picor", "producto", "servicios"]
     },
     {
         url: "producto-grooming-master.html",
-        title: "Grooming Master - Peluquería y Estilismo",
+        title: "Grooming Master - Peluquería y Corte a Tijera",
         category: "Higiene & Spa",
         badgeClass: "badge-spa",
         icon: "fa-scissors",
-        price: "35.00 €",
-        desc: "Corte a tijera de alta escuela, deslanado, arreglo higiénico y ozonoterapia regeneradora para piel y pelo.",
-        tags: ["peluqueria", "corte", "estilismo", "grooming", "tijera", "pelo", "ozono", "peinado", "belleza"]
+        price: "30.00 €",
+        desc: "Corte a tijera de alta escuela, deslanado, arreglo higiénico y cuidado adaptado a la sensibilidad dérmica de tu mascota.",
+        tags: ["peluqueria", "corte", "estilismo", "grooming", "tijera", "pelo", "ozono", "peinado", "belleza", "estetica", "producto", "servicios"]
     },
     {
         url: "producto-zenpet-spa.html",
-        title: "ZenPet Spa - Spa Antiestrés con Feromonas",
+        title: "ZenPet Spa - Hidroterapia y Spa Antiestrés con Feromonas",
         category: "Higiene & Spa",
         badgeClass: "badge-spa",
         icon: "fa-spa",
-        price: "45.00 €",
-        desc: "Sesiones de hidroterapia relajante con difusión de feromonas apaciguadoras, aromaterapia y masaje muscular.",
-        tags: ["spa", "relajacion", "estres", "masaje", "hidroterapia", "feromonas", "zenpet", "calma", "bienestar"]
+        price: "50.00 €",
+        desc: "Hidroterapia articular, masaje relajante y cabinas con feromonas apaciguadoras para reducir activamente el cortisol y la ansiedad.",
+        tags: ["spa", "relajacion", "estres", "ansiedad", "cortisol", "masaje", "hidroterapia", "feromonas", "zenpet", "calma", "bienestar", "producto", "servicios"]
     },
 
-    // --- HERRAMIENTAS INTERACTIVAS Y DEMO ---
-    {
-        url: "simulador-gemelo-digital-telemetria.html",
-        title: "Demo App CUDI: Gemelo Digital y Telemetría",
-        category: "Demo App",
-        badgeClass: "badge-demo",
-        icon: "fa-mobile-screen",
-        price: "Interactiva",
-        desc: "Simulador interactivo nativo de la app CUDI con signos vitales en vivo, GPS en tiempo real, tienda unificada y triaje clínico con IA.",
-        tags: ["demo", "app", "simulador", "aplicacion", "gemelo digital", "telemetria", "movil", "celular", "interfaz", "probar", "ia demo"]
-    },
-    {
-        url: "simulador-gemelo-digital-telemetria.html#tab-gps",
-        title: "Rastreo GPS en Tiempo Real (Demo App)",
-        category: "Demo App",
-        badgeClass: "badge-demo",
-        icon: "fa-location-crosshairs",
-        price: "Interactiva",
-        desc: "Pestaña GPS de la app CUDI: mapa satelital en vivo con posición de la mascota, geocercas activas y pitido acústico.",
-        tags: ["gps", "mapa", "rastreo", "localizacion", "demo gps", "geocerca", "ubicar", "en vivo"]
-    },
-    {
-        url: "simulador-financiero.html",
-        title: "Simulador Financiero CUDI (TFM)",
-        category: "Finanzas",
-        badgeClass: "badge-finance",
-        icon: "fa-chart-line",
-        price: "TFM Tool",
-        desc: "Simulador financiero interactivo con 3 escenarios (Conservador, Base, Agresivo), proyecciones a 5 años, TIR, VAN y EBITDA en tiempo real.",
-        tags: ["finanzas", "simulador financiero", "inversion", "escenarios", "ebitda", "tir", "van", "modelo", "tfm", "calculadora", "metricas"]
-    },
-    {
-        url: "mi-mascota.html",
-        title: "Mi Mascota - Perfil y Constantes Vitales",
-        category: "Demo App",
-        badgeClass: "badge-demo",
-        icon: "fa-paw",
-        price: "Perfil",
-        desc: "Ficha médica biomédica de tu mascota: ritmo cardíaco, temperatura, calorías, peso y sincronización con el Smart Collar.",
-        tags: ["perfil", "mi mascota", "constantes", "signos vitales", "salud mascota", "ficha", "peso", "latidos"]
-    },
-    {
-        url: "simulador-solo-app.html",
-        title: "App CUDI - Vista Completa de Aplicación",
-        category: "Demo App",
-        badgeClass: "badge-demo",
-        icon: "fa-mobile",
-        price: "Interactiva",
-        desc: "Vista completa y limpia del teléfono móvil con todas las pestañas de salud, telemetría y tienda de CUDI.",
-        tags: ["app", "aplicacion", "movil", "celular", "solo app", "pantalla", "interfaz"]
-    },
-
-    // --- PÁGINAS HUB Y SERVICIOS ---
-    {
-        url: "nutricion-personalizada-perros-gatos.html",
-        title: "Nutrición Animal Premium y Planes de Alimentación",
-        category: "Servicio",
-        badgeClass: "badge-nutrition",
-        icon: "fa-seedling",
-        desc: "Planes nutricionales a medida formulados por algoritmos clínicos según peso, raza y analíticas biométricas.",
-        tags: ["nutricion", "comida", "planes comida", "alimentacion", "dieta personalizada", "alimento perros", "alimento gatos"]
-    },
-    {
-        url: "seguros-salud-mascotas-barcelona.html",
-        title: "Seguros para Mascotas y Protección Legal",
-        category: "Servicio",
-        badgeClass: "badge-insurance",
-        icon: "fa-file-contract",
-        desc: "Comparativa y contratación directa de coberturas médicas y seguros de responsabilidad civil para animales de compañía.",
-        tags: ["seguro", "seguros mascotas", "poliza", "coberturas", "proteccion legal", "responsabilidad civil"]
-    },
-    {
-        url: "telemedicina-veterinaria-24-7.html",
-        title: "Telemedicina Veterinaria 24/7 y Clínicas",
-        category: "Salud 24/7",
-        badgeClass: "badge-health",
-        icon: "fa-laptop-medical",
-        desc: "Videoconsulta inmediata con veterinarios colegiados 24/7 con triaje asistido por IA para diagnosticar síntomas tempranos.",
-        tags: ["telemedicina", "veterinario online", "videoconsulta", "24/7", "medico", "urgencia veterinaria", "chat medico"]
-    },
-    {
-        url: "paseadores-perros-certificados-barcelona.html",
-        title: "Red de Paseadores y Cuidadores de Confianza",
-        category: "Servicio",
-        badgeClass: "badge-walks",
-        icon: "fa-person-walking",
-        desc: "Paseadores y cuidadores auditados con seguro de responsabilidad civil, formación en primeros auxilios y seguimiento GPS.",
-        tags: ["paseadores", "cuidadores", "paseador perros", "guarderia", "confianza", "paseos"]
-    },
-    {
-        url: "smart-collar-aventuras-sin-sustos.html",
-        title: "Campaña Aventuras Sin Sustos - Smart Collar",
-        category: "Campaña",
-        badgeClass: "badge-hardware",
-        icon: "fa-map-location-dot",
-        desc: "Comunidad de rutas seguras pet-friendly en España y prevención activa de pérdidas con el Collar Inteligente CUDI.",
-        tags: ["aventuras sin sustos", "rutas", "collar", "campana", "lanzamiento", "mapa rutas", "seguridad"]
-    },
-    {
-        url: "comunidad-cudi.html",
-        title: "Comunidad CUDI - Red Social Multiespecie",
-        category: "Comunidad",
-        badgeClass: "badge-community",
-        icon: "fa-people-group",
-        desc: "Punto de encuentro para tutores responsables: foros temáticos, quedadas de socialización y consejos de expertos.",
-        tags: ["comunidad", "red social", "foro", "amigos", "consejos", "tutores", "social", "eventos"]
-    },
-    {
-        url: "planes-suscripcion-bienestar-animal.html",
-        title: "Suscripciones y Planes de Cuidado CUDI",
-        category: "Suscripciones",
-        badgeClass: "badge-subscription",
-        icon: "fa-shield-cat",
-        desc: "Compara los planes Esencial, Premium y MultiPet con telemedicina ilimitada, descuentos en tienda y monitoreo continuo.",
-        tags: ["planes", "suscripciones", "precios", "tarifas", "premium", "cuotas", "membresia"]
-    },
-    {
-        url: "contratar-plan-premium-cudi.html",
-        title: "Contratar Plan Premium CUDI",
-        category: "Suscripciones",
-        badgeClass: "badge-subscription",
-        icon: "fa-gem",
-        price: "19.99 €/mes",
-        desc: "Contratación directa del plan más completo de bienestar animal con telemedicina 24/7, seguro veterinario y IA predictiva.",
-        tags: ["contratar", "premium", "alta", "plan premium", "suscripcion mensual"]
-    },
-    {
-        url: "red-socios-clinicas-veterinarias.html",
-        title: "Red para Profesionales y Clínicas Socias",
-        category: "Partners",
-        badgeClass: "badge-health",
-        icon: "fa-handshake",
-        desc: "Únete a la red médica CUDI: capta nuevos pacientes, accede al historial biométrico de clientes y digitaliza tu clínica.",
-        tags: ["partners", "socios", "veterinarios", "clinicas socias", "profesionales", "afiliados", "convenios"]
-    },
-    {
-        url: "bienestar-integral-multiespecie.html",
-        title: "Bienestar y Salud Holística Multiespecie",
-        category: "Salud 24/7",
-        badgeClass: "badge-health",
-        icon: "fa-heart-pulse",
-        desc: "Guía completa de convivencia y salud armoniosa entre perros y gatos: etología, prevención de estrés y salud física.",
-        tags: ["bienestar", "holistica", "salud integral", "multiespecie", "gatos y perros", "convivencia"]
-    },
-    {
-        url: "cudi-redes-sociales-bot.html",
-        title: "CUDI en Redes Sociales y Asistente Bot",
-        category: "Comunidad",
-        badgeClass: "badge-community",
-        icon: "fa-hashtag",
-        desc: "Accede a los canales oficiales de CUDI en Instagram, TikTok y activa el bot de triaje desde mensajería instantánea.",
-        tags: ["redes sociales", "bot", "whatsapp", "instagram", "asistente", "chat bot"]
-    },
-
-    // --- ARTÍCULOS CLÍNICOS E INVESTIGACIÓN IA ---
-    {
-        url: "triaje-ia-esperanza-vida-veterinaria.html",
-        title: "Eficacia del Triaje con IA en Urgencias Veterinarias",
-        category: "Clínico / IA",
-        badgeClass: "badge-clinical",
-        icon: "fa-microchip",
-        desc: "Estudio sobre cómo la evaluación algorítmica de síntomas y signos vitales reduce la mortalidad aguda en la hora de oro médica.",
-        tags: ["triaje", "ia", "inteligencia artificial", "urgencias", "mortalidad", "estudio clinico", "diagnostico", "algoritmo"]
-    },
+    // --- ARTÍCULOS CLÍNICOS E INVESTIGACIÓN IA (CUDI JOURNAL — 6 ESTUDIOS) ---
     {
         url: "gemelos-digitales-salud-predictiva.html",
-        title: "Gemelos Digitales Biomédicos en Mascotas",
-        category: "Clínico / IA",
+        title: "Gemelos Digitales y Salud Predictiva",
+        category: "CUDI Journal / Artículo",
         badgeClass: "badge-clinical",
         icon: "fa-network-wired",
-        desc: "Cómo el gemelo digital analiza 8.760 horas de telemetría anual para predecir patologías cardíacas y metabólicas antes de síntomas visibles.",
-        tags: ["gemelo digital", "digital twin", "salud predictiva", "telemetria", "biomedicina", "prediccion", "ia salud"]
+        price: "6 min lectura",
+        desc: "Cómo la monitorización continua las 8.760 horas del año anticipa patologías cardíacas y metabólicas con 94.8% de precisión.",
+        tags: ["articulo", "articulos", "estudio", "estudios", "journal", "investigacion", "investigaciones", "cientifico", "cientificos", "paper", "lectura", "blog", "gemelo digital", "gemelos digitales", "salud predictiva", "telemetria", "biomedicina", "prediccion"]
+    },
+    {
+        url: "triaje-ia-esperanza-vida-veterinaria.html",
+        title: "Triaje con IA y Reducción de Mortalidad Aguda",
+        category: "CUDI Journal / Artículo",
+        badgeClass: "badge-clinical",
+        icon: "fa-microchip",
+        price: "6 min lectura",
+        desc: "La evaluación algorítmica reduce el tiempo de reacción a <18 min y eleva la supervivencia en urgencias críticas al 91%.",
+        tags: ["articulo", "articulos", "estudio", "estudios", "journal", "investigacion", "investigaciones", "cientifico", "cientificos", "paper", "lectura", "blog", "triaje", "ia", "inteligencia artificial", "urgencias", "mortalidad", "esperanza de vida", "ventana de oro"]
+    },
+    {
+        url: "microbioma-nutricion-longevidad-canina.html",
+        title: "Microbioma, Nutrición Orgánica y Longevidad",
+        category: "CUDI Journal / Artículo",
+        badgeClass: "badge-clinical",
+        icon: "fa-dna",
+        price: "7 min lectura",
+        desc: "El ajuste calórico dinámico y dietas orgánicas aumentan un +68% la flora intestinal beneficiosa y +2.4 años la esperanza de vida.",
+        tags: ["articulo", "articulos", "estudio", "estudios", "journal", "investigacion", "investigaciones", "cientifico", "cientificos", "paper", "lectura", "blog", "microbioma", "nutricion", "longevidad", "pienso", "barf", "flora intestinal", "comida"]
     },
     {
         url: "geo-telemetria-prevencion-perdida.html",
-        title: "Telemetría y Geolocalización en Prevención de Pérdidas",
-        category: "Clínico / IA",
+        title: "Geo-Telemetría GNSS contra el Extravío",
+        category: "CUDI Journal / Artículo",
         badgeClass: "badge-clinical",
         icon: "fa-tower-broadcast",
-        desc: "Análisis empírico del impacto del GPS continuo y alertas geográficas en la recuperación inmediata de mascotas extraviadas.",
-        tags: ["perdida", "extravio", "gps", "geolocalizacion", "telemetria", "seguridad", "recuperacion"]
+        price: "5 min lectura",
+        desc: "Arquitectura híbrida LTE-M + GPS multibanda que previene el 99.4% de pérdidas con rescate medio en menos de 4 minutos.",
+        tags: ["articulo", "articulos", "estudio", "estudios", "journal", "investigacion", "investigaciones", "cientifico", "cientificos", "paper", "lectura", "blog", "perdida", "extravio", "gps", "geolocalizacion", "telemetria", "seguridad", "recuperacion"]
     },
     {
         url: "ansiedad-separacion-cortisol-mascotas.html",
         title: "Reducción de Cortisol en Ansiedad por Separación",
-        category: "Clínico / IA",
+        category: "CUDI Journal / Artículo",
         badgeClass: "badge-clinical",
         icon: "fa-brain",
-        desc: "Investigación biomédica sobre picos de cortisol en soledad urbana y estrategias de enriquecimiento ambiental y paseos activos.",
-        tags: ["ansiedad", "estres", "cortisol", "separacion", "comportamiento", "etologia", "salud mental"]
-    },
-    {
-        url: "microbioma-nutricion-longevidad-canina.html",
-        title: "Microbioma y Nutrición Orgánica en Longevidad",
-        category: "Clínico / IA",
-        badgeClass: "badge-clinical",
-        icon: "fa-dna",
-        desc: "Impacto del cambio de ultraprocesados a dietas biológicamente apropiadas en la flora intestinal y esperanza de vida animal.",
-        tags: ["microbioma", "nutricion", "longevidad", "pienso", "barf", "flora intestinal", "estudio", "comida"]
+        price: "5 min lectura",
+        desc: "Biomarcadores VFC de variabilidad cardíaca, paseos activos y feromonas reducen un 47% el cortisol plasmático en 21 días.",
+        tags: ["articulo", "articulos", "estudio", "estudios", "journal", "investigacion", "investigaciones", "cientifico", "cientificos", "paper", "lectura", "blog", "ansiedad", "estres", "cortisol", "separacion", "comportamiento", "etologia", "salud mental"]
     },
     {
         url: "seguros-veterinarios-mortalidad.html",
-        title: "Eutanasia Económica y Cobertura Veterinaria",
-        category: "Clínico / IA",
+        title: "Seguros Preventivos vs. Eutanasia Económica",
+        category: "CUDI Journal / Artículo",
         badgeClass: "badge-clinical",
         icon: "fa-heart-crack",
-        desc: "Análisis socioeconómico de la tenencia responsable y cómo los seguros de salud eliminan decisiones críticas por coste quirúrgico.",
-        tags: ["seguros", "eutanasia economica", "costes veterinarios", "cobertura", "salud", "analisis"]
+        price: "5 min lectura",
+        desc: "Cómo la cobertura preventiva elimina la barrera financiera ante cirugías de +2.000 € reduciendo un 88% la mortalidad económica.",
+        tags: ["articulo", "articulos", "estudio", "estudios", "journal", "investigacion", "investigaciones", "cientifico", "cientificos", "paper", "lectura", "blog", "seguros", "eutanasia economica", "costes veterinarios", "cobertura", "mortalidad"]
     },
 
-    // --- FINANZAS Y ESTRATEGIA ---
+    // --- DEMO INTERACTIVA Y SUS 6 PESTAÑAS + MI MASCOTA ---
+    {
+        url: "simulador-gemelo-digital-telemetria.html",
+        title: "Demo App CUDI: Gemelo Digital y Telemetría (6 Pestañas)",
+        category: "Demo App",
+        badgeClass: "badge-demo",
+        icon: "fa-mobile-screen",
+        price: "Interactiva",
+        desc: "Simulador interactivo completo de la App CUDI con signos vitales en vivo, Triaje IA Holter, GPS, Vacunas, Comunidad y Tienda.",
+        tags: ["demo", "app", "simulador", "aplicacion", "gemelo digital", "telemetria", "movil", "celular", "interfaz", "probar", "pestanas"]
+    },
+    {
+        url: "mi-mascota.html#web-sec-metricas",
+        title: "Panel de Métricas y Signos Vitales en Vivo",
+        category: "Telemetría en Vivo",
+        badgeClass: "badge-demo",
+        icon: "fa-heart-pulse",
+        price: "98/100 Salud",
+        desc: "Frecuencia cardíaca ECG (bpm), temperatura dérmica (38.4°C), respiración, estrés VFC, calidad de sueño y calorías quemadas.",
+        tags: ["metrica", "metricas", "signos vitales", "vitales", "constantes", "bpm", "corazon", "latidos", "pulso", "temperatura", "respiracion", "rpm", "sueno", "descanso", "calorias", "pasos", "vfc", "estres", "como esta", "estado de salud"]
+    },
+    {
+        url: "mi-mascota.html#web-sec-ubicacion",
+        title: "Mapa GPS Satelital y Geocerca en Tiempo Real",
+        category: "Rastreo GPS",
+        badgeClass: "badge-demo",
+        icon: "fa-location-crosshairs",
+        price: "En Zona Segura",
+        desc: "Coordenadas exactas GNSS L1+L5, perímetro seguro de geocerca (150m), distancia a casa y zumbador acústico de 85 dB.",
+        tags: ["ubicacion", "localizacion", "donde esta", "gps", "mapa", "coordenadas", "geocerca", "geovalla", "radar", "perdido", "perdida", "distancia", "sonar"]
+    },
+    {
+        url: "mi-mascota.html#web-sec-vacunas",
+        title: "Calendario de Vacunas, Desparasitación y Citas Médicas",
+        category: "Salud Preventiva",
+        badgeClass: "badge-health",
+        icon: "fa-syringe",
+        price: "Expediente Activo",
+        desc: "Estado de Polivalente/Trivalente, Rabia, Leucemia/Bordetella, pipeta mensual, comprimido trimestral y próxima cita en clínica.",
+        tags: ["vacuna", "vacunas", "vacunar", "vacunarlo", "vacunacion", "cuando vacunar", "cuando le toca", "calendario", "rabia", "polivalente", "trivalente", "leucemia", "bordetella", "desparasitar", "desparasitacion", "pipeta", "pastilla", "cita", "citas", "cartilla"]
+    },
+    {
+        url: "simulador-gemelo-digital-telemetria.html?tab=triage",
+        title: "Simulador de Triaje IA Bio-Neural (Escáner Holter)",
+        category: "Demo App",
+        badgeClass: "badge-demo",
+        icon: "fa-bolt",
+        price: "Triaje 24/7",
+        desc: "Ejecuta una simulación de análisis Holter con IA para detectar arritmias, fiebre, golpe de calor o intoxicaciones al instante.",
+        tags: ["triaje", "holter", "escaner", "simular triaje", "emergencia", "urgencia", "sintomas", "vomito", "diarrea", "chocolate", "toxico", "fiebre", "sangre", "cojea", "tos"]
+    },
+    {
+        url: "mi-mascota.html",
+        title: "Mi Mascota - Ficha Biométrica y Dashboard Web",
+        category: "Perfil Mascota",
+        badgeClass: "badge-demo",
+        icon: "fa-paw",
+        price: "Sincronizado",
+        desc: "Ficha digital sincronizada de tu mascota (raza, edad, peso, dieta, constantes vitales, mapa GPS y cartilla de vacunación).",
+        tags: ["perfil", "mi mascota", "ficha", "peso", "raza", "edad", "panel mascota", "dashboard"]
+    },
+    {
+        url: "simulador-solo-app.html",
+        title: "App CUDI - Vista Exclusiva Móvil Fullscreen",
+        category: "Demo App",
+        badgeClass: "badge-demo",
+        icon: "fa-mobile",
+        price: "Interactiva",
+        desc: "Vista dedicada del dispositivo móvil con las 6 pestañas interactivas del Gemelo Digital CUDI.",
+        tags: ["solo app", "vista movil", "pantalla movil", "celular"]
+    },
+
+    // --- PÁGINAS HUB, COMUNIDAD, CAMPAÑAS, FINANZAS Y B2B ---
+    {
+        url: "planes-suscripcion-bienestar-animal.html",
+        title: "Suscripciones y Planes de Cuidado CUDI (Básico, Care+, Prime)",
+        category: "Suscripciones",
+        badgeClass: "badge-subscription",
+        icon: "fa-crown",
+        price: "Desde 0 € / 30 €",
+        desc: "Compara los planes de suscripción CUDI: Plan Prime Total (30€/mes con Smart Collar incluido), Care+ y coberturas preventivas.",
+        tags: ["plan", "planes", "suscripcion", "suscripciones", "precios", "precio", "cuanto cuesta", "tarifa", "tarifas", "prime", "premium", "cuotas", "membresia"]
+    },
+    {
+        url: "contratar-plan-premium-cudi.html",
+        title: "Pasarela de Pago Seguro CUDI Pay y Envíos 24-48h",
+        category: "Checkout & Envío",
+        badgeClass: "badge-subscription",
+        icon: "fa-credit-card",
+        price: "SSL 256-bit",
+        desc: "Contratación segura con tarjeta, Apple Pay, Google Pay o SEPA. Envío express 24-48h del Smart Collar y activación instantánea.",
+        tags: ["contratar", "pago", "pagar", "metodo de pago", "metodos de pago", "formas de pago", "envio", "envios", "entrega", "logistica", "checkout", "tarjeta", "factura"]
+    },
+    {
+        url: "nutricion-personalizada-perros-gatos.html",
+        title: "Hub de Nutrición Animal Premium y Dietas Clínicas",
+        category: "Categoría Tienda",
+        badgeClass: "badge-nutrition",
+        icon: "fa-seedling",
+        desc: "Comparativa de planes nutricionales formulados por IA: EcoPet Organic (45€), Vitality Mix (32.50€) y PureBites Clinic (58€).",
+        tags: ["nutricion", "comida", "planes comida", "alimentacion", "dieta personalizada", "alimento perros", "alimento gatos", "catalogo nutricion"]
+    },
+    {
+        url: "seguros-salud-mascotas-barcelona.html",
+        title: "Hub de Seguros para Mascotas y Protección Legal",
+        category: "Categoría Tienda",
+        badgeClass: "badge-insurance",
+        icon: "fa-file-contract",
+        desc: "Comparativa de pólizas veterinarias: CUDI Shield Basic (18€), SafeHome MultiPet (28€) y Global Pet Protect (35€).",
+        tags: ["seguro", "seguros", "seguros mascotas", "poliza", "polizas", "coberturas", "proteccion legal", "responsabilidad civil"]
+    },
+    {
+        url: "telemedicina-veterinaria-24-7.html",
+        title: "Hub de Clínicas Veterinarias, Telemedicina y Hospitales 24h",
+        category: "Categoría Salud",
+        badgeClass: "badge-health",
+        icon: "fa-laptop-medical",
+        desc: "Red clínica certificada 24/7: MediPet Express (35€), Hospital Clínico Dual (60€) y VetHome a Domicilio (75€).",
+        tags: ["telemedicina", "veterinario online", "videoconsulta", "24/7", "clinicas", "hospitales", "urgencia veterinaria", "red veterinaria"]
+    },
+    {
+        url: "paseadores-perros-certificados-barcelona.html",
+        title: "Hub de Paseadores Certificados y Cuidadores 24/7",
+        category: "Categoría Paseos",
+        badgeClass: "badge-walks",
+        icon: "fa-person-walking",
+        desc: "Paseadores y cuidadores con seguimiento GPS: Urban Pet Walkers (15€), ActivePaws (19.99€) y NannyPets 24/7 (25€).",
+        tags: ["paseadores", "cuidadores", "paseador perros", "guarderia", "confianza", "paseos"]
+    },
+    {
+        url: "bienestar-integral-multiespecie.html",
+        title: "Hub de Peluquería, Ozonoterapia y Spa Animal",
+        category: "Categoría Spa",
+        badgeClass: "badge-spa",
+        icon: "fa-spa",
+        desc: "Bienestar dermatológico y relajación: Bubbles & Paws (22€), Grooming Master (30€) y ZenPet Spa con feromonas (50€).",
+        tags: ["bienestar", "holistica", "peluqueria", "spa", "estetica", "bano", "ozonoterapia", "hidroterapia", "multiespecie"]
+    },
+    {
+        url: "smart-collar-aventuras-sin-sustos.html",
+        title: "Campaña La Gran Ruta CUDI: Aventuras sin Sustos",
+        category: "Campaña",
+        badgeClass: "badge-hardware",
+        icon: "fa-map-location-dot",
+        desc: "Gran Mapa Colaborativo de rutas seguras pet-friendly, cálculo de gasto calórico y recompensas en redes sociales.",
+        tags: ["aventuras sin sustos", "gran ruta", "rutas", "campana", "lanzamiento", "mapa colaborativo", "excursion"]
+    },
+    {
+        url: "comunidad-cudi.html",
+        title: "Comunidad CUDI - Red Social de Tutores y Quedadas",
+        category: "Comunidad",
+        badgeClass: "badge-community",
+        icon: "fa-people-group",
+        desc: "Punto de encuentro para tutores responsables: muro interactivo, quedadas en parques de Barcelona y consejos verificados.",
+        tags: ["comunidad", "red social", "foro", "amigos", "consejos", "tutores", "social", "eventos", "quedadas"]
+    },
+    {
+        url: "cudi-redes-sociales-bot.html",
+        title: "CUDI Social Bot - Conexión con Instagram y TikTok",
+        category: "Comunidad",
+        badgeClass: "badge-community",
+        icon: "fa-hashtag",
+        desc: "Valida tus publicaciones en redes sociales con el hashtag oficial de CUDI y desbloquea meses de suscripción Prime.",
+        tags: ["redes sociales", "bot", "instagram", "tiktok", "hashtag", "embajador", "recompensas", "descuento"]
+    },
+    {
+        url: "red-socios-clinicas-veterinarias.html",
+        title: "CUDI Partners B2B - Red de Profesionales y Clínicas Socias",
+        category: "Partners B2B",
+        badgeClass: "badge-health",
+        icon: "fa-handshake",
+        desc: "Portal B2B para clínicas veterinarias, paseadores y spas: derivación inteligente con Holter pre-triado y cobro garantizado CUDI Pay.",
+        tags: ["partner", "partners", "socio", "socios", "b2b", "veterinarios", "clinicas socias", "profesionales", "afiliados", "convenios", "asociarme", "trabajar"]
+    },
     {
         url: "simulador-financiero.html",
-        title: "Dashboard del Modelo Financiero CUDI",
-        category: "Finanzas",
+        title: "Simulador Financiero Multiescenario CUDI (TFM)",
+        category: "Finanzas TFM",
+        badgeClass: "badge-finance",
+        icon: "fa-chart-line",
+        price: "LTV/CAC 11.6x",
+        desc: "Simulador interactivo con 3 escenarios (Negativo 1.25M€, Base 2.82M€ EBITDA 24%, Positivo 4.48M€), Break-Even Mes 14 y Unit Economics.",
+        tags: ["finanzas", "financiero", "simulador financiero", "modelo financiero", "inversion", "escenarios", "ebitda", "tir", "van", "modelo", "tfm", "calculadora", "ltv", "cac", "break even", "rentabilidad", "negocio"]
+    },
+    {
+        url: "modelo_financiero.html",
+        title: "Cuadro de Mando Completo del Modelo Financiero TFM",
+        category: "Finanzas TFM",
         badgeClass: "badge-finance",
         icon: "fa-file-invoice-dollar",
-        desc: "Cuadro de mando interactivo con las variables de unit economics, CAPEX, OPEX y ratios de rentabilidad del plan de negocio.",
-        tags: ["modelo financiero", "finanzas", "unit economics", "capex", "opex", "rentabilidad"]
+        desc: "Vista analítica extendida de proyecciones financieras, flujos de caja, CAPEX, OPEX y márgenes por línea de negocio.",
+        tags: ["modelo financiero", "cuadro de mando", "capex", "opex", "flujo de caja", "estados financieros"]
     },
     {
         url: "estrategia-seo.html",
-        title: "Estrategia SEO y Arquitectura Web CUDI",
-        category: "SEO / Arquitectura",
+        title: "Estrategia SEO, Posicionamiento y Analítica GA4 + Clarity",
+        category: "SEO & Analítica",
         badgeClass: "badge-finance",
         icon: "fa-magnifying-glass-chart",
-        desc: "Estructura de enlazado interno, palabras clave de alta intención de compra y optimización técnica de la plataforma.",
-        tags: ["seo", "posicionamiento", "keywords", "estrategia seo", "google", "indexacion"]
+        desc: "Arquitectura SEO local B2B/B2C, larga cola científica Schema.org y medición en tiempo real con Google Analytics 4 y Microsoft Clarity.",
+        tags: ["seo", "estrategia seo", "posicionamiento", "keywords", "palabras clave", "google analytics", "ga4", "clarity", "microsoft clarity", "marketing", "embudo", "funnel", "analitica"]
     },
 
-    // --- LEGAL & CUMPLIMIENTO ---
+    // --- LEGAL, POLÍTICAS, DEVOLUCIONES Y CUMPLIMIENTO (5 PÁGINAS) ---
     {
-        url: "legal.html",
-        title: "Aviso Legal e Información Corporativa",
-        category: "Legal",
+        url: "politica-devoluciones-smart-collar.html",
+        title: "Política de Devoluciones, Cambios, Reembolsos y Cancelaciones",
+        category: "Legal & Garantía",
         badgeClass: "badge-legal",
-        icon: "fa-scale-balanced",
-        desc: "Datos identificativos de la entidad, condiciones de navegación y régimen legal aplicable a CUDI.",
-        tags: ["legal", "aviso legal", "condiciones", "informacion legal", "titularidad"]
+        icon: "fa-rotate-left",
+        price: "30 Días Garantía",
+        desc: "30 días de prueba con reembolso del 100% en Smart Collar, baja sin permanencia en suscripciones y reembolsos del 100% (>72h) en servicios.",
+        tags: ["politica", "politicas", "devolucion", "devoluciones", "devolver", "reembolso", "reembolsos", "cancelacion", "cancelaciones", "cancelar", "cambio", "cambios", "garantia", "desistimiento", "baja", "dar de baja", "politica de devolucion", "politicas de devolucion"]
     },
     {
         url: "politica-privacidad-datos-mascotas.html",
-        title: "Política de Privacidad y RGPD",
-        category: "Legal",
+        title: "Política de Privacidad y Protección de Datos (RGPD)",
+        category: "Legal & RGPD",
         badgeClass: "badge-legal",
         icon: "fa-user-shield",
-        desc: "Tratamiento confidencial de datos de tutores y mascotas, consentimiento informado y derechos ARCO.",
-        tags: ["privacidad", "rgpd", "datos", "seguridad datos", "politica privacidad"]
+        desc: "Tratamiento encriptado de datos biométricos y GPS de tu mascota, finalidad preventiva con IA y ejercicio de derechos ARCO en privacidad@cudi.ai.",
+        tags: ["politica", "politicas", "privacidad", "politica de privacidad", "proteccion de datos", "rgpd", "gdpr", "datos", "datos personales", "derechos arco", "confidencialidad"]
     },
     {
         url: "politica-cookies-plataforma.html",
-        title: "Política de Cookies de la Plataforma",
-        category: "Legal",
+        title: "Política de Cookies de la Plataforma CUDI",
+        category: "Legal & Cookies",
         badgeClass: "badge-legal",
         icon: "fa-cookie-bite",
-        desc: "Descripción de cookies técnicas, de analítica y publicitarias empleadas para mejorar la navegación.",
-        tags: ["cookies", "politica cookies", "rastreo", "consentimiento cookies"]
-    },
-    {
-        url: "politica-devoluciones-smart-collar.html",
-        title: "Política de Devoluciones y Garantía de 3 Años",
-        category: "Legal",
-        badgeClass: "badge-legal",
-        icon: "fa-rotate-left",
-        desc: "Condiciones de desistimiento de 30 días naturales sin coste y garantía europea de 3 años para el Smart Collar.",
-        tags: ["devolucion", "devoluciones", "garantia", "reembolso", "cambios", "cancelacion"]
+        desc: "Detalle de cookies técnicas esenciales (sesión, Gemelo Digital y Cesta CUDI) y analíticas agregadas (Google Analytics 4 y Microsoft Clarity).",
+        tags: ["politica", "politicas", "cookie", "cookies", "politica de cookies", "rastreo", "consentimiento"]
     },
     {
         url: "terminos-condiciones-app.html",
-        title: "Términos y Condiciones del Servicio y App",
+        title: "Términos y Condiciones de Uso de la Plataforma y App",
         category: "Legal",
         badgeClass: "badge-legal",
         icon: "fa-book-bookmark",
-        desc: "Reglas de uso del ecosistema digital, contratación de suscripciones y responsabilidades del usuario.",
-        tags: ["terminos", "condiciones", "contratacion", "normas", "uso"]
+        desc: "Normativa de uso del ecosistema CUDI, alcance preventivo del triaje por IA, responsabilidades del tutor y propiedad intelectual.",
+        tags: ["termino", "terminos", "condiciones", "terminos y condiciones", "normas", "uso", "contrato", "propiedad intelectual"]
+    },
+    {
+        url: "legal.html",
+        title: "Aviso Legal e Información Societaria (CUDI AI Ecosystem S.L.)",
+        category: "Legal",
+        badgeClass: "badge-legal",
+        icon: "fa-scale-balanced",
+        desc: "Datos registrales de CUDI AI Ecosystem S.L. (NIF B-12345678, Paseo de la Castellana 200 Madrid / Sede Barcelona, Registro Mercantil, legal@cudi.ai).",
+        tags: ["legal", "aviso legal", "informacion legal", "titularidad", "nif", "cif", "razon social", "registro mercantil", "empresa", "castellana"]
+    },
+    {
+        url: "index.html",
+        title: "Inicio - Ecosistema Integral CUDI de Bienestar Animal",
+        category: "Portada Principal",
+        badgeClass: "badge-demo",
+        icon: "fa-house",
+        desc: "Página principal de CUDI con acceso a la tienda completa (15 productos), 6 estudios científicos, planes de suscripción y Demo del Gemelo Digital.",
+        tags: ["inicio", "home", "portada", "principal", "cudi", "ecosistema", "tienda", "productos"]
     }
 ];
 
-// DICCIONARIO DE CORRECCIÓN ORTOGRÁFICA / TYPOS
-const CUDI_SPELL_CORRECTIONS = {
-    "comda": "comida",
-    "comidaa": "comida",
-    "cmida": "comida",
-    "comi": "comida",
-    "alimento": "alimento",
-    "alimnto": "alimento",
-    "alimentos": "alimento",
-    "penso": "pienso",
-    "croketas": "croquetas",
-    "croqueta": "croquetas",
-    "croquetas": "croquetas",
-    "nutricon": "nutricion",
-    "nutrison": "nutricion",
-    "nutricion": "nutricion",
-    "suplemnto": "suplemento",
-    "vitamina": "vitaminas",
-    "colar": "collar",
-    "cllar": "collar",
-    "colllar": "collar",
-    "collares": "collar",
-    "gpss": "gps",
-    "gsp": "gps",
-    "rastre": "rastreo",
-    "localisador": "localizador",
-    "geolocalisacion": "geolocalizacion",
-    "vterinario": "veterinario",
-    "veterinrio": "veterinario",
-    "vetrinario": "veterinario",
-    "vet": "veterinario",
-    "veterinaria": "veterinario",
-    "clinca": "clinica",
-    "urgencia": "urgencias",
-    "urgensias": "urgencias",
-    "hospital": "hospital",
-    "ospita": "hospital",
-    "triag": "triaje",
-    "triaje": "triaje",
-    "segro": "seguro",
-    "segroos": "seguro",
-    "segur": "seguro",
-    "seguros": "seguro",
-    "polisa": "poliza",
-    "cobertra": "cobertura",
-    "pasador": "paseador",
-    "pasedor": "paseador",
-    "paseo": "paseo",
-    "paseos": "paseo",
-    "pasear": "paseo",
-    "bano": "bano",
-    "banos": "bano",
-    "pelukeria": "peluqueria",
-    "pelukera": "peluqueria",
-    "pelnado": "peluqueria",
-    "champu": "champu",
-    "shampoo": "champu",
-    "dmo": "demo",
-    "demmo": "demo",
-    "ap": "app",
-    "apliacion": "aplicacion",
-    "simlador": "simulador",
-    "sumulador": "simulador",
-    "gemlo": "gemelo",
-    "finazas": "finanzas",
-    "fianzas": "finanzas",
-    "financiero": "finanzas",
-    "inversion": "inversion",
-    "escenario": "escenarios"
+// DICCIONARIO DE CORRECCIÓN ORTOGRÁFICA / TYPOS REALES
+var CUDI_SPELL_CORRECTIONS = {
+    "comda": "comida", "comidaa": "comida", "cmida": "comida", "comi": "comida",
+    "alimnto": "alimento", "penso": "pienso", "croketas": "croquetas",
+    "nutricon": "nutricion", "nutrison": "nutricion", "suplemnto": "suplemento",
+    "colar": "collar", "cllar": "collar", "colllar": "collar",
+    "gpss": "gps", "gsp": "gps", "rastre": "rastreo",
+    "localisador": "localizador", "geolocalisacion": "geolocalizacion",
+    "vterinario": "veterinario", "veterinrio": "veterinario", "vetrinario": "veterinario",
+    "clinca": "clinica", "urgensias": "urgencias",
+    "ospita": "hospital", "triag": "triaje",
+    "segro": "seguro", "segroos": "seguro", "segur": "seguro",
+    "polisa": "poliza", "cobertra": "cobertura",
+    "pasador": "paseador", "pasedor": "paseador",
+    "pelukeria": "peluqueria", "pelukera": "peluqueria", "shampoo": "champu",
+    "dmo": "demo", "demmo": "demo", "apliacion": "aplicacion",
+    "simlador": "simulador", "sumulador": "simulador", "gemlo": "gemelo",
+    "finazas": "finanzas", "fianzas": "finanzas",
+    "artikulos": "articulos", "artculo": "articulo",
+    "polticas": "politicas", "debolucion": "devolucion", "devolusion": "devolucion"
 };
 
 // VOCABULARIO RAÍZ PARA DISTANCIA LEVENSHTEIN
-const CUDI_ROOT_VOCABULARY = [
+var CUDI_ROOT_VOCABULARY = [
     "comida", "alimento", "pienso", "croquetas", "dieta", "nutricion", "suplemento", "organico", "barf",
     "collar", "gps", "rastreo", "localizador", "geolocalizacion", "mapa", "hardware", "aventuras",
     "veterinario", "clinica", "hospital", "urgencias", "triaje", "telemedicina", "medico", "salud",
     "seguro", "poliza", "cobertura", "responsabilidad", "shield",
     "paseo", "paseador", "caminar", "ejercicio", "cuidador", "guarderia",
     "bano", "peluqueria", "grooming", "spa", "higiene",
-    "demo", "app", "simulador", "gemelo", "telemetria", "movil", "perfil",
+    "demo", "app", "simulador", "gemelo", "telemetria", "movil", "perfil", "metrica", "vitales",
     "finanzas", "inversion", "escenarios", "ebitda", "tir", "van", "modelo", "tfm",
     "comunidad", "amigos", "redes", "foro",
     "ia", "inteligencia", "asistente", "algoritmo", "predictivo",
-    "planes", "suscripciones", "premium", "legal", "privacidad", "cookies"
+    "planes", "suscripciones", "premium", "legal", "privacidad", "cookies", "politica", "devolucion", "reembolso", "garantia", "terminos",
+    "articulo", "estudio", "journal", "investigacion", "cientifico", "microbioma", "cortisol", "longevidad",
+    "vacuna", "calendario", "rabia", "desparasitar", "pipeta", "producto", "tienda", "catalogo", "partners", "seo", "envio", "pago"
 ];
 
 // CLUSTERS SEMÁNTICOS CON RECOMENDACIONES DE IA
-const CUDI_SEMANTIC_CLUSTERS = [
+var CUDI_SEMANTIC_CLUSTERS = [
+    {
+        id: "articulos_clinicos",
+        keywords: ["articulo", "articulos", "estudio", "estudios", "journal", "investigacion", "investigaciones", "cientifico", "cientificos", "paper", "papers", "lectura", "lecturas", "blog", "publicaciones", "microbioma", "longevidad", "cortisol", "eutanasia"],
+        aiSummary: "CUDI Journal (6 Estudios Clínicos Oficiales): investigaciones sobre Gemelos Digitales (94.8% precisión), Triaje IA (<18 min respuesta), Microbioma (+2.4 años longevidad), Geo-Telemetría GPS (99.4% rescate), Cortisol (-47% estrés) y Seguros vs. Eutanasia Económica.",
+        priorityUrls: [
+            "gemelos-digitales-salud-predictiva.html",
+            "triaje-ia-esperanza-vida-veterinaria.html",
+            "microbioma-nutricion-longevidad-canina.html",
+            "geo-telemetria-prevencion-perdida.html",
+            "ansiedad-separacion-cortisol-mascotas.html",
+            "seguros-veterinarios-mortalidad.html"
+        ]
+    },
+    {
+        id: "legal_politicas",
+        keywords: ["politica", "politicas", "devolucion", "devoluciones", "devolver", "reembolso", "reembolsos", "cancelacion", "cancelar", "garantia", "desistimiento", "baja", "privacidad", "rgpd", "gdpr", "datos", "cookies", "cookie", "terminos", "condiciones", "legal", "nif", "cif"],
+        aiSummary: "Marco Legal y Garantías CUDI: 30 días de devolución 100% en Smart Collar, suscripciones sin permanencia, reembolsos del 100% (>72h) en servicios, protección RGPD (privacidad@cudi.ai), política de cookies y datos societarios de CUDI AI Ecosystem S.L.",
+        priorityUrls: [
+            "politica-devoluciones-smart-collar.html",
+            "politica-privacidad-datos-mascotas.html",
+            "politica-cookies-plataforma.html",
+            "terminos-condiciones-app.html",
+            "legal.html"
+        ]
+    },
+    {
+        id: "metricas_vitales",
+        keywords: ["metrica", "metricas", "signos", "vitales", "constantes", "bpm", "corazon", "latidos", "pulso", "temperatura", "respiracion", "rpm", "sueno", "descanso", "calorias", "pasos", "vfc", "estres"],
+        aiSummary: "Telemetría Bio-Neural en Vivo: monitorización continua de frecuencia cardíaca ECG, temperatura dérmica basal (38.4°C), variabilidad VFC antiestrés, calidad de sueño (94/100) y actividad calórica sincronizada con el Gemelo Digital.",
+        priorityUrls: [
+            "mi-mascota.html#web-sec-metricas",
+            "simulador-gemelo-digital-telemetria.html",
+            "gemelos-digitales-salud-predictiva.html",
+            "smart-collar-cudi-gps.html"
+        ]
+    },
+    {
+        id: "vacunas_calendario",
+        keywords: ["vacuna", "vacunas", "vacunar", "vacunarlo", "vacunacion", "calendario", "rabia", "polivalente", "trivalente", "leucemia", "bordetella", "desparasitar", "desparasitacion", "pipeta", "cartilla", "cita", "citas"],
+        aiSummary: "Expediente de Inmunización y Salud Preventiva: control de vacuna Polivalente/Trivalente (renovación pendiente 35€), Antirrábica, desparasitación interna trimestral, pipeta externa mensual y reserva directa con VetHome.",
+        priorityUrls: [
+            "mi-mascota.html#web-sec-vacunas",
+            "producto-vethome-cudi.html",
+            "simulador-gemelo-digital-telemetria.html",
+            "telemedicina-veterinaria-24-7.html"
+        ]
+    },
     {
         id: "nutricion",
         keywords: ["comida", "alimento", "pienso", "croquetas", "dieta", "barf", "nutricion", "suplemento", "vitaminas", "hambre", "comer", "organico", "ecopet", "purebites", "vitality"],
-        aiSummary: "Nutrición biológica y clínica CUDI: dietas BARF orgánicas certificadas (EcoPet Organic), piensos clínicos para sensibilidad gástrica (PureBites Clinic) y suplementos inmunes (Vitality Mix).",
+        aiSummary: "Nutrición biológica y clínica CUDI: dietas BARF orgánicas (EcoPet Organic 45€), piensos clínicos hipoalergénicos prescritos por IA (PureBites Clinic 58€) y suplementos inmunes (Vitality Mix 32.50€).",
         priorityUrls: ["producto-ecopet-organic.html", "producto-purebites-clinic.html", "producto-vitality-mix.html", "nutricion-personalizada-perros-gatos.html", "microbioma-nutricion-longevidad-canina.html"]
     },
     {
         id: "gps_collar",
-        keywords: ["collar", "gps", "rastreo", "localizador", "geolocalizacion", "ubicar", "donde", "mapa", "perdida", "perdido", "extravio", "geocerca", "bateria", "smart", "aventuras", "distancia"],
-        aiSummary: "Smart Collar CUDI GPS: monitorización biomédica continua de signos vitales, geolocalización satelital multibanda y geocercas seguras en tiempo real con batería de 14 días.",
-        priorityUrls: ["smart-collar-cudi-gps.html", "simulador-gemelo-digital-telemetria.html#tab-gps", "smart-collar-aventuras-sin-sustos.html", "geo-telemetria-prevencion-perdida.html"]
+        keywords: ["collar", "gps", "rastreo", "localizador", "geolocalizacion", "ubicar", "ubicacion", "donde", "mapa", "perdida", "perdido", "extravio", "geocerca", "bateria", "smart", "aventuras", "distancia", "coordenadas", "radar"],
+        aiSummary: "Smart Collar CUDI GPS (89.50€): monitorización biomédica continua de signos vitales, geolocalización satelital GNSS L1+L5 + eSIM 4G autónoma, geocercas seguras en tiempo real y zumbador acústico de 85 dB.",
+        priorityUrls: ["smart-collar-cudi-gps.html", "mi-mascota.html#web-sec-ubicacion", "simulador-gemelo-digital-telemetria.html", "smart-collar-aventuras-sin-sustos.html", "geo-telemetria-prevencion-perdida.html"]
     },
     {
         id: "salud_veterinaria",
-        keywords: ["veterinario", "clinica", "hospital", "urgencia", "urgencias", "medico", "doctor", "enfermo", "dolor", "triaje", "telemedicina", "salud", "vacuna", "cirugia", "vethome", "medipet", "emergencia"],
-        aiSummary: "Red médica CUDI: triaje predictivo con IA 24/7, red hospitalaria de alta complejidad (Hospital Dual), clínicas de barrio (MediPet Express) y veterinario a domicilio (VetHome).",
-        priorityUrls: ["producto-medipet-express.html", "producto-hospital-clinico-dual.html", "producto-vethome-cudi.html", "telemedicina-veterinaria-24-7.html", "triaje-ia-esperanza-vida-veterinaria.html"]
+        keywords: ["veterinario", "clinica", "hospital", "urgencia", "urgencias", "medico", "doctor", "enfermo", "dolor", "triaje", "telemedicina", "salud", "cirugia", "vethome", "medipet", "emergencia", "vomito", "diarrea", "tos", "cojea", "chocolate", "toxico", "fiebre", "sangre"],
+        aiSummary: "Red médica CUDI 24/7: triaje predictivo con IA, veterinario colegiado a domicilio en <45 min (VetHome 75€), videoconsulta inmediata (MediPet Express 35€) y hospital quirúrgico UCI 24h (Hospital Clínico Dual 60€).",
+        priorityUrls: ["producto-vethome-cudi.html", "producto-medipet-express.html", "producto-hospital-clinico-dual.html", "telemedicina-veterinaria-24-7.html", "triaje-ia-esperanza-vida-veterinaria.html"]
     },
     {
         id: "seguros",
-        keywords: ["seguro", "seguros", "poliza", "cobertura", "responsabilidad", "civil", "rc", "proteger", "proteccion", "indemnizacion", "blindaje", "accidente", "shield", "global"],
-        aiSummary: "Blindaje legal y veterinario CUDI: RC obligatoria por Ley de Bienestar Animal (CUDI Shield Basic a 6,99€) y cobertura médica total con reembolso quirúrgico del 80% (Global Pet Protect).",
-        priorityUrls: ["producto-cudi-shield-basic.html", "producto-global-pet-protect.html", "producto-safehome-multipet.html", "seguros-salud-mascotas-barcelona.html"]
+        keywords: ["seguro", "seguros", "poliza", "cobertura", "responsabilidad", "civil", "rc", "proteger", "proteccion", "indemnizacion", "blindaje", "accidente", "shield", "global", "safehome", "multipet"],
+        aiSummary: "Seguros Veterinarios CUDI: CUDI Shield Basic (18€/mes, 80% urgencias + RC), SafeHome MultiPet (28€/mes para hogares con perros y gatos) y Global Pet Protect (35€/mes, 100% cirugías y hospitalización).",
+        priorityUrls: ["producto-cudi-shield-basic.html", "producto-global-pet-protect.html", "producto-safehome-multipet.html", "seguros-salud-mascotas-barcelona.html", "seguros-veterinarios-mortalidad.html"]
     },
     {
         id: "paseos",
-        keywords: ["paseo", "paseador", "paseadores", "caminar", "ejercicio", "correr", "actividad", "nanny", "guarderia", "cuidar", "cuidador", "walkers", "activepaws"],
-        aiSummary: "Cuidado activo certificado: paseos urbanos con seguimiento GPS en directo (Urban Pet Walkers), sesiones deportivas de alta energía (ActivePaws) y cuidadores 24/7 a domicilio (NannyPets).",
+        keywords: ["paseo", "paseos", "paseador", "paseadores", "caminar", "ejercicio", "correr", "actividad", "nanny", "nannypets", "guarderia", "cuidar", "cuidador", "cuidadores", "walkers", "activepaws"],
+        aiSummary: "Movilidad y cuidado certificado: paseos urbanos con GPS en directo (Urban Pet Walkers 15€), sesiones deportivas monitorizadas (ActivePaws 19.99€) y cuidadores verificados en tu hogar sin jaulas (NannyPets 24/7 25€).",
         priorityUrls: ["producto-urban-pet-walkers.html", "producto-activepaws.html", "producto-nannypets-247.html", "paseadores-perros-certificados-barcelona.html"]
     },
     {
         id: "higiene_spa",
-        keywords: ["bano", "banar", "peluqueria", "corte", "tijera", "champu", "ozonoterapia", "spa", "relajacion", "estetica", "grooming", "unas", "limpieza", "zenpet", "bubbles"],
-        aiSummary: "Higiene y bienestar dermatológico sin estrés: baños ecológicos sin ruido (Bubbles & Paws), estilismo profesional y ozonoterapia (Grooming Master) y spa relajante con feromonas (ZenPet Spa).",
-        priorityUrls: ["producto-bubbles--paws.html", "producto-grooming-master.html", "producto-zenpet-spa.html"]
+        keywords: ["bano", "banar", "peluqueria", "corte", "tijera", "champu", "ozonoterapia", "spa", "relajacion", "estetica", "grooming", "unas", "limpieza", "zenpet", "bubbles", "hidroterapia"],
+        aiSummary: "Higiene dermatológica y Spa sin estrés: baños ecológicos con ozonoterapia (Bubbles & Paws 22€), corte a tijera (Grooming Master 30€) e hidroterapia con feromonas reductoras de cortisol (ZenPet Spa 50€).",
+        priorityUrls: ["producto-bubbles--paws.html", "producto-grooming-master.html", "producto-zenpet-spa.html", "bienestar-integral-multiespecie.html"]
     },
     {
         id: "demo_app",
-        keywords: ["demo", "app", "simulador", "aplicacion", "probar", "movil", "celular", "telefono", "gemelo", "digital", "telemetria", "interfaz", "biometricos"],
-        aiSummary: "Demo Interactiva CUDI App: experimenta el Gemelo Digital en vivo, signos vitales continuos, mapa GPS interactivo, tienda unificada y centro de triaje de alertas clínicas.",
-        priorityUrls: ["simulador-gemelo-digital-telemetria.html", "simulador-solo-app.html", "mi-mascota.html"]
+        keywords: ["demo", "app", "simulador", "aplicacion", "probar", "movil", "celular", "telefono", "gemelo", "digital", "telemetria", "interfaz", "biometricos", "pestanas"],
+        aiSummary: "Demo Interactiva del Gemelo Digital CUDI: explora las 6 pestañas en vivo (Dashboard de Métricas, Escáner Holter IA, Mapa GPS con Geocerca, Calendario de Vacunas, Comunidad CUDI Paws y Tienda In-App).",
+        priorityUrls: ["simulador-gemelo-digital-telemetria.html", "mi-mascota.html", "simulador-solo-app.html"]
     },
     {
         id: "finanzas_tfm",
-        keywords: ["finanzas", "financiero", "simulador financiero", "inversion", "ebitda", "tir", "van", "escenarios", "cac", "ltv", "modelo", "presupuesto", "rentabilidad"],
-        aiSummary: "Simulador Financiero Interactivo: modelo dinámico a 5 años con 3 escenarios (Conservador, Base, Agresivo), métricas SaaS (CAC, LTV, Churn) y EBITDA proyectado.",
-        priorityUrls: ["simulador-financiero.html", "estrategia-seo.html"]
+        keywords: ["finanzas", "financiero", "simulador financiero", "inversion", "ebitda", "tir", "van", "escenarios", "cac", "ltv", "modelo", "presupuesto", "rentabilidad", "negocio", "tfm", "seo", "analytics", "ga4", "clarity"],
+        aiSummary: "Modelo Financiero y Estrategia TFM CUDI: 3 escenarios proyectados (Conservador 1.25M€, Base 2.82M€ con EBITDA 24% y Break-Even Mes 14, Optimista 4.48M€), Ratio LTV/CAC 11.6x y analítica GA4 + Clarity.",
+        priorityUrls: ["simulador-financiero.html", "modelo_financiero.html", "estrategia-seo.html", "red-socios-clinicas-veterinarias.html"]
+    },
+    {
+        id: "marketplace_catalogo",
+        keywords: ["producto", "productos", "tienda", "catalogo", "marketplace", "servicio", "servicios", "comprar", "precios", "tarifas", "planes", "suscripcion", "suscripciones", "prime", "premium", "pago", "envio", "contratar", "partners", "socios", "b2b"],
+        aiSummary: "Ecosistema Transaccional CUDI: 15 productos y servicios verificados, Plan CUDI Prime Total (30€/mes con Smart Collar gratis), pasarela encriptada CUDI Pay con envío 24-48h y portal B2B para clínicas socias.",
+        priorityUrls: [
+            "smart-collar-cudi-gps.html",
+            "planes-suscripcion-bienestar-animal.html",
+            "contratar-plan-premium-cudi.html",
+            "nutricion-personalizada-perros-gatos.html",
+            "seguros-salud-mascotas-barcelona.html",
+            "telemedicina-veterinaria-24-7.html"
+        ]
     },
     {
         id: "comunidad",
-        keywords: ["comunidad", "foro", "amigos", "redes", "social", "consejos", "eventos", "rutas", "tutor", "historias", "bot"],
-        aiSummary: "Comunidad Multiespecie CUDI: conecta con otros tutores en tu zona, comparte rutas pet-friendly seguras y accede a talleres de educación canina y bienestar felino.",
-        priorityUrls: ["comunidad-cudi.html", "cudi-redes-sociales-bot.html", "smart-collar-aventuras-sin-sustos.html"]
-    },
-    {
-        id: "ia_asistente",
-        keywords: ["ia", "inteligencia", "artificial", "bot", "asistente", "algoritmo", "triaje", "diagnostico", "predictivo", "bio-neural"],
-        aiSummary: "CUDI Bio-Neural AI: asistente inteligente y triaje veterinario que detecta anomalías en signos vitales y recomienda acciones clínicas inmediatas.",
-        priorityUrls: ["triaje-ia-esperanza-vida-veterinaria.html", "gemelos-digitales-salud-predictiva.html", "simulador-gemelo-digital-telemetria.html"]
+        keywords: ["comunidad", "foro", "amigos", "redes", "social", "consejos", "eventos", "rutas", "tutor", "historias", "bot", "instagram", "tiktok", "campana"],
+        aiSummary: "Comunidad Multiespecie y Gran Ruta CUDI: conecta con tutores en Barcelona, descubre el Gran Mapa Colaborativo de Aventuras sin Sustos y desbloquea meses gratis con el Social Bot.",
+        priorityUrls: ["comunidad-cudi.html", "smart-collar-aventuras-sin-sustos.html", "cudi-redes-sociales-bot.html"]
     }
 ];
 
@@ -598,6 +650,15 @@ function normalizeSearchText(str) {
         .replace(/[^a-z0-9\s]/g, ' ')
         .replace(/\s+/g, ' ')
         .trim();
+}
+
+function stemSpanishToken(word) {
+    if (!word || word.length <= 3) return word;
+    if (word.endsWith('ciones')) return word.slice(0, -6) + 'cion';
+    if (word.endsWith('siones')) return word.slice(0, -6) + 'sion';
+    if (word.endsWith('es') && word.length > 5 && !['planes'].includes(word)) return word.slice(0, -2);
+    if (word.endsWith('s') && word.length > 4) return word.slice(0, -1);
+    return word;
 }
 
 function levenshteinDistance(a, b) {
@@ -623,20 +684,33 @@ function levenshteinDistance(a, b) {
     return matrix[b.length][a.length];
 }
 
+var CUDI_SEARCH_STOPWORDS = new Set([
+    "el", "la", "los", "las", "un", "una", "unos", "unas", "de", "del", "al", "en", "con", "por", "para",
+    "sobre", "que", "es", "son", "como", "cual", "cuales", "quiero", "quiro", "me", "mi", "mis", "tu", "tus",
+    "su", "sus", "muestres", "muestra", "mostrar", "muestrame", "ver", "dime", "explica", "explicame",
+    "saber", "hay", "tiene", "tienen", "puedo", "puede", "hacer", "hago", "si", "no", "mas", "muy", "todo", "todos", "todas"
+]);
+
 function correctQueryTypo(rawQuery) {
-    const tokens = normalizeSearchText(rawQuery).split(' ').filter(Boolean);
+    const rawTokens = normalizeSearchText(rawQuery).split(' ').filter(Boolean);
+    const filtered = rawTokens.filter(t => !CUDI_SEARCH_STOPWORDS.has(t));
+    const tokens = filtered.length > 0 ? filtered : rawTokens;
     let wasCorrected = false;
     const correctedTokens = tokens.map(token => {
         if (CUDI_SPELL_CORRECTIONS[token]) {
             if (CUDI_SPELL_CORRECTIONS[token] !== token) wasCorrected = true;
             return CUDI_SPELL_CORRECTIONS[token];
         }
+        const stemmed = stemSpanishToken(token);
+        if (CUDI_ROOT_VOCABULARY.includes(token) || CUDI_ROOT_VOCABULARY.includes(stemmed)) {
+            return token;
+        }
         if (token.length >= 3) {
             let bestWord = token;
             let minDistance = 999;
             for (const root of CUDI_ROOT_VOCABULARY) {
                 const dist = levenshteinDistance(token, root);
-                const maxAllowed = root.length <= 4 ? 1 : (root.length <= 7 ? 2 : 3);
+                const maxAllowed = root.length <= 4 ? 1 : (root.length <= 7 ? 2 : 2);
                 if (dist <= maxAllowed && dist < minDistance) {
                     minDistance = dist;
                     bestWord = root;
@@ -662,7 +736,15 @@ function searchCudiEcosystem(rawQuery) {
     if (!rawQuery || rawQuery.trim().length < 2) return { results: [], aiSummary: null, correction: null };
 
     const queryInfo = correctQueryTypo(rawQuery);
-    const searchTokens = Array.from(new Set([...queryInfo.normalized.split(' '), ...queryInfo.corrected.split(' ')]));
+    const baseTokens = Array.from(new Set([
+        ...queryInfo.normalized.split(' '),
+        ...queryInfo.corrected.split(' ')
+    ])).filter(Boolean);
+    const searchTokens = Array.from(new Set([
+        ...baseTokens,
+        ...baseTokens.map(stemSpanishToken)
+    ])).filter(t => t.length >= 2);
+
     const fullNormalized = queryInfo.normalized;
     const fullCorrected = queryInfo.corrected;
 
@@ -672,11 +754,11 @@ function searchCudiEcosystem(rawQuery) {
         let clusterScore = 0;
         for (const token of searchTokens) {
             if (cluster.keywords.includes(token)) {
-                clusterScore += 10;
+                clusterScore += 14;
             } else {
                 for (const kw of cluster.keywords) {
                     if (kw.includes(token) || token.includes(kw)) {
-                        clusterScore += 4;
+                        clusterScore += 5;
                     }
                 }
             }
@@ -687,59 +769,100 @@ function searchCudiEcosystem(rawQuery) {
         }
     }
 
-    const isLegalExplicit = searchTokens.some(t => ['legal', 'privacidad', 'cookies', 'terminos', 'condiciones', 'devolucion', 'garantia'].includes(t));
-
     const scored = CUDI_SEARCH_INDEX.map(item => {
         let score = 0;
         const normTitle = normalizeSearchText(item.title);
+        const normCategory = normalizeSearchText(item.category);
         const normDesc = normalizeSearchText(item.desc);
         const normTags = (item.tags || []).map(t => normalizeSearchText(t));
         const itemUrl = item.url.toLowerCase();
 
         if (normTitle === fullNormalized || normTitle === fullCorrected) {
-            score += 100;
+            score += 120;
         }
 
         if (matchedCluster && matchedCluster.priorityUrls.includes(item.url)) {
-            score += 50;
+            const rankBonus = (matchedCluster.priorityUrls.length - matchedCluster.priorityUrls.indexOf(item.url)) * 8;
+            score += 55 + rankBonus;
         }
 
         for (const token of searchTokens) {
             if (token.length < 2) continue;
 
-            if (normTitle.includes(token)) {
-                score += 35;
-                if (normTitle.startsWith(token)) score += 15;
+            if (normTags.includes(token)) {
+                score += 42;
+            } else if (normTags.some(t => t.includes(token) || token.includes(t))) {
+                score += 22;
             }
 
-            if (normTags.includes(token)) {
-                score += 30;
-            } else if (normTags.some(t => t.includes(token))) {
-                score += 15;
+            if (normTitle.includes(token)) {
+                score += 36;
+                if (normTitle.startsWith(token)) score += 14;
+            }
+
+            if (normCategory.includes(token)) {
+                score += 28;
             }
 
             if (normDesc.includes(token)) {
-                score += 12;
+                score += 15;
             }
 
             if (itemUrl.includes(token)) {
-                score += 8;
+                score += 12;
             }
-        }
-
-        if (!isLegalExplicit && (itemUrl.includes('politica') || itemUrl.includes('legal') || itemUrl.includes('terminos'))) {
-            score -= 40;
         }
 
         return { ...item, score };
     }).filter(item => item.score > 0)
       .sort((a, b) => b.score - a.score);
 
-    const topResults = scored.slice(0, 6);
+    let topResults = scored.slice(0, 6);
 
+    // Fallback inteligente desde la base de conocimiento completa de 45 páginas de CudiAI si no hubo match directo
+    if (topResults.length === 0 && typeof window !== 'undefined' && window.CudiAI && typeof window.CudiAI.searchAllPagesKnowledge === 'function') {
+        const kbPage = window.CudiAI.searchAllPagesKnowledge(rawQuery);
+        if (kbPage) {
+            topResults = [{
+                url: kbPage.url,
+                title: kbPage.title,
+                category: "Página Verificada CUDI",
+                badgeClass: "badge-clinical",
+                icon: "fa-file-circle-check",
+                desc: kbPage.desc || (kbPage.content ? kbPage.content.slice(0, 140) + "..." : "Recurso oficial del ecosistema CUDI.")
+            }];
+        }
+    }
+
+    // Si es una consulta abierta conversacional, ofrecer siempre los accesos clave del ecosistema junto con la respuesta de CUDI AI
+    if (topResults.length === 0) {
+        topResults = [
+            CUDI_SEARCH_INDEX[0], // Smart Collar
+            CUDI_SEARCH_INDEX.find(i => i.url === "simulador-gemelo-digital-telemetria.html") || CUDI_SEARCH_INDEX[1],
+            CUDI_SEARCH_INDEX.find(i => i.url === "planes-suscripcion-bienestar-animal.html") || CUDI_SEARCH_INDEX[2],
+            CUDI_SEARCH_INDEX.find(i => i.url === "gemelos-digitales-salud-predictiva.html") || CUDI_SEARCH_INDEX[3]
+        ].filter(Boolean);
+    }
+
+    // Extraer resumen inteligente directamente del cerebro de CudiAI si está disponible
     let aiSummary = matchedCluster ? matchedCluster.aiSummary : null;
+    if (typeof window !== 'undefined' && window.CudiAI && typeof window.CudiAI.generateResponseSync === 'function') {
+        try {
+            const rawAiHtml = window.CudiAI.generateResponseSync(rawQuery, true);
+            if (rawAiHtml) {
+                const tmpDiv = document.createElement('div');
+                tmpDiv.innerHTML = rawAiHtml;
+                tmpDiv.querySelectorAll('.ai-actions-wrap, .ai-source-badge').forEach(el => el.remove());
+                const cleanText = (tmpDiv.textContent || '').replace(/\s+/g, ' ').trim();
+                if (cleanText.length > 25) {
+                    aiSummary = cleanText.length > 260 ? cleanText.slice(0, 257) + '...' : cleanText;
+                }
+            }
+        } catch (e) {}
+    }
+
     if (!aiSummary && topResults.length > 0) {
-        aiSummary = `Encontramos ${topResults.length} recursos destacados en el ecosistema CUDI para tu búsqueda.`;
+        aiSummary = `Encontramos ${topResults.length} páginas y recursos verificados en el ecosistema CUDI para "${rawQuery}". Pulsa en "Preguntar a la IA" para abrir el diagnóstico interactivo.`;
     }
 
     return {
@@ -752,7 +875,7 @@ function searchCudiEcosystem(rawQuery) {
 
 
 // Navbar Scroll Effect
-const navbar = document.querySelector('.navbar-island');
+var navbar = document.querySelector('.navbar-island');
 
 window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
@@ -763,7 +886,7 @@ window.addEventListener('scroll', () => {
 });
 
 // Smooth reveal animation for elements on scroll
-const observeElements = () => {
+var observeElements = () => {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -788,7 +911,7 @@ const observeElements = () => {
 document.addEventListener('DOMContentLoaded', observeElements);
 
 // Simple form handle (Con protección Heurística contra fallos en páginas sin formulario)
-const earlyAccessForm = document.getElementById('earlyAccessForm');
+var earlyAccessForm = document.getElementById('earlyAccessForm');
 if (earlyAccessForm) {
     earlyAccessForm.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -812,7 +935,7 @@ if (earlyAccessForm) {
 }
 
 // En la vida real aquí cargaríamos la imagen generada por IA en la clase .hero-visual
-const heroVisual = document.querySelector('.hero-visual');
+var heroVisual = document.querySelector('.hero-visual');
 if(heroVisual) {
     heroVisual.style.background = 'url("bienestar-integral-perros-gatos.png") center/cover no-repeat';
     heroVisual.style.boxShadow = '0 0 20px rgba(0,0,0,0.1)';
@@ -821,7 +944,7 @@ if(heroVisual) {
 // === FUNCIONALIDADES E-COMMERCE TFM ===
 
 // Estado Global del Carrito
-let globalCart = JSON.parse(localStorage.getItem('cudi_cart')) || [];
+var globalCart = JSON.parse(localStorage.getItem('cudi_cart')) || [];
 
 function toggleCart() {
     const cart = document.getElementById('side-cart');
@@ -1048,7 +1171,7 @@ function startTrackingSimulation() {
 }
 
 // === BANCO DE MASCOTAS ALEATORIAS PARA LLENADO RÁPIDO & DEMO ===
-const CUDI_RANDOM_PETS = [
+var CUDI_RANDOM_PETS = [
     {
         name: 'Luna',
         type: 'perro',
@@ -1861,7 +1984,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // === Global AI Chat Widget Logic ===
 
 
-// --- CUDI GLOBAL SMART AI SEARCH ENGINE ---
+// --- CUDI GLOBAL SMART AI SEARCH ENGINE (APPLE LIQUID GLASS EDITION) ---
 function escapeSearchHtml(str) {
     if (!str) return '';
     return String(str)
@@ -1870,6 +1993,207 @@ function escapeSearchHtml(str) {
         .replace(/>/g, '&gt;')
         .replace(/"/g, '&quot;')
         .replace(/'/g, '&#39;');
+}
+
+function injectAppleGlassSearchStyles() {
+    if (document.getElementById('cudi-apple-glass-search-css')) return;
+    const style = document.createElement('style');
+    style.id = 'cudi-apple-glass-search-css';
+    style.textContent = `
+        .search-results-dropdown {
+            position: absolute !important;
+            top: calc(100% + 12px) !important;
+            left: 0 !important;
+            width: 540px !important;
+            max-width: 94vw !important;
+            max-height: 560px !important;
+            overflow-y: auto !important;
+            background: rgba(255, 255, 255, 0.86) !important;
+            backdrop-filter: blur(32px) saturate(200%) !important;
+            -webkit-backdrop-filter: blur(32px) saturate(200%) !important;
+            border: 1px solid rgba(255, 255, 255, 0.85) !important;
+            box-shadow: 0 24px 60px -12px rgba(15, 23, 42, 0.18), 0 0 0 1px rgba(148, 163, 184, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.95) !important;
+            border-radius: 22px !important;
+            z-index: 100000 !important;
+            padding: 14px !important;
+            box-sizing: border-box !important;
+            animation: fadeInDown 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+        }
+        .search-results-dropdown::-webkit-scrollbar { width: 5px; }
+        .search-results-dropdown::-webkit-scrollbar-track { background: transparent; }
+        .search-results-dropdown::-webkit-scrollbar-thumb { background: rgba(148, 163, 184, 0.35); border-radius: 10px; }
+
+        .search-glass-section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 2px 6px 8px;
+            font-size: 0.68rem;
+            font-weight: 800;
+            color: #64748b;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+        }
+        .search-glass-section-header span {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .search-glass-section-header i {
+            color: #0284c7;
+        }
+
+        .search-quick-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 12px;
+            padding: 0 2px;
+        }
+        .search-quick-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 11px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.78);
+            border: 1px solid rgba(203, 213, 225, 0.75);
+            box-shadow: 0 2px 6px rgba(15, 23, 42, 0.03), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+            color: #1e293b;
+            font-size: 0.73rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+            user-select: none;
+        }
+        .search-quick-pill i {
+            color: #0284c7;
+            font-size: 0.72rem;
+        }
+        .search-quick-pill:hover {
+            background: #f0f9ff;
+            border-color: #7dd3fc;
+            color: #0369a1;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(2, 132, 199, 0.12);
+        }
+
+        /* Apple Ice-Glass AI Insight Card */
+        .search-ai-card {
+            background: linear-gradient(135deg, rgba(240, 249, 255, 0.92) 0%, rgba(224, 242, 254, 0.78) 100%) !important;
+            border-radius: 16px !important;
+            padding: 12px 14px !important;
+            margin-bottom: 10px !important;
+            border: 1px solid rgba(125, 211, 252, 0.65) !important;
+            box-shadow: 0 6px 18px rgba(2, 132, 199, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+            color: #0f172a !important;
+        }
+        .search-ai-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 6px;
+            gap: 8px;
+        }
+        .search-ai-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background: rgba(2, 132, 199, 0.12) !important;
+            color: #0369a1 !important;
+            border: 1px solid rgba(2, 132, 199, 0.25) !important;
+            font-size: 0.68rem !important;
+            font-weight: 800 !important;
+            padding: 3px 9px !important;
+            border-radius: 999px !important;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+        }
+        .search-ai-ask-btn {
+            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%) !important;
+            color: #ffffff !important;
+            border: none !important;
+            font-size: 0.71rem !important;
+            font-weight: 700 !important;
+            padding: 5px 11px !important;
+            border-radius: 999px !important;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            box-shadow: 0 3px 10px rgba(2, 132, 199, 0.22);
+            transition: all 0.18s ease;
+        }
+        .search-ai-ask-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 5px 14px rgba(2, 132, 199, 0.32);
+        }
+        .search-ai-text {
+            font-size: 0.77rem !important;
+            line-height: 1.48 !important;
+            color: #1e293b !important;
+            margin: 0 !important;
+        }
+
+        /* Clean Apple Glass Result Cards */
+        .search-result-item {
+            display: block !important;
+            padding: 10px 12px !important;
+            text-decoration: none !important;
+            border-radius: 14px !important;
+            transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1) !important;
+            margin-bottom: 6px !important;
+            background: rgba(255, 255, 255, 0.74) !important;
+            border: 1px solid rgba(226, 232, 240, 0.85) !important;
+            box-shadow: 0 2px 6px rgba(15, 23, 42, 0.02), inset 0 1px 0 rgba(255, 255, 255, 0.85) !important;
+        }
+        .search-result-item:hover {
+            background: rgba(255, 255, 255, 0.98) !important;
+            border-color: rgba(125, 211, 252, 0.85) !important;
+            transform: translateY(-1px) !important;
+            box-shadow: 0 8px 20px -6px rgba(2, 132, 199, 0.12) !important;
+        }
+        .sr-icon {
+            width: 28px !important;
+            height: 28px !important;
+            border-radius: 8px !important;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%) !important;
+            color: #0284c7 !important;
+            border: 1px solid rgba(186, 230, 253, 0.7) !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            font-size: 0.78rem !important;
+            flex-shrink: 0 !important;
+        }
+        .sr-title {
+            font-weight: 700 !important;
+            color: #0f172a !important;
+            font-size: 0.84rem !important;
+            white-space: nowrap !important;
+            overflow: hidden !important;
+            text-overflow: ellipsis !important;
+        }
+        .sr-desc {
+            font-size: 0.73rem !important;
+            color: #475569 !important;
+            line-height: 1.38 !important;
+            padding-left: 36px !important;
+            margin: 0 !important;
+        }
+        .search-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 8px 2px !important;
+            border-top: 1px solid rgba(226, 232, 240, 0.7) !important;
+            margin-top: 6px !important;
+            font-size: 0.69rem !important;
+            color: #64748b !important;
+            font-weight: 600;
+        }
+    `;
+    document.head.appendChild(style);
 }
 
 window.openCudiAiWithQuery = function(query) {
@@ -1885,15 +2209,73 @@ window.openCudiAiWithQuery = function(query) {
                 input.value = query;
                 CudiAI.sendMessage();
             }
-        }, 300);
+        }, 250);
     } else {
         window.location.href = `simulador-gemelo-digital-telemetria.html?ai_query=${encodeURIComponent(query)}`;
     }
 };
 
+var CUDI_FEATURED_RECOMMENDATIONS = [
+    {
+        url: "simulador-gemelo-digital-telemetria.html",
+        title: "Demo Interactiva: Gemelo Digital y Telemetría",
+        category: "Demo App",
+        badgeClass: "badge-demo",
+        icon: "fa-mobile-screen-button",
+        price: "En Vivo",
+        desc: "Explora las 6 pestañas interactivas: constantes ECG, escáner Holter IA, mapa GPS, vacunas, comunidad y tienda."
+    },
+    {
+        url: "planes-suscripcion-bienestar-animal.html",
+        title: "Planes y Suscripción CUDI Prime Total",
+        category: "Suscripción",
+        badgeClass: "badge-subscription",
+        icon: "fa-crown",
+        price: "30.00 €/mes",
+        desc: "Incluye Smart Collar gratis (valorado en 89.50€), telemedicina 24/7 ilimitada, triaje IA y descuentos clínicos."
+    },
+    {
+        url: "telemedicina-veterinaria-24-7.html",
+        title: "Clínicas Veterinarias, VetHome y Telemedicina 24/7",
+        category: "Veterinaria 24/7",
+        badgeClass: "badge-health",
+        icon: "fa-user-doctor",
+        price: "Urgencias 24h",
+        desc: "Veterinario colegiado a domicilio en <45 min (VetHome 75€), videoconsulta MediPet (35€) y Hospital Clínico Dual."
+    },
+    {
+        url: "smart-collar-cudi-gps.html",
+        title: "Smart Collar CUDI GPS + Bio-Sensores ECG",
+        category: "Hardware IoT",
+        badgeClass: "badge-hardware",
+        icon: "fa-satellite-dish",
+        price: "89.50 €",
+        desc: "Sensor cardíaco óptico, temperatura dérmica, VFC antiestrés y GPS multibanda L1+L5 con eSIM 4G autónoma."
+    },
+    {
+        url: "seguros-salud-mascotas-barcelona.html",
+        title: "Seguros Veterinarios CUDI Shield y Global Pet",
+        category: "Seguros",
+        badgeClass: "badge-insurance",
+        icon: "fa-shield-heart",
+        price: "Desde 18 €/mes",
+        desc: "Cobertura del 80% al 100% en cirugías y urgencias más Responsabilidad Civil familiar hasta 150.000 €."
+    },
+    {
+        url: "simulador-financiero.html",
+        title: "Simulador Financiero Multiescenario (TFM)",
+        category: "Finanzas TFM",
+        badgeClass: "badge-finance",
+        icon: "fa-chart-line",
+        price: "LTV/CAC 11.6x",
+        desc: "Modelo interactivo a 36 meses con 3 escenarios, EBITDA 24% y punto de equilibrio en el Mes 14."
+    }
+];
+
 function setupSearchInput(input) {
     if (input.dataset.searchBound) return;
     input.dataset.searchBound = "true";
+    injectAppleGlassSearchStyles();
 
     const parent = input.parentNode;
     if (parent) parent.style.position = 'relative';
@@ -1905,11 +2287,79 @@ function setupSearchInput(input) {
 
     let currentResults = [];
 
-    input.addEventListener('input', (e) => {
-        const rawQuery = e.target.value.trim();
-        if (rawQuery.length < 2) {
-            dropdown.style.display = 'none';
-            currentResults = [];
+    function renderDefaultRecommendations() {
+        currentResults = CUDI_FEATURED_RECOMMENDATIONS;
+        const quickPills = [
+            { label: "Demo App", query: "demo", icon: "fa-mobile-screen" },
+            { label: "Suscripciones", query: "planes", icon: "fa-crown" },
+            { label: "Veterinaria 24/7", query: "veterinario", icon: "fa-stethoscope" },
+            { label: "Smart Collar GPS", query: "collar", icon: "fa-satellite-dish" },
+            { label: "Seguros", query: "seguros", icon: "fa-shield-cat" },
+            { label: "Artículos Clínicos", query: "articulos", icon: "fa-book-medical" },
+            { label: "Vacunas", query: "vacunas", icon: "fa-syringe" },
+            { label: "Devoluciones", query: "devoluciones", icon: "fa-rotate-left" }
+        ];
+
+        let html = `
+            <div class="search-glass-section-header">
+                <span><i class="fa-solid fa-wand-magic-sparkles"></i> Accesos Rápidos CUDI</span>
+                <button type="button" class="search-ai-ask-btn" onclick="openCudiAiWithQuery('Hola CUDI, muéstrame todo lo que puedes hacer por mi mascota')">
+                    <i class="fa-solid fa-robot"></i> Abrir CUDI AI
+                </button>
+            </div>
+            <div class="search-quick-pills">
+                ${quickPills.map(p => `
+                    <button type="button" class="search-quick-pill" data-quick-query="${escapeSearchHtml(p.query)}">
+                        <i class="fa-solid ${p.icon}"></i> ${escapeSearchHtml(p.label)}
+                    </button>
+                `).join('')}
+            </div>
+            <div class="search-glass-section-header" style="padding-top:4px;">
+                <span><i class="fa-solid fa-star"></i> Imprescindibles del Ecosistema</span>
+                <span style="font-weight:600; text-transform:none; letter-spacing:0;">Selección Destacada</span>
+            </div>
+        `;
+
+        html += CUDI_FEATURED_RECOMMENDATIONS.map(item => `
+            <a href="${item.url}" class="search-result-item">
+                <div class="sr-header-row">
+                    <div class="sr-title-wrap">
+                        <span class="sr-icon"><i class="fa-solid ${item.icon}"></i></span>
+                        <span class="sr-title">${escapeSearchHtml(item.title)}</span>
+                    </div>
+                    <div class="sr-meta-wrap">
+                        <span class="sr-badge ${item.badgeClass}">${escapeSearchHtml(item.category)}</span>
+                        ${item.price ? `<span class="sr-price">${escapeSearchHtml(item.price)}</span>` : ''}
+                    </div>
+                </div>
+                <p class="sr-desc">${escapeSearchHtml(item.desc)}</p>
+            </a>
+        `).join('');
+
+        html += `
+            <div class="search-footer">
+                <span><i class="fa-solid fa-circle-nodes"></i> Ecosistema CUDI Completo (45 Páginas + Demo)</span>
+                <span>Escribe cualquier duda o síntoma</span>
+            </div>
+        `;
+
+        dropdown.innerHTML = html;
+        dropdown.querySelectorAll('.search-quick-pill').forEach(btn => {
+            btn.addEventListener('click', (ev) => {
+                ev.preventDefault();
+                ev.stopPropagation();
+                const q = btn.getAttribute('data-quick-query') || '';
+                input.value = q;
+                input.focus();
+                renderQueryResults(q);
+            });
+        });
+        dropdown.style.display = 'block';
+    }
+
+    function renderQueryResults(rawQuery) {
+        if (!rawQuery || rawQuery.length < 2) {
+            renderDefaultRecommendations();
             return;
         }
 
@@ -1919,7 +2369,6 @@ function setupSearchInput(input) {
         if (currentResults.length > 0) {
             let html = '';
 
-            // AI Insight Header Card
             if (data.aiSummary) {
                 html += `
                     <div class="search-ai-card">
@@ -1934,7 +2383,6 @@ function setupSearchInput(input) {
                 `;
             }
 
-            // Typo Correction Notice
             if (data.correction) {
                 html += `
                     <div class="search-correction-bar">
@@ -1944,7 +2392,6 @@ function setupSearchInput(input) {
                 `;
             }
 
-            // Results List
             html += currentResults.map(item => `
                 <a href="${item.url}" class="search-result-item">
                     <div class="sr-header-row">
@@ -1961,7 +2408,6 @@ function setupSearchInput(input) {
                 </a>
             `).join('');
 
-            // Ecosystem Footer
             html += `
                 <div class="search-footer">
                     <span><i class="fa-solid fa-circle-nodes"></i> Ecosistema CUDI Completo</span>
@@ -1971,17 +2417,29 @@ function setupSearchInput(input) {
 
             dropdown.innerHTML = html;
             dropdown.style.display = 'block';
+        }
+    }
+
+    input.addEventListener('input', (e) => {
+        const rawQuery = e.target.value.trim();
+        renderQueryResults(rawQuery);
+    });
+
+    input.addEventListener('focus', () => {
+        const rawQuery = input.value.trim();
+        if (rawQuery.length >= 2) {
+            renderQueryResults(rawQuery);
         } else {
-            dropdown.innerHTML = `
-                <div class="search-empty-state">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <p>No encontramos páginas directas para "<strong>${escapeSearchHtml(rawQuery)}</strong>"</p>
-                    <button type="button" class="empty-ask-btn" onclick="openCudiAiWithQuery('${escapeSearchHtml(rawQuery)}')">
-                        <i class="fa-solid fa-robot"></i> Consultar a CUDI AI
-                    </button>
-                </div>
-            `;
-            dropdown.style.display = 'block';
+            renderDefaultRecommendations();
+        }
+    });
+
+    input.addEventListener('click', () => {
+        const rawQuery = input.value.trim();
+        if (rawQuery.length >= 2) {
+            renderQueryResults(rawQuery);
+        } else {
+            renderDefaultRecommendations();
         }
     });
 
@@ -1993,20 +2451,14 @@ function setupSearchInput(input) {
             } else if (input.value.trim().length >= 2) {
                 window.openCudiAiWithQuery(input.value.trim());
             }
-        }
-    });
-
-    // Hide when clicking outside
-    document.addEventListener('click', (e) => {
-        if (parent && !parent.contains(e.target)) {
+        } else if (e.key === 'Escape') {
             dropdown.style.display = 'none';
         }
     });
 
-    // Focus restore
-    input.addEventListener('focus', () => {
-        if (input.value.trim().length >= 2 && dropdown.innerHTML.trim() !== '') {
-            dropdown.style.display = 'block';
+    document.addEventListener('click', (e) => {
+        if (parent && !parent.contains(e.target)) {
+            dropdown.style.display = 'none';
         }
     });
 }
