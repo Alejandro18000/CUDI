@@ -179,6 +179,9 @@ const CudiAI = {
     },
 
     loadProfile() {
+        if (typeof window.cudi_heal_stored_profiles === 'function') {
+            window.cudi_heal_stored_profiles();
+        }
         const isSessionActive = typeof cudi_is_session_active === 'function' ? cudi_is_session_active() : (localStorage.getItem('cudi_session_active') === 'true');
         try {
             const stored = localStorage.getItem('cudi_pet_profile');
@@ -204,6 +207,14 @@ const CudiAI = {
                 food: 'Pienso Seco'
             };
         }
+
+        if (typeof window.cudi_resolve_pet_photo === 'function') {
+            this.petProfile.photo = window.cudi_resolve_pet_photo(this.petProfile);
+        } else if (!this.petProfile.photo || String(this.petProfile.photo).includes('1513360309081')) {
+            this.petProfile.photo = this.petProfile.type === 'gato'
+                ? 'gato-explorando-seguro-collar-gps.png'
+                : 'avatar-mascota-perfil-gemelo-digital.png';
+        }
     },
 
     injectWidget() {
@@ -215,7 +226,7 @@ const CudiAI = {
         container.id = 'cudi-ai-global-widget';
         container.innerHTML = `
             <div class="cudi-ai-trigger" onclick="CudiAI.toggle()" title="Hablar con la IA Local de CUDI">
-                <img src="logo.jpeg" alt="CUDI AI">
+                <img src="logo.jpeg" alt="CUDI AI" onerror="this.onerror=null;this.src='avatar-mascota-perfil-gemelo-digital.png'">
                 <div class="ai-notif-dot" id="ai-notif"></div>
             </div>
             
@@ -223,7 +234,7 @@ const CudiAI = {
                 <div class="ai-header">
                     <div class="ai-header-left">
                         <div class="ai-header-avatar-slot" title="Mascota Activa: ${this.petProfile.name}">
-                            <img id="ai-avatar" src="${this.petProfile.photo || 'avatar-mascota-perfil-gemelo-digital.png'}" alt="${this.petProfile.name}">
+                            <img id="ai-avatar" src="${this.petProfile.photo || 'avatar-mascota-perfil-gemelo-digital.png'}" alt="${this.petProfile.name}" onerror="this.onerror=null;this.src='avatar-mascota-perfil-gemelo-digital.png'">
                             <span class="ai-avatar-online-dot"></span>
                         </div>
                         <div class="ai-header-info">

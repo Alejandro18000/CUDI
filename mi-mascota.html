@@ -43,7 +43,7 @@
             z-index: 1000;
         }
     </style>
-    <link rel="stylesheet" href="cudi-ai.css?v=6.2">
+    <link rel="stylesheet" href="cudi-ai.css?v=7.2">
     
     <script src="cudi-analytics.js?v=6.3"></script>
 </head>
@@ -86,7 +86,7 @@
             <!-- Hero Dashboard -->
             <div class="dash-web-hero">
                 <div style="position:relative;">
-                    <img src="" id="dash-pet-photo" alt="Mascota" class="dash-web-avatar" decoding="async">
+                    <img src="avatar-mascota-perfil-gemelo-digital.png" id="dash-pet-photo" alt="Mascota" class="dash-web-avatar" onerror="this.onerror=null;this.src='avatar-mascota-perfil-gemelo-digital.png';" style="width:120px !important; height:120px !important; min-width:120px !important; max-width:120px !important; min-height:120px !important; max-height:120px !important; aspect-ratio:1/1 !important; border-radius:50% !important; object-fit:cover !important; object-position:center !important;" decoding="async">
                     <div style="position:absolute; bottom:5px; right:5px; width:25px; height:25px; background:#10b981; border:3px solid white; border-radius:50%; animation: pulse 2s infinite;"></div>
                 </div>
                 <div class="dash-web-info">
@@ -330,7 +330,7 @@
         </div>
     </div>
 
-    <script src="script.js?v=7.1"></script>
+    <script src="script.js?v=7.2"></script>
     <script>
         let heartChart, energyChart, sleepChart, stressChart;
         let currentLiveInterval = null;
@@ -410,9 +410,21 @@
                 if (previewBanner) previewBanner.style.display = 'none';
             }
 
-            // Actualizar Cabecera
+            // Actualizar Cabecera con foto verificada y fallback seguro
+            const safeDashPhoto = (typeof window.cudi_resolve_pet_photo === 'function')
+                ? window.cudi_resolve_pet_photo(profile, profile.type, profile.name)
+                : ((profile.photo && !String(profile.photo).includes('1513360309081-36f20ca480d0')) ? profile.photo : (profile.type === 'gato' ? 'gato-explorando-seguro-collar-gps.png' : 'avatar-mascota-perfil-gemelo-digital.png'));
+            profile.photo = safeDashPhoto;
+            const dashPhotoEl = document.getElementById('dash-pet-photo');
+            if (dashPhotoEl) {
+                dashPhotoEl.onerror = function() {
+                    this.onerror = null;
+                    this.src = profile.type === 'gato' ? 'gato-explorando-seguro-collar-gps.png' : 'avatar-mascota-perfil-gemelo-digital.png';
+                };
+                dashPhotoEl.src = safeDashPhoto;
+                dashPhotoEl.alt = profile.name || 'Mascota';
+            }
             document.getElementById('dash-pet-name').innerText = profile.name;
-            document.getElementById('dash-pet-photo').src = profile.photo;
             document.getElementById('dash-pet-meta').innerText = `${profile.breed} • ${profile.age} años • ${profile.weight} kg`;
 
             // Actualizar Ficha Técnica
@@ -600,7 +612,7 @@
             }, 3000);
         }
     </script>
-    <script src="cudi-ai.js?v=7.0"></script>
+    <script src="cudi-ai.js?v=7.2"></script>
     <!-- Mobile Drawer -->
     <div class="mobile-drawer" id="mobile-drawer">
         <button class="drawer-close" onclick="toggleMobileMenu()"><i class="fa-solid fa-xmark"></i></button>
@@ -622,9 +634,9 @@
         </div>
     </div>
     <!-- Módulos Transversales CUDI (Arquitectura Modular en Español) -->
-    <script src="modulos/estado-compartido.js?v=6.4"></script>
-    <script src="modulos/catalogo-unico.js?v=6.4"></script>
-    <script src="modulos/internacionalizacion.js?v=6.4"></script>
-    <script src="modulos/nucleo-transversal.js?v=6.4"></script>
+    <script src="modulos/estado-compartido.js?v=7.2"></script>
+    <script src="modulos/catalogo-unico.js?v=7.2"></script>
+    <script src="modulos/internacionalizacion.js?v=7.2"></script>
+    <script src="modulos/nucleo-transversal.js?v=7.2"></script>
 </body>
 </html>

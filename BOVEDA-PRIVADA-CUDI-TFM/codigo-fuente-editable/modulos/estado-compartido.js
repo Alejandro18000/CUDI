@@ -29,6 +29,7 @@
         ageLabel: 'Adulto Joven (3 años)',
         energy: 'moderado',
         food: 'barf',
+        photo: 'avatar-mascota-perfil-gemelo-digital.png',
         avatar: 'avatar-mascota-perfil-gemelo-digital.png',
         healthScore: 98,
         bpm: 74,
@@ -39,13 +40,18 @@
 
     function getPet() {
         try {
-            const raw = localStorage.getItem(KEYS.PET_DATA) || localStorage.getItem(KEYS.USER_PET);
+            const raw = localStorage.getItem('cudi_pet_profile') || localStorage.getItem(KEYS.PET_DATA) || localStorage.getItem(KEYS.USER_PET);
             if (raw) {
                 const parsed = JSON.parse(raw);
+                const safePhoto = (typeof window.cudi_resolve_pet_photo === 'function')
+                    ? window.cudi_resolve_pet_photo(parsed)
+                    : (parsed.photo || parsed.avatar || DEFAULT_PET.photo);
                 return Object.assign({}, DEFAULT_PET, parsed, {
                     name: parsed.name || DEFAULT_PET.name,
                     type: parsed.type || parsed.species || DEFAULT_PET.type,
-                    species: parsed.species || parsed.type || DEFAULT_PET.species
+                    species: parsed.species || parsed.type || DEFAULT_PET.species,
+                    photo: safePhoto,
+                    avatar: safePhoto
                 });
             }
         } catch (e) {}

@@ -202,28 +202,105 @@ const NOTIFICATIONS_DATA = [
     { title: 'Paseo programado', desc: 'Tu paseador llega en 30 minutos.', icon: 'fa-person-walking-dog', color: '#0077b6', time: 'Hace 2h', read: true }
 ];
 
-// ---- SOCIAL PETS (SINCRONIZADOS CON CUDI COMUNIDAD) ----
-const SOCIAL_PETS = [
+// ---- SOCIAL PETS & MURO SINCRONIZADO CON CUDI COMUNIDAD ----
+const DEMO_SHARED_SOCIAL_KEY = 'cudi_community_shared_state_v1';
+
+const DEMO_DEFAULT_SHARED_POSTS = [
     {
-        id: 'cooper',
-        name: 'Cooper',
-        breed: 'Beagle Tricolor',
-        type: 'perro',
-        dist: '0.3 km',
-        photo: 'https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=400',
-        compat: 95,
-        energy: 'Muy Alta',
-        bio: 'Explorador profesional de senderos y olfateador de ardillas.',
-        badges: ['Rastreador', 'Social Star'],
-        collar: 'GPS Activo &bull; 88 bpm'
+        id: 'post_cooper_1',
+        petId: 'cooper',
+        author: 'Cooper',
+        verified: true,
+        avatar: 'https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=300&h=300&q=80',
+        timeLoc: 'Hace 2 horas • Parque del Retiro',
+        text: 'Disfrutando de un paseo matutino. ¡Mis niveles de energía están por las nubes según mi CUDI Smart Collar! 🦴✨',
+        image: 'https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=800&q=80',
+        likes: 45,
+        liked: true,
+        commentsCount: 12
     },
+    {
+        id: 'post_bella_2',
+        petId: 'bella',
+        author: 'Bella',
+        verified: true,
+        avatar: 'https://images.unsplash.com/photo-1517423440428-a5a00ad493e8?auto=format&fit=crop&w=300&h=300&q=80',
+        timeLoc: 'Hace 5 horas • Barcelona',
+        text: '¿Quién más está listo para el fin de semana de juegos? La IA dice que soy un 98% compatible con Labradores hoy. ¡A jugar! 🎾',
+        image: '',
+        likes: 32,
+        liked: false,
+        commentsCount: 8
+    },
+    {
+        id: 'post_luna_3',
+        petId: 'luna',
+        author: 'Luna',
+        verified: true,
+        avatar: 'https://images.unsplash.com/photo-1605568427561-40dd23c2acea?auto=format&fit=crop&w=300&h=300&q=80',
+        timeLoc: 'Hace 8 horas • Sierra de Guadarrama',
+        text: '14 km recorridos hoy en la ruta pet-friendly con el Collar CUDI GPS. Batería al 91% y ritmo cardíaco estable en 74 bpm. ❄️🐺 ¿Quién se apunta al próximo encuentro?',
+        image: 'https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=800&q=80',
+        likes: 68,
+        liked: false,
+        commentsCount: 19
+    }
+];
+
+function resolveDemoPetPhoto(input, petType, petName) {
+    if (typeof window.cudi_resolve_pet_photo === 'function') {
+        return window.cudi_resolve_pet_photo(input, petType, petName);
+    }
+    const rawUrl = (input && typeof input === 'object') ? (input.photo || input.avatar || input.img || '') : String(input || '');
+    const clean = rawUrl.trim();
+    const isCat = (petType === 'gato') || (input && input.type === 'gato');
+    if (!clean || clean === 'undefined' || clean === 'null' || clean.includes('1513360309081-36f20ca480d0') || clean.includes('1524511751214-b0a50a01b1da')) {
+        return isCat ? 'gato-explorando-seguro-collar-gps.png' : 'avatar-mascota-perfil-gemelo-digital.png';
+    }
+    return clean;
+}
+
+function getDemoSharedSocialState() {
+    try {
+        const raw = localStorage.getItem(DEMO_SHARED_SOCIAL_KEY);
+        if (raw) {
+            const parsed = JSON.parse(raw);
+            if (parsed && Array.isArray(parsed.posts)) {
+                parsed.posts.forEach(p => {
+                    if (p) p.avatar = resolveDemoPetPhoto(p.avatar, p.type, p.author);
+                });
+                return {
+                    posts: parsed.posts,
+                    followedIds: Array.isArray(parsed.followedIds) ? parsed.followedIds : []
+                };
+            }
+        }
+    } catch (e) {}
+    const initial = {
+        posts: JSON.parse(JSON.stringify(DEMO_DEFAULT_SHARED_POSTS)),
+        followedIds: []
+    };
+    try {
+        localStorage.setItem(DEMO_SHARED_SOCIAL_KEY, JSON.stringify(initial));
+    } catch (e) {}
+    return initial;
+}
+
+function saveDemoSharedSocialState(state) {
+    try {
+        localStorage.setItem(DEMO_SHARED_SOCIAL_KEY, JSON.stringify(state));
+        window.dispatchEvent(new CustomEvent('cudi:socialUpdated', { detail: state }));
+    } catch (e) {}
+}
+
+const SOCIAL_PETS = [
     {
         id: 'max',
         name: 'Max',
         breed: 'Border Collie',
         type: 'perro',
-        dist: '0.45 km',
-        photo: 'https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=400',
+        dist: '0.3 km',
+        photo: 'https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=300&h=300&q=80',
         compat: 98,
         energy: 'Extrema',
         bio: 'Competidor de Agility y fan de las caminatas con Urban Pet Walkers.',
@@ -231,12 +308,38 @@ const SOCIAL_PETS = [
         collar: 'GPS Activo &bull; 76 bpm'
     },
     {
+        id: 'cooper',
+        name: 'Cooper',
+        breed: 'Beagle Tricolor',
+        type: 'perro',
+        dist: '0.35 km',
+        photo: 'https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=300&h=300&q=80',
+        compat: 95,
+        energy: 'Muy Alta',
+        bio: 'Explorador profesional de senderos y olfateador de ardillas.',
+        badges: ['Rastreador', 'Social Star'],
+        collar: 'GPS Activo &bull; 84 bpm'
+    },
+    {
+        id: 'luna',
+        name: 'Luna',
+        breed: 'Husky Siberiano',
+        type: 'perro',
+        dist: '0.5 km',
+        photo: 'https://images.unsplash.com/photo-1605568427561-40dd23c2acea?auto=format&fit=crop&w=300&h=300&q=80',
+        compat: 95,
+        energy: 'Muy Alta',
+        bio: 'Espíritu libre y pasión por las rutas de senderismo pet-friendly.',
+        badges: ['Ruta Aventuras', 'Match IA 95%'],
+        collar: 'GPS Activo &bull; 74 bpm'
+    },
+    {
         id: 'cleo',
         name: 'Cleo',
         breed: 'Podenco & Mestizo Ágil',
         type: 'perro',
         dist: '0.65 km',
-        photo: 'https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?w=400',
+        photo: 'https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&w=300&h=300&q=80',
         compat: 89,
         energy: 'Equilibrada',
         bio: 'Adoptada y mimada al máximo. Fanática del queso suave y las carreras cortas.',
@@ -244,43 +347,56 @@ const SOCIAL_PETS = [
         collar: 'GPS Activo &bull; 88 bpm'
     },
     {
+        id: 'bella',
+        name: 'Bella',
+        breed: 'Pug Negro Elegante',
+        type: 'perro',
+        dist: '0.8 km',
+        photo: 'https://images.unsplash.com/photo-1517423440428-a5a00ad493e8?auto=format&fit=crop&w=300&h=300&q=80',
+        compat: 86,
+        energy: 'Tranquila / Zen',
+        bio: 'Reina de las siestas, catadora certificada de EcoPet Organic y cliente VIP de ZenPet Spa.',
+        badges: ['Cliente VIP Spa', 'Gourmet BARF'],
+        collar: 'GPS Activo &bull; 90 bpm'
+    },
+    {
+        id: 'rex',
+        name: 'Rex',
+        breed: 'Golden Retriever Cachorro',
+        type: 'perro',
+        dist: '0.95 km',
+        photo: 'https://images.unsplash.com/photo-1583511655826-05700d52f4d9?auto=format&fit=crop&w=300&h=300&q=80',
+        compat: 94,
+        energy: 'Juguetón',
+        bio: 'Todo el mundo es mi mejor amigo. Aprendiendo comandos positivos en el parque.',
+        badges: ['Cachorro Escuela', 'Amigable 100%'],
+        collar: 'GPS Activo &bull; 96 bpm'
+    },
+    {
+        id: 'simba',
+        name: 'Simba',
+        breed: 'Pomerania Toy',
+        type: 'perro',
+        dist: '1.15 km',
+        photo: 'https://images.unsplash.com/photo-1601979031925-424e53b6caaa?auto=format&fit=crop&w=300&h=300&q=80',
+        compat: 82,
+        energy: 'Vivaz',
+        bio: 'Mini melena de león y porte real. Adoro pasear por zonas pet-friendly.',
+        badges: ['Mochilero Técnico', 'Top Model'],
+        collar: 'GPS Activo &bull; 98 bpm'
+    },
+    {
         id: 'thor',
         name: 'Thor',
         breed: 'Golden Retriever',
         type: 'perro',
-        dist: '0.85 km',
-        photo: 'https://images.unsplash.com/photo-1552053831-71594a27632d?w=400',
+        dist: '1.3 km',
+        photo: 'https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=300&h=300&q=80',
         compat: 94,
         energy: 'Alta',
         bio: 'Extremadamente dulce y juguetón con cualquier perro o gato del parque.',
         badges: ['Amante del Agua', 'Terapia Canina'],
         collar: 'GPS Activo &bull; 72 bpm'
-    },
-    {
-        id: 'bella',
-        name: 'Bella',
-        breed: 'Gata Ragdoll',
-        type: 'gato',
-        dist: '1.1 km',
-        photo: 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=400',
-        compat: 91,
-        energy: 'Tranquila',
-        bio: 'Compañera felina muy pacífica que convive felizmente con perritos tranquilos.',
-        badges: ['Siesta Pro', 'Pet-Friendly'],
-        collar: 'Smart Collar &bull; 135 bpm'
-    },
-    {
-        id: 'milo',
-        name: 'Milo',
-        breed: 'Jack Russell Terrier',
-        type: 'perro',
-        dist: '1.4 km',
-        photo: 'https://images.unsplash.com/photo-1583511655826-05700d52f4d9?w=400',
-        compat: 87,
-        energy: 'Imparable',
-        bio: 'Pequeño terremoto lleno de alegría. Corre tras cualquier pelota de tenis.',
-        badges: ['Velocidad Máxima', 'Pelotas de Tenis'],
-        collar: 'GPS Activo &bull; 92 bpm'
     }
 ];
 
@@ -337,6 +453,10 @@ function formatPetAgeStage(age) {
 function syncSimulatorDOMWithProfile(p) {
     if (!p || !p.name) return;
 
+    const safePhoto = resolveDemoPetPhoto(p, p.type, p.name);
+    p.photo = safePhoto;
+    const localFallback = p.type === 'gato' ? 'gato-explorando-seguro-collar-gps.png' : 'avatar-mascota-perfil-gemelo-digital.png';
+
     // 1. Poblar campos del formulario de onboarding por si el usuario desea editarlo
     const nameInput = document.getElementById('pet-name');
     if (nameInput) nameInput.value = p.name;
@@ -364,8 +484,8 @@ function syncSimulatorDOMWithProfile(p) {
         }
     }
     const onboardingPhoto = document.getElementById('onboarding-photo');
-    if (onboardingPhoto && p.photo) {
-        onboardingPhoto.style.backgroundImage = `url('${p.photo}')`;
+    if (onboardingPhoto && safePhoto) {
+        onboardingPhoto.style.backgroundImage = `url('${safePhoto}'), url('${localFallback}')`;
     }
 
     // 2. Mostrar pantalla principal y barra de estado
@@ -396,7 +516,8 @@ function syncSimulatorDOMWithProfile(p) {
 
     const dashAvatar = document.getElementById('dash-avatar-img');
     if (dashAvatar) {
-        dashAvatar.src = p.photo || 'avatar-mascota-perfil-gemelo-digital.png';
+        dashAvatar.onerror = function() { this.onerror = null; this.src = localFallback; };
+        dashAvatar.src = safePhoto;
         dashAvatar.alt = p.name;
         dashAvatar.style.width = '48px';
         dashAvatar.style.height = '48px';
@@ -412,7 +533,8 @@ function syncSimulatorDOMWithProfile(p) {
     // 4. Sincronizar Pin GPS
     const gpsPinImg = document.getElementById('gps-pet-avatar-pin');
     if (gpsPinImg) {
-        gpsPinImg.src = p.photo || 'avatar-mascota-perfil-gemelo-digital.png';
+        gpsPinImg.onerror = function() { this.onerror = null; this.src = localFallback; };
+        gpsPinImg.src = safePhoto;
     }
     const gpsPinName = document.getElementById('gps-pin-name');
     if (gpsPinName) gpsPinName.textContent = p.name;
@@ -428,7 +550,10 @@ function syncSimulatorDOMWithProfile(p) {
     if (typeof CudiAI !== 'undefined' && typeof CudiAI.loadProfile === 'function') {
         CudiAI.loadProfile();
         const aiAvatar = document.getElementById('ai-avatar');
-        if (aiAvatar) aiAvatar.src = p.photo || 'avatar-mascota-perfil-gemelo-digital.png';
+        if (aiAvatar) {
+            aiAvatar.onerror = function() { this.onerror = null; this.src = localFallback; };
+            aiAvatar.src = safePhoto;
+        }
         const aiPetTag = document.getElementById('ai-header-pet-name');
         if (aiPetTag) aiPetTag.innerHTML = `<i class="fa-solid fa-paw"></i> ${p.name}`;
     }
@@ -457,6 +582,7 @@ function loadSavedProfile() {
 
     if (saved && saved.name && isSessionActive) {
         const inferredType = saved.type || (saved.breed && saved.breed.toLowerCase().includes('gato') ? 'gato' : 'perro');
+        const safePhoto = resolveDemoPetPhoto(saved, inferredType, saved.name);
         petProfile = {
             name: saved.name,
             type: inferredType,
@@ -465,9 +591,14 @@ function loadSavedProfile() {
             energy: saved.energy || 'Moderado',
             food: saved.food || 'Pienso Seco',
             breed: saved.breed || (inferredType === 'gato' ? 'Europeo Común' : 'Mestizo'),
-            photo: saved.photo || (ONBOARDING_PHOTOS[inferredType] || ONBOARDING_PHOTOS.perro),
+            photo: safePhoto,
             bpm: saved.bpm || (inferredType === 'gato' ? 138 : 74)
         };
+
+        if (saved.photo !== safePhoto) {
+            saved.photo = safePhoto;
+            try { localStorage.setItem('cudi_pet_profile', JSON.stringify(saved)); } catch (e) {}
+        }
 
         syncSimulatorDOMWithProfile(petProfile);
         return true;
@@ -510,13 +641,13 @@ function setupDemoOnboardingAutoFill() {
     const banner = document.createElement('div');
     banner.id = 'demo-autofill-banner';
     banner.className = 'demo-autofill-banner';
-    banner.style.cssText = 'margin-bottom:14px; background:#eff6ff; border:1.5px solid #bfdbfe; border-radius:14px; padding:10px 14px; display:flex; align-items:center; justify-content:space-between; gap:10px;';
+    banner.style.cssText = 'margin-bottom:14px; background:linear-gradient(135deg, rgba(255,255,255,0.88) 0%, rgba(224,242,254,0.82) 100%); backdrop-filter:blur(16px) saturate(190%); -webkit-backdrop-filter:blur(16px) saturate(190%); border:1.5px solid rgba(255,255,255,0.95); box-shadow:0 6px 18px rgba(2,132,199,0.08), 0 1px 0 rgba(255,255,255,0.95) inset; border:16px; border-radius:16px; padding:11px 14px; display:flex; align-items:center; justify-content:space-between; gap:10px;';
     banner.innerHTML = `
         <div>
-            <span style="font-size:0.75rem; font-weight:800; color:#1e40af; display:block;"><i class="fa-solid fa-wand-magic-sparkles"></i> Llenado Automático IA</span>
-            <span style="font-size:0.7rem; color:#3b82f6;" id="demo-autofill-info-label">Probar con ${candidate.name} (${candidate.breed})</span>
+            <span style="font-size:0.75rem; font-weight:800; color:#0284c7; display:block;"><i class="fa-solid fa-wand-magic-sparkles"></i> Llenado Automático IA</span>
+            <span style="font-size:0.7rem; color:#475569; font-weight:600;" id="demo-autofill-info-label">Probar con ${candidate.name} (${candidate.breed})</span>
         </div>
-        <button type="button" onclick="appDemoAutoFill()" style="background:#0284c7; color:white; border:none; padding:7px 12px; border-radius:8px; font-weight:800; font-size:0.75rem; cursor:pointer; display:flex; align-items:center; gap:5px; box-shadow:0 2px 6px rgba(2,132,199,0.25);">
+        <button type="button" onclick="appDemoAutoFill()" style="background:linear-gradient(135deg, #0284c7, #10b981); color:white; border:1px solid rgba(255,255,255,0.4); padding:7px 12px; border-radius:10px; font-weight:800; font-size:0.74rem; cursor:pointer; display:flex; align-items:center; gap:5px; box-shadow:0 4px 12px rgba(2,132,199,0.22);">
             <i class="fa-solid fa-bolt"></i> Autollenar
         </button>
     `;
@@ -590,11 +721,13 @@ function appDemoAutoFill() {
         foodSelect.value = fd.includes('barf') ? 'barf' : (fd.includes('mixta') ? 'mixta' : 'pienso');
     }
 
-    // Foto exclusiva en onboarding
-    window.appDemoSelectedPhoto = pet.photo;
+    // Foto exclusiva en onboarding (con verificación de URL)
+    const safeAutoPhoto = resolveDemoPetPhoto(pet, pet.type, pet.name);
+    window.appDemoSelectedPhoto = safeAutoPhoto;
     const photoEl = document.getElementById('onboarding-photo');
-    if (photoEl && pet.photo) {
-        photoEl.style.backgroundImage = `url('${pet.photo}')`;
+    if (photoEl && safeAutoPhoto) {
+        const localFallback = pet.type === 'gato' ? 'gato-explorando-seguro-collar-gps.png' : 'avatar-mascota-perfil-gemelo-digital.png';
+        photoEl.style.backgroundImage = `url('${safeAutoPhoto}'), url('${localFallback}')`;
     }
 
     // Destacar visualmente los campos para que la persona vea la velocidad del llenado
@@ -623,7 +756,8 @@ function proceedToDashboard() {
     const energyRaw = document.getElementById('pet-energy')?.value || 'moderado';
     const foodRaw   = document.getElementById('pet-food')?.value || 'pienso';
     const breed  = document.getElementById('pet-breed')?.value || (type === 'gato' ? 'Europeo Común' : 'Mestizo');
-    const photo  = window.appDemoSelectedPhoto || ONBOARDING_PHOTOS[type] || ONBOARDING_PHOTOS.perro;
+    const rawPhoto = window.appDemoSelectedPhoto || ONBOARDING_PHOTOS[type] || ONBOARDING_PHOTOS.perro;
+    const photo  = resolveDemoPetPhoto(rawPhoto, type, name);
 
     const energyMap = { tranquilo: 'Tranquilo', moderado: 'Moderado', activo: 'Alto' };
     const foodMap = { pienso: 'Pienso Seco', barf: 'Dieta BARF', mixta: 'Dieta Mixta' };
@@ -955,41 +1089,115 @@ function startLiveMetrics() {
 }
 
 // ==========================
-// SOCIAL PETS (COMUNIDAD COMPLETA EN LA DEMO)
+// SOCIAL PETS & MURO SINCRONIZADO (COMUNIDAD COMPLETA EN LA DEMO)
 // ==========================
 function renderSocialPets() {
-    // 1. BARRA DE STORIES
+    const sharedState = getDemoSharedSocialState();
+    const currentPet = petProfile.name ? petProfile : {
+        name: 'Mi Mascota',
+        photo: 'avatar-mascota-perfil-gemelo-digital.png',
+        type: 'perro'
+    };
+    const currentPetPhoto = resolveDemoPetPhoto(currentPet, currentPet.type, currentPet.name);
+    const localFallback = currentPet.type === 'gato' ? 'gato-explorando-seguro-collar-gps.png' : 'avatar-mascota-perfil-gemelo-digital.png';
+
+    // 1. BARRA DE STORIES SINCRONIZADA
     const storiesBar = document.getElementById('demo-stories-bar');
     if (storiesBar) {
-        const currentPet = petProfile.name ? petProfile : {
-            name: 'Mi Mascota',
-            photo: 'avatar-mascota-perfil-gemelo-digital.png'
-        };
-
         const allStories = [
-            { id: 'user', name: currentPet.name, photo: currentPet.photo || 'avatar-mascota-perfil-gemelo-digital.png', isUser: true },
+            { id: 'user', name: `Tú (${currentPet.name})`, photo: currentPetPhoto, isUser: true },
             ...SOCIAL_PETS
         ];
 
-        storiesBar.innerHTML = allStories.map(s => `
+        storiesBar.innerHTML = allStories.map(s => {
+            const sPhoto = resolveDemoPetPhoto(s.photo, s.type, s.name);
+            return `
             <div class="demo-story-item" onclick="openStoryDetail('${s.id}')" title="${s.name}">
                 <div class="demo-story-ring ${s.isUser ? 'active-pulse' : ''}">
-                    <img src="${s.photo}" alt="${s.name}" class="demo-story-avatar">
+                    <img src="${sPhoto}" alt="${s.name}" class="demo-story-avatar" onerror="this.onerror=null;this.src='avatar-mascota-perfil-gemelo-digital.png';">
                 </div>
                 <span class="demo-story-name">${s.name}</span>
             </div>
-        `).join('');
+        `}).join('');
     }
 
-    // 2. LISTA DE MASCOTAS VECINAS
-    const container = document.getElementById('social-pets-list');
-    if (!container) return;
+    // 2. MURO DE PUBLICACIONES SINCRONIZADO CON COMUNIDAD-CUDI.HTML
+    let feedContainer = document.getElementById('demo-social-feed-list');
+    const petsContainer = document.getElementById('social-pets-list');
+    if (!feedContainer && petsContainer && petsContainer.parentNode) {
+        feedContainer = document.createElement('div');
+        feedContainer.id = 'demo-social-feed-list';
+        petsContainer.parentNode.insertBefore(feedContainer, petsContainer);
+    }
 
-    container.innerHTML = SOCIAL_PETS.map(p => `
+    if (feedContainer) {
+        feedContainer.innerHTML = `
+            <div style="display:flex; justify-content:space-between; align-items:center; margin:4px 0 8px;">
+                <span style="font-size:0.74rem; font-weight:800; color:#0f172a; text-transform:uppercase; letter-spacing:0.4px;">
+                    <i class="fa-solid fa-newspaper" style="color:#0284c7;"></i> Muro Comunidad CUDI
+                </span>
+                <a href="comunidad-cudi.html" style="font-size:0.68rem; color:#0284c7; font-weight:800; text-decoration:none; display:inline-flex; align-items:center; gap:4px;">
+                    Abrir Red Web <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.6rem;"></i>
+                </a>
+            </div>
+            <div class="demo-quick-post-bar">
+                <img src="${currentPetPhoto}" alt="${currentPet.name}" class="demo-feed-author-img" onerror="this.onerror=null;this.src='${localFallback}';">
+                <input type="text" id="demo-quick-post-input" class="demo-quick-post-input" placeholder="Publicar como ${currentPet.name} en Comunidad...">
+                <button type="button" class="demo-quick-post-btn" onclick="publishFromDemoSocial()">
+                    <i class="fa-solid fa-paper-plane"></i> Publicar
+                </button>
+            </div>
+            ${sharedState.posts.slice(0, 4).map(post => {
+                const isFollowed = sharedState.followedIds.includes(post.petId);
+                const postAvatar = resolveDemoPetPhoto(post.avatar, post.type, post.author);
+                return `
+                    <div class="demo-social-feed-card">
+                        <div class="demo-feed-header">
+                            <img src="${postAvatar}" alt="${post.author}" class="demo-feed-author-img" onerror="this.onerror=null;this.src='avatar-mascota-perfil-gemelo-digital.png';" onclick="openAppPetModal('${post.petId}')" style="cursor:pointer;">
+                            <div style="flex:1; min-width:0;">
+                                <div style="font-size:0.84rem; font-weight:800; color:#0f172a; display:flex; align-items:center; gap:4px; cursor:pointer;" onclick="openAppPetModal('${post.petId}')">
+                                    ${post.author} <i class="fa-solid fa-circle-check" style="color:#0284c7; font-size:0.72rem;"></i>
+                                </div>
+                                <div style="font-size:0.66rem; color:#64748b;">${post.timeLoc}</div>
+                            </div>
+                            ${post.petId !== 'user' ? `
+                                <button type="button" onclick="contactPet('${post.petId}', '${post.author}')" style="background:${isFollowed ? '#dcfce7' : '#e0f2fe'}; color:${isFollowed ? '#15803d' : '#0284c7'}; border:none; border-radius:50px; padding:4px 10px; font-size:0.66rem; font-weight:800; cursor:pointer;">
+                                    ${isFollowed ? '<i class="fa-solid fa-check"></i> Siguiendo' : 'Seguir +'}
+                                </button>
+                            ` : `
+                                <span style="background:#dcfce7; color:#15803d; padding:3px 8px; border-radius:50px; font-size:0.64rem; font-weight:800;">Tú</span>
+                            `}
+                        </div>
+                        <p style="font-size:0.75rem; color:#334155; margin:0 0 8px; line-height:1.45;">${post.text}</p>
+                        ${post.image ? `<img src="${post.image}" alt="${post.author}" class="demo-post-image" onerror="this.onerror=null;this.style.display='none';">` : ''}
+                        <div style="display:flex; align-items:center; justify-content:space-between; border-top:1px solid rgba(226,232,240,0.75); padding-top:8px; margin-top:4px;">
+                            <button type="button" onclick="toggleDemoPostLike('${post.id}')" style="background:none; border:none; color:${post.liked ? '#ef4444' : '#64748b'}; font-size:0.74rem; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:5px;">
+                                <i class="fa-solid fa-heart"></i> ${post.likes} Me gusta
+                            </button>
+                            <span style="font-size:0.7rem; color:#64748b; font-weight:600;">
+                                <i class="fa-solid fa-comment"></i> ${post.commentsCount || 0} comentarios
+                            </span>
+                            <span style="font-size:0.66rem; color:#10b981; font-weight:700;">
+                                <i class="fa-solid fa-rotate"></i> Sync Web
+                            </span>
+                        </div>
+                    </div>
+                `;
+            }).join('')}
+        `;
+    }
+
+    // 3. LISTA DE MASCOTAS VECINAS (8 COMPAÑEROS SINCRONIZADOS)
+    if (!petsContainer) return;
+
+    petsContainer.innerHTML = SOCIAL_PETS.map(p => {
+        const isGreeted = sharedState.followedIds.includes(p.id);
+        const safePPhoto = resolveDemoPetPhoto(p.photo, p.type, p.name);
+        return `
         <div class="pet-social-card-rich" id="social-card-${p.id}">
             <div class="pet-social-card-top">
                 <div class="pet-avatar-rich-wrap">
-                    <img src="${p.photo}" alt="${p.name}" class="pet-avatar-rich" onclick="openAppPetModal('${p.id}')">
+                    <img src="${safePPhoto}" alt="${p.name}" class="pet-avatar-rich" onerror="this.onerror=null;this.src='avatar-mascota-perfil-gemelo-digital.png';" onclick="openAppPetModal('${p.id}')" style="cursor:pointer;">
                     <span class="pet-online-beacon" title="Smart Collar GPS Activo"></span>
                 </div>
                 <div class="pet-rich-meta">
@@ -1015,20 +1223,66 @@ function renderSocialPets() {
             </div>
 
             <div class="pet-rich-actions">
-                <button type="button" class="btn-social-saludar" id="btn-saludar-${p.id}" onclick="contactPet('${p.id}', '${p.name}')">
-                    <i class="fa-solid fa-paw"></i> Saludar 🐾
+                <button type="button" class="btn-social-saludar ${isGreeted ? 'saludado' : ''}" id="btn-saludar-${p.id}" onclick="contactPet('${p.id}', '${p.name}')">
+                    ${isGreeted ? '<i class="fa-solid fa-check"></i> ¡Saludado! 🐾' : '<i class="fa-solid fa-paw"></i> Saludar 🐾'}
                 </button>
                 <button type="button" class="btn-social-ficha" onclick="openAppPetModal('${p.id}')">
                     <i class="fa-solid fa-address-card"></i> Ver Ficha
                 </button>
             </div>
         </div>
-    `).join('');
+        `;
+    }).join('');
 }
+
+function toggleDemoPostLike(postId) {
+    const state = getDemoSharedSocialState();
+    const post = state.posts.find(p => p.id === postId);
+    if (!post) return;
+    post.liked = !post.liked;
+    post.likes = Math.max(0, (post.likes || 0) + (post.liked ? 1 : -1));
+    saveDemoSharedSocialState(state);
+    renderSocialPets();
+}
+
+function publishFromDemoSocial() {
+    const input = document.getElementById('demo-quick-post-input');
+    const text = (input ? input.value.trim() : '') || `¡Listos para el paseo de hoy con el Smart Collar CUDI activo! 🐾✨`;
+    const currentPet = petProfile.name ? petProfile : {
+        name: 'Mi Mascota',
+        photo: 'avatar-mascota-perfil-gemelo-digital.png',
+        type: 'perro'
+    };
+
+    const state = getDemoSharedSocialState();
+    state.posts.unshift({
+        id: 'post_demo_' + Date.now(),
+        petId: 'user',
+        author: currentPet.name,
+        verified: true,
+        avatar: resolveDemoPetPhoto(currentPet, currentPet.type, currentPet.name),
+        timeLoc: 'Justo ahora • Desde CUDI App Demo',
+        text: text,
+        image: '',
+        likes: 1,
+        liked: true,
+        commentsCount: 0
+    });
+    saveDemoSharedSocialState(state);
+    if (input) input.value = '';
+    renderSocialPets();
+    showToast(`✨ Publicación de ${currentPet.name} sincronizada con Comunidad CUDI`);
+}
+
+window.addEventListener('storage', (e) => {
+    if (e.key === DEMO_SHARED_SOCIAL_KEY) {
+        renderSocialPets();
+    }
+});
 
 function openStoryDetail(petId) {
     if (petId === 'user') {
-        showToast(`📸 ${petProfile.name || 'Tu mascota'}: Collar activo y ritmo basal saludable.`);
+        showToast(`📸 ${petProfile.name || 'Tu mascota'}: Collar activo y sincronizado con Comunidad CUDI.`);
         return;
     }
     const pet = SOCIAL_PETS.find(p => p.id === petId);
@@ -1039,15 +1293,18 @@ function openStoryDetail(petId) {
 }
 
 function openAppPetModal(petId) {
-    const pet = SOCIAL_PETS.find(p => p.id === petId);
+    const pet = SOCIAL_PETS.find(p => p.id === petId) || SOCIAL_PETS[0];
     if (!pet) return;
 
-    // Remover modal previo si existe
     const existing = document.getElementById('demo-inapp-modal');
     if (existing) existing.remove();
 
     const screen = document.querySelector('.mobile-screen');
     if (!screen) return;
+
+    const sharedState = getDemoSharedSocialState();
+    const isGreeted = sharedState.followedIds.includes(pet.id);
+    const safeModalPhoto = resolveDemoPetPhoto(pet.photo, pet.type, pet.name);
 
     const modal = document.createElement('div');
     modal.id = 'demo-inapp-modal';
@@ -1056,7 +1313,7 @@ function openAppPetModal(petId) {
         <div class="app-inapp-modal-sheet">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
                 <span style="font-size:0.7rem; font-weight:800; background:#dbeafe; color:#0284c7; padding:3px 10px; border-radius:50px;">
-                    <i class="fa-solid fa-paw"></i> FICHA COMUNIDAD CUDI
+                    <i class="fa-solid fa-paw"></i> FICHA SINCRONIZADA CUDI
                 </span>
                 <button onclick="document.getElementById('demo-inapp-modal').remove()" style="background:#f1f5f9; border:none; width:28px; height:28px; border-radius:50%; cursor:pointer; color:#64748b; font-weight:800;">
                     <i class="fa-solid fa-xmark"></i>
@@ -1064,7 +1321,7 @@ function openAppPetModal(petId) {
             </div>
 
             <div style="display:flex; gap:12px; align-items:center; margin-bottom:14px;">
-                <img src="${pet.photo}" alt="${pet.name}" style="width:64px; height:64px; border-radius:50%; object-fit:cover; border:3px solid #0284c7; box-shadow:0 4px 14px rgba(2,132,199,0.25);">
+                <img src="${safeModalPhoto}" alt="${pet.name}" onerror="this.onerror=null;this.src='avatar-mascota-perfil-gemelo-digital.png';" style="width:64px !important; height:64px !important; min-width:64px !important; max-width:64px !important; min-height:64px !important; max-height:64px !important; aspect-ratio:1/1 !important; border-radius:50% !important; object-fit:cover !important; border:3px solid #0284c7; box-shadow:0 4px 14px rgba(2,132,199,0.25);">
                 <div>
                     <h3 style="margin:0; font-size:1.15rem; color:#0f172a; font-weight:800; display:flex; align-items:center; gap:6px;">
                         ${pet.name} <i class="fa-solid fa-circle-check" style="color:#0284c7; font-size:0.85rem;"></i>
@@ -1076,7 +1333,7 @@ function openAppPetModal(petId) {
                 </div>
             </div>
 
-            <p style="font-size:0.8rem; color:#334155; line-height:1.5; margin-bottom:14px; background:#f8fafc; padding:10px 12px; border-radius:12px; border:1px solid #e2e8f0;">
+            <p style="font-size:0.8rem; color:#334155; line-height:1.5; margin-bottom:14px; background:rgba(248,250,252,0.9); padding:10px 12px; border-radius:12px; border:1px solid #e2e8f0;">
                 "${pet.bio}"
             </p>
 
@@ -1092,8 +1349,8 @@ function openAppPetModal(petId) {
             </div>
 
             <div style="display:flex; gap:8px;">
-                <button type="button" class="btn-social-saludar" style="flex:1; padding:12px;" onclick="contactPet('${pet.id}', '${pet.name}'); document.getElementById('demo-inapp-modal').remove();">
-                    <i class="fa-solid fa-paw"></i> Enviar Saludo y Jugar 🐾
+                <button type="button" class="btn-social-saludar ${isGreeted ? 'saludado' : ''}" style="flex:1; padding:12px;" onclick="contactPet('${pet.id}', '${pet.name}'); document.getElementById('demo-inapp-modal').remove();">
+                    <i class="fa-solid fa-paw"></i> ${isGreeted ? '¡Ya sigues a ' + pet.name + '!' : 'Saludar y Seguir en Comunidad 🐾'}
                 </button>
             </div>
         </div>
@@ -1103,16 +1360,21 @@ function openAppPetModal(petId) {
 }
 
 function contactPet(petId, name) {
-    const btn = document.getElementById(`btn-saludar-${petId}`);
-    if (btn) {
-        btn.classList.add('saludado');
-        btn.innerHTML = '<i class="fa-solid fa-check"></i> ¡Saludado!';
+    const state = getDemoSharedSocialState();
+    const idx = state.followedIds.indexOf(petId);
+    if (idx === -1) {
+        state.followedIds.push(petId);
+        showToast(`🎉 ¡Saludo enviado y siguiendo a ${name} en la App y en la Web! 🐾`);
+    } else {
+        state.followedIds.splice(idx, 1);
+        showToast(`Dejaste de seguir a ${name}`);
     }
-    showToast(`🎉 ¡Saludo y huellita enviados a ${name}! 🐾 Te responderá pronto.`);
+    saveDemoSharedSocialState(state);
+    renderSocialPets();
 }
 
 function proposeOuting() {
-    showToast('📍 Propuesta de paseo CUDI enviada a todos tus vecinos compatibles.');
+    showToast('📍 Propuesta de paseo CUDI sincronizada con tus vecinos compatibles.');
 }
 
 // ==========================
@@ -1144,8 +1406,11 @@ function renderProfileCard() {
     });
 
     const avatar = document.querySelector('#tab-profile .profile-avatar');
-    if (avatar && p.photo) {
-        avatar.style.backgroundImage = `url('${p.photo}')`;
+    if (avatar) {
+        const safeProfilePhoto = resolveDemoPetPhoto(p, p.type, p.name);
+        const localFallback = p.type === 'gato' ? 'gato-explorando-seguro-collar-gps.png' : 'avatar-mascota-perfil-gemelo-digital.png';
+        avatar.style.backgroundImage = `url('${safeProfilePhoto}'), url('${localFallback}')`;
+        avatar.innerHTML = `<img src="${safeProfilePhoto}" alt="${p.name || 'Mascota'}" onerror="this.onerror=null;this.src='${localFallback}';" style="width:100% !important; height:100% !important; object-fit:cover !important; object-position:center !important; border-radius:50% !important; display:block;">`;
     }
 
     const tabProfile = document.getElementById('tab-profile');
