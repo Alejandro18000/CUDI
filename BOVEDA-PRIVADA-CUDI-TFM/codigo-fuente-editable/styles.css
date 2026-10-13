@@ -4106,23 +4106,44 @@ section:nth-of-type(2) { animation-delay: 0.6s; }
 .review-ticker-card {
     flex: 0 0 390px;
     max-width: 390px;
-    background: #ffffff;
-    border-radius: 20px;
-    padding: 24px;
-    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.04);
-    border: 1px solid #e2e8f0;
-    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(28px) saturate(190%);
+    -webkit-backdrop-filter: blur(28px) saturate(190%);
+    border-radius: 24px;
+    padding: 26px;
+    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(226, 232, 240, 0.85);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     text-align: left;
     user-select: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.review-ticker-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, rgba(2, 132, 199, 0.35), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .review-ticker-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 18px 36px rgba(2, 132, 199, 0.12);
-    border-color: #38bdf8;
+    transform: translateY(-6px) scale(1.01);
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 24px 48px rgba(2, 132, 199, 0.14), inset 0 1px 0 rgba(255, 255, 255, 1);
+    border-color: rgba(56, 189, 248, 0.7);
+}
+
+.review-ticker-card:hover::before {
+    opacity: 1;
 }
 
 .review-card-header {
