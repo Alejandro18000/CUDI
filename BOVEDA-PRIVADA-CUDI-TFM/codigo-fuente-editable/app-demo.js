@@ -2519,7 +2519,1195 @@ const STORE_CATEGORIES = {
         "icon": "fa-stethoscope",
         "color": "#fee2e2",
         "iconColor": "#ef4444",
-        "products": []
+        "products": [
+            {
+                "id": "SKU-CLINIC-01",
+                "slug": "vethome-urgencias-domicilio",
+                "name": "VetHome CUDI - Urgencias Veterinarias a Domicilio 24/7",
+                "shortTitle": "VetHome CUDI Urgencias",
+                "category": "Veterinaria & Salud 24/7",
+                "categorySlug": "clinica",
+                "categoryLabel": "Atención Veterinaria 24/7",
+                "price": 75,
+                "rating": 5,
+                "reviewsCount": 230,
+                "species": "both",
+                "partner": "Red Clínicas Partners CUDI",
+                "partnerRole": "Hospital Móvil Integrado",
+                "badge": "24/7 Urgencias",
+                "badgeIcon": "fa-truck-medical",
+                "badgeColor": "#ef4444",
+                "img": "cudi-veterinaria-clinica-hero.jpg",
+                "gallery": [
+                    "cudi-veterinaria-clinica-hero.jpg",
+                    "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=1200&q=85",
+                    "cudi-veterinaria-clinica-hero.jpg"
+                ],
+                "desc": "Unidad móvil veterinaria con ecografía portátil y analítica sanguínea instantánea enviada a tu hogar en menos de 35 minutos.",
+                "fullDesc": "Cuando tu mascota no puede desplazarse o sufre un shock agudo, una ambulancia veterinaria totalmente equipada acude a tu domicilio con el historial biométrico sincronizado en la tablet médica del facultativo antes de llegar.",
+                "specs": {
+                    "Tiempo Medio de Llegada": "Menos de 35 minutos en áreas metropolitanas cubiertas",
+                    "Equipamiento de la Unidad": "Ecógrafo Doppler portátil, oxigenoterapia, analizador bioquímico i-STAT y monitor multiparamétrico",
+                    "Integración": "Sube el informe clínico y prescripciones farmacológicas directamente a la app CUDI",
+                    "Disponibilidad": "365 días al año, las 24 horas del día"
+                },
+                "expertVerdict": "Dra. Elena Sánchez: 'Poder atender a un animal con torsión o traumatismo sin el estrés añadido del traslado a la clínica aumenta la probabilidad de éxito de manera crítica.'",
+                "userReviews": [
+                    {
+                        "user": "Marcos G.",
+                        "city": "Madrid",
+                        "rating": 5,
+                        "comment": "Mi perro empezó a convulsionar de noche y la veterinaria llegó rapidísimo con medicación. Le salvaron la vida."
+                    },
+                    {
+                        "user": "Lidia V.",
+                        "city": "Barcelona",
+                        "rating": 5,
+                        "comment": "Atención humana y profesional inmejorable en un momento de pánico."
+                    }
+                ],
+                "url": "producto-vethome-urgencias-domicilio.html",
+                "priceFormatted": "75.00 €",
+                "target_species": "perro",
+                "gallery_img": "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "cudi-veterinaria-clinica-hero.jpg",
+                "studyUrl": "estudio-vethome-urgencias-domicilio.html",
+                "studyTitle": "Evaluación Clínica del Impacto de VetHome CUDI - Urgencias Veterinarias a Domicilio 24/7 en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.99239",
+                "studyJournal": "Journal of Veterinary Internal Medicine (JVIM)",
+                "studyAuthors": "Dr. Javier Méndez (Diplomado ECVIM-CA), Dra. Rocío Santamaría (Medicina Preventiva)",
+                "studyInstitution": "Red Hospitalaria Veterinaria CUDI & Departamento de Medicina Interna",
+                "studySourceName": "PubMed / JVIM Archive",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+preventive+medicine+early+triage",
+                "studyMetricLabel": "Tasa de Detección Temprana Pre-Sintomática",
+                "studyMetricVal": "+79.5%",
+                "studyChartType": "line",
+                "studyChartLabel": "Eficacia de Intervención Temprana (%)",
+                "studyChartLabels": [
+                    "Mes 1",
+                    "Mes 3",
+                    "Mes 6",
+                    "Mes 9",
+                    "Mes 12"
+                ],
+                "studyChartControl": [
+                    32,
+                    35,
+                    41,
+                    45,
+                    48
+                ],
+                "studyChartCudi": [
+                    32,
+                    65,
+                    84,
+                    92,
+                    95
+                ]
+            },
+            {
+                "id": "SKU-CLINIC-02",
+                "slug": "medipet-express-teleconsulta-ia",
+                "name": "MediPet Express - Teleconsulta Veterinaria Inmediata con Triaje IA",
+                "shortTitle": "MediPet Express Teleconsulta",
+                "category": "Veterinaria & Salud 24/7",
+                "categorySlug": "clinica",
+                "categoryLabel": "Atención Veterinaria 24/7",
+                "price": 35,
+                "rating": 4.9,
+                "reviewsCount": 312,
+                "species": "both",
+                "partner": "TeleVet Specialists",
+                "partnerRole": "Telemedicina Oficial",
+                "badge": "Respuesta < 3 min",
+                "badgeIcon": "fa-video",
+                "badgeColor": "#0284c7",
+                "img": "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=1200&q=85",
+                "gallery": [
+                    "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=1200&q=85",
+                    "cudi-veterinaria-clinica-hero.jpg",
+                    "https://images.unsplash.com/photo-1599443015574-be5fe8a05783?auto=format&fit=crop&w=1200&q=85"
+                ],
+                "desc": "Videoconsulta de alta definición con veterinario colegiado en menos de 3 minutos con receta electrónica oficial válida en farmacias.",
+                "fullDesc": "Resuelve dudas de ingestión de tóxicos, heridas leves, diarreas o dosis de medicamentos desde el sofá con receta homologada y derivación preferente a clínica física si es necesario.",
+                "specs": {
+                    "Tiempo de Conexión": "Promedio de 2 minutos 40 segundos",
+                    "Plataforma": "Videollamada encriptada punto a punto en la app CUDI con captura fotográfica HD",
+                    "Receta Médica": "Receta electrónica oficial con firma digital del Colegio de Veterinarios",
+                    "Seguimiento": "Chat médico de control activo durante 48 horas tras la consulta"
+                },
+                "expertVerdict": "Dr. Fernando Morales: 'El triaje previo con los datos del collar inteligente nos permite saber la frecuencia cardíaca y temperatura antes de contestar la videollamada.'",
+                "userReviews": [
+                    {
+                        "user": "Natalia R.",
+                        "city": "Valencia",
+                        "rating": 5,
+                        "comment": "Mi cachorro comió chocolate y en 2 minutos el veterinario me guió paso a paso. Eficacia total."
+                    }
+                ],
+                "url": "producto-medipet-express-teleconsulta-ia.html",
+                "priceFormatted": "35.00 €",
+                "target_species": "gato",
+                "gallery_img": "cudi-veterinaria-clinica-hero.jpg",
+                "gallery_img_2": "https://images.unsplash.com/photo-1599443015574-be5fe8a05783?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-medipet-express-teleconsulta-ia.html",
+                "studyTitle": "Evaluación Clínica del Impacto de MediPet Express - Teleconsulta Veterinaria Inmediata con Triaje IA en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.38396",
+                "studyJournal": "Journal of Veterinary Internal Medicine (JVIM)",
+                "studyAuthors": "Dr. Javier Méndez (Diplomado ECVIM-CA), Dra. Rocío Santamaría (Medicina Preventiva)",
+                "studyInstitution": "Red Hospitalaria Veterinaria CUDI & Departamento de Medicina Interna",
+                "studySourceName": "PubMed / JVIM Archive",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+preventive+medicine+early+triage",
+                "studyMetricLabel": "Tasa de Detección Temprana Pre-Sintomática",
+                "studyMetricVal": "+79.5%",
+                "studyChartType": "line",
+                "studyChartLabel": "Eficacia de Intervención Temprana (%)",
+                "studyChartLabels": [
+                    "Mes 1",
+                    "Mes 3",
+                    "Mes 6",
+                    "Mes 9",
+                    "Mes 12"
+                ],
+                "studyChartControl": [
+                    32,
+                    35,
+                    41,
+                    45,
+                    48
+                ],
+                "studyChartCudi": [
+                    32,
+                    65,
+                    84,
+                    92,
+                    95
+                ]
+            },
+            {
+                "id": "SKU-CLINIC-03",
+                "slug": "hospital-clinico-dual-chequeo-anual",
+                "name": "Hospital Clínico Dual - Chequeo Preventivo Integral Anual",
+                "shortTitle": "Hospital Dual Chequeo Anual",
+                "category": "Veterinaria & Salud 24/7",
+                "categorySlug": "clinica",
+                "categoryLabel": "Atención Veterinaria 24/7",
+                "price": 60,
+                "rating": 4.9,
+                "reviewsCount": 189,
+                "species": "both",
+                "partner": "Hospital Veterinario Central",
+                "partnerRole": "Red Hospitalaria Certificada",
+                "badge": "Medicina Preventiva",
+                "badgeIcon": "fa-hospital",
+                "badgeColor": "#10b981",
+                "img": "cudi-veterinaria-clinica-hero.jpg",
+                "gallery": [
+                    "cudi-veterinaria-clinica-hero.jpg",
+                    "https://images.unsplash.com/photo-1599443015574-be5fe8a05783?auto=format&fit=crop&w=1200&q=85",
+                    "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=1200&q=85"
+                ],
+                "desc": "Revisión física exhaustiva que incluye analítica de sangre completa, bioquímica de 16 parámetros, ecografía abdominal básica y vacunas anuales.",
+                "fullDesc": "La clave de la longevidad de tu perro o gato. Detecta enfermedades silentes antes de que den la cara con informe médico digitalizado en el expediente CUDI.",
+                "specs": {
+                    "Pruebas Incluidas": "Hemograma, perfil renal y hepático, glucosa, ecografía de cribado y revisión oftalmológica/dental",
+                    "Vacunación": "Rabia y Polivalente según pauta autonómica oficial",
+                    "Duración": "Cita presencial de 45 minutos sin esperas con cita previa prioritaria",
+                    "Red de Centros": "Más de 140 hospitales veterinarios asociados en España"
+                },
+                "expertVerdict": "Dra. Esther Quintana: 'El chequeo anual preventivo aumenta la esperanza media de vida de perros y gatos en más de 2.5 años.'",
+                "userReviews": [
+                    {
+                        "user": "Rubén F.",
+                        "city": "Zaragoza",
+                        "rating": 5,
+                        "comment": "Trato exquisito y el informe completo quedó guardado en el perfil de mi mascota en la app."
+                    }
+                ],
+                "url": "producto-hospital-clinico-dual-chequeo-anual.html",
+                "priceFormatted": "60.00 €",
+                "target_species": "perro",
+                "gallery_img": "https://images.unsplash.com/photo-1599443015574-be5fe8a05783?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-hospital-clinico-dual-chequeo-anual.html",
+                "studyTitle": "Evaluación Clínica del Impacto de Hospital Clínico Dual - Chequeo Preventivo Integral Anual en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.40355",
+                "studyJournal": "Journal of Veterinary Internal Medicine (JVIM)",
+                "studyAuthors": "Dr. Javier Méndez (Diplomado ECVIM-CA), Dra. Rocío Santamaría (Medicina Preventiva)",
+                "studyInstitution": "Red Hospitalaria Veterinaria CUDI & Departamento de Medicina Interna",
+                "studySourceName": "PubMed / JVIM Archive",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+preventive+medicine+early+triage",
+                "studyMetricLabel": "Tasa de Detección Temprana Pre-Sintomática",
+                "studyMetricVal": "+79.5%",
+                "studyChartType": "line",
+                "studyChartLabel": "Eficacia de Intervención Temprana (%)",
+                "studyChartLabels": [
+                    "Mes 1",
+                    "Mes 3",
+                    "Mes 6",
+                    "Mes 9",
+                    "Mes 12"
+                ],
+                "studyChartControl": [
+                    32,
+                    35,
+                    41,
+                    45,
+                    48
+                ],
+                "studyChartCudi": [
+                    32,
+                    65,
+                    84,
+                    92,
+                    95
+                ]
+            },
+            {
+                "id": "SKU-CLINIC-04",
+                "slug": "cudi-vacunacion-pasaporte-rabia",
+                "name": "Pack Vacunación Oficial & Pasaporte Europeo de Mascota",
+                "shortTitle": "Vacunación & Pasaporte UE",
+                "category": "Veterinaria & Salud 24/7",
+                "categorySlug": "clinica",
+                "categoryLabel": "Atención Veterinaria 24/7",
+                "price": 42,
+                "rating": 4.8,
+                "reviewsCount": 140,
+                "species": "both",
+                "partner": "Red Clínicas Partners CUDI",
+                "partnerRole": "Clínicas Colegiadas",
+                "badge": "Documentación Oficial",
+                "badgeIcon": "fa-passport",
+                "badgeColor": "#6366f1",
+                "img": "https://images.unsplash.com/photo-1599443015574-be5fe8a05783?auto=format&fit=crop&w=1200&q=85",
+                "gallery": [
+                    "https://images.unsplash.com/photo-1599443015574-be5fe8a05783?auto=format&fit=crop&w=1200&q=85",
+                    "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=1200&q=85",
+                    "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&q=85"
+                ],
+                "desc": "Emisión del Pasaporte Oficial de la Unión Europea para animales de compañía con vacuna antirrábica y desparasitación equinocócica para viajar.",
+                "fullDesc": "Deja a tu perro o gato listo para viajar en avión, tren o cruzar fronteras europeas sin complicaciones burocráticas.",
+                "specs": {
+                    "Documento": "Pasaporte Oficial UE homologado por la DGT y Ministerio de Agricultura",
+                    "Vacuna": "Vacuna antirrábica con validez comunitaria de 1 a 3 años",
+                    "Microchip": "Lectura y certificación en bases de datos AIAC/REIAC",
+                    "Cita": "Presencial en tu clínica asociada más cercana"
+                },
+                "expertVerdict": "Dra. Sofía Alarcón: 'Esencial planificarlo con 21 días de antelación al viaje por periodo de seroconversión de la rabia.'",
+                "userReviews": [
+                    {
+                        "user": "Andrea M.",
+                        "city": "Madrid",
+                        "rating": 5,
+                        "comment": "Todo tramitado en 20 minutos para volar a Francia con mi caniche."
+                    }
+                ],
+                "url": "producto-cudi-vacunacion-pasaporte-rabia.html",
+                "priceFormatted": "42.00 €",
+                "target_species": "gato",
+                "gallery_img": "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-cudi-vacunacion-pasaporte-rabia.html",
+                "studyTitle": "Evaluación Clínica del Impacto de Pack Vacunación Oficial & Pasaporte Europeo de Mascota en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.47987",
+                "studyJournal": "Journal of Veterinary Internal Medicine (JVIM)",
+                "studyAuthors": "Dr. Javier Méndez (Diplomado ECVIM-CA), Dra. Rocío Santamaría (Medicina Preventiva)",
+                "studyInstitution": "Red Hospitalaria Veterinaria CUDI & Departamento de Medicina Interna",
+                "studySourceName": "PubMed / JVIM Archive",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+preventive+medicine+early+triage",
+                "studyMetricLabel": "Tasa de Detección Temprana Pre-Sintomática",
+                "studyMetricVal": "+79.5%",
+                "studyChartType": "line",
+                "studyChartLabel": "Eficacia de Intervención Temprana (%)",
+                "studyChartLabels": [
+                    "Mes 1",
+                    "Mes 3",
+                    "Mes 6",
+                    "Mes 9",
+                    "Mes 12"
+                ],
+                "studyChartControl": [
+                    32,
+                    35,
+                    41,
+                    45,
+                    48
+                ],
+                "studyChartCudi": [
+                    32,
+                    65,
+                    84,
+                    92,
+                    95
+                ]
+            },
+            {
+                "id": "SKU-CLINIC-05",
+                "slug": "limpieza-dental-ultrasonidos-cudi",
+                "name": "Profilaxis Dental por Ultrasonidos & Pulido con Flúor",
+                "shortTitle": "Limpieza Dental Ultrasonidos",
+                "category": "Veterinaria & Salud 24/7",
+                "categorySlug": "clinica",
+                "categoryLabel": "Atención Veterinaria 24/7",
+                "price": 95,
+                "rating": 4.9,
+                "reviewsCount": 118,
+                "species": "both",
+                "partner": "Hospital Veterinario Central",
+                "partnerRole": "Unidad Dental Quirúrgica",
+                "badge": "Salud Gingival",
+                "badgeIcon": "fa-teeth",
+                "badgeColor": "#06b6d4",
+                "img": "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=1200&q=85",
+                "gallery": [
+                    "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=1200&q=85",
+                    "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&q=85",
+                    "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=85"
+                ],
+                "desc": "Limpieza profunda subgingival con escarificador ultrasónico y pulido de esmalte para prevenir periodontitis y pérdida prematura de piezas dentales.",
+                "fullDesc": "Incluye monitorización anestésica avanzada por anestesiólogo colegiado y medicación analgésica preventiva para una recuperación rápida y sin dolor.",
+                "specs": {
+                    "Tecnología": "Piezotome dental veterinario que no daña el esmalte sano",
+                    "Anestesia": "Anestesia inhalatoria con sevoflurano y premedicación multimodal",
+                    "Postoperatorio": "Entrega al dueño despierto y caminando el mismo día",
+                    "Garantía": "Dientes libres de sarro y encías desinflamadas"
+                },
+                "expertVerdict": "Dra. Lucía Soria: 'Las bacterias periodontales viajan al corazón y riñones; cuidar la boca alarga los años de vida del animal.'",
+                "userReviews": [
+                    {
+                        "user": "Moisés B.",
+                        "city": "Bilbao",
+                        "rating": 5,
+                        "comment": "A mi yorkshire le desapareció el mal olor de boca por completo. Excelente atención."
+                    }
+                ],
+                "url": "producto-limpieza-dental-ultrasonidos-cudi.html",
+                "priceFormatted": "95.00 €",
+                "target_species": "perro",
+                "gallery_img": "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-limpieza-dental-ultrasonidos-cudi.html",
+                "studyTitle": "Evaluación Clínica del Impacto de Profilaxis Dental por Ultrasonidos & Pulido con Flúor en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.68955",
+                "studyJournal": "Journal of Veterinary Internal Medicine (JVIM)",
+                "studyAuthors": "Dr. Javier Méndez (Diplomado ECVIM-CA), Dra. Rocío Santamaría (Medicina Preventiva)",
+                "studyInstitution": "Red Hospitalaria Veterinaria CUDI & Departamento de Medicina Interna",
+                "studySourceName": "PubMed / JVIM Archive",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+preventive+medicine+early+triage",
+                "studyMetricLabel": "Tasa de Detección Temprana Pre-Sintomática",
+                "studyMetricVal": "+79.5%",
+                "studyChartType": "line",
+                "studyChartLabel": "Eficacia de Intervención Temprana (%)",
+                "studyChartLabels": [
+                    "Mes 1",
+                    "Mes 3",
+                    "Mes 6",
+                    "Mes 9",
+                    "Mes 12"
+                ],
+                "studyChartControl": [
+                    32,
+                    35,
+                    41,
+                    45,
+                    48
+                ],
+                "studyChartCudi": [
+                    32,
+                    65,
+                    84,
+                    92,
+                    95
+                ]
+            },
+            {
+                "id": "SKU-CLINIC-06",
+                "slug": "castracion-laparoscopica-avanzada",
+                "name": "Esterilización / Castración por Laparoscopia Mínimamente Invasiva",
+                "shortTitle": "Esterilización Laparoscópica",
+                "category": "Veterinaria & Salud 24/7",
+                "categorySlug": "clinica",
+                "categoryLabel": "Atención Veterinaria 24/7",
+                "price": 180,
+                "rating": 5,
+                "reviewsCount": 156,
+                "species": "both",
+                "partner": "Hospital Veterinario Central",
+                "partnerRole": "Cirugía Avanzada",
+                "badge": "Cirugía Mínima Invasión",
+                "badgeIcon": "fa-scissors",
+                "badgeColor": "#8b5cf6",
+                "img": "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&q=85",
+                "gallery": [
+                    "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&q=85",
+                    "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=85",
+                    "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=85"
+                ],
+                "desc": "Intervención quirúrgica con óptica de alta resolución a través de dos microincisiones de 5mm con recuperación en 48 horas y sin collar isabelino.",
+                "fullDesc": "La técnica quirúrgica más segura y respetuosa disponible en medicina veterinaria moderna. Reduce el dolor postoperatorio un 70% comparado con la cirugía abierta.",
+                "specs": {
+                    "Incisión": "Dos orificios milimétricos cerrados con pegamento dérmico quirúrgico (sin puntos externos)",
+                    "Dolor": "Mínimo trauma tisular que no requiere collar de protección en la mayoría de casos",
+                    "Analgesia": "Infusión continua intraoperatoria y analgesia domiciliaria de rescate",
+                    "Alta": "El mismo día en régimen ambulatorio"
+                },
+                "expertVerdict": "Dr. Jordi Rovira: 'Es el estándar de oro en perras y gatas; corren al día siguiente como si nada hubiera pasado.'",
+                "userReviews": [
+                    {
+                        "user": "Paloma S.",
+                        "city": "Málaga",
+                        "rating": 5,
+                        "comment": "Mi perra no se enteró de la operación. Sin puntos molestos ni cono plástico. Impresionante."
+                    }
+                ],
+                "url": "producto-castracion-laparoscopica-avanzada.html",
+                "priceFormatted": "180.00 €",
+                "target_species": "gato",
+                "gallery_img": "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-castracion-laparoscopica-avanzada.html",
+                "studyTitle": "Evaluación Clínica del Impacto de Esterilización / Castración por Laparoscopia Mínimamente Invasiva en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.17292",
+                "studyJournal": "Journal of Veterinary Internal Medicine (JVIM)",
+                "studyAuthors": "Dr. Javier Méndez (Diplomado ECVIM-CA), Dra. Rocío Santamaría (Medicina Preventiva)",
+                "studyInstitution": "Red Hospitalaria Veterinaria CUDI & Departamento de Medicina Interna",
+                "studySourceName": "PubMed / JVIM Archive",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+preventive+medicine+early+triage",
+                "studyMetricLabel": "Tasa de Detección Temprana Pre-Sintomática",
+                "studyMetricVal": "+79.5%",
+                "studyChartType": "line",
+                "studyChartLabel": "Eficacia de Intervención Temprana (%)",
+                "studyChartLabels": [
+                    "Mes 1",
+                    "Mes 3",
+                    "Mes 6",
+                    "Mes 9",
+                    "Mes 12"
+                ],
+                "studyChartControl": [
+                    32,
+                    35,
+                    41,
+                    45,
+                    48
+                ],
+                "studyChartCudi": [
+                    32,
+                    65,
+                    84,
+                    92,
+                    95
+                ]
+            },
+            {
+                "id": "SKU-CLINIC-07",
+                "slug": "test-genetico-adn-longevidad-cudi",
+                "name": "Test Genético CUDI BioDNA - Salud, Razas & Longevidad",
+                "shortTitle": "Test Genético BioDNA",
+                "category": "Veterinaria & Salud 24/7",
+                "categorySlug": "clinica",
+                "categoryLabel": "Atención Veterinaria 24/7",
+                "price": 89,
+                "rating": 4.9,
+                "reviewsCount": 204,
+                "species": "both",
+                "partner": "BioSense Vet Tech",
+                "partnerRole": "Genómica Animal",
+                "badge": "Genética Preventiva",
+                "badgeIcon": "fa-dna",
+                "badgeColor": "#ec4899",
+                "img": "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=85",
+                "gallery": [
+                    "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=85",
+                    "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=85",
+                    "https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=1200&q=85"
+                ],
+                "desc": "Hisopo bucal no invasivo que analiza más de 250 variantes de enfermedades hereditarias, sensibilidad a fármacos (MDR1) y porcentaje de razas.",
+                "fullDesc": "Toma la muestra en casa frotando la mejilla de tu mascota y recibe en 3 semanas un informe genómico de 40 páginas sincronizado en el gemelo digital.",
+                "specs": {
+                    "Marcadores": "Cribado de 250+ mutaciones monogénicas y longitud de telómeros",
+                    "Farmacogenética": "Detección de la mutación MDR1 que hace mortales a ciertos antibióticos y antiparasitarios",
+                    "Envío": "Kit con franqueo de devolución al laboratorio certificado incluido",
+                    "Integración": "La IA de CUDI adapta las alertas nutricionales y farmacológicas al perfil genético"
+                },
+                "expertVerdict": "Dra. Patricia Méndez: 'Descubrir una mutación MDR1 a tiempo salva la vida del animal ante una simple sedación común.'",
+                "userReviews": [
+                    {
+                        "user": "Carles T.",
+                        "city": "Girona",
+                        "rating": 5,
+                        "comment": "Descubrimos que nuestro perro mestizo era 50% border collie y tenía sensibilidad a fármacos. Una información vital."
+                    }
+                ],
+                "url": "producto-test-genetico-adn-longevidad-cudi.html",
+                "priceFormatted": "89.00 €",
+                "target_species": "perro",
+                "gallery_img": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-test-genetico-adn-longevidad-cudi.html",
+                "studyTitle": "Evaluación Clínica del Impacto de Test Genético CUDI BioDNA - Salud, Razas & Longevidad en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.54750",
+                "studyJournal": "Journal of Veterinary Internal Medicine (JVIM)",
+                "studyAuthors": "Dr. Javier Méndez (Diplomado ECVIM-CA), Dra. Rocío Santamaría (Medicina Preventiva)",
+                "studyInstitution": "Red Hospitalaria Veterinaria CUDI & Departamento de Medicina Interna",
+                "studySourceName": "PubMed / JVIM Archive",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+preventive+medicine+early+triage",
+                "studyMetricLabel": "Tasa de Detección Temprana Pre-Sintomática",
+                "studyMetricVal": "+79.5%",
+                "studyChartType": "line",
+                "studyChartLabel": "Eficacia de Intervención Temprana (%)",
+                "studyChartLabels": [
+                    "Mes 1",
+                    "Mes 3",
+                    "Mes 6",
+                    "Mes 9",
+                    "Mes 12"
+                ],
+                "studyChartControl": [
+                    32,
+                    35,
+                    41,
+                    45,
+                    48
+                ],
+                "studyChartCudi": [
+                    32,
+                    65,
+                    84,
+                    92,
+                    95
+                ]
+            },
+            {
+                "id": "SKU-CLINIC-08",
+                "slug": "ecografia-abdominal-alta-resolucion",
+                "name": "Ecografía Abdominal Completa con Especialista de Imagen",
+                "shortTitle": "Ecografía Abdominal Especialista",
+                "category": "Veterinaria & Salud 24/7",
+                "categorySlug": "clinica",
+                "categoryLabel": "Atención Veterinaria 24/7",
+                "price": 68,
+                "rating": 4.9,
+                "reviewsCount": 97,
+                "species": "both",
+                "partner": "Hospital Veterinario Central",
+                "partnerRole": "Diagnóstico por Imagen",
+                "badge": "Ecografía Doppler",
+                "badgeIcon": "fa-wave-square",
+                "badgeColor": "#0284c7",
+                "img": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=85",
+                "gallery": [
+                    "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=85",
+                    "https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=1200&q=85",
+                    "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1200&q=85"
+                ],
+                "desc": "Estudio ecográfico abdominal de 8 órganos con sondas de microconvex y lineal de alta frecuencia para diagnóstico de patologías ocultas.",
+                "fullDesc": "Evaluación detallada de hígado, bazo, riñones, páncreas, estómago, vejiga y ganglios linfáticos sin dolor ni anestesia.",
+                "specs": {
+                    "Sondas": "Sondas matriciales de 12 MHz para máxima resolución de cortes tisulares",
+                    "Doppler": "Doppler color y pulsado para flujos vasculares porta y renales",
+                    "Informe": "Vídeos e imágenes DICOM subidos a la nube médica de CUDI con firma facultativa",
+                    "Tiempo": "Sesión de 30 minutos sin requerir sedación en el 95% de casos"
+                },
+                "expertVerdict": "Dr. Fernando Morales: 'Imprescindible en animales con vómitos crónicos, pérdida de peso o sospecha de cuerpo extraño.'",
+                "userReviews": [
+                    {
+                        "user": "Beatriz G.",
+                        "city": "Sevilla",
+                        "rating": 5,
+                        "comment": "Detectaron a tiempo un cálculo que no salía en las radiografías convencionales."
+                    }
+                ],
+                "url": "producto-ecografia-abdominal-alta-resolucion.html",
+                "priceFormatted": "68.00 €",
+                "target_species": "gato",
+                "gallery_img": "https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-ecografia-abdominal-alta-resolucion.html",
+                "studyTitle": "Evaluación Clínica del Impacto de Ecografía Abdominal Completa con Especialista de Imagen en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.96641",
+                "studyJournal": "Journal of Veterinary Internal Medicine (JVIM)",
+                "studyAuthors": "Dr. Javier Méndez (Diplomado ECVIM-CA), Dra. Rocío Santamaría (Medicina Preventiva)",
+                "studyInstitution": "Red Hospitalaria Veterinaria CUDI & Departamento de Medicina Interna",
+                "studySourceName": "PubMed / JVIM Archive",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+preventive+medicine+early+triage",
+                "studyMetricLabel": "Tasa de Detección Temprana Pre-Sintomática",
+                "studyMetricVal": "+79.5%",
+                "studyChartType": "line",
+                "studyChartLabel": "Eficacia de Intervención Temprana (%)",
+                "studyChartLabels": [
+                    "Mes 1",
+                    "Mes 3",
+                    "Mes 6",
+                    "Mes 9",
+                    "Mes 12"
+                ],
+                "studyChartControl": [
+                    32,
+                    35,
+                    41,
+                    45,
+                    48
+                ],
+                "studyChartCudi": [
+                    32,
+                    65,
+                    84,
+                    92,
+                    95
+                ]
+            },
+            {
+                "id": "SKU-CLINIC-09",
+                "slug": "fisioterapia-rehabilitacion-hidroterapia",
+                "name": "Sesión de Fisioterapia & Hidroterapia Subacuática Canina",
+                "shortTitle": "Fisioterapia Canina & Hidro",
+                "category": "Veterinaria & Salud 24/7",
+                "categorySlug": "clinica",
+                "categoryLabel": "Atención Veterinaria 24/7",
+                "price": 50,
+                "rating": 5,
+                "reviewsCount": 110,
+                "species": "dog",
+                "partner": "Red Clínicas Partners CUDI",
+                "partnerRole": "Rehabilitación Motora",
+                "badge": "Recuperación Articular",
+                "badgeIcon": "fa-water",
+                "badgeColor": "#06b6d4",
+                "img": "https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=1200&q=85",
+                "gallery": [
+                    "https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=1200&q=85",
+                    "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1200&q=85",
+                    "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85"
+                ],
+                "desc": "Cinta subacuática con agua termal climatizada, láser terapéutico clase IV y magnetoterapia para recuperar movilidad tras cirugías o artrosis.",
+                "fullDesc": "La flotabilidad del agua reduce el impacto en articulaciones un 80%, permitiendo a perros con hernias discales o displasias ganar masa muscular sin dolor.",
+                "specs": {
+                    "Instalación": "Piscina y cinta hidroterápica con turbinas de resistencia contracorriente",
+                    "Láser": "Láser terapéutico K-Laser de alta potencia para regeneración tisular y desinflamación",
+                    "Duración": "Sesión personalizada de 50 minutos con fisioterapeuta exclusivo",
+                    "Monitoreo": "Medición de rango articular con goniómetro en cada cita"
+                },
+                "expertVerdict": "Fisioterapeuta Roberto M.: 'Perros que salían operados de ligamento cruzado han vuelto a correr en la mitad de tiempo gracias al agua.'",
+                "userReviews": [
+                    {
+                        "user": "Lorena D.",
+                        "city": "Madrid",
+                        "rating": 5,
+                        "comment": "Mi teckel con hernia discal ha vuelto a caminar gracias a estas sesiones. Pura magia."
+                    }
+                ],
+                "url": "producto-fisioterapia-rehabilitacion-hidroterapia.html",
+                "priceFormatted": "50.00 €",
+                "target_species": "perro",
+                "gallery_img": "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-fisioterapia-rehabilitacion-hidroterapia.html",
+                "studyTitle": "Evaluación Clínica del Impacto de Sesión de Fisioterapia & Hidroterapia Subacuática Canina en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.55508",
+                "studyJournal": "Journal of Veterinary Internal Medicine (JVIM)",
+                "studyAuthors": "Dr. Javier Méndez (Diplomado ECVIM-CA), Dra. Rocío Santamaría (Medicina Preventiva)",
+                "studyInstitution": "Red Hospitalaria Veterinaria CUDI & Departamento de Medicina Interna",
+                "studySourceName": "PubMed / JVIM Archive",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+preventive+medicine+early+triage",
+                "studyMetricLabel": "Tasa de Detección Temprana Pre-Sintomática",
+                "studyMetricVal": "+79.5%",
+                "studyChartType": "line",
+                "studyChartLabel": "Eficacia de Intervención Temprana (%)",
+                "studyChartLabels": [
+                    "Mes 1",
+                    "Mes 3",
+                    "Mes 6",
+                    "Mes 9",
+                    "Mes 12"
+                ],
+                "studyChartControl": [
+                    32,
+                    35,
+                    41,
+                    45,
+                    48
+                ],
+                "studyChartCudi": [
+                    32,
+                    65,
+                    84,
+                    92,
+                    95
+                ]
+            },
+            {
+                "id": "SKU-CLINIC-10",
+                "slug": "consulta-etologia-comportamiento-canino",
+                "name": "Consulta Clínica de Etología & Modificación de Conducta",
+                "shortTitle": "Consulta Etología Clínica",
+                "category": "Veterinaria & Salud 24/7",
+                "categorySlug": "clinica",
+                "categoryLabel": "Atención Veterinaria 24/7",
+                "price": 70,
+                "rating": 4.9,
+                "reviewsCount": 142,
+                "species": "both",
+                "partner": "Red Clínicas Partners CUDI",
+                "partnerRole": "Medicina del Comportamiento",
+                "badge": "Psicología Animal",
+                "badgeIcon": "fa-brain",
+                "badgeColor": "#f59e0b",
+                "img": "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1200&q=85",
+                "gallery": [
+                    "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1200&q=85",
+                    "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85",
+                    "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=1200&q=85"
+                ],
+                "desc": "Evaluación por veterinario especialista en etología clínica para tratar agresividad, miedos fóbicos, ansiedad por separación o eliminación inadecuada.",
+                "fullDesc": "Incluye diagnóstico etológico diferencial para descartar dolor físico subyacente y plan integral de modificación conductual en positivo.",
+                "specs": {
+                    "Duración": "Consulta inicial intensiva de 90 minutos en clínica o domicilio",
+                    "Plan Escrito": "Protocolo detallado de enriquecimiento ambiental y pautas familiares",
+                    "Soporte": "Revisión de vídeos de conducta por mensajería durante 30 días",
+                    "Psicofarmacología": "Prescripción facultativa de moduladores de serotonina si el cuadro lo requiere"
+                },
+                "expertVerdict": "Etóloga Marina Soler: 'Más del 60% de los problemas de conducta son secundarios a dolor o patologías médicas inadvertidas.'",
+                "userReviews": [
+                    {
+                        "user": "Guillermo F.",
+                        "city": "Pamplona",
+                        "rating": 5,
+                        "comment": "La relación con nuestro perro adoptado cambió de la noche a la mañana con las pautas de Marina."
+                    }
+                ],
+                "url": "producto-consulta-etologia-comportamiento-canino.html",
+                "priceFormatted": "70.00 €",
+                "target_species": "gato",
+                "gallery_img": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-consulta-etologia-comportamiento-canino.html",
+                "studyTitle": "Evaluación Clínica del Impacto de Consulta Clínica de Etología & Modificación de Conducta en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.24330",
+                "studyJournal": "Journal of Veterinary Internal Medicine (JVIM)",
+                "studyAuthors": "Dr. Javier Méndez (Diplomado ECVIM-CA), Dra. Rocío Santamaría (Medicina Preventiva)",
+                "studyInstitution": "Red Hospitalaria Veterinaria CUDI & Departamento de Medicina Interna",
+                "studySourceName": "PubMed / JVIM Archive",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+preventive+medicine+early+triage",
+                "studyMetricLabel": "Tasa de Detección Temprana Pre-Sintomática",
+                "studyMetricVal": "+79.5%",
+                "studyChartType": "line",
+                "studyChartLabel": "Eficacia de Intervención Temprana (%)",
+                "studyChartLabels": [
+                    "Mes 1",
+                    "Mes 3",
+                    "Mes 6",
+                    "Mes 9",
+                    "Mes 12"
+                ],
+                "studyChartControl": [
+                    32,
+                    35,
+                    41,
+                    45,
+                    48
+                ],
+                "studyChartCudi": [
+                    32,
+                    65,
+                    84,
+                    92,
+                    95
+                ]
+            },
+            {
+                "id": "SKU-CLINIC-11",
+                "slug": "analisis-sangre-completo-bioquimica",
+                "name": "Perfil Bioquímico & Hematológico Integral de Laboratorio",
+                "shortTitle": "Analítica Sanguínea Completa",
+                "category": "Veterinaria & Salud 24/7",
+                "categorySlug": "clinica",
+                "categoryLabel": "Atención Veterinaria 24/7",
+                "price": 48,
+                "rating": 4.9,
+                "reviewsCount": 165,
+                "species": "both",
+                "partner": "Hospital Veterinario Central",
+                "partnerRole": "Laboratorio Clínico",
+                "badge": "Laboratorio Central",
+                "badgeIcon": "fa-vial",
+                "badgeColor": "#ef4444",
+                "img": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85",
+                "gallery": [
+                    "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85",
+                    "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=1200&q=85",
+                    "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85"
+                ],
+                "desc": "Analítica en laboratorio acreditado con hemograma completo de 5 poblaciones, bioquímica general de 18 parámetros y electrolitos séricos.",
+                "fullDesc": "Resultados en menos de 12 horas con interpretación clínica automática por IA y aviso a tu veterinario de cabecera.",
+                "specs": {
+                    "Parámetros": "Urea, Creatinina, SDMA, ALT, AST, FA, Bilirrubina, Glucosa, Proteínas totales, Albúmina, Na+, K+, Cl-",
+                    "Plazo de Entrega": "Mismo día por la tarde vía app en formato PDF firmado",
+                    "Muestra": "Extracción rápida en menos de 3 minutos por personal de enfermería especializado"
+                },
+                "expertVerdict": "Dra. Esther Quintana: 'La inclusión del marcador renal temprano SDMA permite detectar daño renal cuando aún queda un 60% de función activa.'",
+                "userReviews": [
+                    {
+                        "user": "Claudia P.",
+                        "city": "Salamanca",
+                        "rating": 5,
+                        "comment": "Rápido, indoloro y con explicaciones muy claras de cada valor en el informe."
+                    }
+                ],
+                "url": "producto-analisis-sangre-completo-bioquimica.html",
+                "priceFormatted": "48.00 €",
+                "target_species": "perro",
+                "gallery_img": "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-analisis-sangre-completo-bioquimica.html",
+                "studyTitle": "Evaluación Clínica del Impacto de Perfil Bioquímico & Hematológico Integral de Laboratorio en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.77552",
+                "studyJournal": "Journal of Veterinary Internal Medicine (JVIM)",
+                "studyAuthors": "Dr. Javier Méndez (Diplomado ECVIM-CA), Dra. Rocío Santamaría (Medicina Preventiva)",
+                "studyInstitution": "Red Hospitalaria Veterinaria CUDI & Departamento de Medicina Interna",
+                "studySourceName": "PubMed / JVIM Archive",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+preventive+medicine+early+triage",
+                "studyMetricLabel": "Tasa de Detección Temprana Pre-Sintomática",
+                "studyMetricVal": "+79.5%",
+                "studyChartType": "line",
+                "studyChartLabel": "Eficacia de Intervención Temprana (%)",
+                "studyChartLabels": [
+                    "Mes 1",
+                    "Mes 3",
+                    "Mes 6",
+                    "Mes 9",
+                    "Mes 12"
+                ],
+                "studyChartControl": [
+                    32,
+                    35,
+                    41,
+                    45,
+                    48
+                ],
+                "studyChartCudi": [
+                    32,
+                    65,
+                    84,
+                    92,
+                    95
+                ]
+            },
+            {
+                "id": "SKU-CLINIC-12",
+                "slug": "ecocardiograma-doppler-cardiaco",
+                "name": "Ecocardiograma Color & Electrocardiograma Digital",
+                "shortTitle": "Ecocardiograma Doppler",
+                "category": "Veterinaria & Salud 24/7",
+                "categorySlug": "clinica",
+                "categoryLabel": "Atención Veterinaria 24/7",
+                "price": 85,
+                "rating": 5,
+                "reviewsCount": 82,
+                "species": "both",
+                "partner": "Hospital Veterinario Central",
+                "partnerRole": "Unidad de Cardiología",
+                "badge": "Cardiología Avanzada",
+                "badgeIcon": "fa-heart-pulse",
+                "badgeColor": "#e11d48",
+                "img": "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=1200&q=85",
+                "gallery": [
+                    "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=1200&q=85",
+                    "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85",
+                    "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85"
+                ],
+                "desc": "Estudio morfológico y hemodinámico de las cavidades cardíacas para diagnosticar soplos, valvulopatía mitral o miocardiopatía hipertrófica felina.",
+                "fullDesc": "Imprescindible antes de someter a animales senior a cirugías o para razas predispuestas (Cavalier, Dóberman, Maine Coon, Sphynx).",
+                "specs": {
+                    "Técnica": "Modo B, Modo M, Doppler espectral continuo/pulsado y Doppler tisular",
+                    "ECG Simultáneo": "Registro continuo de ritmo para sincronización de ondas",
+                    "Especialista": "Realizado por cardiólogo veterinario certificado",
+                    "Tratamiento": "Prescripción de IECA o pimobendán ajustada al estadio clínico exacto"
+                },
+                "expertVerdict": "Dr. Fernando Morales: 'Identificar una disfunción ventricular antes de la aparición de edema pulmonar duplica los meses de calidad de vida.'",
+                "userReviews": [
+                    {
+                        "user": "Ángeles R.",
+                        "city": "Madrid",
+                        "rating": 5,
+                        "comment": "Ajustaron la dosis del corazón de mi cavalier y ahora no tose nada por las noches."
+                    }
+                ],
+                "url": "producto-ecocardiograma-doppler-cardiaco.html",
+                "priceFormatted": "85.00 €",
+                "target_species": "gato",
+                "gallery_img": "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-ecocardiograma-doppler-cardiaco.html",
+                "studyTitle": "Evaluación Clínica del Impacto de Ecocardiograma Color & Electrocardiograma Digital en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.64700",
+                "studyJournal": "Journal of Veterinary Internal Medicine (JVIM)",
+                "studyAuthors": "Dr. Javier Méndez (Diplomado ECVIM-CA), Dra. Rocío Santamaría (Medicina Preventiva)",
+                "studyInstitution": "Red Hospitalaria Veterinaria CUDI & Departamento de Medicina Interna",
+                "studySourceName": "PubMed / JVIM Archive",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+preventive+medicine+early+triage",
+                "studyMetricLabel": "Tasa de Detección Temprana Pre-Sintomática",
+                "studyMetricVal": "+79.5%",
+                "studyChartType": "line",
+                "studyChartLabel": "Eficacia de Intervención Temprana (%)",
+                "studyChartLabels": [
+                    "Mes 1",
+                    "Mes 3",
+                    "Mes 6",
+                    "Mes 9",
+                    "Mes 12"
+                ],
+                "studyChartControl": [
+                    32,
+                    35,
+                    41,
+                    45,
+                    48
+                ],
+                "studyChartCudi": [
+                    32,
+                    65,
+                    84,
+                    92,
+                    95
+                ]
+            },
+            {
+                "id": "SKU-CLINIC-13",
+                "slug": "test-leishmania-cribado-vectoriales",
+                "name": "Cribado Rápido Serológico de Leishmania, Filaria & Borrelia (4DX)",
+                "shortTitle": "Cribado 4DX Leishmania & Parásitos",
+                "category": "Veterinaria & Salud 24/7",
+                "categorySlug": "clinica",
+                "categoryLabel": "Atención Veterinaria 24/7",
+                "price": 32,
+                "rating": 4.9,
+                "reviewsCount": 218,
+                "species": "dog",
+                "partner": "Red Clínicas Partners CUDI",
+                "partnerRole": "Enfermedades Infecciosas",
+                "badge": "Cribado Vectorial",
+                "badgeIcon": "fa-bug",
+                "badgeColor": "#f97316",
+                "img": "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85",
+                "gallery": [
+                    "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85",
+                    "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85",
+                    "https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=85"
+                ],
+                "desc": "Test de sangre en 8 minutos para descartar enfermedades transmitidas por mosquitos (filaria, leishmaniosis) y garrapatas (anaplasma, lyme).",
+                "fullDesc": "Recomendado en otoño y primavera para todos los perros que habitan o veranean en la cuenca mediterránea e interior peninsular.",
+                "specs": {
+                    "Método": "Inmunocromatografía ELISA con anticuerpos monoclonales de alta sensibilidad (>98%)",
+                    "Resultados": "Inmediatos en 8 minutos durante la misma consulta",
+                    "Consejo": "Recomendación del antiparasitario más adecuado según la carga de riesgo de tu zona en el mapa CUDI"
+                },
+                "expertVerdict": "Dra. Sofía Alarcón: 'La detección en fase prepatente permite tratar la leishmania con fármacos suaves sin daño renal permanente.'",
+                "userReviews": [
+                    {
+                        "user": "Tomás N.",
+                        "city": "Toledo",
+                        "rating": 5,
+                        "comment": "Todos los otoños se lo hago a mis dos perros. Rápido, económico y vital."
+                    }
+                ],
+                "url": "producto-test-leishmania-cribado-vectoriales.html",
+                "priceFormatted": "32.00 €",
+                "target_species": "perro",
+                "gallery_img": "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-test-leishmania-cribado-vectoriales.html",
+                "studyTitle": "Evaluación Clínica del Impacto de Cribado Rápido Serológico de Leishmania, Filaria & Borrelia (4DX) en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.31551",
+                "studyJournal": "Journal of Veterinary Internal Medicine (JVIM)",
+                "studyAuthors": "Dr. Javier Méndez (Diplomado ECVIM-CA), Dra. Rocío Santamaría (Medicina Preventiva)",
+                "studyInstitution": "Red Hospitalaria Veterinaria CUDI & Departamento de Medicina Interna",
+                "studySourceName": "PubMed / JVIM Archive",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+preventive+medicine+early+triage",
+                "studyMetricLabel": "Tasa de Detección Temprana Pre-Sintomática",
+                "studyMetricVal": "+79.5%",
+                "studyChartType": "line",
+                "studyChartLabel": "Eficacia de Intervención Temprana (%)",
+                "studyChartLabels": [
+                    "Mes 1",
+                    "Mes 3",
+                    "Mes 6",
+                    "Mes 9",
+                    "Mes 12"
+                ],
+                "studyChartControl": [
+                    32,
+                    35,
+                    41,
+                    45,
+                    48
+                ],
+                "studyChartCudi": [
+                    32,
+                    65,
+                    84,
+                    92,
+                    95
+                ]
+            },
+            {
+                "id": "SKU-CLINIC-14",
+                "slug": "radiografia-digital-traumatologia",
+                "name": "Estudio Radiográfico Digital Directo de Alta Definición (2 Proyecciones)",
+                "shortTitle": "Radiografía Digital Directa",
+                "category": "Veterinaria & Salud 24/7",
+                "categorySlug": "clinica",
+                "categoryLabel": "Atención Veterinaria 24/7",
+                "price": 55,
+                "rating": 4.8,
+                "reviewsCount": 114,
+                "species": "both",
+                "partner": "Hospital Veterinario Central",
+                "partnerRole": "Radiología Médica",
+                "badge": "Rayos X Digital",
+                "badgeIcon": "fa-x-ray",
+                "badgeColor": "#475569",
+                "img": "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85",
+                "gallery": [
+                    "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85",
+                    "https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=85",
+                    "cudi-veterinaria-clinica-hero.jpg"
+                ],
+                "desc": "Placas radiológicas digitales con revelado instantáneo para diagnóstico de fracturas, displasias, artrosis o cuerpos extraños radiopacos.",
+                "fullDesc": "Baja dosis de radiación con procesado digital por software que permite ampliar y medir ángulos anatómicos con precisión submilimétrica.",
+                "specs": {
+                    "Proyecciones": "2 vistas ortogonales (laterolateral y ventrodorsal)",
+                    "Tecnología": "Panel detector plano DR de cesio con resolución de 3.5 lp/mm",
+                    "Formato": "Imágenes DICOM enviadas al teléfono del propietario al instante"
+                },
+                "expertVerdict": "Dr. Jordi Rovira: 'La radiología digital directa elimina la repetición de placas y el estrés del animal en la sala de rayos.'",
+                "userReviews": [
+                    {
+                        "user": "Lucía H.",
+                        "city": "Burgos",
+                        "rating": 5,
+                        "comment": "Vimos claramente la fisura en la pata y nos dieron cita con el traumatólogo para esa misma tarde."
+                    }
+                ],
+                "url": "producto-radiografia-digital-traumatologia.html",
+                "priceFormatted": "55.00 €",
+                "target_species": "gato",
+                "gallery_img": "https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "cudi-veterinaria-clinica-hero.jpg",
+                "studyUrl": "estudio-radiografia-digital-traumatologia.html",
+                "studyTitle": "Evaluación Clínica del Impacto de Estudio Radiográfico Digital Directo de Alta Definición (2 Proyecciones) en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.90966",
+                "studyJournal": "Journal of Veterinary Internal Medicine (JVIM)",
+                "studyAuthors": "Dr. Javier Méndez (Diplomado ECVIM-CA), Dra. Rocío Santamaría (Medicina Preventiva)",
+                "studyInstitution": "Red Hospitalaria Veterinaria CUDI & Departamento de Medicina Interna",
+                "studySourceName": "PubMed / JVIM Archive",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+preventive+medicine+early+triage",
+                "studyMetricLabel": "Tasa de Detección Temprana Pre-Sintomática",
+                "studyMetricVal": "+79.5%",
+                "studyChartType": "line",
+                "studyChartLabel": "Eficacia de Intervención Temprana (%)",
+                "studyChartLabels": [
+                    "Mes 1",
+                    "Mes 3",
+                    "Mes 6",
+                    "Mes 9",
+                    "Mes 12"
+                ],
+                "studyChartControl": [
+                    32,
+                    35,
+                    41,
+                    45,
+                    48
+                ],
+                "studyChartCudi": [
+                    32,
+                    65,
+                    84,
+                    92,
+                    95
+                ]
+            },
+            {
+                "id": "SKU-CLINIC-15",
+                "slug": "plan-oncologico-cribado-biopsia",
+                "name": "Consulta Oncológica & Biopsia / Citología de Bultos con Informe",
+                "shortTitle": "Consulta Oncológica & Citología",
+                "category": "Veterinaria & Salud 24/7",
+                "categorySlug": "clinica",
+                "categoryLabel": "Atención Veterinaria 24/7",
+                "price": 65,
+                "rating": 4.9,
+                "reviewsCount": 79,
+                "species": "both",
+                "partner": "Hospital Veterinario Central",
+                "partnerRole": "Oncología Animal",
+                "badge": "Oncología Especializada",
+                "badgeIcon": "fa-microscope",
+                "badgeColor": "#7c3aed",
+                "img": "https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=85",
+                "gallery": [
+                    "https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=85",
+                    "cudi-veterinaria-clinica-hero.jpg",
+                    "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=1200&q=85"
+                ],
+                "desc": "Punción-aspiración con aguja fina (PAAF) de nódulos cutáneos y masas subcutáneas analizada por patólogo veterinario para diagnóstico precoz.",
+                "fullDesc": "No esperes a que un bulto crezca. Conocer si una masa es un lipoma benigno o un mastocitoma agresivo en fase inicial permite salvar la vida del animal con una cirugía sencilla.",
+                "specs": {
+                    "Procedimiento": "Punción indolora sin anestesia en consulta de 5 minutos",
+                    "Patología": "Tinciones Diff-Quik y envío a laboratorio de histopatología certificado",
+                    "Plazo de Informe": "Resultado preliminar en 24h y biopsia definitiva en 5 días hábiles"
+                },
+                "expertVerdict": "Dra. Esther Quintana: 'La regla número uno ante cualquier bulto dérmico es pinchar; el diagnóstico temprano marca la curación definitiva.'",
+                "userReviews": [
+                    {
+                        "user": "Bernat V.",
+                        "city": "Tarragona",
+                        "rating": 5,
+                        "comment": "Le descubrieron un mastocitoma diminuto a mi boxer y se lo quitaron en el acto sin que se extendiera. Infinitamente agradecido."
+                    }
+                ],
+                "url": "producto-plan-oncologico-cribado-biopsia.html",
+                "priceFormatted": "65.00 €",
+                "target_species": "perro",
+                "gallery_img": "cudi-veterinaria-clinica-hero.jpg",
+                "gallery_img_2": "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-plan-oncologico-cribado-biopsia.html",
+                "studyTitle": "Evaluación Clínica del Impacto de Consulta Oncológica & Biopsia / Citología de Bultos con Informe en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.13275",
+                "studyJournal": "Journal of Veterinary Internal Medicine (JVIM)",
+                "studyAuthors": "Dr. Javier Méndez (Diplomado ECVIM-CA), Dra. Rocío Santamaría (Medicina Preventiva)",
+                "studyInstitution": "Red Hospitalaria Veterinaria CUDI & Departamento de Medicina Interna",
+                "studySourceName": "PubMed / JVIM Archive",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+preventive+medicine+early+triage",
+                "studyMetricLabel": "Tasa de Detección Temprana Pre-Sintomática",
+                "studyMetricVal": "+79.5%",
+                "studyChartType": "line",
+                "studyChartLabel": "Eficacia de Intervención Temprana (%)",
+                "studyChartLabels": [
+                    "Mes 1",
+                    "Mes 3",
+                    "Mes 6",
+                    "Mes 9",
+                    "Mes 12"
+                ],
+                "studyChartControl": [
+                    32,
+                    35,
+                    41,
+                    45,
+                    48
+                ],
+                "studyChartCudi": [
+                    32,
+                    65,
+                    84,
+                    92,
+                    95
+                ]
+            }
+        ]
     },
     "paseos": {
         "label": "Paseos & Cuidadores Certificados",
@@ -4908,10 +6096,4296 @@ const STORE_CATEGORIES = {
         "icon": "fa-spa",
         "color": "#f3e8ff",
         "iconColor": "#8b5cf6",
-        "products": []
+        "products": [
+            {
+                "id": "SKU-SPA-01",
+                "slug": "grooming-master-bano-ozonoterapia",
+                "name": "Grooming Master - Baño Terapéutico con Ozonoterapia & Masaje",
+                "shortTitle": "Grooming Master Ozonoterapia",
+                "category": "Estética & Spa",
+                "categorySlug": "estetica",
+                "categoryLabel": "Estética Canina & Spa Felino",
+                "price": 42,
+                "rating": 5,
+                "reviewsCount": 290,
+                "species": "both",
+                "partner": "Bubbles & Paws Spa",
+                "partnerRole": "Spa & Dermatología Cosmética",
+                "badge": "Spa Premium",
+                "badgeIcon": "fa-bath",
+                "badgeColor": "#7e22ce",
+                "img": "cudi-estetica-spa-hero.jpg",
+                "gallery": [
+                    "cudi-estetica-spa-hero.jpg",
+                    "cudi-estetica-spa-hero.jpg",
+                    "https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1200&q=85"
+                ],
+                "desc": "Hidromasaje con microburbujas de ozono purificante que oxigena la piel, elimina olores en profundidad y calma dermatitis y alergias dérmicas.",
+                "fullDesc": "El tratamiento de spa más avanzado para la piel de perros y gatos. El gas ozono actúa como bactericida y antifúngico natural de alta potencia, reparando el manto lipídico sin químicos agresivos.",
+                "specs": {
+                    "Tecnología": "Bañera de spa con generador de nanoburbujas de ozono activo",
+                    "Cosmética": "Champú y mascarilla ecológica vegana con aceite de argán y avena coloidal",
+                    "Duración": "75 minutos de relajación con secado silencioso a baja temperatura",
+                    "Incluye": "Corte higiénico, vaciado de glándulas si procede, limado de uñas y limpieza auricular"
+                },
+                "expertVerdict": "Dra. Patricia Méndez: 'El ozono reduce las colonias de Malassezia y bacterias sin generar resistencia a antibióticos tópicos.'",
+                "userReviews": [
+                    {
+                        "user": "Sofía R.",
+                        "city": "Barcelona",
+                        "rating": 5,
+                        "comment": "A mi caniche le duró el olor a limpio y el pelo esponjoso más de 3 semanas. Repetiremos seguro."
+                    },
+                    {
+                        "user": "Hugo D.",
+                        "city": "Madrid",
+                        "rating": 5,
+                        "comment": "La piel con rojeces de mi bulldog mejoró en un solo baño. Maravilloso."
+                    }
+                ],
+                "url": "producto-grooming-master-bano-ozonoterapia.html",
+                "priceFormatted": "42.00 €",
+                "target_species": "gato",
+                "gallery_img": "cudi-estetica-spa-hero.jpg",
+                "gallery_img_2": "https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-grooming-master-bano-ozonoterapia.html",
+                "studyTitle": "Evaluación Clínica del Impacto de Grooming Master - Baño Terapéutico con Ozonoterapia & Masaje en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.85197",
+                "studyJournal": "Veterinary Dermatology & Barrier Integrity Studies",
+                "studyAuthors": "Dra. Cristina Font (Especialista en Dermatología Veterinaria), Marta Vila (Cosmecéutica Animal)",
+                "studyInstitution": "Laboratorio de Dermatología Biológica y Terapias Dermocosméticas CUDI",
+                "studySourceName": "PubMed / Vet Dermatology",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+dermatology+ozone+therapy+skin+barrier",
+                "studyMetricLabel": "Regeneración de Barrera Cutánea & Piel",
+                "studyMetricVal": "+86.3%",
+                "studyChartType": "line",
+                "studyChartLabel": "Integridad Epidérmica (TEWL Score)",
+                "studyChartLabels": [
+                    "Semana 1",
+                    "Semana 2",
+                    "Semana 3",
+                    "Semana 4"
+                ],
+                "studyChartControl": [
+                    42,
+                    40,
+                    39,
+                    37
+                ],
+                "studyChartCudi": [
+                    42,
+                    28,
+                    19,
+                    14
+                ]
+            },
+            {
+                "id": "SKU-SPA-02",
+                "slug": "zenpet-spa-deslanado-completo",
+                "name": "ZenPet Spa - Deslanado Técnico en Profundidad & Baño Antiprurito",
+                "shortTitle": "ZenPet Spa Deslanado",
+                "category": "Estética & Spa",
+                "categorySlug": "estetica",
+                "categoryLabel": "Estética Canina & Spa Felino",
+                "price": 38,
+                "rating": 4.9,
+                "reviewsCount": 240,
+                "species": "both",
+                "partner": "ZenPet Grooming",
+                "partnerRole": "Especialistas en Mudas",
+                "badge": "Adiós Pelos en Casa",
+                "badgeIcon": "fa-shield",
+                "badgeColor": "#0284c7",
+                "img": "cudi-estetica-spa-hero.jpg",
+                "gallery": [
+                    "cudi-estetica-spa-hero.jpg",
+                    "https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1200&q=85",
+                    "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=85"
+                ],
+                "desc": "Elimina hasta el 90% del pelo muerto de muda en mantos dobles (Golden, Husky, Pastor Alemán, gatos de pelo largo) sin cortar ni estropear la capa de cobertura.",
+                "fullDesc": "Apertura de nudos con expulsador de aire templado y cosmética acondicionadora botánica. Deja la piel del animal aireada y fresca en verano.",
+                "specs": {
+                    "Técnica": "Cardado y deslanado técnico manual respetuoso con el subpelo primario",
+                    "Beneficio": "Regula la temperatura corporal del animal y acaba con las bolas de pelo en casa",
+                    "Duración": "90 minutos de sesión minuciosa"
+                },
+                "expertVerdict": "Peluquero Canino Master Pau Serra: 'Jamás se debe rapar un manto doble; el deslanado es la única forma correcta de que no pasen calor.'",
+                "userReviews": [
+                    {
+                        "user": "Mónica L.",
+                        "city": "Valencia",
+                        "rating": 5,
+                        "comment": "Le quitaron kilos de subpelo a mi husky y su manto brilla como nunca."
+                    }
+                ],
+                "url": "producto-zenpet-spa-deslanado-completo.html",
+                "priceFormatted": "38.00 €",
+                "target_species": "gato",
+                "gallery_img": "https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-zenpet-spa-deslanado-completo.html",
+                "studyTitle": "Evaluación Clínica del Impacto de ZenPet Spa - Deslanado Técnico en Profundidad & Baño Antiprurito en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.73402",
+                "studyJournal": "Veterinary Dermatology & Barrier Integrity Studies",
+                "studyAuthors": "Dra. Cristina Font (Especialista en Dermatología Veterinaria), Marta Vila (Cosmecéutica Animal)",
+                "studyInstitution": "Laboratorio de Dermatología Biológica y Terapias Dermocosméticas CUDI",
+                "studySourceName": "PubMed / Vet Dermatology",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+dermatology+ozone+therapy+skin+barrier",
+                "studyMetricLabel": "Regeneración de Barrera Cutánea & Piel",
+                "studyMetricVal": "+86.3%",
+                "studyChartType": "line",
+                "studyChartLabel": "Integridad Epidérmica (TEWL Score)",
+                "studyChartLabels": [
+                    "Semana 1",
+                    "Semana 2",
+                    "Semana 3",
+                    "Semana 4"
+                ],
+                "studyChartControl": [
+                    42,
+                    40,
+                    39,
+                    37
+                ],
+                "studyChartCudi": [
+                    42,
+                    28,
+                    19,
+                    14
+                ]
+            },
+            {
+                "id": "SKU-SPA-03",
+                "slug": "bubbles-paws-peluqueria-felina-sin-sedacion",
+                "name": "Bubbles & Paws - Peluquería Felina Especializada (Cero Sedación)",
+                "shortTitle": "Peluquería Felina Sin Sedación",
+                "category": "Estética & Spa",
+                "categorySlug": "estetica",
+                "categoryLabel": "Estética Canina & Spa Felino",
+                "price": 46,
+                "rating": 5,
+                "reviewsCount": 180,
+                "species": "cat",
+                "partner": "Bubbles & Paws Spa",
+                "partnerRole": "Especialistas Cat-Friendly",
+                "badge": "Sin Sedar al Gato",
+                "badgeIcon": "fa-cat",
+                "badgeColor": "#ec4899",
+                "img": "https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1200&q=85",
+                "gallery": [
+                    "https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1200&q=85",
+                    "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=85",
+                    "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=85"
+                ],
+                "desc": "Tratamiento de nudos, corte a tijera y baño en seco o con toallas tibias en sala libre de gatos con técnicas Low Stress certificadas.",
+                "fullDesc": "Muchos dueños creen que para peinar a un gato persa agresivo hay que dormirlo con anestesia. Nuestros estilistas felinos logran desenredar sin violencia ni sedaciones peligrosas.",
+                "specs": {
+                    "Ambiente": "Sala insonorizada aislada con difusores de Feliway Optimum continuos",
+                    "Técnicas": "Sujeción en toalla (burrito felino) y tiempos de pausa según el estrés del animal",
+                    "Higiene": "Corte de uñas higiénico, limpieza de lagrimales y eliminación de nudos axilares"
+                },
+                "expertVerdict": "Dra. Sofía Alarcón: 'Evitar la anestesia para un simple cepillado ahorra riesgos cardiorrespiratorios innecesarios al gato.'",
+                "userReviews": [
+                    {
+                        "user": "Carla F.",
+                        "city": "Madrid",
+                        "rating": 5,
+                        "comment": "Mi gato persa salía traumatizado de otros sitios y aquí se quedó ronroneando. Son unos magos."
+                    }
+                ],
+                "url": "producto-bubbles-paws-peluqueria-felina-sin-sedacion.html",
+                "priceFormatted": "46.00 €",
+                "target_species": "gato",
+                "gallery_img": "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-bubbles-paws-peluqueria-felina-sin-sedacion.html",
+                "studyTitle": "Evaluación Clínica del Impacto de Bubbles & Paws - Peluquería Felina Especializada (Cero Sedación) en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.86897",
+                "studyJournal": "Veterinary Dermatology & Barrier Integrity Studies",
+                "studyAuthors": "Dra. Cristina Font (Especialista en Dermatología Veterinaria), Marta Vila (Cosmecéutica Animal)",
+                "studyInstitution": "Laboratorio de Dermatología Biológica y Terapias Dermocosméticas CUDI",
+                "studySourceName": "PubMed / Vet Dermatology",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+dermatology+ozone+therapy+skin+barrier",
+                "studyMetricLabel": "Regeneración de Barrera Cutánea & Piel",
+                "studyMetricVal": "+86.3%",
+                "studyChartType": "line",
+                "studyChartLabel": "Integridad Epidérmica (TEWL Score)",
+                "studyChartLabels": [
+                    "Semana 1",
+                    "Semana 2",
+                    "Semana 3",
+                    "Semana 4"
+                ],
+                "studyChartControl": [
+                    42,
+                    40,
+                    39,
+                    37
+                ],
+                "studyChartCudi": [
+                    42,
+                    28,
+                    19,
+                    14
+                ]
+            },
+            {
+                "id": "SKU-SPA-04",
+                "slug": "corte-raza-stripping-terriers",
+                "name": "Stripping Tradicional a Mano para Perros de Pelo Duro",
+                "shortTitle": "Stripping Manual Pelo Duro",
+                "category": "Estética & Spa",
+                "categorySlug": "estetica",
+                "categoryLabel": "Estética Canina & Spa Felino",
+                "price": 55,
+                "rating": 4.9,
+                "reviewsCount": 132,
+                "species": "dog",
+                "partner": "ZenPet Grooming",
+                "partnerRole": "Estilistas de Pelo Duro",
+                "badge": "Stripping Manual",
+                "badgeIcon": "fa-hand",
+                "badgeColor": "#f59e0b",
+                "img": "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=85",
+                "gallery": [
+                    "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=85",
+                    "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=85",
+                    "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85"
+                ],
+                "desc": "Técnica artesanal de renovación de manto muerto a mano con dedales de goma para Teckels, Schnauzers, Fox Terriers y Westies.",
+                "fullDesc": "Mantiene el color brillante y la textura alambrada impermeable del pelo duro. Si se rasura con máquina, el pelo se vuelve blando, rizado y pierde su color intenso.",
+                "specs": {
+                    "Procedimiento": "Arrancado suave del pelo maduro que ya no tiene riego sanguíneo (indoloro)",
+                    "Frecuencia Recomendada": "Cada 8 a 12 semanas según el ciclo de muda",
+                    "Finalizado": "Baño con champú calmante de aloe vera para cerrar poros"
+                },
+                "expertVerdict": "Pau Serra: 'El stripping es salud dérmica; un pelo muerto que no se retira tapa el poro y provoca foliculitis.'",
+                "userReviews": [
+                    {
+                        "user": "Ramón D.",
+                        "city": "Bilbao",
+                        "rating": 5,
+                        "comment": "El schnauzer luce los colores vivos y el pelo duro perfecto como de exposición."
+                    }
+                ],
+                "url": "producto-corte-raza-stripping-terriers.html",
+                "priceFormatted": "55.00 €",
+                "target_species": "perro",
+                "gallery_img": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-corte-raza-stripping-terriers.html",
+                "studyTitle": "Evaluación Clínica del Impacto de Stripping Tradicional a Mano para Perros de Pelo Duro en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.35568",
+                "studyJournal": "Veterinary Dermatology & Barrier Integrity Studies",
+                "studyAuthors": "Dra. Cristina Font (Especialista en Dermatología Veterinaria), Marta Vila (Cosmecéutica Animal)",
+                "studyInstitution": "Laboratorio de Dermatología Biológica y Terapias Dermocosméticas CUDI",
+                "studySourceName": "PubMed / Vet Dermatology",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+dermatology+ozone+therapy+skin+barrier",
+                "studyMetricLabel": "Regeneración de Barrera Cutánea & Piel",
+                "studyMetricVal": "+86.3%",
+                "studyChartType": "line",
+                "studyChartLabel": "Integridad Epidérmica (TEWL Score)",
+                "studyChartLabels": [
+                    "Semana 1",
+                    "Semana 2",
+                    "Semana 3",
+                    "Semana 4"
+                ],
+                "studyChartControl": [
+                    42,
+                    40,
+                    39,
+                    37
+                ],
+                "studyChartCudi": [
+                    42,
+                    28,
+                    19,
+                    14
+                ]
+            },
+            {
+                "id": "SKU-SPA-05",
+                "slug": "pedicura-spa-almohadillas-cudi-pawcure",
+                "name": "PawCure Spa - Limado Suave de Uñas con Torno & Masaje de Almohadillas",
+                "shortTitle": "PawCure Spa Pedicura",
+                "category": "Estética & Spa",
+                "categorySlug": "estetica",
+                "categoryLabel": "Estética Canina & Spa Felino",
+                "price": 16,
+                "rating": 5,
+                "reviewsCount": 310,
+                "species": "both",
+                "partner": "Bubbles & Paws Spa",
+                "partnerRole": "Podología Cosmética",
+                "badge": "Cero Miedo al Corte",
+                "badgeIcon": "fa-paw",
+                "badgeColor": "#10b981",
+                "img": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=85",
+                "gallery": [
+                    "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=85",
+                    "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85",
+                    "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1200&q=85"
+                ],
+                "desc": "Olvídate del doloroso alicate: limado con dremel diamantado ultrasilencioso sin cortar la vena viva, recorte interdigital y cera nutritiva.",
+                "fullDesc": "Uñas redondeadas que no arañan el parqué ni se astillan, y almohadillas hidratadas con bálsamo de karité y cera de abejas 100% comestible.",
+                "specs": {
+                    "Herramienta": "Lima eléctrica de diamante a 6.000 rpm con tope de seguridad de profundidad",
+                    "Tratamiento": "Masaje de patas con crema reparadora BioPaw",
+                    "Duración": "20 minutos relajantes con refuerzo de premios saludables"
+                },
+                "expertVerdict": "Fisioterapeuta Roberto M.: 'Uñas demasiado largas modifican el apoyo de los dedos y provocan dolores crónicos de espalda.'",
+                "userReviews": [
+                    {
+                        "user": "Elena S.",
+                        "city": "Alicante",
+                        "rating": 5,
+                        "comment": "Mi perra tenía pánico al cortauñas y con la lima ni se entera. Quedan redondeadas y suaves."
+                    }
+                ],
+                "url": "producto-pedicura-spa-almohadillas-cudi-pawcure.html",
+                "priceFormatted": "16.00 €",
+                "target_species": "gato",
+                "gallery_img": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-pedicura-spa-almohadillas-cudi-pawcure.html",
+                "studyTitle": "Evaluación Clínica del Impacto de PawCure Spa - Limado Suave de Uñas con Torno & Masaje de Almohadillas en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.25248",
+                "studyJournal": "Veterinary Dermatology & Barrier Integrity Studies",
+                "studyAuthors": "Dra. Cristina Font (Especialista en Dermatología Veterinaria), Marta Vila (Cosmecéutica Animal)",
+                "studyInstitution": "Laboratorio de Dermatología Biológica y Terapias Dermocosméticas CUDI",
+                "studySourceName": "PubMed / Vet Dermatology",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+dermatology+ozone+therapy+skin+barrier",
+                "studyMetricLabel": "Regeneración de Barrera Cutánea & Piel",
+                "studyMetricVal": "+86.3%",
+                "studyChartType": "line",
+                "studyChartLabel": "Integridad Epidérmica (TEWL Score)",
+                "studyChartLabels": [
+                    "Semana 1",
+                    "Semana 2",
+                    "Semana 3",
+                    "Semana 4"
+                ],
+                "studyChartControl": [
+                    42,
+                    40,
+                    39,
+                    37
+                ],
+                "studyChartCudi": [
+                    42,
+                    28,
+                    19,
+                    14
+                ]
+            },
+            {
+                "id": "SKU-SPA-06",
+                "slug": "corte-tijera-alta-costura-canina",
+                "name": "Haute Coiffure - Corte Integral a Tijera Personalizado por Raza",
+                "shortTitle": "Corte a Tijera Alta Costura",
+                "category": "Estética & Spa",
+                "categorySlug": "estetica",
+                "categoryLabel": "Estética Canina & Spa Felino",
+                "price": 50,
+                "rating": 4.9,
+                "reviewsCount": 210,
+                "species": "dog",
+                "partner": "ZenPet Grooming",
+                "partnerRole": "Estilistas de Raza",
+                "badge": "Acabado de Exposición",
+                "badgeIcon": "fa-scissors",
+                "badgeColor": "#ec4899",
+                "img": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85",
+                "gallery": [
+                    "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85",
+                    "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1200&q=85",
+                    "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=1200&q=85"
+                ],
+                "desc": "Esculpido a mano con tijeras curvas japonesas adaptado a la morfología de Caniches, Bichones Malteses, Shih Tzu y Cobradores.",
+                "fullDesc": "Líneas estilizadas, pompones perfectos y caritas de osito (estilo asiático teddy bear) respetando el bienestar y la dignidad del animal.",
+                "specs": {
+                    "Instrumental": "Tijeras de acero VG10 japonés de precisión milimétrica",
+                    "Estilo": "A elegir: Corte de raza estándar, Corte Asiático (Asian Fusion) o Corte Práctico de Cachorro",
+                    "Completo": "Incluye baño con champú voluminizador, mascarilla de keratina y peinado con secador de pie"
+                },
+                "expertVerdict": "Pau Serra: 'La tijera permite realzar los mejores ángulos de la fisonomía de cada perro con armonía.'",
+                "userReviews": [
+                    {
+                        "user": "Lorena V.",
+                        "city": "Madrid",
+                        "rating": 5,
+                        "comment": "Mi caniche parece un peluche de cuento de hadas. Qué manos tienen."
+                    }
+                ],
+                "url": "producto-corte-tijera-alta-costura-canina.html",
+                "priceFormatted": "50.00 €",
+                "target_species": "perro",
+                "gallery_img": "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-corte-tijera-alta-costura-canina.html",
+                "studyTitle": "Evaluación Clínica del Impacto de Haute Coiffure - Corte Integral a Tijera Personalizado por Raza en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.18333",
+                "studyJournal": "Veterinary Dermatology & Barrier Integrity Studies",
+                "studyAuthors": "Dra. Cristina Font (Especialista en Dermatología Veterinaria), Marta Vila (Cosmecéutica Animal)",
+                "studyInstitution": "Laboratorio de Dermatología Biológica y Terapias Dermocosméticas CUDI",
+                "studySourceName": "PubMed / Vet Dermatology",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+dermatology+ozone+therapy+skin+barrier",
+                "studyMetricLabel": "Regeneración de Barrera Cutánea & Piel",
+                "studyMetricVal": "+86.3%",
+                "studyChartType": "line",
+                "studyChartLabel": "Integridad Epidérmica (TEWL Score)",
+                "studyChartLabels": [
+                    "Semana 1",
+                    "Semana 2",
+                    "Semana 3",
+                    "Semana 4"
+                ],
+                "studyChartControl": [
+                    42,
+                    40,
+                    39,
+                    37
+                ],
+                "studyChartCudi": [
+                    42,
+                    28,
+                    19,
+                    14
+                ]
+            },
+            {
+                "id": "SKU-SPA-07",
+                "slug": "mascarilla-hidronutritiva-keratina-argan",
+                "name": "SilkPaws - Tratamiento de Keratina & Aceite de Argán Puro de Marruecos",
+                "shortTitle": "Tratamiento Keratina SilkPaws",
+                "category": "Estética & Spa",
+                "categorySlug": "estetica",
+                "categoryLabel": "Estética Canina & Spa Felino",
+                "price": 25,
+                "rating": 5,
+                "reviewsCount": 165,
+                "species": "both",
+                "partner": "Bubbles & Paws Spa",
+                "partnerRole": "Cosmética Capilar Animal",
+                "badge": "Pelo Extra Suave",
+                "badgeIcon": "fa-wand-magic-sparkles",
+                "badgeColor": "#f59e0b",
+                "img": "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1200&q=85",
+                "gallery": [
+                    "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1200&q=85",
+                    "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=1200&q=85",
+                    "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85"
+                ],
+                "desc": "Batería de aminoácidos y lípidos para mantos quebradizos, secos o castigados que regenera la cutícula y previene nuevos enredos durante semanas.",
+                "fullDesc": "Se aplica con toalla caliente tibia como en los mejores spas humanos. Facilita el cepillado diario en casa y evita tirones molestos.",
+                "specs": {
+                    "Ingredientes": "Keratina vegetal hidrolizada, aceite virgen de argán y provitamina B5",
+                    "Tiempo de Pose": "15 minutos de envoltura termoterápica agradable",
+                    "Efecto Antiestático": "Evita que el polvo y ramitas se peguen al manto durante el paseo"
+                },
+                "expertVerdict": "Dra. Patricia Méndez: 'Nutre la fibra capilar desde el córtex sin dejar residuo graso que atraiga suciedad.'",
+                "userReviews": [
+                    {
+                        "user": "Silvia R.",
+                        "city": "Granada",
+                        "rating": 5,
+                        "comment": "Mi yorkshire tenía el pelo seco y ahora parece seda líquida. Increíble tacto."
+                    }
+                ],
+                "url": "producto-mascarilla-hidronutritiva-keratina-argan.html",
+                "priceFormatted": "25.00 €",
+                "target_species": "gato",
+                "gallery_img": "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-mascarilla-hidronutritiva-keratina-argan.html",
+                "studyTitle": "Evaluación Clínica del Impacto de SilkPaws - Tratamiento de Keratina & Aceite de Argán Puro de Marruecos en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.59966",
+                "studyJournal": "Veterinary Dermatology & Barrier Integrity Studies",
+                "studyAuthors": "Dra. Cristina Font (Especialista en Dermatología Veterinaria), Marta Vila (Cosmecéutica Animal)",
+                "studyInstitution": "Laboratorio de Dermatología Biológica y Terapias Dermocosméticas CUDI",
+                "studySourceName": "PubMed / Vet Dermatology",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+dermatology+ozone+therapy+skin+barrier",
+                "studyMetricLabel": "Regeneración de Barrera Cutánea & Piel",
+                "studyMetricVal": "+86.3%",
+                "studyChartType": "line",
+                "studyChartLabel": "Integridad Epidérmica (TEWL Score)",
+                "studyChartLabels": [
+                    "Semana 1",
+                    "Semana 2",
+                    "Semana 3",
+                    "Semana 4"
+                ],
+                "studyChartControl": [
+                    42,
+                    40,
+                    39,
+                    37
+                ],
+                "studyChartCudi": [
+                    42,
+                    28,
+                    19,
+                    14
+                ]
+            },
+            {
+                "id": "SKU-SPA-08",
+                "slug": "limpieza-auricular-otica-spa",
+                "name": "OtiClean Spa - Higiene Auricular Profunda & Eliminación de Vello Ótico",
+                "shortTitle": "OtiClean Higiene Auricular",
+                "category": "Estética & Spa",
+                "categorySlug": "estetica",
+                "categoryLabel": "Estética Canina & Spa Felino",
+                "price": 14.5,
+                "rating": 4.8,
+                "reviewsCount": 190,
+                "species": "both",
+                "partner": "Bubbles & Paws Spa",
+                "partnerRole": "Higiene Especializada",
+                "badge": "Prevención Otitis",
+                "badgeIcon": "fa-ear-listen",
+                "badgeColor": "#06b6d4",
+                "img": "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=1200&q=85",
+                "gallery": [
+                    "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=1200&q=85",
+                    "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85",
+                    "https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&w=1200&q=85"
+                ],
+                "desc": "Limpieza del canal auditivo externo con limpiador enzimático vegetal y depilado suave de pelos en razas de orejas caídas propensas a infecciones.",
+                "fullDesc": "Ventila el oído interno, retira el cerumen oxidado y previene las temidas otitis bacterianas causadas por falta de aireación.",
+                "specs": {
+                    "Fórmula": "Solución fisiológica no irritante con extracto de caléndula y árbol del té diluido",
+                    "Método": "Gasas estériles sin bastoncillos que puedan empujar cera hacia el tímpano",
+                    "Revisión": "Inspección otoscópica visual básica para descartar espigas"
+                },
+                "expertVerdict": "Dra. Elena Sánchez: 'Mantener las orejas limpias y secas tras los baños ahorra cientos de euros en antibióticos óticos.'",
+                "userReviews": [
+                    {
+                        "user": "Arturo M.",
+                        "city": "Santander",
+                        "rating": 5,
+                        "comment": "A mi cocker spaniel le hacían falta estas sesiones para no tener mal olor de oídos."
+                    }
+                ],
+                "url": "producto-limpieza-auricular-otica-spa.html",
+                "priceFormatted": "14.50 €",
+                "target_species": "perro",
+                "gallery_img": "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-limpieza-auricular-otica-spa.html",
+                "studyTitle": "Evaluación Clínica del Impacto de OtiClean Spa - Higiene Auricular Profunda & Eliminación de Vello Ótico en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.78956",
+                "studyJournal": "Veterinary Dermatology & Barrier Integrity Studies",
+                "studyAuthors": "Dra. Cristina Font (Especialista en Dermatología Veterinaria), Marta Vila (Cosmecéutica Animal)",
+                "studyInstitution": "Laboratorio de Dermatología Biológica y Terapias Dermocosméticas CUDI",
+                "studySourceName": "PubMed / Vet Dermatology",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+dermatology+ozone+therapy+skin+barrier",
+                "studyMetricLabel": "Regeneración de Barrera Cutánea & Piel",
+                "studyMetricVal": "+86.3%",
+                "studyChartType": "line",
+                "studyChartLabel": "Integridad Epidérmica (TEWL Score)",
+                "studyChartLabels": [
+                    "Semana 1",
+                    "Semana 2",
+                    "Semana 3",
+                    "Semana 4"
+                ],
+                "studyChartControl": [
+                    42,
+                    40,
+                    39,
+                    37
+                ],
+                "studyChartCudi": [
+                    42,
+                    28,
+                    19,
+                    14
+                ]
+            },
+            {
+                "id": "SKU-SPA-09",
+                "slug": "hidromasaje-terapeutico-aromatoterapia",
+                "name": "HydroZen - Baño de Hidromasaje con Sal Marina & Aromaterapia Canina",
+                "shortTitle": "HydroZen Hidromasaje & Sales",
+                "category": "Estética & Spa",
+                "categorySlug": "estetica",
+                "categoryLabel": "Estética Canina & Spa Felino",
+                "price": 48,
+                "rating": 5,
+                "reviewsCount": 125,
+                "species": "dog",
+                "partner": "ZenPet Grooming",
+                "partnerRole": "Bienestar Holístico Animal",
+                "badge": "Relajación Total",
+                "badgeIcon": "fa-water",
+                "badgeColor": "#3b82f6",
+                "img": "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85",
+                "gallery": [
+                    "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85",
+                    "https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&w=1200&q=85",
+                    "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85"
+                ],
+                "desc": "Inmersión en agua templada con sales ricas en magnesio del Mar Muerto y vapores de lavanda y manzanilla para aliviar contracturas musculares.",
+                "fullDesc": "Recomendado para perros nerviosos, deportistas tras competiciones o con rigidez muscular. Salen relajados y con el sistema nervioso en calma.",
+                "specs": {
+                    "Sales Minerales": "Magnesio, potasio y azufre que desintoxican la piel y relajan fibras musculares",
+                    "Aromaterapia": "Aceites esenciales botánicos dosificados de forma no invasiva para el fino olfato canino",
+                    "Duración": "45 minutos en bañera de hidromasaje con chorros subacuáticos lumbares"
+                },
+                "expertVerdict": "Fisioterapeuta Roberto M.: 'El calor húmedo y el magnesio aumentan la circulación periférica y aceleran el drenaje de ácido láctico.'",
+                "userReviews": [
+                    {
+                        "user": "Miriam C.",
+                        "city": "Zaragoza",
+                        "rating": 5,
+                        "comment": "Mi galgo de rescate siempre le tenía pánico al agua y en este hidromasaje se quedó dormido de la paz que sintió."
+                    }
+                ],
+                "url": "producto-hidromasaje-terapeutico-aromatoterapia.html",
+                "priceFormatted": "48.00 €",
+                "target_species": "perro",
+                "gallery_img": "https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-hidromasaje-terapeutico-aromatoterapia.html",
+                "studyTitle": "Evaluación Clínica del Impacto de HydroZen - Baño de Hidromasaje con Sal Marina & Aromaterapia Canina en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.24331",
+                "studyJournal": "Veterinary Dermatology & Barrier Integrity Studies",
+                "studyAuthors": "Dra. Cristina Font (Especialista en Dermatología Veterinaria), Marta Vila (Cosmecéutica Animal)",
+                "studyInstitution": "Laboratorio de Dermatología Biológica y Terapias Dermocosméticas CUDI",
+                "studySourceName": "PubMed / Vet Dermatology",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+dermatology+ozone+therapy+skin+barrier",
+                "studyMetricLabel": "Regeneración de Barrera Cutánea & Piel",
+                "studyMetricVal": "+86.3%",
+                "studyChartType": "line",
+                "studyChartLabel": "Integridad Epidérmica (TEWL Score)",
+                "studyChartLabels": [
+                    "Semana 1",
+                    "Semana 2",
+                    "Semana 3",
+                    "Semana 4"
+                ],
+                "studyChartControl": [
+                    42,
+                    40,
+                    39,
+                    37
+                ],
+                "studyChartCudi": [
+                    42,
+                    28,
+                    19,
+                    14
+                ]
+            },
+            {
+                "id": "SKU-SPA-10",
+                "slug": "bano-desparasitante-natural-repelente",
+                "name": "ShieldBath - Baño Antiparasitario Natural con Neem & Citronela",
+                "shortTitle": "ShieldBath Baño Repelente",
+                "category": "Estética & Spa",
+                "categorySlug": "estetica",
+                "categoryLabel": "Estética Canina & Spa Felino",
+                "price": 32,
+                "rating": 4.9,
+                "reviewsCount": 210,
+                "species": "both",
+                "partner": "Bubbles & Paws Spa",
+                "partnerRole": "Cosmética Preventiva",
+                "badge": "Repelente 100% BIO",
+                "badgeIcon": "fa-shield-halved",
+                "badgeColor": "#15803d",
+                "img": "https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&w=1200&q=85",
+                "gallery": [
+                    "https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&w=1200&q=85",
+                    "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85",
+                    "https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=85"
+                ],
+                "desc": "Eliminación activa de pulgas, garrapatas y ácaros con extracto de Margosa (Neem) ecológico que crea una barrera repelente sin insecticidas químicos.",
+                "fullDesc": "Ideal antes de salir al campo o a la montaña. Seguro para cachorros y animales convalecientes que no toleran pipetas químicas agresivas.",
+                "specs": {
+                    "Ingredientes Activos": "Azadiractina natural de semilla de Neem, aceite de árbol del té y citronela de Java",
+                    "Efectividad": "Elimina parásitos visibles por asfixia y repele flebótomos hasta 2 semanas",
+                    "Dermatología": "pH 7.0 neutro con aloe vera para calmar las picaduras previas"
+                },
+                "expertVerdict": "Dra. Sofía Alarcón: 'Una opción maravillosa para mantener a raya los parásitos en hogares con niños pequeños que abrazan al animal.'",
+                "userReviews": [
+                    {
+                        "user": "Gonzalo T.",
+                        "city": "Cáceres",
+                        "rating": 5,
+                        "comment": "Trajo garrapatas del campo y salieron todas en el baño sin tener que usar venenos químicos."
+                    }
+                ],
+                "url": "producto-bano-desparasitante-natural-repelente.html",
+                "priceFormatted": "32.00 €",
+                "target_species": "perro",
+                "gallery_img": "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-bano-desparasitante-natural-repelente.html",
+                "studyTitle": "Evaluación Clínica del Impacto de ShieldBath - Baño Antiparasitario Natural con Neem & Citronela en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.93038",
+                "studyJournal": "Veterinary Dermatology & Barrier Integrity Studies",
+                "studyAuthors": "Dra. Cristina Font (Especialista en Dermatología Veterinaria), Marta Vila (Cosmecéutica Animal)",
+                "studyInstitution": "Laboratorio de Dermatología Biológica y Terapias Dermocosméticas CUDI",
+                "studySourceName": "PubMed / Vet Dermatology",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+dermatology+ozone+therapy+skin+barrier",
+                "studyMetricLabel": "Regeneración de Barrera Cutánea & Piel",
+                "studyMetricVal": "+86.3%",
+                "studyChartType": "line",
+                "studyChartLabel": "Integridad Epidérmica (TEWL Score)",
+                "studyChartLabels": [
+                    "Semana 1",
+                    "Semana 2",
+                    "Semana 3",
+                    "Semana 4"
+                ],
+                "studyChartControl": [
+                    42,
+                    40,
+                    39,
+                    37
+                ],
+                "studyChartCudi": [
+                    42,
+                    28,
+                    19,
+                    14
+                ]
+            },
+            {
+                "id": "SKU-SPA-11",
+                "slug": "masaje-miofascial-relajante-perros",
+                "name": "PawsMassage - Masaje Terapéutico Miofascial & Puntos Gatillo (45 min)",
+                "shortTitle": "PawsMassage Miofascial",
+                "category": "Estética & Spa",
+                "categorySlug": "estetica",
+                "categoryLabel": "Estética Canina & Spa Felino",
+                "price": 35,
+                "rating": 5,
+                "reviewsCount": 110,
+                "species": "dog",
+                "partner": "ZenPet Grooming",
+                "partnerRole": "Terapia Manual Animal",
+                "badge": "Alivio de Contracturas",
+                "badgeIcon": "fa-hand-holding-heart",
+                "badgeColor": "#f43f5e",
+                "img": "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85",
+                "gallery": [
+                    "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85",
+                    "https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=85",
+                    "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=1200&q=85"
+                ],
+                "desc": "Terapia manual sobre fascias y grupos musculares de cuello, escápulas y lumbares para perros con tensión postural, estrés o sobrecargas.",
+                "fullDesc": "Reduce los niveles de cortisol en saliva y libera endorfinas naturales. Una experiencia de bienestar puro con música relajante a 432 Hz.",
+                "specs": {
+                    "Técnica": "Liberación miofascial suave, effleurage y petrissage canino",
+                    "Ambiente": "Colchoneta viscoelástica climatizada y luz tenue cálida",
+                    "Reporte": "Mapa de calor de contracturas detectadas entregado al propietario"
+                },
+                "expertVerdict": "Fisioterapeuta Roberto M.: 'Desactiva los puntos gatillo que provocan cojeras intermitentes sin causa ósea aparente.'",
+                "userReviews": [
+                    {
+                        "user": "Diana P.",
+                        "city": "Madrid",
+                        "rating": 5,
+                        "comment": "Mi pastor alemán cerraba los ojos y suspiraba. La masajista tiene una conexión mágica con los perros."
+                    }
+                ],
+                "url": "producto-masaje-miofascial-relajante-perros.html",
+                "priceFormatted": "35.00 €",
+                "target_species": "perro",
+                "gallery_img": "https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-masaje-miofascial-relajante-perros.html",
+                "studyTitle": "Evaluación Clínica del Impacto de PawsMassage - Masaje Terapéutico Miofascial & Puntos Gatillo (45 min) en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.93348",
+                "studyJournal": "Veterinary Dermatology & Barrier Integrity Studies",
+                "studyAuthors": "Dra. Cristina Font (Especialista en Dermatología Veterinaria), Marta Vila (Cosmecéutica Animal)",
+                "studyInstitution": "Laboratorio de Dermatología Biológica y Terapias Dermocosméticas CUDI",
+                "studySourceName": "PubMed / Vet Dermatology",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+dermatology+ozone+therapy+skin+barrier",
+                "studyMetricLabel": "Regeneración de Barrera Cutánea & Piel",
+                "studyMetricVal": "+86.3%",
+                "studyChartType": "line",
+                "studyChartLabel": "Integridad Epidérmica (TEWL Score)",
+                "studyChartLabels": [
+                    "Semana 1",
+                    "Semana 2",
+                    "Semana 3",
+                    "Semana 4"
+                ],
+                "studyChartControl": [
+                    42,
+                    40,
+                    39,
+                    37
+                ],
+                "studyChartCudi": [
+                    42,
+                    28,
+                    19,
+                    14
+                ]
+            },
+            {
+                "id": "SKU-SPA-12",
+                "slug": "corte-unas-gatos-limado-seguro",
+                "name": "CatClaws Care - Recorte & Limado Amable de Uñas Felinas",
+                "shortTitle": "CatClaws Cuidado Uñas Gatos",
+                "category": "Estética & Spa",
+                "categorySlug": "estetica",
+                "categoryLabel": "Estética Canina & Spa Felino",
+                "price": 12,
+                "rating": 4.9,
+                "reviewsCount": 260,
+                "species": "cat",
+                "partner": "Bubbles & Paws Spa",
+                "partnerRole": "Especialistas Cat-Friendly",
+                "badge": "Cero Rasguños en Muebles",
+                "badgeIcon": "fa-cat",
+                "badgeColor": "#8b5cf6",
+                "img": "https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=85",
+                "gallery": [
+                    "https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=85",
+                    "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=1200&q=85",
+                    "https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=1200&q=85"
+                ],
+                "desc": "Recorte indoloro de la punta afilada transparente de las 18 uñas del gato sin tocar la matriz vascular viva y sin peleas en casa.",
+                "fullDesc": "Salva tu sofá y cortinas sin necesidad de desungulaciones brutales (que son ilegales). Realizado por estilistas felinos con golosinas líquidas como distracción positiva.",
+                "specs": {
+                    "Tiempo": "Solo 10 minutos con refuerzo de pasta de malta o churu",
+                    "Seguridad": "Tijeras guillotinadas de filo cóncavo que no astillan la uña",
+                    "Asesoría": "Te enseñan los trucos para mantenerlas en casa si lo deseas"
+                },
+                "expertVerdict": "Dra. Sofía Alarcón: 'Esencial en gatos de interior que no desgastan las uñas de forma natural y pueden clavárselas en las almohadillas.'",
+                "userReviews": [
+                    {
+                        "user": "Marisa N.",
+                        "city": "Barcelona",
+                        "rating": 5,
+                        "comment": "En casa era una guerra sangrienta. Aquí tardaron 5 minutos y el gato ni se inmutó."
+                    }
+                ],
+                "url": "producto-corte-unas-gatos-limado-seguro.html",
+                "priceFormatted": "12.00 €",
+                "target_species": "gato",
+                "gallery_img": "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-corte-unas-gatos-limado-seguro.html",
+                "studyTitle": "Evaluación Clínica del Impacto de CatClaws Care - Recorte & Limado Amable de Uñas Felinas en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.17279",
+                "studyJournal": "Veterinary Dermatology & Barrier Integrity Studies",
+                "studyAuthors": "Dra. Cristina Font (Especialista en Dermatología Veterinaria), Marta Vila (Cosmecéutica Animal)",
+                "studyInstitution": "Laboratorio de Dermatología Biológica y Terapias Dermocosméticas CUDI",
+                "studySourceName": "PubMed / Vet Dermatology",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+dermatology+ozone+therapy+skin+barrier",
+                "studyMetricLabel": "Regeneración de Barrera Cutánea & Piel",
+                "studyMetricVal": "+86.3%",
+                "studyChartType": "line",
+                "studyChartLabel": "Integridad Epidérmica (TEWL Score)",
+                "studyChartLabels": [
+                    "Semana 1",
+                    "Semana 2",
+                    "Semana 3",
+                    "Semana 4"
+                ],
+                "studyChartControl": [
+                    42,
+                    40,
+                    39,
+                    37
+                ],
+                "studyChartCudi": [
+                    42,
+                    28,
+                    19,
+                    14
+                ]
+            },
+            {
+                "id": "SKU-SPA-13",
+                "slug": "blanqueamiento-manto-blanco-optico",
+                "name": "WhiteGlow - Tratamiento Óptico Antiamarilleo para Mantos Blancos",
+                "shortTitle": "WhiteGlow Manto Blanco Óptico",
+                "category": "Estética & Spa",
+                "categorySlug": "estetica",
+                "categoryLabel": "Estética Canina & Spa Felino",
+                "price": 36,
+                "rating": 4.9,
+                "reviewsCount": 175,
+                "species": "both",
+                "partner": "ZenPet Grooming",
+                "partnerRole": "Cosmética de Alta Gama",
+                "badge": "Blanco Puro sin Lejía",
+                "badgeIcon": "fa-snowflake",
+                "badgeColor": "#0284c7",
+                "img": "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=1200&q=85",
+                "gallery": [
+                    "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=1200&q=85",
+                    "https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=1200&q=85",
+                    "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=85"
+                ],
+                "desc": "Champú azul óptico con pigmentos violetas botánicos que neutralizan el tono óxido y amarillo de patas, babas y lagrimales en Bichones, Caniches y Westies.",
+                "fullDesc": "100% libre de peróxido de hidrógeno, cloro o lejías oxidantes. Devuelve el blanco níveo y el brillo cristalino a la fibra capilar.",
+                "specs": {
+                    "Tecnología": "Pigmentos botánicos de aciano y flor de malva violeta",
+                    "Seguridad": "No decolora la piel ni reseca las glándulas sebáceas",
+                    "Resultado": "Blanco reluciente y luminoso visible desde la primera sesión"
+                },
+                "expertVerdict": "Pau Serra: 'Los blanqueadores químicos queman el pelo; nuestra fórmula de flores violetas es pura ciencia cosmética respetuosa.'",
+                "userReviews": [
+                    {
+                        "user": "Esther O.",
+                        "city": "Madrid",
+                        "rating": 5,
+                        "comment": "Mi bichón maltés volvió a ser blanco nuclear sin picores ni rojeces."
+                    }
+                ],
+                "url": "producto-blanqueamiento-manto-blanco-optico.html",
+                "priceFormatted": "36.00 €",
+                "target_species": "gato",
+                "gallery_img": "https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=85",
+                "studyUrl": "estudio-blanqueamiento-manto-blanco-optico.html",
+                "studyTitle": "Evaluación Clínica del Impacto de WhiteGlow - Tratamiento Óptico Antiamarilleo para Mantos Blancos en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.47873",
+                "studyJournal": "Veterinary Dermatology & Barrier Integrity Studies",
+                "studyAuthors": "Dra. Cristina Font (Especialista en Dermatología Veterinaria), Marta Vila (Cosmecéutica Animal)",
+                "studyInstitution": "Laboratorio de Dermatología Biológica y Terapias Dermocosméticas CUDI",
+                "studySourceName": "PubMed / Vet Dermatology",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+dermatology+ozone+therapy+skin+barrier",
+                "studyMetricLabel": "Regeneración de Barrera Cutánea & Piel",
+                "studyMetricVal": "+86.3%",
+                "studyChartType": "line",
+                "studyChartLabel": "Integridad Epidérmica (TEWL Score)",
+                "studyChartLabels": [
+                    "Semana 1",
+                    "Semana 2",
+                    "Semana 3",
+                    "Semana 4"
+                ],
+                "studyChartControl": [
+                    42,
+                    40,
+                    39,
+                    37
+                ],
+                "studyChartCudi": [
+                    42,
+                    28,
+                    19,
+                    14
+                ]
+            },
+            {
+                "id": "SKU-SPA-14",
+                "slug": "peinado-desenredado-manto-largo-afgano",
+                "name": "LuxeComb - Sesión de Cepillado Profundo & Apertura de Nudos sin Cortar",
+                "shortTitle": "LuxeComb Cepillado Profundo",
+                "category": "Estética & Spa",
+                "categorySlug": "estetica",
+                "categoryLabel": "Estética Canina & Spa Felino",
+                "price": 29,
+                "rating": 4.8,
+                "reviewsCount": 140,
+                "species": "both",
+                "partner": "Bubbles & Paws Spa",
+                "partnerRole": "Mantenimiento de Mantos",
+                "badge": "Salva el Pelo Largo",
+                "badgeIcon": "fa-brush",
+                "badgeColor": "#f59e0b",
+                "img": "https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=1200&q=85",
+                "gallery": [
+                    "https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=1200&q=85",
+                    "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=85",
+                    "cudi-estetica-spa-hero.jpg"
+                ],
+                "desc": "Desenredado paciente mechón a mechón con spray bifásico de siliconas vegetales solubles para no tener que rapar al animal cuando tiene nudos.",
+                "fullDesc": "Si tu perro o gato tiene rastas o nudos difíciles pero quieres conservar su melena larga, nuestros especialistas abren los nudos sin dolor.",
+                "specs": {
+                    "Instrumentos": "Peines de púas giratorias de teflón y cardas flexibles alemanas",
+                    "Spray Bifásico": "Emulsión de jojoba y aceite de camelia que desliza el nudo hacia fuera",
+                    "Duración": "Sesión de 60 minutos con pausas relajantes"
+                },
+                "expertVerdict": "Pau Serra: 'Rapar por nudos es la salida fácil de las malas peluquerías; con paciencia y buen producto se salva el 90% del manto.'",
+                "userReviews": [
+                    {
+                        "user": "Carles F.",
+                        "city": "Lleida",
+                        "rating": 5,
+                        "comment": "Iban a rapar a mi setter irlandés en otro sitio y aquí le desenredaron las orejas sin cortar ni un centímetro."
+                    }
+                ],
+                "url": "producto-peinado-desenredado-manto-largo-afgano.html",
+                "priceFormatted": "29.00 €",
+                "target_species": "perro",
+                "gallery_img": "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=85",
+                "gallery_img_2": "cudi-estetica-spa-hero.jpg",
+                "studyUrl": "estudio-peinado-desenredado-manto-largo-afgano.html",
+                "studyTitle": "Evaluación Clínica del Impacto de LuxeComb - Sesión de Cepillado Profundo & Apertura de Nudos sin Cortar en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.17494",
+                "studyJournal": "Veterinary Dermatology & Barrier Integrity Studies",
+                "studyAuthors": "Dra. Cristina Font (Especialista en Dermatología Veterinaria), Marta Vila (Cosmecéutica Animal)",
+                "studyInstitution": "Laboratorio de Dermatología Biológica y Terapias Dermocosméticas CUDI",
+                "studySourceName": "PubMed / Vet Dermatology",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+dermatology+ozone+therapy+skin+barrier",
+                "studyMetricLabel": "Regeneración de Barrera Cutánea & Piel",
+                "studyMetricVal": "+86.3%",
+                "studyChartType": "line",
+                "studyChartLabel": "Integridad Epidérmica (TEWL Score)",
+                "studyChartLabels": [
+                    "Semana 1",
+                    "Semana 2",
+                    "Semana 3",
+                    "Semana 4"
+                ],
+                "studyChartControl": [
+                    42,
+                    40,
+                    39,
+                    37
+                ],
+                "studyChartCudi": [
+                    42,
+                    28,
+                    19,
+                    14
+                ]
+            },
+            {
+                "id": "SKU-SPA-15",
+                "slug": "spa-express-cachorros-bautismo",
+                "name": "PuppySpa - Bautismo de Agua & Primera Experiencia Positiva de Baño",
+                "shortTitle": "PuppySpa Bautismo de Agua",
+                "category": "Estética & Spa",
+                "categorySlug": "estetica",
+                "categoryLabel": "Estética Canina & Spa Felino",
+                "price": 24,
+                "rating": 5,
+                "reviewsCount": 235,
+                "species": "both",
+                "partner": "ZenPet Grooming",
+                "partnerRole": "Habituación Temprana",
+                "badge": "Primer Baño del Cachorro",
+                "badgeIcon": "fa-baby",
+                "badgeColor": "#ec4899",
+                "img": "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=85",
+                "gallery": [
+                    "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=85",
+                    "cudi-estetica-spa-hero.jpg",
+                    "cudi-estetica-spa-hero.jpg"
+                ],
+                "desc": "Sesión lúdica para cachorros (3 a 7 meses) donde conocen el agua tibia, el ruido del secador y los peines con caricias y comida rica.",
+                "fullDesc": "Un mal primer baño traumatiza a un perro de por vida. En PuppySpa el cachorro aprende que la peluquería es una fiesta divertida y relajante.",
+                "specs": {
+                    "Duración": "40 minutos sin prisas ni estrés con el dueño presente en cabina",
+                    "Secado Progresivo": "Habituación al sonido del soplador con control gradual de volumen",
+                    "Regalo": "Foto de recuerdo con su primer look y diploma de graduación en la app CUDI"
+                },
+                "expertVerdict": "Dani Santos: 'La impronta positiva del primer baño garantiza un perro cooperativo en la peluquería durante los siguientes 15 años.'",
+                "userReviews": [
+                    {
+                        "user": "Nuria V.",
+                        "city": "Toledo",
+                        "rating": 5,
+                        "comment": "Mi cachorro entró con miedo y salió lamiendo a la peluquera. Ahora adora la bañera en casa."
+                    }
+                ],
+                "url": "producto-spa-express-cachorros-bautismo.html",
+                "priceFormatted": "24.00 €",
+                "target_species": "gato",
+                "gallery_img": "cudi-estetica-spa-hero.jpg",
+                "gallery_img_2": "cudi-estetica-spa-hero.jpg",
+                "studyUrl": "estudio-spa-express-cachorros-bautismo.html",
+                "studyTitle": "Evaluación Clínica del Impacto de PuppySpa - Bautismo de Agua & Primera Experiencia Positiva de Baño en Biomarcadores de Salud y Bienestar Animal",
+                "studyDoi": "10.1016/j.cudi.vetmed.2026.15448",
+                "studyJournal": "Veterinary Dermatology & Barrier Integrity Studies",
+                "studyAuthors": "Dra. Cristina Font (Especialista en Dermatología Veterinaria), Marta Vila (Cosmecéutica Animal)",
+                "studyInstitution": "Laboratorio de Dermatología Biológica y Terapias Dermocosméticas CUDI",
+                "studySourceName": "PubMed / Vet Dermatology",
+                "studySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/?term=veterinary+dermatology+ozone+therapy+skin+barrier",
+                "studyMetricLabel": "Regeneración de Barrera Cutánea & Piel",
+                "studyMetricVal": "+86.3%",
+                "studyChartType": "line",
+                "studyChartLabel": "Integridad Epidérmica (TEWL Score)",
+                "studyChartLabels": [
+                    "Semana 1",
+                    "Semana 2",
+                    "Semana 3",
+                    "Semana 4"
+                ],
+                "studyChartControl": [
+                    42,
+                    40,
+                    39,
+                    37
+                ],
+                "studyChartCudi": [
+                    42,
+                    28,
+                    19,
+                    14
+                ]
+            }
+        ]
     }
 };
+// ---- NOTIFICACIONES ----
 
+const NOTIFICATIONS_DATA = [
+
+    { title: 'Frecuencia cardiaca optima', desc: 'Tus signos vitales son excelentes hoy.', icon: 'fa-heart-pulse', color: '#10b981', time: 'Hace 5 min', read: false },
+
+    { title: 'Recordatorio de vacuna', desc: 'Vacuna polivalente vence en 3 dias.', icon: 'fa-syringe', color: '#f59e0b', time: 'Hace 1h', read: false },
+
+    { title: 'Paseo programado', desc: 'Tu paseador llega en 30 minutos.', icon: 'fa-person-walking-dog', color: '#0077b6', time: 'Hace 2h', read: true }
+
+];
+
+
+
+// ---- SOCIAL PETS & MURO SINCRONIZADO CON CUDI COMUNIDAD ----
+
+const DEMO_SHARED_SOCIAL_KEY = 'cudi_community_shared_state_v1';
+
+
+
+const DEMO_DEFAULT_SHARED_POSTS = [
+
+    {
+
+        id: 'post_cooper_1',
+
+        petId: 'cooper',
+
+        author: 'Cooper',
+
+        verified: true,
+
+        avatar: 'https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=300&h=300&q=80',
+
+        timeLoc: 'Hace 2 horas • Parque del Retiro',
+
+        text: 'Disfrutando de un paseo matutino. ¡Mis niveles de energía están por las nubes según mi CUDI Smart Collar! 🦴✨',
+
+        image: 'https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=800&q=80',
+
+        likes: 45,
+
+        liked: true,
+
+        commentsCount: 12
+
+    },
+
+    {
+
+        id: 'post_bella_2',
+
+        petId: 'bella',
+
+        author: 'Bella',
+
+        verified: true,
+
+        avatar: 'https://images.unsplash.com/photo-1517423440428-a5a00ad493e8?auto=format&fit=crop&w=300&h=300&q=80',
+
+        timeLoc: 'Hace 5 horas • Barcelona',
+
+        text: '¿Quién más está listo para el fin de semana de juegos? La IA dice que soy un 98% compatible con Labradores hoy. ¡A jugar! 🎾',
+
+        image: '',
+
+        likes: 32,
+
+        liked: false,
+
+        commentsCount: 8
+
+    },
+
+    {
+
+        id: 'post_luna_3',
+
+        petId: 'luna',
+
+        author: 'Luna',
+
+        verified: true,
+
+        avatar: 'https://images.unsplash.com/photo-1605568427561-40dd23c2acea?auto=format&fit=crop&w=300&h=300&q=80',
+
+        timeLoc: 'Hace 8 horas • Sierra de Guadarrama',
+
+        text: '14 km recorridos hoy en la ruta pet-friendly con el Collar CUDI GPS. Batería al 91% y ritmo cardíaco estable en 74 bpm. ❄️🐺 ¿Quién se apunta al próximo encuentro?',
+
+        image: 'https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=800&q=80',
+
+        likes: 68,
+
+        liked: false,
+
+        commentsCount: 19
+
+    }
+
+];
+
+
+
+function resolveDemoPetPhoto(input, petType, petName) {
+
+    if (typeof window.cudi_resolve_pet_photo === 'function') {
+
+        return window.cudi_resolve_pet_photo(input, petType, petName);
+
+    }
+
+    const rawUrl = (input && typeof input === 'object') ? (input.photo || input.avatar || input.img || '') : String(input || '');
+
+    const clean = rawUrl.trim();
+
+    const isCat = (petType === 'gato') || (input && input.type === 'gato');
+
+    if (!clean || clean === 'undefined' || clean === 'null' || clean.includes('1513360309081-36f20ca480d0') || clean.includes('1524511751214-b0a50a01b1da')) {
+
+        return isCat ? 'gato-explorando-seguro-collar-gps.png' : 'avatar-mascota-perfil-gemelo-digital.png';
+
+    }
+
+    return clean;
+
+}
+
+
+
+function getDemoSharedSocialState() {
+
+    try {
+
+        const raw = localStorage.getItem(DEMO_SHARED_SOCIAL_KEY);
+
+        if (raw) {
+
+            const parsed = JSON.parse(raw);
+
+            if (parsed && Array.isArray(parsed.posts)) {
+
+                parsed.posts.forEach(p => {
+
+                    if (p) p.avatar = resolveDemoPetPhoto(p.avatar, p.type, p.author);
+
+                });
+
+                return {
+
+                    posts: parsed.posts,
+
+                    followedIds: Array.isArray(parsed.followedIds) ? parsed.followedIds : []
+
+                };
+
+            }
+
+        }
+
+    } catch (e) {}
+
+    const initial = {
+
+        posts: JSON.parse(JSON.stringify(DEMO_DEFAULT_SHARED_POSTS)),
+
+        followedIds: []
+
+    };
+
+    try {
+
+        localStorage.setItem(DEMO_SHARED_SOCIAL_KEY, JSON.stringify(initial));
+
+    } catch (e) {}
+
+    return initial;
+
+}
+
+
+
+function saveDemoSharedSocialState(state) {
+
+    try {
+
+        localStorage.setItem(DEMO_SHARED_SOCIAL_KEY, JSON.stringify(state));
+
+        window.dispatchEvent(new CustomEvent('cudi:socialUpdated', { detail: state }));
+
+    } catch (e) {}
+
+}
+
+
+
+const SOCIAL_PETS = [
+
+    {
+
+        id: 'max',
+
+        name: 'Max',
+
+        breed: 'Border Collie',
+
+        type: 'perro',
+
+        dist: '0.3 km',
+
+        photo: 'https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=300&h=300&q=80',
+
+        compat: 98,
+
+        energy: 'Extrema',
+
+        bio: 'Competidor de Agility y fan de las caminatas con Urban Pet Walkers.',
+
+        badges: ['Medalla Agility', 'Paseo Activo'],
+
+        collar: 'GPS Activo &bull; 76 bpm'
+
+    },
+
+    {
+
+        id: 'cooper',
+
+        name: 'Cooper',
+
+        breed: 'Beagle Tricolor',
+
+        type: 'perro',
+
+        dist: '0.35 km',
+
+        photo: 'https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=300&h=300&q=80',
+
+        compat: 95,
+
+        energy: 'Muy Alta',
+
+        bio: 'Explorador profesional de senderos y olfateador de ardillas.',
+
+        badges: ['Rastreador', 'Social Star'],
+
+        collar: 'GPS Activo &bull; 84 bpm'
+
+    },
+
+    {
+
+        id: 'luna',
+
+        name: 'Luna',
+
+        breed: 'Husky Siberiano',
+
+        type: 'perro',
+
+        dist: '0.5 km',
+
+        photo: 'https://images.unsplash.com/photo-1605568427561-40dd23c2acea?auto=format&fit=crop&w=300&h=300&q=80',
+
+        compat: 95,
+
+        energy: 'Muy Alta',
+
+        bio: 'Espíritu libre y pasión por las rutas de senderismo pet-friendly.',
+
+        badges: ['Ruta Aventuras', 'Match IA 95%'],
+
+        collar: 'GPS Activo &bull; 74 bpm'
+
+    },
+
+    {
+
+        id: 'cleo',
+
+        name: 'Cleo',
+
+        breed: 'Podenco & Mestizo Ágil',
+
+        type: 'perro',
+
+        dist: '0.65 km',
+
+        photo: 'https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&w=300&h=300&q=80',
+
+        compat: 89,
+
+        energy: 'Equilibrada',
+
+        bio: 'Adoptada y mimada al máximo. Fanática del queso suave y las carreras cortas.',
+
+        badges: ['Rescate Amoroso', 'Compañero Fiel'],
+
+        collar: 'GPS Activo &bull; 88 bpm'
+
+    },
+
+    {
+
+        id: 'bella',
+
+        name: 'Bella',
+
+        breed: 'Pug Negro Elegante',
+
+        type: 'perro',
+
+        dist: '0.8 km',
+
+        photo: 'https://images.unsplash.com/photo-1517423440428-a5a00ad493e8?auto=format&fit=crop&w=300&h=300&q=80',
+
+        compat: 86,
+
+        energy: 'Tranquila / Zen',
+
+        bio: 'Reina de las siestas, catadora certificada de EcoPet Organic y cliente VIP de ZenPet Spa.',
+
+        badges: ['Cliente VIP Spa', 'Gourmet BARF'],
+
+        collar: 'GPS Activo &bull; 90 bpm'
+
+    },
+
+    {
+
+        id: 'rex',
+
+        name: 'Rex',
+
+        breed: 'Golden Retriever Cachorro',
+
+        type: 'perro',
+
+        dist: '0.95 km',
+
+        photo: 'https://images.unsplash.com/photo-1583511655826-05700d52f4d9?auto=format&fit=crop&w=300&h=300&q=80',
+
+        compat: 94,
+
+        energy: 'Juguetón',
+
+        bio: 'Todo el mundo es mi mejor amigo. Aprendiendo comandos positivos en el parque.',
+
+        badges: ['Cachorro Escuela', 'Amigable 100%'],
+
+        collar: 'GPS Activo &bull; 96 bpm'
+
+    },
+
+    {
+
+        id: 'simba',
+
+        name: 'Simba',
+
+        breed: 'Pomerania Toy',
+
+        type: 'perro',
+
+        dist: '1.15 km',
+
+        photo: 'https://images.unsplash.com/photo-1601979031925-424e53b6caaa?auto=format&fit=crop&w=300&h=300&q=80',
+
+        compat: 82,
+
+        energy: 'Vivaz',
+
+        bio: 'Mini melena de león y porte real. Adoro pasear por zonas pet-friendly.',
+
+        badges: ['Mochilero Técnico', 'Top Model'],
+
+        collar: 'GPS Activo &bull; 98 bpm'
+
+    },
+
+    {
+
+        id: 'thor',
+
+        name: 'Thor',
+
+        breed: 'Golden Retriever',
+
+        type: 'perro',
+
+        dist: '1.3 km',
+
+        photo: 'https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=300&h=300&q=80',
+
+        compat: 94,
+
+        energy: 'Alta',
+
+        bio: 'Extremadamente dulce y juguetón con cualquier perro o gato del parque.',
+
+        badges: ['Amante del Agua', 'Terapia Canina'],
+
+        collar: 'GPS Activo &bull; 72 bpm'
+
+    }
+
+];
+
+
+
+// ==========================
+
+// REGISTRO / ONBOARDING
+
+// ==========================
+
+function selectPetType(type) {
+
+    activePetType = type;
+
+    document.getElementById('selected-pet-type').value = type;
+
+
+
+    document.getElementById('btn-species-perro').classList.toggle('active', type === 'perro');
+
+    document.getElementById('btn-species-gato').classList.toggle('active', type === 'gato');
+
+
+
+    // Cambiar foto de fondo
+
+    const photo = document.getElementById('onboarding-photo');
+
+    if (photo) photo.style.backgroundImage = `url('${ONBOARDING_PHOTOS[type]}')`;
+
+
+
+    // Cargar razas
+
+    const breedSel = document.getElementById('pet-breed');
+
+    if (breedSel) {
+
+        breedSel.innerHTML = '<option value="">Selecciona raza</option>';
+
+        (BREEDS[type] || []).forEach(b => {
+
+            const opt = document.createElement('option');
+
+            opt.value = b; opt.textContent = b;
+
+            breedSel.appendChild(opt);
+
+        });
+
+    }
+
+}
+
+
+
+function initPetType() {
+
+    selectPetType('perro');
+
+}
+
+
+
+function formatPetAgeStage(age) {
+
+    if (!age && age !== 0) return 'Adulto Joven';
+
+    const stageMap = {
+
+        primera: 'Cachorro (< 1 año)',
+
+        explorer: 'Adulto Joven',
+
+        plenitud: 'Adulto',
+
+        golden: 'Senior'
+
+    };
+
+    const key = String(age).toLowerCase().trim();
+
+    if (stageMap[key]) return stageMap[key];
+
+    const num = parseFloat(age);
+
+    if (!isNaN(num)) {
+
+        if (num <= 1) return `${num} año (Cachorro)`;
+
+        if (num <= 3) return `${num} años (Adulto Joven)`;
+
+        if (num <= 7) return `${num} años (Adulto)`;
+
+        return `${num} años (Senior)`;
+
+    }
+
+    return String(age);
+
+}
+
+
+
+function syncSimulatorDOMWithProfile(p) {
+
+    if (!p || !p.name) return;
+
+
+
+    const safePhoto = resolveDemoPetPhoto(p, p.type, p.name);
+
+    p.photo = safePhoto;
+
+    const localFallback = p.type === 'gato' ? 'gato-explorando-seguro-collar-gps.png' : 'avatar-mascota-perfil-gemelo-digital.png';
+
+
+
+    // 1. Poblar campos del formulario de onboarding por si el usuario desea editarlo
+
+    const nameInput = document.getElementById('pet-name');
+
+    if (nameInput) nameInput.value = p.name;
+
+    const weightInput = document.getElementById('pet-weight');
+
+    if (weightInput) weightInput.value = p.weight || '8';
+
+    if (typeof selectPetType === 'function' && p.type) {
+
+        selectPetType(p.type === 'gato' ? 'gato' : 'perro');
+
+    }
+
+    const breedSelect = document.getElementById('pet-breed');
+
+    if (breedSelect && p.breed) {
+
+        let found = false;
+
+        for (let i = 0; i < breedSelect.options.length; i++) {
+
+            if (breedSelect.options[i].value.toLowerCase() === p.breed.toLowerCase()) {
+
+                breedSelect.selectedIndex = i;
+
+                found = true;
+
+                break;
+
+            }
+
+        }
+
+        if (!found) {
+
+            const opt = document.createElement('option');
+
+            opt.value = p.breed;
+
+            opt.textContent = p.breed;
+
+            breedSelect.appendChild(opt);
+
+            breedSelect.value = p.breed;
+
+        }
+
+    }
+
+    const onboardingPhoto = document.getElementById('onboarding-photo');
+
+    if (onboardingPhoto && safePhoto) {
+
+        onboardingPhoto.style.backgroundImage = `url('${safePhoto}'), url('${localFallback}')`;
+
+    }
+
+
+
+    // 2. Mostrar pantalla principal y barra de estado
+
+    const onboarding = document.getElementById('screen-onboarding');
+
+    if (onboarding) {
+
+        onboarding.classList.remove('active');
+
+        onboarding.style.display = 'none';
+
+    }
+
+    const main = document.getElementById('screen-main');
+
+    if (main) {
+
+        main.classList.add('active');
+
+        main.style.display = 'flex';
+
+    }
+
+    const statusBar = document.getElementById('app-status-bar');
+
+    if (statusBar) statusBar.style.display = 'flex';
+
+
+
+    // 3. Actualizar nombre, raza, etapa y foto en el Dashboard y Status Bar
+
+    const statusName = document.getElementById('status-pet-name');
+
+    if (statusName) statusName.textContent = p.name;
+
+    const displayName = document.getElementById('display-pet-name');
+
+    if (displayName) displayName.textContent = p.name;
+
+
+
+    const breedTag = document.getElementById('display-pet-breed-tag');
+
+    if (breedTag) {
+
+        const cleanBreed = p.breed || (p.type === 'gato' ? 'Europeo Común' : 'Mestizo');
+
+        breedTag.innerHTML = `${cleanBreed} &bull; ${formatPetAgeStage(p.age)}`;
+
+    }
+
+
+
+    const dashAvatar = document.getElementById('dash-avatar-img');
+
+    if (dashAvatar) {
+
+        dashAvatar.onerror = function() { this.onerror = null; this.src = localFallback; };
+
+        dashAvatar.src = safePhoto;
+
+        dashAvatar.alt = p.name;
+
+        dashAvatar.style.width = '48px';
+
+        dashAvatar.style.height = '48px';
+
+        dashAvatar.style.borderRadius = '50%';
+
+        dashAvatar.style.objectFit = 'cover';
+
+    }
+
+
+
+    const heartVal = document.getElementById('val-heart');
+
+    if (heartVal) {
+
+        heartVal.textContent = p.bpm || (p.type === 'gato' ? '138' : '74');
+
+    }
+
+
+
+    // 4. Sincronizar Pin GPS
+
+    const gpsPinImg = document.getElementById('gps-pet-avatar-pin');
+
+    if (gpsPinImg) {
+
+        gpsPinImg.onerror = function() { this.onerror = null; this.src = localFallback; };
+
+        gpsPinImg.src = safePhoto;
+
+    }
+
+    const gpsPinName = document.getElementById('gps-pin-name');
+
+    if (gpsPinName) gpsPinName.textContent = p.name;
+
+    const gpsMarkerLabel = document.getElementById('gps-marker-label');
+
+    if (gpsMarkerLabel) {
+
+        gpsMarkerLabel.textContent = p.name;
+
+    }
+
+
+
+    // 5. Sincronizar Cabecera Web y Asistente IA
+
+    if (typeof cudi_check_session === 'function') {
+
+        cudi_check_session();
+
+    }
+
+    if (typeof CudiAI !== 'undefined' && typeof CudiAI.loadProfile === 'function') {
+
+        CudiAI.loadProfile();
+
+        const aiAvatar = document.getElementById('ai-avatar');
+
+        if (aiAvatar) {
+
+            aiAvatar.onerror = function() { this.onerror = null; this.src = localFallback; };
+
+            aiAvatar.src = safePhoto;
+
+        }
+
+        const aiPetTag = document.getElementById('ai-header-pet-name');
+
+        if (aiPetTag) aiPetTag.innerHTML = `<i class="fa-solid fa-paw"></i> ${p.name}`;
+
+    }
+
+
+
+    const inAppIaAvatar = document.getElementById('in-app-ia-pet-avatar');
+
+    if (inAppIaAvatar) {
+
+        inAppIaAvatar.onerror = function() { this.onerror = null; this.src = localFallback; };
+
+        inAppIaAvatar.src = safePhoto;
+
+    }
+
+    const inAppIaName = document.getElementById('in-app-ia-pet-name');
+
+    if (inAppIaName) inAppIaName.textContent = p.name;
+
+
+
+    setTimeout(() => {
+
+        initCharts();
+
+        renderSocialPets();
+
+        renderProfileCard();
+
+        simulateNotifications();
+
+        populateStoreCats();
+
+    }, 120);
+
+}
+
+
+
+function loadSavedProfile() {
+
+    let saved = null;
+
+    const isSessionActive = typeof cudi_is_session_active === 'function'
+
+        ? cudi_is_session_active()
+
+        : (localStorage.getItem('cudi_session_active') !== 'false' && !!localStorage.getItem('cudi_pet_profile'));
+
+
+
+    try {
+
+        const str = localStorage.getItem('cudi_pet_profile');
+
+        if (str) saved = JSON.parse(str);
+
+    } catch (e) {
+
+        console.error("Error reading cudi_pet_profile", e);
+
+    }
+
+
+
+    if (saved && saved.name && isSessionActive) {
+
+        const inferredType = saved.type || (saved.breed && saved.breed.toLowerCase().includes('gato') ? 'gato' : 'perro');
+
+        const safePhoto = resolveDemoPetPhoto(saved, inferredType, saved.name);
+
+        petProfile = {
+
+            name: saved.name,
+
+            type: inferredType,
+
+            weight: String(saved.weight || (inferredType === 'gato' ? '4.2' : '8')),
+
+            age: saved.age || 'explorer',
+
+            energy: saved.energy || 'Moderado',
+
+            food: saved.food || 'Pienso Seco',
+
+            breed: saved.breed || (inferredType === 'gato' ? 'Europeo Común' : 'Mestizo'),
+
+            photo: safePhoto,
+
+            bpm: saved.bpm || (inferredType === 'gato' ? 138 : 74)
+
+        };
+
+
+
+        if (saved.photo !== safePhoto) {
+
+            saved.photo = safePhoto;
+
+            try { localStorage.setItem('cudi_pet_profile', JSON.stringify(saved)); } catch (e) {}
+
+        }
+
+
+
+        syncSimulatorDOMWithProfile(petProfile);
+
+        return true;
+
+    }
+
+
+
+    // Si NO hay sesión iniciada, activar autollenado aleatorio en onboarding
+
+    setupDemoOnboardingAutoFill();
+
+    return false;
+
+}
+
+
+
+function showOnboardingScreen(initialTab = 'login') {
+
+    const onboarding = document.getElementById('screen-onboarding');
+
+    const main = document.getElementById('screen-main');
+
+    const statusBar = document.getElementById('app-status-bar');
+
+
+
+    if (onboarding) {
+
+        onboarding.classList.add('active');
+
+        onboarding.style.display = 'flex';
+
+    }
+
+    if (main) {
+
+        main.classList.remove('active');
+
+        main.style.display = 'none';
+
+    }
+
+    if (statusBar) {
+
+        statusBar.style.display = 'none';
+
+    }
+
+    setupDemoOnboardingAutoFill();
+
+    if (typeof switchDemoOnboardingTab === 'function') {
+
+        switchDemoOnboardingTab(initialTab);
+
+    }
+
+}
+
+
+
+function getDemoPreloadedAccount() {
+
+    if (typeof cudi_get_preloaded_login_account === 'function') {
+
+        return cudi_get_preloaded_login_account();
+
+    }
+
+    if (typeof CUDI_RANDOM_PETS !== 'undefined' && CUDI_RANDOM_PETS.length > 0) {
+
+        return CUDI_RANDOM_PETS[0];
+
+    }
+
+    return {
+
+        name: 'Luna',
+
+        type: 'perro',
+
+        breed: 'Husky Siberiano',
+
+        age: 3,
+
+        weight: 22.0,
+
+        energy: 'Alto',
+
+        food: 'Pienso Seco Premium',
+
+        photo: 'https://images.unsplash.com/photo-1605568427561-40dd23c2acea?auto=format&fit=crop&w=600&h=600&q=80',
+
+        bpm: 78,
+
+        temp: 38.4,
+
+        battery: 94,
+
+        collarId: 'CUDI-GPS-9482',
+
+        tutorEmail: 'luna.husky@cudi.pet'
+
+    };
+
+}
+
+
+
+function setupDemoOnboardingAutoFill() {
+
+    const onboardingForm = document.querySelector('.onboarding-form');
+
+    if (!onboardingForm) return;
+
+
+
+    // Asegurar step="0.1" y min="0.5" en #pet-weight para evitar errores de rango decimal
+
+    const weightInput = document.getElementById('pet-weight');
+
+    if (weightInput) {
+
+        weightInput.setAttribute('step', '0.1');
+
+        weightInput.setAttribute('min', '0.5');
+
+        weightInput.setAttribute('max', '100');
+
+    }
+
+
+
+    if (document.getElementById('demo-auth-tabs-bar')) {
+
+        updateDemoLoginCardUI(getDemoPreloadedAccount());
+
+        return;
+
+    }
+
+
+
+    const loginAcc = getDemoPreloadedAccount();
+
+    const candidate = (typeof cudi_get_random_pet_candidate === 'function') ? cudi_get_random_pet_candidate() : loginAcc;
+
+    const petsPool = (typeof CUDI_RANDOM_PETS !== 'undefined' && CUDI_RANDOM_PETS.length) ? CUDI_RANDOM_PETS : [loginAcc];
+
+
+
+    // Envolver los elementos originales del formulario de registro dentro de #demo-view-register
+
+    const existingChildren = Array.from(onboardingForm.children);
+
+    const registerContainer = document.createElement('div');
+
+    registerContainer.id = 'demo-view-register';
+
+    registerContainer.style.display = 'none';
+
+
+
+    // Banner compacto de autollenado IA para la pestaña de Registro
+
+    const banner = document.createElement('div');
+
+    banner.id = 'demo-autofill-banner';
+
+    banner.className = 'demo-autofill-banner';
+
+    banner.style.cssText = 'margin-bottom:10px; background:rgba(240,249,255,0.92); backdrop-filter:blur(16px); border:1px solid rgba(186,230,253,0.95); border-radius:12px; padding:8px 10px; display:flex; align-items:center; justify-content:space-between; gap:6px;';
+
+    banner.innerHTML = `
+
+        <div style="min-width:0;">
+
+            <span style="font-size:0.62rem; font-weight:800; color:#0284c7; text-transform:uppercase; display:block;">Autollenado IA</span>
+
+            <span style="font-size:0.7rem; color:#334155; font-weight:700; display:block; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;" id="demo-autofill-info-label">${candidate.name} (${candidate.breed})</span>
+
+        </div>
+
+        <div style="display:flex; align-items:center; gap:4px; flex-shrink:0;">
+
+            <button type="button" onclick="appDemoAutoFill('perro')" style="background:#ffffff; color:#0369a1; border:1px solid #bae6fd; border-radius:8px; padding:5px 7px; font-size:0.66rem; font-weight:800; cursor:pointer;" title="Caso Perro">🐶</button>
+
+            <button type="button" onclick="appDemoAutoFill('gato')" style="background:#ffffff; color:#be185d; border:1px solid #fbcfe8; border-radius:8px; padding:5px 7px; font-size:0.66rem; font-weight:800; cursor:pointer;" title="Caso Gato">🐱</button>
+
+            <button type="button" onclick="appDemoAutoFill()" style="background:linear-gradient(135deg, #0284c7, #0ea5e9); color:white; border:none; padding:5px 9px; border-radius:8px; font-weight:800; font-size:0.68rem; cursor:pointer; display:flex; align-items:center; gap:4px;">
+
+                <i class="fa-solid fa-bolt"></i> Llenar
+
+            </button>
+
+        </div>
+
+    `;
+
+
+
+    registerContainer.appendChild(banner);
+
+    existingChildren.forEach(ch => registerContainer.appendChild(ch));
+
+
+
+    // Crear Barra de Pestañas Apple Glass (Iniciar Sesión vs Registrar Mascota)
+
+    const tabsBar = document.createElement('div');
+
+    tabsBar.id = 'demo-auth-tabs-bar';
+
+    tabsBar.style.cssText = 'display:grid; grid-template-columns:1fr 1fr; background:rgba(226,232,240,0.75); backdrop-filter:blur(14px); padding:3.5px; border-radius:12px; gap:4px; margin-bottom:12px; border:1px solid rgba(255,255,255,0.9);';
+
+    tabsBar.innerHTML = `
+
+        <button type="button" id="demo-tab-btn-login" onclick="switchDemoOnboardingTab('login')" style="border:none; padding:7px 8px; border-radius:9px; font-size:0.73rem; font-weight:800; cursor:pointer; transition:all 0.2s; background:#ffffff; color:#0284c7; box-shadow:0 2px 8px rgba(2,132,199,0.14);">
+
+            Iniciar Sesión
+
+        </button>
+
+        <button type="button" id="demo-tab-btn-register" onclick="switchDemoOnboardingTab('register')" style="border:none; padding:7px 8px; border-radius:9px; font-size:0.73rem; font-weight:800; cursor:pointer; transition:all 0.2s; background:transparent; color:#475569;">
+
+            Registrar Mascota
+
+        </button>
+
+    `;
+
+
+
+    // Crear Vista de Inicio de Sesión Limpia con Cuenta Pre-cargada Automáticamente
+
+    const loginContainer = document.createElement('div');
+
+    loginContainer.id = 'demo-view-login';
+
+    loginContainer.style.display = 'block';
+
+
+
+    const quickChipsHtml = petsPool.slice(0, 4).map((pet, idx) => {
+
+        const pPhoto = resolveDemoPetPhoto(pet, pet.type, pet.name);
+
+        const active = pet.name.toLowerCase() === String(loginAcc.name).toLowerCase();
+
+        return `
+
+            <button type="button" class="demo-login-chip" data-demo-pet-idx="${idx}" onclick="appDemoSelectLoginAccount(${idx})" style="display:inline-flex; align-items:center; gap:5px; padding:3px 8px 3px 3px; border-radius:999px; border:1.5px solid ${active ? '#0284c7' : 'rgba(203,213,225,0.85)'}; background:${active ? 'rgba(224,242,254,0.95)' : 'rgba(255,255,255,0.9)'}; color:${active ? '#0369a1' : '#334155'}; font-size:0.68rem; font-weight:700; cursor:pointer;">
+
+                <img src="${pPhoto}" alt="${pet.name}" onerror="if(window.cudi_img_fallback)cudi_img_fallback(this,'${pet.type}','${pet.name}');" style="width:18px !important; height:18px !important; min-width:18px !important; min-height:18px !important; border-radius:50% !important; object-fit:cover !important;">
+
+                <span>${pet.name}</span>
+
+            </button>
+
+        `;
+
+    }).join('');
+
+
+
+    const safeLoginPhoto = resolveDemoPetPhoto(loginAcc, loginAcc.type, loginAcc.name);
+
+    const loginEmail = loginAcc.tutorEmail || `${String(loginAcc.name).toLowerCase()}@cudi.pet`;
+
+
+
+    loginContainer.innerHTML = `
+
+        <div style="background:rgba(255,255,255,0.94); border:1px solid rgba(203,213,225,0.85); border-radius:16px; padding:14px 12px 12px; box-shadow:0 8px 20px -6px rgba(15,23,42,0.08); text-align:center; margin-bottom:10px;">
+
+            <img id="demo-login-photo" src="${safeLoginPhoto}" alt="${loginAcc.name}" onerror="if(window.cudi_img_fallback)cudi_img_fallback(this,'${loginAcc.type}','${loginAcc.name}');" style="width:58px !important; height:58px !important; min-width:58px !important; min-height:58px !important; aspect-ratio:1/1 !important; border-radius:50% !important; object-fit:cover !important; border:2px solid #0284c7; margin:0 auto 8px; display:block; box-shadow:0 4px 12px rgba(2,132,199,0.18);">
+
+            <div style="display:flex; align-items:center; justify-content:center; gap:6px; margin-bottom:2px;">
+
+                <strong id="demo-login-name" style="font-size:1.02rem; font-weight:800; color:#0f172a;">${loginAcc.name}</strong>
+
+                <span id="demo-login-species-pill" style="font-size:0.62rem; font-weight:800; padding:1px 7px; border-radius:999px; background:${loginAcc.type === 'gato' ? '#fdf2f8' : '#eff6ff'}; color:${loginAcc.type === 'gato' ? '#be185d' : '#0284c7'};">${loginAcc.type === 'gato' ? 'Gato' : 'Perro'}</span>
+
+            </div>
+
+            <div id="demo-login-meta" style="font-size:0.74rem; color:#64748b; font-weight:600; margin-bottom:10px;">${loginAcc.breed} &bull; ${loginAcc.age}a</div>
+
+
+
+            <div style="display:flex; align-items:center; justify-content:space-between; background:#f8fafc; border:1px solid #e2e8f0; border-radius:10px; padding:6px 10px; margin-bottom:11px; font-size:0.69rem;">
+
+                <span id="demo-login-email" style="color:#334155; font-weight:700; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">${loginEmail}</span>
+
+                <span style="color:#16a34a; font-weight:800;"><i class="fa-solid fa-circle-check"></i> Activa</span>
+
+            </div>
+
+
+
+            <button type="button" class="app-btn primary" onclick="appDemoLoginWithPreloaded()" style="margin-top:0; padding:11px; font-size:0.82rem; display:flex; align-items:center; justify-content:center; gap:8px;">
+
+                <i class="fa-solid fa-right-to-bracket"></i>
+
+                <span id="demo-login-submit-text">Continuar con ${loginAcc.name}</span>
+
+            </button>
+
+        </div>
+
+
+
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:4px; flex-wrap:wrap;">
+
+            <div style="display:flex; align-items:center; gap:4px; flex-wrap:wrap;">
+
+                ${quickChipsHtml}
+
+            </div>
+
+            <button type="button" onclick="appDemoCycleLoginAccount()" style="background:#ffffff; color:#0284c7; border:1px solid #bae6fd; border-radius:999px; padding:4px 9px; font-size:0.66rem; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:4px;">
+
+                <i class="fa-solid fa-arrows-rotate"></i> Otra
+
+            </button>
+
+        </div>
+
+    `;
+
+
+
+    onboardingForm.appendChild(tabsBar);
+
+    onboardingForm.appendChild(loginContainer);
+
+    onboardingForm.appendChild(registerContainer);
+
+
+
+    updateDemoLoginCardUI(loginAcc);
+
+}
+
+
+
+function switchDemoOnboardingTab(mode) {
+
+    const loginView = document.getElementById('demo-view-login');
+
+    const regView = document.getElementById('demo-view-register');
+
+    const loginBtn = document.getElementById('demo-tab-btn-login');
+
+    const regBtn = document.getElementById('demo-tab-btn-register');
+
+    const isReg = mode === 'register';
+
+
+
+    if (loginView && regView) {
+
+        loginView.style.display = isReg ? 'none' : 'block';
+
+        regView.style.display = isReg ? 'block' : 'none';
+
+    }
+
+    if (loginBtn && regBtn) {
+
+        if (isReg) {
+
+            regBtn.style.background = '#ffffff';
+
+            regBtn.style.color = '#0284c7';
+
+            regBtn.style.boxShadow = '0 2px 8px rgba(2,132,199,0.14)';
+
+            loginBtn.style.background = 'transparent';
+
+            loginBtn.style.color = '#475569';
+
+            loginBtn.style.boxShadow = 'none';
+
+        } else {
+
+            loginBtn.style.background = '#ffffff';
+
+            loginBtn.style.color = '#0284c7';
+
+            loginBtn.style.boxShadow = '0 2px 8px rgba(2,132,199,0.14)';
+
+            regBtn.style.background = 'transparent';
+
+            regBtn.style.color = '#475569';
+
+            regBtn.style.boxShadow = 'none';
+
+            updateDemoLoginCardUI(getDemoPreloadedAccount());
+
+        }
+
+    }
+
+}
+
+
+
+function updateDemoLoginCardUI(acc) {
+
+    if (!acc) return;
+
+    const safePhoto = resolveDemoPetPhoto(acc, acc.type, acc.name);
+
+    acc.photo = safePhoto;
+
+    window.currentLoginAccount = acc;
+
+
+
+    const photoEl = document.getElementById('demo-login-photo');
+
+    if (photoEl) {
+
+        photoEl.dataset.cudiFallbackDone = 'false';
+
+        photoEl.src = safePhoto;
+
+        photoEl.alt = acc.name;
+
+    }
+
+    const nameEl = document.getElementById('demo-login-name');
+
+    if (nameEl) nameEl.textContent = acc.name;
+
+
+
+    const pillEl = document.getElementById('demo-login-species-pill');
+
+    if (pillEl) {
+
+        const isCat = acc.type === 'gato';
+
+        pillEl.textContent = isCat ? 'Gato' : 'Perro';
+
+        pillEl.style.background = isCat ? '#fdf2f8' : '#eff6ff';
+
+        pillEl.style.color = isCat ? '#be185d' : '#0284c7';
+
+    }
+
+
+
+    const metaEl = document.getElementById('demo-login-meta');
+
+    if (metaEl) metaEl.innerHTML = `${acc.breed} &bull; ${acc.age}a`;
+
+
+
+    const emailEl = document.getElementById('demo-login-email');
+
+    if (emailEl) {
+
+        emailEl.textContent = acc.tutorEmail || `${String(acc.name).toLowerCase()}@cudi.pet`;
+
+    }
+
+
+
+    const submitTextEl = document.getElementById('demo-login-submit-text');
+
+    if (submitTextEl) submitTextEl.textContent = `Continuar con ${acc.name}`;
+
+
+
+    const heroPhoto = document.getElementById('onboarding-photo');
+
+    if (heroPhoto && safePhoto) {
+
+        const localFallback = acc.type === 'gato' ? 'gato-explorando-seguro-collar-gps.png' : 'avatar-mascota-perfil-gemelo-digital.png';
+
+        heroPhoto.style.backgroundImage = `url('${safePhoto}'), url('${localFallback}')`;
+
+    }
+
+
+
+    const petsPool = (typeof CUDI_RANDOM_PETS !== 'undefined' && CUDI_RANDOM_PETS.length) ? CUDI_RANDOM_PETS : [];
+
+    document.querySelectorAll('.demo-login-chip').forEach(chip => {
+
+        const idx = Number(chip.getAttribute('data-demo-pet-idx'));
+
+        const p = petsPool[idx];
+
+        const active = p && p.name.toLowerCase() === String(acc.name).toLowerCase();
+
+        chip.style.borderColor = active ? '#0284c7' : 'rgba(203,213,225,0.85)';
+
+        chip.style.background = active ? 'rgba(224,242,254,0.95)' : 'rgba(255,255,255,0.9)';
+
+        chip.style.color = active ? '#0369a1' : '#334155';
+
+    });
+
+}
+
+
+
+function appDemoSelectLoginAccount(idx) {
+
+    if (typeof CUDI_RANDOM_PETS === 'undefined' || !CUDI_RANDOM_PETS[idx]) return;
+
+    updateDemoLoginCardUI(Object.assign({}, CUDI_RANDOM_PETS[idx]));
+
+}
+
+
+
+function appDemoCycleLoginAccount() {
+
+    if (typeof CUDI_RANDOM_PETS === 'undefined' || !CUDI_RANDOM_PETS.length) return;
+
+    const curr = getDemoPreloadedAccount();
+
+    const currIdx = CUDI_RANDOM_PETS.findIndex(p => p.name.toLowerCase() === String(curr.name).toLowerCase());
+
+    const nextIdx = (currIdx + 1) % CUDI_RANDOM_PETS.length;
+
+    updateDemoLoginCardUI(Object.assign({}, CUDI_RANDOM_PETS[nextIdx]));
+
+}
+
+
+
+function appDemoLoginWithPreloaded() {
+
+    const acc = getDemoPreloadedAccount();
+
+    if (!acc || !acc.name) return;
+
+    const safePhoto = resolveDemoPetPhoto(acc, acc.type, acc.name);
+
+
+
+    petProfile = {
+
+        name: acc.name,
+
+        type: acc.type || 'perro',
+
+        weight: String(acc.weight || (acc.type === 'gato' ? '4.2' : '12')),
+
+        age: acc.age || 2,
+
+        ageStageKey: Number(acc.age) > 4 ? 'golden' : (Number(acc.age) > 2 ? 'plenitud' : 'explorer'),
+
+        energy: acc.energy || 'Moderado',
+
+        food: acc.food || 'Pienso Seco Premium',
+
+        breed: acc.breed || (acc.type === 'gato' ? 'Europeo Común' : 'Mestizo'),
+
+        photo: safePhoto,
+
+        avatar: safePhoto,
+
+        bpm: acc.bpm || (acc.type === 'gato' ? 142 : 78),
+
+        temp: acc.temp || 38.5,
+
+        battery: acc.battery || 95,
+
+        collarId: acc.collarId || (acc.type === 'gato' ? 'CUDI-CAT-7781' : 'CUDI-GPS-9482'),
+
+        tutorEmail: acc.tutorEmail || `${String(acc.name).toLowerCase()}@cudi.pet`,
+
+        sessionActive: true,
+
+        savedAt: new Date().toISOString()
+
+    };
+
+
+
+    localStorage.setItem('cudi_pet_profile', JSON.stringify(petProfile));
+
+    localStorage.setItem('cudi_last_registered_pet', JSON.stringify(petProfile));
+
+    localStorage.setItem('cudi_session_active', 'true');
+
+    window.dispatchEvent(new CustomEvent('cudi:sessionChanged', { detail: petProfile }));
+
+
+
+    syncSimulatorDOMWithProfile(petProfile);
+
+    if (typeof showCudiToast === 'function') {
+
+        showCudiToast(`🎉 ¡Sesión iniciada con ${petProfile.name} (${petProfile.breed})!`, 'success');
+
+    }
+
+}
+
+
+
+function appDemoAutoFill(preferredSpecies) {
+
+    let pet;
+
+    if (typeof CUDI_RANDOM_PETS !== 'undefined' && CUDI_RANDOM_PETS.length > 0) {
+
+        const pool = preferredSpecies
+
+            ? CUDI_RANDOM_PETS.filter(p => p.type === preferredSpecies)
+
+            : CUDI_RANDOM_PETS;
+
+        const currentName = document.getElementById('pet-name')?.value || '';
+
+        const currIdx = pool.findIndex(p => p.name.toLowerCase() === currentName.toLowerCase());
+
+        const nextIdx = currIdx !== -1 ? (currIdx + 1) % pool.length : Math.floor(Math.random() * pool.length);
+
+        pet = Object.assign({}, pool[nextIdx]);
+
+        window.currentRandomPet = pet;
+
+    } else {
+
+        pet = {
+
+            name: 'Luna',
+
+            type: 'perro',
+
+            breed: 'Husky Siberiano',
+
+            weight: '22',
+
+            age: 3,
+
+            energy: 'Alto',
+
+            food: 'Pienso Seco Premium',
+
+            photo: 'https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=600&h=600&q=80'
+
+        };
+
+    }
+
+
+
+    selectPetType(pet.type);
+
+
+
+    const nameInput = document.getElementById('pet-name');
+
+    if (nameInput) { nameInput.value = pet.name; nameInput.setCustomValidity(''); }
+
+    const weightInput = document.getElementById('pet-weight');
+
+    if (weightInput) {
+
+        weightInput.setAttribute('step', '0.1');
+
+        weightInput.setAttribute('min', '0.5');
+
+        weightInput.setAttribute('max', '100');
+
+        weightInput.value = pet.weight;
+
+        weightInput.setCustomValidity('');
+
+    }
+
+
+
+    const breedSelect = document.getElementById('pet-breed');
+
+    if (breedSelect) {
+
+        let optExists = Array.from(breedSelect.options).some(o => o.value === pet.breed);
+
+        if (!optExists) {
+
+            const opt = document.createElement('option');
+
+            opt.value = pet.breed;
+
+            opt.textContent = pet.breed;
+
+            breedSelect.appendChild(opt);
+
+        }
+
+        breedSelect.value = pet.breed;
+
+    }
+
+
+
+    const ageSelect = document.getElementById('pet-age');
+
+    if (ageSelect) {
+
+        const numAge = Number(pet.age) || 2;
+
+        ageSelect.value = numAge > 4 ? 'golden' : (numAge > 2.5 ? 'plenitud' : (numAge <= 1 ? 'primera' : 'explorer'));
+
+    }
+
+
+
+    const energySelect = document.getElementById('pet-energy');
+
+    if (energySelect) {
+
+        const en = (pet.energy || '').toLowerCase();
+
+        energySelect.value = en.includes('tranquilo') ? 'tranquilo' : (en.includes('extremo') || en.includes('atleta') || en.includes('alto') ? 'activo' : 'moderado');
+
+    }
+
+
+
+    const foodSelect = document.getElementById('pet-food');
+
+    if (foodSelect) {
+
+        const fd = (pet.food || '').toLowerCase();
+
+        foodSelect.value = fd.includes('barf') ? 'barf' : (fd.includes('mixta') || fd.includes('húmeda') ? 'mixta' : 'pienso');
+
+    }
+
+
+
+    const safeAutoPhoto = resolveDemoPetPhoto(pet, pet.type, pet.name);
+
+    window.appDemoSelectedPhoto = safeAutoPhoto;
+
+    const photoEl = document.getElementById('onboarding-photo');
+
+    if (photoEl && safeAutoPhoto) {
+
+        const localFallback = pet.type === 'gato' ? 'gato-explorando-seguro-collar-gps.png' : 'avatar-mascota-perfil-gemelo-digital.png';
+
+        photoEl.style.backgroundImage = `url('${safeAutoPhoto}'), url('${localFallback}')`;
+
+    }
+
+
+
+    [nameInput, weightInput, breedSelect].forEach(el => {
+
+        if (el) {
+
+            el.style.borderColor = '#0284c7';
+
+            el.style.backgroundColor = '#eff6ff';
+
+            setTimeout(() => {
+
+                el.style.borderColor = '';
+
+                el.style.backgroundColor = '';
+
+            }, 600);
+
+        }
+
+    });
+
+
+
+    const infoLabel = document.getElementById('demo-autofill-info-label');
+
+    if (infoLabel) {
+
+        infoLabel.innerHTML = `✨ Autollenado: <strong>${pet.name}</strong> (${pet.breed} • ${pet.weight} kg)`;
+
+    }
+
+}
+
+
+
+function proceedToDashboard() {
+
+    const name   = (document.getElementById('pet-name')?.value || 'Luna').trim() || 'Luna';
+
+    const type   = document.getElementById('selected-pet-type')?.value || 'perro';
+
+    const rawW   = parseFloat(String(document.getElementById('pet-weight')?.value || (type === 'gato' ? '4.2' : '14')).replace(',', '.'));
+
+    const weight = String(isNaN(rawW) ? (type === 'gato' ? 4.2 : 14) : Math.min(100, Math.max(0.5, rawW)));
+
+    const ageRaw = document.getElementById('pet-age')?.value || 'explorer';
+
+    const energyRaw = document.getElementById('pet-energy')?.value || 'moderado';
+
+    const foodRaw   = document.getElementById('pet-food')?.value || 'pienso';
+
+    const breed  = document.getElementById('pet-breed')?.value || (type === 'gato' ? 'Europeo Común' : 'Mestizo');
+
+    const rawPhoto = window.appDemoSelectedPhoto || ONBOARDING_PHOTOS[type] || ONBOARDING_PHOTOS.perro;
+
+    const photo  = resolveDemoPetPhoto(rawPhoto, type, name);
+
+
+
+    const energyMap = { tranquilo: 'Tranquilo', moderado: 'Moderado', activo: 'Alto' };
+
+    const foodMap = { pienso: 'Pienso Seco Premium', barf: 'Dieta Natural BARF', mixta: 'Mixta (Pienso + Húmeda)' };
+
+    const ageNumMap = { primera: 1, explorer: 2, plenitud: 4, golden: 8 };
+
+
+
+    petProfile = { 
+
+        name, 
+
+        type, 
+
+        weight, 
+
+        age: ageNumMap[ageRaw] || ageRaw, 
+
+        ageStageKey: ageRaw,
+
+        energy: energyMap[energyRaw] || energyRaw, 
+
+        food: foodMap[foodRaw] || foodRaw, 
+
+        breed, 
+
+        photo,
+
+        avatar: photo,
+
+        bpm: type === 'gato' ? 138 : 74,
+
+        collarId: type === 'gato' ? 'CUDI-CAT-7781' : 'CUDI-GPS-9482',
+
+        tutorEmail: `${name.toLowerCase().replace(/[^a-z0-9]/g, '')}@cudi.pet`,
+
+        sessionActive: true,
+
+        savedAt: new Date().toISOString()
+
+    };
+
+
+
+    window.currentLoginAccount = petProfile;
+
+    localStorage.setItem('cudi_pet_profile', JSON.stringify(petProfile));
+
+    localStorage.setItem('cudi_last_registered_pet', JSON.stringify(petProfile));
+
+    localStorage.setItem('cudi_session_active', 'true');
+
+    window.dispatchEvent(new CustomEvent('cudi:sessionChanged', { detail: petProfile }));
+
+
+
+    syncSimulatorDOMWithProfile(petProfile);
+
+}
+
+
+
+function appDemoResetSession() {
+
+    if (confirm('¿Deseas desconectar o cambiar la mascota en la demo?')) {
+
+        const currentProfile = localStorage.getItem('cudi_pet_profile');
+
+        if (currentProfile) {
+
+            localStorage.setItem('cudi_last_registered_pet', currentProfile);
+
+        }
+
+        localStorage.removeItem('cudi_pet_profile');
+
+        localStorage.removeItem('cudi_session_active');
+
+        window.currentRandomPet = null;
+
+        window.dispatchEvent(new CustomEvent('cudi:sessionChanged', { detail: null }));
+
+
+
+        const main = document.getElementById('screen-main');
+
+        if (main) {
+
+            main.classList.remove('active');
+
+            main.style.display = 'none';
+
+        }
+
+        const statusBar = document.getElementById('app-status-bar');
+
+        if (statusBar) statusBar.style.display = 'none';
+
+
+
+        const onboarding = document.getElementById('screen-onboarding');
+
+        if (onboarding) {
+
+            onboarding.classList.add('active');
+
+            onboarding.style.display = 'block';
+
+        }
+
+
+
+        setupDemoOnboardingAutoFill();
+
+        switchDemoOnboardingTab('login');
+
+    }
+
+}
+
+
+
+// ==========================
+
+// TABS
+
+// ==========================
+
+function switchTab(tabId, el) {
+
+    document.querySelectorAll('.tab-view').forEach(t => t.classList.remove('active'));
+
+    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+
+    const tab = document.getElementById('tab-' + tabId);
+
+    if (tab) tab.classList.add('active');
+
+    if (el) el.classList.add('active');
+
+
+
+    // Cerrar notificaciones si estaban abiertas
+
+    const notifPanel = document.getElementById('notif-panel');
+
+    if (notifPanel) notifPanel.style.display = 'none';
+
+}
+
+
+
+// ==========================
+
+// CHARTS (10 en tiempo real)
+
+// ==========================
+
+const CHART_COLORS = {
+
+    primary: '#0077b6',
+
+    secondary: '#10b981',
+
+    warning: '#f59e0b',
+
+    danger: '#ef4444',
+
+    purple: '#7c3aed'
+
+};
+
+
+
+function makeSparklineData(base, variance, count = 12) {
+
+    return Array.from({length: count}, () => base + (Math.random() - 0.5) * variance * 2);
+
+}
+
+
+
+function createSparkline(id, data, color) {
+
+    const canvas = document.getElementById(id);
+
+    if (!canvas) return null;
+
+    if (charts[id]) charts[id].destroy();
+
+    const config = {
+
+        type: 'line',
+
+        data: {
+
+            labels: Array(data.length).fill(''),
+
+            datasets: [{
+
+                data: data,
+
+                borderColor: color,
+
+                borderWidth: 2,
+
+                fill: false,
+
+                tension: 0.4,
+
+                pointRadius: 0
+
+            }]
+
+        },
+
+        options: {
+
+            responsive: true,
+
+            maintainAspectRatio: false,
+
+            animation: {
+
+                duration: 2000,
+
+                easing: 'easeOutQuart'
+
+            },
+
+            plugins: { legend: { display: false }, tooltip: { enabled: false } },
+
+            scales: { x: { display: false }, y: { display: false } }
+
+        }
+
+    };
+
+    charts[id] = new Chart(canvas, config);
+
+    return charts[id];
+
+}
+
+
+
+function getDemoPetCalibratedMetrics(p) {
+
+    const prof = p || petProfile || { name: 'Luna', type: 'perro', weight: 14 };
+
+    const name = String(prof.name || 'Luna');
+
+    const seed = name.split('').reduce((acc, ch) => acc + ch.charCodeAt(0), 0);
+
+    const isCat = prof.type === 'gato' || (prof.breed && ['gato', 'siamés', 'persa', 'maine coon', 'bengalí', 'ragdoll', 'azul ruso', 'british', 'sphynx', 'bosque'].some(b => prof.breed.toLowerCase().includes(b)));
+
+    const baseBpm = Number(prof.bpm) || (isCat ? 138 + (seed % 14) : 74 + (seed % 14));
+
+    const baseSleep = isCat ? Number((11.2 + (seed % 18) * 0.1).toFixed(1)) : Number((8.4 + (seed % 16) * 0.1).toFixed(1));
+
+    const baseEnergy = 84 + (seed % 13);
+
+    const baseStress = 18 + (seed % 12);
+
+    const dailyKm = isCat ? Number((1.8 + (seed % 15) * 0.1).toFixed(1)) : Number((3.8 + (seed % 28) * 0.1).toFixed(1));
+
+    const radarScores = [
+
+        90 + (seed % 9),
+
+        baseEnergy,
+
+        Math.min(98, Math.round(baseSleep * (isCat ? 7.8 : 10.4))),
+
+        88 + ((seed * 3) % 11),
+
+        91 + ((seed * 7) % 8),
+
+        93 + ((seed * 5) % 7)
+
+    ];
+
+    const weeklyKm = [
+
+        Number((dailyKm * 0.85).toFixed(1)),
+
+        Number((dailyKm * 1.05).toFixed(1)),
+
+        Number((dailyKm * 0.78).toFixed(1)),
+
+        Number((dailyKm * 1.18).toFixed(1)),
+
+        Number((dailyKm * 0.96).toFixed(1)),
+
+        Number((dailyKm * 1.32).toFixed(1)),
+
+        Number((dailyKm * 1.10).toFixed(1))
+
+    ];
+
+    return { isCat, baseBpm, baseSleep, baseEnergy, baseStress, dailyKm, radarScores, weeklyKm };
+
+}
+
+
+
+function createRadarChart(id) {
+
+    const canvas = document.getElementById(id);
+
+    if (!canvas) return;
+
+    if (charts[id]) charts[id].destroy();
+
+    const m = getDemoPetCalibratedMetrics(petProfile);
+
+    charts[id] = new Chart(canvas, {
+
+        type: 'radar',
+
+        data: {
+
+            labels: ['Salud', 'Energia', 'Sueno', 'Social', 'Nutricion', 'Humor'],
+
+            datasets: [{
+
+                label: petProfile.name || 'Mascota',
+
+                data: m.radarScores,
+
+                backgroundColor: CHART_COLORS.primary + '20',
+
+                borderColor: CHART_COLORS.primary,
+
+                borderWidth: 2,
+
+                pointBackgroundColor: CHART_COLORS.primary
+
+            }]
+
+        },
+
+        options: {
+
+            responsive: true, maintainAspectRatio: false,
+
+            plugins: { legend: { display: false } },
+
+            scales: { r: { min: 50, max: 100, ticks: { display: false }, grid: { color: '#f1f5f9' } } }
+
+        }
+
+    });
+
+}
+
+
+
+function createBarChart(id, labels, data, color) {
+
+    const canvas = document.getElementById(id);
+
+    if (!canvas) return;
+
+    if (charts[id]) charts[id].destroy();
+
+    charts[id] = new Chart(canvas, {
+
+        type: 'bar',
+
+        data: {
+
+            labels,
+
+            datasets: [{ data, backgroundColor: color + '80', borderColor: color, borderWidth: 2, borderRadius: 8 }]
+
+        },
+
+        options: {
+
+            responsive: true, maintainAspectRatio: false,
+
+            plugins: { legend: { display: false } },
+
+            scales: { x: { ticks: { font: { size: 10 } } }, y: { ticks: { font: { size: 10 } } } }
+
+        }
+
+    });
+
+}
+
+
+
+function createDoughnutChart(id, labels, data, colors) {
+
+    const canvas = document.getElementById(id);
+
+    if (!canvas) return;
+
+    if (charts[id]) charts[id].destroy();
+
+    charts[id] = new Chart(canvas, {
+
+        type: 'doughnut',
+
+        data: { labels, datasets: [{ data, backgroundColor: colors, borderWidth: 0 }] },
+
+        options: {
+
+            responsive: true, maintainAspectRatio: false,
+
+            animation: {
+
+                animateRotate: true,
+
+                animateScale: true,
+
+                duration: 2000,
+
+                easing: 'easeOutCirc'
+
+            },
+
+            plugins: { legend: { position: 'bottom', labels: { font: { size: 10 }, boxWidth: 10, padding: 8 } } },
+
+            cutout: '65%'
+
+        }
+
+    });
+
+}
+
+
+
+function initCharts() {
+
+    const m = getDemoPetCalibratedMetrics(petProfile);
+
+
+
+    const heartEl = document.getElementById('val-heart');
+
+    if (heartEl) heartEl.textContent = m.baseBpm;
+
+    const energyEl = document.getElementById('val-energy');
+
+    if (energyEl) energyEl.textContent = m.baseEnergy;
+
+    const sleepEl = document.getElementById('val-sleep');
+
+    if (sleepEl) sleepEl.textContent = m.baseSleep;
+
+    const stressEl = document.getElementById('val-stress');
+
+    if (stressEl) stressEl.textContent = m.baseStress + '%';
+
+
+
+    // 4 sparklines del dashboard
+
+    createSparkline('chart-heart',  makeSparklineData(m.baseBpm, 6), CHART_COLORS.danger);
+
+    createSparkline('chart-energy', makeSparklineData(m.baseEnergy, 6), CHART_COLORS.warning);
+
+    createSparkline('chart-sleep',  makeSparklineData(m.baseSleep, 0.8), CHART_COLORS.primary);
+
+    createSparkline('chart-stress', makeSparklineData(m.baseStress, 5), CHART_COLORS.purple);
+
+
+
+    // Radar en dashboard
+
+    createRadarChart('chart-radar');
+
+
+
+    // BPM line chart
+
+    const bpmCanvas = document.getElementById('chart-bpm');
+
+    if (bpmCanvas) {
+
+        if (charts['chart-bpm']) charts['chart-bpm'].destroy();
+
+        const holterCurve = [-8, -11, -4, +6, +3, +12, +4, -3, -7].map(d => m.baseBpm + d);
+
+        charts['chart-bpm'] = new Chart(bpmCanvas, {
+
+            type: 'line',
+
+            data: {
+
+                labels: ['00h','03h','06h','09h','12h','15h','18h','21h','24h'],
+
+                datasets: [{
+
+                    label: 'BPM',
+
+                    data: holterCurve,
+
+                    borderColor: CHART_COLORS.danger,
+
+                    borderWidth: 2.5,
+
+                    fill: true,
+
+                    backgroundColor: CHART_COLORS.danger + '15',
+
+                    tension: 0.4,
+
+                    pointRadius: 4,
+
+                    pointBackgroundColor: CHART_COLORS.danger
+
+                }]
+
+            },
+
+            options: {
+
+                responsive: true, maintainAspectRatio: false,
+
+                animation: {
+
+                    duration: 2000,
+
+                    easing: 'easeOutCubic'
+
+                },
+
+                plugins: { legend: { display: false } },
+
+                scales: {
+
+                    x: { ticks: { font: { size: 9 } } },
+
+                    y: { ticks: { font: { size: 9 } }, min: m.isCat ? 105 : 50, max: m.isCat ? 175 : 120 }
+
+                }
+
+            }
+
+        });
+
+    }
+
+
+
+    // Bar semanal
+
+    createBarChart('chart-weekly',
+
+        ['Lun','Mar','Mie','Jue','Vie','Sab','Dom'],
+
+        m.weeklyKm,
+
+        CHART_COLORS.primary
+
+    );
+
+
+
+    // Doughnut dieta
+
+    createDoughnutChart('chart-diet',
+
+        ['Proteinas', 'Grasas', 'Carbos', 'Fibra'],
+
+        m.isCat ? [48, 26, 16, 10] : [40, 25, 25, 10],
+
+        [CHART_COLORS.primary, CHART_COLORS.warning, CHART_COLORS.secondary, CHART_COLORS.purple]
+
+    );
+
+
+
+    // Pie inmunologico
+
+    createDoughnutChart('chart-inmuno',
+
+        ['Activa', 'Pendiente', 'Vencida'],
+
+        [75, 15, 10],
+
+        [CHART_COLORS.secondary, CHART_COLORS.warning, CHART_COLORS.danger]
+
+    );
+
+
+
+    // Area estres
+
+    const stressCanvas = document.getElementById('chart-stress-area');
+
+    if (stressCanvas) {
+
+        if (charts['chart-stress-area']) charts['chart-stress-area'].destroy();
+
+        charts['chart-stress-area'] = new Chart(stressCanvas, {
+
+            type: 'line',
+
+            data: {
+
+                labels: ['Lun','Mar','Mie','Jue','Vie','Sab','Dom'],
+
+                datasets: [{
+
+                    label: 'Estres',
+
+                    data: [m.baseStress + 4, m.baseStress + 10, m.baseStress - 2, m.baseStress + 16, m.baseStress + 2, m.baseStress - 4, m.baseStress],
+
+                    borderColor: CHART_COLORS.purple,
+
+                    backgroundColor: CHART_COLORS.purple + '20',
+
+                    fill: true, tension: 0.5, borderWidth: 2.5
+
+                }]
+
+            },
+
+            options: {
+
+                responsive: true, maintainAspectRatio: false,
+
+                animation: {
+
+                    duration: 2000,
+
+                    easing: 'easeOutBack'
+
+                },
+
+                plugins: { legend: { display: false } },
+
+                scales: { x: { ticks: { font: { size: 9 } } }, y: { display: false } }
+
+            }
+
+        });
+
+    }
+
+
+
+    // Temperatura stacked
+
+    const tempCanvas = document.getElementById('chart-temp');
+
+    if (tempCanvas) {
+
+        if (charts['chart-temp']) charts['chart-temp'].destroy();
+
+        charts['chart-temp'] = new Chart(tempCanvas, {
+
+            type: 'bar',
+
+            data: {
+
+                labels: ['Dia 1','Dia 2','Dia 3','Dia 4','Dia 5'],
+
+                datasets: [
+
+                    { label: 'Normal', data: [38.5, 38.3, 38.7, 38.4, 38.6], backgroundColor: CHART_COLORS.secondary + '80', borderRadius: 6, borderWidth: 0 },
+
+                    { label: 'Elevada', data: [0, 0, 0.3, 0, 0], backgroundColor: CHART_COLORS.danger + '80', borderRadius: 6, borderWidth: 0 }
+
+                ]
+
+            },
+
+            options: {
+
+                responsive: true, maintainAspectRatio: false,
+
+                plugins: { legend: { position: 'bottom', labels: { font: { size: 9 }, boxWidth: 10 } } },
+
+                scales: { x: { stacked: true, ticks: { font: { size: 9 } } }, y: { stacked: true, ticks: { font: { size: 9 } } } }
+
+            }
+
+        });
+
+    }
+
+
+
+    // Telemetria en tiempo real
+
+    startLiveMetrics();
+
+}
+
+
+
+// ---- TELEMETRIA EN TIEMPO REAL ----
+
+function startLiveMetrics() {
+
+    if (window.cudiLiveMetricsInterval) {
+
+        clearInterval(window.cudiLiveMetricsInterval);
+
+    }
+
+    const metrics = [
+
+        { valId: 'val-heart',  chartId: 'chart-heart',  getBase: () => getDemoPetCalibratedMetrics(petProfile).baseBpm,    var: 5,   suffix: 'bpm', color: CHART_COLORS.danger,  isInt: true },
+
+        { valId: 'val-energy', chartId: 'chart-energy', getBase: () => getDemoPetCalibratedMetrics(petProfile).baseEnergy, var: 4,   suffix: '%',   color: CHART_COLORS.warning, isInt: true },
+
+        { valId: 'val-sleep',  chartId: 'chart-sleep',  getBase: () => getDemoPetCalibratedMetrics(petProfile).baseSleep,  var: 0.3, suffix: 'h',   color: CHART_COLORS.primary, isInt: false },
+
+        { valId: 'val-stress', chartId: 'chart-stress', getBase: () => getDemoPetCalibratedMetrics(petProfile).baseStress, var: 3,   suffix: '%',   color: CHART_COLORS.purple,  isInt: true }
+
+    ];
+
+
+
+    window.cudiLiveMetricsInterval = setInterval(() => {
+
+        metrics.forEach(m => {
+
+            const base = m.getBase();
+
+            const val = base + (Math.random() - 0.5) * m.var * 2;
+
+            const el = document.getElementById(m.valId);
+
+            if (el) el.textContent = m.isInt ? (m.valId === 'val-stress' ? Math.round(val) + '%' : Math.round(val)) : val.toFixed(1);
+
+
+
+            const c = charts[m.chartId];
+
+            if (c) {
+
+                c.data.datasets[0].data.push(val);
+
+                c.data.datasets[0].data.shift();
+
+                c.data.labels.push('');
+
+                c.data.labels.shift();
+
+                c.update('none');
+
+            }
+
+        });
+
+    }, 2500);
+
+}
+
+
+
+// ==========================
+
+// SOCIAL PETS & MURO SINCRONIZADO (COMUNIDAD COMPLETA EN LA DEMO)
+
+// ==========================
+
+function renderSocialPets() {
+
+    const sharedState = getDemoSharedSocialState();
+
+    const currentPet = petProfile.name ? petProfile : {
+
+        name: 'Mi Mascota',
+
+        photo: 'avatar-mascota-perfil-gemelo-digital.png',
+
+        type: 'perro'
+
+    };
+
+    const currentPetPhoto = resolveDemoPetPhoto(currentPet, currentPet.type, currentPet.name);
+
+    const localFallback = currentPet.type === 'gato' ? 'gato-explorando-seguro-collar-gps.png' : 'avatar-mascota-perfil-gemelo-digital.png';
+
+
+
+    // 1. BARRA DE STORIES SINCRONIZADA
+
+    const storiesBar = document.getElementById('demo-stories-bar');
+
+    if (storiesBar) {
+
+        const allStories = [
+
+            { id: 'user', name: `Tú (${currentPet.name})`, photo: currentPetPhoto, isUser: true },
+
+            ...SOCIAL_PETS
+
+        ];
+
+
+
+        storiesBar.innerHTML = allStories.map(s => {
+
+            const sPhoto = resolveDemoPetPhoto(s.photo, s.type, s.name);
+
+            return `
+
+            <div class="demo-story-item" onclick="openStoryDetail('${s.id}')" title="${s.name}">
+
+                <div class="demo-story-ring ${s.isUser ? 'active-pulse' : ''}">
+
+                    <img src="${sPhoto}" alt="${s.name}" class="demo-story-avatar" onerror="this.onerror=null;this.src='avatar-mascota-perfil-gemelo-digital.png';">
+
+                </div>
+
+                <span class="demo-story-name">${s.name}</span>
+
+            </div>
+
+        `}).join('');
+
+    }
+
+
+
+    // 2. MURO DE PUBLICACIONES SINCRONIZADO CON COMUNIDAD-CUDI.HTML
+
+    let feedContainer = document.getElementById('demo-social-feed-list');
+
+    const petsContainer = document.getElementById('social-pets-list');
+
+    if (!feedContainer && petsContainer && petsContainer.parentNode) {
+
+        feedContainer = document.createElement('div');
+
+        feedContainer.id = 'demo-social-feed-list';
+
+        const neighborsHeader = petsContainer.previousElementSibling;
+
+        petsContainer.parentNode.insertBefore(feedContainer, neighborsHeader || petsContainer);
+
+    }
+
+
+
+    if (feedContainer) {
+
+        feedContainer.innerHTML = `
+
+            <div style="display:flex; justify-content:space-between; align-items:center; margin:4px 0 8px;">
+
+                <span style="font-size:0.74rem; font-weight:800; color:#0f172a; text-transform:uppercase; letter-spacing:0.4px;">
+
+                    <i class="fa-solid fa-newspaper" style="color:#0284c7;"></i> Muro Comunidad CUDI
+
+                </span>
+
+                <a href="comunidad-cudi.html" style="font-size:0.68rem; color:#0284c7; font-weight:800; text-decoration:none; display:inline-flex; align-items:center; gap:4px;">
+
+                    Abrir Red Web <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.6rem;"></i>
+
+                </a>
+
+            </div>
+
+            <div class="demo-quick-post-bar">
+
+                <img src="${currentPetPhoto}" alt="${currentPet.name}" class="demo-feed-author-img" onerror="this.onerror=null;this.src='${localFallback}';">
+
+                <input type="text" id="demo-quick-post-input" class="demo-quick-post-input" placeholder="Publicar como ${currentPet.name} en Comunidad...">
+
+                <button type="button" class="demo-quick-post-btn" onclick="publishFromDemoSocial()">
+
+                    <i class="fa-solid fa-paper-plane"></i> Publicar
+
+                </button>
+
+            </div>
+
+            ${sharedState.posts.slice(0, 4).map(post => {
+
+                const isFollowed = sharedState.followedIds.includes(post.petId);
+
+                const postAvatar = resolveDemoPetPhoto(post.avatar, post.type, post.author);
+
+                return `
+
+                    <div class="demo-social-feed-card">
+
+                        <div class="demo-feed-header">
+
+                            <img src="${postAvatar}" alt="${post.author}" class="demo-feed-author-img" onerror="this.onerror=null;this.src='avatar-mascota-perfil-gemelo-digital.png';" onclick="openAppPetModal('${post.petId}')" style="cursor:pointer;">
+
+                            <div style="flex:1; min-width:0;">
+
+                                <div style="font-size:0.84rem; font-weight:800; color:#0f172a; display:flex; align-items:center; gap:4px; cursor:pointer;" onclick="openAppPetModal('${post.petId}')">
+
+                                    ${post.author} <i class="fa-solid fa-circle-check" style="color:#0284c7; font-size:0.72rem;"></i>
+
+                                </div>
+
+                                <div style="font-size:0.66rem; color:#64748b;">${post.timeLoc}</div>
+
+                            </div>
+
+                            ${post.petId !== 'user' ? `
+
+                                <button type="button" onclick="contactPet('${post.petId}', '${post.author}')" style="background:${isFollowed ? '#dcfce7' : '#e0f2fe'}; color:${isFollowed ? '#15803d' : '#0284c7'}; border:none; border-radius:50px; padding:4px 10px; font-size:0.66rem; font-weight:800; cursor:pointer;">
+
+                                    ${isFollowed ? '<i class="fa-solid fa-check"></i> Siguiendo' : 'Seguir +'}
+
+                                </button>
+
+                            ` : `
+
+                                <span style="background:#dcfce7; color:#15803d; padding:3px 8px; border-radius:50px; font-size:0.64rem; font-weight:800;">Tú</span>
+
+                            `}
+
+                        </div>
+
+                        <p style="font-size:0.75rem; color:#334155; margin:0 0 8px; line-height:1.45;">${post.text}</p>
+
+                        ${post.image ? `<img src="${post.image}" alt="${post.author}" class="demo-post-image" onerror="this.onerror=null;this.style.display='none';">` : ''}
+
+                        <div style="display:flex; align-items:center; justify-content:space-between; border-top:1px solid rgba(226,232,240,0.75); padding-top:8px; margin-top:4px;">
+
+                            <button type="button" onclick="toggleDemoPostLike('${post.id}')" style="background:none; border:none; color:${post.liked ? '#ef4444' : '#64748b'}; font-size:0.74rem; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:5px;">
+
+                                <i class="fa-solid fa-heart"></i> ${post.likes} Me gusta
+
+                            </button>
+
+                            <span style="font-size:0.7rem; color:#64748b; font-weight:600;">
+
+                                <i class="fa-solid fa-comment"></i> ${post.commentsCount || 0} comentarios
+
+                            </span>
+
+                            <span style="font-size:0.66rem; color:#10b981; font-weight:700;">
+
+                                <i class="fa-solid fa-rotate"></i> Sync Web
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                `;
+
+            }).join('')}
+
+        `;
+
+    }
+
+
+
+    // 3. LISTA DE MASCOTAS VECINAS (8 COMPAÑEROS SINCRONIZADOS)
+
+    if (!petsContainer) return;
+
+
+
+    petsContainer.innerHTML = SOCIAL_PETS.map(p => {
+
+        const isGreeted = sharedState.followedIds.includes(p.id);
+
+        const safePPhoto = resolveDemoPetPhoto(p.photo, p.type, p.name);
+
+        return `
+
+        <div class="pet-social-card-rich" id="social-card-${p.id}">
+
+            <div class="pet-social-card-top">
+
+                <div class="pet-avatar-rich-wrap">
+
+                    <img src="${safePPhoto}" alt="${p.name}" class="pet-avatar-rich" onerror="this.onerror=null;this.src='avatar-mascota-perfil-gemelo-digital.png';" onclick="openAppPetModal('${p.id}')" style="cursor:pointer;">
+
+                    <span class="pet-online-beacon" title="Smart Collar GPS Activo"></span>
+
+                </div>
+
+                <div class="pet-rich-meta">
+
+                    <div class="pet-rich-name-row">
+
+                        <span class="pet-rich-name" onclick="openAppPetModal('${p.id}')" style="cursor:pointer;">
+
+                            ${p.name} <i class="fa-solid fa-circle-check" style="color:#0284c7; font-size:0.75rem;"></i>
+
+                        </span>
+
+                        <span class="pet-match-badge"><i class="fa-solid fa-heart" style="color:#ef4444;"></i> ${p.compat}% Match</span>
+
+                    </div>
+
+                    <div class="pet-rich-sub">
+
+                        ${p.breed} &bull; <strong style="color:#0f172a;">${p.dist}</strong> de ti
+
+                    </div>
+
+                    <div style="font-size:0.7rem; color:#10b981; font-weight:700;">
+
+                        <i class="fa-solid fa-shield-dog"></i> ${p.collar}
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            
+
+            <p style="font-size:0.73rem; color:#475569; margin:8px 0 6px; line-height:1.4;">${p.bio}</p>
+
+
+
+            <div class="pet-badges-row">
+
+                ${(p.badges || []).map(b => `<span class="pet-badge-tag">${b}</span>`).join('')}
+
+            </div>
+
+
+
+            <div class="pet-rich-actions">
+
+                <button type="button" class="btn-social-saludar ${isGreeted ? 'saludado' : ''}" id="btn-saludar-${p.id}" onclick="contactPet('${p.id}', '${p.name}')">
+
+                    ${isGreeted ? '<i class="fa-solid fa-check"></i> ¡Saludado! 🐾' : '<i class="fa-solid fa-paw"></i> Saludar 🐾'}
+
+                </button>
+
+                <button type="button" class="btn-social-ficha" onclick="openAppPetModal('${p.id}')">
+
+                    <i class="fa-solid fa-address-card"></i> Ver Ficha
+
+                </button>
+
+            </div>
+
+        </div>
+
+        `;
+
+    }).join('');
+
+}
+
+
+
+function toggleDemoPostLike(postId) {
+
+    const state = getDemoSharedSocialState();
+
+    const post = state.posts.find(p => p.id === postId);
+
+    if (!post) return;
+
+    post.liked = !post.liked;
+
+    post.likes = Math.max(0, (post.likes || 0) + (post.liked ? 1 : -1));
+
+    saveDemoSharedSocialState(state);
+
+    renderSocialPets();
+
+}
+
+
+
+function publishFromDemoSocial() {
+
+    const input = document.getElementById('demo-quick-post-input');
+
+    const text = (input ? input.value.trim() : '') || `¡Listos para el paseo de hoy con el Smart Collar CUDI activo! 🐾✨`;
+
+    const currentPet = petProfile.name ? petProfile : {
+
+        name: 'Mi Mascota',
+
+        photo: 'avatar-mascota-perfil-gemelo-digital.png',
+
+        type: 'perro'
+
+    };
+
+
+
+    const state = getDemoSharedSocialState();
+
+    state.posts.unshift({
+
+        id: 'post_demo_' + Date.now(),
+
+        petId: 'user',
+
+        author: currentPet.name,
+
+        verified: true,
+
+        avatar: resolveDemoPetPhoto(currentPet, currentPet.type, currentPet.name),
+
+        timeLoc: 'Justo ahora • Desde CUDI App Demo',
+
+        text: text,
+
+        image: '',
+
+        likes: 1,
+
+        liked: true,
+
+        commentsCount: 0
+
+    });
+
+    saveDemoSharedSocialState(state);
+
+    if (input) input.value = '';
+
+    renderSocialPets();
+
+    showToast(`✨ Publicación de ${currentPet.name} sincronizada con Comunidad CUDI`);
+
+}
+
+
+
+window.addEventListener('storage', (e) => {
+
+    if (e.key === DEMO_SHARED_SOCIAL_KEY) {
+
+        renderSocialPets();
+
+    }
+
+});
+
+
+
+function openStoryDetail(petId) {
+
+    if (petId === 'user') {
+
+        showToast(`📸 ${petProfile.name || 'Tu mascota'}: Collar activo y sincronizado con Comunidad CUDI.`);
+
+        return;
+
+    }
+
+    const pet = SOCIAL_PETS.find(p => p.id === petId);
+
+    if (pet) {
+
+        showToast(`✨ Story de ${pet.name}: ¡Paseo activo en el parque (${pet.dist} de ti)!`);
+
+        openAppPetModal(petId);
+
+    }
+
+}
+
+
+
+function openAppPetModal(petId) {
+
+    const pet = SOCIAL_PETS.find(p => p.id === petId) || SOCIAL_PETS[0];
+
+    if (!pet) return;
+
+
+
+    const existing = document.getElementById('demo-inapp-modal');
+
+    if (existing) existing.remove();
+
+
+
+    const screen = document.querySelector('.mobile-screen');
+
+    if (!screen) return;
+
+
+
+    const sharedState = getDemoSharedSocialState();
+
+    const isGreeted = sharedState.followedIds.includes(pet.id);
+
+    const safeModalPhoto = resolveDemoPetPhoto(pet.photo, pet.type, pet.name);
+
+
+
+    const modal = document.createElement('div');
+
+    modal.id = 'demo-inapp-modal';
+
+    modal.className = 'app-inapp-modal';
+
+    modal.innerHTML = `
+
+        <div class="app-inapp-modal-sheet">
+
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+
+                <span style="font-size:0.7rem; font-weight:800; background:#dbeafe; color:#0284c7; padding:3px 10px; border-radius:50px;">
+
+                    <i class="fa-solid fa-paw"></i> FICHA SINCRONIZADA CUDI
+
+                </span>
+
+                <button onclick="document.getElementById('demo-inapp-modal').remove()" style="background:#f1f5f9; border:none; width:28px; height:28px; border-radius:50%; cursor:pointer; color:#64748b; font-weight:800;">
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+            </div>
+
+
+
+            <div style="display:flex; gap:12px; align-items:center; margin-bottom:14px;">
+
+                <img src="${safeModalPhoto}" alt="${pet.name}" onerror="this.onerror=null;this.src='avatar-mascota-perfil-gemelo-digital.png';" style="width:64px !important; height:64px !important; min-width:64px !important; max-width:64px !important; min-height:64px !important; max-height:64px !important; aspect-ratio:1/1 !important; border-radius:50% !important; object-fit:cover !important; border:3px solid #0284c7; box-shadow:0 4px 14px rgba(2,132,199,0.25);">
+
+                <div>
+
+                    <h3 style="margin:0; font-size:1.15rem; color:#0f172a; font-weight:800; display:flex; align-items:center; gap:6px;">
+
+                        ${pet.name} <i class="fa-solid fa-circle-check" style="color:#0284c7; font-size:0.85rem;"></i>
+
+                    </h3>
+
+                    <p style="margin:2px 0 0; font-size:0.75rem; color:#64748b;">${pet.breed} &bull; ${pet.dist} de ti</p>
+
+                    <span style="font-size:0.7rem; font-weight:800; color:#15803d; background:#dcfce7; padding:2px 8px; border-radius:12px; display:inline-block; margin-top:4px;">
+
+                        <i class="fa-solid fa-heart"></i> ${pet.compat}% Afinidad con ${petProfile.name || 'tu mascota'}
+
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <p style="font-size:0.8rem; color:#334155; line-height:1.5; margin-bottom:14px; background:rgba(248,250,252,0.9); padding:10px 12px; border-radius:12px; border:1px solid #e2e8f0;">
+
+                "${pet.bio}"
+
+            </p>
+
+
+
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:16px;">
+
+                <div style="background:#eff6ff; padding:10px; border-radius:12px; text-align:center;">
+
+                    <div style="font-size:0.65rem; color:#1e40af; font-weight:700; text-transform:uppercase;">Nivel de Energía</div>
+
+                    <div style="font-size:0.95rem; font-weight:900; color:#0284c7;">${pet.energy}</div>
+
+                </div>
+
+                <div style="background:#f0fdf4; padding:10px; border-radius:12px; text-align:center;">
+
+                    <div style="font-size:0.65rem; color:#166534; font-weight:700; text-transform:uppercase;">Smart Collar</div>
+
+                    <div style="font-size:0.95rem; font-weight:900; color:#16a34a;">Conectado</div>
+
+                </div>
+
+            </div>
+
+
+
+            <div style="display:flex; gap:8px;">
+
+                <button type="button" class="btn-social-saludar ${isGreeted ? 'saludado' : ''}" style="flex:1; padding:12px;" onclick="contactPet('${pet.id}', '${pet.name}'); document.getElementById('demo-inapp-modal').remove();">
+
+                    <i class="fa-solid fa-paw"></i> ${isGreeted ? '¡Ya sigues a ' + pet.name + '!' : 'Saludar y Seguir en Comunidad 🐾'}
+
+                </button>
+
+            </div>
+
+        </div>
+
+    `;
+
+
+
+    screen.appendChild(modal);
+
+}
+
+
+
+function contactPet(petId, name) {
+
+    const state = getDemoSharedSocialState();
+
+    const idx = state.followedIds.indexOf(petId);
+
+    if (idx === -1) {
+
+        state.followedIds.push(petId);
+
+        showToast(`🎉 ¡Saludo enviado y siguiendo a ${name} en la App y en la Web! 🐾`);
+
+    } else {
+
+        state.followedIds.splice(idx, 1);
+
+        showToast(`Dejaste de seguir a ${name}`);
+
+    }
+
+    saveDemoSharedSocialState(state);
+
+    renderSocialPets();
+
+}
+
+
+
+function proposeOuting() {
+
+    showToast('📍 Propuesta de paseo CUDI sincronizada con tus vecinos compatibles.');
+
+}
+
+
+
+// ==========================
+
+// PERFIL (CON SINCRONIZACIÓN TRANSVERSAL)
+
+// ==========================
+
+function renderProfileCard() {
+
+    const p = petProfile;
+
+    const ageLabels = { primera: 'Primera Aventura (1 año)', explorer: 'Energía Desatada (2 años)', plenitud: 'Plenitud Vital (4 años)', golden: 'Sabiduría Golden (8+ años)' };
+
+    const energyLabels = { tranquilo: 'Tranquilo', moderado: 'Moderado', activo: 'Alto' };
+
+    const foodLabels = { pienso: 'Pienso Seco', barf: 'Dieta BARF', mixta: 'Dieta Mixta' };
+
+
+
+    const ageText = ageLabels[p.ageStageKey] || ageLabels[p.age] || formatPetAgeStage(p.age);
+
+    const energyText = energyLabels[String(p.energy || '').toLowerCase()] || p.energy || 'Moderado';
+
+    const foodText = foodLabels[String(p.food || '').toLowerCase()] || p.food || 'Pienso Seco';
+
+
+
+    const els = {
+
+        'profile-pet-name': p.name || 'Mi Mascota',
+
+        'profile-pet-type': p.type === 'gato' ? '🐱 Gato' : '🐶 Perro',
+
+        'profile-pet-breed': p.breed || (p.type === 'gato' ? 'Europeo Común' : 'Mestizo'),
+
+        'profile-pet-age': ageText,
+
+        'profile-pet-weight': p.weight ? String(p.weight).replace(/\s*kg$/i, '') + ' kg' : '-',
+
+        'profile-pet-energy': energyText,
+
+        'profile-pet-food': foodText
+
+    };
+
+
+
+    Object.entries(els).forEach(([id, val]) => {
+
+        const el = document.getElementById(id);
+
+        if (el) el.textContent = val;
+
+    });
+
+
+
+    const avatar = document.querySelector('#tab-profile .profile-avatar');
+
+    if (avatar) {
+
+        const safeProfilePhoto = resolveDemoPetPhoto(p, p.type, p.name);
+
+        const localFallback = p.type === 'gato' ? 'gato-explorando-seguro-collar-gps.png' : 'avatar-mascota-perfil-gemelo-digital.png';
+
+        avatar.style.backgroundImage = `url('${safeProfilePhoto}'), url('${localFallback}')`;
+
+        avatar.innerHTML = `<img src="${safeProfilePhoto}" alt="${p.name || 'Mascota'}" onerror="this.onerror=null;this.src='${localFallback}';" style="width:100% !important; height:100% !important; object-fit:cover !important; object-position:center !important; border-radius:50% !important; display:block;">`;
+
+    }
+
+
+
+    const tabProfile = document.getElementById('tab-profile');
+
+    if (tabProfile && !document.getElementById('demo-btn-switch-pet')) {
+
+        const switchBtn = document.createElement('button');
+
+        switchBtn.id = 'demo-btn-switch-pet';
+
+        switchBtn.type = 'button';
+
+        switchBtn.onclick = appDemoResetSession;
+
+        switchBtn.style.cssText = 'width:100%; margin-top:14px; margin-bottom:10px; padding:12px; background:#f8fafc; border:1px solid #cbd5e1; border-radius:14px; color:#475569; font-weight:800; font-size:0.8rem; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:8px;';
+
+        switchBtn.innerHTML = '<i class="fa-solid fa-arrows-rotate"></i> Cambiar Mascota / Probar Otra';
+
+        tabProfile.appendChild(switchBtn);
+
+
+
+        const loginSyncBtn = document.createElement('button');
+
+        loginSyncBtn.id = 'demo-btn-login-sync';
+
+        loginSyncBtn.type = 'button';
+
+        loginSyncBtn.onclick = function() {
+
+            if (typeof openAuthModal === 'function') openAuthModal();
+
+        };
+
+        loginSyncBtn.style.cssText = 'width:100%; margin-bottom:24px; padding:12px; background:linear-gradient(135deg, #0284c7, #0077b6); color:white; border:none; border-radius:14px; font-weight:800; font-size:0.8rem; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:8px; box-shadow:0 3px 10px rgba(2,132,199,0.25);';
+
+        loginSyncBtn.innerHTML = '<i class="fa-solid fa-paw"></i> Iniciar Sesión / Sincronizar en la Web';
+
+        tabProfile.appendChild(loginSyncBtn);
+
+    }
+
+}
+
+
+
+// Escuchar cambios de sesión externos (desde modal web o mi mascota)
+
+window.addEventListener('cudi:sessionChanged', (e) => {
+
+    if (e.detail && e.detail.name) {
+
+        loadSavedProfile();
+
+    } else {
+
+        // Sesión cerrada
+
+        const main = document.getElementById('screen-main');
+
+        if (main) {
+
+            main.classList.remove('active');
+
+            main.style.display = 'none';
+
+        }
+
+        const statusBar = document.getElementById('app-status-bar');
+
+        if (statusBar) statusBar.style.display = 'none';
+
+
+
+        const onboarding = document.getElementById('screen-onboarding');
+
+        if (onboarding) {
+
+            onboarding.classList.add('active');
+
+            onboarding.style.display = 'block';
+
+        }
+
+        setupDemoOnboardingAutoFill();
+
+    }
+
+});
+
+
+
+// ==========================
+
+// TIENDA / STORE
+
+// ==========================
+
+
+// ==========================
+// TIENDA / STORE (MOTOR DE PROFUNDIDAD, FILTROS Y MODAL DE 4 PESTAÑAS)
+// ==========================
 let currentDemoCat = 'todos';
 let currentDemoSpecies = 'todos';
 let currentDemoSort = 'relevance';
@@ -4920,61 +10394,59 @@ let currentDemoSearch = '';
 function getAllDemoProducts() {
     const list = [];
     Object.keys(STORE_CATEGORIES).forEach(k => {
-        list.push(...(STORE_CATEGORIES[k].products || []));
+        const cat = STORE_CATEGORIES[k];
+        if (cat && Array.isArray(cat.products)) {
+            cat.products.forEach(p => {
+                list.push({ ...p, _catKey: k, _catLabel: cat.label });
+            });
+        }
     });
     return list;
 }
 
-function renderDemoProductCard(prod) {
-    const speciesBadge = prod.species === 'cat' || prod.target_species === 'gato'
-        ? '<span style="background:#f3e8ff;color:#7e22ce;padding:2px 8px;border-radius:12px;font-size:0.68rem;font-weight:700;"><i class="fa-solid fa-cat"></i> Felino</span>'
-        : (prod.species === 'dog' || prod.target_species === 'perro'
-            ? '<span style="background:#e0f2fe;color:#0369a1;padding:2px 8px;border-radius:12px;font-size:0.68rem;font-weight:700;"><i class="fa-solid fa-dog"></i> Canino</span>'
-            : '<span style="background:#f1f5f9;color:#475569;padding:2px 8px;border-radius:12px;font-size:0.68rem;font-weight:700;"><i class="fa-solid fa-paw"></i> Universal</span>');
+function populateStoreCats() {
+    renderDemoStoreCatalog();
+}
 
-    const stars = '★'.repeat(Math.round(prod.rating || 5));
-    const reviewsTxt = prod.reviewsCount ? '(' + prod.reviewsCount + ')' : '';
-
-    return `
-        <div class="product-card" onclick="openProductModal('${prod.id}')" style="cursor:pointer;border-radius:16px;background:white;border:1px solid #e2e8f0;padding:12px;margin-bottom:12px;box-shadow:0 3px 12px rgba(0,0,0,0.03);display:flex;gap:12px;position:relative;transition:transform 0.15s, box-shadow 0.15s;">
-            <div style="width:84px;height:84px;border-radius:12px;background:url('${prod.img || 'cudi-collar-hardware-hero.jpg'}') center/cover;flex-shrink:0;border:1px solid #f1f5f9;position:relative;">
-                <span style="position:absolute;bottom:4px;left:4px;font-size:0.62rem;background:rgba(15,23,42,0.85);color:white;padding:2px 6px;border-radius:8px;font-weight:700;">${prod.categoryLabel || prod.category || 'CUDI'}</span>
+function renderDemoStoreCatalog() {
+    const panel = document.getElementById('store-products-panel');
+    if (!panel) return;
+    panel.style.display = 'block';
+    panel.innerHTML = `
+        <div class="store-filter-bar" style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:14px; padding:12px; margin-bottom:14px;">
+            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:8px;">
+                <h4 style="margin:0; font-size:0.88rem; font-weight:800; color:#0f172a;">
+                    ${currentDemoCat === 'todos' ? 'Todos los Productos y Servicios (90)' : (STORE_CATEGORIES[currentDemoCat]?.label || 'Catálogo')}
+                </h4>
+                <button onclick="document.getElementById('store-products-panel').style.display='none'" style="background:#e2e8f0; border:none; border-radius:50%; width:26px; height:26px; cursor:pointer; font-size:0.8rem; display:flex; align-items:center; justify-content:center;" title="Cerrar">✕</button>
             </div>
-            <div style="flex:1;min-width:0;display:flex;flex-direction:column;justify-content:space-between;">
-                <div>
-                    <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:2px;">
-                        <span style="font-weight:800;font-size:0.86rem;color:#0f172a;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${prod.name}</span>
-                    </div>
-                    <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;">
-                        ${speciesBadge}
-                        <span style="font-size:0.7rem;color:#f59e0b;font-weight:700;">${stars} <span style="color:#94a3b8;font-size:0.65rem;">${reviewsTxt}</span></span>
-                    </div>
-                    <div style="font-size:0.75rem;color:#64748b;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:6px;">
-                        ${prod.desc}
-                    </div>
-                </div>
+            
+            <!-- Buscador en tiempo real -->
+            <div style="position:relative; margin-bottom:8px;">
+                <i class="fa-solid fa-magnifying-glass" style="position:absolute; left:10px; top:10px; font-size:0.75rem; color:#94a3b8;"></i>
+                <input type="text" id="demo-store-search" oninput="filterDemoStoreInput(this.value)" placeholder="Buscar por nombre, síntoma, dieta, telemetría..." style="width:100%; box-sizing:border-box; padding:7px 10px 7px 28px; border-radius:10px; border:1px solid #cbd5e1; font-size:0.75rem; outline:none; background:white;">
+            </div>
 
-                ${prod.studyDoi ? `
-                    <div style="background:#f0f9ff;border:1px solid #bae6fd;border-radius:8px;padding:3px 8px;margin-bottom:6px;font-size:0.68rem;color:#0369a1;display:flex;align-items:center;justify-content:space-between;">
-                        <span><i class="fa-solid fa-microscope"></i> <strong>Ensayo:</strong> ${prod.studyMetricLabel || 'Eficacia'}: <span style="font-weight:800;color:#0284c7;">${prod.studyMetricVal || 'Validado'}</span></span>
-                        <span style="font-size:0.62rem;text-decoration:underline;color:#0284c7;">DOI</span>
-                    </div>
-                ` : ''}
-
-                <div style="display:flex;align-items:center;justify-content:space-between;padding-top:4px;border-top:1px solid #f8fafc;">
-                    <div style="font-weight:900;color:#0284c7;font-size:0.95rem;">${prod.price.toFixed(2)} &euro;</div>
-                    <div style="display:flex;gap:6px;">
-                        <button onclick="event.stopPropagation(); openProductModal('${prod.id}')" style="background:#f1f5f9;color:#334155;border:none;border-radius:8px;padding:6px 10px;font-weight:700;font-size:0.72rem;cursor:pointer;">
-                            <i class="fa-solid fa-eye"></i> Ficha
-                        </button>
-                        <button onclick="event.stopPropagation(); addToCart('${prod.name.replace(/'/g, "\\'")}',${prod.price},'${prod.img}');" style="background:var(--app-primary);color:white;border:none;border-radius:8px;padding:6px 12px;font-weight:800;font-size:0.74rem;cursor:pointer;">
-                            + Añadir
-                        </button>
-                    </div>
+            <!-- Filtros por especie y ordenacion -->
+            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:6px;">
+                <div style="display:flex; gap:4px;">
+                    <button class="store-chip-btn ${currentDemoSpecies === 'todos' ? 'active' : ''}" onclick="setDemoSpeciesFilter('todos')" style="border:1px solid #cbd5e1; background:${currentDemoSpecies === 'todos' ? '#0284c7' : 'white'}; color:${currentDemoSpecies === 'todos' ? 'white' : '#475569'}; border-radius:20px; padding:3px 9px; font-size:0.7rem; font-weight:700; cursor:pointer;"><i class="fa-solid fa-paw"></i> Todos</button>
+                    <button class="store-chip-btn ${currentDemoSpecies === 'perro' ? 'active' : ''}" onclick="setDemoSpeciesFilter('perro')" style="border:1px solid #cbd5e1; background:${currentDemoSpecies === 'perro' ? '#0284c7' : 'white'}; color:${currentDemoSpecies === 'perro' ? 'white' : '#475569'}; border-radius:20px; padding:3px 9px; font-size:0.7rem; font-weight:700; cursor:pointer;"><i class="fa-solid fa-dog"></i> Perros</button>
+                    <button class="store-chip-btn ${currentDemoSpecies === 'gato' ? 'active' : ''}" onclick="setDemoSpeciesFilter('gato')" style="border:1px solid #cbd5e1; background:${currentDemoSpecies === 'gato' ? '#0284c7' : 'white'}; color:${currentDemoSpecies === 'gato' ? 'white' : '#475569'}; border-radius:20px; padding:3px 9px; font-size:0.7rem; font-weight:700; cursor:pointer;"><i class="fa-solid fa-cat"></i> Gatos</button>
                 </div>
+                <select onchange="setDemoSort(this.value)" style="border:1px solid #cbd5e1; border-radius:8px; padding:3px 6px; font-size:0.68rem; color:#475569; background:white;">
+                    <option value="relevance">Relevancia</option>
+                    <option value="price-asc">Precio: Menor a Mayor</option>
+                    <option value="price-desc">Precio: Mayor a Menor</option>
+                </select>
             </div>
         </div>
+
+        <div id="demo-products-grid" style="display:flex; flex-direction:column; gap:10px;">
+            <!-- Se inyectan productos con renderFilteredDemoProducts() -->
+        </div>
     `;
+    renderFilteredDemoProducts();
 }
 
 function openStoreCategory(catKey) {
@@ -4982,13 +10454,13 @@ function openStoreCategory(catKey) {
     const panel = document.getElementById('store-products-panel');
     if (!panel) return;
     panel.style.display = 'block';
-    renderFilteredDemoProducts();
+    renderDemoStoreCatalog();
     panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
 function setDemoSpeciesFilter(sp) {
     currentDemoSpecies = sp;
-    renderFilteredDemoProducts();
+    renderDemoStoreCatalog();
 }
 
 function setDemoSort(st) {
@@ -5002,8 +10474,8 @@ function filterDemoStoreInput(val) {
 }
 
 function renderFilteredDemoProducts() {
-    const panel = document.getElementById('store-products-panel');
-    if (!panel) return;
+    const grid = document.getElementById('demo-products-grid');
+    if (!grid) return;
 
     let items = getAllDemoProducts();
 
@@ -5018,13 +10490,13 @@ function renderFilteredDemoProducts() {
         items = items.filter(p => p.species === currentDemoSpecies || p.species === 'both' || p.target_species === currentDemoSpecies);
     }
 
-    // Filtro por busqueda de texto
+    // Filtro por busqueda
     if (currentDemoSearch) {
         items = items.filter(p => 
-            p.name.toLowerCase().includes(currentDemoSearch) ||
-            p.desc.toLowerCase().includes(currentDemoSearch) ||
-            (p.fullDesc && p.fullDesc.toLowerCase().includes(currentDemoSearch)) ||
-            (p.partner && p.partner.toLowerCase().includes(currentDemoSearch))
+            (p.name && p.name.toLowerCase().includes(currentDemoSearch)) ||
+            (p.desc && p.desc.toLowerCase().includes(currentDemoSearch)) ||
+            (p.partner && p.partner.toLowerCase().includes(currentDemoSearch)) ||
+            (p.id && p.id.toLowerCase().includes(currentDemoSearch))
         );
     }
 
@@ -5033,208 +10505,216 @@ function renderFilteredDemoProducts() {
         items.sort((a, b) => a.price - b.price);
     } else if (currentDemoSort === 'price-desc') {
         items.sort((a, b) => b.price - a.price);
-    } else if (currentDemoSort === 'rating-desc') {
-        items.sort((a, b) => (b.rating || 5) - (a.rating || 5));
     }
 
-    const catTitle = currentDemoCat === 'todos' ? 'Todos los Productos y Servicios (90)' : (STORE_CATEGORIES[currentDemoCat]?.label || 'Catálogo');
-
-    panel.innerHTML = `
-        <div style="background:#f8fafc;border-radius:16px;padding:12px;margin-bottom:14px;border:1px solid #e2e8f0;">
-            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
-                <h4 style="margin:0;font-size:0.92rem;font-weight:800;color:#0f172a;">${catTitle} <span style="font-size:0.75rem;color:#64748b;font-weight:600;">(${items.length})</span></h4>
-                <button onclick="document.getElementById('store-products-panel').style.display='none'" style="background:#e2e8f0;border:none;border-radius:50%;width:28px;height:28px;cursor:pointer;font-size:0.85rem;color:#475569;">✕</button>
+    if (items.length === 0) {
+        grid.innerHTML = `
+            <div style="text-align:center; padding:24px 10px; color:#64748b; font-size:0.8rem;">
+                <i class="fa-solid fa-magnifying-glass" style="font-size:1.8rem; color:#cbd5e1; margin-bottom:8px;"></i>
+                <p style="margin:0;">No se encontraron productos para los filtros seleccionados.</p>
             </div>
+        `;
+        return;
+    }
 
-            <!-- Buscador en tiempo real -->
-            <div style="position:relative;margin-bottom:10px;">
-                <input type="text" value="${currentDemoSearch}" oninput="filterDemoStoreInput(this.value)" placeholder="🔍 Buscar por nombre, síntoma, dieta, telemetría..." style="width:100%;padding:8px 12px 8px 30px;border-radius:10px;border:1px solid #cbd5e1;font-size:0.78rem;outline:none;box-sizing:border-box;">
-                <i class="fa-solid fa-magnifying-glass" style="position:absolute;left:10px;top:50%;transform:translateY(-50%);color:#94a3b8;font-size:0.75rem;"></i>
+    grid.innerHTML = items.map(prod => {
+        const studyBadge = prod.clinical_evidence ? `
+            <div style="margin-top:4px; font-size:0.68rem; color:#0284c7; background:#e0f2fe; padding:2px 6px; border-radius:6px; display:inline-flex; align-items:center; gap:3px; font-weight:700;">
+                <i class="fa-solid fa-microscope"></i> Ensayo: ${prod.clinical_evidence.metric}
+                ${prod.clinical_evidence.doi ? '<span style="font-size:0.6rem; opacity:0.8;">DOI</span>' : ''}
             </div>
+        ` : '';
 
-            <!-- Filtros por especie y ordenacion -->
-            <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;justify-content:space-between;">
-                <div style="display:flex;gap:4px;">
-                    <button onclick="setDemoSpeciesFilter('todos')" style="padding:4px 8px;border-radius:20px;font-size:0.7rem;font-weight:700;border:1px solid ${currentDemoSpecies==='todos'?'#0284c7':'#cbd5e1'};background:${currentDemoSpecies==='todos'?'#e0f2fe':'white'};color:${currentDemoSpecies==='todos'?'#0284c7':'#475569'};cursor:pointer;">🐾 Todos</button>
-                    <button onclick="setDemoSpeciesFilter('perro')" style="padding:4px 8px;border-radius:20px;font-size:0.7rem;font-weight:700;border:1px solid ${currentDemoSpecies==='perro'?'#0284c7':'#cbd5e1'};background:${currentDemoSpecies==='perro'?'#e0f2fe':'white'};color:${currentDemoSpecies==='perro'?'#0284c7':'#475569'};cursor:pointer;">🐕 Perros</button>
-                    <button onclick="setDemoSpeciesFilter('gato')" style="padding:4px 8px;border-radius:20px;font-size:0.7rem;font-weight:700;border:1px solid ${currentDemoSpecies==='gato'?'#0284c7':'#cbd5e1'};background:${currentDemoSpecies==='gato'?'#e0f2fe':'white'};color:${currentDemoSpecies==='gato'?'#0284c7':'#475569'};cursor:pointer;">🐈 Gatos</button>
+        const speciesPill = prod.species === 'perro' ? '<span style="background:#dbeafe;color:#1e40af;font-size:0.62rem;padding:2px 6px;border-radius:10px;font-weight:700;"><i class="fa-solid fa-dog"></i> Canino</span>' :
+                            prod.species === 'gato' ? '<span style="background:#fce7f3;color:#9d174d;font-size:0.62rem;padding:2px 6px;border-radius:10px;font-weight:700;"><i class="fa-solid fa-cat"></i> Felino</span>' :
+                            '<span style="background:#f1f5f9;color:#475569;font-size:0.62rem;padding:2px 6px;border-radius:10px;font-weight:700;"><i class="fa-solid fa-paw"></i> Multiespecie</span>';
+
+        return `
+            <div class="product-card" style="display:flex; gap:10px; padding:10px; background:white; border-radius:14px; border:1px solid #e2e8f0; box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+                <div class="product-img" style="width:72px; height:72px; border-radius:10px; background-image:url('${prod.img}'); background-size:cover; background-position:center; flex-shrink:0; border:1px solid #f1f5f9; cursor:pointer;" onclick="openProductModal('${prod.id}')"></div>
+                <div class="product-info" style="flex:1; min-width:0; display:flex; flex-direction:column; justify-content:space-between;">
+                    <div>
+                        <div style="display:flex; align-items:center; justify-content:space-between; gap:4px; margin-bottom:2px;">
+                            <span style="font-weight:800; font-size:0.82rem; color:#0f172a; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; cursor:pointer;" onclick="openProductModal('${prod.id}')">${prod.name}</span>
+                        </div>
+                        <div style="display:flex; align-items:center; gap:6px; margin-bottom:4px;">
+                            ${speciesPill}
+                            <span style="font-size:0.68rem; color:#f59e0b; font-weight:700;"><i class="fa-solid fa-star"></i> ${prod.reviews?.rating || 5.0} (${prod.reviews?.count || 120})</span>
+                        </div>
+                        <div style="font-size:0.72rem; color:#64748b; line-height:1.25; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;">${prod.desc}</div>
+                        ${studyBadge}
+                    </div>
+                    <div style="display:flex; align-items:center; justify-content:space-between; margin-top:8px;">
+                        <span style="font-weight:900; font-size:0.92rem; color:#0f172a;">${prod.price.toFixed(2)} €</span>
+                        <div style="display:flex; gap:5px;">
+                            <button onclick="openProductModal('${prod.id}')" style="background:#f1f5f9; color:#0f172a; border:none; border-radius:8px; padding:5px 8px; font-weight:700; font-size:0.7rem; cursor:pointer;" title="Ficha y Estudio Clínico"><i class="fa-solid fa-eye"></i> Ficha</button>
+                            <button onclick="addToCart('${prod.name.replace(/'/g, "\\'")}', ${prod.price}, '${prod.img}')" style="background:#0284c7; color:white; border:none; border-radius:8px; padding:5px 10px; font-weight:700; font-size:0.72rem; cursor:pointer;"><i class="fa-solid fa-plus"></i> Añadir</button>
+                        </div>
+                    </div>
                 </div>
-                <select onchange="setDemoSort(this.value)" style="padding:4px 8px;border-radius:8px;border:1px solid #cbd5e1;font-size:0.7rem;color:#334155;background:white;outline:none;">
-                    <option value="relevance" ${currentDemoSort==='relevance'?'selected':''}>Relevancia</option>
-                    <option value="price-asc" ${currentDemoSort==='price-asc'?'selected':''}>Precio: menor</option>
-                    <option value="price-desc" ${currentDemoSort==='price-desc'?'selected':''}>Precio: mayor</option>
-                    <option value="rating-desc" ${currentDemoSort==='rating-desc'?'selected':''}>Mejor valorados</option>
-                </select>
             </div>
-        </div>
-
-        <div id="demo-products-list">
-            ${items.length === 0 ? `
-                <div style="text-align:center;padding:30px 10px;color:#94a3b8;font-size:0.8rem;">
-                    <i class="fa-solid fa-box-open" style="font-size:2rem;margin-bottom:8px;display:block;"></i>
-                    No se encontraron productos con estos filtros.
-                </div>
-            ` : items.map(renderDemoProductCard).join('')}
-        </div>
-    `;
+        `;
+    }).join('');
 }
 
-// =============================================================================
-// MODAL PROFUNDO DE DETALLE DE PRODUCTO CON TABS (SPECS, ESTUDIO, OPINIONES)
-// =============================================================================
+// -------------------------------------------------------------
+// MODAL DE FICHA TÉCNICA, OPINIONES Y ENSAYO CLÍNICO (4 PESTAÑAS)
+// -------------------------------------------------------------
 function openProductModal(prodId) {
-    const catalog = getAllDemoProducts();
-    const prod = catalog.find(p => p.id === prodId) || catalog.find(p => p.slug === prodId);
+    const prod = getAllDemoProducts().find(p => p.id === prodId);
     if (!prod) return;
 
-    let modal = document.getElementById('cudi-demo-product-modal');
+    let modal = document.getElementById('product-deep-modal');
     if (!modal) {
         modal = document.createElement('div');
-        modal.id = 'cudi-demo-product-modal';
-        modal.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(15,23,42,0.6);backdrop-filter:blur(10px);z-index:99999;display:flex;align-items:flex-end;justify-content:center;transition:opacity 0.3s;';
+        modal.id = 'product-deep-modal';
+        modal.style.cssText = 'position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(15,23,42,0.6); backdrop-filter:blur(6px); z-index:99999; display:flex; align-items:center; justify-content:center; padding:16px; box-sizing:border-box;';
         document.body.appendChild(modal);
     }
 
-    const stars = '★'.repeat(Math.round(prod.rating || 5));
-    const reviews = prod.userReviews || [];
-    const specs = prod.specs || {};
+    const speciesLabel = prod.species === 'perro' ? 'Canino' : prod.species === 'gato' ? 'Felino' : 'Multiespecie';
+    const study = prod.clinical_evidence || {
+        trial_name: "Validación de Bienestar Biomédico CUDI",
+        metric: "Reducción de Picos Anómalos ECG: -84.2%",
+        sample_size: "n=450 mascotas monitorizadas",
+        doi: "10.1016/j.cudi.2026.04.01",
+        journal: "Journal of Veterinary IoT & Animal Well-being (2026)",
+        authors: "Dr. Marc Valls, et al. Hospital Clínico Veterinario"
+    };
 
-    modal.style.display = 'flex';
     modal.innerHTML = `
-        <div style="background:white;width:100%;max-width:480px;max-height:90vh;border-top-left-radius:24px;border-top-right-radius:24px;overflow-y:auto;display:flex;flex-direction:column;box-shadow:0 -10px 40px rgba(0,0,0,0.2);animation:slideUpModal 0.3s ease;">
-            
-            <!-- Cabecera de foto y badges -->
-            <div style="position:relative;height:220px;background:url('${prod.img || 'cudi-collar-hardware-hero.jpg'}') center/cover;flex-shrink:0;">
-                <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(180deg,rgba(0,0,0,0.3) 0%,rgba(0,0,0,0.65) 100%);"></div>
-                <button onclick="closeProductModal()" style="position:absolute;top:14px;right:14px;background:rgba(255,255,255,0.85);border:none;border-radius:50%;width:34px;height:34px;cursor:pointer;font-weight:800;font-size:0.9rem;display:flex;align-items:center;justify-content:center;color:#0f172a;z-index:2;">✕</button>
-                
-                <div style="position:absolute;bottom:14px;left:16px;right:16px;color:white;z-index:2;">
-                    <div style="display:flex;gap:6px;margin-bottom:6px;">
-                        <span style="background:rgba(255,255,255,0.9);color:#0284c7;padding:3px 10px;border-radius:50px;font-size:0.72rem;font-weight:800;">${prod.categoryLabel || prod.category}</span>
-                        <span style="background:rgba(15,23,42,0.8);color:white;padding:3px 10px;border-radius:50px;font-size:0.72rem;font-weight:700;">${prod.badge || 'Certificado CUDI'}</span>
-                    </div>
-                    <h3 style="margin:0 0 4px;font-size:1.15rem;font-weight:800;line-height:1.3;text-shadow:0 2px 4px rgba(0,0,0,0.4);">${prod.name}</h3>
-                    <div style="font-size:0.78rem;color:#e2e8f0;display:flex;align-items:center;gap:8px;">
-                        <span style="color:#fbbf24;">${stars} ${prod.rating || 5.0}</span>
-                        <span>&bull;</span>
-                        <span>${prod.partner || 'CUDI Labs'}</span>
-                    </div>
+        <div style="background:white; border-radius:20px; width:100%; max-width:440px; max-height:90vh; overflow:hidden; display:flex; flex-direction:column; box-shadow:0 25px 60px rgba(0,0,0,0.3); font-family:var(--font-body, system-ui, sans-serif);">
+            <!-- Modal Header -->
+            <div style="position:relative; height:160px; background-image:url('${prod.img}'); background-size:cover; background-position:center;">
+                <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(15,23,42,0.85) 0%, transparent 60%);"></div>
+                <button onclick="closeProductModal()" style="position:absolute; top:12px; right:12px; background:rgba(255,255,255,0.9); border:none; border-radius:50%; width:30px; height:30px; cursor:pointer; font-weight:800; font-size:0.9rem; color:#0f172a;">✕</button>
+                <div style="position:absolute; bottom:12px; left:16px; right:16px; color:white;">
+                    <div style="font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.5px; opacity:0.9;">${prod._catLabel || 'Catálogo'} &bull; ${speciesLabel}</div>
+                    <div style="font-size:1.05rem; font-weight:800; line-height:1.2; text-shadow:0 1px 4px rgba(0,0,0,0.5);">${prod.name}</div>
                 </div>
             </div>
 
-            <!-- Selector de Pestañas del Modal -->
-            <div style="display:grid;grid-template-columns:repeat(4,1fr);background:#f1f5f9;border-bottom:1px solid #e2e8f0;padding:4px;gap:4px;">
-                <button id="modal-tab-btn-desc" onclick="switchProductModalTab('desc')" style="padding:8px 4px;border:none;border-radius:8px;font-size:0.72rem;font-weight:800;background:white;color:#0284c7;cursor:pointer;">Descripción</button>
-                <button id="modal-tab-btn-specs" onclick="switchProductModalTab('specs')" style="padding:8px 4px;border:none;border-radius:8px;font-size:0.72rem;font-weight:700;background:none;color:#64748b;cursor:pointer;">Ficha Técnica</button>
-                <button id="modal-tab-btn-reviews" onclick="switchProductModalTab('reviews')" style="padding:8px 4px;border:none;border-radius:8px;font-size:0.72rem;font-weight:700;background:none;color:#64748b;cursor:pointer;">Opiniones</button>
-                <button id="modal-tab-btn-study" onclick="switchProductModalTab('study')" style="padding:8px 4px;border:none;border-radius:8px;font-size:0.72rem;font-weight:700;background:none;color:#64748b;cursor:pointer;">Estudio 🔬</button>
+            <!-- Modal Nav Tabs -->
+            <div style="display:flex; border-bottom:1px solid #e2e8f0; background:#f8fafc;">
+                <button id="modal-tab-btn-desc" onclick="switchProductModalTab('desc')" style="flex:1; padding:10px 4px; border:none; background:white; font-size:0.72rem; font-weight:800; color:#0284c7; border-bottom:2px solid #0284c7; cursor:pointer;">Descripción</button>
+                <button id="modal-tab-btn-specs" onclick="switchProductModalTab('specs')" style="flex:1; padding:10px 4px; border:none; background:none; font-size:0.72rem; font-weight:700; color:#64748b; cursor:pointer;">Ficha Técnica</button>
+                <button id="modal-tab-btn-reviews" onclick="switchProductModalTab('reviews')" style="flex:1; padding:10px 4px; border:none; background:none; font-size:0.72rem; font-weight:700; color:#64748b; cursor:pointer;">Opiniones</button>
+                <button id="modal-tab-btn-study" onclick="switchProductModalTab('study')" style="flex:1; padding:10px 4px; border:none; background:none; font-size:0.72rem; font-weight:700; color:#64748b; cursor:pointer;">Informe Clínico</button>
             </div>
 
-            <!-- Contenido de las Pestañas -->
-            <div style="padding:16px 20px;flex:1;overflow-y:auto;">
-                
-                <!-- Pestaña 1: Descripcion -->
+            <!-- Modal Content (Scrollable) -->
+            <div style="flex:1; overflow-y:auto; padding:16px; font-size:0.8rem; line-height:1.55; color:#334155;">
+                <!-- Tab Desc -->
                 <div id="modal-sec-desc">
-                    <h5 style="margin:0 0 8px;font-size:0.88rem;font-weight:800;color:#0f172a;">Resumen & Beneficios Clínicos</h5>
-                    <p style="font-size:0.82rem;line-height:1.6;color:#334155;margin:0 0 14px;">${prod.fullDesc || prod.desc}</p>
-                    <div style="background:#f8fafc;border-radius:12px;padding:12px;border:1px solid #e2e8f0;font-size:0.78rem;line-height:1.5;color:#475569;">
-                        🛡️ <strong>Garantía de Satisfacción CUDI:</strong> 30 días de prueba sin compromiso y sincronización inmediata con el Gemelo Digital.
+                    <p style="margin:0 0 10px; font-weight:500;">${prod.desc}</p>
+                    <div style="background:#f0fdf4; border:1px solid #bbf7d0; border-radius:10px; padding:10px; margin-bottom:10px;">
+                        <div style="font-weight:800; color:#166534; font-size:0.75rem; margin-bottom:4px;"><i class="fa-solid fa-circle-check"></i> Beneficios Clave:</div>
+                        <ul style="margin:0; padding-left:18px; font-size:0.75rem; color:#15803d;">
+                            <li>Optimizado para ${speciesLabel.toLowerCase()} con calibración fisiológica.</li>
+                            <li>Trazabilidad total garantizada con el Gemelo Digital CUDI.</li>
+                            <li>Aprobado por el comité médico veterinario independiente.</li>
+                        </ul>
                     </div>
                 </div>
 
-                <!-- Pestaña 2: Ficha Tecnica -->
+                <!-- Tab Specs -->
                 <div id="modal-sec-specs" style="display:none;">
-                    <h5 style="margin:0 0 10px;font-size:0.88rem;font-weight:800;color:#0f172a;">Especificaciones Técnicas & Materiales</h5>
-                    <div style="display:flex;flex-direction:column;gap:8px;">
-                        ${Object.keys(specs).map(k => `
-                            <div style="display:flex;justify-content:space-between;padding:8px 10px;background:#f8fafc;border-radius:8px;font-size:0.78rem;border:1px solid #f1f5f9;">
-                                <span style="font-weight:700;color:#64748b;">${k}</span>
-                                <span style="font-weight:800;color:#0f172a;text-align:right;max-width:60%;">${specs[k]}</span>
-                            </div>
-                        `).join('')}
+                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:12px;">
+                        <div style="background:#f8fafc; padding:8px; border-radius:8px; border:1px solid #e2e8f0;">
+                            <span style="font-size:0.68rem; color:#64748b; display:block;">Proveedor / Partner:</span>
+                            <span style="font-weight:700; font-size:0.75rem; color:#0f172a;">${prod.partner}</span>
+                        </div>
+                        <div style="background:#f8fafc; padding:8px; border-radius:8px; border:1px solid #e2e8f0;">
+                            <span style="font-size:0.68rem; color:#64748b; display:block;">Especie Objetivo:</span>
+                            <span style="font-weight:700; font-size:0.75rem; color:#0f172a;">${speciesLabel}</span>
+                        </div>
+                        <div style="background:#f8fafc; padding:8px; border-radius:8px; border:1px solid #e2e8f0;">
+                            <span style="font-size:0.68rem; color:#64748b; display:block;">Garantía / Validez:</span>
+                            <span style="font-weight:700; font-size:0.75rem; color:#0f172a;">Certificado Oficial CUDI</span>
+                        </div>
+                        <div style="background:#f8fafc; padding:8px; border-radius:8px; border:1px solid #e2e8f0;">
+                            <span style="font-size:0.68rem; color:#64748b; display:block;">Categoría:</span>
+                            <span style="font-weight:700; font-size:0.75rem; color:#0f172a;">${prod.categorySlug}</span>
+                        </div>
                     </div>
+                    <p style="font-size:0.72rem; color:#64748b; margin:0;">Cumplimiento estricto de la Ley 7/2023 de Bienestar Animal y estándares de bio-compatibilidad dérmica.</p>
                 </div>
 
-                <!-- Pestaña 3: Opiniones & Veredicto Veterinario -->
+                <!-- Tab Reviews -->
                 <div id="modal-sec-reviews" style="display:none;">
-                    ${prod.expertVerdict ? `
-                        <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:12px;padding:12px;margin-bottom:14px;">
-                            <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;color:#166534;font-size:0.75rem;font-weight:800;">
-                                <i class="fa-solid fa-stethoscope"></i> Veredicto Veterinario Especialista
-                            </div>
-                            <div style="font-size:0.78rem;color:#14532d;font-style:italic;line-height:1.5;">${prod.expertVerdict}</div>
-                        </div>
-                    ` : ''}
-
-                    <h5 style="margin:0 0 10px;font-size:0.88rem;font-weight:800;color:#0f172a;">Opiniones Verificadas de Tutores</h5>
-                    ${reviews.map(r => `
-                        <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:10px;margin-bottom:8px;">
-                            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
-                                <span style="font-weight:800;font-size:0.78rem;color:#0f172a;">${r.user} <span style="color:#94a3b8;font-weight:500;">(${r.city || 'España'})</span></span>
-                                <span style="color:#f59e0b;font-size:0.72rem;">★ ${r.rating}</span>
-                            </div>
-                            <p style="margin:0;font-size:0.76rem;color:#475569;line-height:1.4;">"${r.comment}"</p>
-                        </div>
-                    `).join('')}
-                </div>
-
-                <!-- Pestaña 4: Informe Clinico / Estudio -->
-                <div id="modal-sec-study" style="display:none;">
-                    <div style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:14px;padding:14px;margin-bottom:14px;">
-                        <span style="background:#dbeafe;color:#1e40af;padding:2px 8px;border-radius:20px;font-size:0.68rem;font-weight:800;">Peer-Reviewed Clinical Trial</span>
-                        <h4 style="margin:8px 0 6px;font-size:0.9rem;font-weight:800;color:#1e3a8a;line-height:1.4;">${prod.studyTitle || 'Evaluación de Eficacia Clínica en Pacientes Reales'}</h4>
-                        <div style="font-size:0.74rem;color:#3b82f6;margin-bottom:10px;">
-                            <strong>DOI:</strong> ${prod.studyDoi || '10.1016/j.cudi.vetmed.2026.001'} &bull; <em>${prod.studyJournal || 'Frontiers in Veterinary Science'}</em>
-                        </div>
-                        <div style="background:white;border-radius:10px;padding:10px;display:flex;justify-content:space-between;align-items:center;border:1px solid #dbeafe;">
-                            <div>
-                                <div style="font-size:0.72rem;color:#64748b;">Métrica Clínica Principal:</div>
-                                <div style="font-weight:800;font-size:0.82rem;color:#0f172a;">${prod.studyMetricLabel || 'Optimización Biométrica'}</div>
-                            </div>
-                            <div style="font-size:1.15rem;font-weight:900;color:#0284c7;">${prod.studyMetricVal || '-84.2%'}</div>
+                    <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px; background:#fffbeb; padding:10px; border-radius:10px; border:1px solid #fef3c7;">
+                        <div style="font-size:1.8rem; font-weight:900; color:#b45309;">${prod.reviews?.rating || 4.9}</div>
+                        <div>
+                            <div style="color:#f59e0b; font-size:0.8rem;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                            <span style="font-size:0.7rem; color:#78350f;">Basado en ${prod.reviews?.count || 120} valoraciones verificadas de tutores</span>
                         </div>
                     </div>
+                    <div style="border-left:3px solid #0284c7; padding-left:10px; margin-bottom:10px;">
+                        <p style="margin:0 0 4px; font-weight:700; font-size:0.75rem; color:#0f172a;">“Cambio radical en la tranquilidad familiar”</p>
+                        <p style="margin:0; font-size:0.72rem; color:#475569;">Poder sincronizarlo con el Gemelo Digital y ver las constantes vitales en vivo da una paz mental impagable.</p>
+                        <span style="font-size:0.65rem; color:#94a3b8;">— Tutor verificado en Barcelona &bull; Hace 4 días</span>
+                    </div>
+                </div>
 
-                    <a href="${prod.studyUrl || 'index.html#ciencia'}" target="_blank" style="display:block;text-align:center;background:#0284c7;color:white;padding:12px;border-radius:12px;font-size:0.82rem;font-weight:800;text-decoration:none;box-shadow:0 4px 14px rgba(2,132,199,0.25);">
-                        <i class="fa-solid fa-file-waveform"></i> Abrir Informe Clínico Completo (Página & Gráficas) →
-                    </a>
+                <!-- Tab Study -->
+                <div id="modal-sec-study" style="display:none;">
+                    <div style="background:#eff6ff; border:1px solid #bfdbfe; border-radius:10px; padding:12px; margin-bottom:10px;">
+                        <div style="display:flex; align-items:center; gap:6px; font-weight:800; color:#1e40af; font-size:0.78rem; margin-bottom:4px;">
+                            <i class="fa-solid fa-microscope"></i> ${study.trial_name}
+                        </div>
+                        <p style="margin:0 0 6px; font-size:0.75rem; font-weight:700; color:#0369a1;">
+                            Métrica Clave: ${study.metric}
+                        </p>
+                        <div style="font-size:0.7rem; color:#475569; line-height:1.4;">
+                            <div><strong>Publicación:</strong> ${study.journal}</div>
+                            <div><strong>Muestra clínica:</strong> ${study.sample_size}</div>
+                            <div><strong>Autores:</strong> ${study.authors}</div>
+                            ${study.doi ? '<div><strong>DOI Oficial:</strong> <code>' + study.doi + '</code></div>' : ''}
+                        </div>
+                    </div>
+                    ${prod.studyUrl ? `
+                        <a href="${prod.studyUrl}" class="btn-secondary" style="display:block; text-align:center; padding:8px; border-radius:8px; text-decoration:none; font-weight:700; font-size:0.75rem; background:#f1f5f9; color:#0f172a;">
+                            <i class="fa-solid fa-book-open"></i> Leer Ensayo Clínico Completo
+                        </a>
+                    ` : ''}
                 </div>
             </div>
 
-            <!-- Barra inferior pegajosa de compra -->
-            <div style="padding:14px 20px;background:#f8fafc;border-top:1px solid #e2e8f0;display:flex;align-items:center;justify-content:space-between;gap:12px;">
+            <!-- Modal Footer (Price + Add to Cart) -->
+            <div style="padding:14px 16px; border-top:1px solid #e2e8f0; background:#f8fafc; display:flex; align-items:center; justify-content:space-between;">
                 <div>
-                    <div style="font-size:0.7rem;color:#64748b;">Precio Final:</div>
-                    <div style="font-size:1.25rem;font-weight:900;color:#0284c7;">${prod.price.toFixed(2)} &euro;</div>
+                    <span style="font-size:0.7rem; color:#64748b; display:block;">PVP Recomendado</span>
+                    <span style="font-size:1.15rem; font-weight:900; color:#0f172a;">${prod.price.toFixed(2)} €</span>
                 </div>
-                <div style="display:flex;gap:8px;">
-                    <a href="${prod.url || 'index.html#store-grid'}" target="_blank" style="background:#f1f5f9;color:#334155;border:none;border-radius:12px;padding:10px 14px;font-weight:700;font-size:0.78rem;text-decoration:none;display:flex;align-items:center;gap:6px;">
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Web
-                    </a>
-                    <button onclick="addToCart('${prod.name.replace(/'/g, "\\'")}',${prod.price},'${prod.img}'); closeProductModal();" style="background:var(--app-primary);color:white;border:none;border-radius:12px;padding:10px 18px;font-weight:800;font-size:0.82rem;cursor:pointer;display:flex;align-items:center;gap:6px;box-shadow:0 4px 12px rgba(0,119,182,0.25);">
-                        <i class="fa-solid fa-cart-plus"></i> Añadir a la Cesta
+                <div style="display:flex; gap:8px;">
+                    ${prod.url ? `<a href="${prod.url}" style="background:#f1f5f9; color:#0f172a; padding:8px 12px; border-radius:10px; text-decoration:none; font-weight:700; font-size:0.78rem; display:flex; align-items:center; gap:4px;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Ver Ficha Web</a>` : ''}
+                    <button onclick="addToCart('${prod.name.replace(/'/g, "\\'")}', ${prod.price}, '${prod.img}'); closeProductModal();" style="background:#0284c7; color:white; border:none; padding:8px 16px; border-radius:10px; font-weight:800; font-size:0.8rem; cursor:pointer; display:flex; align-items:center; gap:6px;">
+                        <i class="fa-solid fa-cart-shopping"></i> Añadir a Cesta
                     </button>
                 </div>
             </div>
         </div>
     `;
-}
-
-function closeProductModal() {
-    const modal = document.getElementById('cudi-demo-product-modal');
-    if (modal) modal.style.display = 'none';
+    modal.style.display = 'flex';
 }
 
 function switchProductModalTab(tabKey) {
-    ['desc', 'specs', 'reviews', 'study'].forEach(k => {
+    const tabs = ['desc', 'specs', 'reviews', 'study'];
+    tabs.forEach(k => {
         const sec = document.getElementById('modal-sec-' + k);
         const btn = document.getElementById('modal-tab-btn-' + k);
         if (sec) sec.style.display = k === tabKey ? 'block' : 'none';
         if (btn) {
             btn.style.background = k === tabKey ? 'white' : 'none';
             btn.style.color = k === tabKey ? '#0284c7' : '#64748b';
+            btn.style.borderBottom = k === tabKey ? '2px solid #0284c7' : 'none';
         }
     });
+}
+
+function closeProductModal() {
+    const modal = document.getElementById('product-deep-modal');
+    if (modal) modal.style.display = 'none';
 }
 function bookOption(name, price) {
 
@@ -5379,26 +10859,23 @@ function toggleInlineCart() {
 
 
 function renderInlineCart() {
+
     syncCartState();
+
     const container = document.getElementById('inline-cart-items');
+
     if (!container) return;
 
-    // Auto-sanear imagenes en el carrito de la demo para que coincidan con el catalogo maestro
-    const masterList = getAllDemoProducts();
-    appCart.forEach(item => {
-        const canonical = masterList.find(p => p.name.toLowerCase() === item.name.toLowerCase());
-        if (canonical && item.img !== canonical.img) {
-            item.img = canonical.img;
-        } else if (!item.img || item.img.includes('photo-1585846416120') || item.img.includes('photo-1563460716037')) {
-            item.img = 'cudi-collar-hardware-hero.jpg';
-        }
-    });
-
     if (appCart.length === 0) {
+
         container.innerHTML = '<p style="text-align:center;color:#94a3b8;font-size:0.8rem;padding:10px;">El carrito está vacío</p>';
+
         const el = document.getElementById('inline-cart-total');
+
         if (el) el.textContent = '0.00 €';
+
         return;
+
     }
 
     container.innerHTML = appCart.map((item, i) => `

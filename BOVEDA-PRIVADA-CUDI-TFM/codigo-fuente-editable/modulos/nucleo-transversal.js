@@ -477,7 +477,7 @@
     // 4. Barra de progreso de lectura + Estudios Clínicos Relacionados en los artículos del Blog / Journal
     function enhanceClinicalArticles() {
         const fileName = getFileName();
-        if (!window.CudiCatalog) return;
+        if (!window.CudiCatalog || typeof window.CudiCatalog.getArticleByUrl !== 'function') return;
         const currentArticle = window.CudiCatalog.getArticleByUrl(fileName);
         if (!currentArticle) return;
 
@@ -499,7 +499,7 @@
         }
 
         // B. Estudios clínicos relacionados al final del artículo
-        const relatedArticles = window.CudiCatalog.getRelatedArticles(fileName, 3);
+        const relatedArticles = (window.CudiCatalog && typeof window.CudiCatalog.getRelatedArticles === 'function') ? window.CudiCatalog.getRelatedArticles(fileName, 3) : [];
         if (!document.getElementById('cudi-related-articles-section') && relatedArticles.length > 0) {
             const relSec = document.createElement('section');
             relSec.id = 'cudi-related-articles-section';
