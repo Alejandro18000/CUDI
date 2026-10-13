@@ -1265,7 +1265,6 @@ p {
     .hero-dual { grid-template-columns: 1fr; }
     .hero-dual-text { padding: 60px 5%; text-align: center; }
     .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 40px; }
-}
     /* Asegurar que el carrito es siempre tocable */
     .cart-trigger-island {
         min-width: 44px !important;
@@ -5229,327 +5228,429 @@ section:nth-of-type(2) { animation-delay: 0.6s; }
 }
 
 /* ==========================================================================
-   CUDI APPLE HERO CINEMATIC REDESIGN (APPLE-GRADE FLUID MOTION & GLASS DOCK)
+   CUDI IMMERSIVE APPLE / SAMSUNG HERO CANVAS (FULL-BLEED CINEMATIC SHOWCASE)
    ========================================================================== */
-.hero-apple-cinematic {
+/* ==========================================================================
+   PORTADA CINEMÁTICA ESTILO APPLE & SAMSUNG (2026 REFINED EDITION)
+   Stage centrado, fotografía panorámica inmersiva, tipografía pura y legible
+   ========================================================================== */
+/* ==========================================================================
+   PORTADA CINEMÁTICA ESTILO APPLE & SAMSUNG (2026 REFINED MASTERPIECE)
+   Stage centrado, fotografía panorámica inmersiva, tipografía pura y legible
+   ========================================================================== */
+.cudi-apple-stage-hero {
     position: relative;
-    overflow: hidden;
-    background: radial-gradient(circle at 85% 30%, rgba(56, 189, 248, 0.08) 0%, transparent 60%),
-                radial-gradient(circle at 15% 80%, rgba(14, 165, 233, 0.06) 0%, transparent 50%),
-                linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
-    padding: 70px 0 110px;
-    border-bottom: 1px solid rgba(226, 232, 240, 0.8);
-}
-
-.hero-apple-container {
-    max-width: 1360px;
-    margin: 0 auto;
-    padding: 0 32px;
-    display: grid;
-    grid-template-columns: 1.05fr 1.15fr;
-    gap: 50px;
+    width: 100%;
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
-    position: relative;
-    z-index: 2;
+    overflow: hidden;
+    background: #000000;
+    color: #ffffff;
+    box-sizing: border-box;
+    padding-top: 15px;
 }
 
-/* Eyebrow Pill */
-.hero-apple-eyebrow {
+/* Full-bleed background media with cinematic slow zoom (Ken Burns) */
+.cudi-hero-bg-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.cudi-hero-bg-media {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 72%;
+    transform: scale(1.03);
+    animation: cudiKenBurns 20s ease-in-out infinite alternate;
+    will-change: transform;
+}
+
+@keyframes cudiKenBurns {
+    0% { transform: scale(1.02) translate(0, 0); }
+    50% { transform: scale(1.07) translate(-0.8%, -0.4%); }
+    100% { transform: scale(1.03) translate(0.8%, 0.4%); }
+}
+
+/* Apple Pro Scrim: Top contrast gradient for crystal-clear typography, bottom fade to white page */
+.cudi-hero-scrim-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, 
+        rgba(0, 0, 0, 0.88) 0%, 
+        rgba(0, 0, 0, 0.70) 30%, 
+        rgba(0, 0, 0, 0.05) 55%, 
+        rgba(0, 0, 0, 0.20) 80%, 
+        rgba(0, 0, 0, 0.90) 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Floating HUD Live Telemetry Indicators (Smart Collar Sync) */
+.cudi-hero-telemetry-hud {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.cudi-hud-badge {
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(15, 23, 42, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    padding: 10px 22px;
+    border-radius: 980px;
+    color: #ffffff;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.25);
+    animation: cudiHudFloat 5s ease-in-out infinite;
+    pointer-events: auto;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.cudi-hud-badge:hover {
+    transform: translateY(-3px) scale(1.03);
+    border-color: rgba(56, 189, 248, 0.6);
+}
+
+.cudi-hud-badge.dog-hud {
+    bottom: 8%;
+    right: 5%;
+    animation-delay: 0s;
+}
+
+.cudi-hud-badge.cat-hud {
+    bottom: 8%;
+    left: 5%;
+    animation-delay: 2.5s;
+}
+
+@keyframes cudiHudFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+.cudi-hud-beacon {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.cudi-hud-beacon.cyan {
+    background: #38bdf8;
+    box-shadow: 0 0 14px #38bdf8;
+}
+
+.cudi-hud-beacon.emerald {
+    background: #10b981;
+    box-shadow: 0 0 14px #10b981;
+}
+
+.cudi-hud-beacon::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    border: 1.5px solid currentColor;
+    opacity: 0.8;
+    animation: cudiSonarRing 2s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+@keyframes cudiSonarRing {
+    0% { transform: scale(0.8); opacity: 1; }
+    100% { transform: scale(2.4); opacity: 0; }
+}
+
+/* Staggered Apple Motion Typography Content */
+.cudi-hero-viewport-content {
+    position: relative;
+    z-index: 4;
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px 24px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+/* Staggered Entrance Keyframes (Apple Motion Curve) */
+@keyframes appleFadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(32px) scale(0.98);
+        filter: blur(8px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+.cudi-hero-kicker-pill {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    background: rgba(2, 132, 199, 0.08);
-    border: 1px solid rgba(2, 132, 199, 0.22);
-    padding: 7px 16px;
-    border-radius: 50px;
-    font-size: 0.78rem;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 6px 18px;
+    border-radius: 980px;
+    font-size: 0.75rem;
     font-weight: 800;
-    color: #0284c7;
-    letter-spacing: 0.5px;
+    color: #f8fafc;
     text-transform: uppercase;
-    margin-bottom: 24px;
-    box-shadow: 0 4px 15px rgba(2, 132, 199, 0.08);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    letter-spacing: 1.2px;
+    margin-bottom: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    animation: appleFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
 }
 
-.hero-apple-eyebrow i {
-    color: #0284c7;
+.cudi-hero-kicker-pill i {
+    color: #38bdf8;
     animation: cudiPulseGlow 2s infinite ease-in-out;
 }
 
-@keyframes cudiPulseGlow {
-    0%, 100% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.2); opacity: 0.7; }
-}
-
-/* Apple Title */
-.hero-apple-title {
-    font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
-    font-size: clamp(2.9rem, 5.2vw, 4.4rem);
+.cudi-hero-headline {
+    font-family: 'Outfit', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: clamp(2.4rem, 4.8vw, 3.8rem);
     font-weight: 850;
-    line-height: 1.04;
-    letter-spacing: -2px;
-    color: #0f172a;
-    margin: 0 0 24px 0;
+    line-height: 1.08;
+    letter-spacing: -1.8px;
+    color: #ffffff;
+    margin: 0 0 12px 0;
+    text-shadow: 0 4px 28px rgba(0, 0, 0, 0.7);
+    animation: appleFadeUp 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both;
 }
 
-.hero-apple-gradient-text {
-    background: linear-gradient(135deg, #0284c7 0%, #0077b6 50%, #0369a1 100%);
+.cudi-hero-headline-accent {
+    background: linear-gradient(135deg, #38bdf8 0%, #7dd3fc 45%, #60a5fa 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline;
 }
 
-.hero-apple-desc {
-    font-size: 1.15rem;
-    line-height: 1.7;
-    color: #475569;
-    margin: 0 0 36px 0;
-    max-width: 540px;
+.cudi-hero-subdeck {
+    font-size: clamp(0.95rem, 1.35vw, 1.1rem);
+    line-height: 1.55;
+    color: #e2e8f0;
+    max-width: 680px;
+    margin: 0 auto 16px;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.8);
+    font-weight: 400;
+    animation: appleFadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
 }
 
-/* Action Buttons Apple Style */
-.hero-apple-actions {
+/* Apple CTAs Pill Dock */
+.cudi-hero-cta-dock {
     display: flex;
     gap: 16px;
     flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
-    margin-bottom: 40px;
+    margin-bottom: 0;
+    animation: appleFadeUp 1.3s cubic-bezier(0.16, 1, 0.3, 1) 0.55s both;
 }
 
-.hero-btn-apple-primary {
+.cudi-cta-btn-apple-glow {
     display: inline-flex;
     align-items: center;
     gap: 12px;
-    background: #0f172a;
+    background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
     color: #ffffff !important;
-    padding: 16px 36px;
+    padding: 13px 32px;
     border-radius: 980px;
-    font-size: 1.02rem;
-    font-weight: 700;
+    font-size: 0.98rem;
+    font-weight: 800;
     text-decoration: none;
     border: none;
     cursor: pointer;
-    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.25);
+    box-shadow: 0 12px 35px rgba(2, 132, 199, 0.45), inset 0 1px 1px rgba(255, 255, 255, 0.3);
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     position: relative;
-    overflow: hidden;
 }
 
-.hero-btn-apple-primary:hover {
-    background: #0284c7;
-    transform: translateY(-2px);
-    box-shadow: 0 15px 35px rgba(2, 132, 199, 0.35);
+.cudi-cta-btn-apple-glow:hover {
+    background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 20px 45px rgba(56, 189, 248, 0.55);
 }
 
-.hero-btn-apple-secondary {
+.cudi-cta-btn-apple-glass {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    background: rgba(255, 255, 255, 0.85);
-    color: #0f172a !important;
-    padding: 16px 32px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    color: #ffffff !important;
+    padding: 13px 30px;
     border-radius: 980px;
-    font-size: 1.02rem;
+    font-size: 0.98rem;
     font-weight: 700;
     text-decoration: none;
-    border: 1px solid rgba(203, 213, 225, 0.8);
     cursor: pointer;
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.hero-btn-apple-secondary:hover {
-    background: #ffffff;
-    border-color: #0284c7;
-    color: #0284c7 !important;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(2, 132, 199, 0.15);
+.cudi-cta-btn-apple-glass:hover {
+    background: rgba(255, 255, 255, 0.28);
+    border-color: #38bdf8;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(56, 189, 248, 0.3);
 }
 
-/* Feature Tickers */
-.hero-apple-features-row {
-    display: flex;
-    gap: 24px;
+/* Bottom Glass Bar with Micro-Features */
+.cudi-hero-specs-capsule {
+    display: inline-flex;
+    gap: 28px;
     flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
-    padding-top: 24px;
-    border-top: 1px solid rgba(226, 232, 240, 0.8);
-}
-
-.hero-apple-feature-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.84rem;
-    font-weight: 700;
-    color: #334155;
-}
-
-.hero-apple-feature-item i {
-    color: #0284c7;
-    font-size: 0.95rem;
-}
-
-/* Hero Stage & Visual */
-.hero-apple-stage {
+    background: rgba(15, 23, 42, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    padding: 8px 26px;
+    border-radius: 980px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    animation: appleFadeUp 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.7s both;
     position: relative;
-    border-radius: 36px;
-    padding: 12px;
-    background: rgba(255, 255, 255, 0.65);
-    border: 1px solid rgba(255, 255, 255, 0.9);
-    box-shadow: 0 30px 80px rgba(15, 23, 42, 0.12),
-                0 4px 20px rgba(0, 0, 0, 0.04),
-                inset 0 1px 2px rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
+    z-index: 4;
+    margin-top: auto;
+    margin-bottom: 16px;
 }
 
-.hero-apple-img-wrapper {
-    position: relative;
-    border-radius: 28px;
-    overflow: hidden;
-    background: #e2e8f0;
-    aspect-ratio: 16 / 9;
-}
-
-.hero-apple-main-img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    display: block !important;
-    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.hero-apple-stage:hover .hero-apple-main-img {
-    transform: scale(1.025);
-}
-
-/* Floating Glass Telemetry Badges on the Image */
-.hero-glass-pill {
-    position: absolute;
-    background: rgba(15, 23, 42, 0.82);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
-    color: #ffffff;
-    border-radius: 50px;
-    padding: 8px 16px;
+.cudi-hero-spec-item {
     display: flex;
     align-items: center;
     gap: 10px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-    z-index: 5;
-    animation: heroFloatingPill 4s ease-in-out infinite;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #f1f5f9;
 }
 
-.hero-glass-pill.top-right {
-    top: 20px;
-    right: 20px;
-    animation-delay: 0s;
+.cudi-hero-spec-item i {
+    color: #38bdf8;
+    font-size: 0.95rem;
 }
 
-.hero-glass-pill.bottom-left {
-    bottom: 20px;
-    left: 20px;
-    animation-delay: 2s;
+.cudi-spec-divider {
+    width: 1px;
+    height: 16px;
+    background: rgba(255, 255, 255, 0.2);
 }
 
-@keyframes heroFloatingPill {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-6px); }
+/* Ocultar botón demo flotante en la portada para evitar colisión */
+#global-floating-demo-pill {
+    display: none !important;
 }
 
-.hero-pulse-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #38bdf8;
-    box-shadow: 0 0 12px #38bdf8;
-    animation: cudiDotBlink 1.4s infinite;
-}
-
-.hero-pulse-dot.emerald {
-    background: #10b981;
-    box-shadow: 0 0 12px #10b981;
-}
-
-@keyframes cudiDotBlink {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.4; transform: scale(0.8); }
-}
-
-/* Responsive Apple Hero */
-@media (max-width: 1024px) {
-    .hero-apple-container {
-        grid-template-columns: 1fr;
-        gap: 40px;
-        text-align: center;
+/* Mobile Responsiveness (Estilo Apple / Samsung: Stage dividido con fotografía y texto nítido) */
+@media (max-width: 768px) {
+    .cudi-apple-stage-hero {
+        min-height: auto !important;
+        padding-top: 0 !important;
+        background: #000000 !important;
+        display: flex !important;
+        flex-direction: column !important;
     }
-    .hero-apple-desc {
-        margin-left: auto;
-        margin-right: auto;
+    
+    .cudi-hero-bg-canvas {
+        position: relative !important;
+        inset: auto !important;
+        width: 100% !important;
+        height: 290px !important;
+        overflow: hidden !important;
     }
-    .hero-apple-actions {
-        justify-content: center;
+    .cudi-hero-bg-media {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: center 60% !important;
     }
-    .hero-apple-features-row {
-        justify-content: center;
+    .cudi-hero-scrim-overlay {
+        position: absolute !important;
+        inset: 0 !important;
+        background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.85) 100%) !important;
     }
-    .hero-apple-stage {
-        max-width: 650px;
-        margin: 0 auto;
+    
+    .cudi-hero-viewport-content {
+        position: relative !important;
+        padding: 20px 20px 24px !important;
+        background: #000000 !important;
+        margin: 0 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
     }
-}
-
-@media (max-width: 640px) {
-    .hero-apple-cinematic {
-        padding: 40px 0 50px;
+    .cudi-hero-kicker-pill {
+        font-size: 0.72rem !important;
+        padding: 6px 14px !important;
+        margin-bottom: 12px !important;
     }
-    .hero-apple-container {
-        padding: 0 20px;
-        gap: 32px;
+    .cudi-hero-headline {
+        font-size: 2.1rem !important;
+        line-height: 1.15 !important;
+        letter-spacing: -1px !important;
+        margin-bottom: 12px !important;
     }
-    .hero-apple-title {
-        font-size: 2.35rem;
-        letter-spacing: -1px;
+    .cudi-hero-subdeck {
+        font-size: 0.92rem !important;
+        line-height: 1.5 !important;
+        margin-bottom: 20px !important;
     }
-    .hero-apple-desc {
-        font-size: 1rem;
-        margin-bottom: 28px;
+    .cudi-hero-cta-dock {
+        flex-direction: column !important;
+        width: 100% !important;
+        gap: 12px !important;
+        margin-bottom: 20px !important;
     }
-    .hero-apple-actions {
-        flex-direction: column;
-        width: 100%;
-        gap: 12px;
+    .cudi-cta-btn-apple-glow,
+    .cudi-cta-btn-apple-glass {
+        width: 100% !important;
+        justify-content: center !important;
+        padding: 14px 20px !important;
+        font-size: 0.95rem !important;
     }
-    .hero-btn-apple-primary,
-    .hero-btn-apple-secondary {
-        width: 100%;
-        justify-content: center;
-        padding: 14px 24px;
-        font-size: 0.96rem;
+    .cudi-hud-badge {
+        display: none !important;
     }
-    .hero-apple-stage {
-        border-radius: 24px;
-        padding: 8px;
+    .cudi-hero-specs-capsule {
+        margin: 0 16px 24px !important;
+        width: calc(100% - 32px) !important;
+        box-sizing: border-box !important;
+        padding: 10px 16px !important;
+        gap: 12px !important;
+        border-radius: 16px !important;
+        font-size: 0.74rem !important;
     }
-    .hero-apple-img-wrapper {
-        border-radius: 18px;
-    }
-    .hero-glass-pill {
-        padding: 6px 12px;
-        font-size: 0.72rem;
-    }
-    .hero-glass-pill.top-right {
-        top: 10px;
-        right: 10px;
-    }
-    .hero-glass-pill.bottom-left {
-        bottom: 10px;
-        left: 10px;
+    .cudi-spec-divider {
+        display: none !important;
     }
 }
