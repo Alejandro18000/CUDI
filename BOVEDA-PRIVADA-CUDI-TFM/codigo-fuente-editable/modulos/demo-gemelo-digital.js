@@ -4,20 +4,20 @@
 // ============================================================
 
 // ---- ESTADO GLOBAL ----
-let appCart = JSON.parse(localStorage.getItem('cudi_cart') || '[]');
-let petProfile = {};
-let checkoutStep = 1;
-let selectedPayMethod = 'card';
-let activePetType = 'perro';
-let charts = {};
+var appCart = JSON.parse(localStorage.getItem('cudi_cart') || '[]');
+var petProfile = {};
+var checkoutStep = 1;
+var selectedPayMethod = 'card';
+var activePetType = 'perro';
+var charts = {};
 
 // ---- DATOS MASCOTA ----
-const BREEDS = {
-    perro: ['Husky Siberiano','Golden Retriever','Bulldog Francés','Beagle Tricolor','Border Collie','Pomerania Toy','Pug Carlino','Pastor Alemán','Labrador Retriever','Poodle','Chihuahua','Yorkshire Terrier','Mestizo'],
-    gato:  ['Siamés Real','Europeo Atigrado','Bengalí Dorado','Maine Coon Real','Ragdoll Azul','British Shorthair','Bombay Negro','Scottish Fold','Persa Blanco','Europeo Común','Abisinio','Mestizo']
+var BREEDS = {
+    perro: ['Golden Retriever','Labrador','Pastor Aleman','Bulldog Frances','Beagle','Poodle','Chihuahua','Husky Siberiano','Yorkshire Terrier','Mestizo'],
+    gato:  ['Europeo Comun','Persa','Maine Coon','Ragdoll','Siames','Bengali','British Shorthair','Scottish Fold','Abisinio','Mestizo']
 };
 
-const ONBOARDING_PHOTOS = {
+var ONBOARDING_PHOTOS = {
     perro: 'https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=800&q=80',
     gato:  'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=800&q=80',
     default: 'https://images.unsplash.com/photo-1444464666168-49d633b86797?auto=format&fit=crop&w=800&q=80'
@@ -25,8 +25,8 @@ const ONBOARDING_PHOTOS = {
 
 // ---- PRODUCTOS DEMO ----
 // ---- PRODUCTOS OFICIALES DE LA PLATAFORMA CUDI ----
-const STORE_CATEGORIES = {
-    "hardware": {
+var STORE_CATEGORIES = {
+    "hardware_planes": {
         "label": "Dispositivos & Hardware IoT",
         "icon": "fa-satellite-dish",
         "color": "#e0f2fe",
@@ -35,680 +35,677 @@ const STORE_CATEGORIES = {
             {
                 "name": "Smart Collar CUDI GPS Ultra",
                 "price": 149.0,
-                "img": "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=800&q=80",
+                "img": "cudi-collar-hardware-hero.jpg",
                 "partner": "CUDI Hardware Labs",
-                "desc": "Collar biométrico de titanio y polímero médico con GPS multibanda L1+L5 a 10 Hz, sensor PP..."
+                "desc": "Collar biométrico de titanio y polímero médico con GPS multibanda L1+L5 a 10 Hz, sensor PPG dual, electrocardiograma con..."
             },
             {
                 "name": "Smart Collar CUDI Feline Nano",
                 "price": 129.0,
-                "img": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=1200&q=85",
                 "partner": "CUDI Feline Tech",
-                "desc": "El localizador y monitor de salud más ligero del mundo para gatos (22g) con cierre de libe..."
+                "desc": "El localizador y monitor de salud más ligero del mundo para gatos (22g) con cierre de liberación de seguridad antipánico..."
             },
             {
                 "name": "Base de Carga Rápida & Nodo Baliza CUDI",
                 "price": 39.0,
-                "img": "cudi-smart-collar-geolocalizacion-gps.png",
+                "img": "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=1200&q=85",
                 "partner": "CUDI Hardware Labs",
-                "desc": "Estación de acoplamiento magnético con baliza BLE 5.4 integrada que establece la zona segu..."
+                "desc": "Estación de acoplamiento magnético con baliza BLE 5.4 integrada que establece la zona segura del hogar sin consumir bate..."
             },
             {
                 "name": "Arnés Ergonómico CUDI Explorer con Integración Bio",
                 "price": 64.0,
-                "img": "https://images.unsplash.com/photo-1535294435445-d7249524ef2e?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1541599540903-216a46ca1dc0?auto=format&fit=crop&w=1200&q=85",
                 "partner": "Adventure Paws Lab",
-                "desc": "Arnés antitirones con bolsillo blindado para módulo Smart Collar, costuras reflectantes 3M..."
+                "desc": "Arnés antitirones con bolsillo blindado para módulo Smart Collar, costuras reflectantes 3M y tejido ripstop transpirable..."
             },
             {
                 "name": "Pack de Balizas Perimetrales CUDI Smart Beacons (3 uds)",
                 "price": 49.0,
-                "img": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=1200&q=85",
                 "partner": "CUDI Hardware Labs",
-                "desc": "Microbalizas adhesivas para delimitar zonas prohibidas en casa (cocina, piscina, plantas t..."
+                "desc": "Microbalizas adhesivas para delimitar zonas prohibidas en casa (cocina, piscina, plantas tóxicas) con alertas vibratoria..."
             },
             {
                 "name": "Sensor Pod BioTemp para Almohadillas & Piel CUDI",
                 "price": 34.0,
-                "img": "https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=85",
                 "partner": "BioSense Vet Tech",
-                "desc": "Dispositivo infrarrojo de contacto suave para medir la inflamación podal y temperatura art..."
+                "desc": "Dispositivo infrarrojo de contacto suave para medir la inflamación podal y temperatura articular antes y después del eje..."
             },
             {
                 "name": "Dispensador Inteligente CUDI BioFeeder con IA",
                 "price": 119.0,
-                "img": "https://images.unsplash.com/photo-1561948955-570b270e7c36?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1544568100-847a948585b9?auto=format&fit=crop&w=1200&q=85",
                 "partner": "SmartPet Robotics",
-                "desc": "Tolva automatizada con báscula de precisión que ajusta los gramos de pienso exactos en fun..."
+                "desc": "Tolva automatizada con báscula de precisión que ajusta los gramos de pienso exactos en función de los pasos y calorías q..."
             },
             {
                 "name": "Fuente Hidratante CUDI PureWater con Sensor de Ingesta",
                 "price": 59.0,
-                "img": "https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=85",
                 "partner": "AquaPet BioSystems",
-                "desc": "Fuente de acero quirúrgico 304 con filtrado cuádruple UVC y conteo de mililitros bebidos r..."
+                "desc": "Fuente de acero quirúrgico 304 con filtrado cuádruple UVC y conteo de mililitros bebidos registrado directamente en el g..."
             },
             {
                 "name": "Correa Amortiguadora CUDI SmartLead con Medidor de Tracción",
                 "price": 38.0,
-                "img": "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=1200&q=85",
                 "partner": "Adventure Paws Lab",
-                "desc": "Correa de adiestramiento no tirón con dinamómetro Bluetooth que registra los picos de reac..."
+                "desc": "Correa de adiestramiento no tirón con dinamómetro Bluetooth que registra los picos de reactividad y fuerza ejercida en c..."
             },
             {
                 "name": "Colchón Ortopédico CUDI SleepSense con Malla de Presión",
                 "price": 139.0,
-                "img": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85",
                 "partner": "VetRest Technologies",
-                "desc": "Cama viscoelástica de grado médico con matriz de sensores piezoeléctricos para monitorizar..."
+                "desc": "Cama viscoelástica de grado médico con matriz de sensores piezoeléctricos para monitorizar sueño REM, dolor articular y ..."
             },
             {
                 "name": "Clip LED Inteligente CUDI NightSafety RGB",
                 "price": 19.5,
-                "img": "https://images.unsplash.com/photo-1548802673-380ab8ebc7b7?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=1200&q=85",
                 "partner": "CUDI Hardware Labs",
-                "desc": "Faro de seguridad programable desde la app que se activa automáticamente al anochecer o cu..."
+                "desc": "Faro de seguridad programable desde la app que se activa automáticamente al anochecer o cuando activas la búsqueda de re..."
             },
             {
                 "name": "Fijación ISOFIX con Sensor de Tensión CUDI CarSafe",
                 "price": 29.9,
-                "img": "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85",
                 "partner": "SafeTravel Pets",
-                "desc": "Conector directo al sistema ISOFIX del vehículo certificado para crash-test con sensor que..."
+                "desc": "Conector directo al sistema ISOFIX del vehículo certificado para crash-test con sensor que avisa si el perro se desengan..."
             },
             {
                 "name": "Bálsamo Regenerador & Botín Transpirable CUDI PawCare",
                 "price": 24.5,
-                "img": "https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=1200&q=85",
                 "partner": "BioSense Vet Tech",
-                "desc": "Cera biológica reparadora de almohadillas con cera de abeja, caléndula y botines de trekki..."
+                "desc": "Cera biológica reparadora de almohadillas con cera de abeja, caléndula y botines de trekking ergonómicos con suela Vibra..."
             },
             {
                 "name": "Chapa Digital de Identificación CUDI BioID NFC + QR",
                 "price": 14.9,
-                "img": "https://images.unsplash.com/photo-1560807707-8cc77767d783?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85",
                 "partner": "CUDI Security Cloud",
-                "desc": "Chapa de resina epoxi indestructible con chip NFC y código QR dinámico que muestra histori..."
+                "desc": "Chapa de resina epoxi indestructible con chip NFC y código QR dinámico que muestra historial médico de emergencia y cont..."
             },
             {
                 "name": "Repetidor Satelital CUDI WildRange para Rutas Sin Cobertura",
                 "price": 89.0,
-                "img": "https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=85",
                 "partner": "Adventure Paws Lab",
-                "desc": "Transmisor LoRa de bolsillo que conecta directamente tu smartphone con el collar de tu per..."
+                "desc": "Transmisor LoRa de bolsillo que conecta directamente tu smartphone con el collar de tu perro a hasta 15 km de distancia ..."
             }
         ]
     },
     "nutricion": {
-        "label": "Nutrición & Dieta Biológica",
+        "label": "Alimentación & Microbioma",
         "icon": "fa-bowl-food",
-        "color": "#dcfce7",
-        "iconColor": "#15803d",
+        "color": "#ecfdf5",
+        "iconColor": "#10b981",
         "products": [
             {
                 "name": "EcoPet Organic - Dieta BARF Biológica",
                 "price": 45.0,
-                "img": "https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=800&q=80",
+                "img": "cudi-nutricion-organica-hero.jpg",
                 "partner": "EcoPet Biologics",
-                "desc": "Menús crudos biológicamente apropiados formulados con carne de pasto, vísceras nobles, ver..."
+                "desc": "Menús crudos biológicamente apropiados formulados con carne de pasto, vísceras nobles, verdura ecológica y aceite de sal..."
             },
             {
                 "name": "PureBites Clinic - Pienso Hipoalergénico Monoproteico",
                 "price": 38.5,
-                "img": "https://images.unsplash.com/photo-1571566882372-1598d88abd90?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=1200&q=85",
                 "partner": "PureBites Clinical",
-                "desc": "Receta clínica de caballo y boniato cocinada a baja temperatura para animales con intolera..."
+                "desc": "Receta clínica de caballo y boniato cocinada a baja temperatura para animales con intolerancias alimentarias y prurito a..."
             },
             {
                 "name": "Vitality Mix - Complejo Articular & Inmunológico Dual",
                 "price": 24.99,
-                "img": "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1568640347023-a616a30bc3bd?auto=format&fit=crop&w=1200&q=85",
                 "partner": "BioSense Vet Tech",
-                "desc": "Polvo nutracéutico con Glucosamina pura, Condroitina marina, MSM, cúrcuma biodisponible y ..."
+                "desc": "Polvo nutracéutico con Glucosamina pura, Condroitina marina, MSM, cúrcuma biodisponible y colágeno hidrolizado de tipo I..."
             },
             {
                 "name": "OceanPure - Aceite de Salmón Salvaje & Krill Antártico",
                 "price": 21.5,
-                "img": "https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1585846416120-3a7354ed7d39?auto=format&fit=crop&w=1200&q=85",
                 "partner": "EcoPet Biologics",
-                "desc": "Aceite puro de prensado en frío con concentrado de fosfolípidos EPA y DHA para salud cardi..."
+                "desc": "Aceite puro de prensado en frío con concentrado de fosfolípidos EPA y DHA para salud cardiovascular, cerebral y un pelaj..."
             },
             {
                 "name": "DigestShield - Probióticos Multicepa con Prebióticos FOS",
                 "price": 26.0,
-                "img": "https://cdn2.thecatapi.com/images/cao.jpg",
+                "img": "https://images.unsplash.com/photo-1563460716037-460b3dd14ba9?auto=format&fit=crop&w=1200&q=85",
                 "partner": "BioSense Vet Tech",
-                "desc": "Sobres monodosis con 10.000 millones de UFC viables de Enterococcus faecium y Lactobacillu..."
+                "desc": "Sobres monodosis con 10.000 millones de UFC viables de Enterococcus faecium y Lactobacillus rhamnosus para frenar diarre..."
             },
             {
                 "name": "Dentapaws Sticks - Cuidado Dental con Espirulina & Ascophyllum",
                 "price": 16.5,
-                "img": "https://images.dog.ceo/breeds/hound-walker/n02089867_454.jpg",
+                "img": "https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=1200&q=85",
                 "partner": "EcoPet Biologics",
-                "desc": "Snacks dentales masticables en forma de cruz que limpian mecánicamente la placa bacteriana..."
+                "desc": "Snacks dentales masticables en forma de cruz que limpian mecánicamente la placa bacteriana y combaten el mal aliento des..."
             },
             {
                 "name": "CalmPaws Chews - Bocaditos Antiestrés con L-Teanina & Ashwagandha",
                 "price": 22.9,
-                "img": "https://images.unsplash.com/photo-1519052537078-e6302a4968d4?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1583512603805-3cc6b41f3edb?auto=format&fit=crop&w=1200&q=85",
                 "partner": "BioSense Vet Tech",
-                "desc": "Bocaditos masticables semihúmedos diseñados para tormentas, fuegos artificiales, visitas a..."
+                "desc": "Bocaditos masticables semihúmedos diseñados para tormentas, fuegos artificiales, visitas al veterinario y ansiedad por s..."
             },
             {
                 "name": "BioBroth - Caldo de Huesos Orgánico de Cocción Lenta (24h)",
                 "price": 14.5,
-                "img": "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1200&q=85",
                 "partner": "EcoPet Biologics",
-                "desc": "Elixir reconstituyente hervido a fuego lento durante 24 horas repleto de colágeno nativo, ..."
+                "desc": "Elixir reconstituyente hervido a fuego lento durante 24 horas repleto de colágeno nativo, glucosamina y aminoácidos para..."
             },
             {
                 "name": "NephroProtect - Quelante de Fósforo & Soporte Renal Avanzado",
                 "price": 29.5,
-                "img": "https://images.unsplash.com/photo-1511044568932-338cba0ad803?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=1200&q=85",
                 "partner": "PureBites Clinical",
-                "desc": "Polvo insípido quelante intestinal de fósforo enriquecido con quitosano y astrágalo para r..."
+                "desc": "Polvo insípido quelante intestinal de fósforo enriquecido con quitosano y astrágalo para ralentizar la progresión de la ..."
             },
             {
                 "name": "TrainBites - Premios Liofilizados 100% Corazón de Ternera",
                 "price": 12.9,
-                "img": "https://images.unsplash.com/photo-1507146426996-ef05306b995a?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&w=1200&q=85",
                 "partner": "EcoPet Biologics",
-                "desc": "Snacks liofilizados al vacío en frío que conservan todo el aroma y sabor natural para sesi..."
+                "desc": "Snacks liofilizados al vacío en frío que conservan todo el aroma y sabor natural para sesiones de educación y adiestrami..."
             },
             {
                 "name": "LactoCudi - Leche de Inicio con Calostro & DHA para Cachorros",
                 "price": 28.0,
-                "img": "https://images.unsplash.com/photo-1529778873920-4da4926a72c2?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=85",
                 "partner": "PureBites Clinical",
-                "desc": "Sustituto lácteo en polvo homogeneizado con calostro bovino rico en inmunoglobulinas IgG y..."
+                "desc": "Sustituto lácteo en polvo homogeneizado con calostro bovino rico en inmunoglobulinas IgG y perfil de ácidos grasos idént..."
             },
             {
                 "name": "HepatoCare - Cardo Mariano (Silimarina 80%) & SAMe",
                 "price": 31.0,
-                "img": "dietas-personalizadas-longevidad-mascotas.png",
+                "img": "https://images.unsplash.com/photo-1535930891776-0c2dfb7fda1a?auto=format&fit=crop&w=1200&q=85",
                 "partner": "BioSense Vet Tech",
-                "desc": "Cápsulas gastroprotegidas con S-Adenosilmetionina (SAMe) y extracto fitosomal de Silimarin..."
+                "desc": "Cápsulas gastroprotegidas con S-Adenosilmetionina (SAMe) y extracto fitosomal de Silimarina para recuperar transaminasas..."
             },
             {
                 "name": "CocoPet - Aceite de Coco Virgen Extra Ecológico Prensado Frío",
                 "price": 13.9,
-                "img": "https://images.unsplash.com/photo-1577023311546-cdc07a8454d9?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=1200&q=85",
                 "partner": "EcoPet Biologics",
-                "desc": "Aceite de coco 100% puro rico en ácido láurico y MCT. Puede ingerirse para soporte metaból..."
+                "desc": "Aceite de coco 100% puro rico en ácido láurico y MCT. Puede ingerirse para soporte metabólico o aplicarse tópicamente en..."
             },
             {
                 "name": "FiberGlow - Cáscara de Psyllium Ecológica & Prebióticos",
                 "price": 15.5,
-                "img": "https://images.unsplash.com/photo-1533743983669-94fa5c4338ec?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13?auto=format&fit=crop&w=1200&q=85",
                 "partner": "PureBites Clinical",
-                "desc": "Fibra soluble formadora de mucílago que regula tanto el estreñimiento como las heces bland..."
+                "desc": "Fibra soluble formadora de mucílago que regula tanto el estreñimiento como las heces blandas, favoreciendo el vaciado na..."
             },
             {
                 "name": "SuperBerry Bites - Snack Antioxidante de Arándanos Rojos & Pavo",
                 "price": 11.5,
-                "img": "https://images.unsplash.com/photo-1495360010541-f48722b34f7d?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?auto=format&fit=crop&w=1200&q=85",
                 "partner": "EcoPet Biologics",
-                "desc": "Galletitas semihúmedas con alto contenido de proantocianidinas (PACs) de arándano rojo que..."
+                "desc": "Galletitas semihúmedas con alto contenido de proantocianidinas (PACs) de arándano rojo que evitan la adherencia de E. co..."
             }
         ]
     },
     "clinica": {
-        "label": "Veterinaria & Salud 24/7",
+        "label": "Telemedicina & Clínicas 24/7",
         "icon": "fa-stethoscope",
-        "color": "#fee2e2",
-        "iconColor": "#ef4444",
+        "color": "#fef3c7",
+        "iconColor": "#f59e0b",
         "products": [
             {
                 "name": "VetHome CUDI - Urgencias Veterinarias a Domicilio 24/7",
                 "price": 75.0,
-                "img": "https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=800&q=80",
+                "img": "cudi-veterinaria-clinica-hero.jpg",
                 "partner": "Red Clínicas Partners CUDI",
-                "desc": "Unidad móvil veterinaria con ecografía portátil y analítica sanguínea instantánea enviada ..."
+                "desc": "Unidad móvil veterinaria con ecografía portátil y analítica sanguínea instantánea enviada a tu hogar en menos de 35 minu..."
             },
             {
                 "name": "MediPet Express - Teleconsulta Veterinaria Inmediata con Triaje IA",
                 "price": 35.0,
-                "img": "triaje-ia-veterinario-urgencias.png",
+                "img": "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=1200&q=85",
                 "partner": "TeleVet Specialists",
-                "desc": "Videoconsulta de alta definición con veterinario colegiado en menos de 3 minutos con recet..."
+                "desc": "Videoconsulta de alta definición con veterinario colegiado en menos de 3 minutos con receta electrónica oficial válida e..."
             },
             {
                 "name": "Hospital Clínico Dual - Chequeo Preventivo Integral Anual",
                 "price": 60.0,
-                "img": "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?auto=format&fit=crop&w=1200&q=85",
                 "partner": "Hospital Veterinario Central",
-                "desc": "Revisión física exhaustiva que incluye analítica de sangre completa, bioquímica de 16 pará..."
+                "desc": "Revisión física exhaustiva que incluye analítica de sangre completa, bioquímica de 16 parámetros, ecografía abdominal bá..."
             },
             {
                 "name": "Pack Vacunación Oficial & Pasaporte Europeo de Mascota",
                 "price": 42.0,
-                "img": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1599443015574-be5fe8a05783?auto=format&fit=crop&w=1200&q=85",
                 "partner": "Red Clínicas Partners CUDI",
-                "desc": "Emisión del Pasaporte Oficial de la Unión Europea para animales de compañía con vacuna ant..."
+                "desc": "Emisión del Pasaporte Oficial de la Unión Europea para animales de compañía con vacuna antirrábica y desparasitación equ..."
             },
             {
                 "name": "Profilaxis Dental por Ultrasonidos & Pulido con Flúor",
                 "price": 95.0,
-                "img": "https://images.unsplash.com/photo-1583512603805-3cc6b41f3edb?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=1200&q=85",
                 "partner": "Hospital Veterinario Central",
-                "desc": "Limpieza profunda subgingival con escarificador ultrasónico y pulido de esmalte para preve..."
+                "desc": "Limpieza profunda subgingival con escarificador ultrasónico y pulido de esmalte para prevenir periodontitis y pérdida pr..."
             },
             {
                 "name": "Esterilización / Castración por Laparoscopia Mínimamente Invasiva",
                 "price": 180.0,
-                "img": "https://images.unsplash.com/photo-1532386236358-a33d8a9434e3?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&q=85",
                 "partner": "Hospital Veterinario Central",
-                "desc": "Intervención quirúrgica con óptica de alta resolución a través de dos microincisiones de 5..."
+                "desc": "Intervención quirúrgica con óptica de alta resolución a través de dos microincisiones de 5mm con recuperación en 48 hora..."
             },
             {
                 "name": "Test Genético CUDI BioDNA - Salud, Razas & Longevidad",
                 "price": 89.0,
-                "img": "https://images.unsplash.com/photo-1506755855567-92ff770e8d00?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=85",
                 "partner": "BioSense Vet Tech",
-                "desc": "Hisopo bucal no invasivo que analiza más de 250 variantes de enfermedades hereditarias, se..."
+                "desc": "Hisopo bucal no invasivo que analiza más de 250 variantes de enfermedades hereditarias, sensibilidad a fármacos (MDR1) y..."
             },
             {
                 "name": "Ecografía Abdominal Completa con Especialista de Imagen",
                 "price": 68.0,
-                "img": "https://images.unsplash.com/photo-1536590158209-e9d615d525e4?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=85",
                 "partner": "Hospital Veterinario Central",
-                "desc": "Estudio ecográfico abdominal de 8 órganos con sondas de microconvex y lineal de alta frecu..."
+                "desc": "Estudio ecográfico abdominal de 8 órganos con sondas de microconvex y lineal de alta frecuencia para diagnóstico de pato..."
             },
             {
                 "name": "Sesión de Fisioterapia & Hidroterapia Subacuática Canina",
                 "price": 50.0,
-                "img": "https://images.unsplash.com/photo-1583511655826-05700d52f4d9?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=1200&q=85",
                 "partner": "Red Clínicas Partners CUDI",
-                "desc": "Cinta subacuática con agua termal climatizada, láser terapéutico clase IV y magnetoterapia..."
+                "desc": "Cinta subacuática con agua termal climatizada, láser terapéutico clase IV y magnetoterapia para recuperar movilidad tras..."
             },
             {
                 "name": "Consulta Clínica de Etología & Modificación de Conducta",
                 "price": 70.0,
-                "img": "comportamiento-canino-barcelona.png",
+                "img": "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1200&q=85",
                 "partner": "Red Clínicas Partners CUDI",
-                "desc": "Evaluación por veterinario especialista en etología clínica para tratar agresividad, miedo..."
+                "desc": "Evaluación por veterinario especialista en etología clínica para tratar agresividad, miedos fóbicos, ansiedad por separa..."
             },
             {
                 "name": "Perfil Bioquímico & Hematológico Integral de Laboratorio",
                 "price": 48.0,
-                "img": "https://images.unsplash.com/photo-1516750484197-6b28d10c91ea?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85",
                 "partner": "Hospital Veterinario Central",
-                "desc": "Analítica en laboratorio acreditado con hemograma completo de 5 poblaciones, bioquímica ge..."
+                "desc": "Analítica en laboratorio acreditado con hemograma completo de 5 poblaciones, bioquímica general de 18 parámetros y elect..."
             },
             {
                 "name": "Ecocardiograma Color & Electrocardiograma Digital",
                 "price": 85.0,
-                "img": "https://images.unsplash.com/photo-1535268647677-300dbf3d78d1?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=1200&q=85",
                 "partner": "Hospital Veterinario Central",
-                "desc": "Estudio morfológico y hemodinámico de las cavidades cardíacas para diagnosticar soplos, va..."
+                "desc": "Estudio morfológico y hemodinámico de las cavidades cardíacas para diagnosticar soplos, valvulopatía mitral o miocardiop..."
             },
             {
                 "name": "Cribado Rápido Serológico de Leishmania, Filaria & Borrelia (4DX)",
                 "price": 32.0,
-                "img": "https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85",
                 "partner": "Red Clínicas Partners CUDI",
-                "desc": "Test de sangre en 8 minutos para descartar enfermedades transmitidas por mosquitos (filari..."
+                "desc": "Test de sangre en 8 minutos para descartar enfermedades transmitidas por mosquitos (filaria, leishmaniosis) y garrapatas..."
             },
             {
                 "name": "Estudio Radiográfico Digital Directo de Alta Definición (2 Proyecciones)",
                 "price": 55.0,
-                "img": "https://images.unsplash.com/photo-1529429617124-95b109e86bb8?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85",
                 "partner": "Hospital Veterinario Central",
-                "desc": "Placas radiológicas digitales con revelado instantáneo para diagnóstico de fracturas, disp..."
+                "desc": "Placas radiológicas digitales con revelado instantáneo para diagnóstico de fracturas, displasias, artrosis o cuerpos ext..."
             },
             {
                 "name": "Consulta Oncológica & Biopsia / Citología de Bultos con Informe",
                 "price": 65.0,
-                "img": "https://images.unsplash.com/photo-1544568100-847a948585b9?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=85",
                 "partner": "Hospital Veterinario Central",
-                "desc": "Punción-aspiración con aguja fina (PAAF) de nódulos cutáneos y masas subcutáneas analizada..."
+                "desc": "Punción-aspiración con aguja fina (PAAF) de nódulos cutáneos y masas subcutáneas analizada por patólogo veterinario para..."
             }
         ]
     },
     "paseos": {
-        "label": "Paseos & Cuidadores",
-        "icon": "fa-person-walking-dog",
-        "color": "#dbeafe",
-        "iconColor": "#3b82f6",
+        "label": "Paseadores & Cuidado",
+        "icon": "fa-dog",
+        "color": "#f3e8ff",
+        "iconColor": "#8b5cf6",
         "products": [
             {
                 "name": "ActivePaws - Paseo Guiado con Telemetría GPS en Vivo",
                 "price": 14.0,
-                "img": "perro-urbano-barcelona-paseo.png",
+                "img": "cudi-paseos-aventura-hero.jpg",
                 "partner": "Urban Pet Walkers",
-                "desc": "Paseo individualizado de 60 minutos con monitorización de ruta GPS en vivo, reporte de hid..."
+                "desc": "Paseo individualizado de 60 minutos con monitorización de ruta GPS en vivo, reporte de hidratación y pulso sincronizado ..."
             },
             {
                 "name": "Urban Pet Walkers - Paseo de Estimulación Olfativa & Cognitiva",
                 "price": 18.0,
-                "img": "paseadores-perros-actividad-fisica.png",
+                "img": "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&q=85",
                 "partner": "Urban Pet Walkers",
-                "desc": "Paseo diseñado por educadores enfocado en juegos de rastro, calma y discriminación de olor..."
+                "desc": "Paseo diseñado por educadores enfocado en juegos de rastro, calma y discriminación de olores para reducir estrés en perr..."
             },
             {
                 "name": "NannyPets 24/7 - Cuidador Certificado a Domicilio (Día & Noche)",
                 "price": 32.0,
-                "img": "reduccion-ansiedad-separacion-perros.png",
+                "img": "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85",
                 "partner": "NannyPets Care",
-                "desc": "Cuidado respetuoso en tu propia casa sin el trauma de hoteles caninos o jaulas para estanc..."
+                "desc": "Cuidado respetuoso en tu propia casa sin el trauma de hoteles caninos o jaulas para estancias de fin de semana o vacacio..."
             },
             {
                 "name": "CampPaws - Guardería de Día en Finca Rústica Vallada con Transporte",
                 "price": 28.0,
-                "img": "guarderia-canina-confianza.png",
+                "img": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85",
                 "partner": "Urban Pet Walkers",
-                "desc": "Día completo de juegos en praderas valladas con piscina para perros, zonas de sombra y fur..."
+                "desc": "Día completo de juegos en praderas valladas con piscina para perros, zonas de sombra y furgoneta climatizada que recoge ..."
             },
             {
                 "name": "FeliCare - Cuidadora a Domicilio Exclusiva para Gatos (ISFM)",
                 "price": 19.0,
-                "img": "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=1200&q=85",
                 "partner": "NannyPets Care",
-                "desc": "Visitas a domicilio respetuosas con los ritmos felinos: limpieza de areneros, cambio de ag..."
+                "desc": "Visitas a domicilio respetuosas con los ritmos felinos: limpieza de areneros, cambio de agua fresca, cepillado suave y j..."
             },
             {
                 "name": "Paseo Matinal Express Higiénico (30 min)",
                 "price": 9.5,
-                "img": "rutas-paseos-seguros-barcelona.png",
+                "img": "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1200&q=85",
                 "partner": "Urban Pet Walkers",
-                "desc": "Paseo funcional a primera hora de la mañana para necesidades fisiológicas y estiramiento a..."
+                "desc": "Paseo funcional a primera hora de la mañana para necesidades fisiológicas y estiramiento antes de que salgas al trabajo...."
             },
             {
                 "name": "Sesión de Adiestramiento Canino en Positivo a Domicilio",
                 "price": 45.0,
-                "img": "https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=85",
                 "partner": "Urban Pet Walkers",
-                "desc": "Clase particular de 60 minutos con educador canino profesional para pasear sin tirones, ll..."
+                "desc": "Clase particular de 60 minutos con educador canino profesional para pasear sin tirones, llamada perfecta y autocontrol e..."
             },
             {
                 "name": "PetTaxi CUDI - Vehículo Adaptado con Jaulas Crash-Tested",
                 "price": 22.0,
-                "img": "https://images.unsplash.com/photo-1517331156700-3c241d2b4d83?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=85",
                 "partner": "SafeTravel Pets",
-                "desc": "Traslado puerta a puerta de animales al veterinario, peluquería o aeropuerto en furgonetas..."
+                "desc": "Traslado puerta a puerta de animales al veterinario, peluquería o aeropuerto en furgonetas climatizadas con conductor au..."
             },
             {
                 "name": "Pack Senderismo Canino CUDI Trail (4 Horas en Naturaleza)",
                 "price": 38.0,
-                "img": "senderismo-familiar-mascota-naturaleza.png",
+                "img": "https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1200&q=85",
                 "partner": "Urban Pet Walkers",
-                "desc": "Excursión de medio día por senderos de montaña seguros con paradas en ríos, agua fresca y ..."
+                "desc": "Excursión de medio día por senderos de montaña seguros con paradas en ríos, agua fresca y monitorización del Smart Colla..."
             },
             {
                 "name": "HomeStay CUDI - Alojamiento en Casa de Familia Certificada (24h)",
                 "price": 30.0,
-                "img": "https://images.unsplash.com/photo-1520315342629-6ea920342047?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85",
                 "partner": "NannyPets Care",
-                "desc": "Tu mascota duerme en el hogar cálido de una familia amante de los animales inspeccionada p..."
+                "desc": "Tu mascota duerme en el hogar cálido de una familia amante de los animales inspeccionada por CUDI con máximo un huésped ..."
             },
             {
                 "name": "GentlePaws - Paseo Terapéutico para Perros Abuelos & Senior",
                 "price": 13.0,
-                "img": "perro-senior-calidad-vida-longevidad.png",
+                "img": "https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&w=1200&q=85",
                 "partner": "Urban Pet Walkers",
-                "desc": "Paseo a paso muy pausado sobre césped suave con arnés de asistencia trasera para perros co..."
+                "desc": "Paseo a paso muy pausado sobre césped suave con arnés de asistencia trasera para perros con artrosis, ceguera o edad ava..."
             },
             {
                 "name": "PuppyWalk - Sesión Grupal de Socialización Temprana para Cachorros",
                 "price": 20.0,
-                "img": "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=85",
                 "partner": "Urban Pet Walkers",
-                "desc": "Encuentros en recinto higienizado para cachorros con pauta vacunal al día con estímulos so..."
+                "desc": "Encuentros en recinto higienizado para cachorros con pauta vacunal al día con estímulos sonoros, texturas y perros adult..."
             },
             {
                 "name": "DuoWalk - Paseo Conjunto para Familias con 2 Perros",
                 "price": 21.0,
-                "img": "https://images.unsplash.com/photo-1568640347023-a616a30bc3bd?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=85",
                 "partner": "Urban Pet Walkers",
-                "desc": "Paseo de 60 minutos para dos perros del mismo hogar con precio especial unificado y contro..."
+                "desc": "Paseo de 60 minutos para dos perros del mismo hogar con precio especial unificado y control simultáneo con correas de se..."
             },
             {
                 "name": "Canicross Runner - Entrenamiento Deportivo & Carrera Guiada",
                 "price": 22.0,
-                "img": "pareja-corriendo-mascota-activa.png",
+                "img": "https://images.unsplash.com/photo-1535930891776-0c2dfb7fda1a?auto=format&fit=crop&w=1200&q=85",
                 "partner": "Urban Pet Walkers",
-                "desc": "Salida de running continuo de 5 a 8 km con paseador corredor federado para perros con exce..."
+                "desc": "Salida de running continuo de 5 a 8 km con paseador corredor federado para perros con exceso de energía (pastores, huski..."
             },
             {
                 "name": "FlashWalk - Paseo Urgente en Menos de 45 Minutos por Imprevisto",
                 "price": 19.5,
-                "img": "prevencion-golpes-calor-paseos.png",
+                "img": "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=1200&q=85",
                 "partner": "Urban Pet Walkers",
-                "desc": "Te ha surgido un viaje imprevisto, una reunión que se alarga o una urgencia médica: un pas..."
+                "desc": "Te ha surgido un viaje imprevisto, una reunión que se alarga o una urgencia médica: un paseador acude a tu domicilio en ..."
             }
         ]
     },
     "seguros": {
-        "label": "Seguros & Protección",
+        "label": "Seguros de Salud & Urgencias",
         "icon": "fa-shield-heart",
-        "color": "#fef3c7",
-        "iconColor": "#d97706",
+        "color": "#ffe4e6",
+        "iconColor": "#f43f5e",
         "products": [
             {
                 "name": "CUDI Shield Basic - Cobertura Esencial de Accidentes & Urgencias",
                 "price": 18.0,
-                "img": "seguros-gastos-veterinarios-perros-gatos.png",
+                "img": "cudi-seguros-salud-hero.jpg",
                 "partner": "CUDI Seguros & Reaseguros",
-                "desc": "Cobertura veterinaria de urgencias y accidentes de hasta 1.500€/año con libre elección de ..."
+                "desc": "Cobertura veterinaria de urgencias y accidentes de hasta 1.500€/año con libre elección de clínica y reembolso en 48 hora..."
             },
             {
                 "name": "Global Pet Protect - Cobertura Total de Enfermedad & Cirugía",
                 "price": 34.0,
-                "img": "https://images.unsplash.com/photo-1504595403659-9088ce801e29?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1200&q=85",
                 "partner": "CUDI Seguros & Reaseguros",
-                "desc": "El seguro más completo de España: hasta 3.500€/año tanto por accidentes como por enfermeda..."
+                "desc": "El seguro más completo de España: hasta 3.500€/año tanto por accidentes como por enfermedades imprevistas (cáncer, diabe..."
             },
             {
                 "name": "SafeHome MultiPet - Póliza Familiar para Hogares Multiespecie",
                 "price": 28.0,
-                "img": "familia-multiespecie-paz-mental.png",
+                "img": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=85",
                 "partner": "CUDI Seguros & Reaseguros",
-                "desc": "Póliza combinada que asegura a perros y gatos del mismo hogar bajo una única cuota reducid..."
+                "desc": "Póliza combinada que asegura a perros y gatos del mismo hogar bajo una única cuota reducida con bolsa compartida de gast..."
             },
             {
                 "name": "CUDI LegalGuard - Seguro de Responsabilidad Civil Oficial (Ley Bienestar)",
                 "price": 2.9,
-                "img": "https://images.unsplash.com/photo-1558788353-f76d92427f16?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85",
                 "partner": "CUDI Seguros & Reaseguros",
-                "desc": "Póliza obligatoria de RC de hasta 350.000€ adaptada a la Ley de Bienestar Animal con certi..."
+                "desc": "Póliza obligatoria de RC de hasta 350.000€ adaptada a la Ley de Bienestar Animal con certificado digital instantáneo des..."
             },
             {
                 "name": "CUDI TravelSafe - Seguro Médico Internacional para Viajes & Vacaciones",
                 "price": 15.0,
-                "img": "rutas-pet-friendly-barcelona.png",
+                "img": "https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1200&q=85",
                 "partner": "CUDI Seguros & Reaseguros",
-                "desc": "Cobertura veterinaria temporal en cualquier país de la UE y Reino Unido con repatriación d..."
+                "desc": "Cobertura veterinaria temporal en cualquier país de la UE y Reino Unido con repatriación del animal y gastos de hotel po..."
             },
             {
                 "name": "SeniorPaws Protect - Póliza Especial para Mascotas de +9 Años",
                 "price": 39.0,
-                "img": "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=1200&q=85",
                 "partner": "CUDI Seguros & Reaseguros",
-                "desc": "El único seguro que no excluye a tu mascota por edad avanzada. Cobertura de enfermedades c..."
+                "desc": "El único seguro que no excluye a tu mascota por edad avanzada. Cobertura de enfermedades crónicas, artrosis y medicación..."
             },
             {
                 "name": "DentalCare Plus - Cobertura Específica de Limpiezas & Cirugías Orales",
                 "price": 8.5,
-                "img": "https://images.unsplash.com/photo-1478098711619-5ab0b478d6e6?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85",
                 "partner": "CUDI Seguros & Reaseguros",
-                "desc": "Módulo complementario que cubre limpiezas dentales anuales, extracciones complejas de muel..."
+                "desc": "Módulo complementario que cubre limpiezas dentales anuales, extracciones complejas de muelas rotas y fístulas oronasales..."
             },
             {
                 "name": "WildRescue - Cobertura de Búsqueda, Rescate & Recompensa por Pérdida",
                 "price": 4.5,
-                "img": "mascota-sana-feliz.png",
+                "img": "https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&w=1200&q=85",
                 "partner": "CUDI Seguros & Reaseguros",
-                "desc": "Cubre los costes de unidades de rescate canino, drones térmicos, publicidad y recompensa l..."
+                "desc": "Cubre los costes de unidades de rescate canino, drones térmicos, publicidad y recompensa legal de hasta 800€ si tu masco..."
             },
             {
                 "name": "CatShield Total - Póliza de Salud Diseñada para las Patologías del Gato",
                 "price": 21.0,
-                "img": "gato-explorando-seguro-collar-gps.png",
+                "img": "https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=1200&q=85",
                 "partner": "CUDI Seguros & Reaseguros",
-                "desc": "Cubre las enfermedades típicas felinas: obstrucciones urinarias (FLUTD), fallo renal cróni..."
+                "desc": "Cubre las enfermedades típicas felinas: obstrucciones urinarias (FLUTD), fallo renal crónico, caídas desde balcones (sín..."
             },
             {
                 "name": "FarewellCare - Cobertura de Eutanasia Digna, Incineración & Apoyo al Duelo",
                 "price": 3.5,
-                "img": "mejora-descanso-salud-felina.png",
+                "img": "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85",
                 "partner": "CUDI Seguros & Reaseguros",
-                "desc": "Garantiza una despedida serena en tu hogar con eutanasia compasiva sin dolor, incineración..."
+                "desc": "Garantiza una despedida serena en tu hogar con eutanasia compasiva sin dolor, incineración individual ecológica y devolu..."
             },
             {
                 "name": "ProBreed Safe - Seguro Especializado para Razas de Manejo Especial",
                 "price": 6.9,
-                "img": "bienestar-integral-perros-gatos.png",
+                "img": "https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=85",
                 "partner": "CUDI Seguros & Reaseguros",
-                "desc": "Póliza con cobertura ampliada de 500.000€ exigida para gatos catalogados de manejo especia..."
+                "desc": "Póliza con cobertura ampliada de 500.000€ exigida para gatos catalogados de manejo especial (Rottweiler, Pitbull, Dogo, ..."
             },
             {
                 "name": "FieldGuard - Seguro para Perros de Caza, Pastoreo & Trabajo de Campo",
                 "price": 16.5,
-                "img": "https://images.unsplash.com/photo-1597633425046-08f5110420b5?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=85",
                 "partner": "CUDI Seguros & Reaseguros",
-                "desc": "Cobertura especializada contra ataques de jabalíes, mordeduras de víboras, espigas clavada..."
+                "desc": "Cobertura especializada contra ataques de jabalíes, mordeduras de víboras, espigas clavadas, cortes de zarzas y golpes d..."
             },
             {
                 "name": "PharmaPaws - Póliza de Cobertura Continua de Medicamentos Crónicos",
                 "price": 12.0,
-                "img": "https://images.unsplash.com/photo-1579202673506-ca3ce28943ef?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=1200&q=85",
                 "partner": "CUDI Seguros & Reaseguros",
-                "desc": "Reembolso del 80% en facturas de medicamentos de prescripción para tratamientos crónicos (..."
+                "desc": "Reembolso del 80% en facturas de medicamentos de prescripción para tratamientos crónicos (insulina, leishmania, epilepsi..."
             },
             {
                 "name": "SecondOpinion Global - Acceso a Especialistas Universitarios Internacionales",
                 "price": 7.0,
-                "img": "https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=1200&q=85",
                 "partner": "CUDI Seguros & Reaseguros",
-                "desc": "Revisión del caso médico de tu mascota por catedráticos diplomados europeos (ECVIM, ECVS, ..."
+                "desc": "Revisión del caso médico de tu mascota por catedráticos diplomados europeos (ECVIM, ECVS, ECVN) ante diagnósticos difíci..."
             },
             {
                 "name": "HolisticVet Care - Seguro de Terapias Complementarias, Fisio & Acupuntura",
                 "price": 11.5,
-                "img": "https://images.unsplash.com/photo-1560114928-40f1f1eb26a0?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=85",
                 "partner": "CUDI Seguros & Reaseguros",
-                "desc": "Cubre sesiones de acupuntura veterinaria, quiropráctica animal, hidroterapia y rehabilitac..."
+                "desc": "Cubre sesiones de acupuntura veterinaria, quiropráctica animal, hidroterapia y rehabilitación articular prescritas por t..."
             }
         ]
     },
     "estetica": {
-        "label": "Estética, Baño & Spa",
-        "icon": "fa-bath",
-        "color": "#f3e8ff",
-        "iconColor": "#7e22ce",
+        "label": "Spa & Estética Terapéutica",
+        "icon": "fa-spa",
+        "color": "#ccfbf1",
+        "iconColor": "#14b8a6",
         "products": [
             {
                 "name": "Grooming Master - Baño Terapéutico con Ozonoterapia & Masaje",
                 "price": 42.0,
-                "img": "estetica-canina-bienestar.png",
+                "img": "cudi-estetica-spa-hero.jpg",
                 "partner": "Bubbles & Paws Spa",
-                "desc": "Hidromasaje con microburbujas de ozono purificante que oxigena la piel, elimina olores en ..."
+                "desc": "Hidromasaje con microburbujas de ozono purificante que oxigena la piel, elimina olores en profundidad y calma dermatitis..."
             },
             {
                 "name": "ZenPet Spa - Deslanado Técnico en Profundidad & Baño Antiprurito",
                 "price": 38.0,
-                "img": "https://images.unsplash.com/photo-1568152950566-c1bf43f4ab28?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=1200&q=85",
                 "partner": "ZenPet Grooming",
-                "desc": "Elimina hasta el 90% del pelo muerto de muda en mantos dobles (Golden, Husky, Pastor Alemá..."
+                "desc": "Elimina hasta el 90% del pelo muerto de muda en mantos dobles (Golden, Husky, Pastor Alemán, gatos de pelo largo) sin co..."
             },
             {
                 "name": "Bubbles & Paws - Peluquería Felina Especializada (Cero Sedación)",
                 "price": 46.0,
-                "img": "https://images.unsplash.com/photo-1586042091284-bd35c8c1d917?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1200&q=85",
                 "partner": "Bubbles & Paws Spa",
-                "desc": "Tratamiento de nudos, corte a tijera y baño en seco o con toallas tibias en sala libre de ..."
+                "desc": "Tratamiento de nudos, corte a tijera y baño en seco o con toallas tibias en sala libre de gatos con técnicas Low Stress ..."
             },
             {
                 "name": "Stripping Tradicional a Mano para Perros de Pelo Duro",
                 "price": 55.0,
-                "img": "https://images.unsplash.com/photo-1554456854-55a089fd4cb2?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=85",
                 "partner": "ZenPet Grooming",
-                "desc": "Técnica artesanal de renovación de manto muerto a mano con dedales de goma para Teckels, S..."
+                "desc": "Técnica artesanal de renovación de manto muerto a mano con dedales de goma para Teckels, Schnauzers, Fox Terriers y West..."
             },
             {
                 "name": "PawCure Spa - Limado Suave de Uñas con Torno & Masaje de Almohadillas",
                 "price": 16.0,
-                "img": "https://images.unsplash.com/photo-1503777119540-ce54b422baff?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=85",
                 "partner": "Bubbles & Paws Spa",
-                "desc": "Olvídate del doloroso alicate: limado con dremel diamantado ultrasilencioso sin cortar la ..."
+                "desc": "Olvídate del doloroso alicate: limado con dremel diamantado ultrasilencioso sin cortar la vena viva, recorte interdigita..."
             },
             {
                 "name": "Haute Coiffure - Corte Integral a Tijera Personalizado por Raza",
                 "price": 50.0,
-                "img": "https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85",
                 "partner": "ZenPet Grooming",
-                "desc": "Esculpido a mano con tijeras curvas japonesas adaptado a la morfología de Caniches, Bichon..."
+                "desc": "Esculpido a mano con tijeras curvas japonesas adaptado a la morfología de Caniches, Bichones Malteses, Shih Tzu y Cobrad..."
             },
             {
                 "name": "SilkPaws - Tratamiento de Keratina & Aceite de Argán Puro de Marruecos",
                 "price": 25.0,
-                "img": "https://images.unsplash.com/photo-1513245543132-31f507417b26?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1200&q=85",
                 "partner": "Bubbles & Paws Spa",
-                "desc": "Batería de aminoácidos y lípidos para mantos quebradizos, secos o castigados que regenera ..."
+                "desc": "Batería de aminoácidos y lípidos para mantos quebradizos, secos o castigados que regenera la cutícula y previene nuevos ..."
             },
             {
                 "name": "OtiClean Spa - Higiene Auricular Profunda & Eliminación de Vello Ótico",
                 "price": 14.5,
-                "img": "https://images.unsplash.com/photo-1517423440428-a5a00ad493e8?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=1200&q=85",
                 "partner": "Bubbles & Paws Spa",
-                "desc": "Limpieza del canal auditivo externo con limpiador enzimático vegetal y depilado suave de p..."
+                "desc": "Limpieza del canal auditivo externo con limpiador enzimático vegetal y depilado suave de pelos en razas de orejas caídas..."
             },
             {
                 "name": "HydroZen - Baño de Hidromasaje con Sal Marina & Aromaterapia Canina",
                 "price": 48.0,
-                "img": "https://images.unsplash.com/photo-1587402092301-725e37c70fd8?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85",
                 "partner": "ZenPet Grooming",
-                "desc": "Inmersión en agua templada con sales ricas en magnesio del Mar Muerto y vapores de lavanda..."
+                "desc": "Inmersión en agua templada con sales ricas en magnesio del Mar Muerto y vapores de lavanda y manzanilla para aliviar con..."
             },
             {
                 "name": "ShieldBath - Baño Antiparasitario Natural con Neem & Citronela",
                 "price": 32.0,
-                "img": "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&w=1200&q=85",
                 "partner": "Bubbles & Paws Spa",
-                "desc": "Eliminación activa de pulgas, garrapatas y ácaros con extracto de Margosa (Neem) ecológico..."
+                "desc": "Eliminación activa de pulgas, garrapatas y ácaros con extracto de Margosa (Neem) ecológico que crea una barrera repelent..."
             },
             {
                 "name": "PawsMassage - Masaje Terapéutico Miofascial & Puntos Gatillo (45 min)",
                 "price": 35.0,
-                "img": "https://images.unsplash.com/photo-1560743641-3914f2c45636?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85",
                 "partner": "ZenPet Grooming",
-                "desc": "Terapia manual sobre fascias y grupos musculares de cuello, escápulas y lumbares para perr..."
+                "desc": "Terapia manual sobre fascias y grupos musculares de cuello, escápulas y lumbares para perros con tensión postural, estré..."
             },
             {
                 "name": "CatClaws Care - Recorte & Limado Amable de Uñas Felinas",
                 "price": 12.0,
-                "img": "https://images.unsplash.com/photo-1518288774672-b94e808873ff?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=85",
                 "partner": "Bubbles & Paws Spa",
-                "desc": "Recorte indoloro de la punta afilada transparente de las 18 uñas del gato sin tocar la mat..."
+                "desc": "Recorte indoloro de la punta afilada transparente de las 18 uñas del gato sin tocar la matriz vascular viva y sin peleas..."
             },
             {
                 "name": "WhiteGlow - Tratamiento Óptico Antiamarilleo para Mantos Blancos",
                 "price": 36.0,
-                "img": "https://images.unsplash.com/photo-1588774069410-84ae30757c8e?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=1200&q=85",
                 "partner": "ZenPet Grooming",
-                "desc": "Champú azul óptico con pigmentos violetas botánicos que neutralizan el tono óxido y amaril..."
+                "desc": "Champú azul óptico con pigmentos violetas botánicos que neutralizan el tono óxido y amarillo de patas, babas y lagrimale..."
             },
             {
                 "name": "LuxeComb - Sesión de Cepillado Profundo & Apertura de Nudos sin Cortar",
                 "price": 29.0,
-                "img": "https://images.unsplash.com/photo-1541599540903-216a46ca1dc0?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=1200&q=85",
                 "partner": "Bubbles & Paws Spa",
-                "desc": "Desenredado paciente mechón a mechón con spray bifásico de siliconas vegetales solubles pa..."
+                "desc": "Desenredado paciente mechón a mechón con spray bifásico de siliconas vegetales solubles para no tener que rapar al anima..."
             },
             {
                 "name": "PuppySpa - Bautismo de Agua & Primera Experiencia Positiva de Baño",
                 "price": 24.0,
-                "img": "https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&w=800&q=80",
+                "img": "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=85",
                 "partner": "ZenPet Grooming",
-                "desc": "Sesión lúdica para cachorros (3 a 7 meses) donde conocen el agua tibia, el ruido del secad..."
+                "desc": "Sesión lúdica para cachorros (3 a 7 meses) donde conocen el agua tibia, el ruido del secador y los peines con caricias y..."
             }
         ]
     }
 };
 
-// ==========================
-// TIENDA / STORE
-// ==========================
 function populateStoreCats() {
     // ya renderizado en HTML estatico, solo activamos los handlers
 }
@@ -785,13 +782,11 @@ function addToCart(name, price, img) {
 
 function updateCartBadge() {
     syncCartState();
-    const total = appCart.reduce((a, i) => a + (Number(i.qty) || 1), 0);
+    const total = appCart.reduce((a, i) => a + i.qty, 0);
     const badge = document.getElementById('app-cart-badge');
     if (badge) badge.textContent = total;
     const cnt = document.getElementById('cart-float-count');
     if (cnt) cnt.textContent = total;
-    const dockCnt = document.getElementById('floating-dock-cart-count');
-    if (dockCnt) dockCnt.textContent = total;
     
     // También actualizar badge web si está en la misma página
     const webBadge = document.getElementById('global-cart-badge');
@@ -1039,10 +1034,10 @@ function simulateNotifications() {
 // ==========================
 // IA TRIAGE & CLINICAL PREDICTIVE (AVANZADO)
 // ==========================
-let currentTriageScenarioKey = 'calor';
-let collarLedActive = false;
-let gpsRouteVisible = true;
-let isLostModeActive = false;
+var currentTriageScenarioKey = 'calor';
+var collarLedActive = false;
+var gpsRouteVisible = true;
+var isLostModeActive = false;
 
 function startAIAnalysisAnimated() {
     const banner = document.getElementById('ia-integrated-btn');
@@ -1107,8 +1102,8 @@ function startAIAnalysisAnimated() {
     }, 2000);
 }
 
-let ecgAnimationId = null;
-let petEscaped = false;
+var ecgAnimationId = null;
+var petEscaped = false;
 
 function initTriageECGCanvas(scenarioKey) {
     const canvas = document.getElementById('triage-ecg-canvas');
@@ -1313,34 +1308,29 @@ function toggleSimulateEscape() {
     const escapeMsg = document.getElementById('gps-escape-msg');
     const btnSim = document.getElementById('btn-gps-sim');
     const txtSim = document.getElementById('txt-gps-sim');
-    const trail = document.getElementById('svg-walking-trail');
 
     petEscaped = !petEscaped;
 
     if (petEscaped) {
-        // Mover a la mascota FUERA de la geocerca a la calle (C/ de Pallars)
+        // Mover a la mascota FUERA de la geocerca a la calle
         if (pin) {
-            pin.style.top = '22%';
-            pin.style.left = '82%';
-        }
-        if (trail) {
-            trail.setAttribute('d', 'M 120 92 Q 210 75 328 58');
-            trail.setAttribute('stroke', '#ef4444');
+            pin.style.top = '74%';
+            pin.style.left = '78%';
         }
         if (geofence) geofence.classList.add('alert');
         if (zoneTag) {
             zoneTag.className = 'gps-geofence-tag alert';
             zoneTag.innerHTML = '<i class="fa-solid fa-triangle-exclamation fa-beat"></i> ¡Fuera de Zona!';
         }
-        if (zoneText) zoneText.textContent = 'C/ de Pallars 142 • En Tránsito';
+        if (zoneText) zoneText.textContent = 'Calle Pallars 142 • En Tránsito';
         if (distText) distText.textContent = '285 m de casa';
-        if (speedText) speedText.textContent = '5.4 km/h';
+        if (speedText) speedText.textContent = '5.4 km/h (Corriendo)';
         if (banner) banner.style.display = 'block';
         if (escapeMsg) escapeMsg.textContent = `${petProfile.name || 'Mimi'} ha cruzado el perímetro de seguridad (150m).`;
         if (btnSim) {
             btnSim.className = 'gps-sim-btn return-sim';
         }
-        if (txtSim) txtSim.textContent = 'Regresar a Zona Segura 🏡';
+        if (txtSim) txtSim.textContent = 'Regresar a Casa 🏡';
 
         try {
             const ctx = new (window.AudioContext || window.webkitAudioContext)();
@@ -1354,30 +1344,26 @@ function toggleSimulateEscape() {
 
         showToast(`🚨 ¡Alerta Geocerca! ${petProfile.name || 'Tu mascota'} ha salido del área segura`);
     } else {
-        // Regresar a la mascota dentro del Parc del Poblenou
+        // Regresar a la mascota dentro de la casa / parque
         if (pin) {
-            pin.style.top = '56%';
-            pin.style.left = '54%';
-        }
-        if (trail) {
-            trail.setAttribute('d', 'M 120 92 Q 165 110 216 144');
-            trail.setAttribute('stroke', '#0284c7');
+            pin.style.top = '48%';
+            pin.style.left = '43%';
         }
         if (geofence) geofence.classList.remove('alert');
         if (zoneTag) {
             zoneTag.className = 'gps-geofence-tag safe';
             zoneTag.innerHTML = '<i class="fa-solid fa-shield-check"></i> En Zona Segura';
         }
-        if (zoneText) zoneText.textContent = 'Parc del Poblenou • Zona Botánica';
+        if (zoneText) zoneText.textContent = 'Parc Poblenou • Jardín Principal';
         if (distText) distText.textContent = '45 m de casa';
         if (speedText) speedText.textContent = '0.8 km/h';
         if (banner) banner.style.display = 'none';
         if (btnSim) {
             btnSim.className = 'gps-sim-btn alert-sim';
         }
-        if (txtSim) txtSim.textContent = 'Simular Salida de Zona 🏃';
+        if (txtSim) txtSim.textContent = 'Simular Salida de Casa 🏃';
 
-        showToast(`✅ ${petProfile.name || 'Tu mascota'} ha regresado a la Zona Segura`);
+        showToast(`✅ ${petProfile.name || 'Tu mascota'} ha regresado a la Zona Segura de Casa`);
     }
 }
 
@@ -1503,65 +1489,23 @@ function showToast(msg) {
 }
 
 // ==========================
-// IN-APP CHAT (RE-INTEGRACION UNIFICADA CON MOTOR BIO-NEURAL Y SINCRONIZACIÓN WEB <-> DEMO)
+// IN-APP CHAT (RE-INTEGRACION UNIFICADA CON MOTOR BIO-NEURAL)
 // ==========================
-function renderInAppSyncedHistory() {
-    const body = document.getElementById('in-app-ia-body');
-    if (!body) return;
-
-    const pName = (petProfile && petProfile.name) ? petProfile.name : 'Luna';
-    const pBreed = (petProfile && petProfile.breed) ? petProfile.breed : 'Husky Siberiano';
-    const pBpm = (petProfile && petProfile.bpm) ? petProfile.bpm : ((petProfile && petProfile.type === 'gato') ? 138 : 74);
-
-    const inAppIaName = document.getElementById('in-app-ia-pet-name');
-    if (inAppIaName) inAppIaName.textContent = pName;
-    const inAppIaAvatar = document.getElementById('in-app-ia-pet-avatar');
-    if (inAppIaAvatar && petProfile && petProfile.photo) {
-        inAppIaAvatar.src = petProfile.photo;
-    }
-
-    let history = [];
-    if (typeof CudiAI !== 'undefined' && Array.isArray(CudiAI.history) && CudiAI.history.length > 0) {
-        history = CudiAI.history;
-    } else {
-        try {
-            const raw = sessionStorage.getItem('cudi_ai_chat_history');
-            if (raw) history = JSON.parse(raw) || [];
-        } catch (e) {}
-    }
-
-    body.innerHTML = '';
-
-    // Mensaje inicial contextualizado
-    const welcome = document.createElement('div');
-    welcome.className = 'ia-msg-bubble';
-    welcome.innerHTML = `<div class="ai-source-badge" style="margin-bottom:5px; font-size:0.65rem; color:#0284c7; font-weight:800;"><i class="fa-solid fa-microchip"></i> IA Neuronal CUDI &bull; Sincronizada</div>¡Hola! Monitorizo en vivo a <strong>${pName}</strong> (${pBreed}, <strong>${pBpm} bpm</strong>). Conozco sus métricas, ubicación y tu <strong>🛒 Cesta de Compras</strong>. ¿En qué te ayudo?`;
-    body.appendChild(welcome);
-
-    history.forEach((item, idx) => {
-        const role = item.role || item.sender || 'ia';
-        const content = item.text || item.html || '';
-        if (!content) return;
-        // Evitar duplicar el saludo inicial largo del panel web en el primer mensaje
-        if (idx === 0 && role === 'ia' && content.includes('Asistente Veterinario y Guardián Bio-Neural CUDI')) return;
-        const div = document.createElement('div');
-        div.className = role === 'user' ? 'user-msg-bubble' : 'ia-msg-bubble';
-        div.innerHTML = content;
-        body.appendChild(div);
-    });
-
-    setTimeout(() => {
-        body.scrollTop = body.scrollHeight;
-    }, 30);
-}
-
 function toggleInAppChat() {
     const panel = document.getElementById('in-app-ia-panel');
     if (panel) {
         const isHidden = panel.style.display === 'none' || !panel.style.display;
         panel.style.display = isHidden ? 'flex' : 'none';
         if (isHidden) {
-            renderInAppSyncedHistory();
+            const pName = (petProfile && petProfile.name) ? petProfile.name : 'tu mascota';
+            const statusMini = panel.querySelector('.ia-status-mini');
+            if (statusMini) {
+                statusMini.innerHTML = `<i class="fa-solid fa-microchip"></i> IA Neuronal Activa &bull; ${pName}`;
+            }
+            const body = document.getElementById('in-app-ia-body');
+            if (body && body.children.length === 1 && body.firstElementChild.textContent.includes('¿Cómo puedo ayudarte hoy')) {
+                body.firstElementChild.innerHTML = `<div class="ai-source-badge" style="margin-bottom:6px;"><i class="fa-solid fa-microchip"></i> IA Neuronal CUDI &bull; ${pName}</div>¡Hola! Monitorizo en vivo a <strong>${pName}</strong> (${petProfile.breed || 'Mestizo'}, ${petProfile.bpm || (petProfile.type === 'gato' ? 138 : 74)} bpm). Pregúntame cualquier duda veterinaria o sobre el ecosistema CUDI.`;
+            }
             if (typeof CudiAI !== 'undefined' && !CudiAI.llmReady && !CudiAI.isDownloadingLLM && typeof navigator !== 'undefined' && navigator.gpu) {
                 CudiAI.initLocalLLM(CudiAI.selectedModel);
             }
@@ -1573,45 +1517,17 @@ function toggleInAppChat() {
     }
 }
 
-function clearInAppChatHistory() {
-    if (typeof CudiAI !== 'undefined' && typeof CudiAI.clearChat === 'function') {
-        CudiAI.clearChat();
-    } else {
-        sessionStorage.removeItem('cudi_ai_chat_history');
-    }
-    renderInAppSyncedHistory();
-}
-
-function sendInAppQuickPrompt(promptText) {
-    const panel = document.getElementById('in-app-ia-panel');
-    if (panel && (panel.style.display === 'none' || !panel.style.display)) {
-        panel.style.display = 'flex';
-        renderInAppSyncedHistory();
-    }
-    const input = document.getElementById('in-app-ia-input');
-    if (input) {
-        input.value = promptText;
-        sendInAppChatMessage();
-    }
-}
-
 function handleInAppChatEnter(e) {
     if (e.key === 'Enter') sendInAppChatMessage();
 }
 
 async function sendInAppChatMessage() {
     const input = document.getElementById('in-app-ia-input');
-    if (!input) return;
     const msg = input.value.trim();
     if (!msg || typeof CudiAI === 'undefined') return;
 
     input.value = '';
     addInAppMsg('user', msg);
-
-    // Sincronizar con historial global de CudiAI (para que se vea también en el panel Web)
-    if (typeof CudiAI.addMessage === 'function') {
-        CudiAI.addMessage('user', msg);
-    }
 
     // Indicador de escritura
     const body = document.getElementById('in-app-ia-body');
@@ -1619,7 +1535,7 @@ async function sendInAppChatMessage() {
     const typingDiv = document.createElement('div');
     typingDiv.id = typingId;
     typingDiv.className = 'typing-mini';
-    typingDiv.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> CUDI analizando biometría y cesta...';
+    typingDiv.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> CUDI analizando biometría...';
     body.appendChild(typingDiv);
     body.scrollTop = body.scrollHeight;
 
@@ -1631,11 +1547,6 @@ async function sendInAppChatMessage() {
         document.getElementById(typingId).remove();
     }
     addInAppMsg('ia', response);
-
-    // Sincronizar respuesta con el panel Web de CudiAI
-    if (typeof CudiAI.addMessage === 'function') {
-        CudiAI.addMessage('ia', response);
-    }
 }
 
 function addInAppMsg(sender, text) {
@@ -1644,6 +1555,7 @@ function addInAppMsg(sender, text) {
     
     const div = document.createElement('div');
     div.className = sender === 'user' ? 'user-msg-bubble' : 'ia-msg-bubble';
+    // Usamos innerHTML para soportar botones interactivos, formato enriquecido y acciones
     div.innerHTML = text;
     body.appendChild(div);
     
@@ -1706,28 +1618,11 @@ window.addEventListener('cudi:sessionChanged', (e) => {
     }
 });
 
-window.addEventListener('cudi:aiHistoryUpdated', () => {
-    const panel = document.getElementById('in-app-ia-panel');
-    if (panel && panel.style.display === 'flex') {
-        renderInAppSyncedHistory();
-    }
-});
-
-window.addEventListener('cudi:cartUpdated', () => {
-    updateCartBadge();
-    if (document.getElementById('inline-cart-panel')?.classList.contains('active')) {
-        renderInlineCart();
-    }
-});
-
 window.addEventListener('storage', (e) => {
     if (e.key === 'cudi_pet_profile' || e.key === 'cudi_session_active') {
         const active = loadSavedProfile();
         if (!active) {
             showOnboardingScreen();
         }
-    } else if (e.key === 'cudi_cart') {
-        updateCartBadge();
     }
 });
-

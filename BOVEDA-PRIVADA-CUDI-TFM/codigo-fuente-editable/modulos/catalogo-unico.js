@@ -4173,6 +4173,59 @@
         }
 ];
 
+    const ARTICULOS_CLINICOS = [
+        {
+            url: 'gemelos-digitales-salud-predictiva.html',
+            title: 'Impacto ClÃ­nico de los Gemelos Digitales en la Salud Predictiva',
+            badge: 'TelemetrÃ­a & IA',
+            readTime: '6 min lectura',
+            img: 'dashboard-biometrico-gemelo-digital-mascotas.png',
+            desc: 'CÃ³mo la monitorizaciÃ³n continua las 8.760 horas del aÃ±o anticipa patologÃ­as subclÃ­nicas.'
+        },
+        {
+            url: 'ansiedad-separacion-cortisol-mascotas.html',
+            title: 'ReducciÃ³n de Cortisol SistÃ©mico en Ansiedad por SeparaciÃ³n',
+            badge: 'EtologÃ­a ClÃ­nica',
+            readTime: '5 min lectura',
+            img: 'reduccion-ansiedad-separacion-perros.png',
+            desc: 'Biomarcadores HRV de variabilidad cardÃ­aca para detectar y mitigar el estrÃ©s en hogares urbanos.'
+        },
+        {
+            url: 'geo-telemetria-prevencion-perdida.html',
+            title: 'Geo-TelemetrÃ­a GNSS y Geocercas DinÃ¡micas contra el ExtravÃ­o',
+            badge: 'Seguridad GPS',
+            readTime: '5 min lectura',
+            img: 'radar-gps-prevencion-perdidas.png',
+            desc: 'Arquitectura hÃ­brida LTE-M + GPS multibanda para rescate inmediato en menos de 4 minutos.'
+        },
+        {
+            url: 'microbioma-nutricion-longevidad-canina.html',
+            title: 'Microbioma Intestinal y NutriciÃ³n de PrecisiÃ³n en Longevidad',
+            badge: 'NutriciÃ³n ClÃ­nica',
+            readTime: '7 min lectura',
+            img: 'dietas-personalizadas-longevidad-mascotas.png',
+            desc: 'Ajuste calÃ³rico dinÃ¡mico segÃºn telemetrÃ­a de actividad y prevenciÃ³n de inflamaciÃ³n crÃ³nica.'
+        },
+        {
+            url: 'triaje-ia-esperanza-vida-veterinaria.html',
+            title: 'Triaje AlgorÃ­tmico 24/7 y Aumento de la Esperanza de Vida',
+            badge: 'Urgencias & IA',
+            readTime: '6 min lectura',
+            img: 'triaje-ia-veterinario-urgencias.png',
+            desc: 'DetecciÃ³n temprana de golpe de calor, torsiÃ³n gÃ¡strica e insuficiencia cardÃ­aca mediante IA.'
+        },
+        {
+            url: 'seguros-veterinarios-mortalidad.html',
+            title: 'Impacto de los Seguros Preventivos en la ReducciÃ³n de Eutanasia EconÃ³mica',
+            badge: 'Salud PÃºblica',
+            readTime: '5 min lectura',
+            img: 'seguros-gastos-veterinarios-perros-gatos.png',
+            desc: 'Por quÃ© el modelo de suscripciÃ³n preventiva elimina la barrera financiera ante urgencias graves.'
+        }
+    ];
+
+    
+
     function getProductByUrl(url) {
         if (!url) return null;
         const cleanUrl = url.split('/').pop().split('?')[0].toLowerCase();
