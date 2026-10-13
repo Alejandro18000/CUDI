@@ -1419,7 +1419,8 @@ function renderSocialPets() {
     if (!feedContainer && petsContainer && petsContainer.parentNode) {
         feedContainer = document.createElement('div');
         feedContainer.id = 'demo-social-feed-list';
-        petsContainer.parentNode.insertBefore(feedContainer, petsContainer);
+        const neighborsHeader = petsContainer.previousElementSibling;
+        petsContainer.parentNode.insertBefore(feedContainer, neighborsHeader || petsContainer);
     }
 
     if (feedContainer) {

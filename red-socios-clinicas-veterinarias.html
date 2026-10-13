@@ -148,24 +148,73 @@
             </div>
         </div>
         
-        <!-- Formulario en Hero (Espacio de Registro solicitado) -->
+        <!-- Formulario en Hero (Apple Liquid Glass: Acceso Partner Pre-cargado + Registro B2B) -->
         <div class="hero-dual-photo" style="display:flex; align-items:center; position:relative;">
-            <div style="position:absolute; width:100%; height:100%; background-image: url('servicios-telemedicina-veterinaria-domicilio.png'); background-size: cover; background-position: center; border-radius: 30px; opacity:0.15; z-index:0;"></div>
-            <div style="background:white; padding:40px; border-radius:24px; box-shadow:0 30px 60px rgba(0,0,0,0.12); width:100%; position:relative; z-index:1; border:1px solid #f0f0f0;">
-                <h3 style="margin-bottom:10px; font-weight:800;">Solicitud de Acceso</h3>
-                <p style="color:var(--clr-text-muted); font-size:0.9rem; margin-bottom:20px;">Únete a la red líder en salud animal.</p>
-                <form id="registro" onsubmit="event.preventDefault(); submitB2B(this.querySelector('button'))">
-                    <div style="margin-bottom:15px;">
-                        <input type="text" placeholder="Nombre comercial" style="width:100%; padding:12px; border:1px solid #ddd; border-radius:8px; outline:none;">
+            <div style="position:absolute; width:100%; height:100%; background-image: url('servicios-telemedicina-veterinaria-domicilio.png'); background-size: cover; background-position: center; border-radius: 30px; opacity:0.22; z-index:0;"></div>
+            <div class="liquid-glass-card" style="background:linear-gradient(155deg, rgba(255,255,255,0.9) 0%, rgba(240,249,255,0.84) 55%, rgba(255,255,255,0.92) 100%); backdrop-filter:blur(32px) saturate(200%); -webkit-backdrop-filter:blur(32px) saturate(200%); padding:30px; border-radius:28px; box-shadow:0 30px 64px -12px rgba(15,23,42,0.18), 0 12px 28px -8px rgba(2,132,199,0.12), inset 0 2px 2px rgba(255,255,255,0.98); width:100%; position:relative; z-index:1; border:1.5px solid rgba(255,255,255,0.96);">
+                <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:14px;">
+                    <div style="display:flex; align-items:center; gap:10px;">
+                        <div style="width:36px; height:36px; border-radius:11px; background:linear-gradient(135deg, #0284c7, #0ea5e9); color:white; display:flex; align-items:center; justify-content:center; font-size:1rem; box-shadow:0 4px 12px rgba(2,132,199,0.25);"><i class="fa-solid fa-hospital-user"></i></div>
+                        <div>
+                            <h3 style="margin:0; font-size:1.18rem; font-weight:800; color:#0f172a;">Portal CUDI Partners</h3>
+                            <span style="font-size:0.74rem; color:#475569; font-weight:600;">Ecosistema Clínico &amp; B2B</span>
+                        </div>
                     </div>
-                    <div style="margin-bottom:15px;">
-                        <input type="text" placeholder="Nº Colegiado / Licencia" style="width:100%; padding:12px; border:1px solid #ddd; border-radius:8px; outline:none;">
+                    <span style="font-size:0.68rem; font-weight:800; background:rgba(220,252,231,0.92); color:#15803d; padding:4px 10px; border-radius:999px; border:1px solid rgba(134,239,172,0.85);">Red Activa</span>
+                </div>
+
+                <!-- Pestañas Apple Glass: Iniciar Sesión Partner vs Solicitar Alta -->
+                <div style="display:flex; background:rgba(226,232,240,0.72); backdrop-filter:blur(14px); padding:3.5px; border-radius:999px; gap:4px; border:1px solid rgba(255,255,255,0.95); margin-bottom:16px;">
+                    <button type="button" id="b2b-tab-login" onclick="document.getElementById('b2b-view-login').style.display='block'; document.getElementById('b2b-view-register').style.display='none'; this.style.background='white'; this.style.color='#0284c7'; document.getElementById('b2b-tab-reg').style.background='transparent'; document.getElementById('b2b-tab-reg').style.color='#475569';" style="flex:1; border:none; padding:8px 12px; border-radius:999px; font-size:0.76rem; font-weight:800; cursor:pointer; background:white; color:#0284c7; box-shadow:0 2px 8px rgba(2,132,199,0.14);">
+                        <i class="fa-solid fa-right-to-bracket"></i> Iniciar Sesión Partner
+                    </button>
+                    <button type="button" id="b2b-tab-reg" onclick="document.getElementById('b2b-view-login').style.display='none'; document.getElementById('b2b-view-register').style.display='block'; this.style.background='white'; this.style.color='#0284c7'; document.getElementById('b2b-tab-login').style.background='transparent'; document.getElementById('b2b-tab-login').style.color='#475569';" style="flex:1; border:none; padding:8px 12px; border-radius:999px; font-size:0.76rem; font-weight:800; cursor:pointer; background:transparent; color:#475569;">
+                        <i class="fa-solid fa-building-circle-check"></i> Solicitar Alta B2B
+                    </button>
+                </div>
+
+                <!-- VISTA 1: INICIAR SESIÓN PARTNER PRE-CARGADO -->
+                <div id="b2b-view-login" style="display:block;">
+                    <div style="background:rgba(255,255,255,0.88); border:1.5px solid rgba(125,211,252,0.85); border-radius:18px; padding:14px; margin-bottom:14px;">
+                        <div style="display:flex; align-items:center; gap:12px; margin-bottom:10px;">
+                            <img src="servicios-telemedicina-veterinaria-domicilio.png" alt="VetHome BCN" style="width:52px !important; height:52px !important; min-width:52px !important; max-width:52px !important; aspect-ratio:1/1 !important; border-radius:50% !important; object-fit:cover !important; border:2px solid #0284c7;">
+                            <div>
+                                <div style="font-weight:800; font-size:0.96rem; color:#0f172a;">Clínica VetHome BCN <i class="fa-solid fa-circle-check" style="color:#0284c7; font-size:0.8rem;"></i></div>
+                                <div style="font-size:0.74rem; color:#475569; font-weight:600;">Colegiado Nº COL-08-4921 &bull; Urgencias 24/7</div>
+                                <div style="font-size:0.68rem; color:#0284c7; font-weight:700;"><i class="fa-solid fa-satellite-dish"></i> Derivación Triaje IA Activa (18 pacientes/mes)</div>
+                            </div>
+                        </div>
+                        <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:12px;">
+                            <div style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:10px; padding:6px 10px;">
+                                <span style="display:block; font-size:0.62rem; font-weight:800; color:#64748b; text-transform:uppercase;">ID Centro Clínico</span>
+                                <strong style="font-size:0.74rem; color:#0f172a;">partner@vethome.cudi.pet</strong>
+                            </div>
+                            <div style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:10px; padding:6px 10px;">
+                                <span style="display:block; font-size:0.62rem; font-weight:800; color:#64748b; text-transform:uppercase;">Token API B2B</span>
+                                <strong style="font-size:0.74rem; color:#16a34a;">•••••••• Activo</strong>
+                            </div>
+                        </div>
+                        <button type="button" class="btn-primary" style="width:100%; padding:13px; border-radius:12px; border:none; font-weight:800; cursor:pointer; background:linear-gradient(135deg,#0284c7,#0ea5e9);" onclick="document.getElementById('roi-dashboard')?.scrollIntoView({behavior:'smooth'}); if(typeof showCudiToast==='function') showCudiToast('🏥 Sesión Partner iniciada: Clínica VetHome BCN conectada al Panel ROI','success');">
+                            <i class="fa-solid fa-right-to-bracket"></i> Entrar como Clínica VetHome BCN
+                        </button>
                     </div>
-                    <div style="margin-bottom:20px;">
-                        <input type="email" placeholder="Email administrativo" style="width:100%; padding:12px; border:1px solid #ddd; border-radius:8px; outline:none;">
-                    </div>
-                    <button type="button" class="btn-primary" aria-label="Acción principal" style="width:100%; padding:15px; border-radius:8px; border:none; cursor:pointer;" onclick="submitB2B(this)">Solicitar acceso a la red</button>
-                </form>
+                </div>
+
+                <!-- VISTA 2: SOLICITAR ALTA NUEVO PARTNER B2B -->
+                <div id="b2b-view-register" style="display:none;">
+                    <form id="registro" onsubmit="event.preventDefault(); submitB2B(this.querySelector('button'))">
+                        <div style="margin-bottom:12px;">
+                            <input type="text" class="cudi-input-premium" value="Hospital Veterinario Poblenou" placeholder="Nombre comercial" style="width:100%; padding:11px 14px; border-radius:12px;">
+                        </div>
+                        <div style="margin-bottom:12px;">
+                            <input type="text" class="cudi-input-premium" value="COL-08-7734" placeholder="Nº Colegiado / Licencia" style="width:100%; padding:11px 14px; border-radius:12px;">
+                        </div>
+                        <div style="margin-bottom:16px;">
+                            <input type="email" class="cudi-input-premium" value="direccion@vetpoblenou.es" placeholder="Email administrativo" style="width:100%; padding:11px 14px; border-radius:12px;">
+                        </div>
+                        <button type="button" class="btn-primary" aria-label="Acción principal" style="width:100%; padding:13px; border-radius:12px; border:none; cursor:pointer; font-weight:800;" onclick="submitB2B(this)">Solicitar acceso a la red</button>
+                    </form>
+                </div>
             </div>
         </div>
     </header>
