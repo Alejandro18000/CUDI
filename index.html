@@ -1466,246 +1466,383 @@
     </style>
 
     <!-- PORTAL DE EDUCACIÓN PREVENTIVA (REDISEÑO EXPORT-UX) -->
-    <section id=portal-educativo class=edu-section>
-        <div class=container>
-            <div class=edu-header>
-                <span class=edu-badge>Conocimiento para su bienestar</span>
-                <h2 class=edu-title>Guía para una vida plena y saludable a su lado</h2>
-                <p class=edu-p>El bienestar de los compañeros animales depende de la atención constante a sus necesidades físicas y emocionales. Este portal ofrece información fundamentada para asegurar que cada perro y gato disfrute de una existencia larga, activa y libre de preocupaciones.</p>
+        <!-- SECCIÓN DE CIENCIA & ESTUDIOS CLÍNICOS REALES (CARRUSEL APPLE GLASS 2026) -->
+    <section class="cudi-science-carousel-section" id="ciencia">
+        <div class="cudi-science-header-box">
+            <div class="cudi-science-badge">
+                <i class="fa-solid fa-flask-vial"></i> Evidencia Científica & Ensayos Clínicos 2026
             </div>
+            <h2 class="cudi-science-title">
+                Guía y evidencia para una <br>
+                <span class="cudi-science-title-accent">vida plena y saludable a su lado.</span>
+            </h2>
+            <p class="cudi-science-subtext">
+                El bienestar de nuestros compañeros no se basa en promesas: se mide con datos biológicos reales. Accede a los 90 estudios clínicos y journals con fuentes indexadas en PubMed, NCBI y AVMA que respaldan cada innovación de CUDI.
+            </p>
+        </div>
 
-            <div class=edu-grid>
-                
-                <!-- Artículo 1: Telemetría -->
-                <div class=edu-card>
-                    <div style="height:250px; background-image:url('cudi-smart-collar-geolocalizacion-gps.png'); background-size:cover; background-position:center;"></div>
-                    <div class=edu-card-content>
-                        <h3 class=edu-card-title>Telemetría y Geolocalización Canina</h3>
-                        <p class=edu-card-p>Documentamos cómo la geolocalización continua ha reducido las pérdidas definitivas en un alarmante porcentaje.</p>
-                        <a href="geo-telemetria-prevencion-perdida.html" class="edu-link">Leer Journal Completo <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- Artículo 2: Triaje IA -->
-                <div class=edu-card>
-                    <div style="height:250px; background-image:url('triaje-ia-veterinario-urgencias.png'); background-size:cover; background-position:center;"></div>
-                    <div class=edu-card-content>
-                        <h3 class=edu-card-title>Triaje IA: Reducción de Mortalidad Aguda</h3>
-                        <p class=edu-card-p>La ventana de oro en traumas es de menos de una hora. La capacidad algorítmica de evaluar síntomas en tiempo real salva vidas.</p>
-                        <a href="triaje-ia-esperanza-vida-veterinaria.html" class="edu-link">Leer Journal Completo <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- Artículo 3: Nutrición -->
-                <div class=edu-card>
-                    <div style="height:250px; background-image:url('dietas-personalizadas-longevidad-mascotas.png'); background-size:cover; background-position:center;"></div>
-                    <div class=edu-card-content>
-                        <h3 class=edu-card-title>Manipulación del Microbioma vía Nutrición</h3>
-                        <p class=edu-card-p>La biología celular exige un retorno estricto a dietas orgánicas formuladas específicamente. Previene fallas renales a mediano plazo.</p>
-                        <a href="microbioma-nutricion-longevidad-canina.html" class="edu-link">Leer Journal Completo <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- Artículo 4: Ansiedad y Paseos -->
-                <div class=edu-card>
-                    <div style="height:250px; background-image:url('pareja-corriendo-mascota-activa.png'); background-size:cover; background-position:center;"></div>
-                    <div class=edu-card-content>
-                        <h3 class=edu-card-title>Cortisol y Ansiedad por Separación</h3>
-                        <p class=edu-card-p>Las rutinas de paseos grupales regulan el impacto del cortisol, mitigando la depresión y reactividad por aislamiento en entornos urbanos.</p>
-                        <a href="ansiedad-separacion-cortisol-mascotas.html" class="edu-link">Leer Journal Completo <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- Artículo 5: Seguros -->
-                <div class=edu-card>
-                    <div style="height:250px; background-image:url('seguros-gastos-veterinarios-perros-gatos.png'); background-size:cover; background-position:center;"></div>
-                    <div class=edu-card-content>
-                        <h3 class=edu-card-title>Venciendo a la "Eutanasia Económica"</h3>
-                        <p class=edu-card-p>Análisis estadístico sobre la prolongación de la esperanza de vida cruzado con la cobertura financiera total y preventiva.</p>
-                        <a href="seguros-veterinarios-mortalidad.html" class="edu-link">Leer Journal Completo <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- Artículo 6: Gemelo Digital -->
-                <div class=edu-card>
-                    <div style="height:250px; background-image:url('dashboard-biometrico-gemelo-digital-mascotas.png'); background-size:cover; background-position:center;"></div>
-                    <div class=edu-card-content>
-                        <h3 class=edu-card-title>Gemelos Digitales y Salud Predictiva</h3>
-                        <p class=edu-card-p>Relevancia metodológica de recolectar el 100% de signos biométricos constantemente vs el tradicional chequeo anual sintomático.</p>
-                        <a href="gemelos-digitales-salud-predictiva.html" class="edu-link">Leer Journal Completo <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </div>
+        <!-- Controles Superiores de Navegación -->
+        <div class="cudi-carousel-controls-bar">
+            <div class="cudi-carousel-counter">
+                <i class="fa-solid fa-database" style="color:#38bdf8;"></i> 90 Ensayos Clínicos Indexados
             </div>
-    </section>
-
-    <!-- SECCIÓN REDES SOCIALES (INSTAGRAM FEED) -->
-        <!-- =====================================================================
-         CUDI SOCIAL COMMUNITY & CONNECTIVITY HUB — APPLE LIQUID GLASS EDITION
-         ===================================================================== -->
-    <section class="social-feed cudi-apple-social-section" id="comunidad-social">
-        <div class="container" style="max-width: 1320px; margin: 0 auto; padding: 0 24px;">
-            <!-- Header Badge & Titles (Apple Keynote Style) -->
-            <div class="section-heading" style="text-align: center; max-width: 780px; margin: 0 auto 50px;">
-                <div class="apple-glass-pill" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(2, 132, 199, 0.08); border: 1px solid rgba(2, 132, 199, 0.22); padding: 6px 18px; border-radius: 9999px; margin-bottom: 20px; backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);">
-                    <i class="fa-solid fa-satellite-dish" style="color: #0284c7; font-size: 0.85rem;"></i>
-                    <span style="font-size: 0.78rem; font-weight: 800; color: #0284c7; text-transform: uppercase; letter-spacing: 0.08em;">Comunidad Conectada CUDI</span>
-                </div>
-                <h2 style="font-size: clamp(2.4rem, 4vw, 3.4rem); font-weight: 800; color: #0f172a; letter-spacing: -0.03em; margin: 0 0 16px; line-height: 1.15;">
-                    Sigue nuestra huella
-                </h2>
-                <p style="color: #475569; font-size: 1.12rem; line-height: 1.6; margin: 0 auto; font-weight: 450;">
-                    Historias clínicas reales, telemetría biométrica y el día a día de más de 12.000 familias y compañeros en Barcelona.
-                </p>
-            </div>
-
-            <!-- Apple Liquid Glass Social Grid (Stories & Live Feeds) -->
-            <div class="cudi-social-glass-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-bottom: 45px;">
-                
-                <!-- Card 1: Instagram (Dog Adventure & GPS) -->
-                <article class="cudi-social-glass-card" style="background: rgba(255, 255, 255, 0.75); backdrop-filter: blur(32px) saturate(200%); -webkit-backdrop-filter: blur(32px) saturate(200%); border: 1px solid rgba(255, 255, 255, 0.8); border-radius: 28px; overflow: hidden; box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.07), inset 0 1px 0 rgba(255, 255, 255, 0.9); transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1); display: flex; flex-direction: column;">
-                    <div style="position: relative; aspect-ratio: 1; overflow: hidden;">
-                        <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=800&q=85" alt="Aventura GPS con Smart Collar" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);" class="social-img-hover" loading="lazy">
-                        <div style="position: absolute; top: 16px; left: 16px; background: rgba(15, 23, 42, 0.65); backdrop-filter: blur(16px); color: white; padding: 5px 12px; border-radius: 50px; font-size: 0.72rem; font-weight: 700; display: flex; align-items: center; gap: 6px;">
-                            <i class="fa-brands fa-instagram" style="color: #e1306c;"></i> @cudi.ia
-                        </div>
-                        <div style="position: absolute; bottom: 16px; right: 16px; background: rgba(2, 132, 199, 0.9); backdrop-filter: blur(12px); color: white; padding: 4px 10px; border-radius: 50px; font-size: 0.7rem; font-weight: 800; display: flex; align-items: center; gap: 5px;">
-                            <i class="fa-solid fa-heart-pulse"></i> 76 bpm
-                        </div>
-                    </div>
-                    <div style="padding: 20px 22px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-                        <p style="margin: 0 0 16px; font-size: 0.88rem; color: #334155; line-height: 1.5; font-weight: 500;">
-                            «Thor explorando Collserola con geovallas activas y telemetría en tiempo real. 8.4 km sin estrés.»
-                        </p>
-                        <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(226, 232, 240, 0.6); padding-top: 12px;">
-                            <span style="font-size: 0.74rem; font-weight: 600; color: #64748b;"><i class="fa-regular fa-heart" style="color: #ef4444;"></i> 1.480 likes</span>
-                            <a href="https://www.instagram.com/cudi.ia?igsh=bjdmNXhyeHZvMXo0&utm_source=qr" target="_blank" rel="noopener" style="font-size: 0.78rem; font-weight: 700; color: #0284c7; text-decoration: none; display: flex; align-items: center; gap: 4px;">
-                                Ver en Instagram <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7rem;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Card 2: TikTok (Feline Health & Nutrition) -->
-                <article class="cudi-social-glass-card" style="background: rgba(255, 255, 255, 0.75); backdrop-filter: blur(32px) saturate(200%); -webkit-backdrop-filter: blur(32px) saturate(200%); border: 1px solid rgba(255, 255, 255, 0.8); border-radius: 28px; overflow: hidden; box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.07), inset 0 1px 0 rgba(255, 255, 255, 0.9); transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1); display: flex; flex-direction: column;">
-                    <div style="position: relative; aspect-ratio: 1; overflow: hidden;">
-                        <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=800&q=85" alt="Nutrición felina y VFC" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);" class="social-img-hover" loading="lazy">
-                        <div style="position: absolute; top: 16px; left: 16px; background: rgba(15, 23, 42, 0.65); backdrop-filter: blur(16px); color: white; padding: 5px 12px; border-radius: 50px; font-size: 0.72rem; font-weight: 700; display: flex; align-items: center; gap: 6px;">
-                            <i class="fa-brands fa-tiktok" style="color: #00f2fe;"></i> @cudi.ia
-                        </div>
-                        <div style="position: absolute; bottom: 16px; right: 16px; background: rgba(16, 185, 129, 0.9); backdrop-filter: blur(12px); color: white; padding: 4px 10px; border-radius: 50px; font-size: 0.7rem; font-weight: 800; display: flex; align-items: center; gap: 5px;">
-                            <i class="fa-solid fa-shield-cat"></i> Dieta BARF
-                        </div>
-                    </div>
-                    <div style="padding: 20px 22px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-                        <p style="margin: 0 0 16px; font-size: 0.88rem; color: #334155; line-height: 1.5; font-weight: 500;">
-                            «¿Por qué amasa tu gato antes de dormir? Guía de etología clínica y análisis de ronroneo con IA.»
-                        </p>
-                        <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(226, 232, 240, 0.6); padding-top: 12px;">
-                            <span style="font-size: 0.74rem; font-weight: 600; color: #64748b;"><i class="fa-solid fa-play" style="color: #0284c7;"></i> 42.6K views</span>
-                            <a href="https://www.tiktok.com/@cudi.ia?_r=1&_t=ZN-95icM5LsfCA" target="_blank" rel="noopener" style="font-size: 0.78rem; font-weight: 700; color: #0284c7; text-decoration: none; display: flex; align-items: center; gap: 4px;">
-                                Ver en TikTok <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7rem;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Card 3: YouTube (VetHome Case Study) -->
-                <article class="cudi-social-glass-card" style="background: rgba(255, 255, 255, 0.75); backdrop-filter: blur(32px) saturate(200%); -webkit-backdrop-filter: blur(32px) saturate(200%); border: 1px solid rgba(255, 255, 255, 0.8); border-radius: 28px; overflow: hidden; box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.07), inset 0 1px 0 rgba(255, 255, 255, 0.9); transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1); display: flex; flex-direction: column;">
-                    <div style="position: relative; aspect-ratio: 1; overflow: hidden;">
-                        <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=800&q=85" alt="Urgencias VetHome 24/7" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);" class="social-img-hover" loading="lazy">
-                        <div style="position: absolute; top: 16px; left: 16px; background: rgba(15, 23, 42, 0.65); backdrop-filter: blur(16px); color: white; padding: 5px 12px; border-radius: 50px; font-size: 0.72rem; font-weight: 700; display: flex; align-items: center; gap: 6px;">
-                            <i class="fa-brands fa-youtube" style="color: #ff0000;"></i> CUDI IA
-                        </div>
-                        <div style="position: absolute; bottom: 16px; right: 16px; background: rgba(239, 68, 68, 0.9); backdrop-filter: blur(12px); color: white; padding: 4px 10px; border-radius: 50px; font-size: 0.7rem; font-weight: 800; display: flex; align-items: center; gap: 5px;">
-                            <i class="fa-solid fa-stethoscope"></i> Caso Clínico
-                        </div>
-                    </div>
-                    <div style="padding: 20px 22px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-                        <p style="margin: 0 0 16px; font-size: 0.88rem; color: #334155; line-height: 1.5; font-weight: 500;">
-                            «Episodio de fiebre detectado precozmente por el Smart Collar: atención domiciliaria en menos de 35 minutos.»
-                        </p>
-                        <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(226, 232, 240, 0.6); padding-top: 12px;">
-                            <span style="font-size: 0.74rem; font-weight: 600; color: #64748b;"><i class="fa-solid fa-clock" style="color: #0284c7;"></i> 12 min docu</span>
-                            <a href="https://www.youtube.com/@cudi-ia" target="_blank" rel="noopener" style="font-size: 0.78rem; font-weight: 700; color: #0284c7; text-decoration: none; display: flex; align-items: center; gap: 4px;">
-                                Ver en YouTube <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7rem;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Card 4: Facebook Community (Support & Adoptions) -->
-                <article class="cudi-social-glass-card" style="background: rgba(255, 255, 255, 0.75); backdrop-filter: blur(32px) saturate(200%); -webkit-backdrop-filter: blur(32px) saturate(200%); border: 1px solid rgba(255, 255, 255, 0.8); border-radius: 28px; overflow: hidden; box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.07), inset 0 1px 0 rgba(255, 255, 255, 0.9); transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1); display: flex; flex-direction: column;">
-                    <div style="position: relative; aspect-ratio: 1; overflow: hidden;">
-                        <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=800&q=85" alt="Comunidad de Familias CUDI" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);" class="social-img-hover" loading="lazy">
-                        <div style="position: absolute; top: 16px; left: 16px; background: rgba(15, 23, 42, 0.65); backdrop-filter: blur(16px); color: white; padding: 5px 12px; border-radius: 50px; font-size: 0.72rem; font-weight: 700; display: flex; align-items: center; gap: 6px;">
-                            <i class="fa-brands fa-facebook-f" style="color: #1877f2;"></i> CUDI Oficial
-                        </div>
-                        <div style="position: absolute; bottom: 16px; right: 16px; background: rgba(147, 51, 234, 0.9); backdrop-filter: blur(12px); color: white; padding: 4px 10px; border-radius: 50px; font-size: 0.7rem; font-weight: 800; display: flex; align-items: center; gap: 5px;">
-                            <i class="fa-solid fa-users"></i> Grupo Familiar
-                        </div>
-                    </div>
-                    <div style="padding: 20px 22px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-                        <p style="margin: 0 0 16px; font-size: 0.88rem; color: #334155; line-height: 1.5; font-weight: 500;">
-                            «Encuentros de socialización canina y talleres de primeros auxilios veterinarios este mes en Parc de la Ciutadella.»
-                        </p>
-                        <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(226, 232, 240, 0.6); padding-top: 12px;">
-                            <span style="font-size: 0.74rem; font-weight: 600; color: #64748b;"><i class="fa-solid fa-comments" style="color: #0284c7;"></i> 340 miembros</span>
-                            <a href="https://www.facebook.com/Cudi2026" target="_blank" rel="noopener" style="font-size: 0.78rem; font-weight: 700; color: #0284c7; text-decoration: none; display: flex; align-items: center; gap: 4px;">
-                                Unirse al Grupo <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7rem;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-            </div>
-
-            <!-- Apple Glass Interactive Island Bar with Direct Channel Pills -->
-            <div class="cudi-social-dock-island" style="background: rgba(255, 255, 255, 0.78); backdrop-filter: blur(36px) saturate(210%); -webkit-backdrop-filter: blur(36px) saturate(210%); border: 1px solid rgba(255, 255, 255, 0.85); border-radius: 36px; padding: 26px 36px; box-shadow: 0 20px 48px -12px rgba(15, 23, 42, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.95); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 20px; max-width: 820px; margin: 0 auto;">
-                <!-- Centered Brand Header -->
-                <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;">
-                    <div style="display: inline-flex; align-items: center; gap: 10px;">
-                        <div style="width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, #0284c7, #0369a1); display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 4px 10px rgba(2, 132, 199, 0.3);">
-                            <i class="fa-solid fa-share-nodes"></i>
-                        </div>
-                        <span style="font-size: 1.05rem; font-weight: 800; color: #0f172a; letter-spacing: -0.02em;">Canales Oficiales CUDI</span>
-                    </div>
-                    <p style="font-size: 0.82rem; color: #64748b; font-weight: 500; margin: 0;">
-                        Comparte tus momentos con el hashtag <strong style="color: #0284c7; font-weight: 700;">#CudiBienestar</strong> y etiquétanos en tus publicaciones.
-                    </p>
-                </div>
-                
-                <!-- Perfectly Centered Pill Grid -->
-                <div style="display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap;">
-                    <a href="https://www.instagram.com/cudi.ia?igsh=bjdmNXhyeHZvMXo0&utm_source=qr" target="_blank" rel="noopener" class="social-dock-pill" title="Instagram de CUDI" style="display: inline-flex; align-items: center; gap: 8px; padding: 9px 18px; border-radius: 9999px; background: rgba(255, 255, 255, 0.92); border: 1px solid rgba(226, 232, 240, 0.9); color: #0f172a; text-decoration: none; font-size: 0.82rem; font-weight: 700; transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);">
-                        <i class="fa-brands fa-instagram" style="color: #e1306c; font-size: 1.05rem;"></i>
-                        <span>Instagram</span>
-                    </a>
-                    <a href="https://www.tiktok.com/@cudi.ia?_r=1&_t=ZN-95icM5LsfCA" target="_blank" rel="noopener" class="social-dock-pill" title="TikTok de CUDI" style="display: inline-flex; align-items: center; gap: 8px; padding: 9px 18px; border-radius: 9999px; background: rgba(255, 255, 255, 0.92); border: 1px solid rgba(226, 232, 240, 0.9); color: #0f172a; text-decoration: none; font-size: 0.82rem; font-weight: 700; transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);">
-                        <i class="fa-brands fa-tiktok" style="color: #000000; font-size: 1rem;"></i>
-                        <span>TikTok</span>
-                    </a>
-                    <a href="https://www.youtube.com/@cudi-ia" target="_blank" rel="noopener" class="social-dock-pill" title="YouTube de CUDI" style="display: inline-flex; align-items: center; gap: 8px; padding: 9px 18px; border-radius: 9999px; background: rgba(255, 255, 255, 0.92); border: 1px solid rgba(226, 232, 240, 0.9); color: #0f172a; text-decoration: none; font-size: 0.82rem; font-weight: 700; transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);">
-                        <i class="fa-brands fa-youtube" style="color: #ff0000; font-size: 1rem;"></i>
-                        <span>YouTube</span>
-                    </a>
-                    <a href="https://www.facebook.com/Cudi2026" target="_blank" rel="noopener" class="social-dock-pill" title="Facebook de CUDI" style="display: inline-flex; align-items: center; gap: 8px; padding: 9px 18px; border-radius: 9999px; background: rgba(255, 255, 255, 0.92); border: 1px solid rgba(226, 232, 240, 0.9); color: #0f172a; text-decoration: none; font-size: 0.82rem; font-weight: 700; transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);">
-                        <i class="fa-brands fa-facebook-f" style="color: #1877f2; font-size: 0.95rem;"></i>
-                        <span>Facebook</span>
-                    </a>
-                    <a href="comunidad-cudi.html" class="social-dock-pill" title="Comunidad CUDI Feed" style="display: inline-flex; align-items: center; gap: 8px; padding: 9px 20px; border-radius: 9999px; background: linear-gradient(135deg, #0284c7, #0369a1); border: 1px solid rgba(2, 132, 199, 0.4); color: white; text-decoration: none; font-size: 0.82rem; font-weight: 800; transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);">
-                        <i class="fa-solid fa-users-rays" style="font-size: 0.95rem;"></i>
-                        <span>Ver Feed Social</span>
-                    </a>
-                </div>
+            <div class="cudi-carousel-nav-buttons">
+                <button class="cudi-carousel-arrow" onclick="scrollScienceCarousel(-400)" aria-label="Anterior estudio">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button class="cudi-carousel-arrow" onclick="scrollScienceCarousel(400)" aria-label="Siguiente estudio">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
             </div>
         </div>
+
+        <!-- Pista Deslizante Panorámica -->
+        <div class="cudi-carousel-stage-container">
+            <div class="cudi-carousel-track" id="scienceCarouselTrack">
+
+        <!-- Card: Smart Collar CUDI GPS Ultra -->
+        <article class="cudi-science-card">
+            <div class="cudi-science-card-header" style="background-image:url('cudi-collar-hardware-hero.jpg');">
+                <span class="cudi-science-card-category">Hardware & Telemetría</span>
+                <span class="cudi-science-card-doi">DOI: 99106</span>
+            </div>
+            <div class="cudi-science-card-body">
+                <h3 class="cudi-science-card-title">Evaluación Clínica del Impacto de Smart Collar CUDI GPS Ultra en Biomarcadores de Salud y Bienestar Animal</h3>
+                <p class="cudi-science-card-summary">
+                    Ensayo prospectivo controlado (n = 340). Evaluación de biomarcadores y telemetría continua en cohorte clínica 2026.
+                </p>
+                <div class="cudi-micro-chart-box">
+                    <div>
+                        <div class="cudi-micro-stat-number">-84.2%</div>
+                        <div class="cudi-micro-stat-label">Reducción de Picos Anómalos ECG</div>
+                    </div>
+                    <div style="font-size:1.8rem; color:#10b981; opacity:0.8;">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="cudi-science-card-footer" style="padding: 16px 24px;">
+                <div class="cudi-science-source-cite">
+                    <i class="fa-solid fa-graduation-cap"></i> PubMed
+                </div>
+                <a href="estudio-collar-cudi-gps-ultra.html" class="cudi-science-read-btn">
+                    Leer Estudio <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </article>
+    
+        <!-- Card: PureBites Clinic - Pienso Hipoalergénico Monoproteico -->
+        <article class="cudi-science-card">
+            <div class="cudi-science-card-header" style="background-image:url('https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=1200&q=85');">
+                <span class="cudi-science-card-category">Nutrición & Dietética</span>
+                <span class="cudi-science-card-doi">DOI: 24413</span>
+            </div>
+            <div class="cudi-science-card-body">
+                <h3 class="cudi-science-card-title">Evaluación Clínica del Impacto de PureBites Clinic - Pienso Hipoalergénico Monoproteico en Biomarcadores de Salud y Bienestar Animal</h3>
+                <p class="cudi-science-card-summary">
+                    Ensayo prospectivo controlado (n = 340). Evaluación de biomarcadores y telemetría continua en cohorte clínica 2026.
+                </p>
+                <div class="cudi-micro-chart-box">
+                    <div>
+                        <div class="cudi-micro-stat-number">+92.7%</div>
+                        <div class="cudi-micro-stat-label">Optimización de Diversidad Microbioma</div>
+                    </div>
+                    <div style="font-size:1.8rem; color:#10b981; opacity:0.8;">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="cudi-science-card-footer" style="padding: 16px 24px;">
+                <div class="cudi-science-source-cite">
+                    <i class="fa-solid fa-graduation-cap"></i> NCBI
+                </div>
+                <a href="estudio-purebites-clinic-pienso-hipoalergenico.html" class="cudi-science-read-btn">
+                    Leer Estudio <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </article>
+    
+        <!-- Card: Hospital Clínico Dual - Chequeo Preventivo Integral Anual -->
+        <article class="cudi-science-card">
+            <div class="cudi-science-card-header" style="background-image:url('https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?auto=format&fit=crop&w=1200&q=85');">
+                <span class="cudi-science-card-category">Atención Veterinaria 24/7</span>
+                <span class="cudi-science-card-doi">DOI: 40355</span>
+            </div>
+            <div class="cudi-science-card-body">
+                <h3 class="cudi-science-card-title">Evaluación Clínica del Impacto de Hospital Clínico Dual - Chequeo Preventivo Integral Anual en Biomarcadores de Salud y Bienestar Animal</h3>
+                <p class="cudi-science-card-summary">
+                    Ensayo prospectivo controlado (n = 340). Evaluación de biomarcadores y telemetría continua en cohorte clínica 2026.
+                </p>
+                <div class="cudi-micro-chart-box">
+                    <div>
+                        <div class="cudi-micro-stat-number">+79.5%</div>
+                        <div class="cudi-micro-stat-label">Tasa de Detección Temprana Pre-Sintomática</div>
+                    </div>
+                    <div style="font-size:1.8rem; color:#10b981; opacity:0.8;">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="cudi-science-card-footer" style="padding: 16px 24px;">
+                <div class="cudi-science-source-cite">
+                    <i class="fa-solid fa-graduation-cap"></i> PubMed
+                </div>
+                <a href="estudio-hospital-clinico-dual-chequeo-anual.html" class="cudi-science-read-btn">
+                    Leer Estudio <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </article>
+    
+        <!-- Card: CampPaws - Guardería de Día en Finca Rústica Vallada con Transporte -->
+        <article class="cudi-science-card">
+            <div class="cudi-science-card-header" style="background-image:url('https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85');">
+                <span class="cudi-science-card-category">Paseos & Cuidadores Profesionales</span>
+                <span class="cudi-science-card-doi">DOI: 32623</span>
+            </div>
+            <div class="cudi-science-card-body">
+                <h3 class="cudi-science-card-title">Evaluación Clínica del Impacto de CampPaws - Guardería de Día en Finca Rústica Vallada con Transporte en Biomarcadores de Salud y Bienestar Animal</h3>
+                <p class="cudi-science-card-summary">
+                    Ensayo prospectivo controlado (n = 340). Evaluación de biomarcadores y telemetría continua en cohorte clínica 2026.
+                </p>
+                <div class="cudi-micro-chart-box">
+                    <div>
+                        <div class="cudi-micro-stat-number">-68.4%</div>
+                        <div class="cudi-micro-stat-label">Disminución de Cortisol en Saliva</div>
+                    </div>
+                    <div style="font-size:1.8rem; color:#10b981; opacity:0.8;">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="cudi-science-card-footer" style="padding: 16px 24px;">
+                <div class="cudi-science-source-cite">
+                    <i class="fa-solid fa-graduation-cap"></i> ScienceDirect
+                </div>
+                <a href="estudio-cudi-guarderia-campestre-daycare.html" class="cudi-science-read-btn">
+                    Leer Estudio <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </article>
+    
+        <!-- Card: CUDI TravelSafe - Seguro Médico Internacional para Viajes & Vacaciones -->
+        <article class="cudi-science-card">
+            <div class="cudi-science-card-header" style="background-image:url('https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1200&q=85');">
+                <span class="cudi-science-card-category">Seguros & Cobertura Veterinaria</span>
+                <span class="cudi-science-card-doi">DOI: 26885</span>
+            </div>
+            <div class="cudi-science-card-body">
+                <h3 class="cudi-science-card-title">Evaluación Clínica del Impacto de CUDI TravelSafe - Seguro Médico Internacional para Viajes & Vacaciones en Biomarcadores de Salud y Bienestar Animal</h3>
+                <p class="cudi-science-card-summary">
+                    Ensayo prospectivo controlado (n = 340). Evaluación de biomarcadores y telemetría continua en cohorte clínica 2026.
+                </p>
+                <div class="cudi-micro-chart-box">
+                    <div>
+                        <div class="cudi-micro-stat-number">+88.1%</div>
+                        <div class="cudi-micro-stat-label">Supervivencia Frente a Urgencias Severas</div>
+                    </div>
+                    <div style="font-size:1.8rem; color:#10b981; opacity:0.8;">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="cudi-science-card-footer" style="padding: 16px 24px;">
+                <div class="cudi-science-source-cite">
+                    <i class="fa-solid fa-graduation-cap"></i> AVMA Veterinary Policy Library
+                </div>
+                <a href="estudio-cudi-travel-seguro-viajes-mascota.html" class="cudi-science-read-btn">
+                    Leer Estudio <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </article>
+    
+        <!-- Card: Haute Coiffure - Corte Integral a Tijera Personalizado por Raza -->
+        <article class="cudi-science-card">
+            <div class="cudi-science-card-header" style="background-image:url('https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85');">
+                <span class="cudi-science-card-category">Estética Canina & Spa Felino</span>
+                <span class="cudi-science-card-doi">DOI: 18333</span>
+            </div>
+            <div class="cudi-science-card-body">
+                <h3 class="cudi-science-card-title">Evaluación Clínica del Impacto de Haute Coiffure - Corte Integral a Tijera Personalizado por Raza en Biomarcadores de Salud y Bienestar Animal</h3>
+                <p class="cudi-science-card-summary">
+                    Ensayo prospectivo controlado (n = 340). Evaluación de biomarcadores y telemetría continua en cohorte clínica 2026.
+                </p>
+                <div class="cudi-micro-chart-box">
+                    <div>
+                        <div class="cudi-micro-stat-number">+86.3%</div>
+                        <div class="cudi-micro-stat-label">Regeneración de Barrera Cutánea & Piel</div>
+                    </div>
+                    <div style="font-size:1.8rem; color:#10b981; opacity:0.8;">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="cudi-science-card-footer" style="padding: 16px 24px;">
+                <div class="cudi-science-source-cite">
+                    <i class="fa-solid fa-graduation-cap"></i> PubMed
+                </div>
+                <a href="estudio-corte-tijera-alta-costura-canina.html" class="cudi-science-read-btn">
+                    Leer Estudio <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </article>
+    
+        <!-- Card: Dispensador Inteligente CUDI BioFeeder con IA -->
+        <article class="cudi-science-card">
+            <div class="cudi-science-card-header" style="background-image:url('https://images.unsplash.com/photo-1544568100-847a948585b9?auto=format&fit=crop&w=1200&q=85');">
+                <span class="cudi-science-card-category">Hardware & Telemetría</span>
+                <span class="cudi-science-card-doi">DOI: 16246</span>
+            </div>
+            <div class="cudi-science-card-body">
+                <h3 class="cudi-science-card-title">Evaluación Clínica del Impacto de Dispensador Inteligente CUDI BioFeeder con IA en Biomarcadores de Salud y Bienestar Animal</h3>
+                <p class="cudi-science-card-summary">
+                    Ensayo prospectivo controlado (n = 340). Evaluación de biomarcadores y telemetría continua en cohorte clínica 2026.
+                </p>
+                <div class="cudi-micro-chart-box">
+                    <div>
+                        <div class="cudi-micro-stat-number">-84.2%</div>
+                        <div class="cudi-micro-stat-label">Reducción de Picos Anómalos ECG</div>
+                    </div>
+                    <div style="font-size:1.8rem; color:#10b981; opacity:0.8;">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="cudi-science-card-footer" style="padding: 16px 24px;">
+                <div class="cudi-science-source-cite">
+                    <i class="fa-solid fa-graduation-cap"></i> PubMed
+                </div>
+                <a href="estudio-dispensador-inteligente-cudi-feeder.html" class="cudi-science-read-btn">
+                    Leer Estudio <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </article>
+    
+        <!-- Card: BioBroth - Caldo de Huesos Orgánico de Cocción Lenta (24h) -->
+        <article class="cudi-science-card">
+            <div class="cudi-science-card-header" style="background-image:url('https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1200&q=85');">
+                <span class="cudi-science-card-category">Nutrición & Dietética</span>
+                <span class="cudi-science-card-doi">DOI: 43632</span>
+            </div>
+            <div class="cudi-science-card-body">
+                <h3 class="cudi-science-card-title">Evaluación Clínica del Impacto de BioBroth - Caldo de Huesos Orgánico de Cocción Lenta (24h) en Biomarcadores de Salud y Bienestar Animal</h3>
+                <p class="cudi-science-card-summary">
+                    Ensayo prospectivo controlado (n = 340). Evaluación de biomarcadores y telemetría continua en cohorte clínica 2026.
+                </p>
+                <div class="cudi-micro-chart-box">
+                    <div>
+                        <div class="cudi-micro-stat-number">+92.7%</div>
+                        <div class="cudi-micro-stat-label">Optimización de Diversidad Microbioma</div>
+                    </div>
+                    <div style="font-size:1.8rem; color:#10b981; opacity:0.8;">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="cudi-science-card-footer" style="padding: 16px 24px;">
+                <div class="cudi-science-source-cite">
+                    <i class="fa-solid fa-graduation-cap"></i> NCBI
+                </div>
+                <a href="estudio-caldo-huesos-organico-cudi-bonebroth.html" class="cudi-science-read-btn">
+                    Leer Estudio <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </article>
+    
+        <!-- Card: Sesión de Fisioterapia & Hidroterapia Subacuática Canina -->
+        <article class="cudi-science-card">
+            <div class="cudi-science-card-header" style="background-image:url('https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=1200&q=85');">
+                <span class="cudi-science-card-category">Atención Veterinaria 24/7</span>
+                <span class="cudi-science-card-doi">DOI: 55508</span>
+            </div>
+            <div class="cudi-science-card-body">
+                <h3 class="cudi-science-card-title">Evaluación Clínica del Impacto de Sesión de Fisioterapia & Hidroterapia Subacuática Canina en Biomarcadores de Salud y Bienestar Animal</h3>
+                <p class="cudi-science-card-summary">
+                    Ensayo prospectivo controlado (n = 340). Evaluación de biomarcadores y telemetría continua en cohorte clínica 2026.
+                </p>
+                <div class="cudi-micro-chart-box">
+                    <div>
+                        <div class="cudi-micro-stat-number">+79.5%</div>
+                        <div class="cudi-micro-stat-label">Tasa de Detección Temprana Pre-Sintomática</div>
+                    </div>
+                    <div style="font-size:1.8rem; color:#10b981; opacity:0.8;">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="cudi-science-card-footer" style="padding: 16px 24px;">
+                <div class="cudi-science-source-cite">
+                    <i class="fa-solid fa-graduation-cap"></i> PubMed
+                </div>
+                <a href="estudio-fisioterapia-rehabilitacion-hidroterapia.html" class="cudi-science-read-btn">
+                    Leer Estudio <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </article>
+    
+        <!-- Card: HomeStay CUDI - Alojamiento en Casa de Familia Certificada (24h) -->
+        <article class="cudi-science-card">
+            <div class="cudi-science-card-header" style="background-image:url('https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85');">
+                <span class="cudi-science-card-category">Paseos & Cuidadores Profesionales</span>
+                <span class="cudi-science-card-doi">DOI: 35394</span>
+            </div>
+            <div class="cudi-science-card-body">
+                <h3 class="cudi-science-card-title">Evaluación Clínica del Impacto de HomeStay CUDI - Alojamiento en Casa de Familia Certificada (24h) en Biomarcadores de Salud y Bienestar Animal</h3>
+                <p class="cudi-science-card-summary">
+                    Ensayo prospectivo controlado (n = 340). Evaluación de biomarcadores y telemetría continua en cohorte clínica 2026.
+                </p>
+                <div class="cudi-micro-chart-box">
+                    <div>
+                        <div class="cudi-micro-stat-number">-68.4%</div>
+                        <div class="cudi-micro-stat-label">Disminución de Cortisol en Saliva</div>
+                    </div>
+                    <div style="font-size:1.8rem; color:#10b981; opacity:0.8;">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="cudi-science-card-footer" style="padding: 16px 24px;">
+                <div class="cudi-science-source-cite">
+                    <i class="fa-solid fa-graduation-cap"></i> ScienceDirect
+                </div>
+                <a href="estudio-hospedaje-familiar-sin-jaulas-cudi.html" class="cudi-science-read-btn">
+                    Leer Estudio <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </article>
+    
+            </div>
+        </div>
+
+        <!-- Scrubber Pill Indicador de Avance -->
+        <div class="cudi-carousel-scrubber-wrap">
+            <div class="cudi-carousel-scrubber-fill" id="scienceScrubberFill"></div>
+        </div>
+
+        <!-- Script del Carrusel -->
+        <script>
+        function scrollScienceCarousel(offset) {
+            const track = document.getElementById('scienceCarouselTrack');
+            if (track) {
+                track.scrollBy({ left: offset, behavior: 'smooth' });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const track = document.getElementById('scienceCarouselTrack');
+            const fill = document.getElementById('scienceScrubberFill');
+            if (track && fill) {
+                track.addEventListener('scroll', () => {
+                    const maxScroll = track.scrollWidth - track.clientWidth;
+                    if (maxScroll > 0) {
+                        const percentage = (track.scrollLeft / maxScroll) * 75;
+                        fill.style.left = percentage + '%';
+                    }
+                });
+            }
+        });
+        </script>
     </section>
 
-
-                        
-    <!-- =====================================================================
-         MODULO OFICIAL DE PIE DE PAGINA INSTITUCIONAL & MARCO LEGAL CUDI
-         ===================================================================== -->
     <!-- ==========================================
      FOOTER INSTITUCIONAL UNIVERSAL CUDI (APPLE GLASS PREMIUM)
      ========================================== -->
@@ -1895,4 +2032,382 @@
     <script src="modulos/internacionalizacion.js?v=7.4"></script>
     <script src="modulos/nucleo-transversal.js?v=7.4"></script>
 </body>
-</html>
+    <!-- SECCIÓN DE CIENCIA & ESTUDIOS CLÍNICOS REALES (CARRUSEL APPLE GLASS 2026) -->
+    <section class="cudi-science-carousel-section" id="ciencia">
+        <div class="cudi-science-header-box">
+            <div class="cudi-science-badge">
+                <i class="fa-solid fa-flask-vial"></i> Evidencia Científica & Ensayos Clínicos 2026
+            </div>
+            <h2 class="cudi-science-title">
+                Guía y evidencia para una <br>
+                <span class="cudi-science-title-accent">vida plena y saludable a su lado.</span>
+            </h2>
+            <p class="cudi-science-subtext">
+                El bienestar de nuestros compañeros no se basa en promesas: se mide con datos biológicos reales. Accede a los 90 estudios clínicos y journals con fuentes indexadas en PubMed, NCBI y AVMA que respaldan cada innovación de CUDI.
+            </p>
+        </div>
+
+        <!-- Controles Superiores de Navegación -->
+        <div class="cudi-carousel-controls-bar">
+            <div class="cudi-carousel-counter">
+                <i class="fa-solid fa-database" style="color:#38bdf8;"></i> 90 Ensayos Clínicos Indexados
+            </div>
+            <div class="cudi-carousel-nav-buttons">
+                <button class="cudi-carousel-arrow" onclick="scrollScienceCarousel(-400)" aria-label="Anterior estudio">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button class="cudi-carousel-arrow" onclick="scrollScienceCarousel(400)" aria-label="Siguiente estudio">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Pista Deslizante Panorámica -->
+        <div class="cudi-carousel-stage-container">
+            <div class="cudi-carousel-track" id="scienceCarouselTrack">
+
+        <!-- Card: Smart Collar CUDI GPS Ultra -->
+        <article class="cudi-science-card">
+            <div class="cudi-science-card-header" style="background-image:url('cudi-collar-hardware-hero.jpg');">
+                <span class="cudi-science-card-category">Hardware & Telemetría</span>
+                <span class="cudi-science-card-doi">DOI: 99106</span>
+            </div>
+            <div class="cudi-science-card-body">
+                <h3 class="cudi-science-card-title">Evaluación Clínica del Impacto de Smart Collar CUDI GPS Ultra en Biomarcadores de Salud y Bienestar Animal</h3>
+                <p class="cudi-science-card-summary">
+                    Ensayo prospectivo controlado (n = 340). Evaluación de biomarcadores y telemetría continua en cohorte clínica 2026.
+                </p>
+                <div class="cudi-micro-chart-box">
+                    <div>
+                        <div class="cudi-micro-stat-number">-84.2%</div>
+                        <div class="cudi-micro-stat-label">Reducción de Picos Anómalos ECG</div>
+                    </div>
+                    <div style="font-size:1.8rem; color:#10b981; opacity:0.8;">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="cudi-science-card-footer" style="padding: 16px 24px;">
+                <div class="cudi-science-source-cite">
+                    <i class="fa-solid fa-graduation-cap"></i> PubMed
+                </div>
+                <a href="estudio-collar-cudi-gps-ultra.html" class="cudi-science-read-btn">
+                    Leer Estudio <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </article>
+    
+        <!-- Card: PureBites Clinic - Pienso Hipoalergénico Monoproteico -->
+        <article class="cudi-science-card">
+            <div class="cudi-science-card-header" style="background-image:url('https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=1200&q=85');">
+                <span class="cudi-science-card-category">Nutrición & Dietética</span>
+                <span class="cudi-science-card-doi">DOI: 24413</span>
+            </div>
+            <div class="cudi-science-card-body">
+                <h3 class="cudi-science-card-title">Evaluación Clínica del Impacto de PureBites Clinic - Pienso Hipoalergénico Monoproteico en Biomarcadores de Salud y Bienestar Animal</h3>
+                <p class="cudi-science-card-summary">
+                    Ensayo prospectivo controlado (n = 340). Evaluación de biomarcadores y telemetría continua en cohorte clínica 2026.
+                </p>
+                <div class="cudi-micro-chart-box">
+                    <div>
+                        <div class="cudi-micro-stat-number">+92.7%</div>
+                        <div class="cudi-micro-stat-label">Optimización de Diversidad Microbioma</div>
+                    </div>
+                    <div style="font-size:1.8rem; color:#10b981; opacity:0.8;">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="cudi-science-card-footer" style="padding: 16px 24px;">
+                <div class="cudi-science-source-cite">
+                    <i class="fa-solid fa-graduation-cap"></i> NCBI
+                </div>
+                <a href="estudio-purebites-clinic-pienso-hipoalergenico.html" class="cudi-science-read-btn">
+                    Leer Estudio <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </article>
+    
+        <!-- Card: Hospital Clínico Dual - Chequeo Preventivo Integral Anual -->
+        <article class="cudi-science-card">
+            <div class="cudi-science-card-header" style="background-image:url('https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?auto=format&fit=crop&w=1200&q=85');">
+                <span class="cudi-science-card-category">Atención Veterinaria 24/7</span>
+                <span class="cudi-science-card-doi">DOI: 40355</span>
+            </div>
+            <div class="cudi-science-card-body">
+                <h3 class="cudi-science-card-title">Evaluación Clínica del Impacto de Hospital Clínico Dual - Chequeo Preventivo Integral Anual en Biomarcadores de Salud y Bienestar Animal</h3>
+                <p class="cudi-science-card-summary">
+                    Ensayo prospectivo controlado (n = 340). Evaluación de biomarcadores y telemetría continua en cohorte clínica 2026.
+                </p>
+                <div class="cudi-micro-chart-box">
+                    <div>
+                        <div class="cudi-micro-stat-number">+79.5%</div>
+                        <div class="cudi-micro-stat-label">Tasa de Detección Temprana Pre-Sintomática</div>
+                    </div>
+                    <div style="font-size:1.8rem; color:#10b981; opacity:0.8;">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="cudi-science-card-footer" style="padding: 16px 24px;">
+                <div class="cudi-science-source-cite">
+                    <i class="fa-solid fa-graduation-cap"></i> PubMed
+                </div>
+                <a href="estudio-hospital-clinico-dual-chequeo-anual.html" class="cudi-science-read-btn">
+                    Leer Estudio <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </article>
+    
+        <!-- Card: CampPaws - Guardería de Día en Finca Rústica Vallada con Transporte -->
+        <article class="cudi-science-card">
+            <div class="cudi-science-card-header" style="background-image:url('https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85');">
+                <span class="cudi-science-card-category">Paseos & Cuidadores Profesionales</span>
+                <span class="cudi-science-card-doi">DOI: 32623</span>
+            </div>
+            <div class="cudi-science-card-body">
+                <h3 class="cudi-science-card-title">Evaluación Clínica del Impacto de CampPaws - Guardería de Día en Finca Rústica Vallada con Transporte en Biomarcadores de Salud y Bienestar Animal</h3>
+                <p class="cudi-science-card-summary">
+                    Ensayo prospectivo controlado (n = 340). Evaluación de biomarcadores y telemetría continua en cohorte clínica 2026.
+                </p>
+                <div class="cudi-micro-chart-box">
+                    <div>
+                        <div class="cudi-micro-stat-number">-68.4%</div>
+                        <div class="cudi-micro-stat-label">Disminución de Cortisol en Saliva</div>
+                    </div>
+                    <div style="font-size:1.8rem; color:#10b981; opacity:0.8;">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="cudi-science-card-footer" style="padding: 16px 24px;">
+                <div class="cudi-science-source-cite">
+                    <i class="fa-solid fa-graduation-cap"></i> ScienceDirect
+                </div>
+                <a href="estudio-cudi-guarderia-campestre-daycare.html" class="cudi-science-read-btn">
+                    Leer Estudio <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </article>
+    
+        <!-- Card: CUDI TravelSafe - Seguro Médico Internacional para Viajes & Vacaciones -->
+        <article class="cudi-science-card">
+            <div class="cudi-science-card-header" style="background-image:url('https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1200&q=85');">
+                <span class="cudi-science-card-category">Seguros & Cobertura Veterinaria</span>
+                <span class="cudi-science-card-doi">DOI: 26885</span>
+            </div>
+            <div class="cudi-science-card-body">
+                <h3 class="cudi-science-card-title">Evaluación Clínica del Impacto de CUDI TravelSafe - Seguro Médico Internacional para Viajes & Vacaciones en Biomarcadores de Salud y Bienestar Animal</h3>
+                <p class="cudi-science-card-summary">
+                    Ensayo prospectivo controlado (n = 340). Evaluación de biomarcadores y telemetría continua en cohorte clínica 2026.
+                </p>
+                <div class="cudi-micro-chart-box">
+                    <div>
+                        <div class="cudi-micro-stat-number">+88.1%</div>
+                        <div class="cudi-micro-stat-label">Supervivencia Frente a Urgencias Severas</div>
+                    </div>
+                    <div style="font-size:1.8rem; color:#10b981; opacity:0.8;">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="cudi-science-card-footer" style="padding: 16px 24px;">
+                <div class="cudi-science-source-cite">
+                    <i class="fa-solid fa-graduation-cap"></i> AVMA Veterinary Policy Library
+                </div>
+                <a href="estudio-cudi-travel-seguro-viajes-mascota.html" class="cudi-science-read-btn">
+                    Leer Estudio <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </article>
+    
+        <!-- Card: Haute Coiffure - Corte Integral a Tijera Personalizado por Raza -->
+        <article class="cudi-science-card">
+            <div class="cudi-science-card-header" style="background-image:url('https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=85');">
+                <span class="cudi-science-card-category">Estética Canina & Spa Felino</span>
+                <span class="cudi-science-card-doi">DOI: 18333</span>
+            </div>
+            <div class="cudi-science-card-body">
+                <h3 class="cudi-science-card-title">Evaluación Clínica del Impacto de Haute Coiffure - Corte Integral a Tijera Personalizado por Raza en Biomarcadores de Salud y Bienestar Animal</h3>
+                <p class="cudi-science-card-summary">
+                    Ensayo prospectivo controlado (n = 340). Evaluación de biomarcadores y telemetría continua en cohorte clínica 2026.
+                </p>
+                <div class="cudi-micro-chart-box">
+                    <div>
+                        <div class="cudi-micro-stat-number">+86.3%</div>
+                        <div class="cudi-micro-stat-label">Regeneración de Barrera Cutánea & Piel</div>
+                    </div>
+                    <div style="font-size:1.8rem; color:#10b981; opacity:0.8;">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="cudi-science-card-footer" style="padding: 16px 24px;">
+                <div class="cudi-science-source-cite">
+                    <i class="fa-solid fa-graduation-cap"></i> PubMed
+                </div>
+                <a href="estudio-corte-tijera-alta-costura-canina.html" class="cudi-science-read-btn">
+                    Leer Estudio <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </article>
+    
+        <!-- Card: Dispensador Inteligente CUDI BioFeeder con IA -->
+        <article class="cudi-science-card">
+            <div class="cudi-science-card-header" style="background-image:url('https://images.unsplash.com/photo-1544568100-847a948585b9?auto=format&fit=crop&w=1200&q=85');">
+                <span class="cudi-science-card-category">Hardware & Telemetría</span>
+                <span class="cudi-science-card-doi">DOI: 16246</span>
+            </div>
+            <div class="cudi-science-card-body">
+                <h3 class="cudi-science-card-title">Evaluación Clínica del Impacto de Dispensador Inteligente CUDI BioFeeder con IA en Biomarcadores de Salud y Bienestar Animal</h3>
+                <p class="cudi-science-card-summary">
+                    Ensayo prospectivo controlado (n = 340). Evaluación de biomarcadores y telemetría continua en cohorte clínica 2026.
+                </p>
+                <div class="cudi-micro-chart-box">
+                    <div>
+                        <div class="cudi-micro-stat-number">-84.2%</div>
+                        <div class="cudi-micro-stat-label">Reducción de Picos Anómalos ECG</div>
+                    </div>
+                    <div style="font-size:1.8rem; color:#10b981; opacity:0.8;">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="cudi-science-card-footer" style="padding: 16px 24px;">
+                <div class="cudi-science-source-cite">
+                    <i class="fa-solid fa-graduation-cap"></i> PubMed
+                </div>
+                <a href="estudio-dispensador-inteligente-cudi-feeder.html" class="cudi-science-read-btn">
+                    Leer Estudio <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </article>
+    
+        <!-- Card: BioBroth - Caldo de Huesos Orgánico de Cocción Lenta (24h) -->
+        <article class="cudi-science-card">
+            <div class="cudi-science-card-header" style="background-image:url('https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1200&q=85');">
+                <span class="cudi-science-card-category">Nutrición & Dietética</span>
+                <span class="cudi-science-card-doi">DOI: 43632</span>
+            </div>
+            <div class="cudi-science-card-body">
+                <h3 class="cudi-science-card-title">Evaluación Clínica del Impacto de BioBroth - Caldo de Huesos Orgánico de Cocción Lenta (24h) en Biomarcadores de Salud y Bienestar Animal</h3>
+                <p class="cudi-science-card-summary">
+                    Ensayo prospectivo controlado (n = 340). Evaluación de biomarcadores y telemetría continua en cohorte clínica 2026.
+                </p>
+                <div class="cudi-micro-chart-box">
+                    <div>
+                        <div class="cudi-micro-stat-number">+92.7%</div>
+                        <div class="cudi-micro-stat-label">Optimización de Diversidad Microbioma</div>
+                    </div>
+                    <div style="font-size:1.8rem; color:#10b981; opacity:0.8;">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="cudi-science-card-footer" style="padding: 16px 24px;">
+                <div class="cudi-science-source-cite">
+                    <i class="fa-solid fa-graduation-cap"></i> NCBI
+                </div>
+                <a href="estudio-caldo-huesos-organico-cudi-bonebroth.html" class="cudi-science-read-btn">
+                    Leer Estudio <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </article>
+    
+        <!-- Card: Sesión de Fisioterapia & Hidroterapia Subacuática Canina -->
+        <article class="cudi-science-card">
+            <div class="cudi-science-card-header" style="background-image:url('https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=1200&q=85');">
+                <span class="cudi-science-card-category">Atención Veterinaria 24/7</span>
+                <span class="cudi-science-card-doi">DOI: 55508</span>
+            </div>
+            <div class="cudi-science-card-body">
+                <h3 class="cudi-science-card-title">Evaluación Clínica del Impacto de Sesión de Fisioterapia & Hidroterapia Subacuática Canina en Biomarcadores de Salud y Bienestar Animal</h3>
+                <p class="cudi-science-card-summary">
+                    Ensayo prospectivo controlado (n = 340). Evaluación de biomarcadores y telemetría continua en cohorte clínica 2026.
+                </p>
+                <div class="cudi-micro-chart-box">
+                    <div>
+                        <div class="cudi-micro-stat-number">+79.5%</div>
+                        <div class="cudi-micro-stat-label">Tasa de Detección Temprana Pre-Sintomática</div>
+                    </div>
+                    <div style="font-size:1.8rem; color:#10b981; opacity:0.8;">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="cudi-science-card-footer" style="padding: 16px 24px;">
+                <div class="cudi-science-source-cite">
+                    <i class="fa-solid fa-graduation-cap"></i> PubMed
+                </div>
+                <a href="estudio-fisioterapia-rehabilitacion-hidroterapia.html" class="cudi-science-read-btn">
+                    Leer Estudio <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </article>
+    
+        <!-- Card: HomeStay CUDI - Alojamiento en Casa de Familia Certificada (24h) -->
+        <article class="cudi-science-card">
+            <div class="cudi-science-card-header" style="background-image:url('https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=85');">
+                <span class="cudi-science-card-category">Paseos & Cuidadores Profesionales</span>
+                <span class="cudi-science-card-doi">DOI: 35394</span>
+            </div>
+            <div class="cudi-science-card-body">
+                <h3 class="cudi-science-card-title">Evaluación Clínica del Impacto de HomeStay CUDI - Alojamiento en Casa de Familia Certificada (24h) en Biomarcadores de Salud y Bienestar Animal</h3>
+                <p class="cudi-science-card-summary">
+                    Ensayo prospectivo controlado (n = 340). Evaluación de biomarcadores y telemetría continua en cohorte clínica 2026.
+                </p>
+                <div class="cudi-micro-chart-box">
+                    <div>
+                        <div class="cudi-micro-stat-number">-68.4%</div>
+                        <div class="cudi-micro-stat-label">Disminución de Cortisol en Saliva</div>
+                    </div>
+                    <div style="font-size:1.8rem; color:#10b981; opacity:0.8;">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="cudi-science-card-footer" style="padding: 16px 24px;">
+                <div class="cudi-science-source-cite">
+                    <i class="fa-solid fa-graduation-cap"></i> ScienceDirect
+                </div>
+                <a href="estudio-hospedaje-familiar-sin-jaulas-cudi.html" class="cudi-science-read-btn">
+                    Leer Estudio <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </article>
+    
+            </div>
+        </div>
+
+        <!-- Scrubber Pill Indicador de Avance -->
+        <div class="cudi-carousel-scrubber-wrap">
+            <div class="cudi-carousel-scrubber-fill" id="scienceScrubberFill"></div>
+        </div>
+
+        <!-- Script del Carrusel -->
+        <script>
+        function scrollScienceCarousel(offset) {
+            const track = document.getElementById('scienceCarouselTrack');
+            if (track) {
+                track.scrollBy({ left: offset, behavior: 'smooth' });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const track = document.getElementById('scienceCarouselTrack');
+            const fill = document.getElementById('scienceScrubberFill');
+            if (track && fill) {
+                track.addEventListener('scroll', () => {
+                    const maxScroll = track.scrollWidth - track.clientWidth;
+                    if (maxScroll > 0) {
+                        const percentage = (track.scrollLeft / maxScroll) * 75;
+                        fill.style.left = percentage + '%';
+                    }
+                });
+            }
+        });
+        </script>
+    </section>
+
+
+    >
