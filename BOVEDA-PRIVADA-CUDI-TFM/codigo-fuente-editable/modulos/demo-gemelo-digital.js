@@ -13,8 +13,8 @@ let charts = {};
 
 // ---- DATOS MASCOTA ----
 const BREEDS = {
-    perro: ['Golden Retriever','Labrador','Pastor Aleman','Bulldog Frances','Beagle','Poodle','Chihuahua','Husky Siberiano','Yorkshire Terrier','Mestizo'],
-    gato:  ['Europeo Comun','Persa','Maine Coon','Ragdoll','Siames','Bengali','British Shorthair','Scottish Fold','Abisinio','Mestizo']
+    perro: ['Husky Siberiano','Golden Retriever','Bulldog Francés','Beagle Tricolor','Border Collie','Pomerania Toy','Pug Carlino','Pastor Alemán','Labrador Retriever','Poodle','Chihuahua','Yorkshire Terrier','Mestizo'],
+    gato:  ['Siamés Real','Europeo Atigrado','Bengalí Dorado','Maine Coon Real','Ragdoll Azul','British Shorthair','Bombay Negro','Scottish Fold','Persa Blanco','Europeo Común','Abisinio','Mestizo']
 };
 
 const ONBOARDING_PHOTOS = {
@@ -609,7 +609,7 @@ function loadSavedProfile() {
     return false;
 }
 
-function showOnboardingScreen() {
+function showOnboardingScreen(initialTab = 'login') {
     const onboarding = document.getElementById('screen-onboarding');
     const main = document.getElementById('screen-main');
     const statusBar = document.getElementById('app-status-bar');
@@ -626,71 +626,355 @@ function showOnboardingScreen() {
         statusBar.style.display = 'none';
     }
     setupDemoOnboardingAutoFill();
+    if (typeof switchDemoOnboardingTab === 'function') {
+        switchDemoOnboardingTab(initialTab);
+    }
+}
+
+function getDemoPreloadedAccount() {
+    if (typeof cudi_get_preloaded_login_account === 'function') {
+        return cudi_get_preloaded_login_account();
+    }
+    if (typeof CUDI_RANDOM_PETS !== 'undefined' && CUDI_RANDOM_PETS.length > 0) {
+        return CUDI_RANDOM_PETS[0];
+    }
+    return {
+        name: 'Luna',
+        type: 'perro',
+        breed: 'Husky Siberiano',
+        age: 3,
+        weight: 22.0,
+        energy: 'Alto',
+        food: 'Pienso Seco Premium',
+        photo: 'https://images.unsplash.com/photo-1605568427561-40dd23c2acea?auto=format&fit=crop&w=600&h=600&q=80',
+        bpm: 78,
+        temp: 38.4,
+        battery: 94,
+        collarId: 'CUDI-GPS-9482',
+        tutorEmail: 'luna.husky@cudi.pet'
+    };
 }
 
 function setupDemoOnboardingAutoFill() {
     const onboardingForm = document.querySelector('.onboarding-form');
-    if (!onboardingForm || document.getElementById('demo-autofill-banner')) return;
+    if (!onboardingForm) return;
 
-    const candidate = (typeof cudi_get_random_pet_candidate === 'function') ? cudi_get_random_pet_candidate() : {
-        name: 'Luna',
-        breed: 'Husky Siberiano',
-        type: 'perro'
-    };
+    // Asegurar step="0.1" y min="0.5" en #pet-weight para evitar errores de rango decimal
+    const weightInput = document.getElementById('pet-weight');
+    if (weightInput) {
+        weightInput.setAttribute('step', '0.1');
+        weightInput.setAttribute('min', '0.5');
+        weightInput.setAttribute('max', '100');
+    }
 
+    if (document.getElementById('demo-auth-tabs-bar')) {
+        updateDemoLoginCardUI(getDemoPreloadedAccount());
+        return;
+    }
+
+    const loginAcc = getDemoPreloadedAccount();
+    const candidate = (typeof cudi_get_random_pet_candidate === 'function') ? cudi_get_random_pet_candidate() : loginAcc;
+    const petsPool = (typeof CUDI_RANDOM_PETS !== 'undefined' && CUDI_RANDOM_PETS.length) ? CUDI_RANDOM_PETS : [loginAcc];
+
+    // Envolver los elementos originales del formulario de registro dentro de #demo-view-register
+    const existingChildren = Array.from(onboardingForm.children);
+    const registerContainer = document.createElement('div');
+    registerContainer.id = 'demo-view-register';
+    registerContainer.style.display = 'none';
+
+    // Banner de autollenado IA para la pestaña de Registro
     const banner = document.createElement('div');
     banner.id = 'demo-autofill-banner';
     banner.className = 'demo-autofill-banner';
-    banner.style.cssText = 'margin-bottom:14px; background:linear-gradient(135deg, rgba(255,255,255,0.88) 0%, rgba(224,242,254,0.82) 100%); backdrop-filter:blur(16px) saturate(190%); -webkit-backdrop-filter:blur(16px) saturate(190%); border:1.5px solid rgba(255,255,255,0.95); box-shadow:0 6px 18px rgba(2,132,199,0.08), 0 1px 0 rgba(255,255,255,0.95) inset; border:16px; border-radius:16px; padding:11px 14px; display:flex; align-items:center; justify-content:space-between; gap:10px;';
+    banner.style.cssText = 'margin-bottom:12px; background:linear-gradient(135deg, rgba(255,255,255,0.92) 0%, rgba(224,242,254,0.84) 100%); backdrop-filter:blur(16px) saturate(190%); -webkit-backdrop-filter:blur(16px) saturate(190%); border:1.5px solid rgba(186,230,253,0.95); box-shadow:0 6px 18px rgba(2,132,199,0.08), 0 1px 0 rgba(255,255,255,0.95) inset; border-radius:14px; padding:10px 12px; display:flex; flex-direction:column; gap:8px;';
     banner.innerHTML = `
-        <div>
-            <span style="font-size:0.75rem; font-weight:800; color:#0284c7; display:block;"><i class="fa-solid fa-wand-magic-sparkles"></i> Llenado Automático IA</span>
-            <span style="font-size:0.7rem; color:#475569; font-weight:600;" id="demo-autofill-info-label">Probar con ${candidate.name} (${candidate.breed})</span>
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:6px;">
+            <div>
+                <span style="font-size:0.73rem; font-weight:800; color:#0284c7; display:block;"><i class="fa-solid fa-wand-magic-sparkles"></i> Auto-Diligenciado IA (Sin Errores)</span>
+                <span style="font-size:0.68rem; color:#475569; font-weight:600;" id="demo-autofill-info-label">Sugerencia: <strong>${candidate.name}</strong> (${candidate.breed})</span>
+            </div>
+            <button type="button" onclick="appDemoAutoFill()" style="background:linear-gradient(135deg, #0284c7, #10b981); color:white; border:1px solid rgba(255,255,255,0.4); padding:6px 11px; border-radius:10px; font-weight:800; font-size:0.72rem; cursor:pointer; display:flex; align-items:center; gap:5px; box-shadow:0 4px 12px rgba(2,132,199,0.22); white-space:nowrap;">
+                <i class="fa-solid fa-bolt"></i> Autollenar
+            </button>
         </div>
-        <button type="button" onclick="appDemoAutoFill()" style="background:linear-gradient(135deg, #0284c7, #10b981); color:white; border:1px solid rgba(255,255,255,0.4); padding:7px 12px; border-radius:10px; font-weight:800; font-size:0.74rem; cursor:pointer; display:flex; align-items:center; gap:5px; box-shadow:0 4px 12px rgba(2,132,199,0.22);">
-            <i class="fa-solid fa-bolt"></i> Autollenar
+        <div style="display:flex; align-items:center; gap:6px;">
+            <button type="button" onclick="appDemoAutoFill('perro')" style="flex:1; background:rgba(255,255,255,0.85); color:#0369a1; border:1px solid rgba(125,211,252,0.8); border-radius:8px; padding:4px 8px; font-size:0.68rem; font-weight:800; cursor:pointer;">🐶 Caso Perro</button>
+            <button type="button" onclick="appDemoAutoFill('gato')" style="flex:1; background:rgba(255,255,255,0.85); color:#be185d; border:1px solid rgba(244,114,182,0.6); border-radius:8px; padding:4px 8px; font-size:0.68rem; font-weight:800; cursor:pointer;">🐱 Caso Gato</button>
+            <button type="button" onclick="appDemoAutoFill()" style="background:rgba(255,255,255,0.85); color:#334155; border:1px solid rgba(203,213,225,0.85); border-radius:8px; padding:4px 8px; font-size:0.68rem; font-weight:800; cursor:pointer;" title="Otro perfil aleatorio"><i class="fa-solid fa-shuffle"></i></button>
+        </div>
+    `;
+
+    registerContainer.appendChild(banner);
+    existingChildren.forEach(ch => registerContainer.appendChild(ch));
+
+    // Crear Barra de Pestañas Apple Glass (Iniciar Sesión vs Registrar Mascota)
+    const tabsBar = document.createElement('div');
+    tabsBar.id = 'demo-auth-tabs-bar';
+    tabsBar.style.cssText = 'display:grid; grid-template-columns:1fr 1fr; background:rgba(226,232,240,0.75); backdrop-filter:blur(14px); padding:3.5px; border-radius:12px; gap:4px; margin-bottom:12px; border:1px solid rgba(255,255,255,0.9); box-shadow:inset 0 1px 2px rgba(15,23,42,0.06);';
+    tabsBar.innerHTML = `
+        <button type="button" id="demo-tab-btn-login" onclick="switchDemoOnboardingTab('login')" style="border:none; padding:7px 8px; border-radius:9px; font-size:0.73rem; font-weight:800; cursor:pointer; transition:all 0.2s; background:rgba(255,255,255,0.98); color:#0284c7; box-shadow:0 2px 8px rgba(2,132,199,0.15);">
+            <i class="fa-solid fa-right-to-bracket"></i> Iniciar Sesión
+        </button>
+        <button type="button" id="demo-tab-btn-register" onclick="switchDemoOnboardingTab('register')" style="border:none; padding:7px 8px; border-radius:9px; font-size:0.73rem; font-weight:800; cursor:pointer; transition:all 0.2s; background:transparent; color:#475569;">
+            <i class="fa-solid fa-user-plus"></i> Registrar Mascota
         </button>
     `;
 
-    // Insertar justo antes de la selección de especie
-    const speciesLabel = onboardingForm.querySelector('.app-label');
-    if (speciesLabel) {
-        onboardingForm.insertBefore(banner, speciesLabel);
-    } else {
-        onboardingForm.prepend(banner);
+    // Crear Vista de Inicio de Sesión con Cuenta Pre-cargada Automáticamente
+    const loginContainer = document.createElement('div');
+    loginContainer.id = 'demo-view-login';
+    loginContainer.style.display = 'block';
+
+    const quickChipsHtml = petsPool.slice(0, 10).map((pet, idx) => {
+        const pPhoto = resolveDemoPetPhoto(pet, pet.type, pet.name);
+        const active = pet.name.toLowerCase() === String(loginAcc.name).toLowerCase();
+        const icon = pet.type === 'gato' ? '🐱' : '🐶';
+        return `
+            <button type="button" class="demo-login-chip" data-demo-pet-idx="${idx}" onclick="appDemoSelectLoginAccount(${idx})" style="display:inline-flex; align-items:center; gap:5px; padding:4px 8px 4px 4px; border-radius:999px; border:1.5px solid ${active ? '#0284c7' : 'rgba(203,213,225,0.85)'}; background:${active ? 'rgba(224,242,254,0.95)' : 'rgba(255,255,255,0.85)'}; color:${active ? '#0369a1' : '#334155'}; font-size:0.68rem; font-weight:700; cursor:pointer; white-space:nowrap;">
+                <img src="${pPhoto}" alt="${pet.name}" onerror="if(window.cudi_img_fallback)cudi_img_fallback(this,'${pet.type}','${pet.name}');" style="width:18px !important; height:18px !important; min-width:18px !important; min-height:18px !important; border-radius:50% !important; object-fit:cover !important;">
+                <span>${icon} ${pet.name}</span>
+            </button>
+        `;
+    }).join('');
+
+    const safeLoginPhoto = resolveDemoPetPhoto(loginAcc, loginAcc.type, loginAcc.name);
+    const loginEmail = loginAcc.tutorEmail || `${String(loginAcc.name).toLowerCase()}@cudi.pet`;
+    const loginCollar = loginAcc.collarId || (loginAcc.type === 'gato' ? 'CUDI-CAT-7781' : 'CUDI-GPS-9482');
+
+    loginContainer.innerHTML = `
+        <div style="background:linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(240,249,255,0.9) 100%); border:1.5px solid rgba(125,211,252,0.85); border-radius:16px; padding:12px; box-shadow:0 8px 20px -6px rgba(2,132,199,0.14); margin-bottom:10px;">
+            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:9px;">
+                <span style="display:inline-flex; align-items:center; gap:5px; background:#dcfce7; color:#15803d; border:1px solid #86efac; font-size:0.62rem; font-weight:800; padding:2px 8px; border-radius:999px; text-transform:uppercase;">
+                    <span style="width:6px; height:6px; border-radius:50%; background:#22c55e;"></span> Cuenta Pre-Cargada
+                </span>
+                <button type="button" onclick="appDemoCycleLoginAccount()" style="background:#e0f2fe; color:#0284c7; border:1px solid #7dd3fc; border-radius:999px; padding:3px 9px; font-size:0.66rem; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:4px;">
+                    <i class="fa-solid fa-shuffle"></i> Otra Cuenta
+                </button>
+            </div>
+
+            <div style="display:flex; align-items:center; gap:10px; padding:9px; background:#ffffff; border-radius:12px; border:1px solid #e2e8f0; margin-bottom:9px;">
+                <img id="demo-login-photo" src="${safeLoginPhoto}" alt="${loginAcc.name}" onerror="if(window.cudi_img_fallback)cudi_img_fallback(this,'${loginAcc.type}','${loginAcc.name}');" style="width:48px !important; height:48px !important; min-width:48px !important; min-height:48px !important; aspect-ratio:1/1 !important; border-radius:50% !important; object-fit:cover !important; border:2px solid #0284c7;">
+                <div style="flex:1; min-width:0;">
+                    <div style="display:flex; align-items:center; gap:6px;">
+                        <strong id="demo-login-name" style="font-size:0.95rem; font-weight:800; color:#0f172a;">${loginAcc.name}</strong>
+                        <span id="demo-login-species-pill" style="font-size:0.62rem; font-weight:800; padding:1px 7px; border-radius:999px; background:${loginAcc.type === 'gato' ? '#fdf2f8' : '#eff6ff'}; color:${loginAcc.type === 'gato' ? '#be185d' : '#0284c7'};">${loginAcc.type === 'gato' ? '🐱 Gato' : '🐶 Perro'}</span>
+                    </div>
+                    <div id="demo-login-meta" style="font-size:0.72rem; color:#475569; font-weight:600; margin-top:1px;">${loginAcc.breed} &bull; ${loginAcc.weight} kg &bull; ${loginAcc.age}a</div>
+                    <div id="demo-login-telem" style="font-size:0.65rem; color:#0284c7; font-weight:700; margin-top:2px;">
+                        <i class="fa-solid fa-satellite-dish"></i> ${loginCollar} &bull; <i class="fa-solid fa-heart-pulse" style="color:#ef4444;"></i> ${loginAcc.bpm || 78} bpm
+                    </div>
+                </div>
+            </div>
+
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px; margin-bottom:10px;">
+                <div style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:9px; padding:6px 8px;">
+                    <span style="display:block; font-size:0.58rem; font-weight:800; color:#64748b; text-transform:uppercase;">Tutor CUDI ID</span>
+                    <strong id="demo-login-email" style="font-size:0.68rem; color:#0f172a; display:block; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">${loginEmail}</strong>
+                </div>
+                <div style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:9px; padding:6px 8px;">
+                    <span style="display:block; font-size:0.58rem; font-weight:800; color:#64748b; text-transform:uppercase;">Token Collar</span>
+                    <strong style="font-size:0.68rem; color:#16a34a; display:block;"><i class="fa-solid fa-circle-check"></i> Sincronizado</strong>
+                </div>
+            </div>
+
+            <button type="button" class="app-btn primary" onclick="appDemoLoginWithPreloaded()" style="margin-top:0; padding:11px; font-size:0.82rem; display:flex; align-items:center; justify-content:center; gap:8px;">
+                <i class="fa-solid fa-right-to-bracket"></i>
+                <span id="demo-login-submit-text">Iniciar Sesión con ${loginAcc.name}</span>
+            </button>
+        </div>
+
+        <div style="background:rgba(255,255,255,0.82); border:1px solid #e2e8f0; border-radius:12px; padding:8px 10px; margin-bottom:8px;">
+            <span style="display:block; font-size:0.64rem; font-weight:800; color:#475569; text-transform:uppercase; margin-bottom:6px;"><i class="fa-solid fa-paw" style="color:#0284c7;"></i> Elegir otra cuenta (Perros y Gatos)</span>
+            <div style="display:flex; flex-wrap:wrap; gap:5px; max-height:62px; overflow-y:auto;">
+                ${quickChipsHtml}
+            </div>
+        </div>
+
+        <div style="text-align:center; font-size:0.71rem; color:#64748b;">
+            ¿Mascota nueva? <button type="button" onclick="switchDemoOnboardingTab('register')" style="background:none; border:none; color:#0284c7; font-weight:800; cursor:pointer; text-decoration:underline; padding:0; font-size:0.71rem;">Registrar Mascota &rarr;</button>
+        </div>
+    `;
+
+    onboardingForm.appendChild(tabsBar);
+    onboardingForm.appendChild(loginContainer);
+    onboardingForm.appendChild(registerContainer);
+
+    updateDemoLoginCardUI(loginAcc);
+}
+
+function switchDemoOnboardingTab(mode) {
+    const loginView = document.getElementById('demo-view-login');
+    const regView = document.getElementById('demo-view-register');
+    const loginBtn = document.getElementById('demo-tab-btn-login');
+    const regBtn = document.getElementById('demo-tab-btn-register');
+    const isReg = mode === 'register';
+
+    if (loginView && regView) {
+        loginView.style.display = isReg ? 'none' : 'block';
+        regView.style.display = isReg ? 'block' : 'none';
+    }
+    if (loginBtn && regBtn) {
+        if (isReg) {
+            regBtn.style.background = 'rgba(255,255,255,0.98)';
+            regBtn.style.color = '#0284c7';
+            regBtn.style.boxShadow = '0 2px 8px rgba(2,132,199,0.15)';
+            loginBtn.style.background = 'transparent';
+            loginBtn.style.color = '#475569';
+            loginBtn.style.boxShadow = 'none';
+        } else {
+            loginBtn.style.background = 'rgba(255,255,255,0.98)';
+            loginBtn.style.color = '#0284c7';
+            loginBtn.style.boxShadow = '0 2px 8px rgba(2,132,199,0.15)';
+            regBtn.style.background = 'transparent';
+            regBtn.style.color = '#475569';
+            regBtn.style.boxShadow = 'none';
+            updateDemoLoginCardUI(getDemoPreloadedAccount());
+        }
     }
 }
 
-function appDemoAutoFill() {
-    let pet = (typeof cudi_get_random_pet_candidate === 'function') 
-        ? cudi_get_random_pet_candidate() 
-        : {
+function updateDemoLoginCardUI(acc) {
+    if (!acc) return;
+    const safePhoto = resolveDemoPetPhoto(acc, acc.type, acc.name);
+    acc.photo = safePhoto;
+    window.currentLoginAccount = acc;
+
+    const photoEl = document.getElementById('demo-login-photo');
+    if (photoEl) {
+        photoEl.dataset.cudiFallbackDone = 'false';
+        photoEl.src = safePhoto;
+        photoEl.alt = acc.name;
+    }
+    const nameEl = document.getElementById('demo-login-name');
+    if (nameEl) nameEl.textContent = acc.name;
+
+    const pillEl = document.getElementById('demo-login-species-pill');
+    if (pillEl) {
+        const isCat = acc.type === 'gato';
+        pillEl.textContent = isCat ? '🐱 Gato' : '🐶 Perro';
+        pillEl.style.background = isCat ? '#fdf2f8' : '#eff6ff';
+        pillEl.style.color = isCat ? '#be185d' : '#0284c7';
+    }
+
+    const metaEl = document.getElementById('demo-login-meta');
+    if (metaEl) metaEl.innerHTML = `${acc.breed} &bull; ${acc.weight} kg &bull; ${acc.age}a`;
+
+    const collarId = acc.collarId || (acc.type === 'gato' ? 'CUDI-CAT-7781' : 'CUDI-GPS-9482');
+    const telemEl = document.getElementById('demo-login-telem');
+    if (telemEl) {
+        telemEl.innerHTML = `<i class="fa-solid fa-satellite-dish"></i> ${collarId} &bull; <i class="fa-solid fa-heart-pulse" style="color:#ef4444;"></i> ${acc.bpm || (acc.type === 'gato' ? 142 : 78)} bpm`;
+    }
+
+    const emailEl = document.getElementById('demo-login-email');
+    if (emailEl) {
+        emailEl.textContent = acc.tutorEmail || `${String(acc.name).toLowerCase()}@cudi.pet`;
+    }
+
+    const submitTextEl = document.getElementById('demo-login-submit-text');
+    if (submitTextEl) submitTextEl.textContent = `Iniciar Sesión con ${acc.name}`;
+
+    const heroPhoto = document.getElementById('onboarding-photo');
+    if (heroPhoto && safePhoto) {
+        const localFallback = acc.type === 'gato' ? 'gato-explorando-seguro-collar-gps.png' : 'avatar-mascota-perfil-gemelo-digital.png';
+        heroPhoto.style.backgroundImage = `url('${safePhoto}'), url('${localFallback}')`;
+    }
+
+    const petsPool = (typeof CUDI_RANDOM_PETS !== 'undefined' && CUDI_RANDOM_PETS.length) ? CUDI_RANDOM_PETS : [];
+    document.querySelectorAll('.demo-login-chip').forEach(chip => {
+        const idx = Number(chip.getAttribute('data-demo-pet-idx'));
+        const p = petsPool[idx];
+        const active = p && p.name.toLowerCase() === String(acc.name).toLowerCase();
+        chip.style.borderColor = active ? '#0284c7' : 'rgba(203,213,225,0.85)';
+        chip.style.background = active ? 'rgba(224,242,254,0.95)' : 'rgba(255,255,255,0.85)';
+        chip.style.color = active ? '#0369a1' : '#334155';
+    });
+}
+
+function appDemoSelectLoginAccount(idx) {
+    if (typeof CUDI_RANDOM_PETS === 'undefined' || !CUDI_RANDOM_PETS[idx]) return;
+    updateDemoLoginCardUI(Object.assign({}, CUDI_RANDOM_PETS[idx]));
+}
+
+function appDemoCycleLoginAccount() {
+    if (typeof CUDI_RANDOM_PETS === 'undefined' || !CUDI_RANDOM_PETS.length) return;
+    const curr = getDemoPreloadedAccount();
+    const currIdx = CUDI_RANDOM_PETS.findIndex(p => p.name.toLowerCase() === String(curr.name).toLowerCase());
+    const nextIdx = (currIdx + 1) % CUDI_RANDOM_PETS.length;
+    updateDemoLoginCardUI(Object.assign({}, CUDI_RANDOM_PETS[nextIdx]));
+}
+
+function appDemoLoginWithPreloaded() {
+    const acc = getDemoPreloadedAccount();
+    if (!acc || !acc.name) return;
+    const safePhoto = resolveDemoPetPhoto(acc, acc.type, acc.name);
+
+    petProfile = {
+        name: acc.name,
+        type: acc.type || 'perro',
+        weight: String(acc.weight || (acc.type === 'gato' ? '4.2' : '12')),
+        age: acc.age || 2,
+        ageStageKey: Number(acc.age) > 4 ? 'golden' : (Number(acc.age) > 2 ? 'plenitud' : 'explorer'),
+        energy: acc.energy || 'Moderado',
+        food: acc.food || 'Pienso Seco Premium',
+        breed: acc.breed || (acc.type === 'gato' ? 'Europeo Común' : 'Mestizo'),
+        photo: safePhoto,
+        avatar: safePhoto,
+        bpm: acc.bpm || (acc.type === 'gato' ? 142 : 78),
+        temp: acc.temp || 38.5,
+        battery: acc.battery || 95,
+        collarId: acc.collarId || (acc.type === 'gato' ? 'CUDI-CAT-7781' : 'CUDI-GPS-9482'),
+        tutorEmail: acc.tutorEmail || `${String(acc.name).toLowerCase()}@cudi.pet`,
+        sessionActive: true,
+        savedAt: new Date().toISOString()
+    };
+
+    localStorage.setItem('cudi_pet_profile', JSON.stringify(petProfile));
+    localStorage.setItem('cudi_last_registered_pet', JSON.stringify(petProfile));
+    localStorage.setItem('cudi_session_active', 'true');
+    window.dispatchEvent(new CustomEvent('cudi:sessionChanged', { detail: petProfile }));
+
+    syncSimulatorDOMWithProfile(petProfile);
+    if (typeof showCudiToast === 'function') {
+        showCudiToast(`🎉 ¡Sesión iniciada con ${petProfile.name} (${petProfile.breed})!`, 'success');
+    }
+}
+
+function appDemoAutoFill(preferredSpecies) {
+    let pet;
+    if (typeof CUDI_RANDOM_PETS !== 'undefined' && CUDI_RANDOM_PETS.length > 0) {
+        const pool = preferredSpecies
+            ? CUDI_RANDOM_PETS.filter(p => p.type === preferredSpecies)
+            : CUDI_RANDOM_PETS;
+        const currentName = document.getElementById('pet-name')?.value || '';
+        const currIdx = pool.findIndex(p => p.name.toLowerCase() === currentName.toLowerCase());
+        const nextIdx = currIdx !== -1 ? (currIdx + 1) % pool.length : Math.floor(Math.random() * pool.length);
+        pet = Object.assign({}, pool[nextIdx]);
+        window.currentRandomPet = pet;
+    } else {
+        pet = {
             name: 'Luna',
             type: 'perro',
             breed: 'Husky Siberiano',
             weight: '22',
-            age: 'explorer',
-            energy: 'activo',
-            food: 'pienso',
-            photo: 'https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=800&q=80'
+            age: 3,
+            energy: 'Alto',
+            food: 'Pienso Seco Premium',
+            photo: 'https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=600&h=600&q=80'
         };
-
-    // Si ya tiene ese mismo, rotar al siguiente del banco
-    const nameInput = document.getElementById('pet-name');
-    if (nameInput && nameInput.value === pet.name && typeof CUDI_RANDOM_PETS !== 'undefined') {
-        const others = CUDI_RANDOM_PETS.filter(p => p.name !== pet.name);
-        if (others.length > 0) {
-            pet = others[Math.floor(Math.random() * others.length)];
-            window.currentRandomPet = pet;
-        }
     }
 
-    // Seleccionar especie
     selectPetType(pet.type);
 
-    if (nameInput) nameInput.value = pet.name;
+    const nameInput = document.getElementById('pet-name');
+    if (nameInput) { nameInput.value = pet.name; nameInput.setCustomValidity(''); }
     const weightInput = document.getElementById('pet-weight');
-    if (weightInput) weightInput.value = pet.weight;
+    if (weightInput) {
+        weightInput.setAttribute('step', '0.1');
+        weightInput.setAttribute('min', '0.5');
+        weightInput.setAttribute('max', '100');
+        weightInput.value = pet.weight;
+        weightInput.setCustomValidity('');
+    }
 
     const breedSelect = document.getElementById('pet-breed');
     if (breedSelect) {
@@ -706,22 +990,22 @@ function appDemoAutoFill() {
 
     const ageSelect = document.getElementById('pet-age');
     if (ageSelect) {
-        ageSelect.value = pet.age > 4 ? 'golden' : (pet.age > 2 ? 'plenitud' : 'explorer');
+        const numAge = Number(pet.age) || 2;
+        ageSelect.value = numAge > 4 ? 'golden' : (numAge > 2.5 ? 'plenitud' : (numAge <= 1 ? 'primera' : 'explorer'));
     }
 
     const energySelect = document.getElementById('pet-energy');
     if (energySelect) {
         const en = (pet.energy || '').toLowerCase();
-        energySelect.value = en.includes('tranquilo') ? 'tranquilo' : (en.includes('extremo') || en.includes('alto') ? 'activo' : 'moderado');
+        energySelect.value = en.includes('tranquilo') ? 'tranquilo' : (en.includes('extremo') || en.includes('atleta') || en.includes('alto') ? 'activo' : 'moderado');
     }
 
     const foodSelect = document.getElementById('pet-food');
     if (foodSelect) {
         const fd = (pet.food || '').toLowerCase();
-        foodSelect.value = fd.includes('barf') ? 'barf' : (fd.includes('mixta') ? 'mixta' : 'pienso');
+        foodSelect.value = fd.includes('barf') ? 'barf' : (fd.includes('mixta') || fd.includes('húmeda') ? 'mixta' : 'pienso');
     }
 
-    // Foto exclusiva en onboarding (con verificación de URL)
     const safeAutoPhoto = resolveDemoPetPhoto(pet, pet.type, pet.name);
     window.appDemoSelectedPhoto = safeAutoPhoto;
     const photoEl = document.getElementById('onboarding-photo');
@@ -730,7 +1014,6 @@ function appDemoAutoFill() {
         photoEl.style.backgroundImage = `url('${safeAutoPhoto}'), url('${localFallback}')`;
     }
 
-    // Destacar visualmente los campos para que la persona vea la velocidad del llenado
     [nameInput, weightInput, breedSelect].forEach(el => {
         if (el) {
             el.style.borderColor = '#0284c7';
@@ -744,14 +1027,15 @@ function appDemoAutoFill() {
 
     const infoLabel = document.getElementById('demo-autofill-info-label');
     if (infoLabel) {
-        infoLabel.innerHTML = `✨ Autollenado: <strong>${pet.name}</strong> (${pet.breed})`;
+        infoLabel.innerHTML = `✨ Autollenado: <strong>${pet.name}</strong> (${pet.breed} • ${pet.weight} kg)`;
     }
 }
 
 function proceedToDashboard() {
     const name   = (document.getElementById('pet-name')?.value || 'Luna').trim() || 'Luna';
     const type   = document.getElementById('selected-pet-type')?.value || 'perro';
-    const weight = document.getElementById('pet-weight')?.value || (type === 'gato' ? '4.2' : '14');
+    const rawW   = parseFloat(String(document.getElementById('pet-weight')?.value || (type === 'gato' ? '4.2' : '14')).replace(',', '.'));
+    const weight = String(isNaN(rawW) ? (type === 'gato' ? 4.2 : 14) : Math.min(100, Math.max(0.5, rawW)));
     const ageRaw = document.getElementById('pet-age')?.value || 'explorer';
     const energyRaw = document.getElementById('pet-energy')?.value || 'moderado';
     const foodRaw   = document.getElementById('pet-food')?.value || 'pienso';
@@ -760,7 +1044,7 @@ function proceedToDashboard() {
     const photo  = resolveDemoPetPhoto(rawPhoto, type, name);
 
     const energyMap = { tranquilo: 'Tranquilo', moderado: 'Moderado', activo: 'Alto' };
-    const foodMap = { pienso: 'Pienso Seco', barf: 'Dieta BARF', mixta: 'Dieta Mixta' };
+    const foodMap = { pienso: 'Pienso Seco Premium', barf: 'Dieta Natural BARF', mixta: 'Mixta (Pienso + Húmeda)' };
     const ageNumMap = { primera: 1, explorer: 2, plenitud: 4, golden: 8 };
 
     petProfile = { 
@@ -773,13 +1057,17 @@ function proceedToDashboard() {
         food: foodMap[foodRaw] || foodRaw, 
         breed, 
         photo,
+        avatar: photo,
         bpm: type === 'gato' ? 138 : 74,
+        collarId: type === 'gato' ? 'CUDI-CAT-7781' : 'CUDI-GPS-9482',
+        tutorEmail: `${name.toLowerCase().replace(/[^a-z0-9]/g, '')}@cudi.pet`,
         sessionActive: true,
         savedAt: new Date().toISOString()
     };
 
-    // Persistir como sesión activa en todo el ecosistema
+    window.currentLoginAccount = petProfile;
     localStorage.setItem('cudi_pet_profile', JSON.stringify(petProfile));
+    localStorage.setItem('cudi_last_registered_pet', JSON.stringify(petProfile));
     localStorage.setItem('cudi_session_active', 'true');
     window.dispatchEvent(new CustomEvent('cudi:sessionChanged', { detail: petProfile }));
 
@@ -788,12 +1076,15 @@ function proceedToDashboard() {
 
 function appDemoResetSession() {
     if (confirm('¿Deseas desconectar o cambiar la mascota en la demo?')) {
+        const currentProfile = localStorage.getItem('cudi_pet_profile');
+        if (currentProfile) {
+            localStorage.setItem('cudi_last_registered_pet', currentProfile);
+        }
         localStorage.removeItem('cudi_pet_profile');
         localStorage.removeItem('cudi_session_active');
         window.currentRandomPet = null;
         window.dispatchEvent(new CustomEvent('cudi:sessionChanged', { detail: null }));
 
-        // Mostrar pantalla de onboarding
         const main = document.getElementById('screen-main');
         if (main) {
             main.classList.remove('active');
@@ -809,6 +1100,7 @@ function appDemoResetSession() {
         }
 
         setupDemoOnboardingAutoFill();
+        switchDemoOnboardingTab('login');
     }
 }
 
