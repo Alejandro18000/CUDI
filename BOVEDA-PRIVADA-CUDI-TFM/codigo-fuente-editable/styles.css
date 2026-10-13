@@ -2481,7 +2481,8 @@ section:nth-of-type(2) { animation-delay: 0.6s; }
 
 .btn-autofill-reroll:hover {
     background: #f0f9ff;
-    transform: rotate(30deg);
+    transform: translateY(-1px);
+    box-shadow: 0 3px 8px rgba(2, 132, 199, 0.14);
 }
 
 .autofill-pet-preview-card {

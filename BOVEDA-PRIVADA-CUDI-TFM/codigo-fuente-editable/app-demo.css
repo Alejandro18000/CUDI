@@ -1607,103 +1607,183 @@ body.app-demo-body {
 }
 
 /* =========================================================
-   IN-APP AI CHAT (MINI LIQUID GLASS)
+/* =========================================================
+   IN-APP AI CHAT & FLOATING BASKET DOCK (APPLE LIQUID GLASS)
    ========================================================= */
 .in-app-ia-wrapper {
     position: absolute;
-    bottom: 84px;
-    right: 14px;
-    z-index: 90;
-    transition: opacity 0.2s;
+    bottom: 70px;
+    left: 12px;
+    right: 12px;
+    z-index: 95;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
 }
 
-.checkout-modal:not([style*="display: none"]) ~ .in-app-ia-wrapper {
+.onboarding-screen.active ~ .in-app-ia-wrapper .in-app-floating-dock,
+.checkout-modal[style*="display: flex"] ~ .in-app-ia-wrapper,
+.dynamic-alert-screen[style*="display: flex"] ~ .in-app-ia-wrapper {
     opacity: 0;
     pointer-events: none;
 }
 
+.in-app-floating-dock {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    pointer-events: none;
+    width: 100%;
+}
+
+.in-app-floating-cart-pill {
+    pointer-events: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 13px;
+    border-radius: 999px;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.92) 0%, rgba(240, 249, 255, 0.88) 100%);
+    backdrop-filter: blur(22px) saturate(200%);
+    -webkit-backdrop-filter: blur(22px) saturate(200%);
+    border: 1.5px solid rgba(255, 255, 255, 0.96);
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.14), 0 1px 0 rgba(255, 255, 255, 0.95) inset;
+    color: #0f172a;
+    font-size: 0.74rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.in-app-floating-cart-pill i {
+    color: #0284c7;
+    font-size: 0.82rem;
+}
+
+.in-app-floating-cart-pill:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(2, 132, 199, 0.24);
+}
+
+.floating-cart-count {
+    background: linear-gradient(135deg, #0284c7, #0ea5e9);
+    color: white;
+    font-size: 0.65rem;
+    font-weight: 900;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 5px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(2, 132, 199, 0.3);
+}
 
 .in-app-ia-btn {
-    width: 44px;
-    height: 44px;
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.88) 0%, rgba(224, 242, 254, 0.82) 100%);
-    backdrop-filter: blur(20px) saturate(200%);
-    -webkit-backdrop-filter: blur(20px) saturate(200%);
-    border-radius: 50%;
+    pointer-events: auto;
+    height: 38px;
+    padding: 4px 13px 4px 5px;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.92) 0%, rgba(2, 132, 199, 0.92) 100%);
+    backdrop-filter: blur(22px) saturate(200%);
+    -webkit-backdrop-filter: blur(22px) saturate(200%);
+    border-radius: 999px;
     position: relative;
     cursor: pointer;
-    box-shadow: 0 8px 22px rgba(2, 132, 199, 0.28), 0 0 0 1px rgba(255, 255, 255, 0.9) inset;
-    border: 1.5px solid rgba(255, 255, 255, 0.92);
-    overflow: hidden;
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s ease;
+    box-shadow: 0 8px 22px rgba(2, 132, 199, 0.34), 0 0 0 1px rgba(255, 255, 255, 0.35) inset;
+    border: 1.5px solid rgba(255, 255, 255, 0.75);
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: white;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .in-app-ia-btn:hover {
-    transform: scale(1.08);
-    box-shadow: 0 10px 26px rgba(2, 132, 199, 0.38);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 26px rgba(2, 132, 199, 0.44);
 }
 
-.in-app-ia-btn img {
+.ia-orb-icon-wrap {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: white;
+    border: 1.5px solid rgba(56, 189, 248, 0.9);
+    flex-shrink: 0;
+}
+
+.ia-orb-icon-wrap img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
+    display: block;
+}
+
+.ia-btn-label {
+    font-size: 0.73rem;
+    font-weight: 800;
+    letter-spacing: 0.2px;
+    white-space: nowrap;
 }
 
 .ia-pulse-mini {
     position: absolute;
-    inset: 0;
-    border-radius: 50%;
-    background: var(--app-primary);
-    opacity: 0.3;
-    animation: pulseMini 2s infinite;
-    z-index: -1;
+    inset: -2px;
+    border-radius: 999px;
+    border: 1.5px solid rgba(56, 189, 248, 0.55);
+    opacity: 0.5;
+    animation: pulseMini 2.4s infinite;
+    pointer-events: none;
 }
 
 @keyframes pulseMini {
-    0% { transform: scale(1); opacity: 0.3; }
-    100% { transform: scale(1.5); opacity: 0; }
+    0% { transform: scale(1); opacity: 0.55; }
+    100% { transform: scale(1.12); opacity: 0; }
 }
 
 .in-app-ia-panel {
+    pointer-events: auto;
     position: absolute;
-    bottom: 60px;
+    bottom: 46px;
+    left: 0;
     right: 0;
-    width: 280px;
-    height: 380px;
-    background: linear-gradient(165deg, rgba(255, 255, 255, 0.88) 0%, rgba(248, 250, 252, 0.82) 100%);
-    backdrop-filter: blur(28px) saturate(200%);
-    -webkit-backdrop-filter: blur(28px) saturate(200%);
-    border: 1.5px solid rgba(255, 255, 255, 0.92);
-    border-radius: 22px;
-    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.16), 0 1px 0 rgba(255, 255, 255, 0.95) inset;
+    width: 100%;
+    height: 450px;
+    background: linear-gradient(165deg, rgba(255, 255, 255, 0.94) 0%, rgba(240, 249, 255, 0.91) 100%);
+    backdrop-filter: blur(32px) saturate(210%);
+    -webkit-backdrop-filter: blur(32px) saturate(210%);
+    border: 1.5px solid rgba(255, 255, 255, 0.98);
+    border-radius: 24px;
+    box-shadow: 0 22px 48px rgba(15, 23, 42, 0.24), 0 1px 0 rgba(255, 255, 255, 0.98) inset;
     display: none;
     flex-direction: column;
     overflow: hidden;
     transform-origin: bottom right;
-    animation: panelPop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation: panelPop 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @keyframes panelPop {
-    from { transform: scale(0.5); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
+    from { transform: translateY(16px) scale(0.94); opacity: 0; }
+    to { transform: translateY(0) scale(1); opacity: 1; }
 }
 
 .ia-panel-mini-header {
-    padding: 12px 15px;
-    background: linear-gradient(135deg, rgba(2, 132, 199, 0.92) 0%, rgba(16, 185, 129, 0.88) 100%);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    padding: 11px 14px;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.94) 0%, rgba(2, 132, 199, 0.92) 100%);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
     color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.28);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .ia-profile-mini {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 9px;
 }
 
 .ia-avatar-mini {
@@ -1711,82 +1791,150 @@ body.app-demo-body {
     height: 32px;
     border-radius: 50%;
     background: white;
-    padding: 2px;
+    padding: 1.5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    flex-shrink: 0;
 }
 
-.ia-avatar-mini img { width: 100%; height: 100%; border-radius: 50%; }
+.ia-avatar-mini img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+}
 
-.ia-meta-mini { display: flex; flex-direction: column; }
-.ia-name-mini { font-size: 0.75rem; font-weight: 800; line-height: 1.1; }
-.ia-status-mini { font-size: 0.6rem; opacity: 0.8; }
+.ia-meta-mini { display: flex; flex-direction: column; gap: 1px; }
+.ia-name-mini { font-size: 0.76rem; font-weight: 800; line-height: 1.15; letter-spacing: -0.1px; }
+.ia-status-mini { font-size: 0.62rem; color: #bae6fd; font-weight: 600; display: flex; align-items: center; gap: 4px; }
+.ia-live-dot { width: 6px; height: 6px; border-radius: 50%; background: #10b981; display: inline-block; box-shadow: 0 0 6px #10b981; }
 
 .ia-close-mini {
-    background: rgba(255, 255, 255, 0.22);
-    border: 1px solid rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     color: white;
-    width: 24px;
-    height: 24px;
+    width: 26px;
+    height: 26px;
     border-radius: 50%;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: background 0.15s;
+}
+
+.ia-close-mini:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.ia-panel-mini-chips {
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    padding: 8px 10px;
+    background: rgba(248, 250, 252, 0.85);
+    border-bottom: 1px solid rgba(226, 232, 240, 0.85);
+    scrollbar-width: none;
+    flex-shrink: 0;
+}
+
+.ia-panel-mini-chips::-webkit-scrollbar { display: none; }
+
+.ia-mini-chip {
+    white-space: nowrap;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(186, 230, 253, 0.95);
+    color: #0369a1;
+    font-size: 0.66rem;
+    font-weight: 800;
+    padding: 5px 10px;
+    border-radius: 999px;
+    cursor: pointer;
+    flex-shrink: 0;
+    box-shadow: 0 2px 5px rgba(2, 132, 199, 0.06);
+    transition: all 0.15s ease;
+}
+
+.ia-mini-chip:hover {
+    background: #0284c7;
+    color: white;
+    border-color: #0284c7;
 }
 
 .ia-panel-mini-body {
     flex: 1;
-    padding: 15px;
+    padding: 12px;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
 }
 
 .ia-msg-bubble {
-    background: rgba(255, 255, 255, 0.88);
-    border: 1px solid rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(226, 232, 240, 0.95);
     padding: 10px 12px;
-    border-radius: 15px;
-    border-top-left-radius: 2px;
-    font-size: 0.8rem;
-    color: #334155;
+    border-radius: 16px;
+    border-top-left-radius: 4px;
+    font-size: 0.74rem;
+    color: #1e293b;
     align-self: flex-start;
-    box-shadow: 0 3px 10px rgba(15, 23, 42, 0.05);
-    max-width: 85%;
-    line-height: 1.4;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+    max-width: 94%;
+    line-height: 1.45;
+}
+
+.ia-msg-bubble .ai-actions-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+}
+
+.ia-msg-bubble .ai-btn-action {
+    font-size: 0.68rem !important;
+    padding: 6px 10px !important;
+    border-radius: 10px !important;
 }
 
 .user-msg-bubble {
     background: linear-gradient(135deg, #0284c7, #0ea5e9);
     color: white;
-    padding: 10px 12px;
-    border-radius: 15px;
-    border-top-right-radius: 2px;
-    font-size: 0.8rem;
+    padding: 9px 12px;
+    border-radius: 16px;
+    border-top-right-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
     align-self: flex-end;
     box-shadow: 0 4px 12px rgba(2, 132, 199, 0.22);
-    max-width: 85%;
+    max-width: 86%;
     line-height: 1.4;
 }
 
 .ia-panel-mini-footer {
-    padding: 12px;
-    background: rgba(255, 255, 255, 0.84);
+    padding: 9px 10px;
+    background: rgba(255, 255, 255, 0.92);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
     display: flex;
-    gap: 8px;
-    border-top: 1px solid rgba(255, 255, 255, 0.92);
+    gap: 7px;
+    border-top: 1px solid rgba(226, 232, 240, 0.9);
 }
 
 .ia-panel-mini-footer input {
     flex: 1;
-    border: 1px solid rgba(203, 213, 225, 0.9);
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 50px;
-    padding: 8px 12px;
-    font-size: 0.8rem;
+    border: 1px solid rgba(203, 213, 225, 0.95);
+    background: #f8fafc;
+    border-radius: 999px;
+    padding: 7px 12px;
+    font-size: 0.74rem;
     outline: none;
+    color: #0f172a;
+}
+
+.ia-panel-mini-footer input:focus {
+    border-color: #0284c7;
+    background: white;
 }
 
 .ia-panel-mini-footer button {
@@ -1797,6 +1945,10 @@ body.app-demo-body {
     height: 32px;
     border-radius: 50%;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
 }
 
 .typing-mini { font-size: 0.7rem; color: var(--app-text-muted); font-style: italic; }
@@ -2166,16 +2318,16 @@ body.app-demo-body {
     color: #dc2626;
 }
 
-/* Contenedor del Mapa Vectorial con Capas Cartográficas */
+/* Contenedor del Mapa Vectorial con Capas Cartográficas (Estilo Apple Maps) */
 .gps-map-container {
-    height: 245px;
-    background: #0f172a;
-    border-radius: 20px;
+    height: 252px;
+    background: #f1f5f9;
+    border-radius: 22px;
     position: relative;
     overflow: hidden;
     margin-bottom: 12px;
-    border: 1.5px solid #334155;
-    box-shadow: inset 0 0 35px rgba(0,0,0,0.6);
+    border: 1.5px solid rgba(255, 255, 255, 0.95);
+    box-shadow: 0 10px 26px rgba(15, 23, 42, 0.08), inset 0 0 0 1px rgba(203, 213, 225, 0.65);
 }
 
 .gps-svg-streets {
@@ -2184,6 +2336,26 @@ body.app-demo-body {
     width: 100%;
     height: 100%;
     pointer-events: none;
+}
+
+.gps-map-scale-pill {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 12;
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    border-radius: 999px;
+    padding: 3px 9px;
+    font-size: 0.58rem;
+    font-weight: 800;
+    color: #334155;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
 }
 
 /* Banner de Alerta de Fuga Geocerca */
@@ -2209,17 +2381,17 @@ body.app-demo-body {
     flex-shrink: 0;
 }
 
-/* ÁREA DE LA CASA / ZONA SEGURA (Geocerca circular animada) */
+/* ÁREA DE LA CASA / ZONA SEGURA (Geocerca circular limpia estilo Apple Find My) */
 .gps-geofence-zone {
     position: absolute;
-    top: 45%;
-    left: 36%;
+    top: 48%;
+    left: 46%;
     transform: translate(-50%, -50%);
-    width: 165px;
-    height: 165px;
+    width: 152px;
+    height: 152px;
     border-radius: 50%;
-    border: 2px dashed rgba(16, 185, 129, 0.7);
-    background: radial-gradient(circle, rgba(16, 185, 129, 0.16) 0%, rgba(16, 185, 129, 0.04) 70%, transparent 100%);
+    border: 1.8px dashed rgba(16, 185, 129, 0.78);
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.14) 0%, rgba(16, 185, 129, 0.03) 70%, transparent 100%);
     pointer-events: none;
     transition: all 0.5s ease;
     z-index: 2;
@@ -2227,7 +2399,7 @@ body.app-demo-body {
 
 .gps-geofence-zone.alert {
     border-color: rgba(239, 68, 68, 0.9) !important;
-    background: radial-gradient(circle, rgba(239, 68, 68, 0.28) 0%, rgba(239, 68, 68, 0.08) 70%, transparent 100%) !important;
+    background: radial-gradient(circle, rgba(239, 68, 68, 0.22) 0%, rgba(239, 68, 68, 0.06) 70%, transparent 100%) !important;
     animation: geofenceAlarmPulse 1.2s infinite ease-in-out !important;
 }
 
@@ -2238,41 +2410,42 @@ body.app-demo-body {
 
 .geofence-radar-wave {
     position: absolute;
-    inset: -12px;
+    inset: -10px;
     border-radius: 50%;
-    border: 1.5px solid rgba(16, 185, 129, 0.4);
+    border: 1.2px solid rgba(16, 185, 129, 0.35);
     animation: geofencePulse 3.5s ease-out infinite;
 }
 
 @keyframes geofencePulse {
-    0% { transform: scale(0.9); opacity: 0.8; }
-    50% { transform: scale(1.08); opacity: 0.3; }
-    100% { transform: scale(0.9); opacity: 0.8; }
+    0% { transform: scale(0.92); opacity: 0.7; }
+    50% { transform: scale(1.06); opacity: 0.25; }
+    100% { transform: scale(0.92); opacity: 0.7; }
 }
 
 .geofence-zone-label,
 .geofence-label {
     position: absolute;
-    bottom: -10px;
+    top: -10px;
+    bottom: auto;
     left: 50%;
     transform: translateX(-50%);
-    background: rgba(15, 23, 42, 0.9);
-    border: 1px solid rgba(16, 185, 129, 0.5);
-    color: #a7f3d0;
-    font-size: 0.58rem;
+    background: rgba(255, 255, 255, 0.94);
+    border: 1px solid rgba(16, 185, 129, 0.55);
+    color: #047857;
+    font-size: 0.55rem;
     font-weight: 800;
     padding: 2px 8px;
     border-radius: 50px;
     white-space: nowrap;
-    letter-spacing: 0.3px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+    letter-spacing: 0.2px;
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.1);
 }
 
 /* MARCADOR DEL HOGAR */
 .gps-home-marker {
     position: absolute;
-    top: 36%;
-    left: 28%;
+    top: 34%;
+    left: 30%;
     transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
@@ -2285,25 +2458,25 @@ body.app-demo-body {
 .home-icon-wrap {
     width: 26px;
     height: 26px;
-    background: #0284c7;
+    background: linear-gradient(135deg, #0284c7, #0369a1);
     border: 2px solid white;
     border-radius: 50%;
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.7rem;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+    font-size: 0.66rem;
+    box-shadow: 0 3px 10px rgba(2, 132, 199, 0.35);
 }
 
 .home-marker-label,
 .home-marker-lbl {
-    background: rgba(15, 23, 42, 0.9);
-    border: 1px solid rgba(255,255,255,0.25);
-    color: #e2e8f0;
-    font-size: 0.56rem;
+    background: rgba(15, 23, 42, 0.88);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: #ffffff;
+    font-size: 0.54rem;
     font-weight: 800;
-    padding: 2px 7px;
+    padding: 1.5px 6px;
     border-radius: 50px;
     margin-top: 2px;
     white-space: nowrap;
@@ -2318,7 +2491,7 @@ body.app-demo-body {
     flex-direction: column;
     align-items: center;
     z-index: 10;
-    transition: top 1.2s cubic-bezier(0.25, 1, 0.5, 1), left 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+    transition: top 1.1s cubic-bezier(0.25, 1, 0.5, 1), left 1.1s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .marker-beacon-outer {
@@ -2326,9 +2499,9 @@ body.app-demo-body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 56px;
-    height: 56px;
-    background: rgba(2, 132, 199, 0.35);
+    width: 52px;
+    height: 52px;
+    background: rgba(2, 132, 199, 0.28);
     border-radius: 50%;
     animation: petPing 2.2s cubic-bezier(0, 0, 0.2, 1) infinite;
     pointer-events: none;
@@ -2339,25 +2512,25 @@ body.app-demo-body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 40px;
-    height: 40px;
-    background: rgba(16, 185, 129, 0.25);
+    width: 38px;
+    height: 38px;
+    background: rgba(16, 185, 129, 0.22);
     border-radius: 50%;
     animation: petPing 2.2s 0.7s cubic-bezier(0, 0, 0.2, 1) infinite;
     pointer-events: none;
 }
 
 @keyframes petPing {
-    0% { transform: translate(-50%, -50%) scale(0.6); opacity: 0.9; }
-    100% { transform: translate(-50%, -50%) scale(2.2); opacity: 0; }
+    0% { transform: translate(-50%, -50%) scale(0.6); opacity: 0.85; }
+    100% { transform: translate(-50%, -50%) scale(2.1); opacity: 0; }
 }
 
 .pet-pin-avatar-wrap {
-    width: 38px;
-    height: 38px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
-    border: 3px solid white;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.4), 0 0 0 2px var(--app-primary);
+    border: 2.5px solid white;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.28), 0 0 0 2px var(--app-primary);
     overflow: hidden;
     position: relative;
     background: white;
@@ -2375,28 +2548,29 @@ body.app-demo-body {
     position: absolute;
     top: -2px;
     right: -2px;
-    width: 14px;
-    height: 14px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
-    background: #0284c7;
+    background: #10b981;
     border: 1.5px solid white;
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.45rem;
+    font-size: 0.42rem;
     z-index: 4;
 }
 
 .pet-pin-tooltip {
-    background: white;
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(226, 232, 240, 0.95);
     color: #0f172a;
-    font-size: 0.62rem;
+    font-size: 0.6rem;
     font-weight: 800;
     padding: 2px 8px;
     border-radius: 50px;
-    margin-top: 4px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+    margin-top: 3px;
+    box-shadow: 0 3px 10px rgba(15, 23, 42, 0.16);
     white-space: nowrap;
     display: flex;
     align-items: center;
@@ -2446,7 +2620,7 @@ body.app-demo-body {
     z-index: 2;
 }
 
-/* Píldora de Simulación Interactiva */
+/* Píldora de Simulación Interactiva dentro del mapa */
 .gps-sim-toggle-pill {
     position: absolute;
     bottom: 10px;
@@ -2455,31 +2629,31 @@ body.app-demo-body {
 }
 
 .gps-sim-btn {
-    border: none;
+    border: 1px solid rgba(255, 255, 255, 0.65);
     border-radius: 50px;
-    padding: 6px 12px;
-    font-size: 0.68rem;
+    padding: 6px 11px;
+    font-size: 0.64rem;
     font-weight: 800;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    gap: 5px;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.22);
     transition: all 0.2s;
 }
 
 .gps-sim-btn.alert-sim {
-    background: #0284c7;
+    background: linear-gradient(135deg, #0284c7, #0369a1);
     color: white;
 }
 
 .gps-sim-btn.return-sim {
-    background: #10b981;
+    background: linear-gradient(135deg, #10b981, #059669);
     color: white;
 }
 
 .gps-sim-btn:hover {
-    transform: scale(1.04);
+    transform: translateY(-1px);
 }
 
 .gps-map-controls {
@@ -2488,24 +2662,25 @@ body.app-demo-body {
     right: 10px;
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 5px;
     z-index: 15;
 }
 
 .map-ctrl-btn {
-    width: 32px;
-    height: 32px;
-    background: rgba(255, 255, 255, 0.9);
-    border: none;
-    border-radius: 8px;
+    width: 30px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    border-radius: 9px;
     color: #0f172a;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    font-size: 0.85rem;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    transition: background 0.2s;
+    font-size: 0.78rem;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.12);
+    transition: all 0.2s;
 }
 
 .map-ctrl-btn:hover { background: white; }
@@ -2513,27 +2688,84 @@ body.app-demo-body {
 .map-ctrl-btn.active {
     background: var(--app-primary) !important;
     color: white !important;
+    border-color: var(--app-primary) !important;
 }
 
-/* Header IA status chip */
+/* Header IA & Cesta Apple Liquid Glass status chips */
 .in-app-ai-header-btn {
-    background: #e0f2fe;
-    color: #0284c7;
-    border: 1px solid #bae6fd;
-    padding: 3px 8px;
-    border-radius: 50px;
+    background: linear-gradient(135deg, #0284c7 0%, #10b981 100%);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    padding: 4px 10px;
+    border-radius: 999px;
     font-size: 0.68rem;
     font-weight: 800;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
     gap: 4px;
-    transition: all 0.2s;
+    box-shadow: 0 3px 10px rgba(2, 132, 199, 0.24);
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
 
 .in-app-ai-header-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 14px rgba(2, 132, 199, 0.35);
+}
+
+.in-app-cart-header-btn {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.95) 0%, rgba(224, 242, 254, 0.9) 100%);
+    color: #0f172a;
+    border: 1px solid rgba(186, 230, 253, 0.95);
+    padding: 4px 9px;
+    border-radius: 999px;
+    font-size: 0.68rem;
+    font-weight: 800;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    box-shadow: 0 3px 10px rgba(15, 23, 42, 0.07);
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.in-app-cart-header-btn i {
+    color: #0284c7;
+    font-size: 0.72rem;
+}
+
+.in-app-cart-header-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 14px rgba(2, 132, 199, 0.18);
+}
+
+.app-cart-pill-badge {
     background: #0284c7;
     color: white;
+    font-size: 0.6rem;
+    font-weight: 900;
+    min-width: 16px;
+    height: 16px;
+    padding: 0 4px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.in-app-notif-header-btn {
+    position: relative;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    color: #475569;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    cursor: pointer;
 }
 
 /* Telemetría Collar */

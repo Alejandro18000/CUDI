@@ -1010,9 +1010,15 @@ function updateQty(index, delta) {
 
 function saveCart() {
     localStorage.setItem('cudi_cart', JSON.stringify(globalCart));
+    window.dispatchEvent(new CustomEvent('cudi:cartUpdated', { detail: globalCart }));
 }
 
 function renderCartUI() {
+    try {
+        globalCart = JSON.parse(localStorage.getItem('cudi_cart')) || [];
+    } catch (e) {
+        globalCart = [];
+    }
     const badge = document.getElementById('global-cart-badge');
     const container = document.getElementById('cart-items-container');
     const totalDisplay = document.getElementById('cart-total-price');
@@ -1021,7 +1027,7 @@ function renderCartUI() {
     const checkoutList = document.getElementById('checkout-items-list');
     
     // Calcula cuántos ítems totales hay
-    let totalItems = globalCart.reduce((acc, item) => acc + item.qty, 0);
+    let totalItems = globalCart.reduce((acc, item) => acc + (Number(item.qty) || 1), 0);
     if(badge) {
         badge.innerText = totalItems;
         badge.classList.remove('pulse');
@@ -1088,6 +1094,8 @@ function renderCartUI() {
     });
     container.innerHTML = htmlBlock;
 }
+window.cudi_toggle_cart = toggleCart;
+window.cudi_update_cart_ui = renderCartUI;
 
 // Simulador Transaccional (Para contratar-plan-premium-cudi.html con Interfaz de Rastreo)
 function simulatePayment() {
@@ -1682,168 +1690,111 @@ function cudi_init_auth_modal(mode = 'login') {
     const isRegMode = mode === 'register';
 
     const loginEmail = loginAccount.tutorEmail || `${String(loginAccount.name).toLowerCase().replace(/[^a-z0-9]/g, '')}@cudi.pet`;
-    const loginCollar = loginAccount.collarId || (loginAccount.type === 'gato' ? 'CUDI-CAT-7781' : 'CUDI-GPS-9482');
     const loginPhoto = cudi_resolve_pet_photo(loginAccount);
 
-    // Chips rápidos de perfiles pre-cargados (alternando perros y gatos)
-    const quickAccountsHtml = CUDI_RANDOM_PETS.slice(0, 10).map((pet, idx) => {
+    // 4 perfiles rápidos destacados (2 perros y 2 gatos) para mantener una interfaz limpia
+    const quickAccountsHtml = CUDI_RANDOM_PETS.slice(0, 4).map((pet, idx) => {
         const pPhoto = cudi_resolve_pet_photo(pet);
         const isSelected = pet.name.toLowerCase() === String(loginAccount.name).toLowerCase();
-        const spIcon = pet.type === 'gato' ? '🐱' : '🐶';
         return `
-            <button type="button" class="cudi-login-account-chip" data-pet-idx="${idx}" onclick="cudi_selectLoginAccount(${idx})" style="display:inline-flex; align-items:center; gap:6px; padding:5px 10px 5px 5px; border-radius:999px; border:1.5px solid ${isSelected ? '#0284c7' : 'rgba(203,213,225,0.85)'}; background:${isSelected ? 'rgba(224,242,254,0.95)' : 'rgba(255,255,255,0.82)'}; color:${isSelected ? '#0369a1' : '#334155'}; font-size:0.74rem; font-weight:700; cursor:pointer; transition:all 0.18s; box-shadow:0 2px 6px rgba(15,23,42,0.04);">
-                <img src="${pPhoto}" alt="${pet.name}" onerror="cudi_img_fallback(this, '${pet.type}', '${pet.name}')" style="width:22px !important; height:22px !important; min-width:22px !important; min-height:22px !important; aspect-ratio:1/1 !important; border-radius:50% !important; object-fit:cover !important; border:1px solid #38bdf8;">
-                <span>${spIcon} ${pet.name}</span>
+            <button type="button" class="cudi-login-account-chip" data-pet-idx="${idx}" onclick="cudi_selectLoginAccount(${idx})" style="display:inline-flex; align-items:center; gap:6px; padding:4px 10px 4px 4px; border-radius:999px; border:1.5px solid ${isSelected ? '#0284c7' : 'rgba(203,213,225,0.85)'}; background:${isSelected ? 'rgba(224,242,254,0.95)' : 'rgba(255,255,255,0.88)'}; color:${isSelected ? '#0369a1' : '#334155'}; font-size:0.74rem; font-weight:700; cursor:pointer; transition:background 0.18s, border-color 0.18s;">
+                <img src="${pPhoto}" alt="${pet.name}" onerror="cudi_img_fallback(this, '${pet.type}', '${pet.name}')" style="width:22px !important; height:22px !important; min-width:22px !important; min-height:22px !important; aspect-ratio:1/1 !important; border-radius:50% !important; object-fit:cover !important;">
+                <span>${pet.name}</span>
             </button>
         `;
     }).join('');
 
     modal.innerHTML = `
-        <div class="cudi-modal-content cudi-apple-glass-modal">
-            <div class="modal-header-premium" style="padding:16px 22px 12px; background:linear-gradient(135deg, rgba(255,255,255,0.92) 0%, rgba(224,242,254,0.82) 55%, rgba(186,230,253,0.72) 100%); backdrop-filter:blur(28px) saturate(200%); -webkit-backdrop-filter:blur(28px) saturate(200%); border-bottom:1px solid rgba(255,255,255,0.92); color:#0f172a;">
-                <button type="button" onclick="closeAuthModal()" style="position:absolute; top:14px; right:16px; background:rgba(255,255,255,0.85); width:32px; height:32px; border-radius:50%; border:1px solid rgba(255,255,255,0.95); color:#334155; cursor:pointer; font-size:0.95rem; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 8px rgba(15,23,42,0.08);" title="Cerrar"><i class="fa-solid fa-xmark"></i></button>
-                <div style="display:flex; align-items:center; justify-content:center; gap:10px; margin-bottom:3px;">
-                    <div style="width:34px; height:34px; border-radius:11px; background:linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%); color:#ffffff; display:flex; align-items:center; justify-content:center; font-size:1.05rem; box-shadow:0 4px 12px rgba(2,132,199,0.28);"><i class="fa-solid fa-shield-dog"></i></div>
-                    <h2 id="auth-modal-main-title" style="color:#0f172a !important; font-size:1.22rem; font-weight:800; margin:0; letter-spacing:-0.3px;">${isRegMode ? 'Registrar Nueva Mascota' : 'Iniciar Sesión en CUDI'}</h2>
+        <div class="cudi-modal-content cudi-apple-glass-modal" style="max-width:450px;">
+            <div class="modal-header-premium" style="padding:18px 22px 14px; background:linear-gradient(135deg, rgba(255,255,255,0.94) 0%, rgba(240,249,255,0.86) 100%); backdrop-filter:blur(28px) saturate(200%); -webkit-backdrop-filter:blur(28px) saturate(200%); border-bottom:1px solid rgba(226,232,240,0.8); color:#0f172a;">
+                <button type="button" onclick="closeAuthModal()" style="position:absolute; top:14px; right:16px; background:rgba(255,255,255,0.9); width:30px; height:30px; border-radius:50%; border:1px solid rgba(203,213,225,0.8); color:#475569; cursor:pointer; font-size:0.9rem; display:flex; align-items:center; justify-content:center;" title="Cerrar"><i class="fa-solid fa-xmark"></i></button>
+                <div style="display:flex; align-items:center; justify-content:center; gap:9px; margin-bottom:10px;">
+                    <div style="width:30px; height:30px; border-radius:9px; background:linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%); color:#ffffff; display:flex; align-items:center; justify-content:center; font-size:0.95rem;"><i class="fa-solid fa-shield-dog"></i></div>
+                    <h2 id="auth-modal-main-title" style="color:#0f172a !important; font-size:1.15rem; font-weight:800; margin:0; letter-spacing:-0.3px;">${isRegMode ? 'Registrar Mascota' : 'Iniciar Sesión'}</h2>
                 </div>
-                <p id="auth-modal-main-sub" style="color:#475569 !important; font-size:0.76rem; font-weight:500; margin:0 0 10px;">${isRegMode ? 'Configura el Gemelo Digital de tu perro o gato en segundos' : 'Cuenta CUDI pre-cargada lista para conectar con 1 clic'}</p>
-                <div style="display:inline-flex; background:rgba(226,232,240,0.72); backdrop-filter:blur(14px); padding:3.5px; border-radius:999px; gap:4px; border:1px solid rgba(255,255,255,0.92); box-shadow:inset 0 1px 2px rgba(15,23,42,0.06);">
-                    <button type="button" id="auth-tab-btn-login" onclick="switchAuthModalTab('login')" style="border:none; padding:6px 16px; border-radius:999px; font-size:0.76rem; font-weight:800; cursor:pointer; transition:all 0.22s; ${!isRegMode ? 'background:rgba(255,255,255,0.98); color:#0284c7; box-shadow:0 3px 10px rgba(2,132,199,0.15);' : 'background:transparent; color:#475569;'}">
-                        <i class="fa-solid fa-right-to-bracket"></i> Iniciar Sesión
+                <div style="display:inline-flex; background:rgba(226,232,240,0.75); padding:3.5px; border-radius:999px; gap:4px; border:1px solid rgba(255,255,255,0.95);">
+                    <button type="button" id="auth-tab-btn-login" onclick="switchAuthModalTab('login')" style="border:none; padding:6px 18px; border-radius:999px; font-size:0.76rem; font-weight:800; cursor:pointer; transition:all 0.2s; ${!isRegMode ? 'background:#ffffff; color:#0284c7; box-shadow:0 2px 8px rgba(2,132,199,0.14);' : 'background:transparent; color:#475569;'}">
+                        Iniciar Sesión
                     </button>
-                    <button type="button" id="auth-tab-btn-register" onclick="switchAuthModalTab('register')" style="border:none; padding:6px 16px; border-radius:999px; font-size:0.76rem; font-weight:800; cursor:pointer; transition:all 0.22s; ${isRegMode ? 'background:rgba(255,255,255,0.98); color:#0284c7; box-shadow:0 3px 10px rgba(2,132,199,0.15);' : 'background:transparent; color:#475569;'}">
-                        <i class="fa-solid fa-user-plus"></i> Registrar Mascota
+                    <button type="button" id="auth-tab-btn-register" onclick="switchAuthModalTab('register')" style="border:none; padding:6px 18px; border-radius:999px; font-size:0.76rem; font-weight:800; cursor:pointer; transition:all 0.2s; ${isRegMode ? 'background:#ffffff; color:#0284c7; box-shadow:0 2px 8px rgba(2,132,199,0.14);' : 'background:transparent; color:#475569;'}">
+                        Registrar Mascota
                     </button>
                 </div>
             </div>
 
-            <div class="modal-body-premium" style="padding:14px 22px 16px; background:transparent;">
+            <div class="modal-body-premium" style="padding:18px 22px 20px; background:transparent;">
                 <!-- =========================================================
-                     VISTA 1: INICIAR SESIÓN (CUENTA PRE-CARGADA AUTOMÁTICA)
+                     VISTA 1: INICIAR SESIÓN (LIMPIA ESTILO APPLE PASSKEY)
                      ========================================================= -->
                 <div id="auth-view-login" style="display:${isRegMode ? 'none' : 'block'};">
-                    <div style="background:linear-gradient(135deg, rgba(255,255,255,0.94) 0%, rgba(240,249,255,0.88) 100%); border:1.5px solid rgba(125,211,252,0.85); border-radius:20px; padding:15px; box-shadow:0 12px 28px -8px rgba(2,132,199,0.14), inset 0 1px 0 rgba(255,255,255,0.98); margin-bottom:12px;">
-                        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:10px;">
-                            <span style="display:inline-flex; align-items:center; gap:6px; background:rgba(220,252,231,0.92); color:#15803d; border:1px solid rgba(134,239,172,0.85); font-size:0.68rem; font-weight:800; padding:3px 10px; border-radius:999px; text-transform:uppercase; letter-spacing:0.4px;">
-                                <span style="width:7px; height:7px; border-radius:50%; background:#22c55e; display:inline-block;"></span> Sesión CUDI Detectada
-                            </span>
-                            <button type="button" onclick="cudi_cycleLoginAccount()" style="background:rgba(224,242,254,0.85); color:#0284c7; border:1px solid rgba(125,211,252,0.8); border-radius:999px; padding:4px 11px; font-size:0.72rem; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:5px; transition:all 0.18s;">
-                                <i class="fa-solid fa-shuffle"></i> Cambiar Cuenta
-                            </button>
+                    <div style="background:rgba(255,255,255,0.92); border:1px solid rgba(203,213,225,0.85); border-radius:20px; padding:20px 18px 16px; box-shadow:0 10px 25px -8px rgba(15,23,42,0.08); text-align:center; margin-bottom:14px;">
+                        <div style="position:relative; width:72px; height:72px; margin:0 auto 10px;">
+                            <img id="login-card-photo" src="${loginPhoto}" alt="${loginAccount.name}" onerror="cudi_img_fallback(this, '${loginAccount.type || ''}', '${loginAccount.name}')" style="width:72px !important; height:72px !important; min-width:72px !important; min-height:72px !important; aspect-ratio:1/1 !important; border-radius:50% !important; object-fit:cover !important; border:2.5px solid #0284c7; box-shadow:0 6px 16px rgba(2,132,199,0.2);">
+                            <span id="login-card-species-badge" style="position:absolute; bottom:-2px; right:-2px; width:24px; height:24px; border-radius:50%; background:#ffffff; border:1.5px solid #bae6fd; display:flex; align-items:center; justify-content:center; font-size:0.78rem; box-shadow:0 2px 6px rgba(0,0,0,0.08);">${loginAccount.type === 'gato' ? '🐱' : '🐶'}</span>
                         </div>
 
-                        <!-- Tarjeta principal de la mascota pre-cargada -->
-                        <div style="display:flex; align-items:center; gap:14px; padding:11px; background:rgba(255,255,255,0.92); border-radius:16px; border:1px solid rgba(226,232,240,0.9); margin-bottom:11px;">
-                            <div style="position:relative; flex-shrink:0;">
-                                <img id="login-card-photo" src="${loginPhoto}" alt="${loginAccount.name}" onerror="cudi_img_fallback(this, '${loginAccount.type || ''}', '${loginAccount.name}')" style="width:62px !important; height:62px !important; min-width:62px !important; min-height:62px !important; aspect-ratio:1/1 !important; border-radius:50% !important; object-fit:cover !important; border:2.5px solid #0284c7; box-shadow:0 4px 12px rgba(2,132,199,0.22);">
-                                <span id="login-card-species-badge" style="position:absolute; bottom:-2px; right:-2px; width:23px; height:23px; border-radius:50%; background:#ffffff; border:1.5px solid #bae6fd; display:flex; align-items:center; justify-content:center; font-size:0.76rem; box-shadow:0 2px 6px rgba(0,0,0,0.1);">${loginAccount.type === 'gato' ? '🐱' : '🐶'}</span>
-                            </div>
-                            <div style="flex:1; min-width:0;">
-                                <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
-                                    <h3 id="login-card-name" style="margin:0; font-size:1.12rem; font-weight:800; color:#0f172a;">${loginAccount.name}</h3>
-                                    <span id="login-card-species-pill" style="font-size:0.68rem; font-weight:800; padding:2px 8px; border-radius:999px; background:${loginAccount.type === 'gato' ? '#fdf2f8' : '#eff6ff'}; color:${loginAccount.type === 'gato' ? '#be185d' : '#0284c7'}; border:1px solid ${loginAccount.type === 'gato' ? '#fbcfe8' : '#bfdbfe'};">${loginAccount.type === 'gato' ? 'Gato' : 'Perro'}</span>
-                                </div>
-                                <p id="login-card-meta" style="margin:2px 0 4px; font-size:0.79rem; color:#475569; font-weight:600;">${loginAccount.breed} &bull; ${loginAccount.weight} kg &bull; ${loginAccount.age} ${Number(loginAccount.age) === 1 ? 'año' : 'años'}</p>
-                                <div id="login-card-telemetry" style="display:flex; align-items:center; gap:10px; font-size:0.7rem; color:#0369a1; font-weight:700;">
-                                    <span><i class="fa-solid fa-satellite-dish"></i> ${loginCollar}</span>
-                                    <span><i class="fa-solid fa-heart-pulse" style="color:#ef4444;"></i> ${loginAccount.bpm || (loginAccount.type === 'gato' ? 142 : 78)} bpm</span>
-                                    <span><i class="fa-solid fa-battery-full" style="color:#16a34a;"></i> ${loginAccount.battery || 95}%</span>
-                                </div>
-                            </div>
+                        <div style="display:flex; align-items:center; justify-content:center; gap:7px; margin-bottom:3px;">
+                            <h3 id="login-card-name" style="margin:0; font-size:1.2rem; font-weight:800; color:#0f172a;">${loginAccount.name}</h3>
+                            <span id="login-card-species-pill" style="font-size:0.68rem; font-weight:800; padding:2px 8px; border-radius:999px; background:${loginAccount.type === 'gato' ? '#fdf2f8' : '#eff6ff'}; color:${loginAccount.type === 'gato' ? '#be185d' : '#0284c7'};">${loginAccount.type === 'gato' ? 'Gato' : 'Perro'}</span>
                         </div>
 
-                        <!-- Credenciales auto-diligenciadas de la cuenta -->
-                        <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:12px;">
-                            <div style="background:rgba(248,250,252,0.95); border:1px solid rgba(203,213,225,0.8); border-radius:12px; padding:7px 11px;">
-                                <span style="display:block; font-size:0.65rem; font-weight:800; color:#64748b; text-transform:uppercase; letter-spacing:0.4px;">ID Tutor Vinculado</span>
-                                <div style="display:flex; align-items:center; justify-content:space-between; margin-top:2px;">
-                                    <strong id="login-card-email" style="font-size:0.76rem; color:#0f172a; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">${loginEmail}</strong>
-                                    <i class="fa-solid fa-circle-check" style="color:#0284c7; font-size:0.8rem;"></i>
-                                </div>
-                            </div>
-                            <div style="background:rgba(248,250,252,0.95); border:1px solid rgba(203,213,225,0.8); border-radius:12px; padding:7px 11px;">
-                                <span style="display:block; font-size:0.65rem; font-weight:800; color:#64748b; text-transform:uppercase; letter-spacing:0.4px;">Clave Biométrica CUDI</span>
-                                <div style="display:flex; align-items:center; justify-content:space-between; margin-top:2px;">
-                                    <strong style="font-size:0.76rem; color:#0f172a; letter-spacing:1.5px;">••••••••••••</strong>
-                                    <span style="font-size:0.64rem; font-weight:800; color:#16a34a; background:#dcfce7; padding:1px 6px; border-radius:6px;">Activa</span>
-                                </div>
-                            </div>
+                        <p id="login-card-meta" style="margin:0 0 12px; font-size:0.82rem; color:#64748b; font-weight:600;">${loginAccount.breed} &bull; ${loginAccount.age} ${Number(loginAccount.age) === 1 ? 'año' : 'años'}</p>
+
+                        <div style="display:flex; align-items:center; justify-content:space-between; background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:8px 12px; margin-bottom:14px; font-size:0.76rem;">
+                            <span style="color:#64748b; font-weight:600;"><i class="fa-regular fa-envelope" style="color:#0284c7; margin-right:5px;"></i> <strong id="login-card-email" style="color:#1e293b;">${loginEmail}</strong></span>
+                            <span style="color:#16a34a; font-weight:800; font-size:0.7rem;"><i class="fa-solid fa-circle-check"></i> Lista</span>
                         </div>
 
-                        <!-- Botón 1-Clic Iniciar Sesión -->
-                        <button type="button" id="btn-login-preloaded-submit" onclick="cudi_loginWithSelectedAccount()" class="btn-primary" style="width:100%; padding:12px 16px; border-radius:14px; font-weight:800; font-size:0.88rem; display:flex; align-items:center; justify-content:center; gap:10px; border:1px solid rgba(255,255,255,0.45); background:linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%); color:#ffffff; box-shadow:0 8px 22px rgba(2,132,199,0.28), inset 0 1px 1px rgba(255,255,255,0.4); cursor:pointer; transition:all 0.2s;">
+                        <button type="button" id="btn-login-preloaded-submit" onclick="cudi_loginWithSelectedAccount()" class="btn-primary" style="width:100%; padding:12px 16px; border-radius:14px; font-weight:800; font-size:0.9rem; display:flex; align-items:center; justify-content:center; gap:8px; border:none; background:linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%); color:#ffffff; box-shadow:0 8px 20px rgba(2,132,199,0.25); cursor:pointer;">
                             <i class="fa-solid fa-right-to-bracket"></i>
-                            <span id="btn-login-preloaded-text">Iniciar Sesión con ${loginAccount.name}</span>
+                            <span id="btn-login-preloaded-text">Continuar con ${loginAccount.name}</span>
                         </button>
                     </div>
 
-                    <!-- Selector rápido de perfiles (Perros y Gatos) -->
-                    <div style="background:rgba(255,255,255,0.78); border:1px solid rgba(226,232,240,0.9); border-radius:16px; padding:10px 12px;">
-                        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:7px;">
-                            <span style="font-size:0.7rem; font-weight:800; color:#475569; text-transform:uppercase; letter-spacing:0.4px;"><i class="fa-solid fa-paw" style="color:#0284c7;"></i> Cambiar perfil pre-cargado (Perros y Gatos)</span>
-                            <span style="font-size:0.68rem; color:#64748b; font-weight:600;">18 cuentas verificadas</span>
-                        </div>
-                        <div id="login-quick-accounts-strip" style="display:flex; flex-wrap:wrap; gap:6px; max-height:74px; overflow-y:auto; padding-right:2px;">
+                    <!-- Selector minimalista de mascota -->
+                    <div style="display:flex; align-items:center; justify-content:space-between; gap:6px; flex-wrap:wrap; padding:2px 2px 0;">
+                        <div style="display:flex; align-items:center; gap:5px; flex-wrap:wrap;">
                             ${quickAccountsHtml}
                         </div>
-                    </div>
-
-                    <div style="text-align:center; margin-top:10px; font-size:0.76rem; color:#475569;">
-                        ¿Quieres dar de alta una mascota nueva desde cero?
-                        <button type="button" onclick="switchAuthModalTab('register')" style="background:none; border:none; color:#0284c7; font-weight:800; cursor:pointer; text-decoration:underline; padding:0 4px; font-size:0.76rem;">Ir a Registrar Mascota &rarr;</button>
+                        <button type="button" onclick="cudi_cycleLoginAccount()" style="background:rgba(255,255,255,0.9); color:#0284c7; border:1px solid #bae6fd; border-radius:999px; padding:5px 11px; font-size:0.73rem; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:5px;">
+                            <i class="fa-solid fa-arrows-rotate"></i> Otra
+                        </button>
                     </div>
                 </div>
 
                 <!-- =========================================================
-                     VISTA 2: REGISTRAR MASCOTA NUEVA (CON AUTOLLENADO IA SIN ERRORES)
+                     VISTA 2: REGISTRAR MASCOTA NUEVA (BARRA AUTOLLENADO LIMPIA)
                      ========================================================= -->
                 <div id="auth-view-register" style="display:${isRegMode ? 'block' : 'none'};">
-                    <!-- BANNER DE LLENADO AUTOMÁTICO ALEATORIO (PERROS Y GATOS) -->
-                    <div class="cudi-autofill-banner" style="display:flex; flex-direction:column; align-items:stretch; gap:8px; padding:10px 13px; margin-bottom:10px; background:linear-gradient(135deg, rgba(255,255,255,0.92) 0%, rgba(224,242,254,0.82) 100%); backdrop-filter:blur(18px); border:1px solid rgba(186,230,253,0.95); box-shadow:0 4px 14px rgba(2,132,199,0.07), inset 0 1px 1px rgba(255,255,255,0.98); border-radius:16px;">
-                        <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
-                            <div style="flex:1; min-width:0;">
-                                <div style="display:flex; align-items:center; gap:7px; flex-wrap:wrap;">
-                                    <span class="autofill-badge" style="margin:0;"><i class="fa-solid fa-wand-magic-sparkles"></i> Auto-Diligenciado IA</span>
-                                    <span class="autofill-suggestion" id="autofill-pet-suggestion" style="font-size:0.74rem;">🐾 Sugerencia: <strong>${candidate.name}</strong> (${candidate.breed} • ${candidate.type === 'gato' ? 'Gato' : 'Perro'})</span>
-                                </div>
+                    <div class="cudi-autofill-banner" style="display:flex; align-items:center; justify-content:space-between; gap:8px; padding:9px 12px; margin-bottom:12px; background:rgba(240,249,255,0.9); border:1px solid rgba(186,230,253,0.95); border-radius:14px;">
+                        <div style="display:flex; align-items:center; gap:8px; min-width:0;">
+                            <img id="auth-preview-photo" src="${cudi_resolve_pet_photo(candidate)}" alt="${candidate.name}" onerror="cudi_img_fallback(this, '${candidate.type || ''}', '${candidate.name}')" style="width:34px !important; height:34px !important; min-width:34px !important; min-height:34px !important; aspect-ratio:1/1 !important; object-fit:cover !important; border-radius:50% !important; border:1.5px solid #0284c7;">
+                            <div style="min-width:0;">
+                                <span style="font-size:0.66rem; font-weight:800; color:#0284c7; text-transform:uppercase; display:block; letter-spacing:0.3px;">Autollenado Rápido</span>
+                                <span id="autofill-pet-suggestion" style="font-size:0.75rem; color:#334155; font-weight:700; display:block; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${candidate.name} &bull; ${candidate.breed}</span>
                             </div>
-                            <button type="button" class="btn-autofill-trigger" onclick="cudi_fillRandomPet()" title="Autollenar datos en 1 clic" style="padding:7px 13px; white-space:nowrap;">
-                                <i class="fa-solid fa-bolt"></i> Autollenar
+                        </div>
+                        <div style="display:flex; align-items:center; gap:5px; flex-shrink:0;">
+                            <button type="button" class="btn-autofill-reroll" onclick="cudi_rerollRandomPet('perro')" title="Cargar caso de Perro" style="padding:6px 9px; font-size:0.72rem; width:auto; height:auto; border-radius:9px; font-weight:800; color:#0369a1;">
+                                🐶 Perro
+                            </button>
+                            <button type="button" class="btn-autofill-reroll" onclick="cudi_rerollRandomPet('gato')" title="Cargar caso de Gato" style="padding:6px 9px; font-size:0.72rem; width:auto; height:auto; border-radius:9px; font-weight:800; color:#be185d;">
+                                🐱 Gato
+                            </button>
+                            <button type="button" class="btn-autofill-trigger" onclick="cudi_fillRandomPet()" title="Autollenar datos" style="padding:6px 10px; font-size:0.72rem; border-radius:9px;">
+                                <i class="fa-solid fa-bolt"></i> Llenar
                             </button>
                         </div>
-                        <div style="display:flex; align-items:center; gap:6px;">
-                            <button type="button" class="btn-autofill-reroll" onclick="cudi_rerollRandomPet('perro')" title="Autollenar con otro Perro" style="flex:1; padding:5px 10px; font-size:0.73rem; width:auto; height:auto; border-radius:9px; font-weight:800; color:#0369a1; border-color:rgba(125,211,252,0.85);">
-                                🐶 Caso Perro
-                            </button>
-                            <button type="button" class="btn-autofill-reroll" onclick="cudi_rerollRandomPet('gato')" title="Autollenar con otro Gato" style="flex:1; padding:5px 10px; font-size:0.73rem; width:auto; height:auto; border-radius:9px; font-weight:800; color:#be185d; border-color:rgba(244,114,182,0.65);">
-                                🐱 Caso Gato
-                            </button>
-                            <button type="button" class="btn-autofill-reroll" onclick="cudi_rerollRandomPet()" title="Elegir otra mascota aleatoria" style="padding:5px 12px; font-size:0.73rem; width:auto; height:auto; border-radius:9px; font-weight:800;">
-                                <i class="fa-solid fa-shuffle"></i> Otro
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- PREVIEW CARD SI ESTÁ SELECCIONADA -->
-                    <div id="auth-pet-preview-wrap" style="display:none; margin-bottom:9px; padding:7px 11px; background:rgba(255,255,255,0.9); border:1px solid rgba(255,255,255,0.95); box-shadow:0 4px 12px rgba(15,23,42,0.04);" class="autofill-pet-preview-card">
-                        <img id="auth-preview-photo" src="${cudi_resolve_pet_photo(candidate)}" alt="${candidate.name}" onerror="cudi_img_fallback(this, '${candidate.type || ''}', '${candidate.name}')" class="autofill-preview-avatar" style="width:40px !important; height:40px !important; min-width:40px !important; min-height:40px !important; aspect-ratio:1/1 !important; object-fit:cover !important; border-radius:50% !important;">
-                        <div style="flex:1;">
-                            <strong id="auth-preview-title" style="font-size:0.86rem; color:#0f172a; display:block;">${candidate.name}</strong>
-                            <span id="auth-preview-meta" style="font-size:0.72rem; color:#64748b;">${candidate.breed} • ${candidate.weight} kg • ${candidate.type === 'gato' ? 'Gato' : 'Perro'}</span>
-                        </div>
-                        <span style="background:rgba(220,252,231,0.9); color:#15803d; border:1px solid rgba(134,239,172,0.8); font-size:0.68rem; font-weight:800; padding:3px 8px; border-radius:12px;"><i class="fa-solid fa-check"></i> Rango Válido</span>
                     </div>
 
                     <form onsubmit="handleWebRegister(event)" novalidate>
-                        <!-- Botones visuales de Especie -->
                         <div class="cudi-input-group" style="margin-bottom:10px;">
-                            <label style="margin-bottom:5px; font-size:0.8rem; color:#334155;">Especie de tu compañero</label>
                             <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
-                                <button type="button" id="modal-species-perro" onclick="cudi_selectModalSpecies('perro')" style="display:flex; align-items:center; justify-content:center; gap:8px; padding:9px; border-radius:12px; border:1.5px solid #38bdf8; background:rgba(224,242,254,0.85); color:#0284c7; font-weight:800; cursor:pointer; font-size:0.84rem; box-shadow:0 4px 12px rgba(2,132,199,0.1), inset 0 1px 1px rgba(255,255,255,0.95); transition:all 0.2s;">
-                                    <i class="fa-solid fa-dog" style="color:#0284c7; font-size:1rem;"></i> Perro
+                                <button type="button" id="modal-species-perro" onclick="cudi_selectModalSpecies('perro')" style="display:flex; align-items:center; justify-content:center; gap:8px; padding:8px; border-radius:11px; border:1.5px solid #38bdf8; background:rgba(224,242,254,0.85); color:#0284c7; font-weight:800; cursor:pointer; font-size:0.82rem;">
+                                    <i class="fa-solid fa-dog" style="color:#0284c7;"></i> Perro
                                 </button>
-                                <button type="button" id="modal-species-gato" onclick="cudi_selectModalSpecies('gato')" style="display:flex; align-items:center; justify-content:center; gap:8px; padding:9px; border-radius:12px; border:1.5px solid rgba(255,255,255,0.95); background:rgba(255,255,255,0.75); color:#475569; font-weight:700; cursor:pointer; font-size:0.84rem; box-shadow:0 2px 6px rgba(15,23,42,0.03), inset 0 1px 1px rgba(255,255,255,0.95); transition:all 0.2s;">
-                                    <i class="fa-solid fa-cat" style="color:#ec4899; font-size:1rem;"></i> Gato
+                                <button type="button" id="modal-species-gato" onclick="cudi_selectModalSpecies('gato')" style="display:flex; align-items:center; justify-content:center; gap:8px; padding:8px; border-radius:11px; border:1.5px solid #e2e8f0; background:#ffffff; color:#475569; font-weight:700; cursor:pointer; font-size:0.82rem;">
+                                    <i class="fa-solid fa-cat" style="color:#ec4899;"></i> Gato
                                 </button>
                             </div>
                             <select id="web-pet-type" class="cudi-input-premium" onchange="cudi_onSpeciesChange()" style="display:none;">
@@ -1853,31 +1804,31 @@ function cudi_init_auth_modal(mode = 'login') {
                         </div>
 
                         <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
-                            <div class="cudi-input-group" style="margin-bottom:10px;">
-                                <label style="margin-bottom:4px; font-size:0.8rem; color:#334155;">Nombre de tu mascota</label>
-                                <input type="text" id="web-pet-name" class="cudi-input-premium" style="padding:9px 12px;" placeholder="Ej: Luna, Kira..." required>
+                            <div class="cudi-input-group" style="margin-bottom:9px;">
+                                <label style="margin-bottom:3px; font-size:0.76rem; color:#334155;">Nombre</label>
+                                <input type="text" id="web-pet-name" class="cudi-input-premium" style="padding:8px 11px;" placeholder="Ej: Luna, Oliver..." required>
                             </div>
-                            <div class="cudi-input-group" style="margin-bottom:10px;">
-                                <label style="margin-bottom:4px; font-size:0.8rem; color:#334155;">Raza</label>
-                                <input type="text" id="web-pet-breed" class="cudi-input-premium" style="padding:9px 12px;" placeholder="Ej: Golden, Siamés..." required>
+                            <div class="cudi-input-group" style="margin-bottom:9px;">
+                                <label style="margin-bottom:3px; font-size:0.76rem; color:#334155;">Raza</label>
+                                <input type="text" id="web-pet-breed" class="cudi-input-premium" style="padding:8px 11px;" placeholder="Ej: Golden, Siamés..." required>
                             </div>
                         </div>
 
                         <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
-                            <div class="cudi-input-group" style="margin-bottom:10px;">
-                                <label style="margin-bottom:4px; font-size:0.8rem; color:#334155;">Edad (Años: 0.5 a 25)</label>
-                                <input type="number" id="web-pet-age" class="cudi-input-premium" style="padding:9px 12px;" placeholder="2" value="2" min="0.1" max="25" step="0.1" required>
+                            <div class="cudi-input-group" style="margin-bottom:9px;">
+                                <label style="margin-bottom:3px; font-size:0.76rem; color:#334155;">Edad (años)</label>
+                                <input type="number" id="web-pet-age" class="cudi-input-premium" style="padding:8px 11px;" placeholder="2" value="2" min="0.1" max="25" step="0.1" required>
                             </div>
-                            <div class="cudi-input-group" style="margin-bottom:10px;">
-                                <label style="margin-bottom:4px; font-size:0.8rem; color:#334155;">Peso (kg: 0.5 a 90)</label>
-                                <input type="number" id="web-pet-weight" class="cudi-input-premium" style="padding:9px 12px;" placeholder="10" value="10" min="0.1" max="90" step="0.1" required>
+                            <div class="cudi-input-group" style="margin-bottom:9px;">
+                                <label style="margin-bottom:3px; font-size:0.76rem; color:#334155;">Peso (kg)</label>
+                                <input type="number" id="web-pet-weight" class="cudi-input-premium" style="padding:8px 11px;" placeholder="10" value="10" min="0.1" max="90" step="0.1" required>
                             </div>
                         </div>
 
                         <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
                             <div class="cudi-input-group" style="margin-bottom:12px;">
-                                <label style="margin-bottom:4px; font-size:0.8rem; color:#334155;">Nivel de Energía</label>
-                                <select id="web-pet-energy" class="cudi-input-premium" style="padding:9px 12px;">
+                                <label style="margin-bottom:3px; font-size:0.76rem; color:#334155;">Nivel de Energía</label>
+                                <select id="web-pet-energy" class="cudi-input-premium" style="padding:8px 11px;">
                                     <option value="Tranquilo">Tranquilo</option>
                                     <option value="Moderado" selected>Moderado</option>
                                     <option value="Juguetón y Curioso">Juguetón y Curioso</option>
@@ -1886,8 +1837,8 @@ function cudi_init_auth_modal(mode = 'login') {
                                 </select>
                             </div>
                             <div class="cudi-input-group" style="margin-bottom:12px;">
-                                <label style="margin-bottom:4px; font-size:0.8rem; color:#334155;">Alimentación</label>
-                                <select id="web-pet-food" class="cudi-input-premium" style="padding:9px 12px;">
+                                <label style="margin-bottom:3px; font-size:0.76rem; color:#334155;">Alimentación</label>
+                                <select id="web-pet-food" class="cudi-input-premium" style="padding:8px 11px;">
                                     <option value="Pienso Seco Premium" selected>Pienso Seco Premium</option>
                                     <option value="Dieta Natural BARF">Dieta Natural BARF</option>
                                     <option value="Comida Húmeda & Natural">Comida Húmeda & Natural</option>
@@ -1897,13 +1848,11 @@ function cudi_init_auth_modal(mode = 'login') {
                             </div>
                         </div>
 
-                        <button type="submit" id="auth-submit-main-btn" class="btn-primary" style="width:100%; padding:13px; border-radius:14px; font-weight:800; text-transform:uppercase; letter-spacing:0.5px; margin-top:2px; display:flex; align-items:center; justify-content:center; gap:10px; border:1px solid rgba(255,255,255,0.45); background:linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%); box-shadow:0 8px 22px rgba(2,132,199,0.28), inset 0 1px 1px rgba(255,255,255,0.4); cursor:pointer; font-size:0.86rem;">
-                            <i class="fa-solid fa-heart-pulse"></i> <span>Registrar Mascota y Conectar</span>
+                        <button type="submit" id="auth-submit-main-btn" class="btn-primary" style="width:100%; padding:12px; border-radius:14px; font-weight:800; display:flex; align-items:center; justify-content:center; gap:8px; border:none; background:linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%); box-shadow:0 8px 20px rgba(2,132,199,0.25); cursor:pointer; font-size:0.88rem;">
+                            <i class="fa-solid fa-heart-pulse"></i> <span>Registrar y Conectar</span>
                         </button>
                     </form>
                 </div>
-
-                <p style="text-align:center; font-size:0.71rem; color:#64748b; margin:10px 0 0;">Sincronización instantánea con Mi Mascota, Comunidad CUDI, Asistente IA y Demo App.</p>
             </div>
         </div>
     `;
@@ -1911,7 +1860,6 @@ function cudi_init_auth_modal(mode = 'login') {
 
 function switchAuthModalTab(mode) {
     const title = document.getElementById('auth-modal-main-title');
-    const sub = document.getElementById('auth-modal-main-sub');
     const loginBtn = document.getElementById('auth-tab-btn-login');
     const regBtn = document.getElementById('auth-tab-btn-register');
     const loginView = document.getElementById('auth-view-login');
@@ -1919,12 +1867,7 @@ function switchAuthModalTab(mode) {
 
     const isReg = mode === 'register';
     if (title) {
-        title.textContent = isReg ? 'Registrar Nueva Mascota' : 'Iniciar Sesión en CUDI';
-    }
-    if (sub) {
-        sub.textContent = isReg
-            ? 'Configura el Gemelo Digital de tu perro o gato en segundos'
-            : 'Cuenta CUDI pre-cargada lista para conectar con 1 clic';
+        title.textContent = isReg ? 'Registrar Mascota' : 'Iniciar Sesión';
     }
     if (loginView && regView) {
         loginView.style.display = isReg ? 'none' : 'block';
@@ -1932,16 +1875,16 @@ function switchAuthModalTab(mode) {
     }
     if (loginBtn && regBtn) {
         if (isReg) {
-            regBtn.style.background = 'rgba(255,255,255,0.98)';
+            regBtn.style.background = '#ffffff';
             regBtn.style.color = '#0284c7';
-            regBtn.style.boxShadow = '0 3px 10px rgba(2,132,199,0.15)';
+            regBtn.style.boxShadow = '0 2px 8px rgba(2,132,199,0.14)';
             loginBtn.style.background = 'transparent';
             loginBtn.style.color = '#475569';
             loginBtn.style.boxShadow = 'none';
         } else {
-            loginBtn.style.background = 'rgba(255,255,255,0.98)';
+            loginBtn.style.background = '#ffffff';
             loginBtn.style.color = '#0284c7';
-            loginBtn.style.boxShadow = '0 3px 10px rgba(2,132,199,0.15)';
+            loginBtn.style.boxShadow = '0 2px 8px rgba(2,132,199,0.14)';
             regBtn.style.background = 'transparent';
             regBtn.style.color = '#475569';
             regBtn.style.boxShadow = 'none';
@@ -1973,22 +1916,11 @@ function cudi_updateLoginCardUI(account) {
         pillEl.textContent = isCat ? 'Gato' : 'Perro';
         pillEl.style.background = isCat ? '#fdf2f8' : '#eff6ff';
         pillEl.style.color = isCat ? '#be185d' : '#0284c7';
-        pillEl.style.borderColor = isCat ? '#fbcfe8' : '#bfdbfe';
     }
 
     const metaEl = document.getElementById('login-card-meta');
     if (metaEl) {
-        metaEl.innerHTML = `${account.breed} &bull; ${account.weight} kg &bull; ${account.age} ${Number(account.age) === 1 ? 'año' : 'años'}`;
-    }
-
-    const collarId = account.collarId || (account.type === 'gato' ? 'CUDI-CAT-7781' : 'CUDI-GPS-9482');
-    const telemEl = document.getElementById('login-card-telemetry');
-    if (telemEl) {
-        telemEl.innerHTML = `
-            <span><i class="fa-solid fa-satellite-dish"></i> ${collarId}</span>
-            <span><i class="fa-solid fa-heart-pulse" style="color:#ef4444;"></i> ${account.bpm || (account.type === 'gato' ? 142 : 78)} bpm</span>
-            <span><i class="fa-solid fa-battery-full" style="color:#16a34a;"></i> ${account.battery || 95}%</span>
-        `;
+        metaEl.innerHTML = `${account.breed} &bull; ${account.age} ${Number(account.age) === 1 ? 'año' : 'años'}`;
     }
 
     const emailEl = document.getElementById('login-card-email');
@@ -1998,7 +1930,7 @@ function cudi_updateLoginCardUI(account) {
 
     const btnTextEl = document.getElementById('btn-login-preloaded-text');
     if (btnTextEl) {
-        btnTextEl.textContent = `Iniciar Sesión con ${account.name}`;
+        btnTextEl.textContent = `Continuar con ${account.name}`;
     }
 
     document.querySelectorAll('.cudi-login-account-chip').forEach(chip => {
@@ -2006,7 +1938,7 @@ function cudi_updateLoginCardUI(account) {
         const p = CUDI_RANDOM_PETS[idx];
         const active = p && p.name.toLowerCase() === String(account.name).toLowerCase();
         chip.style.borderColor = active ? '#0284c7' : 'rgba(203,213,225,0.85)';
-        chip.style.background = active ? 'rgba(224,242,254,0.95)' : 'rgba(255,255,255,0.82)';
+        chip.style.background = active ? 'rgba(224,242,254,0.95)' : 'rgba(255,255,255,0.88)';
         chip.style.color = active ? '#0369a1' : '#334155';
     });
 }
@@ -2085,15 +2017,15 @@ function cudi_selectModalSpecies(type) {
             btnCat.style.borderColor = '#f472b6';
             btnCat.style.background = 'rgba(253, 242, 248, 0.9)';
             btnCat.style.color = '#be185d';
-            btnDog.style.borderColor = 'rgba(255,255,255,0.95)';
-            btnDog.style.background = 'rgba(255,255,255,0.75)';
+            btnDog.style.borderColor = '#e2e8f0';
+            btnDog.style.background = '#ffffff';
             btnDog.style.color = '#475569';
         } else {
             btnDog.style.borderColor = '#38bdf8';
             btnDog.style.background = 'rgba(224, 242, 254, 0.88)';
             btnDog.style.color = '#0284c7';
-            btnCat.style.borderColor = 'rgba(255,255,255,0.95)';
-            btnCat.style.background = 'rgba(255,255,255,0.75)';
+            btnCat.style.borderColor = '#e2e8f0';
+            btnCat.style.background = '#ffffff';
             btnCat.style.color = '#475569';
         }
     }
@@ -2113,7 +2045,7 @@ function openAuthModal(mode = 'login') {
         if (!nameVal) {
             const candidate = cudi_get_random_pet_candidate();
             const sugg = document.getElementById('autofill-pet-suggestion');
-            if (sugg) sugg.innerHTML = `🐾 Sugerencia: <strong>${candidate.name}</strong> (${candidate.breed} • ${candidate.type === 'gato' ? 'Gato' : 'Perro'})`;
+            if (sugg) sugg.innerHTML = `${candidate.name} &bull; ${candidate.breed}`;
         }
     }
 }
@@ -2163,20 +2095,14 @@ function cudi_fillRandomPet() {
 
     window.currentSelectedPhoto = pet.photo;
 
-    // Actualizar tarjeta preview
-    const previewWrap = document.getElementById('auth-pet-preview-wrap');
     const previewPhoto = document.getElementById('auth-preview-photo');
-    const previewTitle = document.getElementById('auth-preview-title');
-    const previewMeta = document.getElementById('auth-preview-meta');
-
-    if (previewWrap) {
-        previewWrap.style.display = 'flex';
-        if (previewPhoto) {
-            previewPhoto.dataset.cudiFallbackDone = 'false';
-            previewPhoto.src = pet.photo;
-        }
-        if (previewTitle) previewTitle.textContent = pet.name;
-        if (previewMeta) previewMeta.textContent = `${pet.breed} • ${safeWeight} kg • ${pet.type === 'gato' ? 'Gato' : 'Perro'}`;
+    if (previewPhoto) {
+        previewPhoto.dataset.cudiFallbackDone = 'false';
+        previewPhoto.src = pet.photo;
+    }
+    const sugg = document.getElementById('autofill-pet-suggestion');
+    if (sugg) {
+        sugg.innerHTML = `${pet.name} &bull; ${pet.breed}`;
     }
 
     [nameInput, breedInput, ageInput, weightInput, energySelect, foodSelect].forEach(el => {
@@ -2187,7 +2113,7 @@ function cudi_fillRandomPet() {
     });
 
     if (typeof showCudiToast === 'function') {
-        showCudiToast(`✨ Auto-diligenciado: ${pet.name} (${pet.breed} • ${safeWeight} kg). ¡Haz clic en Registrar!`, 'info');
+        showCudiToast(`✨ ${pet.name} (${pet.breed} • ${safeWeight} kg) cargado.`, 'info');
     }
 }
 
@@ -2209,10 +2135,6 @@ function cudi_rerollRandomPet(preferredSpecies) {
 
     nextPet.photo = cudi_resolve_pet_photo(nextPet);
     window.currentRandomPet = nextPet;
-    const sugg = document.getElementById('autofill-pet-suggestion');
-    if (sugg) {
-        sugg.innerHTML = `🐾 Sugerencia: <strong>${nextPet.name}</strong> (${nextPet.breed} • ${nextPet.type === 'gato' ? 'Gato' : 'Perro'})`;
-    }
     cudi_fillRandomPet();
 }
 

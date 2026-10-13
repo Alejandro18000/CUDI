@@ -26,9 +26,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="styles.css?v=7.3">
-    <link rel="stylesheet" href="app-demo.css?v=7.3">
-    <link rel="stylesheet" href="cudi-ai.css?v=7.3">
+    <link rel="stylesheet" href="styles.css?v=7.4">
+    <link rel="stylesheet" href="app-demo.css?v=7.4">
+    <link rel="stylesheet" href="cudi-ai.css?v=7.4">
     <style>
         body.app-demo-body {
             padding: 0 !important;
@@ -56,26 +56,24 @@
 
                         <!-- STATUS BAR (siempre visible cuando dashboard activo) -->
                         <div class="app-status-bar" id="app-status-bar" style="display:none;">
-                            <div class="status-bar-left">
+                            <div class="status-bar-left" onclick="showOnboardingScreen()" style="cursor:pointer;" title="Cambiar o editar mascota">
                                 <div class="sync-dot"></div>
-                                <span style="font-weight:700;font-size:0.72rem;color:#0f172a;">CUDI Live</span>
+                                <span id="status-pet-name" style="font-weight:800;color:#0f172a;font-size:0.82rem;">Mimi</span>
+                                <i class="fa-solid fa-chevron-down" style="font-size:0.58rem;color:#64748b;"></i>
                             </div>
-                            <div style="display:flex;align-items:center;gap:6px;cursor:pointer;" onclick="showOnboardingScreen()" title="Cambiar o editar mascota">
-                                <span id="status-pet-name" style="font-weight:800;color:#0f172a;font-size:0.85rem;">Mimi</span>
-                                <i class="fa-solid fa-chevron-down" style="font-size:0.6rem;color:#64748b;"></i>
-                            </div>
-                            <div class="status-bar-right" style="display:flex;align-items:center;gap:8px;">
-                                <button class="in-app-ai-header-btn" onclick="if(typeof CudiAI!=='undefined')CudiAI.toggle();" title="Abrir Asistente IA CUDI">
-                                    <i class="fa-solid fa-brain"></i> <span>IA</span>
+                            <div class="status-bar-right" style="display:flex;align-items:center;gap:6px;">
+                                <button class="in-app-ai-header-btn" onclick="toggleInAppChat()" title="Abrir Asistente IA en la App">
+                                    <i class="fa-solid fa-wand-magic-sparkles"></i> <span>IA</span>
                                 </button>
-                                <div style="position:relative;cursor:pointer;" onclick="toggleNotifications()">
-                                    <i class="fa-solid fa-bell" style="font-size:0.95rem;color:#475569;"></i>
-                                    <span id="notif-dot" style="display:none;position:absolute;top:-2px;right:-2px;width:7px;height:7px;background:#ef4444;border-radius:50%;border:1px solid white;"></span>
-                                </div>
-                                <div style="position:relative;cursor:pointer;" onclick="openFullCheckout()">
-                                    <i class="fa-solid fa-bag-shopping" style="font-size:0.95rem;color:#475569;"></i>
-                                    <span id="app-cart-badge" style="position:absolute;top:-6px;right:-8px;background:#0077b6;color:white;font-size:0.58rem;font-weight:700;border-radius:50%;width:15px;height:15px;display:flex;align-items:center;justify-content:center;">0</span>
-                                </div>
+                                <button class="in-app-cart-header-btn" onclick="openFullCheckout()" title="Ver Cesta de Compras">
+                                    <i class="fa-solid fa-bag-shopping"></i>
+                                    <span>Cesta</span>
+                                    <span id="app-cart-badge" class="app-cart-pill-badge">0</span>
+                                </button>
+                                <button class="in-app-notif-header-btn" onclick="toggleNotifications()" title="Notificaciones">
+                                    <i class="fa-solid fa-bell"></i>
+                                    <span id="notif-dot" style="display:none;position:absolute;top:2px;right:2px;width:7px;height:7px;background:#ef4444;border-radius:50%;border:1.5px solid white;"></span>
+                                </button>
                             </div>
                         </div>
 
@@ -377,56 +375,102 @@
                                     </div>
                                 </div>
 
-                                <!-- Botón Simulador de Movimiento / Fuga -->
-                                <div class="gps-sim-toggle-pill">
-                                    <button id="btn-gps-sim" class="gps-sim-btn alert-sim" onclick="toggleSimulateEscape()">
-                                        <i class="fa-solid fa-person-running"></i>
-                                        <span id="txt-gps-sim">Simular Salida de Casa 🏃</span>
-                                    </button>
-                                </div>
-
-                                <!-- MAPA VECTORIAL INTERACTIVO CON GEOCERCA Y ÁREA DE CASA -->
+                                <!-- MAPA VECTORIAL DE ALTA PRECISIÓN (ESTILO APPLE MAPS / PARC DEL POBLENOU) -->
                                 <div class="gps-map-container" id="gps-map-box">
-                                    <!-- Cartografía Urbana SVG -->
-                                    <svg class="gps-svg-streets" viewBox="0 0 400 320" preserveAspectRatio="none">
-                                        <!-- Manzanas / Bloques urbanos -->
-                                        <rect x="15" y="15" width="105" height="120" rx="8" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1.5" />
-                                        <rect x="145" y="15" width="110" height="120" rx="8" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1.5" />
-                                        <rect x="280" y="15" width="105" height="120" rx="8" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1.5" />
-                                        <rect x="15" y="165" width="105" height="140" rx="8" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1.5" />
-                                        <rect x="145" y="165" width="110" height="140" rx="8" fill="#e0f2fe" stroke="#bae6fd" stroke-width="1.5" />
-                                        <rect x="280" y="165" width="105" height="140" rx="8" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1.5" />
+                                    <!-- Cartografía Vectorial Detallada Barcelona (Vila Olímpica / Parc del Poblenou) -->
+                                    <svg class="gps-svg-streets" viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice">
+                                        <defs>
+                                            <linearGradient id="parkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                <stop offset="0%" stop-color="#dcfce7" />
+                                                <stop offset="100%" stop-color="#bbf7d0" />
+                                            </linearGradient>
+                                            <linearGradient id="seaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                <stop offset="0%" stop-color="#bae6fd" />
+                                                <stop offset="100%" stop-color="#7dd3fc" />
+                                            </linearGradient>
+                                            <filter id="blockShadow" x="-5%" y="-5%" width="110%" height="110%">
+                                                <feDropShadow dx="0" dy="1.5" stdDeviation="1.5" flood-color="#64748b" flood-opacity="0.14" />
+                                            </filter>
+                                        </defs>
 
-                                        <!-- Jardín Poblenou / Área Casa -->
-                                        <rect x="135" y="70" width="130" height="135" rx="18" fill="#dcfce7" stroke="#86efac" stroke-width="2" opacity="0.85" />
-                                        <text x="200" y="92" text-anchor="middle" fill="#166534" font-size="8.5" font-family="'Plus Jakarta Sans',sans-serif" font-weight="800" letter-spacing="0.5">JARDÍN / HOGAR (ÁREA SEGURA)</text>
+                                        <!-- Base cartográfica cálida estilo Apple Maps -->
+                                        <rect width="400" height="260" fill="#f1f5f9" />
 
-                                        <!-- Calles principales de Barcelona -->
-                                        <line x1="0" y1="148" x2="400" y2="148" stroke="#ffffff" stroke-width="18" />
-                                        <line x1="0" y1="148" x2="400" y2="148" stroke="#cbd5e1" stroke-dasharray="6,6" stroke-width="2" />
-                                        <line x1="130" y1="0" x2="130" y2="320" stroke="#ffffff" stroke-width="15" />
-                                        <line x1="265" y1="0" x2="265" y2="320" stroke="#ffffff" stroke-width="15" />
-                                        <text x="45" y="145" fill="#64748b" font-size="7.5" font-weight="700">C/ Ramon Turró</text>
-                                        <text x="315" y="145" fill="#64748b" font-size="7.5" font-weight="700">C/ Pallars</text>
+                                        <!-- Costa Mediterránea / Platja del Bogatell (Esquina inferior derecha) -->
+                                        <path d="M 305 260 Q 338 222 400 198 L 400 260 Z" fill="#fef3c7" />
+                                        <path d="M 322 260 Q 352 230 400 210 L 400 260 Z" fill="url(#seaGrad)" />
+                                        <path d="M 332 256 Q 362 234 398 218" fill="none" stroke="#ffffff" stroke-width="1.2" stroke-dasharray="4,4" opacity="0.75" />
 
-                                        <!-- Rastro de paseo SVG -->
-                                        <path id="svg-walking-trail" d="M 180 140 Q 185 160 172 154" fill="none" stroke="#0077b6" stroke-width="3" stroke-linecap="round" stroke-dasharray="4,4" style="display:none;" />
+                                        <!-- Gran Parque Central: Parc del Poblenou (Zona Verde Detallada) -->
+                                        <path d="M 108 58 L 282 58 Q 296 58 296 72 L 296 196 Q 296 210 282 210 L 108 210 Q 94 210 94 196 L 94 72 Q 94 58 108 58 Z" fill="url(#parkGrad)" stroke="#86efac" stroke-width="1.2" />
+                                        <ellipse cx="155" cy="112" rx="42" ry="30" fill="#bbf7d0" opacity="0.65" />
+                                        <ellipse cx="235" cy="152" rx="44" ry="32" fill="#bbf7d0" opacity="0.65" />
+                                        <path d="M 218 86 C 238 82, 264 92, 260 110 C 256 126, 228 126, 214 114 C 202 104, 204 90, 218 86 Z" fill="#93c5fd" stroke="#60a5fa" stroke-width="1" opacity="0.85" />
+                                        <path d="M 96 132 Q 158 118 202 142 T 294 126" fill="none" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round" opacity="0.92" />
+                                        <path d="M 176 60 Q 190 125 168 208" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" opacity="0.88" />
+                                        <g fill="#4ade80" opacity="0.55">
+                                            <circle cx="118" cy="82" r="6" /><circle cx="128" cy="76" r="4.5" /><circle cx="142" cy="88" r="5" />
+                                            <circle cx="122" cy="176" r="6.5" /><circle cx="136" cy="184" r="5" /><circle cx="268" cy="174" r="6" />
+                                            <circle cx="276" cy="162" r="4.5" /><circle cx="252" cy="78" r="5.5" /><circle cx="204" cy="182" r="5" />
+                                        </g>
+
+                                        <!-- Red Viaria Urbana -->
+                                        <g stroke="#ffffff" stroke-linecap="square">
+                                            <line x1="0" y1="48" x2="400" y2="48" stroke-width="12" />
+                                            <line x1="0" y1="218" x2="400" y2="218" stroke-width="13" />
+                                            <line x1="84" y1="0" x2="84" y2="260" stroke-width="12" />
+                                            <line x1="306" y1="0" x2="306" y2="260" stroke-width="12" />
+                                            <line x1="306" y1="142" x2="400" y2="142" stroke-width="10" />
+                                        </g>
+                                        <g stroke="#cbd5e1" stroke-width="1" stroke-dasharray="4,4" opacity="0.8">
+                                            <line x1="0" y1="48" x2="400" y2="48" />
+                                            <line x1="0" y1="218" x2="340" y2="218" />
+                                            <line x1="84" y1="0" x2="84" y2="260" />
+                                            <line x1="306" y1="0" x2="306" y2="220" />
+                                        </g>
+
+                                        <!-- Manzanas Cerdà -->
+                                        <g filter="url(#blockShadow)">
+                                            <polygon points="10,6 68,6 74,12 74,34 68,40 10,40" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1" />
+                                            <polygon points="100,6 184,6 190,12 190,34 184,40 100,40 94,34 94,12" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1" />
+                                            <rect x="112" y="14" width="60" height="18" rx="3" fill="#f8fafc" />
+                                            <polygon points="208,6 290,6 296,12 296,34 290,40 208,40 202,34 202,12" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1" />
+                                            <rect x="220" y="14" width="58" height="18" rx="3" fill="#f8fafc" />
+                                            <polygon points="10,62 66,62 74,70 74,198 66,206 10,206" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1" />
+                                            <rect x="20" y="78" width="38" height="112" rx="5" fill="#f8fafc" />
+                                            <polygon points="322,62 388,62 392,66 392,126 388,132 322,132 316,126 316,68" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1" />
+                                            <rect x="330" y="76" width="48" height="42" rx="4" fill="#f8fafc" />
+                                            <polygon points="322,152 388,152 392,158 392,194 384,202 322,202 316,196 316,158" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1" />
+                                            <rect x="10" y="228" width="64" height="26" rx="4" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1" />
+                                            <rect x="96" y="228" width="92" height="26" rx="4" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1" />
+                                            <rect x="202" y="228" width="92" height="26" rx="4" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1" />
+                                        </g>
+
+                                        <text x="195" y="45" text-anchor="middle" fill="#475569" font-size="7" font-family="'Inter',sans-serif" font-weight="700" letter-spacing="0.4">C/ DE RAMON TURRÓ</text>
+                                        <text x="195" y="215" text-anchor="middle" fill="#475569" font-size="7" font-family="'Inter',sans-serif" font-weight="700" letter-spacing="0.4">AV. D'ICÀRIA</text>
+                                        <text x="354" y="140" text-anchor="middle" fill="#475569" font-size="6.8" font-family="'Inter',sans-serif" font-weight="700">C/ PALLARS</text>
+                                        <text x="195" y="74" text-anchor="middle" fill="#15803d" font-size="7.5" font-family="'Outfit',sans-serif" font-weight="800" letter-spacing="0.8" opacity="0.85">PARC DEL POBLENOU</text>
+
+                                        <!-- Rastro de paseo dinámico SVG -->
+                                        <path id="svg-walking-trail" d="M 120 92 Q 165 110 216 144" fill="none" stroke="#0284c7" stroke-width="2.8" stroke-linecap="round" stroke-dasharray="4,5" />
                                     </svg>
 
-                                    <!-- Geocerca circular de la casa con radar animado -->
-                                    <div class="gps-geofence-zone" id="gps-geofence-zone" style="top:47%; left:45%; width:170px; height:170px;">
+                                    <div class="gps-map-scale-pill">
+                                        <i class="fa-solid fa-compass" style="color:#0284c7;"></i>
+                                        <span>GNSS L1+L5 &bull; 50 m</span>
+                                    </div>
+
+                                    <div class="gps-geofence-zone" id="gps-geofence-zone" style="top:48%; left:46%; width:152px; height:152px;">
                                         <div class="geofence-radar-wave"></div>
-                                        <div class="geofence-label"><i class="fa-solid fa-shield-heart"></i> Geocerca Casa (150m)</div>
+                                        <div class="geofence-label"><i class="fa-solid fa-shield-halved"></i> Zona Segura 150m</div>
                                     </div>
 
-                                    <!-- Marcador del Hogar Base -->
-                                    <div class="gps-home-marker" id="gps-home-marker" style="top:42%; left:38%;" onclick="centerGpsMap('home')" title="Hogar CUDI">
+                                    <div class="gps-home-marker" id="gps-home-marker" style="top:34%; left:30%;" onclick="centerGpsMap('home')" title="Hogar CUDI">
                                         <div class="home-icon-wrap"><i class="fa-solid fa-house-chimney"></i></div>
-                                        <span class="home-marker-lbl">Casa (Base)</span>
+                                        <span class="home-marker-lbl">Hogar</span>
                                     </div>
 
-                                    <!-- Marcador en Tiempo Real de la Mascota -->
-                                    <div class="gps-pet-marker" id="gps-pet-pin" style="top:48%; left:43%;" onclick="centerGpsMap('pet')">
+                                    <div class="gps-pet-marker" id="gps-pet-pin" style="top:56%; left:54%;" onclick="centerGpsMap('pet')">
                                         <div class="marker-beacon-outer"></div>
                                         <div class="marker-beacon-inner"></div>
                                         <div class="sound-wave-ping" id="sound-wave-ping" style="display:none;"></div>
@@ -436,15 +480,22 @@
                                             <div class="pet-compass-heading"></div>
                                         </div>
                                         <div class="pet-pin-tooltip">
-                                            <strong id="gps-marker-label">Mimi</strong> &bull; <span style="color:#10b981;">En vivo</span>
+                                            <span class="pin-status-dot"></span>
+                                            <strong id="gps-marker-label">Mimi</strong>
                                         </div>
                                     </div>
 
-                                    <!-- Controles flotantes sobre el mapa -->
+                                    <div class="gps-sim-toggle-pill">
+                                        <button id="btn-gps-sim" class="gps-sim-btn alert-sim" onclick="toggleSimulateEscape()">
+                                            <i class="fa-solid fa-person-running"></i>
+                                            <span id="txt-gps-sim">Simular Salida 🏃</span>
+                                        </button>
+                                    </div>
+
                                     <div class="gps-map-controls">
-                                        <button class="map-ctrl-btn" onclick="centerGpsMap('pet')" title="Centrar en Mascota"><i class="fa-solid fa-crosshairs"></i></button>
+                                        <button class="map-ctrl-btn" onclick="centerGpsMap('pet')" title="Centrar en Mascota"><i class="fa-solid fa-location-crosshairs"></i></button>
                                         <button class="map-ctrl-btn" onclick="centerGpsMap('home')" title="Centrar en Hogar"><i class="fa-solid fa-house"></i></button>
-                                        <button class="map-ctrl-btn" onclick="toggleGpsRoute()" id="btn-toggle-route" title="Ver Historial de Ruta"><i class="fa-solid fa-route"></i></button>
+                                        <button class="map-ctrl-btn active" onclick="toggleGpsRoute()" id="btn-toggle-route" title="Ver Historial de Ruta"><i class="fa-solid fa-route"></i></button>
                                     </div>
                                 </div>
 
@@ -847,31 +898,51 @@
 
                         
 
-                        <!-- IN-APP AI CHAT WIDGET (Immersive Version) -->
-                        <div class="in-app-ia-wrapper">
-                            <div class="in-app-ia-btn" onclick="toggleInAppChat()">
-                                <img src="logo.jpeg" alt="CUDI AI" decoding="async" loading="lazy">
-                                <div class="ia-pulse-mini"></div>
+                        <!-- IN-APP AI CHAT WIDGET & FLOATING BASKET DOCK (APPLE LIQUID GLASS) -->
+                        <div class="in-app-ia-wrapper" id="in-app-ia-wrapper">
+                            <div class="in-app-floating-dock">
+                                <button class="in-app-floating-cart-pill" id="in-app-floating-cart-btn" onclick="openFullCheckout()" title="Abrir Cesta CUDI">
+                                    <i class="fa-solid fa-basket-shopping"></i>
+                                    <span>Cesta</span>
+                                    <span class="floating-cart-count" id="floating-dock-cart-count">0</span>
+                                </button>
+                                <button class="in-app-ia-btn" id="in-app-floating-ia-btn" onclick="toggleInAppChat()" title="Abrir Asistente IA en la App">
+                                    <div class="ia-orb-icon-wrap">
+                                        <img src="logo.jpeg" alt="CUDI AI" decoding="async" loading="lazy">
+                                    </div>
+                                    <span class="ia-btn-label">CUDI IA</span>
+                                    <div class="ia-pulse-mini"></div>
+                                </button>
                             </div>
                             <div class="in-app-ia-panel" id="in-app-ia-panel">
                                 <div class="ia-panel-mini-header">
                                     <div class="ia-profile-mini">
                                         <div class="ia-avatar-mini">
-                                            <img src="logo.jpeg" alt="CUDI" decoding="async" loading="lazy">
+                                            <img id="in-app-ia-pet-avatar" src="logo.jpeg" alt="CUDI" decoding="async" loading="lazy">
                                         </div>
                                         <div class="ia-meta-mini">
-                                            <span class="ia-name-mini">CUDI | Asistente de Salud</span>
-                                            <span class="ia-status-mini">En línea</span>
+                                            <span class="ia-name-mini">CUDI IA &bull; <span id="in-app-ia-pet-name">Asistente</span></span>
+                                            <span class="ia-status-mini"><span class="ia-live-dot"></span> Sincronizado con Web &amp; Collar</span>
                                         </div>
                                     </div>
-                                    <button class="ia-close-mini" onclick="toggleInAppChat()"><i class="fa-solid fa-xmark"></i></button>
+                                    <div style="display:flex;align-items:center;gap:6px;">
+                                        <button class="ia-close-mini" onclick="if(typeof CudiAI!=='undefined')CudiAI.clearChat();" title="Reiniciar conversación"><i class="fa-solid fa-rotate-right" style="font-size:0.68rem;"></i></button>
+                                        <button class="ia-close-mini" onclick="toggleInAppChat()" title="Cerrar"><i class="fa-solid fa-chevron-down"></i></button>
+                                    </div>
+                                </div>
+                                <div class="ia-panel-mini-chips" id="in-app-ia-chips">
+                                    <button class="ia-mini-chip" onclick="sendInAppQuickPrompt('¿Qué tengo en mi cesta de compras y qué me recomiendas para complementar?')">🛒 Mi Cesta</button>
+                                    <button class="ia-mini-chip" onclick="sendInAppQuickPrompt('¿Cuáles son las métricas y signos vitales ahora mismo?')">📊 Métricas</button>
+                                    <button class="ia-mini-chip" onclick="sendInAppQuickPrompt('¿Cuál es la ubicación GPS en tiempo real?')">📍 Ubicación</button>
+                                    <button class="ia-mini-chip" onclick="sendInAppQuickPrompt('¿Cuándo le toca su próxima vacuna?')">💉 Vacunas</button>
+                                    <button class="ia-mini-chip" onclick="sendInAppQuickPrompt('Necesito veterinario a domicilio VetHome')">🚑 VetHome</button>
                                 </div>
                                 <div class="ia-panel-mini-body" id="in-app-ia-body">
                                     <div class="ia-msg-bubble">¡Hola! Soy tu asistente CUDI. ¿Cómo puedo ayudarte hoy con tu compañero?</div>
                                 </div>
                                 <div class="ia-panel-mini-footer">
-                                    <input type="text" id="in-app-ia-input" placeholder="Pregúntame lo que necesites..." onkeypress="handleInAppChatEnter(event)">
-                                    <button onclick="sendInAppChatMessage()"><i class="fa-solid fa-paper-plane"></i></button>
+                                    <input type="text" id="in-app-ia-input" placeholder="Pregunta por tu cesta, métricas, salud..." onkeypress="handleInAppChatEnter(event)">
+                                    <button onclick="sendInAppChatMessage()" title="Enviar"><i class="fa-solid fa-paper-plane"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -881,13 +952,13 @@
     </div><!-- /mobile-device -->
 
     <!-- SCRIPTS -->
-    <script src="script.js?v=7.3"></script>
-    <script src="app-demo.js?v=7.3"></script>
-    <script src="cudi-ai.js?v=7.3"></script>
+    <script src="script.js?v=7.4"></script>
+    <script src="app-demo.js?v=7.4"></script>
+    <script src="cudi-ai.js?v=7.4"></script>
     <!-- Módulos Transversales CUDI (Arquitectura Modular en Español) -->
-    <script src="modulos/estado-compartido.js?v=7.3"></script>
-    <script src="modulos/catalogo-unico.js?v=7.3"></script>
-    <script src="modulos/internacionalizacion.js?v=7.3"></script>
-    <script src="modulos/nucleo-transversal.js?v=7.3"></script>
+    <script src="modulos/estado-compartido.js?v=7.4"></script>
+    <script src="modulos/catalogo-unico.js?v=7.4"></script>
+    <script src="modulos/internacionalizacion.js?v=7.4"></script>
+    <script src="modulos/nucleo-transversal.js?v=7.4"></script>
 </body>
 </html>

@@ -558,6 +558,14 @@ function syncSimulatorDOMWithProfile(p) {
         if (aiPetTag) aiPetTag.innerHTML = `<i class="fa-solid fa-paw"></i> ${p.name}`;
     }
 
+    const inAppIaAvatar = document.getElementById('in-app-ia-pet-avatar');
+    if (inAppIaAvatar) {
+        inAppIaAvatar.onerror = function() { this.onerror = null; this.src = localFallback; };
+        inAppIaAvatar.src = safePhoto;
+    }
+    const inAppIaName = document.getElementById('in-app-ia-pet-name');
+    if (inAppIaName) inAppIaName.textContent = p.name;
+
     setTimeout(() => {
         initCharts();
         renderSocialPets();
@@ -682,25 +690,22 @@ function setupDemoOnboardingAutoFill() {
     registerContainer.id = 'demo-view-register';
     registerContainer.style.display = 'none';
 
-    // Banner de autollenado IA para la pestaña de Registro
+    // Banner compacto de autollenado IA para la pestaña de Registro
     const banner = document.createElement('div');
     banner.id = 'demo-autofill-banner';
     banner.className = 'demo-autofill-banner';
-    banner.style.cssText = 'margin-bottom:12px; background:linear-gradient(135deg, rgba(255,255,255,0.92) 0%, rgba(224,242,254,0.84) 100%); backdrop-filter:blur(16px) saturate(190%); -webkit-backdrop-filter:blur(16px) saturate(190%); border:1.5px solid rgba(186,230,253,0.95); box-shadow:0 6px 18px rgba(2,132,199,0.08), 0 1px 0 rgba(255,255,255,0.95) inset; border-radius:14px; padding:10px 12px; display:flex; flex-direction:column; gap:8px;';
+    banner.style.cssText = 'margin-bottom:10px; background:rgba(240,249,255,0.92); backdrop-filter:blur(16px); border:1px solid rgba(186,230,253,0.95); border-radius:12px; padding:8px 10px; display:flex; align-items:center; justify-content:space-between; gap:6px;';
     banner.innerHTML = `
-        <div style="display:flex; align-items:center; justify-content:space-between; gap:6px;">
-            <div>
-                <span style="font-size:0.73rem; font-weight:800; color:#0284c7; display:block;"><i class="fa-solid fa-wand-magic-sparkles"></i> Auto-Diligenciado IA (Sin Errores)</span>
-                <span style="font-size:0.68rem; color:#475569; font-weight:600;" id="demo-autofill-info-label">Sugerencia: <strong>${candidate.name}</strong> (${candidate.breed})</span>
-            </div>
-            <button type="button" onclick="appDemoAutoFill()" style="background:linear-gradient(135deg, #0284c7, #10b981); color:white; border:1px solid rgba(255,255,255,0.4); padding:6px 11px; border-radius:10px; font-weight:800; font-size:0.72rem; cursor:pointer; display:flex; align-items:center; gap:5px; box-shadow:0 4px 12px rgba(2,132,199,0.22); white-space:nowrap;">
-                <i class="fa-solid fa-bolt"></i> Autollenar
-            </button>
+        <div style="min-width:0;">
+            <span style="font-size:0.62rem; font-weight:800; color:#0284c7; text-transform:uppercase; display:block;">Autollenado IA</span>
+            <span style="font-size:0.7rem; color:#334155; font-weight:700; display:block; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;" id="demo-autofill-info-label">${candidate.name} (${candidate.breed})</span>
         </div>
-        <div style="display:flex; align-items:center; gap:6px;">
-            <button type="button" onclick="appDemoAutoFill('perro')" style="flex:1; background:rgba(255,255,255,0.85); color:#0369a1; border:1px solid rgba(125,211,252,0.8); border-radius:8px; padding:4px 8px; font-size:0.68rem; font-weight:800; cursor:pointer;">🐶 Caso Perro</button>
-            <button type="button" onclick="appDemoAutoFill('gato')" style="flex:1; background:rgba(255,255,255,0.85); color:#be185d; border:1px solid rgba(244,114,182,0.6); border-radius:8px; padding:4px 8px; font-size:0.68rem; font-weight:800; cursor:pointer;">🐱 Caso Gato</button>
-            <button type="button" onclick="appDemoAutoFill()" style="background:rgba(255,255,255,0.85); color:#334155; border:1px solid rgba(203,213,225,0.85); border-radius:8px; padding:4px 8px; font-size:0.68rem; font-weight:800; cursor:pointer;" title="Otro perfil aleatorio"><i class="fa-solid fa-shuffle"></i></button>
+        <div style="display:flex; align-items:center; gap:4px; flex-shrink:0;">
+            <button type="button" onclick="appDemoAutoFill('perro')" style="background:#ffffff; color:#0369a1; border:1px solid #bae6fd; border-radius:8px; padding:5px 7px; font-size:0.66rem; font-weight:800; cursor:pointer;" title="Caso Perro">🐶</button>
+            <button type="button" onclick="appDemoAutoFill('gato')" style="background:#ffffff; color:#be185d; border:1px solid #fbcfe8; border-radius:8px; padding:5px 7px; font-size:0.66rem; font-weight:800; cursor:pointer;" title="Caso Gato">🐱</button>
+            <button type="button" onclick="appDemoAutoFill()" style="background:linear-gradient(135deg, #0284c7, #0ea5e9); color:white; border:none; padding:5px 9px; border-radius:8px; font-weight:800; font-size:0.68rem; cursor:pointer; display:flex; align-items:center; gap:4px;">
+                <i class="fa-solid fa-bolt"></i> Llenar
+            </button>
         </div>
     `;
 
@@ -710,88 +715,62 @@ function setupDemoOnboardingAutoFill() {
     // Crear Barra de Pestañas Apple Glass (Iniciar Sesión vs Registrar Mascota)
     const tabsBar = document.createElement('div');
     tabsBar.id = 'demo-auth-tabs-bar';
-    tabsBar.style.cssText = 'display:grid; grid-template-columns:1fr 1fr; background:rgba(226,232,240,0.75); backdrop-filter:blur(14px); padding:3.5px; border-radius:12px; gap:4px; margin-bottom:12px; border:1px solid rgba(255,255,255,0.9); box-shadow:inset 0 1px 2px rgba(15,23,42,0.06);';
+    tabsBar.style.cssText = 'display:grid; grid-template-columns:1fr 1fr; background:rgba(226,232,240,0.75); backdrop-filter:blur(14px); padding:3.5px; border-radius:12px; gap:4px; margin-bottom:12px; border:1px solid rgba(255,255,255,0.9);';
     tabsBar.innerHTML = `
-        <button type="button" id="demo-tab-btn-login" onclick="switchDemoOnboardingTab('login')" style="border:none; padding:7px 8px; border-radius:9px; font-size:0.73rem; font-weight:800; cursor:pointer; transition:all 0.2s; background:rgba(255,255,255,0.98); color:#0284c7; box-shadow:0 2px 8px rgba(2,132,199,0.15);">
-            <i class="fa-solid fa-right-to-bracket"></i> Iniciar Sesión
+        <button type="button" id="demo-tab-btn-login" onclick="switchDemoOnboardingTab('login')" style="border:none; padding:7px 8px; border-radius:9px; font-size:0.73rem; font-weight:800; cursor:pointer; transition:all 0.2s; background:#ffffff; color:#0284c7; box-shadow:0 2px 8px rgba(2,132,199,0.14);">
+            Iniciar Sesión
         </button>
         <button type="button" id="demo-tab-btn-register" onclick="switchDemoOnboardingTab('register')" style="border:none; padding:7px 8px; border-radius:9px; font-size:0.73rem; font-weight:800; cursor:pointer; transition:all 0.2s; background:transparent; color:#475569;">
-            <i class="fa-solid fa-user-plus"></i> Registrar Mascota
+            Registrar Mascota
         </button>
     `;
 
-    // Crear Vista de Inicio de Sesión con Cuenta Pre-cargada Automáticamente
+    // Crear Vista de Inicio de Sesión Limpia con Cuenta Pre-cargada Automáticamente
     const loginContainer = document.createElement('div');
     loginContainer.id = 'demo-view-login';
     loginContainer.style.display = 'block';
 
-    const quickChipsHtml = petsPool.slice(0, 10).map((pet, idx) => {
+    const quickChipsHtml = petsPool.slice(0, 4).map((pet, idx) => {
         const pPhoto = resolveDemoPetPhoto(pet, pet.type, pet.name);
         const active = pet.name.toLowerCase() === String(loginAcc.name).toLowerCase();
-        const icon = pet.type === 'gato' ? '🐱' : '🐶';
         return `
-            <button type="button" class="demo-login-chip" data-demo-pet-idx="${idx}" onclick="appDemoSelectLoginAccount(${idx})" style="display:inline-flex; align-items:center; gap:5px; padding:4px 8px 4px 4px; border-radius:999px; border:1.5px solid ${active ? '#0284c7' : 'rgba(203,213,225,0.85)'}; background:${active ? 'rgba(224,242,254,0.95)' : 'rgba(255,255,255,0.85)'}; color:${active ? '#0369a1' : '#334155'}; font-size:0.68rem; font-weight:700; cursor:pointer; white-space:nowrap;">
+            <button type="button" class="demo-login-chip" data-demo-pet-idx="${idx}" onclick="appDemoSelectLoginAccount(${idx})" style="display:inline-flex; align-items:center; gap:5px; padding:3px 8px 3px 3px; border-radius:999px; border:1.5px solid ${active ? '#0284c7' : 'rgba(203,213,225,0.85)'}; background:${active ? 'rgba(224,242,254,0.95)' : 'rgba(255,255,255,0.9)'}; color:${active ? '#0369a1' : '#334155'}; font-size:0.68rem; font-weight:700; cursor:pointer;">
                 <img src="${pPhoto}" alt="${pet.name}" onerror="if(window.cudi_img_fallback)cudi_img_fallback(this,'${pet.type}','${pet.name}');" style="width:18px !important; height:18px !important; min-width:18px !important; min-height:18px !important; border-radius:50% !important; object-fit:cover !important;">
-                <span>${icon} ${pet.name}</span>
+                <span>${pet.name}</span>
             </button>
         `;
     }).join('');
 
     const safeLoginPhoto = resolveDemoPetPhoto(loginAcc, loginAcc.type, loginAcc.name);
     const loginEmail = loginAcc.tutorEmail || `${String(loginAcc.name).toLowerCase()}@cudi.pet`;
-    const loginCollar = loginAcc.collarId || (loginAcc.type === 'gato' ? 'CUDI-CAT-7781' : 'CUDI-GPS-9482');
 
     loginContainer.innerHTML = `
-        <div style="background:linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(240,249,255,0.9) 100%); border:1.5px solid rgba(125,211,252,0.85); border-radius:16px; padding:12px; box-shadow:0 8px 20px -6px rgba(2,132,199,0.14); margin-bottom:10px;">
-            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:9px;">
-                <span style="display:inline-flex; align-items:center; gap:5px; background:#dcfce7; color:#15803d; border:1px solid #86efac; font-size:0.62rem; font-weight:800; padding:2px 8px; border-radius:999px; text-transform:uppercase;">
-                    <span style="width:6px; height:6px; border-radius:50%; background:#22c55e;"></span> Cuenta Pre-Cargada
-                </span>
-                <button type="button" onclick="appDemoCycleLoginAccount()" style="background:#e0f2fe; color:#0284c7; border:1px solid #7dd3fc; border-radius:999px; padding:3px 9px; font-size:0.66rem; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:4px;">
-                    <i class="fa-solid fa-shuffle"></i> Otra Cuenta
-                </button>
+        <div style="background:rgba(255,255,255,0.94); border:1px solid rgba(203,213,225,0.85); border-radius:16px; padding:14px 12px 12px; box-shadow:0 8px 20px -6px rgba(15,23,42,0.08); text-align:center; margin-bottom:10px;">
+            <img id="demo-login-photo" src="${safeLoginPhoto}" alt="${loginAcc.name}" onerror="if(window.cudi_img_fallback)cudi_img_fallback(this,'${loginAcc.type}','${loginAcc.name}');" style="width:58px !important; height:58px !important; min-width:58px !important; min-height:58px !important; aspect-ratio:1/1 !important; border-radius:50% !important; object-fit:cover !important; border:2px solid #0284c7; margin:0 auto 8px; display:block; box-shadow:0 4px 12px rgba(2,132,199,0.18);">
+            <div style="display:flex; align-items:center; justify-content:center; gap:6px; margin-bottom:2px;">
+                <strong id="demo-login-name" style="font-size:1.02rem; font-weight:800; color:#0f172a;">${loginAcc.name}</strong>
+                <span id="demo-login-species-pill" style="font-size:0.62rem; font-weight:800; padding:1px 7px; border-radius:999px; background:${loginAcc.type === 'gato' ? '#fdf2f8' : '#eff6ff'}; color:${loginAcc.type === 'gato' ? '#be185d' : '#0284c7'};">${loginAcc.type === 'gato' ? 'Gato' : 'Perro'}</span>
             </div>
+            <div id="demo-login-meta" style="font-size:0.74rem; color:#64748b; font-weight:600; margin-bottom:10px;">${loginAcc.breed} &bull; ${loginAcc.age}a</div>
 
-            <div style="display:flex; align-items:center; gap:10px; padding:9px; background:#ffffff; border-radius:12px; border:1px solid #e2e8f0; margin-bottom:9px;">
-                <img id="demo-login-photo" src="${safeLoginPhoto}" alt="${loginAcc.name}" onerror="if(window.cudi_img_fallback)cudi_img_fallback(this,'${loginAcc.type}','${loginAcc.name}');" style="width:48px !important; height:48px !important; min-width:48px !important; min-height:48px !important; aspect-ratio:1/1 !important; border-radius:50% !important; object-fit:cover !important; border:2px solid #0284c7;">
-                <div style="flex:1; min-width:0;">
-                    <div style="display:flex; align-items:center; gap:6px;">
-                        <strong id="demo-login-name" style="font-size:0.95rem; font-weight:800; color:#0f172a;">${loginAcc.name}</strong>
-                        <span id="demo-login-species-pill" style="font-size:0.62rem; font-weight:800; padding:1px 7px; border-radius:999px; background:${loginAcc.type === 'gato' ? '#fdf2f8' : '#eff6ff'}; color:${loginAcc.type === 'gato' ? '#be185d' : '#0284c7'};">${loginAcc.type === 'gato' ? '🐱 Gato' : '🐶 Perro'}</span>
-                    </div>
-                    <div id="demo-login-meta" style="font-size:0.72rem; color:#475569; font-weight:600; margin-top:1px;">${loginAcc.breed} &bull; ${loginAcc.weight} kg &bull; ${loginAcc.age}a</div>
-                    <div id="demo-login-telem" style="font-size:0.65rem; color:#0284c7; font-weight:700; margin-top:2px;">
-                        <i class="fa-solid fa-satellite-dish"></i> ${loginCollar} &bull; <i class="fa-solid fa-heart-pulse" style="color:#ef4444;"></i> ${loginAcc.bpm || 78} bpm
-                    </div>
-                </div>
-            </div>
-
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px; margin-bottom:10px;">
-                <div style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:9px; padding:6px 8px;">
-                    <span style="display:block; font-size:0.58rem; font-weight:800; color:#64748b; text-transform:uppercase;">Tutor CUDI ID</span>
-                    <strong id="demo-login-email" style="font-size:0.68rem; color:#0f172a; display:block; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">${loginEmail}</strong>
-                </div>
-                <div style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:9px; padding:6px 8px;">
-                    <span style="display:block; font-size:0.58rem; font-weight:800; color:#64748b; text-transform:uppercase;">Token Collar</span>
-                    <strong style="font-size:0.68rem; color:#16a34a; display:block;"><i class="fa-solid fa-circle-check"></i> Sincronizado</strong>
-                </div>
+            <div style="display:flex; align-items:center; justify-content:space-between; background:#f8fafc; border:1px solid #e2e8f0; border-radius:10px; padding:6px 10px; margin-bottom:11px; font-size:0.69rem;">
+                <span id="demo-login-email" style="color:#334155; font-weight:700; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">${loginEmail}</span>
+                <span style="color:#16a34a; font-weight:800;"><i class="fa-solid fa-circle-check"></i> Activa</span>
             </div>
 
             <button type="button" class="app-btn primary" onclick="appDemoLoginWithPreloaded()" style="margin-top:0; padding:11px; font-size:0.82rem; display:flex; align-items:center; justify-content:center; gap:8px;">
                 <i class="fa-solid fa-right-to-bracket"></i>
-                <span id="demo-login-submit-text">Iniciar Sesión con ${loginAcc.name}</span>
+                <span id="demo-login-submit-text">Continuar con ${loginAcc.name}</span>
             </button>
         </div>
 
-        <div style="background:rgba(255,255,255,0.82); border:1px solid #e2e8f0; border-radius:12px; padding:8px 10px; margin-bottom:8px;">
-            <span style="display:block; font-size:0.64rem; font-weight:800; color:#475569; text-transform:uppercase; margin-bottom:6px;"><i class="fa-solid fa-paw" style="color:#0284c7;"></i> Elegir otra cuenta (Perros y Gatos)</span>
-            <div style="display:flex; flex-wrap:wrap; gap:5px; max-height:62px; overflow-y:auto;">
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:4px; flex-wrap:wrap;">
+            <div style="display:flex; align-items:center; gap:4px; flex-wrap:wrap;">
                 ${quickChipsHtml}
             </div>
-        </div>
-
-        <div style="text-align:center; font-size:0.71rem; color:#64748b;">
-            ¿Mascota nueva? <button type="button" onclick="switchDemoOnboardingTab('register')" style="background:none; border:none; color:#0284c7; font-weight:800; cursor:pointer; text-decoration:underline; padding:0; font-size:0.71rem;">Registrar Mascota &rarr;</button>
+            <button type="button" onclick="appDemoCycleLoginAccount()" style="background:#ffffff; color:#0284c7; border:1px solid #bae6fd; border-radius:999px; padding:4px 9px; font-size:0.66rem; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:4px;">
+                <i class="fa-solid fa-arrows-rotate"></i> Otra
+            </button>
         </div>
     `;
 
@@ -815,16 +794,16 @@ function switchDemoOnboardingTab(mode) {
     }
     if (loginBtn && regBtn) {
         if (isReg) {
-            regBtn.style.background = 'rgba(255,255,255,0.98)';
+            regBtn.style.background = '#ffffff';
             regBtn.style.color = '#0284c7';
-            regBtn.style.boxShadow = '0 2px 8px rgba(2,132,199,0.15)';
+            regBtn.style.boxShadow = '0 2px 8px rgba(2,132,199,0.14)';
             loginBtn.style.background = 'transparent';
             loginBtn.style.color = '#475569';
             loginBtn.style.boxShadow = 'none';
         } else {
-            loginBtn.style.background = 'rgba(255,255,255,0.98)';
+            loginBtn.style.background = '#ffffff';
             loginBtn.style.color = '#0284c7';
-            loginBtn.style.boxShadow = '0 2px 8px rgba(2,132,199,0.15)';
+            loginBtn.style.boxShadow = '0 2px 8px rgba(2,132,199,0.14)';
             regBtn.style.background = 'transparent';
             regBtn.style.color = '#475569';
             regBtn.style.boxShadow = 'none';
@@ -851,19 +830,13 @@ function updateDemoLoginCardUI(acc) {
     const pillEl = document.getElementById('demo-login-species-pill');
     if (pillEl) {
         const isCat = acc.type === 'gato';
-        pillEl.textContent = isCat ? '🐱 Gato' : '🐶 Perro';
+        pillEl.textContent = isCat ? 'Gato' : 'Perro';
         pillEl.style.background = isCat ? '#fdf2f8' : '#eff6ff';
         pillEl.style.color = isCat ? '#be185d' : '#0284c7';
     }
 
     const metaEl = document.getElementById('demo-login-meta');
-    if (metaEl) metaEl.innerHTML = `${acc.breed} &bull; ${acc.weight} kg &bull; ${acc.age}a`;
-
-    const collarId = acc.collarId || (acc.type === 'gato' ? 'CUDI-CAT-7781' : 'CUDI-GPS-9482');
-    const telemEl = document.getElementById('demo-login-telem');
-    if (telemEl) {
-        telemEl.innerHTML = `<i class="fa-solid fa-satellite-dish"></i> ${collarId} &bull; <i class="fa-solid fa-heart-pulse" style="color:#ef4444;"></i> ${acc.bpm || (acc.type === 'gato' ? 142 : 78)} bpm`;
-    }
+    if (metaEl) metaEl.innerHTML = `${acc.breed} &bull; ${acc.age}a`;
 
     const emailEl = document.getElementById('demo-login-email');
     if (emailEl) {
@@ -871,7 +844,7 @@ function updateDemoLoginCardUI(acc) {
     }
 
     const submitTextEl = document.getElementById('demo-login-submit-text');
-    if (submitTextEl) submitTextEl.textContent = `Iniciar Sesión con ${acc.name}`;
+    if (submitTextEl) submitTextEl.textContent = `Continuar con ${acc.name}`;
 
     const heroPhoto = document.getElementById('onboarding-photo');
     if (heroPhoto && safePhoto) {
@@ -885,7 +858,7 @@ function updateDemoLoginCardUI(acc) {
         const p = petsPool[idx];
         const active = p && p.name.toLowerCase() === String(acc.name).toLowerCase();
         chip.style.borderColor = active ? '#0284c7' : 'rgba(203,213,225,0.85)';
-        chip.style.background = active ? 'rgba(224,242,254,0.95)' : 'rgba(255,255,255,0.85)';
+        chip.style.background = active ? 'rgba(224,242,254,0.95)' : 'rgba(255,255,255,0.9)';
         chip.style.color = active ? '#0369a1' : '#334155';
     });
 }
@@ -1166,17 +1139,48 @@ function createSparkline(id, data, color) {
     return charts[id];
 }
 
+function getDemoPetCalibratedMetrics(p) {
+    const prof = p || petProfile || { name: 'Luna', type: 'perro', weight: 14 };
+    const name = String(prof.name || 'Luna');
+    const seed = name.split('').reduce((acc, ch) => acc + ch.charCodeAt(0), 0);
+    const isCat = prof.type === 'gato' || (prof.breed && ['gato', 'siamés', 'persa', 'maine coon', 'bengalí', 'ragdoll', 'azul ruso', 'british', 'sphynx', 'bosque'].some(b => prof.breed.toLowerCase().includes(b)));
+    const baseBpm = Number(prof.bpm) || (isCat ? 138 + (seed % 14) : 74 + (seed % 14));
+    const baseSleep = isCat ? Number((11.2 + (seed % 18) * 0.1).toFixed(1)) : Number((8.4 + (seed % 16) * 0.1).toFixed(1));
+    const baseEnergy = 84 + (seed % 13);
+    const baseStress = 18 + (seed % 12);
+    const dailyKm = isCat ? Number((1.8 + (seed % 15) * 0.1).toFixed(1)) : Number((3.8 + (seed % 28) * 0.1).toFixed(1));
+    const radarScores = [
+        90 + (seed % 9),
+        baseEnergy,
+        Math.min(98, Math.round(baseSleep * (isCat ? 7.8 : 10.4))),
+        88 + ((seed * 3) % 11),
+        91 + ((seed * 7) % 8),
+        93 + ((seed * 5) % 7)
+    ];
+    const weeklyKm = [
+        Number((dailyKm * 0.85).toFixed(1)),
+        Number((dailyKm * 1.05).toFixed(1)),
+        Number((dailyKm * 0.78).toFixed(1)),
+        Number((dailyKm * 1.18).toFixed(1)),
+        Number((dailyKm * 0.96).toFixed(1)),
+        Number((dailyKm * 1.32).toFixed(1)),
+        Number((dailyKm * 1.10).toFixed(1))
+    ];
+    return { isCat, baseBpm, baseSleep, baseEnergy, baseStress, dailyKm, radarScores, weeklyKm };
+}
+
 function createRadarChart(id) {
     const canvas = document.getElementById(id);
     if (!canvas) return;
     if (charts[id]) charts[id].destroy();
+    const m = getDemoPetCalibratedMetrics(petProfile);
     charts[id] = new Chart(canvas, {
         type: 'radar',
         data: {
             labels: ['Salud', 'Energia', 'Sueno', 'Social', 'Nutricion', 'Humor'],
             datasets: [{
                 label: petProfile.name || 'Mascota',
-                data: [92, 85, 78, 90, 88, 95],
+                data: m.radarScores,
                 backgroundColor: CHART_COLORS.primary + '20',
                 borderColor: CHART_COLORS.primary,
                 borderWidth: 2,
@@ -1186,7 +1190,7 @@ function createRadarChart(id) {
         options: {
             responsive: true, maintainAspectRatio: false,
             plugins: { legend: { display: false } },
-            scales: { r: { ticks: { display: false }, grid: { color: '#f1f5f9' } } }
+            scales: { r: { min: 50, max: 100, ticks: { display: false }, grid: { color: '#f1f5f9' } } }
         }
     });
 }
@@ -1231,11 +1235,22 @@ function createDoughnutChart(id, labels, data, colors) {
 }
 
 function initCharts() {
+    const m = getDemoPetCalibratedMetrics(petProfile);
+
+    const heartEl = document.getElementById('val-heart');
+    if (heartEl) heartEl.textContent = m.baseBpm;
+    const energyEl = document.getElementById('val-energy');
+    if (energyEl) energyEl.textContent = m.baseEnergy;
+    const sleepEl = document.getElementById('val-sleep');
+    if (sleepEl) sleepEl.textContent = m.baseSleep;
+    const stressEl = document.getElementById('val-stress');
+    if (stressEl) stressEl.textContent = m.baseStress + '%';
+
     // 4 sparklines del dashboard
-    createSparkline('chart-heart',  makeSparklineData(75, 10), CHART_COLORS.danger);
-    createSparkline('chart-energy', makeSparklineData(82, 12), CHART_COLORS.warning);
-    createSparkline('chart-sleep',  makeSparklineData(8.5, 1.5), CHART_COLORS.primary);
-    createSparkline('chart-stress', makeSparklineData(25, 8), CHART_COLORS.purple);
+    createSparkline('chart-heart',  makeSparklineData(m.baseBpm, 6), CHART_COLORS.danger);
+    createSparkline('chart-energy', makeSparklineData(m.baseEnergy, 6), CHART_COLORS.warning);
+    createSparkline('chart-sleep',  makeSparklineData(m.baseSleep, 0.8), CHART_COLORS.primary);
+    createSparkline('chart-stress', makeSparklineData(m.baseStress, 5), CHART_COLORS.purple);
 
     // Radar en dashboard
     createRadarChart('chart-radar');
@@ -1244,13 +1259,14 @@ function initCharts() {
     const bpmCanvas = document.getElementById('chart-bpm');
     if (bpmCanvas) {
         if (charts['chart-bpm']) charts['chart-bpm'].destroy();
+        const holterCurve = [-8, -11, -4, +6, +3, +12, +4, -3, -7].map(d => m.baseBpm + d);
         charts['chart-bpm'] = new Chart(bpmCanvas, {
             type: 'line',
             data: {
                 labels: ['00h','03h','06h','09h','12h','15h','18h','21h','24h'],
                 datasets: [{
                     label: 'BPM',
-                    data: [68, 65, 72, 80, 78, 85, 75, 70, 68],
+                    data: holterCurve,
                     borderColor: CHART_COLORS.danger,
                     borderWidth: 2.5,
                     fill: true,
@@ -1269,7 +1285,7 @@ function initCharts() {
                 plugins: { legend: { display: false } },
                 scales: {
                     x: { ticks: { font: { size: 9 } } },
-                    y: { ticks: { font: { size: 9 } }, min: 50, max: 120 }
+                    y: { ticks: { font: { size: 9 } }, min: m.isCat ? 105 : 50, max: m.isCat ? 175 : 120 }
                 }
             }
         });
@@ -1278,14 +1294,14 @@ function initCharts() {
     // Bar semanal
     createBarChart('chart-weekly',
         ['Lun','Mar','Mie','Jue','Vie','Sab','Dom'],
-        [3.2, 4.5, 2.8, 5.1, 4.0, 6.3, 3.7],
+        m.weeklyKm,
         CHART_COLORS.primary
     );
 
     // Doughnut dieta
     createDoughnutChart('chart-diet',
         ['Proteinas', 'Grasas', 'Carbos', 'Fibra'],
-        [40, 25, 25, 10],
+        m.isCat ? [48, 26, 16, 10] : [40, 25, 25, 10],
         [CHART_COLORS.primary, CHART_COLORS.warning, CHART_COLORS.secondary, CHART_COLORS.purple]
     );
 
@@ -1306,7 +1322,7 @@ function initCharts() {
                 labels: ['Lun','Mar','Mie','Jue','Vie','Sab','Dom'],
                 datasets: [{
                     label: 'Estres',
-                    data: [30, 45, 28, 60, 35, 20, 25],
+                    data: [m.baseStress + 4, m.baseStress + 10, m.baseStress - 2, m.baseStress + 16, m.baseStress + 2, m.baseStress - 4, m.baseStress],
                     borderColor: CHART_COLORS.purple,
                     backgroundColor: CHART_COLORS.purple + '20',
                     fill: true, tension: 0.5, borderWidth: 2.5
@@ -1355,10 +1371,10 @@ function startLiveMetrics() {
         clearInterval(window.cudiLiveMetricsInterval);
     }
     const metrics = [
-        { valId: 'val-heart',  chartId: 'chart-heart',  getBase: () => Number(petProfile?.bpm) || (petProfile?.type === 'gato' ? 138 : 75), var: 6, suffix: 'bpm', color: CHART_COLORS.danger, isInt: true },
-        { valId: 'val-energy', chartId: 'chart-energy', getBase: () => 82,  var: 6,   suffix: '%',   color: CHART_COLORS.warning, isInt: true },
-        { valId: 'val-sleep',  chartId: 'chart-sleep',  getBase: () => 8.5, var: 0.8, suffix: 'h',   color: CHART_COLORS.primary, isInt: false },
-        { valId: 'val-stress', chartId: 'chart-stress', getBase: () => 25,  var: 5,   suffix: '%',   color: CHART_COLORS.purple,  isInt: true }
+        { valId: 'val-heart',  chartId: 'chart-heart',  getBase: () => getDemoPetCalibratedMetrics(petProfile).baseBpm,    var: 5,   suffix: 'bpm', color: CHART_COLORS.danger,  isInt: true },
+        { valId: 'val-energy', chartId: 'chart-energy', getBase: () => getDemoPetCalibratedMetrics(petProfile).baseEnergy, var: 4,   suffix: '%',   color: CHART_COLORS.warning, isInt: true },
+        { valId: 'val-sleep',  chartId: 'chart-sleep',  getBase: () => getDemoPetCalibratedMetrics(petProfile).baseSleep,  var: 0.3, suffix: 'h',   color: CHART_COLORS.primary, isInt: false },
+        { valId: 'val-stress', chartId: 'chart-stress', getBase: () => getDemoPetCalibratedMetrics(petProfile).baseStress, var: 3,   suffix: '%',   color: CHART_COLORS.purple,  isInt: true }
     ];
 
     window.cudiLiveMetricsInterval = setInterval(() => {
@@ -1366,7 +1382,7 @@ function startLiveMetrics() {
             const base = m.getBase();
             const val = base + (Math.random() - 0.5) * m.var * 2;
             const el = document.getElementById(m.valId);
-            if (el) el.textContent = m.isInt ? Math.round(val) : val.toFixed(1);
+            if (el) el.textContent = m.isInt ? (m.valId === 'val-stress' ? Math.round(val) + '%' : Math.round(val)) : val.toFixed(1);
 
             const c = charts[m.chartId];
             if (c) {
@@ -1830,11 +1846,13 @@ function addToCart(name, price, img) {
 
 function updateCartBadge() {
     syncCartState();
-    const total = appCart.reduce((a, i) => a + i.qty, 0);
+    const total = appCart.reduce((a, i) => a + (Number(i.qty) || 1), 0);
     const badge = document.getElementById('app-cart-badge');
     if (badge) badge.textContent = total;
     const cnt = document.getElementById('cart-float-count');
     if (cnt) cnt.textContent = total;
+    const dockCnt = document.getElementById('floating-dock-cart-count');
+    if (dockCnt) dockCnt.textContent = total;
     
     // También actualizar badge web si está en la misma página
     const webBadge = document.getElementById('global-cart-badge');
@@ -2356,29 +2374,34 @@ function toggleSimulateEscape() {
     const escapeMsg = document.getElementById('gps-escape-msg');
     const btnSim = document.getElementById('btn-gps-sim');
     const txtSim = document.getElementById('txt-gps-sim');
+    const trail = document.getElementById('svg-walking-trail');
 
     petEscaped = !petEscaped;
 
     if (petEscaped) {
-        // Mover a la mascota FUERA de la geocerca a la calle
+        // Mover a la mascota FUERA de la geocerca a la calle (C/ de Pallars)
         if (pin) {
-            pin.style.top = '74%';
-            pin.style.left = '78%';
+            pin.style.top = '22%';
+            pin.style.left = '82%';
+        }
+        if (trail) {
+            trail.setAttribute('d', 'M 120 92 Q 210 75 328 58');
+            trail.setAttribute('stroke', '#ef4444');
         }
         if (geofence) geofence.classList.add('alert');
         if (zoneTag) {
             zoneTag.className = 'gps-geofence-tag alert';
             zoneTag.innerHTML = '<i class="fa-solid fa-triangle-exclamation fa-beat"></i> ¡Fuera de Zona!';
         }
-        if (zoneText) zoneText.textContent = 'Calle Pallars 142 • En Tránsito';
+        if (zoneText) zoneText.textContent = 'C/ de Pallars 142 • En Tránsito';
         if (distText) distText.textContent = '285 m de casa';
-        if (speedText) speedText.textContent = '5.4 km/h (Corriendo)';
+        if (speedText) speedText.textContent = '5.4 km/h';
         if (banner) banner.style.display = 'block';
         if (escapeMsg) escapeMsg.textContent = `${petProfile.name || 'Mimi'} ha cruzado el perímetro de seguridad (150m).`;
         if (btnSim) {
             btnSim.className = 'gps-sim-btn return-sim';
         }
-        if (txtSim) txtSim.textContent = 'Regresar a Casa 🏡';
+        if (txtSim) txtSim.textContent = 'Regresar a Zona Segura 🏡';
 
         try {
             const ctx = new (window.AudioContext || window.webkitAudioContext)();
@@ -2392,26 +2415,30 @@ function toggleSimulateEscape() {
 
         showToast(`🚨 ¡Alerta Geocerca! ${petProfile.name || 'Tu mascota'} ha salido del área segura`);
     } else {
-        // Regresar a la mascota dentro de la casa / parque
+        // Regresar a la mascota dentro del Parc del Poblenou
         if (pin) {
-            pin.style.top = '48%';
-            pin.style.left = '43%';
+            pin.style.top = '56%';
+            pin.style.left = '54%';
+        }
+        if (trail) {
+            trail.setAttribute('d', 'M 120 92 Q 165 110 216 144');
+            trail.setAttribute('stroke', '#0284c7');
         }
         if (geofence) geofence.classList.remove('alert');
         if (zoneTag) {
             zoneTag.className = 'gps-geofence-tag safe';
             zoneTag.innerHTML = '<i class="fa-solid fa-shield-check"></i> En Zona Segura';
         }
-        if (zoneText) zoneText.textContent = 'Parc Poblenou • Jardín Principal';
+        if (zoneText) zoneText.textContent = 'Parc del Poblenou • Zona Botánica';
         if (distText) distText.textContent = '45 m de casa';
         if (speedText) speedText.textContent = '0.8 km/h';
         if (banner) banner.style.display = 'none';
         if (btnSim) {
             btnSim.className = 'gps-sim-btn alert-sim';
         }
-        if (txtSim) txtSim.textContent = 'Simular Salida de Casa 🏃';
+        if (txtSim) txtSim.textContent = 'Simular Salida de Zona 🏃';
 
-        showToast(`✅ ${petProfile.name || 'Tu mascota'} ha regresado a la Zona Segura de Casa`);
+        showToast(`✅ ${petProfile.name || 'Tu mascota'} ha regresado a la Zona Segura`);
     }
 }
 
@@ -2537,23 +2564,65 @@ function showToast(msg) {
 }
 
 // ==========================
-// IN-APP CHAT (RE-INTEGRACION UNIFICADA CON MOTOR BIO-NEURAL)
+// IN-APP CHAT (RE-INTEGRACION UNIFICADA CON MOTOR BIO-NEURAL Y SINCRONIZACIÓN WEB <-> DEMO)
 // ==========================
+function renderInAppSyncedHistory() {
+    const body = document.getElementById('in-app-ia-body');
+    if (!body) return;
+
+    const pName = (petProfile && petProfile.name) ? petProfile.name : 'Luna';
+    const pBreed = (petProfile && petProfile.breed) ? petProfile.breed : 'Husky Siberiano';
+    const pBpm = (petProfile && petProfile.bpm) ? petProfile.bpm : ((petProfile && petProfile.type === 'gato') ? 138 : 74);
+
+    const inAppIaName = document.getElementById('in-app-ia-pet-name');
+    if (inAppIaName) inAppIaName.textContent = pName;
+    const inAppIaAvatar = document.getElementById('in-app-ia-pet-avatar');
+    if (inAppIaAvatar && petProfile && petProfile.photo) {
+        inAppIaAvatar.src = petProfile.photo;
+    }
+
+    let history = [];
+    if (typeof CudiAI !== 'undefined' && Array.isArray(CudiAI.history) && CudiAI.history.length > 0) {
+        history = CudiAI.history;
+    } else {
+        try {
+            const raw = sessionStorage.getItem('cudi_ai_chat_history');
+            if (raw) history = JSON.parse(raw) || [];
+        } catch (e) {}
+    }
+
+    body.innerHTML = '';
+
+    // Mensaje inicial contextualizado
+    const welcome = document.createElement('div');
+    welcome.className = 'ia-msg-bubble';
+    welcome.innerHTML = `<div class="ai-source-badge" style="margin-bottom:5px; font-size:0.65rem; color:#0284c7; font-weight:800;"><i class="fa-solid fa-microchip"></i> IA Neuronal CUDI &bull; Sincronizada</div>¡Hola! Monitorizo en vivo a <strong>${pName}</strong> (${pBreed}, <strong>${pBpm} bpm</strong>). Conozco sus métricas, ubicación y tu <strong>🛒 Cesta de Compras</strong>. ¿En qué te ayudo?`;
+    body.appendChild(welcome);
+
+    history.forEach((item, idx) => {
+        const role = item.role || item.sender || 'ia';
+        const content = item.text || item.html || '';
+        if (!content) return;
+        // Evitar duplicar el saludo inicial largo del panel web en el primer mensaje
+        if (idx === 0 && role === 'ia' && content.includes('Asistente Veterinario y Guardián Bio-Neural CUDI')) return;
+        const div = document.createElement('div');
+        div.className = role === 'user' ? 'user-msg-bubble' : 'ia-msg-bubble';
+        div.innerHTML = content;
+        body.appendChild(div);
+    });
+
+    setTimeout(() => {
+        body.scrollTop = body.scrollHeight;
+    }, 30);
+}
+
 function toggleInAppChat() {
     const panel = document.getElementById('in-app-ia-panel');
     if (panel) {
         const isHidden = panel.style.display === 'none' || !panel.style.display;
         panel.style.display = isHidden ? 'flex' : 'none';
         if (isHidden) {
-            const pName = (petProfile && petProfile.name) ? petProfile.name : 'tu mascota';
-            const statusMini = panel.querySelector('.ia-status-mini');
-            if (statusMini) {
-                statusMini.innerHTML = `<i class="fa-solid fa-microchip"></i> IA Neuronal Activa &bull; ${pName}`;
-            }
-            const body = document.getElementById('in-app-ia-body');
-            if (body && body.children.length === 1 && body.firstElementChild.textContent.includes('¿Cómo puedo ayudarte hoy')) {
-                body.firstElementChild.innerHTML = `<div class="ai-source-badge" style="margin-bottom:6px;"><i class="fa-solid fa-microchip"></i> IA Neuronal CUDI &bull; ${pName}</div>¡Hola! Monitorizo en vivo a <strong>${pName}</strong> (${petProfile.breed || 'Mestizo'}, ${petProfile.bpm || (petProfile.type === 'gato' ? 138 : 74)} bpm). Pregúntame cualquier duda veterinaria o sobre el ecosistema CUDI.`;
-            }
+            renderInAppSyncedHistory();
             if (typeof CudiAI !== 'undefined' && !CudiAI.llmReady && !CudiAI.isDownloadingLLM && typeof navigator !== 'undefined' && navigator.gpu) {
                 CudiAI.initLocalLLM(CudiAI.selectedModel);
             }
@@ -2565,17 +2634,45 @@ function toggleInAppChat() {
     }
 }
 
+function clearInAppChatHistory() {
+    if (typeof CudiAI !== 'undefined' && typeof CudiAI.clearChat === 'function') {
+        CudiAI.clearChat();
+    } else {
+        sessionStorage.removeItem('cudi_ai_chat_history');
+    }
+    renderInAppSyncedHistory();
+}
+
+function sendInAppQuickPrompt(promptText) {
+    const panel = document.getElementById('in-app-ia-panel');
+    if (panel && (panel.style.display === 'none' || !panel.style.display)) {
+        panel.style.display = 'flex';
+        renderInAppSyncedHistory();
+    }
+    const input = document.getElementById('in-app-ia-input');
+    if (input) {
+        input.value = promptText;
+        sendInAppChatMessage();
+    }
+}
+
 function handleInAppChatEnter(e) {
     if (e.key === 'Enter') sendInAppChatMessage();
 }
 
 async function sendInAppChatMessage() {
     const input = document.getElementById('in-app-ia-input');
+    if (!input) return;
     const msg = input.value.trim();
     if (!msg || typeof CudiAI === 'undefined') return;
 
     input.value = '';
     addInAppMsg('user', msg);
+
+    // Sincronizar con historial global de CudiAI (para que se vea también en el panel Web)
+    if (typeof CudiAI.addMessage === 'function') {
+        CudiAI.addMessage('user', msg);
+    }
 
     // Indicador de escritura
     const body = document.getElementById('in-app-ia-body');
@@ -2583,7 +2680,7 @@ async function sendInAppChatMessage() {
     const typingDiv = document.createElement('div');
     typingDiv.id = typingId;
     typingDiv.className = 'typing-mini';
-    typingDiv.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> CUDI analizando biometría...';
+    typingDiv.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> CUDI analizando biometría y cesta...';
     body.appendChild(typingDiv);
     body.scrollTop = body.scrollHeight;
 
@@ -2595,6 +2692,11 @@ async function sendInAppChatMessage() {
         document.getElementById(typingId).remove();
     }
     addInAppMsg('ia', response);
+
+    // Sincronizar respuesta con el panel Web de CudiAI
+    if (typeof CudiAI.addMessage === 'function') {
+        CudiAI.addMessage('ia', response);
+    }
 }
 
 function addInAppMsg(sender, text) {
@@ -2603,7 +2705,6 @@ function addInAppMsg(sender, text) {
     
     const div = document.createElement('div');
     div.className = sender === 'user' ? 'user-msg-bubble' : 'ia-msg-bubble';
-    // Usamos innerHTML para soportar botones interactivos, formato enriquecido y acciones
     div.innerHTML = text;
     body.appendChild(div);
     
@@ -2666,12 +2767,28 @@ window.addEventListener('cudi:sessionChanged', (e) => {
     }
 });
 
+window.addEventListener('cudi:aiHistoryUpdated', () => {
+    const panel = document.getElementById('in-app-ia-panel');
+    if (panel && panel.style.display === 'flex') {
+        renderInAppSyncedHistory();
+    }
+});
+
+window.addEventListener('cudi:cartUpdated', () => {
+    updateCartBadge();
+    if (document.getElementById('inline-cart-panel')?.classList.contains('active')) {
+        renderInlineCart();
+    }
+});
+
 window.addEventListener('storage', (e) => {
     if (e.key === 'cudi_pet_profile' || e.key === 'cudi_session_active') {
         const active = loadSavedProfile();
         if (!active) {
             showOnboardingScreen();
         }
+    } else if (e.key === 'cudi_cart') {
+        updateCartBadge();
     }
 });
 
