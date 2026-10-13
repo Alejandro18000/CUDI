@@ -5567,10 +5567,6 @@ section:nth-of-type(2) { animation-delay: 0.6s; }
     background: rgba(255, 255, 255, 0.2);
 }
 
-/* Ocultar botón demo flotante en la portada para evitar colisión */
-#global-floating-demo-pill {
-    display: none !important;
-}
 
 /* Mobile Responsiveness (Estilo Apple / Samsung: Stage dividido con fotografía y texto nítido) */
 @media (max-width: 768px) {
@@ -6297,5 +6293,29 @@ section:nth-of-type(2) { animation-delay: 0.6s; }
     .apple-product-gallery-pane {
         position: relative !important;
         top: 0 !important;
+    }
+}
+
+
+/* Ensure #global-floating-demo-pill is always visible and perfectly layered above other elements */
+#global-floating-demo-pill,
+.floating-demo-pill {
+    display: inline-flex !important;
+    position: fixed !important;
+    bottom: 24px !important;
+    left: 24px !important;
+    z-index: 9999 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+}
+
+@media (max-width: 768px) {
+    #global-floating-demo-pill,
+    .floating-demo-pill {
+        bottom: 16px !important;
+        left: 16px !important;
+        padding: 8px 14px !important;
+        font-size: 0.78rem !important;
     }
 }

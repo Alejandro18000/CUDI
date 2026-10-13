@@ -641,3 +641,27 @@
         top: 0 !important;
     }
 }
+
+
+/* Ensure #global-floating-demo-pill is always visible and perfectly layered above other elements */
+#global-floating-demo-pill,
+.floating-demo-pill {
+    display: inline-flex !important;
+    position: fixed !important;
+    bottom: 24px !important;
+    left: 24px !important;
+    z-index: 9999 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+}
+
+@media (max-width: 768px) {
+    #global-floating-demo-pill,
+    .floating-demo-pill {
+        bottom: 16px !important;
+        left: 16px !important;
+        padding: 8px 14px !important;
+        font-size: 0.78rem !important;
+    }
+}
