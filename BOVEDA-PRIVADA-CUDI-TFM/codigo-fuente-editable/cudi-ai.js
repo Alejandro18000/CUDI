@@ -179,47 +179,285 @@ var CudiAI = {
     },
 
     loadProfile() {
-        if (typeof window.cudi_heal_stored_profiles === 'function') {
+        if (typeof window !== 'undefined' && typeof window.cudi_heal_stored_profiles === 'function') {
             window.cudi_heal_stored_profiles();
         }
-        const isSessionActive = typeof cudi_is_session_active === 'function' ? cudi_is_session_active() : (localStorage.getItem('cudi_session_active') === 'true');
+        const isSessionActive = typeof cudi_is_session_active === 'function'
+            ? cudi_is_session_active()
+            : (typeof localStorage !== 'undefined' && localStorage.getItem('cudi_session_active') === 'true');
+
         try {
-            const stored = localStorage.getItem('cudi_pet_profile');
+            const stored = (typeof localStorage !== 'undefined') ? localStorage.getItem('cudi_pet_profile') : null;
             if (stored && isSessionActive) {
                 this.petProfile = JSON.parse(stored);
+                this.hasActiveProfile = !!(this.petProfile && this.petProfile.name);
+            } else if (this.isDemoContext()) {
+                const candidate = (typeof cudi_get_random_pet_candidate === 'function') ? cudi_get_random_pet_candidate() : null;
+                const demoPet = (typeof window !== 'undefined' && typeof window.cudi_get_active_demo_pet === 'function') ? window.cudi_get_active_demo_pet() : null;
+                this.petProfile = demoPet || candidate || {
+                    name: 'Zoe',
+                    photo: 'avatar-mascota-perfil-gemelo-digital.png',
+                    type: 'perro',
+                    breed: 'Mestizo',
+                    weight: '8',
+                    age: '2 años',
+                    energy: 'Moderado',
+                    food: 'Pienso Seco'
+                };
+                this.hasActiveProfile = true;
+            } else if (this.petProfile && this.petProfile.name && typeof process !== 'undefined') {
+                this.hasActiveProfile = true;
             } else {
                 this.petProfile = null;
+                this.hasActiveProfile = false;
             }
         } catch (e) {
             console.warn('Error reading cudi_pet_profile', e);
+            if (!this.petProfile) {
+                this.hasActiveProfile = false;
+            }
         }
 
-        if (!this.petProfile || !this.petProfile.name) {
-            const candidate = (typeof cudi_get_random_pet_candidate === 'function') ? cudi_get_random_pet_candidate() : null;
-            this.petProfile = candidate || {
-                name: 'Mimi',
-                photo: 'avatar-mascota-perfil-gemelo-digital.png',
-                type: 'perro',
-                breed: 'Mestizo',
-                weight: '8',
-                age: 'Adulto Joven',
-                energy: 'Moderado',
-                food: 'Pienso Seco'
-            };
+        if (this.hasActiveProfile && this.petProfile) {
+            if (typeof window !== 'undefined' && typeof window.cudi_resolve_pet_photo === 'function') {
+                this.petProfile.photo = window.cudi_resolve_pet_photo(this.petProfile);
+            } else if (!this.petProfile.photo || String(this.petProfile.photo).includes('1513360309081')) {
+                this.petProfile.photo = this.petProfile.type === 'gato'
+                    ? 'gato-explorando-seguro-collar-gps.png'
+                    : 'avatar-mascota-perfil-gemelo-digital.png';
+            }
         }
+    },
 
-        if (typeof window.cudi_resolve_pet_photo === 'function') {
-            this.petProfile.photo = window.cudi_resolve_pet_photo(this.petProfile);
-        } else if (!this.petProfile.photo || String(this.petProfile.photo).includes('1513360309081')) {
-            this.petProfile.photo = this.petProfile.type === 'gato'
-                ? 'gato-explorando-seguro-collar-gps.png'
-                : 'avatar-mascota-perfil-gemelo-digital.png';
+    updateHeaderUI() {
+        const avatar = document.getElementById('ai-avatar');
+        const petTag = document.getElementById('ai-header-pet-name');
+        const statusTag = document.getElementById('ai-header-status-tag');
+        const avatarSlot = document.getElementById('ai-header-avatar-slot');
+        if (!avatar) return;
+
+        if (this.hasActiveProfile && this.petProfile) {
+            avatar.src = this.petProfile.photo || 'avatar-mascota-perfil-gemelo-digital.png';
+            avatar.alt = this.petProfile.name;
+            if (avatarSlot) avatarSlot.title = `Mascota Activa: ${this.petProfile.name}`;
+            if (statusTag) {
+                statusTag.className = 'ai-status-tag';
+                statusTag.style.background = 'rgba(224, 242, 254, 0.92)';
+                statusTag.style.color = '#0284c7';
+                statusTag.textContent = 'Triaje Activo';
+            }
+            if (petTag) {
+                petTag.innerHTML = `<i class="fa-solid fa-paw"></i> ${this.petProfile.name}`;
+            }
+        } else {
+            avatar.src = 'logo.jpeg';
+            avatar.alt = 'CUDI Global';
+            if (avatarSlot) avatarSlot.title = 'Modo General (Sin Perfil Vinculado)';
+            if (statusTag) {
+                statusTag.className = 'ai-status-tag guest';
+                statusTag.textContent = 'Modo Libre';
+            }
+            if (petTag) {
+                petTag.innerHTML = `<i class="fa-solid fa-user-slash"></i> Sin Perfil Activo`;
+            }
         }
+    },
+
+    scrollSuggestions(direction) {
+        const wrap = document.getElementById('ai-suggestions');
+        if (wrap) wrap.scrollBy({ left: 190 * direction, behavior: 'smooth' });
+    },
+
+    toggleFaqDrawer(force) {
+        const drawer = document.getElementById('ai-faq-drawer');
+        if (!drawer) return;
+        if (typeof force === 'boolean') {
+            drawer.classList.toggle('open', force);
+        } else {
+            drawer.classList.toggle('open');
+        }
+    },
+
+    handleFaqClick(text) {
+        this.toggleFaqDrawer(false);
+        this.handleSuggestion(text);
+    },
+
+    openProfileOrLogin() {
+        if (this.isDemoContext()) {
+            if (typeof switchTab === 'function') {
+                const navItems = document.querySelectorAll('.nav-item');
+                switchTab('profile', navItems[navItems.length - 1] || navItems[5]);
+            } else if (typeof openAuthModal === 'function') {
+                openAuthModal();
+            }
+        } else {
+            window.location.href = 'simulador-gemelo-digital-telemetria.html?tab=profile';
+        }
+    },
+
+    renderSuggestions() {
+        const wrap = document.getElementById('ai-suggestions');
+        if (!wrap) return;
+
+        if (this.hasActiveProfile && this.petProfile) {
+            const petName = this.petProfile.name || 'mi mascota';
+            wrap.innerHTML = `
+                <div class="ai-chip" onclick="CudiAI.handleSuggestion('¿Cuáles son las constantes vitales y ritmo cardíaco de ${petName}?')">❤️ Constantes en vivo</div>
+                <div class="ai-chip" onclick="CudiAI.handleSuggestion('¿Cuántos años tiene ${petName} y en qué etapa está?')">🎂 ¿Cuántos años tiene?</div>
+                <div class="ai-chip" onclick="CudiAI.handleSuggestion('¿Cuál es la ubicación GPS de ${petName} ahora mismo?')">📍 Ubicación GPS</div>
+                <div class="ai-chip" onclick="CudiAI.handleSuggestion('¿Cuánto pesa ${petName} y cuál es su condición corporal?')">⚖️ ¿Cuánto pesa?</div>
+                <div class="ai-chip" onclick="CudiAI.handleSuggestion('¿Qué come ${petName} y cuál es su pauta nutricional?')">🥣 ¿Qué come?</div>
+                <div class="ai-chip" onclick="CudiAI.handleSuggestion('¿Cuándo debo vacunar a ${petName} y qué vacunas tiene?')">💉 Calendario Vacunas</div>
+                <div class="ai-chip" onclick="CudiAI.handleSuggestion('¿Cuánta batería le queda al Smart Collar?')">🔋 Batería Collar</div>
+                <div class="ai-chip" onclick="CudiAI.handleSuggestion('¿Cómo funciona el Smart Collar y qué lo diferencia?')">📡 Smart Collar</div>
+                <div class="ai-chip" onclick="CudiAI.handleSuggestion('Mi mascota ha comido chocolate o un tóxico, ¿qué hago?')">🍫 Urgencia Tóxicos</div>
+                <div class="ai-chip" onclick="CudiAI.handleSuggestion('Necesito una consulta veterinaria a domicilio')">🚑 VetHome Urgente</div>
+                <div class="ai-chip" onclick="CudiAI.handleSuggestion('¿Cuáles son todos los datos y ficha completa de ${petName}?')">📋 Ficha Completa</div>
+            `;
+        } else {
+            wrap.innerHTML = `
+                <div class="ai-chip" onclick="CudiAI.handleSuggestion('¿Cómo funciona el ecosistema de salud predictiva CUDI?')">🐾 Ecosistema CUDI</div>
+                <div class="ai-chip" onclick="CudiAI.handleSuggestion('¿Cómo funciona el Smart Collar CUDI GPS y qué sensores tiene?')">📡 Smart Collar GPS</div>
+                <div class="ai-chip" onclick="CudiAI.handleSuggestion('¿Cómo funciona el Triaje IA 24/7 y la atención veterinaria?')">🩺 Triaje IA 24/7</div>
+                <div class="ai-chip" onclick="CudiAI.handleSuggestion('¿Qué seguros de salud para mascotas ofrecéis?')">🛡️ Seguros de Salud</div>
+                <div class="ai-chip" onclick="CudiAI.handleSuggestion('¿Qué alimentación biológica y BARF recomendáis?')">🥣 Nutrición & BARF</div>
+                <div class="ai-chip" onclick="CudiAI.handleSuggestion('¿Qué evidencia científica y 90 estudios respaldan CUDI?')">🔬 90 Ensayos Clínicos</div>
+                <div class="ai-chip" onclick="CudiAI.handleSuggestion('¿Cómo vinculo a mi mascota o inicio sesión?')">🐾 Vincular Mascota</div>
+                <div class="ai-chip" onclick="CudiAI.handleSuggestion('¿Cómo funciona la garantía de 30 días y envíos?')">📦 Garantía 30 Días</div>
+                <div class="ai-chip" onclick="CudiAI.handleSuggestion('¿Cuáles son los planes de suscripción y precios?')">💳 Planes y Precios</div>
+            `;
+        }
+    },
+
+    renderFaqDrawer() {
+        const body = document.getElementById('ai-faq-drawer-body');
+        if (!body) return;
+
+        const pName = (this.hasActiveProfile && this.petProfile && this.petProfile.name) ? this.petProfile.name : 'mi mascota';
+
+        body.innerHTML = `
+            <div class="ai-faq-group">
+                <div class="ai-faq-group-title"><i class="fa-solid fa-paw"></i> Perfil, Biometría & Datos Personales</div>
+                <div class="ai-faq-list">
+                    <div class="ai-faq-item" onclick="CudiAI.handleFaqClick('¿Cuántos años tiene ${pName} y en qué etapa de vida está?')">
+                        <span>🎂 ¿Cuántos años tiene ${pName} y en qué etapa biológica está?</span>
+                        <i class="fa-solid fa-chevron-right faq-arrow"></i>
+                    </div>
+                    <div class="ai-faq-item" onclick="CudiAI.handleFaqClick('¿Cuánto pesa ${pName} y cuál es su condición corporal?')">
+                        <span>⚖️ ¿Cuánto pesa ${pName} y cuál es su condición corporal ideal?</span>
+                        <i class="fa-solid fa-chevron-right faq-arrow"></i>
+                    </div>
+                    <div class="ai-faq-item" onclick="CudiAI.handleFaqClick('¿Qué come ${pName} y cuál es su pauta de alimentación?')">
+                        <span>🥣 ¿Qué come ${pName} y cuál es su pauta nutricional?</span>
+                        <i class="fa-solid fa-chevron-right faq-arrow"></i>
+                    </div>
+                    <div class="ai-faq-item" onclick="CudiAI.handleFaqClick('¿Qué raza es ${pName} y qué características tiene?')">
+                        <span>🐕 ¿Qué raza es ${pName} y qué predisposiciones monitoriza el collar?</span>
+                        <i class="fa-solid fa-chevron-right faq-arrow"></i>
+                    </div>
+                    <div class="ai-faq-item" onclick="CudiAI.handleFaqClick('¿Cuáles son todos los datos y ficha completa de ${pName}?')">
+                        <span>📋 Ficha completa y expediente biométrico de ${pName}</span>
+                        <i class="fa-solid fa-chevron-right faq-arrow"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ai-faq-group">
+                <div class="ai-faq-group-title"><i class="fa-solid fa-heart-pulse"></i> Telemetría Bio-Neural & Constantes en Vivo</div>
+                <div class="ai-faq-list">
+                    <div class="ai-faq-item" onclick="CudiAI.handleFaqClick('¿Cómo está el ritmo cardíaco y constantes vitales de ${pName}?')">
+                        <span>❤️ Ritmo cardíaco, ECG y constantes en tiempo real</span>
+                        <i class="fa-solid fa-chevron-right faq-arrow"></i>
+                    </div>
+                    <div class="ai-faq-item" onclick="CudiAI.handleFaqClick('¿Cuánta batería le queda al Smart Collar CUDI?')">
+                        <span>🔋 Batería, autonomía y conectividad 4G LTE-M del collar</span>
+                        <i class="fa-solid fa-chevron-right faq-arrow"></i>
+                    </div>
+                    <div class="ai-faq-item" onclick="CudiAI.handleFaqClick('¿Cuál es su nivel de actividad, pasos y calorías de hoy?')">
+                        <span>⚡ Nivel de actividad diaria, km caminados y meta de pasos</span>
+                        <i class="fa-solid fa-chevron-right faq-arrow"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ai-faq-group">
+                <div class="ai-faq-group-title"><i class="fa-solid fa-location-dot"></i> Ubicación GPS Satelital & Geocercas</div>
+                <div class="ai-faq-list">
+                    <div class="ai-faq-item" onclick="CudiAI.handleFaqClick('¿Cuál es la ubicación GPS de ${pName} ahora mismo?')">
+                        <span>📍 Ubicación satelital GNSS L1+L5 y estado de la geocerca</span>
+                        <i class="fa-solid fa-chevron-right faq-arrow"></i>
+                    </div>
+                    <div class="ai-faq-item" onclick="CudiAI.handleFaqClick('¿Cómo funciona el zumbador acústico de 85dB del collar?')">
+                        <span>🔊 Alarma sonora de 85dB y alerta de escape fuera de zona</span>
+                        <i class="fa-solid fa-chevron-right faq-arrow"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ai-faq-group">
+                <div class="ai-faq-group-title"><i class="fa-solid fa-stethoscope"></i> Salud, Vacunas & Triaje Clínico</div>
+                <div class="ai-faq-list">
+                    <div class="ai-faq-item" onclick="CudiAI.handleFaqClick('¿Cuándo debo vacunar a ${pName} y qué vacunas tiene?')">
+                        <span>💉 Calendario oficial de vacunas y desparasitación</span>
+                        <i class="fa-solid fa-chevron-right faq-arrow"></i>
+                    </div>
+                    <div class="ai-faq-item" onclick="CudiAI.handleFaqClick('Mi mascota ha comido chocolate o un tóxico, ¿qué hago?')">
+                        <span>🍫 Urgencia clínica: Ingesta de alimentos tóxicos</span>
+                        <i class="fa-solid fa-chevron-right faq-arrow"></i>
+                    </div>
+                    <div class="ai-faq-item" onclick="CudiAI.handleFaqClick('Necesito una consulta veterinaria a domicilio VetHome')">
+                        <span>🚑 Despacho de veterinario a domicilio VetHome 24/7</span>
+                        <i class="fa-solid fa-chevron-right faq-arrow"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ai-faq-group">
+                <div class="ai-faq-group-title"><i class="fa-solid fa-store"></i> Marketplace, Seguros & Nutrición</div>
+                <div class="ai-faq-list">
+                    <div class="ai-faq-item" onclick="CudiAI.handleFaqClick('¿Qué seguros de salud para mascotas ofrecéis?')">
+                        <span>🛡️ Pólizas CUDI Shield, SafeHome MultiPet y Global Pet</span>
+                        <i class="fa-solid fa-chevron-right faq-arrow"></i>
+                    </div>
+                    <div class="ai-faq-item" onclick="CudiAI.handleFaqClick('¿Qué alimentación biológica BARF y piensos tenéis?')">
+                        <span>🥩 Dieta biológica BARF EcoPet y fórmula hipoalergénica PureBites</span>
+                        <i class="fa-solid fa-chevron-right faq-arrow"></i>
+                    </div>
+                    <div class="ai-faq-item" onclick="CudiAI.handleFaqClick('¿Cuáles son los planes de suscripción y precios?')">
+                        <span>💳 Planes mensuales y Plan CUDI Prime Total</span>
+                        <i class="fa-solid fa-chevron-right faq-arrow"></i>
+                    </div>
+                    <div class="ai-faq-item" onclick="CudiAI.handleFaqClick('¿Cómo funciona la garantía de 30 días y devoluciones?')">
+                        <span>📦 Garantía europea de 3 años y 30 días de prueba gratuita</span>
+                        <i class="fa-solid fa-chevron-right faq-arrow"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ai-faq-group">
+                <div class="ai-faq-group-title"><i class="fa-solid fa-microscope"></i> Ciencia & Estudios Clínicos</div>
+                <div class="ai-faq-list">
+                    <div class="ai-faq-item" onclick="CudiAI.handleFaqClick('¿Qué evidencia científica y 90 estudios respaldan CUDI?')">
+                        <span>🔬 Biblioteca de 90 ensayos clínicos publicados en PubMed</span>
+                        <i class="fa-solid fa-chevron-right faq-arrow"></i>
+                    </div>
+                    <div class="ai-faq-item" onclick="CudiAI.handleFaqClick('¿Cómo protege CUDI los datos biométricos según el RGPD?')">
+                        <span>🔒 Privacidad RGPD, cifrado AES-256 y derechos ARCO</span>
+                        <i class="fa-solid fa-chevron-right faq-arrow"></i>
+                    </div>
+                </div>
+            </div>
+        `;
     },
 
     injectWidget() {
         const old = document.querySelector('.cudi-ai-container');
         if (old) old.remove();
+
+        const petName = (this.hasActiveProfile && this.petProfile && this.petProfile.name) ? this.petProfile.name : 'Sin Perfil Activo';
+        const petPhoto = (this.hasActiveProfile && this.petProfile && this.petProfile.photo) ? this.petProfile.photo : 'logo.jpeg';
+        const isGuest = !this.hasActiveProfile;
 
         const container = document.createElement('div');
         container.className = 'cudi-ai-container';
@@ -233,15 +471,17 @@ var CudiAI = {
             <div class="cudi-ai-panel" id="ai-panel">
                 <div class="ai-header">
                     <div class="ai-header-left">
-                        <div class="ai-header-avatar-slot" title="Mascota Activa: ${this.petProfile.name}">
-                            <img id="ai-avatar" src="${this.petProfile.photo || 'avatar-mascota-perfil-gemelo-digital.png'}" alt="${this.petProfile.name}" onerror="this.onerror=null;this.src='avatar-mascota-perfil-gemelo-digital.png'">
+                        <div class="ai-header-avatar-slot" id="ai-header-avatar-slot" title="${isGuest ? 'Modo General (Sin Perfil Vinculado)' : 'Mascota Activa: ' + petName}">
+                            <img id="ai-avatar" src="${petPhoto}" alt="${petName}" onerror="this.onerror=null;this.src='logo.jpeg'">
                             <span class="ai-avatar-online-dot"></span>
                         </div>
                         <div class="ai-header-info">
-                            <h3 class="ai-header-title"><i class="fa-solid fa-brain" style="color:#38bdf8;"></i> CUDI AI Companion</h3>
+                            <h3 class="ai-header-title">
+                                <img src="logo.jpeg" class="ai-header-brand-logo" alt="CUDI"> CUDI Companion
+                            </h3>
                             <div class="ai-header-status">
-                                <span class="ai-status-tag">Triaje Activo</span>
-                                <span class="ai-pet-tag" id="ai-header-pet-name"><i class="fa-solid fa-paw"></i> ${this.petProfile.name}</span>
+                                <span class="ai-status-tag ${isGuest ? 'guest' : ''}" id="ai-header-status-tag">${isGuest ? 'Modo Libre' : 'Triaje Activo'}</span>
+                                <span class="ai-pet-tag" id="ai-header-pet-name">${isGuest ? '<i class="fa-solid fa-user-slash"></i> Sin Perfil Activo' : '<i class="fa-solid fa-paw"></i> ' + petName}</span>
                             </div>
                         </div>
                     </div>
@@ -266,7 +506,7 @@ var CudiAI = {
                                 <option value="SmolLM2-360M-Instruct-q4f16_1-MLC">SmolLM2 (360M Ultra-Ligero)</option>
                             </select>
                             <button class="ai-model-load-btn" id="ai-model-load-btn" onclick="CudiAI.initLocalLLM()">
-                                <i class="fa-solid fa-download"></i> <span>Activar IA Local</span>
+                                <img src="logo.jpeg" class="ai-badge-brand-logo" alt="CUDI" style="filter:none;"> <span>Activar IA Local</span>
                             </button>
                         </div>
                     </div>
@@ -285,21 +525,40 @@ var CudiAI = {
                     <!-- Mensajes inyectados dinámicamente -->
                 </div>
 
-                <div class="ai-suggestions" id="ai-suggestions">
-                    <div class="ai-chip" onclick="CudiAI.handleSuggestion('¿Qué tengo en mi cesta de compras y qué me recomiendas para complementar?')" style="background:linear-gradient(135deg, rgba(16,185,129,0.14), rgba(2,132,199,0.14)); border-color:rgba(16,185,129,0.45); color:#065f46; font-weight:800;">🛒 Mi Cesta y Recomendaciones</div>
-                    <div class="ai-chip" onclick="CudiAI.handleSuggestion('¿Cuáles son las métricas y signos vitales de ${this.petProfile.name}?')">📊 Métricas en vivo</div>
-                    <div class="ai-chip" onclick="CudiAI.handleSuggestion('¿Cuál es la ubicación de ${this.petProfile.name} ahora mismo?')">📍 Ubicación GPS</div>
-                    <div class="ai-chip" onclick="CudiAI.handleSuggestion('¿Cuándo debo vacunar a ${this.petProfile.name} y qué vacunas tiene?')">💉 ¿Cuándo vacunarlo?</div>
-                    <div class="ai-chip" onclick="CudiAI.handleSuggestion('¿Cómo funciona el Smart Collar y qué lo diferencia?')">📡 Smart Collar</div>
-                    <div class="ai-chip" onclick="CudiAI.handleSuggestion('Mi mascota ha comido chocolate, ¿qué hago?')">🍫 Urgencia Tóxicos</div>
-                    <div class="ai-chip" onclick="CudiAI.handleSuggestion('Necesito una consulta veterinaria a domicilio')">🚑 VetHome Urgente</div>
-                    <div class="ai-chip" onclick="CudiAI.handleSuggestion('¿Qué alimentación me recomiendas para ${this.petProfile.name}?')">🥣 Dieta & Nutrición</div>
-                    <div class="ai-chip" onclick="CudiAI.handleSuggestion('¿Cuál es el modelo financiero del proyecto CUDI?')">📈 Modelo de Negocio</div>
+                <!-- Barra de Sugerencias con Navegación y Botón Ver Todas -->
+                <div class="ai-suggestions-wrapper">
+                    <button type="button" class="ai-sugg-scroll-btn prev" onclick="CudiAI.scrollSuggestions(-1)" title="Anterior">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <div class="ai-suggestions" id="ai-suggestions">
+                        <!-- Chips inyectados por renderSuggestions() -->
+                    </div>
+                    <button type="button" class="ai-sugg-scroll-btn next" onclick="CudiAI.scrollSuggestions(1)" title="Siguiente">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                    <button type="button" class="ai-sugg-expand-btn" onclick="CudiAI.toggleFaqDrawer()" title="Ver todas las consultas frecuentes">
+                        <i class="fa-solid fa-table-cells-large"></i> <span>Ver todas</span>
+                    </button>
+                </div>
+
+                <!-- Drawer Expandible con Todas las Consultas Frecuentes sin Recortes -->
+                <div class="ai-faq-drawer" id="ai-faq-drawer">
+                    <div class="ai-faq-drawer-header">
+                        <div class="ai-faq-drawer-title">
+                            <img src="logo.jpeg" class="ai-badge-brand-logo" alt="CUDI"> Consultas Frecuentes & Asistente Clínico
+                        </div>
+                        <button type="button" class="ai-faq-close-btn" onclick="CudiAI.toggleFaqDrawer(false)" title="Cerrar">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </div>
+                    <div class="ai-faq-drawer-body" id="ai-faq-drawer-body">
+                        <!-- Inyectado por renderFaqDrawer() -->
+                    </div>
                 </div>
                 
                 <div class="ai-footer">
                     <div class="ai-input-wrap">
-                        <input type="text" id="ai-input" class="ai-input" placeholder="Pregunta por tu cesta, métricas, ubicación, vacunas o cualquier duda..." autocomplete="off">
+                        <input type="text" id="ai-input" class="ai-input" placeholder="Pregunta por salud, edad, nutrición, constantes, GPS o servicios..." autocomplete="off">
                     </div>
                     <button class="ai-send-btn" onclick="CudiAI.sendMessage()" title="Enviar mensaje">
                         <i class="fa-solid fa-paper-plane"></i>
@@ -308,6 +567,9 @@ var CudiAI = {
             </div>
         `;
         document.body.appendChild(container);
+        this.renderSuggestions();
+        this.renderFaqDrawer();
+        this.updateHeaderUI();
     },
 
     addEventListeners() {
@@ -323,14 +585,9 @@ var CudiAI = {
 
         window.addEventListener('cudi:sessionChanged', () => {
             this.loadProfile();
-            const avatar = document.getElementById('ai-avatar');
-            if (avatar && this.petProfile) {
-                avatar.src = this.petProfile.photo || 'avatar-mascota-perfil-gemelo-digital.png';
-            }
-            const petTag = document.getElementById('ai-header-pet-name');
-            if (petTag && this.petProfile) {
-                petTag.innerHTML = `<i class="fa-solid fa-paw"></i> ${this.petProfile.name}`;
-            }
+            this.updateHeaderUI();
+            this.renderSuggestions();
+            this.renderFaqDrawer();
         });
     },
 
@@ -348,32 +605,65 @@ var CudiAI = {
             }
         } catch(e) {}
 
-        // Saludo inicial inteligente y personalizado
-        const p = this.petProfile;
-        const bpmVal = p.bpm || (p.type === 'gato' ? 138 : 74);
-        const speciesIcon = p.type === 'gato' ? '🐱' : '🐶';
-        const initialGreeting = `
-            <div class="ai-source-badge"><i class="fa-solid fa-microchip"></i> IA Neuronal + Gemelo Digital Sincronizado</div><br>
-            ¡Hola! 👋 Soy tu <strong>Asistente Veterinario y Guardián Bio-Neural CUDI</strong>.
-            <br><br>
-            Monitorizo en tiempo real las constantes vitales de <strong>${speciesIcon} ${p.name}</strong> (${p.breed || (p.type === 'gato' ? 'Europeo Común' : 'Mestizo')}, ${p.weight || (p.type === 'gato' ? '4.2' : '8')} kg):
-            <div class="ai-info-card">
-                ❤️ <strong>Ritmo Cardíaco:</strong> ${bpmVal} bpm (Reposo Óptimo)<br>
-                ⚡ <strong>Vitalidad hoy:</strong> 4.2 km &bull; 4,280 pasos completados<br>
-                📍 <strong>Ubicación:</strong> Zona Segura &bull; Parc del Poblenou<br>
-                💉 <strong>Próxima Vacuna:</strong> Polivalente Anual (¡Vence Hoy!)
-            </div>
-            Pregúntame por tu <strong>🛒 Cesta de Compras</strong>, sus <strong>métricas</strong>, su <strong>ubicación GPS</strong> o cualquier síntoma clínico.
-            <div class="ai-actions-wrap">
-                <button class="ai-btn-action primary" onclick="CudiAI.handleSuggestion('¿Qué tengo en mi cesta de compras y qué me recomiendas para complementar?')">
-                    <i class="fa-solid fa-cart-shopping"></i> Analizar Mi Cesta
-                </button>
-                <button class="ai-btn-action secondary" onclick="CudiAI.handleSuggestion('¿Cuáles son las métricas de ' + '${p.name}' + '?')">
-                    <i class="fa-solid fa-heart-pulse"></i> Ver Métricas
-                </button>
-            </div>
-        `;
-        this.addMessage('ia', initialGreeting);
+        this.loadProfile();
+
+        if (this.hasActiveProfile && this.petProfile) {
+            const p = this.petProfile;
+            const t = this.getLiveTelemetrySnapshot();
+            const speciesIcon = p.type === 'gato' ? '🐱' : '🐶';
+            const initialGreeting = `
+                <div class="ai-source-badge"><img src="logo.jpeg" class="ai-badge-brand-logo" alt="CUDI"> Gemelo Digital Sincronizado &bull; ${p.name}</div><br>
+                ¡Hola! 👋 Soy tu <strong>Asistente Clínico y Guardián Bio-Neural CUDI</strong>.
+                <br><br>
+                Monitorizo en tiempo real las constantes vitales de <strong>${speciesIcon} ${p.name}</strong> (${t.breed}, ${t.weight} kg):
+                <div class="ai-info-card">
+                    ❤️ <strong>Ritmo Cardíaco:</strong> ${t.bpm} bpm (Reposo Óptimo &bull; ${t.bpmRange})<br>
+                    ⚡ <strong>Vitalidad hoy:</strong> ${t.activity}<br>
+                    📍 <strong>Ubicación:</strong> ${t.locationZone} (${t.geofenceStatus})<br>
+                    💉 <strong>Próxima Vacuna:</strong> ${t.vaxMainName} (¡Vence Hoy!)
+                </div>
+                Pregúntame sobre sus <strong>constantes cardíacas</strong>, su <strong>edad o alimentación</strong>, su <strong>ubicación GPS</strong> o cualquier síntoma clínico.
+                <div class="ai-actions-wrap">
+                    <button class="ai-btn-action primary" onclick="CudiAI.handleSuggestion('¿Cuáles son las constantes vitales y ritmo cardíaco de ' + '${p.name}' + '?')">
+                        <i class="fa-solid fa-heart-pulse"></i> Constantes en Vivo
+                    </button>
+                    <button class="ai-btn-action secondary" onclick="CudiAI.handleSuggestion('¿Cuál es la ubicación GPS de ' + '${p.name}' + '?')">
+                        <i class="fa-solid fa-location-dot"></i> Ubicación GPS
+                    </button>
+                    <button class="ai-btn-action secondary" onclick="CudiAI.handleSuggestion('¿Cuándo debo vacunar a ' + '${p.name}' + '?')">
+                        <i class="fa-solid fa-syringe"></i> Calendario Vacunas
+                    </button>
+                </div>
+            `;
+            this.addMessage('ia', initialGreeting);
+        } else {
+            // MODO GENERAL / SIN PERFIL ACTIVO
+            const guestGreeting = `
+                <div class="ai-source-badge"><img src="logo.jpeg" class="ai-badge-brand-logo" alt="CUDI"> Asistente Bio-Neural CUDI &bull; Modo General</div><br>
+                ¡Hola! 👋 Bienvenido al <strong>Ecosistema de Salud Predictiva y Bienestar Animal CUDI</strong>.
+                <br><br>
+                Actualmente estás navegando en <strong>Modo General (Sin Perfil de Mascota Activo)</strong>. Estoy preparado para orientarte con máxima evidencia científica en:
+                <div class="ai-info-card">
+                    🩺 <strong>Triaje IA & Urgencias 24/7:</strong> Detección precoz de arritmias y medicina preventiva.<br>
+                    📡 <strong>Smart Collar CUDI GPS Ultra:</strong> Algoritmos Holter, telemetría PPG y geocercas satelitales.<br>
+                    🛍️ <strong>Catálogo de 90 Soluciones:</strong> Nutrición biológica BARF, seguros de salud veterinaria y bienestar.<br>
+                    🔬 <strong>Evidencia Científica:</strong> 90 ensayos clínicos publicados en el CUDI Journal.
+                </div>
+                Si tienes una mascota, puedes vincular su perfil o probar nuestra Demo Interactiva con telemetría en tiempo real:
+                <div class="ai-actions-wrap">
+                    <button class="ai-btn-action primary" onclick="CudiAI.openProfileOrLogin()">
+                        <i class="fa-solid fa-paw"></i> Iniciar Sesión / Vincular Perfil
+                    </button>
+                    <button class="ai-btn-action secondary" onclick="window.location.href='simulador-gemelo-digital-telemetria.html'">
+                        <i class="fa-solid fa-mobile-screen"></i> Probar Demo Gemelo Digital
+                    </button>
+                    <button class="ai-btn-action secondary" onclick="window.location.href='index.html#store-grid'">
+                        <i class="fa-solid fa-store"></i> Explorar Catálogo
+                    </button>
+                </div>
+            `;
+            this.addMessage('ia', guestGreeting);
+        }
     },
 
     saveHistory() {
@@ -712,7 +1002,7 @@ REGLAS: Responde siempre en español de forma empática, precisa y breve (máxim
                 if (llmText) {
                     const modelShort = this.selectedModel.split('-Instruct')[0];
                     this.chatMemory.push({ role: 'user', content: rawQuery }, { role: 'assistant', content: llmText });
-                    return `<div class="ai-source-badge"><i class="fa-solid fa-microchip"></i> IA Local WebGPU (${modelShort}) &bull; ${this.petProfile.name}</div><br>${this.formatMarkdownToHTML(llmText)}${this.getContextualActionButtons(rawQuery)}`;
+                    return `<div class="ai-source-badge"><img src="logo.jpeg" class="ai-badge-brand-logo" alt="CUDI"> IA Local WebGPU (${modelShort}) &bull; ${this.petProfile.name}</div><br>${this.formatMarkdownToHTML(llmText)}${this.getContextualActionButtons(rawQuery)}`;
                 }
             } catch (e) {
                 console.warn('Error en inferencia opcional WebLLM:', e);
@@ -1052,6 +1342,188 @@ REGLAS: Responde siempre en español de forma empática, precisa y breve (máxim
         });
 
         // ---------------------------------------------------------------------
+        // ---------------------------------------------------------------------
+        // 0. CONSULTAS ESPECÍFICAS DE PERFIL Y DATOS DE LA MASCOTA / MODO GENERAL
+        // ---------------------------------------------------------------------
+        const isPetSpecificQuery = has(
+            'cuantos anos tiene', 'cuantos anos', 'que edad tiene', 'que edad', 'edad de', 'cuando nacio', 'etapa de vida',
+            'cuanto pesa', 'peso de', 'cual es su peso', 'esta gordo', 'esta delgado', 'condicion corporal',
+            'que come', 'su comida', 'cual es su comida', 'que alimento come', 'su dieta', 'dieta actual', 'pauta nutricional', 'alimentacion de',
+            'que raza es', 'cual es su raza', 'de que raza es', 'raza de mi',
+            'nivel de energia', 'cuanto ejercicio', 'es activo',
+            'bateria del collar', 'bateria de su collar', 'cuanta bateria tiene', 'autonomia del collar',
+            'como esta su corazon', 'como esta el corazon', 'ritmo cardiaco de', 'pulso de mi', 'bpm de',
+            'donde esta el', 'donde esta ella', 'donde esta mi perro', 'donde esta mi gato',
+            'perfil de mi mascota', 'ficha de mi mascota', 'ficha completa', 'todos sus datos'
+        ) || (q.includes('cuantos anos') || q.includes('cuantos anos tiene') || q.includes('que edad') || q.includes('que come') || q.includes('cuanto pesa'));
+
+        // Si NO hay perfil activo (Modo General) y preguntan por datos de su mascota:
+        if (!this.hasActiveProfile && isPetSpecificQuery) {
+            return `
+                <div class="ai-source-badge"><img src="logo.jpeg" class="ai-badge-brand-logo" alt="CUDI"> Modo General &bull; Sin Perfil Activo</div><br>
+                Actualmente estás navegando en <strong>Modo General (Sin Perfil de Mascota Activo)</strong>.<br><br>
+                No tienes ninguna mascota vinculada en esta sesión para consultar datos personales (como su edad cronológica, peso, pauta de alimentación, ubicación GPS o constantes cardíacas en vivo).<br><br>
+                💡 <strong>¿Deseas vincular a tu mascota o probar el simulador?</strong><br>
+                Puedes iniciar sesión o acceder a la Demo Interactiva donde podrás interactuar con un Gemelo Digital real:
+                <div class="ai-actions-wrap">
+                    <button class="ai-btn-action primary" onclick="CudiAI.openProfileOrLogin()">
+                        <i class="fa-solid fa-paw"></i> Iniciar Sesión / Vincular Perfil
+                    </button>
+                    <button class="ai-btn-action secondary" onclick="window.location.href='simulador-gemelo-digital-telemetria.html'">
+                        <i class="fa-solid fa-mobile-screen"></i> Probar Demo con Gemelo Digital
+                    </button>
+                    <button class="ai-btn-action secondary" onclick="window.location.href='index.html#store-grid'">
+                        <i class="fa-solid fa-store"></i> Explorar Catálogo
+                    </button>
+                </div>
+            `;
+        }
+
+        // Si HAY perfil activo: Respuestas exactas con todos los datos
+        // 0.1 EDAD Y ETAPA BIOLÓGICA
+        if (has('cuantos anos tiene', 'cuantos anos', 'que edad tiene', 'que edad', 'edad de', 'cuando nacio', 'fecha de nacimiento', 'etapa de vida', 'meses tiene', 'anos tiene') || q.includes('cuantos anos') || q.includes('que edad')) {
+            const ageStr = t.age || '2 años';
+            const speciesText = t.species.toLowerCase().includes('gato') ? 'felino' : 'canino';
+            const ageDetails = speciesText === 'felino'
+                ? 'Equivale aproximadamente a 24 años humanos. Se encuentra en su etapa de mayor estabilidad comportamental, elasticidad muscular y vitalidad fisiológica.'
+                : 'Equivale aproximadamente a 24 años humanos en escala alométrica canina. Su condición osteoarticular y masa muscular se encuentran en el rango óptimo de desarrollo.';
+            return `
+                <div class="ai-source-badge"><img src="logo.jpeg" class="ai-badge-brand-logo" alt="CUDI"> Gemelo Digital Sincronizado &bull; ${t.name}</div><br>
+                <strong>Edad y Etapa Biológica de ${t.name}:</strong>
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin:8px 0; font-size:0.82rem; line-height:1.65; color:#1e293b;">
+                    🎂 <strong>Edad Registrada:</strong> <strong>${ageStr}</strong> (Etapa: <strong>Adulto Joven</strong>)<br>
+                    🧬 <strong>Madurez Fisiológica:</strong> ${ageDetails}<br>
+                    📈 <strong>Esperanza de Vida Estimada:</strong> 14 a 16 años (optimizada mediante monitorización bio-neural preventiva y detección precoz CUDI).<br>
+                    🩺 <strong>Plan Preventivo Activo:</strong> Chequeo anual de adultos jóvenes y cartilla de vacunación sincronizada.
+                </div>
+                <div class="ai-actions-wrap">
+                    <button class="ai-btn-action primary" onclick="CudiAI.goToProfileTab()">
+                        <i class="fa-solid fa-id-card"></i> ${inDemo ? 'Ver Perfil en App' : 'Ver Ficha de ' + t.name}
+                    </button>
+                    <button class="ai-btn-action secondary" onclick="CudiAI.goToHealthTab()">
+                        <i class="fa-solid fa-stethoscope"></i> Historial Clínico
+                    </button>
+                </div>
+            `;
+        }
+
+        // 0.2 RAZA Y GENOTIPO
+        if (has('que raza es', 'cual es su raza', 'raza de mi', 'de que raza es', 'pedigree', 'cruza') || (has('raza') && !has('precio', 'tienda', 'comprar', 'catalogo'))) {
+            return `
+                <div class="ai-source-badge"><img src="logo.jpeg" class="ai-badge-brand-logo" alt="CUDI"> Genotipo y Morfología &bull; ${t.name}</div><br>
+                <strong>Raza y Características Fenotípicas de ${t.name}:</strong>
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin:8px 0; font-size:0.82rem; line-height:1.65; color:#1e293b;">
+                    🐾 <strong>Raza:</strong> <strong>${t.breed}</strong> (${t.species})<br>
+                    ⚖️ <strong>Biotipo y Constitución:</strong> Mesoformo atlético con peso actual de <strong>${t.weight} kg</strong>.<br>
+                    🧬 <strong>Predisposiciones Monitorizadas:</strong> Algoritmo de detección precoz de displasias y micro-arritmias mediante los sensores de impedancia del Smart Collar.<br>
+                    🛡️ <strong>Plan de Salud Asociado:</strong> Póliza CUDI Shield con cobertura completa ante patologías de raza y urgencias.
+                </div>
+                <div class="ai-actions-wrap">
+                    <button class="ai-btn-action primary" onclick="CudiAI.goToProfileTab()">
+                        <i class="fa-solid fa-id-card"></i> Ver Perfil Completo
+                    </button>
+                    <button class="ai-btn-action secondary" onclick="CudiAI.goToMetrics()">
+                        <i class="fa-solid fa-heart-pulse"></i> Telemetría de ${t.name}
+                    </button>
+                </div>
+            `;
+        }
+
+        // 0.3 PESO Y CONDICIÓN CORPORAL
+        if (has('cuanto pesa', 'peso de', 'cual es su peso', 'esta gordo', 'esta flaco', 'esta delgado', 'condicion corporal', 'sobrepeso', 'peso ideal', 'cuanto deberia pesar') || q.includes('cuanto pesa')) {
+            return `
+                <div class="ai-source-badge"><img src="logo.jpeg" class="ai-badge-brand-logo" alt="CUDI"> Biometría y Peso &bull; ${t.name}</div><br>
+                <strong>Registro Biométrico de Peso de ${t.name}:</strong>
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin:8px 0; font-size:0.82rem; line-height:1.65; color:#1e293b;">
+                    ⚖️ <strong>Peso Actual:</strong> <strong>${t.weight} kg</strong><br>
+                    📏 <strong>Índice de Condición Corporal (BCS):</strong> <strong>3 / 5 (Normopeso Óptimo)</strong> &bull; Silueta definida y costillas palpables sin acumulación adiposa.<br>
+                    🔥 <strong>Gasto Metabólico Basal:</strong> ~340 kcal/día sincronizadas con la actividad de hoy (${t.activity}).<br>
+                    📊 <strong>Estabilidad Ponderal:</strong> Variación inferior al 1.5% en los últimos 60 días (Excelente equilibrio metabólico).
+                </div>
+                <div class="ai-actions-wrap">
+                    <button class="ai-btn-action primary" onclick="CudiAI.goToMetrics()">
+                        <i class="fa-solid fa-chart-line"></i> Ver Gráfica de Peso
+                    </button>
+                    <button class="ai-btn-action secondary" onclick="window.location.href='nutricion-personalizada-perros-gatos.html'">
+                        <i class="fa-solid fa-bowl-food"></i> Ajustar Ración Calórica
+                    </button>
+                </div>
+            `;
+        }
+
+        // 0.4 ALIMENTACIÓN Y DIETA PAUTADA
+        if ((has('que come', 'que come el', 'que come ella', 'su comida', 'cual es su comida', 'que alimento come', 'su dieta', 'dieta actual', 'pauta nutricional', 'alimentacion de') || q.includes('que come') || q.includes('su comida')) && !has('venden', 'catalogo', 'tienda', 'comprar', 'precio')) {
+            return `
+                <div class="ai-source-badge"><img src="logo.jpeg" class="ai-badge-brand-logo" alt="CUDI"> Nutrición de Precisión &bull; ${t.name}</div><br>
+                <strong>Pauta Nutricional y Alimentación de ${t.name}:</strong>
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin:8px 0; font-size:0.82rem; line-height:1.65; color:#1e293b;">
+                    🥣 <strong>Dieta Pautada:</strong> <strong>${t.food}</strong> (Fórmula de alta digestibilidad con ingredientes orgánicos certificados).<br>
+                    🥩 <strong>Ración Diaria Recomendada:</strong> Ajustada a su peso de <strong>${t.weight} kg</strong> y gasto diario en 2 tomas (mañana y noche).<br>
+                    💧 <strong>Hidratación:</strong> Acceso permanente a agua fresca. Monitorización hídrica activa con el Smart Collar.<br>
+                    🔬 <strong>Microbioma &amp; Salud Digestiva:</strong> Avalado por ensayos clínicos del CUDI Journal (reducción del 54% en marcadores proinflamatorios fecales).
+                </div>
+                <div class="ai-actions-wrap">
+                    <button class="ai-btn-action primary" onclick="window.location.href='producto-ecopet-organic.html'">
+                        <i class="fa-solid fa-bag-shopping"></i> Ver Dieta Orgánica EcoPet
+                    </button>
+                    <button class="ai-btn-action secondary" onclick="window.location.href='estudio-ecopet-organic-barf-integral.html'">
+                        <i class="fa-solid fa-flask"></i> Ver Estudio Microbioma BARF
+                    </button>
+                </div>
+            `;
+        }
+
+        // 0.5 BATERÍA DEL SMART COLLAR
+        if (has('bateria del collar', 'bateria de su collar', 'cuanta bateria tiene', 'nivel de bateria', 'autonomia del collar', 'collar encendido', 'carga del collar', 'bateria restante', 'cuanta bateria')) {
+            return `
+                <div class="ai-source-badge"><img src="logo.jpeg" class="ai-badge-brand-logo" alt="CUDI"> Telemetría de Hardware &bull; Smart Collar CUDI</div><br>
+                <strong>Estado de Batería y Hardware del Collar de ${t.name}:</strong>
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin:8px 0; font-size:0.82rem; line-height:1.65; color:#1e293b;">
+                    🔋 <strong>Nivel de Batería:</strong> <strong>${t.battery}</strong><br>
+                    ⚡ <strong>Autonomía Restante:</strong> ~18 días en modo estándar (4 días en modo rastreo satelital intensivo LTE-M 1Hz).<br>
+                    📡 <strong>Conectividad eSIM:</strong> 4G LTE-M / NB-IoT con señal excelente (-78 dBm).<br>
+                    🛡️ <strong>Sensores Activos:</strong> PPG Óptico dual, acelerómetro triaxial 3D y termistor dérmico operando al 100%.
+                </div>
+                <div class="ai-actions-wrap">
+                    <button class="ai-btn-action primary" onclick="CudiAI.triggerCollarBeep()">
+                        <i class="fa-solid fa-volume-high"></i> Comprobar Zumbador Acústico
+                    </button>
+                    <button class="ai-btn-action secondary" onclick="window.location.href='smart-collar-cudi-gps.html'">
+                        <i class="fa-solid fa-microchip"></i> Ver Especificaciones Collar
+                    </button>
+                </div>
+            `;
+        }
+
+        // 0.6 FICHA COMPLETA / TODOS SUS DATOS
+        if (has('todos sus datos', 'datos de mi mascota', 'que sabes de mi mascota', 'ficha completa', 'quien es mi mascota', 'perfil completo', 'toda su informacion', 'resumen de mi mascota')) {
+            return `
+                <div class="ai-source-badge"><img src="logo.jpeg" class="ai-badge-brand-logo" alt="CUDI"> Expediente Bio-Neural Completo &bull; ${t.name}</div><br>
+                <strong>Ficha Biográfica y Biométrica Completa de ${t.name}:</strong>
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin:8px 0; font-size:0.82rem; line-height:1.68; color:#1e293b;">
+                    🐾 <strong>Nombre y Especie:</strong> <strong>${t.name}</strong> &bull; ${t.species}<br>
+                    🐕 <strong>Raza y Genotipo:</strong> <strong>${t.breed}</strong><br>
+                    🎂 <strong>Edad y Etapa:</strong> <strong>${t.age}</strong> (Adulto Joven &bull; ~24 años biológicos)<br>
+                    ⚖️ <strong>Peso y Condición:</strong> <strong>${t.weight} kg</strong> (BCS: 3/5 Normopeso)<br>
+                    🥣 <strong>Alimentación:</strong> <strong>${t.food}</strong><br>
+                    ⚡ <strong>Nivel de Energía:</strong> <strong>${t.energy}</strong> (${t.activity})<br>
+                    ❤️ <strong>Frecuencia Cardíaca:</strong> <strong>${t.bpm} bpm</strong> (Normal: ${t.bpmRange})<br>
+                    🌡️ <strong>Temperatura Dérmica:</strong> <strong>${t.temp}</strong> &bull; VFC Estrés: <strong>${t.hrv}</strong><br>
+                    📍 <strong>Ubicación Actual:</strong> <strong>${t.locationZone}</strong> (${t.geofenceStatus})<br>
+                    🔋 <strong>Batería Smart Collar:</strong> <strong>${t.battery}</strong><br>
+                    💉 <strong>Inmunización Próxima:</strong> ${t.vaxMainName} (¡Alerta activa hoy!)
+                </div>
+                <div class="ai-actions-wrap">
+                    <button class="ai-btn-action primary" onclick="CudiAI.goToProfileTab()">
+                        <i class="fa-solid fa-id-card"></i> ${inDemo ? 'Editar Perfil en App' : 'Ver Perfil en Web'}
+                    </button>
+                    <button class="ai-btn-action secondary" onclick="CudiAI.goToMetrics()">
+                        <i class="fa-solid fa-chart-line"></i> Telemetría en Vivo
+                    </button>
+                </div>
+            `;
+        }
+
         // A0. CESTA DE COMPRAS (CARRITO / CANASTA / SESTA) + RECOMENDACIONES AFINES
         // ---------------------------------------------------------------------
         if (has('cesta', 'sesta', 'carrito', 'canasta', 'carro', 'mi pedido', 'mis compras', 'en la cesta', 'en la sesta', 'en el carrito', 'en la canasta', 'que tengo en', 'que llevo', 'complementar', 'afines', 'recomendaciones para mi cesta')) {
@@ -3385,7 +3857,7 @@ REGLAS: Responde siempre en español de forma empática, precisa y breve (máxim
             }
             if (has('ansiedad por separacion', 'cortisol')) {
                 return `
-                    <div class="ai-source-badge"><i class="fa-solid fa-brain"></i> CUDI Journal &bull; Etología Clínica</div><br>
+                    <div class="ai-source-badge"><img src="logo.jpeg" class="ai-badge-brand-logo" alt="CUDI"> CUDI Journal &bull; Etología Clínica</div><br>
                     <strong>Estudio Clínico: Reducción de Cortisol Sistémico en Ansiedad por Separación (<code>ansiedad-separacion-cortisol-mascotas.html</code>):</strong>
                     <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin:8px 0; font-size:0.8rem; line-height:1.62;">
                         📉 <strong>Hallazgo Principal:</strong> Mediante el sensor de Variabilidad de Frecuencia Cardíaca (VFC/HRV) del Smart Collar, CUDI detecta picos de estrés simpático antes del llanto o ladrido compulsivo.<br>
@@ -4226,7 +4698,7 @@ REGLAS: Responde siempre en español de forma empática, precisa y breve (máxim
 
         // Respuesta abierta elocuente y amigable
         return `
-            <div class="ai-source-badge"><i class="fa-solid fa-brain"></i> Asistente de Inteligencia CUDI &bull; ${p.name}</div><br>
+            <div class="ai-source-badge"><img src="logo.jpeg" class="ai-badge-brand-logo" alt="CUDI"> Asistente Bio-Neural CUDI ${p ? "&bull; " + p.name : ""}</div><br>
             Entiendo perfectamente tu inquietud sobre: <strong>"${rawQuery}"</strong>.<br><br>
             <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:12px; margin:8px 0; font-size:0.81rem; line-height:1.6; color:#334155;">
                 Como IA integral de salud animal y conocimiento abierto, evalúo continuamente tanto las necesidades comportamentales como fisiológicas de ${p.name} (${p.type === 'gato' ? 'felino' : 'canino'}). 
