@@ -34,9 +34,18 @@
     <div class="top-bar-refined">
         <span><i class="fa-solid fa-envelope"></i> cudi.ai2026@gmail.com</span>
         <span><i class="fa-solid fa-phone"></i> 900 123 456</span>
+        <div style="display:flex; align-items:center; gap:5px;">
+            <i class="fa-solid fa-globe"></i>
+            <select class="lang-selector" style="background:transparent; color:white; border:none; outline:none; font-family:var(--font-body); cursor:pointer; font-weight:700; font-size:0.75rem;">
+                <option value="es" style="color:#000;">ES</option>
+                <option value="ca" style="color:#000;">CA</option>
+                <option value="en" style="color:#000;">EN</option>
+            </select>
+        </div>
     </div>
 
-    <nav class="navbar-island">
+    <!-- Navegación Estilo "Floating Island" -->
+                <nav class="navbar-island">
         <div class="nav-capsule">
             <a href="index.html" class="logo" style="display:flex; align-items:center;">
                 <img src="logo.jpeg" alt="CUDI" style="height:55px; width:auto; border-radius: 8px;" decoding="async">
@@ -56,9 +65,9 @@
                     <li><a href="red-socios-clinicas-veterinarias.html">Partners</a></li>
                     <li id="nav-session-item"></li>
                 </ul>
-                <div class="cart-trigger-island" onclick="toggleCart()">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                    <span class="cart-badge" id="global-cart-badge">0</span>
+                <div class="cart-trigger-island" onclick="toggleCart()" style="position:relative; display:flex; align-items:center; justify-content:center; cursor:pointer; min-width:44px; min-height:44px;">
+                    <i class="cart-icon-cudi" style="font-size:1.2rem; pointer-events:none;"></i>
+                    <span class="cart-badge" id="global-cart-badge" style="position:absolute;top:-6px;right:-6px;background:var(--clr-primary);color:white;font-size:0.65rem;font-weight:700;border-radius:50px;width:18px;height:18px;display:flex;align-items:center;justify-content:center;border: 2px solid white; pointer-events:none;">0</span>
                 </div>
                 <button class="menu-trigger-mobile" onclick="toggleMobileMenu()" style="touch-action:manipulation;"><i class="fa-solid fa-bars-staggered"></i></button>
             </div>
