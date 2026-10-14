@@ -951,37 +951,274 @@
     }
 }
 
-/* Floating Elements Positioning & Collision Avoidance */
+/* ============================================================================
+   UNIVERSAL MOBILE-FIRST CATEGORY, MARKETPLACE & LEGAL LAYOUT OVERHAUL (v8.2)
+   Prevents narrow sliver hero photos, collapsed sidebars, and overlapping buttons
+   ============================================================================ */
+
+/* Base Category Hero Defaults */
+.category-hero-header,
+header.container {
+    max-width: 1280px;
+    margin: 0 auto 40px;
+    padding: 0 24px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+    /* Category Hero Container */
+    header.container {
+        margin: 0 auto 20px !important;
+        padding: 0 14px !important;
+    }
+    
+    header.container > .apple-glass-card {
+        border-radius: 24px !important;
+        overflow: hidden !important;
+    }
+
+    /* Force Category Hero to Stack Vertically on Mobile / Tablet */
+    header.container div[style*="grid-template-columns: 1.2fr 0.8fr"],
+    header.container div[style*="1.2fr 0.8fr"],
+    .category-hero-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        grid-template-columns: 1fr !important;
+        width: 100% !important;
+    }
+
+    /* Category Hero Text Area */
+    header.container div[style*="grid-template-columns: 1.2fr 0.8fr"] > div:first-child,
+    header.container div[style*="1.2fr 0.8fr"] > div:first-child,
+    .category-hero-content {
+        padding: 24px 18px 20px !important;
+        order: 1 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Responsive Category Titles */
+    header.container div[style*="grid-template-columns: 1.2fr 0.8fr"] h1,
+    header.container div[style*="1.2fr 0.8fr"] h1,
+    .category-hero-content h1 {
+        font-size: clamp(1.35rem, 5.5vw, 1.85rem) !important;
+        line-height: 1.22 !important;
+        margin: 0 0 12px !important;
+        letter-spacing: -0.4px !important;
+        word-break: break-word !important;
+    }
+
+    header.container div[style*="grid-template-columns: 1.2fr 0.8fr"] p,
+    header.container div[style*="1.2fr 0.8fr"] p,
+    .category-hero-content p {
+        font-size: 0.88rem !important;
+        line-height: 1.5 !important;
+        margin: 0 0 16px !important;
+    }
+
+    /* Category Hero Image Banner: Full-width, never a narrow vertical sliver */
+    header.container div[style*="grid-template-columns: 1.2fr 0.8fr"] > div:last-child,
+    header.container div[style*="1.2fr 0.8fr"] > div:last-child,
+    .category-hero-banner {
+        width: 100% !important;
+        min-height: 200px !important;
+        height: 210px !important;
+        max-height: 240px !important;
+        border-radius: 0 0 24px 24px !important;
+        background-size: cover !important;
+        background-position: center !important;
+        order: 2 !important;
+        display: block !important;
+        flex-shrink: 0 !important;
+    }
+
+    /* ========================================================================
+       MAIN 2-COLUMN MARKETPLACE & LEGAL LAYOUTS TO SINGLE-COLUMN STACK
+       ======================================================================== */
+    main.container,
+    main[style*="grid-template-columns: 280px 1fr"],
+    main[style*="280px 1fr"],
+    .category-marketplace-layout,
+    .marketplace-layout {
+        display: flex !important;
+        flex-direction: column !important;
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        padding: 0 14px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Sidebar Filters unstick and full-width */
+    main.container > aside,
+    main[style*="grid-template-columns: 280px 1fr"] > aside,
+    main[style*="280px 1fr"] > aside,
+    .category-filters-aside,
+    .filters-sidebar {
+        position: static !important;
+        top: auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 16px !important;
+        border-radius: 20px !important;
+        margin-bottom: 6px !important;
+    }
+
+    /* Turn filter radio lists into modern horizontal chips on mobile */
+    aside.apple-glass-card div[style*="flex-direction: column; gap: 8px;"],
+    .category-filters-aside div[style*="flex-direction: column; gap: 8px;"] {
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        gap: 6px !important;
+    }
+
+    aside.apple-glass-card label,
+    .category-filters-aside label {
+        background: rgba(255, 255, 255, 0.95) !important;
+        border: 1px solid rgba(203, 213, 225, 0.8) !important;
+        border-radius: 50px !important;
+        padding: 6px 12px !important;
+        font-size: 0.78rem !important;
+        font-weight: 700 !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+        cursor: pointer !important;
+        box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04) !important;
+    }
+
+    /* Product Section & Grid */
+    main.container > section,
+    main[style*="grid-template-columns: 280px 1fr"] > section,
+    .category-products-section {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    #category-products-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Product Card on Mobile */
+    #category-products-grid .partner-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 16px !important;
+        border-radius: 20px !important;
+        margin: 0 !important;
+    }
+
+    #category-products-grid .partner-card img {
+        width: 100% !important;
+        height: 190px !important;
+        object-fit: cover !important;
+        border-radius: 16px !important;
+    }
+
+    #category-products-grid .partner-card h3 {
+        font-size: 1.05rem !important;
+        line-height: 1.35 !important;
+        margin-bottom: 8px !important;
+    }
+
+    #category-products-grid .partner-card p {
+        font-size: 0.84rem !important;
+        line-height: 1.48 !important;
+        margin-bottom: 14px !important;
+    }
+
+    #category-products-grid .partner-card > div:last-child {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        gap: 10px !important;
+        padding-top: 12px !important;
+        flex-wrap: nowrap !important;
+    }
+
+    /* Legal Pages Article on Mobile */
+    main[style*="grid-template-columns: 280px 1fr"] > article,
+    main[style*="280px 1fr"] > article {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 22px 16px !important;
+        border-radius: 20px !important;
+    }
+}
+
+/* ============================================================================
+   FLOATING ELEMENTS HARMONY & COLLISION PREVENTION ACROSS ALL PAGES
+   ============================================================================ */
 #global-floating-demo-pill,
 .floating-demo-pill {
     display: inline-flex !important;
     position: fixed !important;
     bottom: 24px !important;
     left: 24px !important;
-    z-index: 9999 !important;
+    z-index: 9990 !important;
     opacity: 1 !important;
     visibility: visible !important;
     pointer-events: auto !important;
 }
 
 @media (max-width: 768px) {
+    /* Bottom Left: Interactive Demo Pill */
     #global-floating-demo-pill,
     .floating-demo-pill {
-        bottom: calc(16px + env(safe-area-inset-bottom, 0px)) !important;
-        left: 14px !important;
+        bottom: calc(14px + env(safe-area-inset-bottom, 0px)) !important;
+        left: 12px !important;
+        right: auto !important;
+        max-width: calc(100vw - 84px) !important;
         padding: 7px 12px !important;
-        font-size: 0.74rem !important;
-        border-radius: 20px !important;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18) !important;
+        font-size: 0.72rem !important;
+        border-radius: 50px !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        z-index: 9990 !important;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22) !important;
     }
-    /* Back to Top button mobile placement above bottom triggers */
+
+    /* Bottom Right: CUDI AI Assistant Trigger */
+    .cudi-ai-container,
+    .cudi-ai-root {
+        bottom: calc(14px + env(safe-area-inset-bottom, 0px)) !important;
+        right: 12px !important;
+        left: auto !important;
+        z-index: 9995 !important;
+    }
+
+    .cudi-ai-trigger {
+        width: 50px !important;
+        height: 50px !important;
+        min-width: 50px !important;
+        min-height: 50px !important;
+    }
+
+    /* Above AI Trigger: Back to Top Button (Stacked cleanly, NO OVERLAP) */
+    #cudi-back-to-top,
+    .cudi-back-to-top-btn,
     #scroll-top-btn,
     .scroll-top,
     .scroll-to-top {
-        bottom: 78px !important;
-        right: 16px !important;
+        bottom: calc(74px + env(safe-area-inset-bottom, 0px)) !important;
+        right: 14px !important;
+        left: auto !important;
         width: 38px !important;
         height: 38px !important;
+        min-width: 38px !important;
+        min-height: 38px !important;
         font-size: 0.85rem !important;
+        z-index: 9980 !important;
     }
 }
+
