@@ -1296,9 +1296,45 @@ button:active, .btn-primary:active, .btn-secondary:active, .store-card:active {
 
 /* Responsive Adjustments for Marketplace & Product */
 @media (max-width: 900px) {
-    .ecommerce-grid, .results-grid, .pillar-grid { grid-template-columns: 1fr !important; }
+    .ecommerce-grid, .results-grid, .pillar-grid, .edu-grid, .apple-subs-grid { grid-template-columns: 1fr !important; }
     .marketplace-layout, .product-layout { grid-template-columns: 1fr; }
     .filters-sidebar { position: static; margin-bottom: 30px; }
+}
+
+@media (max-width: 768px) {
+    .ecommerce-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        margin-top: 24px !important;
+    }
+    .store-card {
+        border-radius: 22px !important;
+    }
+    .store-card .card-img {
+        height: 200px !important;
+    }
+    .store-card .card-content {
+        padding: 20px 18px !important;
+    }
+    .store-card h3 {
+        font-size: 1.25rem !important;
+        margin: 0 0 8px !important;
+    }
+    .store-card p {
+        font-size: 0.88rem !important;
+        line-height: 1.5 !important;
+        margin: 0 0 16px !important;
+    }
+    .edu-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+    .edu-card-content {
+        padding: 24px 20px !important;
+    }
+    .edu-title {
+        font-size: 2rem !important;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1306,7 +1342,19 @@ button:active, .btn-primary:active, .btn-secondary:active, .store-card:active {
     .product-cards { grid-template-columns: 1fr; }
     .pricing-cards, .p-grid { grid-template-columns: 1fr !important; }
     .partners-cards { grid-template-columns: 1fr; }
-    .container { padding: 0 20px; }
+    .container { padding: 0 16px; }
+    .store-card .card-img {
+        height: 180px !important;
+    }
+}
+
+/* Hide redundant site-wide floating pills when user is inside the Mobile Simulator */
+.app-demo-body #global-floating-demo-pill,
+.app-demo-body .floating-demo-pill,
+.app-demo-body .cudi-chat-widget,
+.app-demo-body .cudi-ai-trigger,
+.app-demo-body #cudi-back-to-top {
+    display: none !important;
 }
 
 /* AI Chat Triage Widget Global */

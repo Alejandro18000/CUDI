@@ -555,54 +555,8 @@
 }
 
 /* ==========================================================================
-   RESPONSIVIDAD MÓVIL APPLE STORE (iPHONE VIEWPORT)
+   RESPONSIVIDAD MÓVIL APPLE STORE & ESTUDIOS CLÍNICOS (iPHONE / ANDROID)
    ========================================================================== */
-@media (max-width: 900px) {
-    .apple-product-stage-container {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-    .apple-product-gallery-pane {
-        position: relative;
-        top: 0;
-    }
-    .apple-main-image-viewport {
-        min-height: 340px;
-        padding: 20px;
-    }
-    .apple-main-image-viewport img {
-        max-height: 300px;
-    }
-    .apple-expert-card {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 20px;
-    }
-    .apple-expert-avatar {
-        margin: 0 auto;
-    }
-    .apple-sticky-buy-dock {
-        padding: 10px 16px;
-    }
-    .apple-sticky-prod-info {
-        gap: 10px;
-    }
-    .apple-sticky-title {
-        font-size: 0.82rem;
-        max-width: 140px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-    .apple-sticky-price {
-        font-size: 0.95rem;
-    }
-    .apple-sticky-btn {
-        padding: 9px 18px;
-        font-size: 0.82rem;
-    }
-}
-
 
 /* Hide redundant transversal breadcrumbs on Apple Store pages */
 .apple-product-page-root #cudi-transversal-breadcrumbs,
@@ -631,19 +585,373 @@
     order: 2 !important;
 }
 
+/* TABLET & MOBILE BREAKPOINT (<= 900px) */
 @media (max-width: 900px) {
     .apple-product-stage-container {
         grid-template-columns: 1fr !important;
-        gap: 30px !important;
+        gap: 28px !important;
+        padding: 16px 20px !important;
+        margin-bottom: 36px !important;
     }
     .apple-product-gallery-pane {
         position: relative !important;
         top: 0 !important;
     }
+    .apple-main-image-viewport {
+        min-height: 320px !important;
+        padding: 20px !important;
+        border-radius: 22px !important;
+    }
+    .apple-main-image-viewport img {
+        max-height: 280px !important;
+    }
+    .apple-expert-card {
+        grid-template-columns: 1fr !important;
+        text-align: center !important;
+        gap: 18px !important;
+        padding: 28px 20px !important;
+    }
+    .apple-expert-avatar {
+        margin: 0 auto !important;
+    }
+    
+    /* Study Paper Tablet */
+    .study-paper-body {
+        grid-template-columns: 1fr !important;
+        gap: 36px !important;
+        margin: 40px auto !important;
+        padding: 0 20px !important;
+    }
+    .study-product-linked-card {
+        position: relative !important;
+        top: 0 !important;
+    }
 }
 
+/* MOBILE PHONES (<= 768px - iPhone 14/15, Galaxy, Pixel) */
+@media (max-width: 768px) {
+    /* Breadcrumbs Bar: single-line scroll without multiline stacking */
+    .apple-breadcrumbs-bar {
+        padding: 10px 16px !important;
+        font-size: 0.74rem !important;
+        overflow-x: auto !important;
+        white-space: nowrap !important;
+        -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important;
+        gap: 6px !important;
+    }
+    .apple-breadcrumbs-bar::-webkit-scrollbar {
+        display: none !important;
+    }
+    .apple-breadcrumbs-bar span.current {
+        max-width: 160px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display: inline-block;
+        vertical-align: bottom;
+    }
 
-/* Ensure #global-floating-demo-pill is always visible and perfectly layered above other elements */
+    /* Product Stage */
+    .apple-product-stage-container {
+        padding: 12px 14px !important;
+        gap: 22px !important;
+        margin-bottom: 24px !important;
+    }
+    .apple-main-image-viewport {
+        min-height: 250px !important;
+        padding: 14px !important;
+        border-radius: 18px !important;
+    }
+    .apple-main-image-viewport img {
+        max-height: 220px !important;
+    }
+    .apple-badge-floating {
+        top: 10px !important;
+        left: 10px !important;
+        font-size: 0.68rem !important;
+        padding: 4px 10px !important;
+    }
+    .apple-thumbs-strip {
+        gap: 8px !important;
+        margin-top: 6px !important;
+    }
+    .apple-thumb-slot {
+        width: 54px !important;
+        height: 54px !important;
+        border-radius: 12px !important;
+        padding: 4px !important;
+    }
+
+    /* Product Typography & Pricing */
+    .apple-product-kicker {
+        font-size: 0.75rem !important;
+        margin-bottom: 6px !important;
+    }
+    .apple-product-title {
+        font-size: clamp(1.4rem, 5.5vw, 1.85rem) !important;
+        line-height: 1.15 !important;
+        letter-spacing: -0.6px !important;
+        margin: 0 0 10px !important;
+        word-break: break-word !important;
+    }
+    .apple-product-partner-row {
+        flex-wrap: wrap !important;
+        gap: 8px !important;
+        margin-bottom: 14px !important;
+        font-size: 0.8rem !important;
+    }
+    .apple-price-block {
+        gap: 10px !important;
+        margin-bottom: 18px !important;
+        padding-bottom: 16px !important;
+    }
+    .apple-price-main {
+        font-size: 2.1rem !important;
+    }
+    .apple-price-subtext {
+        font-size: 0.78rem !important;
+    }
+    .apple-product-desc {
+        font-size: 0.94rem !important;
+        line-height: 1.55 !important;
+        margin-bottom: 20px !important;
+    }
+
+    /* Variant Selector */
+    .apple-variant-selector-box {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 10px !important;
+        padding: 14px 16px !important;
+        border-radius: 16px !important;
+        margin-bottom: 20px !important;
+    }
+    .apple-variant-pills {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 6px !important;
+        width: 100% !important;
+    }
+    .apple-var-pill {
+        text-align: center !important;
+        padding: 8px 6px !important;
+        font-size: 0.75rem !important;
+        white-space: nowrap !important;
+    }
+
+    /* Buy Actions */
+    .apple-buy-actions-dock {
+        gap: 10px !important;
+        margin-bottom: 22px !important;
+    }
+    .apple-btn-buy-primary {
+        padding: 15px 20px !important;
+        font-size: 0.96rem !important;
+        border-radius: 16px !important;
+        justify-content: center !important;
+    }
+    .apple-btn-buy-secondary {
+        padding: 13px 18px !important;
+        font-size: 0.86rem !important;
+        border-radius: 16px !important;
+        justify-content: center !important;
+    }
+    .apple-guarantee-strip {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 10px 14px !important;
+        justify-content: flex-start !important;
+        padding-top: 8px !important;
+        font-size: 0.72rem !important;
+    }
+
+    /* Clinical Trial Section inside Product Page */
+    .apple-product-page-root section {
+        padding: 40px 16px !important;
+    }
+    .apple-product-page-root section h3 {
+        font-size: 1.35rem !important;
+        line-height: 1.25 !important;
+    }
+    .apple-product-page-root section p {
+        font-size: 0.92rem !important;
+    }
+
+    /* Specs & Reviews Grids */
+    .apple-section-specs,
+    .apple-section-expert {
+        padding: 40px 16px !important;
+    }
+    .apple-section-header {
+        margin-bottom: 28px !important;
+    }
+    .apple-section-title {
+        font-size: 1.7rem !important;
+    }
+    .apple-specs-grid,
+    .apple-reviews-grid {
+        grid-template-columns: 1fr !important;
+        gap: 14px !important;
+    }
+    .apple-spec-card,
+    .apple-review-card {
+        padding: 18px 16px !important;
+        border-radius: 16px !important;
+    }
+
+    /* Sticky Bottom Buy Dock */
+    .apple-sticky-buy-dock {
+        padding: 8px 14px calc(8px + env(safe-area-inset-bottom, 0px)) !important;
+        bottom: 0 !important;
+        z-index: 998 !important;
+    }
+    .apple-sticky-prod-info {
+        gap: 8px !important;
+    }
+    .apple-sticky-thumb {
+        width: 38px !important;
+        height: 38px !important;
+        border-radius: 8px !important;
+    }
+    .apple-sticky-title {
+        font-size: 0.75rem !important;
+        max-width: 120px !important;
+    }
+    .apple-sticky-price {
+        font-size: 0.88rem !important;
+    }
+    .apple-sticky-btn {
+        padding: 8px 14px !important;
+        font-size: 0.78rem !important;
+        gap: 6px !important;
+    }
+
+    /* ==========================================================
+       STUDY PAGES (estudio-*.html) COMPREHENSIVE MOBILE OVERRIDES
+       ========================================================== */
+    .study-paper-hero {
+        padding: 75px 14px 28px !important;
+    }
+    .study-meta-pill-bar {
+        gap: 6px !important;
+        margin-bottom: 14px !important;
+    }
+    .study-tag {
+        font-size: 0.66rem !important;
+        padding: 4px 10px !important;
+    }
+    .study-doi-pill {
+        font-size: 0.66rem !important;
+        padding: 4px 8px !important;
+        max-width: 100% !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        white-space: nowrap !important;
+    }
+    .study-headline {
+        font-size: clamp(1.35rem, 5.5vw, 1.85rem) !important;
+        line-height: 1.2 !important;
+        letter-spacing: -0.6px !important;
+        margin-bottom: 14px !important;
+        word-break: break-word !important;
+    }
+    .study-authors-box {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 6px !important;
+        font-size: 0.82rem !important;
+        margin-bottom: 18px !important;
+        padding-bottom: 14px !important;
+    }
+    .study-stats-highlight-grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 10px !important;
+        margin-top: 16px !important;
+    }
+    .study-stat-card {
+        padding: 12px 10px !important;
+        border-radius: 14px !important;
+    }
+    .study-stat-num {
+        font-size: 1.55rem !important;
+        line-height: 1 !important;
+    }
+    .study-stat-label {
+        font-size: 0.66rem !important;
+    }
+
+    .study-paper-body {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+        margin: 24px auto !important;
+        padding: 0 14px !important;
+    }
+    .study-content-column {
+        font-size: 0.95rem !important;
+        line-height: 1.6 !important;
+    }
+    .study-content-column h2 {
+        font-size: 1.35rem !important;
+        margin: 26px 0 10px !important;
+    }
+    .study-chart-stage-card {
+        padding: 16px 12px !important;
+        border-radius: 16px !important;
+        margin: 24px 0 !important;
+    }
+    .study-chart-header {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 4px !important;
+    }
+    .study-chart-title {
+        font-size: 1.05rem !important;
+    }
+    .study-chart-stage-card canvas {
+        max-height: 240px !important;
+        width: 100% !important;
+    }
+    .study-product-linked-card {
+        padding: 18px 14px !important;
+        border-radius: 18px !important;
+    }
+    .study-prod-img-box {
+        height: 150px !important;
+        padding: 10px !important;
+    }
+    .study-sources-box {
+        padding: 18px 14px !important;
+        border-radius: 16px !important;
+    }
+}
+
+/* NARROW MOBILE (<= 400px - iPhone SE, Android 360px) */
+@media (max-width: 400px) {
+    .apple-main-image-viewport {
+        min-height: 220px !important;
+        padding: 10px !important;
+    }
+    .apple-main-image-viewport img {
+        max-height: 190px !important;
+    }
+    .apple-thumb-slot {
+        width: 48px !important;
+        height: 48px !important;
+    }
+    .apple-product-title {
+        font-size: 1.45rem !important;
+    }
+    .apple-price-main {
+        font-size: 1.85rem !important;
+    }
+    .apple-stats-highlight-grid,
+    .study-stats-highlight-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* Floating Elements Positioning & Collision Avoidance */
 #global-floating-demo-pill,
 .floating-demo-pill {
     display: inline-flex !important;
@@ -659,9 +967,21 @@
 @media (max-width: 768px) {
     #global-floating-demo-pill,
     .floating-demo-pill {
-        bottom: 16px !important;
-        left: 16px !important;
-        padding: 8px 14px !important;
-        font-size: 0.78rem !important;
+        bottom: calc(16px + env(safe-area-inset-bottom, 0px)) !important;
+        left: 14px !important;
+        padding: 7px 12px !important;
+        font-size: 0.74rem !important;
+        border-radius: 20px !important;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18) !important;
+    }
+    /* Back to Top button mobile placement above bottom triggers */
+    #scroll-top-btn,
+    .scroll-top,
+    .scroll-to-top {
+        bottom: 78px !important;
+        right: 16px !important;
+        width: 38px !important;
+        height: 38px !important;
+        font-size: 0.85rem !important;
     }
 }

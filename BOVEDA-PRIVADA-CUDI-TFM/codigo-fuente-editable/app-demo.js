@@ -10429,12 +10429,12 @@ function renderDemoStoreCatalog() {
 
             <!-- Filtros por especie y ordenacion -->
             <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:6px;">
-                <div style="display:flex; gap:4px;">
-                    <button class="store-chip-btn ${currentDemoSpecies === 'todos' ? 'active' : ''}" onclick="setDemoSpeciesFilter('todos')" style="border:1px solid #cbd5e1; background:${currentDemoSpecies === 'todos' ? '#0284c7' : 'white'}; color:${currentDemoSpecies === 'todos' ? 'white' : '#475569'}; border-radius:20px; padding:3px 9px; font-size:0.7rem; font-weight:700; cursor:pointer;"><i class="fa-solid fa-paw"></i> Todos</button>
-                    <button class="store-chip-btn ${currentDemoSpecies === 'perro' ? 'active' : ''}" onclick="setDemoSpeciesFilter('perro')" style="border:1px solid #cbd5e1; background:${currentDemoSpecies === 'perro' ? '#0284c7' : 'white'}; color:${currentDemoSpecies === 'perro' ? 'white' : '#475569'}; border-radius:20px; padding:3px 9px; font-size:0.7rem; font-weight:700; cursor:pointer;"><i class="fa-solid fa-dog"></i> Perros</button>
-                    <button class="store-chip-btn ${currentDemoSpecies === 'gato' ? 'active' : ''}" onclick="setDemoSpeciesFilter('gato')" style="border:1px solid #cbd5e1; background:${currentDemoSpecies === 'gato' ? '#0284c7' : 'white'}; color:${currentDemoSpecies === 'gato' ? 'white' : '#475569'}; border-radius:20px; padding:3px 9px; font-size:0.7rem; font-weight:700; cursor:pointer;"><i class="fa-solid fa-cat"></i> Gatos</button>
+                <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                    <button class="store-chip-btn ${currentDemoSpecies === 'todos' ? 'active' : ''}" onclick="setDemoSpeciesFilter('todos')" style="border:1px solid #cbd5e1; background:${currentDemoSpecies === 'todos' ? '#0284c7' : 'white'}; color:${currentDemoSpecies === 'todos' ? 'white' : '#475569'}; border-radius:20px; padding:6px 12px; font-size:0.72rem; font-weight:700; cursor:pointer; min-height:32px; display:inline-flex; align-items:center; gap:4px;"><i class="fa-solid fa-paw"></i> Todos</button>
+                    <button class="store-chip-btn ${currentDemoSpecies === 'perro' ? 'active' : ''}" onclick="setDemoSpeciesFilter('perro')" style="border:1px solid #cbd5e1; background:${currentDemoSpecies === 'perro' ? '#0284c7' : 'white'}; color:${currentDemoSpecies === 'perro' ? 'white' : '#475569'}; border-radius:20px; padding:6px 12px; font-size:0.72rem; font-weight:700; cursor:pointer; min-height:32px; display:inline-flex; align-items:center; gap:4px;"><i class="fa-solid fa-dog"></i> Perros</button>
+                    <button class="store-chip-btn ${currentDemoSpecies === 'gato' ? 'active' : ''}" onclick="setDemoSpeciesFilter('gato')" style="border:1px solid #cbd5e1; background:${currentDemoSpecies === 'gato' ? '#0284c7' : 'white'}; color:${currentDemoSpecies === 'gato' ? 'white' : '#475569'}; border-radius:20px; padding:6px 12px; font-size:0.72rem; font-weight:700; cursor:pointer; min-height:32px; display:inline-flex; align-items:center; gap:4px;"><i class="fa-solid fa-cat"></i> Gatos</button>
                 </div>
-                <select onchange="setDemoSort(this.value)" style="border:1px solid #cbd5e1; border-radius:8px; padding:3px 6px; font-size:0.68rem; color:#475569; background:white;">
+                <select onchange="setDemoSort(this.value)" style="border:1px solid #cbd5e1; border-radius:8px; padding:5px 8px; font-size:0.72rem; color:#475569; background:white; min-height:32px;">
                     <option value="relevance">Relevancia</option>
                     <option value="price-asc">Precio: Menor a Mayor</option>
                     <option value="price-desc">Precio: Mayor a Menor</option>
@@ -10561,14 +10561,14 @@ function renderFilteredDemoProducts() {
 // MODAL DE FICHA TÉCNICA, OPINIONES Y ENSAYO CLÍNICO (4 PESTAÑAS)
 // -------------------------------------------------------------
 function openProductModal(prodId) {
-    const prod = getAllDemoProducts().find(p => p.id === prodId);
+    const prod = getAllDemoProducts().find(p => p.id === prodId || p.slug === prodId || (p.name && p.name.toLowerCase() === String(prodId).toLowerCase()));
     if (!prod) return;
 
     let modal = document.getElementById('product-deep-modal');
     if (!modal) {
         modal = document.createElement('div');
         modal.id = 'product-deep-modal';
-        modal.style.cssText = 'position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(15,23,42,0.6); backdrop-filter:blur(6px); z-index:99999; display:flex; align-items:center; justify-content:center; padding:16px; box-sizing:border-box;';
+        modal.style.cssText = 'position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(15,23,42,0.6); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px); z-index:99999; display:flex; align-items:center; justify-content:center; padding:12px; box-sizing:border-box;';
         document.body.appendChild(modal);
     }
 
@@ -10583,23 +10583,23 @@ function openProductModal(prodId) {
     };
 
     modal.innerHTML = `
-        <div style="background:white; border-radius:20px; width:100%; max-width:440px; max-height:90vh; overflow:hidden; display:flex; flex-direction:column; box-shadow:0 25px 60px rgba(0,0,0,0.3); font-family:var(--font-body, system-ui, sans-serif);">
+        <div style="background:white; border-radius:20px; width:100%; max-width:440px; max-height:88vh; overflow:hidden; display:flex; flex-direction:column; box-shadow:0 25px 60px rgba(0,0,0,0.3); font-family:var(--font-body, system-ui, sans-serif); margin:auto;">
             <!-- Modal Header -->
-            <div style="position:relative; height:160px; background-image:url('${prod.img}'); background-size:cover; background-position:center;">
+            <div style="position:relative; height:135px; background-image:url('${prod.img}'); background-size:cover; background-position:center; flex-shrink:0;">
                 <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(15,23,42,0.85) 0%, transparent 60%);"></div>
-                <button onclick="closeProductModal()" style="position:absolute; top:12px; right:12px; background:rgba(255,255,255,0.9); border:none; border-radius:50%; width:30px; height:30px; cursor:pointer; font-weight:800; font-size:0.9rem; color:#0f172a;">✕</button>
-                <div style="position:absolute; bottom:12px; left:16px; right:16px; color:white;">
-                    <div style="font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.5px; opacity:0.9;">${prod._catLabel || 'Catálogo'} &bull; ${speciesLabel}</div>
-                    <div style="font-size:1.05rem; font-weight:800; line-height:1.2; text-shadow:0 1px 4px rgba(0,0,0,0.5);">${prod.name}</div>
+                <button onclick="closeProductModal()" style="position:absolute; top:10px; right:10px; background:rgba(255,255,255,0.92); border:none; border-radius:50%; width:28px; height:28px; cursor:pointer; font-weight:800; font-size:0.85rem; color:#0f172a; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 6px rgba(0,0,0,0.2);">✕</button>
+                <div style="position:absolute; bottom:10px; left:14px; right:14px; color:white;">
+                    <div style="font-size:0.68rem; font-weight:700; text-transform:uppercase; letter-spacing:0.5px; opacity:0.9;">${prod._catLabel || 'Catálogo'} &bull; ${speciesLabel}</div>
+                    <div style="font-size:0.98rem; font-weight:800; line-height:1.2; text-shadow:0 1px 4px rgba(0,0,0,0.5); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${prod.name}</div>
                 </div>
             </div>
 
             <!-- Modal Nav Tabs -->
-            <div style="display:flex; border-bottom:1px solid #e2e8f0; background:#f8fafc;">
-                <button id="modal-tab-btn-desc" onclick="switchProductModalTab('desc')" style="flex:1; padding:10px 4px; border:none; background:white; font-size:0.72rem; font-weight:800; color:#0284c7; border-bottom:2px solid #0284c7; cursor:pointer;">Descripción</button>
-                <button id="modal-tab-btn-specs" onclick="switchProductModalTab('specs')" style="flex:1; padding:10px 4px; border:none; background:none; font-size:0.72rem; font-weight:700; color:#64748b; cursor:pointer;">Ficha Técnica</button>
-                <button id="modal-tab-btn-reviews" onclick="switchProductModalTab('reviews')" style="flex:1; padding:10px 4px; border:none; background:none; font-size:0.72rem; font-weight:700; color:#64748b; cursor:pointer;">Opiniones</button>
-                <button id="modal-tab-btn-study" onclick="switchProductModalTab('study')" style="flex:1; padding:10px 4px; border:none; background:none; font-size:0.72rem; font-weight:700; color:#64748b; cursor:pointer;">Informe Clínico</button>
+            <div style="display:flex; border-bottom:1px solid #e2e8f0; background:#f8fafc; flex-shrink:0;">
+                <button id="modal-tab-btn-desc" onclick="switchProductModalTab('desc')" style="flex:1; padding:9px 2px; border:none; background:white; font-size:0.68rem; font-weight:800; color:#0284c7; border-bottom:2px solid #0284c7; cursor:pointer;">Descripción</button>
+                <button id="modal-tab-btn-specs" onclick="switchProductModalTab('specs')" style="flex:1; padding:9px 2px; border:none; background:none; font-size:0.68rem; font-weight:700; color:#64748b; cursor:pointer;">Ficha Técnica</button>
+                <button id="modal-tab-btn-reviews" onclick="switchProductModalTab('reviews')" style="flex:1; padding:9px 2px; border:none; background:none; font-size:0.68rem; font-weight:700; color:#64748b; cursor:pointer;">Opiniones</button>
+                <button id="modal-tab-btn-study" onclick="switchProductModalTab('study')" style="flex:1; padding:9px 2px; border:none; background:none; font-size:0.68rem; font-weight:700; color:#64748b; cursor:pointer;">Informe Clínico</button>
             </div>
 
             <!-- Modal Content (Scrollable) -->
@@ -10681,15 +10681,15 @@ function openProductModal(prodId) {
             </div>
 
             <!-- Modal Footer (Price + Add to Cart) -->
-            <div style="padding:14px 16px; border-top:1px solid #e2e8f0; background:#f8fafc; display:flex; align-items:center; justify-content:space-between;">
+            <div style="padding:10px 14px; border-top:1px solid #e2e8f0; background:#f8fafc; display:flex; align-items:center; justify-content:space-between; flex-shrink:0;">
                 <div>
-                    <span style="font-size:0.7rem; color:#64748b; display:block;">PVP Recomendado</span>
-                    <span style="font-size:1.15rem; font-weight:900; color:#0f172a;">${prod.price.toFixed(2)} €</span>
+                    <span style="font-size:0.65rem; color:#64748b; display:block;">PVP Recomendado</span>
+                    <span style="font-size:1.1rem; font-weight:900; color:#0f172a;">${prod.price.toFixed(2)} €</span>
                 </div>
-                <div style="display:flex; gap:8px;">
-                    ${prod.url ? `<a href="${prod.url}" style="background:#f1f5f9; color:#0f172a; padding:8px 12px; border-radius:10px; text-decoration:none; font-weight:700; font-size:0.78rem; display:flex; align-items:center; gap:4px;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Ver Ficha Web</a>` : ''}
-                    <button onclick="addToCart('${prod.name.replace(/'/g, "\\'")}', ${prod.price}, '${prod.img}'); closeProductModal();" style="background:#0284c7; color:white; border:none; padding:8px 16px; border-radius:10px; font-weight:800; font-size:0.8rem; cursor:pointer; display:flex; align-items:center; gap:6px;">
-                        <i class="fa-solid fa-cart-shopping"></i> Añadir a Cesta
+                <div style="display:flex; gap:6px; flex-wrap:wrap; justify-content:flex-end;">
+                    ${prod.url ? `<a href="${prod.url}" style="background:#f1f5f9; color:#0f172a; padding:7px 10px; border-radius:10px; text-decoration:none; font-weight:700; font-size:0.72rem; display:flex; align-items:center; gap:4px;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Web</a>` : ''}
+                    <button onclick="addToCart('${prod.name.replace(/'/g, "\\'")}', ${prod.price}, '${prod.img}'); closeProductModal();" style="background:#0284c7; color:white; border:none; padding:7px 12px; border-radius:10px; font-weight:800; font-size:0.75rem; cursor:pointer; display:flex; align-items:center; gap:4px;">
+                        <i class="fa-solid fa-cart-shopping"></i> Añadir
                     </button>
                 </div>
             </div>
